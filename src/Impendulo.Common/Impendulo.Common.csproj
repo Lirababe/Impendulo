@@ -97,7 +97,6 @@
     <Compile Include="SqlEntityHelper\EntityFrameworkHelper.cs" />
     <Compile Include="SqlEntityHelper\SQLHelper.cs" />
     <Compile Include="Test.cs" />
-    <Compile Include="Test\Class1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

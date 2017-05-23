@@ -18,7 +18,7 @@ namespace Impendulo.ClientEnquiry.Development
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmClientEnquiryV2());
+            Application.Run(new Impendulo.Enquiry.Development.WorkBanchEnquiries.frmWorkbanchEnquiries());
         }
     }
 }
