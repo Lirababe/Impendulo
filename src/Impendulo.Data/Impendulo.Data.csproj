@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdditionalClasses\ObservableListSource.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Models\Activity.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
