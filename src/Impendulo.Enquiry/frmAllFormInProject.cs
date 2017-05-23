@@ -86,6 +86,11 @@ namespace Impendulo.Enquiry.Development
             frmWorkbanchEnquiries frm = new frmWorkbanchEnquiries();
             frm.ShowDialog();
         }
+
+        private void frmAllFormInProject_Load(object sender, EventArgs e)
+        {
+
+        }
         //
         //frmSelectCompanyContact
     }

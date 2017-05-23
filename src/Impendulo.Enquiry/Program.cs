@@ -1,4 +1,5 @@
-﻿using Impendulo.Enquiry.Development.EnquiryV2.Development;
+﻿using Impendulo.Enquiry.Development;
+using Impendulo.Enquiry.Development.EnquiryV2.Development;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Impendulo.ClientEnquiry.Development
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Impendulo.Enquiry.Development.WorkBanchEnquiries.frmWorkbanchEnquiries());
+            Application.Run(new frmAllFormInProject());
         }
     }
 }

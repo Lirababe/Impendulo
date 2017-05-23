@@ -159,6 +159,7 @@
             this.Name = "frmAllFormInProject";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Menu - All Equiry Forms ";
+            this.Load += new System.EventHandler(this.frmAllFormInProject_Load);
             this.ResumeLayout(false);
 
         }
