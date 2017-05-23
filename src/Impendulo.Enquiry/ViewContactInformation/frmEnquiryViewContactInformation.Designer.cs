@@ -374,7 +374,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmEnquiryViewContactInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Enquiry Contactn Information";
+            this.Text = "Enquiry Contact Information";
             this.Load += new System.EventHandler(this.frmEnquiryViewContactInformation_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

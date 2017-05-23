@@ -130,12 +130,6 @@
     <Compile Include="SelectCourseCurriculum\frmSelectCourseCurriculumForClientEnquiry.Designer.cs">
       <DependentUpon>frmSelectCourseCurriculumForClientEnquiry.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestPage\frmEnquiryTwest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TestPage\frmEnquiryTwest.Designer.cs">
-      <DependentUpon>frmEnquiryTwest.cs</DependentUpon>
-    </Compile>
     <Compile Include="UpdateSelectedCurriculumEnrollQty\frmUpdateSelectedCurriculumEnrollQty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,7 +142,6 @@
     <Compile Include="ViewContactInformation\frmEnquiryViewContactInformation.Designer.cs">
       <DependentUpon>frmEnquiryViewContactInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewHistory\Class1.cs" />
     <Compile Include="ViewHistory\frmEnquiryViewHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,9 +199,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectCourseCurriculum\frmSelectCourseCurriculumForClientEnquiry.resx">
       <DependentUpon>frmSelectCourseCurriculumForClientEnquiry.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TestPage\frmEnquiryTwest.resx">
-      <DependentUpon>frmEnquiryTwest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateSelectedCurriculumEnrollQty\frmUpdateSelectedCurriculumEnrollQty.resx">
       <DependentUpon>frmUpdateSelectedCurriculumEnrollQty.cs</DependentUpon>
