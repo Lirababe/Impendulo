@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="ApplicationLookAndFeel.cs" />
     <Compile Include="AppSettings\AppSettings.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="CommonFormProperties.cs">
       <SubType>Form</SubType>
     </Compile>
