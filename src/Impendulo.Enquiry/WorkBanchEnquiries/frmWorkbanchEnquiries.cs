@@ -36,41 +36,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
         /// <param name="CurrentDate"></param>
         /// <param name="AmountDaysToAdd"></param>
         /// <returns></returns>
-        private DateTime getCustomDateTime(DateTime CurrentDate, int AmountDaysToAdd)
-        {
-            int iCount = 0;
-           
-
-            while (!(AmountDaysToAdd == 0))
-            {
-                if ((CurrentDate.DayOfWeek != DayOfWeek.Saturday && CurrentDate.DayOfWeek != DayOfWeek.Sunday))
-                {
-
-                    if (AmountDaysToAdd < 0)
-                    {
-                        CurrentDate = CurrentDate.AddDays(-1);
-                        AmountDaysToAdd++;
-                    }
-                    else
-                    {
-                        CurrentDate = CurrentDate.AddDays(1);
-                        iCount--;
-                    }
-                }
-                else
-                {
-                    if (AmountDaysToAdd < 0)
-                    {
-                        CurrentDate = CurrentDate.AddDays(-1);
-                    }
-                    else
-                    {
-                        CurrentDate = CurrentDate.AddDays(1);
-                    }
-                }
-            }
-            return CurrentDate;
-        }
+        
         private void LoadItems(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
         {
             using (var Dbconnection = new MCDEntities())
@@ -99,7 +65,9 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
                                       select a).Count<Data.Models.Enquiry>().ToString();
 
                 //Over due enquiries
-                DateTime queryDatetime = getCustomDateTime(DateTime.Now, -4);
+                //I created the CustomerDateTime static classs inside impendulo.Common
+                DateTime queryDatetime = Impendulo.Common.CustomerDateTime.CustomerDateTime.getCustomDateTime(DateTime.Now, -4);
+                //DateTime queryDatetime = getCustDateTime(DateTime.Now, -4);
                 lblOverDueEnquiries.Text = (from a in Dbconnection.Enquiries
                                             from b in a.CurriculumEnquiries
                                             where
