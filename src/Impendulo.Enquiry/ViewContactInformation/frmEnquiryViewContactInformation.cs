@@ -11,6 +11,7 @@ using Impendulo.Data.Models;
 using Impendulo.ContactDetails.Development;
 using Impendulo.Common.Enum;
 using Impendulo.Email.Development;
+using System.Data.Entity;
 
 namespace Impendulo.Enquiry.ViewContactInformation.Development
 {
@@ -38,6 +39,20 @@ namespace Impendulo.Enquiry.ViewContactInformation.Development
 
         private void frmEnquiryViewContactInformation_Load(object sender, EventArgs e)
         {
+            if (CurrentEnquiry == null)
+            {
+                using (var Dbconnection = new MCDEntities())
+                {
+                    CurrentEnquiry = (from a in Dbconnection.Enquiries
+                                      //from b in a.Individuals
+                                      //from c in b.ContactDetails
+                                      select a)
+                                      .Include("Companies")
+                                      .Include("Individuals")
+                                      .Include("Individuals.ContactDetails")
+                                      .FirstOrDefault<Data.Models.Enquiry>();
+                };
+            }
             this.refreshCompanyName();
             this.refreshContact();
             this.refreshContactDetails();
@@ -201,7 +216,7 @@ namespace Impendulo.Enquiry.ViewContactInformation.Development
                 frm.ShowDialog();
                 if (dgvIndividualContactDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Send Mail")
                 {
-                    
+
                 }
             }
         }

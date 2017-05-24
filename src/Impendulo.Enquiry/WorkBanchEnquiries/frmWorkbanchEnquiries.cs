@@ -24,7 +24,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             /*set date parameters*/
             DateTime Todaydate = DateTime.Now;
             Todaydate.Month.ToString("D");
-            lblcurrentdate.Text = Todaydate.ToShortDateString();
+            lbCurrentDateTime.Text = Todaydate.ToShortDateString();
             dtpFrom.Value = new DateTime(Todaydate.Year, Todaydate.Month, 1);
             dtpTo.Value = new DateTime(Todaydate.Year, Todaydate.Month, 1).AddMonths(1).AddDays(-1);
             /*load queries*/
@@ -83,6 +83,15 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
         }
 
         private void dtpTo_ValueChanged(object sender, EventArgs e)
+        {
+            LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
+        }
+        /// <summary>
+        /// Date Added 24 May 2017
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnApprenticeshipFilterSearch_Click(object sender, EventArgs e)
         {
             LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
         }

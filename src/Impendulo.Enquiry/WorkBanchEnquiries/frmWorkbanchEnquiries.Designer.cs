@@ -38,13 +38,10 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.lblcurrentdate = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblEquiyTotalEquiry = new System.Windows.Forms.Label();
@@ -63,19 +60,22 @@
             this.lblCompanyEnquiry = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnApprenticeshipFilterSearch = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.lbCurrentDateTime = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpMainPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -189,36 +189,22 @@
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.groupBox5, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.groupBox6, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 142F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 193F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 146F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 232F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(795, 445);
             this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Controls.Add(this.label16);
-            this.groupBox5.Controls.Add(this.dtpTo);
-            this.groupBox5.Controls.Add(this.dtpFrom);
-            this.groupBox5.Controls.Add(this.lblcurrentdate);
-            this.groupBox5.Controls.Add(this.label1);
-            this.groupBox5.Location = new System.Drawing.Point(3, 3);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(789, 104);
-            this.groupBox5.TabIndex = 0;
-            this.groupBox5.TabStop = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(416, 59);
+            this.label5.Location = new System.Drawing.Point(391, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(20, 13);
             this.label5.TabIndex = 7;
@@ -227,7 +213,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(163, 60);
+            this.label16.Location = new System.Drawing.Point(192, 25);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(33, 13);
             this.label16.TabIndex = 6;
@@ -235,7 +221,7 @@
             // 
             // dtpTo
             // 
-            this.dtpTo.Location = new System.Drawing.Point(448, 54);
+            this.dtpTo.Location = new System.Drawing.Point(417, 22);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(200, 20);
             this.dtpTo.TabIndex = 5;
@@ -243,30 +229,10 @@
             // 
             // dtpFrom
             // 
-            this.dtpFrom.Location = new System.Drawing.Point(199, 54);
+            this.dtpFrom.Location = new System.Drawing.Point(222, 24);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(200, 20);
+            this.dtpFrom.Size = new System.Drawing.Size(158, 20);
             this.dtpFrom.TabIndex = 4;
-            // 
-            // lblcurrentdate
-            // 
-            this.lblcurrentdate.AutoSize = true;
-            this.lblcurrentdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcurrentdate.Location = new System.Drawing.Point(13, 56);
-            this.lblcurrentdate.Name = "lblcurrentdate";
-            this.lblcurrentdate.Size = new System.Drawing.Size(92, 18);
-            this.lblcurrentdate.TabIndex = 3;
-            this.lblcurrentdate.Text = "Current Date";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Apprenticeship Enquiries";
             // 
             // tableLayoutPanel4
             // 
@@ -275,18 +241,18 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.89874F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
             this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel3, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel5, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel6, 4, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 113);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 70);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(789, 136);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(789, 140);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // panel1
@@ -298,7 +264,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.InfoText;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(131, 130);
+            this.panel1.Size = new System.Drawing.Size(131, 134);
             this.panel1.TabIndex = 0;
             // 
             // lblEquiyTotalEquiry
@@ -329,7 +295,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(140, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(142, 130);
+            this.panel2.Size = new System.Drawing.Size(141, 134);
             this.panel2.TabIndex = 1;
             // 
             // label9
@@ -358,9 +324,9 @@
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.lblOverDueEnquiries);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(288, 3);
+            this.panel3.Location = new System.Drawing.Point(287, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(149, 130);
+            this.panel3.Size = new System.Drawing.Size(149, 134);
             this.panel3.TabIndex = 2;
             // 
             // label10
@@ -389,9 +355,9 @@
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.lblPrivateEquiries);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(443, 3);
+            this.panel5.Location = new System.Drawing.Point(442, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(152, 130);
+            this.panel5.Size = new System.Drawing.Size(152, 134);
             this.panel5.TabIndex = 4;
             // 
             // label14
@@ -420,9 +386,9 @@
             this.panel6.Controls.Add(this.label15);
             this.panel6.Controls.Add(this.lblCompanyEnquiry);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(601, 3);
+            this.panel6.Location = new System.Drawing.Point(600, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(185, 130);
+            this.panel6.Size = new System.Drawing.Size(186, 134);
             this.panel6.TabIndex = 5;
             // 
             // label15
@@ -450,7 +416,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(831, 408);
+            this.tabPage1.Size = new System.Drawing.Size(801, 451);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "LOTP";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -460,10 +426,45 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(831, 408);
+            this.tabPage3.Size = new System.Drawing.Size(801, 451);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "SoftSkills";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnApprenticeshipFilterSearch
+            // 
+            this.btnApprenticeshipFilterSearch.Location = new System.Drawing.Point(623, 21);
+            this.btnApprenticeshipFilterSearch.Name = "btnApprenticeshipFilterSearch";
+            this.btnApprenticeshipFilterSearch.Size = new System.Drawing.Size(57, 23);
+            this.btnApprenticeshipFilterSearch.TabIndex = 8;
+            this.btnApprenticeshipFilterSearch.Text = "Search";
+            this.btnApprenticeshipFilterSearch.UseVisualStyleBackColor = true;
+            this.btnApprenticeshipFilterSearch.Click += new System.EventHandler(this.btnApprenticeshipFilterSearch_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.lbCurrentDateTime);
+            this.groupBox6.Controls.Add(this.btnApprenticeshipFilterSearch);
+            this.groupBox6.Controls.Add(this.dtpFrom);
+            this.groupBox6.Controls.Add(this.label16);
+            this.groupBox6.Controls.Add(this.label5);
+            this.groupBox6.Controls.Add(this.dtpTo);
+            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox6.Location = new System.Drawing.Point(3, 3);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(789, 61);
+            this.groupBox6.TabIndex = 2;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Filters";
+            // 
+            // lbCurrentDateTime
+            // 
+            this.lbCurrentDateTime.AutoSize = true;
+            this.lbCurrentDateTime.Location = new System.Drawing.Point(6, 26);
+            this.lbCurrentDateTime.Name = "lbCurrentDateTime";
+            this.lbCurrentDateTime.Size = new System.Drawing.Size(35, 13);
+            this.lbCurrentDateTime.TabIndex = 9;
+            this.lbCurrentDateTime.Text = "label1";
             // 
             // frmWorkbanchEnquiries
             // 
@@ -480,8 +481,6 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -493,6 +492,8 @@
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -509,13 +510,10 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DateTimePicker dtpTo;
         private System.Windows.Forms.DateTimePicker dtpFrom;
-        private System.Windows.Forms.Label lblcurrentdate;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblEquiyTotalEquiry;
@@ -534,5 +532,8 @@
         private System.Windows.Forms.Label lblCompanyEnquiry;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button btnApprenticeshipFilterSearch;
+        private System.Windows.Forms.Label lbCurrentDateTime;
     }
 }
