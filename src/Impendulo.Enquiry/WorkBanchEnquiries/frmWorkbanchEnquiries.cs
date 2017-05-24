@@ -29,9 +29,48 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             dtpTo.Value = new DateTime(Todaydate.Year, Todaydate.Month, 1).AddMonths(1).AddDays(-1);
             /*load queries*/
             LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
-
         }
+        /// <summary>
+        ///retruns date into the future or in to be past by a set amount of days excluding Saturday and Sunday.
+        /// </summary>
+        /// <param name="CurrentDate"></param>
+        /// <param name="AmountDaysToAdd"></param>
+        /// <returns></returns>
+        private DateTime getCustomDateTime(DateTime CurrentDate, int AmountDaysToAdd)
+        {
+            int iCount = 0;
+           
 
+            while (!(AmountDaysToAdd == 0))
+            {
+                if ((CurrentDate.DayOfWeek != DayOfWeek.Saturday && CurrentDate.DayOfWeek != DayOfWeek.Sunday))
+                {
+
+                    if (AmountDaysToAdd < 0)
+                    {
+                        CurrentDate = CurrentDate.AddDays(-1);
+                        AmountDaysToAdd++;
+                    }
+                    else
+                    {
+                        CurrentDate = CurrentDate.AddDays(1);
+                        iCount--;
+                    }
+                }
+                else
+                {
+                    if (AmountDaysToAdd < 0)
+                    {
+                        CurrentDate = CurrentDate.AddDays(-1);
+                    }
+                    else
+                    {
+                        CurrentDate = CurrentDate.AddDays(1);
+                    }
+                }
+            }
+            return CurrentDate;
+        }
         private void LoadItems(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
         {
             using (var Dbconnection = new MCDEntities())
@@ -52,15 +91,21 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
                 //new enquiries
                 lblNewEnquiry.Text = (from a in Dbconnection.Enquiries
                                       from b in a.CurriculumEnquiries
-                                      where a.InitialConsultationComplete == true/*b.LookupEnquiryStatus.EnquiryStatusID == (int)EnumEnquiryStatuses.New*/
+                                      where 
+                                     // a.InitialConsultationComplete == false &&
+                                      b.LookupEnquiryStatus.EnquiryStatusID == (int)EnumEnquiryStatuses.New
                                       && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate &&
                                       b.Curriculum.DepartmentID == (int)aDepartment
                                       select a).Count<Data.Models.Enquiry>().ToString();
 
                 //Over due enquiries
+                DateTime queryDatetime = getCustomDateTime(DateTime.Now, -4);
                 lblOverDueEnquiries.Text = (from a in Dbconnection.Enquiries
                                             from b in a.CurriculumEnquiries
-                                            where a.EnquiryDate <= DateTime.Now &&
+                                            where
+                                            //Enquiriesw are deemed Over Due if not responded to with in 3 Working Days
+                                            a.EnquiryDate <= queryDatetime &&
+                                            b.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed &&
                                             b.Curriculum.DepartmentID == (int)aDepartment
                                             select a).Count<Data.Models.Enquiry>().ToString();
 

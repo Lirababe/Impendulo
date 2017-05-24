@@ -63,6 +63,7 @@
             this.btnApprenticeshipFilterSearch = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.lbCurrentDateTime = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpMainPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -204,7 +205,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(391, 25);
+            this.label5.Location = new System.Drawing.Point(391, 28);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(20, 13);
             this.label5.TabIndex = 7;
@@ -213,7 +214,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(192, 25);
+            this.label16.Location = new System.Drawing.Point(181, 28);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(33, 13);
             this.label16.TabIndex = 6;
@@ -443,6 +444,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.label1);
             this.groupBox6.Controls.Add(this.lbCurrentDateTime);
             this.groupBox6.Controls.Add(this.btnApprenticeshipFilterSearch);
             this.groupBox6.Controls.Add(this.dtpFrom);
@@ -460,11 +462,20 @@
             // lbCurrentDateTime
             // 
             this.lbCurrentDateTime.AutoSize = true;
-            this.lbCurrentDateTime.Location = new System.Drawing.Point(6, 26);
+            this.lbCurrentDateTime.Location = new System.Drawing.Point(89, 29);
             this.lbCurrentDateTime.Name = "lbCurrentDateTime";
             this.lbCurrentDateTime.Size = new System.Drawing.Size(35, 13);
             this.lbCurrentDateTime.TabIndex = 9;
             this.lbCurrentDateTime.Text = "label1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "ToDay Date:";
             // 
             // frmWorkbanchEnquiries
             // 
@@ -535,5 +546,6 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button btnApprenticeshipFilterSearch;
         private System.Windows.Forms.Label lbCurrentDateTime;
+        private System.Windows.Forms.Label label1;
     }
 }
