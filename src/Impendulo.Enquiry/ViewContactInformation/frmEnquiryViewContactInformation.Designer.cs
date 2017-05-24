@@ -83,7 +83,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(481, 361);
+            this.groupBox1.Size = new System.Drawing.Size(476, 356);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Information";
@@ -92,9 +92,9 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(380, 16);
+            this.pictureBox1.Location = new System.Drawing.Point(375, 16);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(98, 73);
+            this.pictureBox1.Size = new System.Drawing.Size(98, 68);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
@@ -103,9 +103,9 @@
             // 
             this.groupBox4.Controls.Add(this.toolStripContainer1);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox4.Location = new System.Drawing.Point(3, 89);
+            this.groupBox4.Location = new System.Drawing.Point(3, 84);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(475, 241);
+            this.groupBox4.Size = new System.Drawing.Size(470, 241);
             this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Contact Details";
@@ -116,11 +116,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvIndividualContactDetails);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(469, 197);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(464, 197);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(469, 222);
+            this.toolStripContainer1.Size = new System.Drawing.Size(464, 222);
             this.toolStripContainer1.TabIndex = 3;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -145,7 +145,7 @@
             this.dgvIndividualContactDetails.ReadOnly = true;
             this.dgvIndividualContactDetails.RowHeadersWidth = 15;
             this.dgvIndividualContactDetails.RowTemplate.Height = 24;
-            this.dgvIndividualContactDetails.Size = new System.Drawing.Size(469, 197);
+            this.dgvIndividualContactDetails.Size = new System.Drawing.Size(464, 197);
             this.dgvIndividualContactDetails.TabIndex = 0;
             this.dgvIndividualContactDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIndividualContactDetails_CellContentClick);
             this.dgvIndividualContactDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvIndividualContactDetails_DataBindingComplete);
@@ -208,7 +208,7 @@
             this.btnRemoveContactDetails.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.btnRemoveContactDetails.Name = "btnRemoveContactDetails";
             this.btnRemoveContactDetails.PositionItem = this.bindingNavigatorPositionItem;
-            this.btnRemoveContactDetails.Size = new System.Drawing.Size(469, 25);
+            this.btnRemoveContactDetails.Size = new System.Drawing.Size(464, 25);
             this.btnRemoveContactDetails.Stretch = true;
             this.btnRemoveContactDetails.TabIndex = 0;
             // 
@@ -314,14 +314,14 @@
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 330);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 325);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(475, 28);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(470, 28);
             this.flowLayoutPanel1.TabIndex = 15;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(397, 3);
+            this.button1.Location = new System.Drawing.Point(392, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -369,7 +369,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 361);
+            this.ClientSize = new System.Drawing.Size(476, 356);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmEnquiryViewContactInformation";
