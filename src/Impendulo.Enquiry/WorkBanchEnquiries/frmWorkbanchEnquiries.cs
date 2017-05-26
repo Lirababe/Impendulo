@@ -29,6 +29,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             dtpTo.Value = new DateTime(Todaydate.Year, Todaydate.Month, 1).AddMonths(1).AddDays(-1);
             /*load queries*/
             LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
+            this.FiiChart();
         }
         /// <summary>
         ///retruns date into the future or in to be past by a set amount of days excluding Saturday and Sunday.
@@ -107,6 +108,32 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
         private void btnApprenticeshipFilterSearch_Click(object sender, EventArgs e)
         {
             LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
+        }
+
+        private void FiiChart()
+        {
+            using (var Dbconnection = new MCDEntities())
+            {
+                //Im creating a List of Enquiries
+                List<Impendulo.Data.Models.Enquiry> lst = (from a in Dbconnection.Enquiries
+                                     select a).ToList<Impendulo.Data.Models.Enquiry>();
+
+                /*Here i was trying to count all enquiries made in a specific date*/
+                /*The idea is to display on a graph the number of enquiries made on specific date*/
+
+
+                //int lst = (from a in Dbconnection.Enquiries
+                //                     where a.EnquiryDate.ToShortDateString() == "2017-04-10"
+                //                     select a).Count<Enquiry>();
+
+                //Filling the chart
+                chart1.DataSource = lst;
+                chart1.Series["Series1"].XValueMember = "EnquiryDate";
+
+                //The YValueMember should be the number of Enquiries not the EnquiryID, the EnquiryID was to check if the code would work
+                chart1.Series["Series1"].YValueMembers = "EnquiryID";
+
+            }
         }
     }
 }
