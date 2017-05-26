@@ -42,9 +42,6 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
         public int CurrentEquiryID { get; set; }
         private void frmEnrolmmentInprogress_Load(object sender, EventArgs e)
         {
-            CurrentEnrollmentID = 0;
-            CurrentEquiryID = 0;
-
             CurrentSelectedDepartment = EnumDepartments.Apprenticeship;
 
             this.refreshEnrollment();
@@ -183,20 +180,20 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                 if (CurrentEquiryID > 0)
                 {
                     AllEnrollments = (from a in AllEnrollments
-                                                          from b in a.CurriculumEnquiries
-                                                          where b.EnquiryID == CurrentEquiryID
-                                                          select a).ToList<Enrollment>();
+                                      from b in a.CurriculumEnquiries
+                                      where b.EnquiryID == CurrentEquiryID
+                                      select a).ToList<Enrollment>();
                 }
-                if (CurrentEnrollmentID > 0 )
+                if (CurrentEnrollmentID > 0)
                 {
                     AllEnrollments = (from a in AllEnrollments
                                       where a.EnrollmentID == CurrentEnrollmentID
                                       select a).ToList<Enrollment>();
                 }
 
-                
 
-                 enrollmentBindingSource.DataSource = AllEnrollments;
+
+                enrollmentBindingSource.DataSource = AllEnrollments;
 
 
 
