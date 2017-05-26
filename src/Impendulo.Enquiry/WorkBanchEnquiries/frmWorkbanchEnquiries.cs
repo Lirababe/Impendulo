@@ -12,6 +12,10 @@ using Impendulo.Common.Enum;
 
 namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 {
+    /*
+     * How to data bind and create chart control with entity framework
+     * https://www.codeproject.com/Articles/221931/Entity-Framework-in-WinForms
+     * *****************************************************************/
     public partial class frmWorkbanchEnquiries : Form
     {
         public frmWorkbanchEnquiries()
@@ -44,33 +48,17 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
         /// <param name="CurrentDate"></param>
         /// <param name="AmountDaysToAdd"></param>
         /// <returns></returns>
-
         private void LoadItems(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
         {
+            lblEquiyTotalEquiry.Text = getAllEnquiry(FromDate, Todate, aDepartment).Count.ToString();
+
+            lblNewEnquiry.Text = GetNewEquiry(FromDate, Todate, aDepartment).Count.ToString();
+
+            lblOverDueEnquiries.Text = GetOverDueEnquiry(FromDate, Todate, aDepartment).Count.ToString();
             using (var Dbconnection = new MCDEntities())
             {
-                lblEquiyTotalEquiry.Text = (from a in Dbconnection.Enquiries
-                                                /*Include Sections */
-                                            from b in a.CurriculumEnquiries
-                                                /* Where Sections */
-                                            where
-                                                 /*Filters*/
-                                                 (a.EnquiryDate >= FromDate &&
-                                                  a.EnquiryDate <= Todate) &&
-                                                  //Sections
-                                                  b.Curriculum.DepartmentID == (int)aDepartment
-                                            select a)
-                                         /*Aggregation*/
-                                         .Count<Data.Models.Enquiry>().ToString();
-                //new enquiries
-                lblNewEnquiry.Text = (from a in Dbconnection.Enquiries
-                                      from b in a.CurriculumEnquiries
-                                      where
-                                      // a.InitialConsultationComplete == false &&
-                                      b.LookupEnquiryStatus.EnquiryStatusID == (int)EnumEnquiryStatuses.New
-                                      && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate &&
-                                      b.Curriculum.DepartmentID == (int)aDepartment
-                                      select a).Count<Data.Models.Enquiry>().ToString();
+
+               
 
                 //Over due enquiries
                 //I created the CustomerDateTime static classs inside impendulo.Common
@@ -102,7 +90,81 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 
 
         }
+        /// <summary>
+        ///  Get a list of equiry Object  -Amount of equiry for the period defined by the dates.
+        /// </summary>
+        /// <param name="FromDate"></param>
+        /// <param name="Todate"></param>
+        /// <param name="aDepartment"></param>
+        /// <returns>List of Equiry Objects</returns>
+        private List<Data.Models.Enquiry> getAllEnquiry(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
+        {
+            List<Data.Models.Enquiry> Rtn = new List<Data.Models.Enquiry>();
+            using (var Dbconnection = new MCDEntities())
+            {
+                Rtn = (from a in Dbconnection.Enquiries
+                           /*Include Sections */
+                       from b in a.CurriculumEnquiries
+                           /* Where Sections */
+                       where
+                            /*Filters*/
+                            (a.EnquiryDate >= FromDate &&
+                             a.EnquiryDate <= Todate) &&
+                             //Sections
+                             b.Curriculum.DepartmentID == (int)aDepartment
+                       select a)
+                                         /*Aggregation*/
+                                         .ToList<Data.Models.Enquiry>();
+            };
+            return Rtn;
+        }
+        /// <summary>
+        /// Get a list of equiry Object  - Only the new one for the period defined by the dates.
+        /// </summary>
+        /// <param name="FromDate"></param>
+        /// <param name="Todate"></param>
+        /// <param name="aDepartment"></param>
+        /// <returns>>List of Equiry Objects</returns>
+        private List<Data.Models.Enquiry> GetNewEquiry(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
+        {
+            List<Data.Models.Enquiry> Rtn = new List<Data.Models.Enquiry>();
+            using (var Dbconnection = new MCDEntities())
+            {
+                Rtn = (from a in Dbconnection.Enquiries
+                       from b in a.CurriculumEnquiries
+                       where
+                       // a.InitialConsultationComplete == false &&
+                       b.LookupEnquiryStatus.EnquiryStatusID == (int)EnumEnquiryStatuses.New
+                       && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate &&
+                       b.Curriculum.DepartmentID == (int)aDepartment
+                       select a).ToList<Data.Models.Enquiry>();
+            };
 
+            return Rtn;
+        }
+
+        private List<Data.Models.Enquiry> GetOverDueEnquiry(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
+        {
+            List<Data.Models.Enquiry> Rtn = new List<Data.Models.Enquiry>();
+
+            using (var Dbconnection = new MCDEntities())
+            {
+                //I created the CustomerDateTime static classs inside impendulo.Common
+                DateTime queryDatetime = Impendulo.Common.CustomerDateTime.CustomerDateTime.getCustomDateTime(DateTime.Now, -4);
+                //DateTime queryDatetime = getCustDateTime(DateTime.Now, -4);
+                Rtn = (from a in Dbconnection.Enquiries
+                                            from b in a.CurriculumEnquiries
+                                            where
+                                            //Enquiriesw are deemed Over Due if not responded to with in 3 Working Days
+                                            a.EnquiryDate <= queryDatetime &&
+                                            b.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed &&
+                                            b.Curriculum.DepartmentID == (int)aDepartment
+                                            select a).ToList<Data.Models.Enquiry>();
+            };
+            //Over due enquiries
+           
+            return Rtn;
+        }
         private void dtpTo_ValueChanged(object sender, EventArgs e)
         {
             LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
@@ -142,12 +204,20 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rbNewEnquiryByMonth_CheckedChanged(object sender, EventArgs e)
         {
             this.NewEnquiryByMonth();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rbAmountOfPrivateVSCompanyEnquiriesPerMonth_CheckedChanged(object sender, EventArgs e)
         {
             this.AmountOfPrivateVSCompanyEnquiriesPerMonth();
@@ -155,7 +225,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 
         private void NewEnquiryByMonth()
         {
-            if(rbNewEnquiryByMonth.Checked == true)
+            if (rbNewEnquiryByMonth.Checked == true)
             {
                 lblGraphTitle.Text = "NEW ENQUIRY BY MONTH";
                 //using (var Dbconnection = new MCDEntities())
@@ -177,13 +247,13 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 
         private void AmountOfPrivateVSCompanyEnquiriesPerMonth()
         {
-            if(rbAmountOfPrivateVSCompanyEnquiriesPerMonth.Checked == true)
+            if (rbAmountOfPrivateVSCompanyEnquiriesPerMonth.Checked == true)
             {
                 lblGraphTitle.Text = "AMOUNT OF PRIVATE VS COMPANY ENQUIRIES";
                 //Update the chart
             }
         }
 
-        
+
     }
 }
