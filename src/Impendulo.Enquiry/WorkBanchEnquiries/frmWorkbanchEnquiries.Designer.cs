@@ -66,17 +66,17 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.rbAmountOfPrivateVSCompanyEnquiriesPerMonth = new System.Windows.Forms.RadioButton();
+            this.rbNewEnquiryByMonth = new System.Windows.Forms.RadioButton();
+            this.rbEnquiryByMonth = new System.Windows.Forms.RadioButton();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.lblGraphTitle = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpMainPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -90,7 +90,6 @@
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -100,6 +99,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -234,7 +234,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.89874F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 193F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 194F));
             this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel3, 2, 0);
@@ -257,7 +257,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.InfoText;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(130, 134);
+            this.panel1.Size = new System.Drawing.Size(129, 134);
             this.panel1.TabIndex = 0;
             // 
             // lblEquiyTotalEquiry
@@ -286,7 +286,7 @@
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.lblNewEnquiry);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(139, 3);
+            this.panel2.Location = new System.Drawing.Point(138, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(140, 134);
             this.panel2.TabIndex = 1;
@@ -317,7 +317,7 @@
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.lblOverDueEnquiries);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(285, 3);
+            this.panel3.Location = new System.Drawing.Point(284, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(149, 134);
             this.panel3.TabIndex = 2;
@@ -348,7 +348,7 @@
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.lblPrivateEquiries);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(440, 3);
+            this.panel5.Location = new System.Drawing.Point(439, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(152, 134);
             this.panel5.TabIndex = 4;
@@ -379,9 +379,9 @@
             this.panel6.Controls.Add(this.label15);
             this.panel6.Controls.Add(this.lblCompanyEnquiry);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(598, 3);
+            this.panel6.Location = new System.Drawing.Point(597, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(188, 134);
+            this.panel6.Size = new System.Drawing.Size(189, 134);
             this.panel6.TabIndex = 5;
             // 
             // label15
@@ -482,6 +482,90 @@
             this.dtpTo.TabIndex = 5;
             this.dtpTo.ValueChanged += new System.EventHandler(this.dtpTo_ValueChanged);
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 216);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.groupBox5);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Size = new System.Drawing.Size(789, 226);
+            this.splitContainer1.SplitterDistance = 245;
+            this.splitContainer1.TabIndex = 3;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.rbAmountOfPrivateVSCompanyEnquiriesPerMonth);
+            this.groupBox5.Controls.Add(this.rbNewEnquiryByMonth);
+            this.groupBox5.Controls.Add(this.rbEnquiryByMonth);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(0, 0);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(245, 226);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Filter Graph by:";
+            // 
+            // rbAmountOfPrivateVSCompanyEnquiriesPerMonth
+            // 
+            this.rbAmountOfPrivateVSCompanyEnquiriesPerMonth.AutoSize = true;
+            this.rbAmountOfPrivateVSCompanyEnquiriesPerMonth.Location = new System.Drawing.Point(6, 65);
+            this.rbAmountOfPrivateVSCompanyEnquiriesPerMonth.Name = "rbAmountOfPrivateVSCompanyEnquiriesPerMonth";
+            this.rbAmountOfPrivateVSCompanyEnquiriesPerMonth.Size = new System.Drawing.Size(241, 17);
+            this.rbAmountOfPrivateVSCompanyEnquiriesPerMonth.TabIndex = 6;
+            this.rbAmountOfPrivateVSCompanyEnquiriesPerMonth.TabStop = true;
+            this.rbAmountOfPrivateVSCompanyEnquiriesPerMonth.Text = "Amount of Private Verses Company per month";
+            this.rbAmountOfPrivateVSCompanyEnquiriesPerMonth.UseVisualStyleBackColor = true;
+            this.rbAmountOfPrivateVSCompanyEnquiriesPerMonth.CheckedChanged += new System.EventHandler(this.rbAmountOfPrivateVSCompanyEnquiriesPerMonth_CheckedChanged);
+            // 
+            // rbNewEnquiryByMonth
+            // 
+            this.rbNewEnquiryByMonth.AutoSize = true;
+            this.rbNewEnquiryByMonth.Location = new System.Drawing.Point(6, 42);
+            this.rbNewEnquiryByMonth.Name = "rbNewEnquiryByMonth";
+            this.rbNewEnquiryByMonth.Size = new System.Drawing.Size(127, 17);
+            this.rbNewEnquiryByMonth.TabIndex = 5;
+            this.rbNewEnquiryByMonth.TabStop = true;
+            this.rbNewEnquiryByMonth.Text = "New Equiry By Month";
+            this.rbNewEnquiryByMonth.UseVisualStyleBackColor = true;
+            this.rbNewEnquiryByMonth.CheckedChanged += new System.EventHandler(this.rbNewEnquiryByMonth_CheckedChanged);
+            // 
+            // rbEnquiryByMonth
+            // 
+            this.rbEnquiryByMonth.AutoSize = true;
+            this.rbEnquiryByMonth.Location = new System.Drawing.Point(6, 19);
+            this.rbEnquiryByMonth.Name = "rbEnquiryByMonth";
+            this.rbEnquiryByMonth.Size = new System.Drawing.Size(101, 17);
+            this.rbEnquiryByMonth.TabIndex = 4;
+            this.rbEnquiryByMonth.TabStop = true;
+            this.rbEnquiryByMonth.Text = "Equiry by Month";
+            this.rbEnquiryByMonth.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.panel4);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.chart1);
+            this.splitContainer2.Size = new System.Drawing.Size(540, 226);
+            this.splitContainer2.SplitterDistance = 49;
+            this.splitContainer2.TabIndex = 4;
+            // 
             // chart1
             // 
             chartArea1.Name = "ChartArea1";
@@ -495,7 +579,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(540, 185);
+            this.chart1.Size = new System.Drawing.Size(540, 173);
             this.chart1.TabIndex = 3;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
@@ -521,105 +605,24 @@
             this.tabPage3.Text = "SoftSkills";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // splitContainer1
+            // lblGraphTitle
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 216);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.groupBox5);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(789, 226);
-            this.splitContainer1.SplitterDistance = 245;
-            this.splitContainer1.TabIndex = 3;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.radioButton3);
-            this.groupBox5.Controls.Add(this.radioButton2);
-            this.groupBox5.Controls.Add(this.radioButton1);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(0, 0);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(245, 226);
-            this.groupBox5.TabIndex = 0;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Filter Graph by:";
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 65);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(241, 17);
-            this.radioButton3.TabIndex = 6;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Amount of Private Verses Company per month";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 42);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(127, 17);
-            this.radioButton2.TabIndex = 5;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "New Equiry By Month";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(101, 17);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Equiry by Month";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.panel4);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.chart1);
-            this.splitContainer2.Size = new System.Drawing.Size(540, 226);
-            this.splitContainer2.SplitterDistance = 37;
-            this.splitContainer2.TabIndex = 4;
+            this.lblGraphTitle.AutoSize = true;
+            this.lblGraphTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGraphTitle.Location = new System.Drawing.Point(60, 19);
+            this.lblGraphTitle.Name = "lblGraphTitle";
+            this.lblGraphTitle.Size = new System.Drawing.Size(347, 18);
+            this.lblGraphTitle.TabIndex = 0;
+            this.lblGraphTitle.Text = "{Graph Title - Change as selected on the left}";
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.lblGraphTitle);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(540, 37);
+            this.panel4.Size = new System.Drawing.Size(540, 49);
             this.panel4.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(220, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "{Graph Title - Change as selected on the left}";
             // 
             // frmWorkbanchEnquiries
             // 
@@ -649,7 +652,6 @@
             this.panel6.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -660,6 +662,7 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -707,11 +710,11 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbAmountOfPrivateVSCompanyEnquiriesPerMonth;
+        private System.Windows.Forms.RadioButton rbNewEnquiryByMonth;
+        private System.Windows.Forms.RadioButton rbEnquiryByMonth;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblGraphTitle;
     }
 }

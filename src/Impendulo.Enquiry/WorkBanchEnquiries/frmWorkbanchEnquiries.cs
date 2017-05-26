@@ -30,14 +30,21 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             /*load queries*/
             LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
             this.FiiChart();
+
+            rbEnquiryByMonth.Checked = true;
+            if (rbEnquiryByMonth.Checked == true)
+            {
+                lblGraphTitle.Text = "ENQUIRY BY MONTH";
+            }
         }
+
         /// <summary>
         ///retruns date into the future or in to be past by a set amount of days excluding Saturday and Sunday.
         /// </summary>
         /// <param name="CurrentDate"></param>
         /// <param name="AmountDaysToAdd"></param>
         /// <returns></returns>
-        
+
         private void LoadItems(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
         {
             using (var Dbconnection = new MCDEntities())
@@ -58,8 +65,8 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
                 //new enquiries
                 lblNewEnquiry.Text = (from a in Dbconnection.Enquiries
                                       from b in a.CurriculumEnquiries
-                                      where 
-                                     // a.InitialConsultationComplete == false &&
+                                      where
+                                      // a.InitialConsultationComplete == false &&
                                       b.LookupEnquiryStatus.EnquiryStatusID == (int)EnumEnquiryStatuses.New
                                       && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate &&
                                       b.Curriculum.DepartmentID == (int)aDepartment
@@ -116,7 +123,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             {
                 //Im creating a List of Enquiries
                 List<Impendulo.Data.Models.Enquiry> lst = (from a in Dbconnection.Enquiries
-                                     select a).ToList<Impendulo.Data.Models.Enquiry>();
+                                                           select a).ToList<Impendulo.Data.Models.Enquiry>();
 
                 /*Here i was trying to count all enquiries made in a specific date*/
                 /*The idea is to display on a graph the number of enquiries made on specific date*/
@@ -135,5 +142,48 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 
             }
         }
+
+        private void rbNewEnquiryByMonth_CheckedChanged(object sender, EventArgs e)
+        {
+            this.NewEnquiryByMonth();
+        }
+
+        private void rbAmountOfPrivateVSCompanyEnquiriesPerMonth_CheckedChanged(object sender, EventArgs e)
+        {
+            this.AmountOfPrivateVSCompanyEnquiriesPerMonth();
+        }
+
+        private void NewEnquiryByMonth()
+        {
+            if(rbNewEnquiryByMonth.Checked == true)
+            {
+                lblGraphTitle.Text = "NEW ENQUIRY BY MONTH";
+                //using (var Dbconnection = new MCDEntities())
+                //{
+                //    List<Impendulo.Data.Models.Enquiry> newlstOfEnquiries = (from a in Dbconnection.Enquiries
+                //                                                             from b in Dbconnection.CurriculumEnquiries
+                //                                                             where b.LookupEnquiryStatus.EnquiryStatusID == (int)EnumEnquiryStatuses.New
+                //                                                             select a).ToList<Impendulo.Data.Models.Enquiry>();
+
+                //    chart1.DataSource = newlstOfEnquiries;
+                //    chart1.Series["Series1"].XValueMember = "EnquiryDate";
+
+                //    //The YValueMember should be the number of Enquiries not the EnquiryID, the EnquiryID was to check if the code would work
+                //    chart1.Series["Series1"].YValueMembers = "EnquiryStatus";
+
+                //}
+            }
+        }
+
+        private void AmountOfPrivateVSCompanyEnquiriesPerMonth()
+        {
+            if(rbAmountOfPrivateVSCompanyEnquiriesPerMonth.Checked == true)
+            {
+                lblGraphTitle.Text = "AMOUNT OF PRIVATE VS COMPANY ENQUIRIES";
+                //Update the chart
+            }
+        }
+
+        
     }
 }
