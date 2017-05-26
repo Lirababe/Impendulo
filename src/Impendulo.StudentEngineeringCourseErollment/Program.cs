@@ -19,7 +19,7 @@ namespace Impendulo.Enrollments.Development
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEnrolmmentInprogress());
+            Application.Run(new frmEnrollmentMenu());
         }
     }
 }

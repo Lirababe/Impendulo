@@ -79,6 +79,12 @@
     <Compile Include="EnrollmentInprogress\frmEnrolmmentInprogress.Designer.cs">
       <DependentUpon>frmEnrolmmentInprogress.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEnrollmentMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnrollmentMenu.Designer.cs">
+      <DependentUpon>frmEnrollmentMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStudentCourseEnrollmentV2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EnrollmentInprogress\frmEnrolmmentInprogress.resx">
       <DependentUpon>frmEnrolmmentInprogress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEnrollmentMenu.resx">
+      <DependentUpon>frmEnrollmentMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStudentCourseEnrollmentV2.resx">
       <DependentUpon>frmStudentCourseEnrollmentV2.cs</DependentUpon>
