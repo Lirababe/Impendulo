@@ -28,13 +28,24 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             InitializeComponent();
 
         }
+
+        /*Diff Modes that the form can be loaded
+         1. Listed by current Enquiry - which list all enrollments for the the specific enquiry
+         2. Lists by current Equiry and Enrollment which lists only current enrollemnt associated with the a specific enquiry
+         3. All Enrollments (First 50)
+         4. Enrolment filter by search page.
+         */
+
+        public EnumDepartments CurrentSelectedDepartment { get; set; }
         public Employee CurrentEmployeeLoggedIn { get; set; }
         public int CurrentEnrollmentID { get; set; }
         public int CurrentEquiryID { get; set; }
         private void frmEnrolmmentInprogress_Load(object sender, EventArgs e)
         {
-            CurrentEnrollmentID = 2042;
-            CurrentEquiryID = 4129;
+            CurrentEnrollmentID = 0;
+            CurrentEquiryID = 0;
+
+            CurrentSelectedDepartment = EnumDepartments.Apprenticeship;
 
             this.refreshEnrollment();
 
@@ -155,7 +166,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                        //Only List Emrollment that are not yet Completed(Scheduled).
                        a.LookupEnrollmentProgressStateID == (int)EnumEnrollmentProgressStates.In_Progress &&
                        //Lists all Enrollemt that from part of the Apprenticeship Department
-                       a.Curriculum.DepartmentID == (int)EnumDepartments.Apprenticeship &&
+                       a.Curriculum.DepartmentID == (int)CurrentSelectedDepartment &&
                        //The enquiry is not closed - means that the client has not cancelled the Enrollment or enquiry.
                        b.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed
                    orderby b.EnquiryID descending, a.DateIntitiated descending
@@ -169,12 +180,23 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                       .Take<Enrollment>(50)
                       .ToList<Enrollment>();
 
-                enrollmentBindingSource.DataSource = (from a in AllEnrollments
-                                                      from b in a.CurriculumEnquiries
-                                                      where b.EnquiryID == CurrentEquiryID
-                                                      select a).ToList<Enrollment>();
+                if (CurrentEquiryID > 0)
+                {
+                    AllEnrollments = (from a in AllEnrollments
+                                                          from b in a.CurriculumEnquiries
+                                                          where b.EnquiryID == CurrentEquiryID
+                                                          select a).ToList<Enrollment>();
+                }
+                if (CurrentEnrollmentID > 0 )
+                {
+                    AllEnrollments = (from a in AllEnrollments
+                                      where a.EnrollmentID == CurrentEnrollmentID
+                                      select a).ToList<Enrollment>();
+                }
 
-               // enrollmentBindingSource.DataSource = AllEnrollments;
+                
+
+                 enrollmentBindingSource.DataSource = AllEnrollments;
 
 
 

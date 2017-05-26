@@ -150,13 +150,13 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment
 
                      where
                          // lists the main Enrollemnt Query for the Apprenticeship
-                         a.EnrolmentParentID == 0 &&
-                         //Only List Emrollment that are not yet Completed(Scheduled).
-                         a.LookupEnrollmentProgressStateID == (int)EnumEnrollmentProgressStates.In_Progress &&
-                         //Lists all Enrollemt that from part of the Apprenticeship Department
-                         a.Curriculum.DepartmentID == (int)EnumDepartments.Apprenticeship &&
-                         //The enquiry is not closed - means that the client has not cancelled the Enrollment or enquiry.
-                         b.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed
+                         a.EnrolmentParentID == 0
+                     //Only List Emrollment that are not yet Completed(Scheduled).
+                     //&& a.LookupEnrollmentProgressStateID == (int)EnumEnrollmentProgressStates.In_Progress &&
+                     //Lists all Enrollemt that from part of the Apprenticeship Department
+                     //a.Curriculum.DepartmentID == (int)EnumDepartments.Apprenticeship &&
+                     //The enquiry is not closed - means that the client has not cancelled the Enrollment or enquiry.
+                     // b.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed
                      orderby b.EnquiryID descending, a.DateIntitiated descending
                      select a)
                         .Include("Student")
