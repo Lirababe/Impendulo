@@ -39,6 +39,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment
            
             //Passes the employee object of the currentlly loggin
             frm.CurrentEmployeeLoggedIn = CurrentEmployeeLoggedIn;
+            //Sets the parameters for the for to load the correct enrollments
             frm.CurrentEnrollmentID = Convert.ToInt32(txtEnrollmentIDForInProgreesEnrollment.Text);
             frm.CurrentEquiryID = Convert.ToInt32(txtEquriyIDForInprogressEnrollment.Text);
             frm.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)(cboDepartmentsForInProgressEnrollment.SelectedValue);
