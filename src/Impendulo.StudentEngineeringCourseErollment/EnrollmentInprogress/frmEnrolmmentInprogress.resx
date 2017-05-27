@@ -129,77 +129,6 @@
   <metadata name="label15.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnEmailClient.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        TkSuQmCC
-</value>
-  </data>
-  <data name="btnCompleteEnrollmentSummary.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="enrollmentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>894, 56</value>
-  </metadata>
   <metadata name="colApprenticeshipEnrollmentHistory.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -224,6 +153,7 @@
   <metadata name="bindingNavigatorCurriculum.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bindingNavigatorDeleteItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -339,6 +269,128 @@
         ntwC4so2rLgSW8mTWpu24L8GQn8CWeRYRhJUuHUAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
+        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
+        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
+        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
+        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
+        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
+        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
+        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
+        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="colApprenticeshipEnrollmentLinkedCourse.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApprenticeshipEnrollmentLinkedCourseStartDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApprenticeshipEnrollmentLinkedCourseEndtDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="bindingNavigator9.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>538, 17</value>
+  </metadata>
+  <data name="toolStripButton41.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAASpJREFUOE9jGDygcNbz/00Lnv/PnPj4P1QIA4S3P8Apx5A789n/VUfe/8elKL77
+        wf/ghmu4DciY8vT/wn0fsCqK73n4f+n+///9qy/gNiCh58n/aVveYyiKaL8P1pw56/9/r9ITuA2I7Hr0
+        v3f1BxRFoa33wJpb1wFt7/z73yX/AG4DApsf/q+b/w6uKLjl7v9Fe///7wBqzpjz879d3c//9hnbcRvg
+        UXX/f/60NyiK7Ipv/0+f8/u/f9e3/zqF7/5bJKzHbYB96d3/2ZNfYyjSTzn/36ToxX+VrE//jSOX4TbA
+        Iu/O/9T+11gVGSSd+C+b9vW/bvA83AYYZt3+H9byEqci/dTL/zV8p+E2QCftxn+/6od4Fal4TMBtgFPu
+        lf8gBXgVDULAwAAA8HbAq6XlmnAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="toolStripButton42.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAALZJREFUOE9jGDogvP3BfyiTdBDf/eB/cMM18gyI73n4f+n+///9qy+QbkBE+32w
+        5sxZ//97lZ4gzYDQ1ntgza3rgLZ3/v3vkn+AeAOCW+7+X7T3//8OoOaMOT//29X9/G+fsZ00F9gV3/6f
+        Puf3f/+ub/91Ct/9t0hYT3oY6Kec/29S9OK/Stan/8aRy0g3AAQMkk78l037+l83eB55BoCAfurl/xq+
+        08g3AARUPCZQZsBgBQwMANAUYJgEulBVAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="toolStripButton43.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAKNJREFUOE9jGHygcNbz/1AmeSB35rP/Cd33yDckY8rT//P2//6f0HWHPEMSep78
+        n73v1//OrX//u5VeJt2QyK5H/6ds+/W/ZOnf/wnT//63yT1LmiGBzQ//t659D9ZsXPLlv3T0tf/GkcuI
+        N8Sj6v7/krnv4JoVXXpIc4F96d3/gS3PyNMMAhZ5d/7bFFwhTzMIGGbdJl8zCOik3SBf81AEDAwAoH5f
+        oAc0QjgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="toolStripButton44.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAASxJREFUOE9jGFygcNbz/1AmBgDJNS14/j9z4mOcahhyZz77n9B9D6sCkNyqI+//
+        h7c/wG1AxpSn/+ft//0/oesOhiKQ3MJ9H/4HN1zDbUBCz5P/s/f9+t+59e9/t9LLKApBctO2vP/vX30B
+        twGRXY/+T9n263/J0r//E6b//W+TexauGCTXu/rDf6/SE7gNCGx++L917XuwZuOSL/+lo6/9N45cBtYA
+        kqub/+6/S/4B3AZ4VN3/XzL3HVyzoksPXDFILn/am//2GdtxG2Bfevd/YMszDM0gAJLLnvz6v0XCetwG
+        WOTd+W9TcAVDMwiA5FL7X8O9hBUYZt3GqhkEQHJhLS//6wbPw22ATtoNnJIgOb/qh/81fKfhNgAfcMq9
+        8l/FYwIYQ4UGBWBgAAC+0b+zuQxOnAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="colApprenticeshipEnrollmentAvailableCourse.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Cost.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Duration.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="curriculumCourseLinkedToEnrollmentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="bindingNavigator2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>692, 17</value>
+  </metadata>
+  <data name="toolStripButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAASpJREFUOE9jGDygcNbz/00Lnv/PnPj4P1QIA4S3P8Apx5A789n/VUfe/8elKL77
+        wf/ghmu4DciY8vT/wn0fsCqK73n4f+n+///9qy/gNiCh58n/aVveYyiKaL8P1pw56/9/r9ITuA2I7Hr0
+        v3f1BxRFoa33wJpb1wFt7/z73yX/AG4DApsf/q+b/w6uKLjl7v9Fe///7wBqzpjz879d3c//9hnbcRvg
+        UXX/f/60NyiK7Ipv/0+f8/u/f9e3/zqF7/5bJKzHbYB96d3/2ZNfYyjSTzn/36ToxX+VrE//jSOX4TbA
+        Iu/O/9T+11gVGSSd+C+b9vW/bvA83AYYZt3+H9byEqci/dTL/zV8p+E2QCftxn+/6od4Fal4TMBtgFPu
+        lf8gBXgVDULAwAAA8HbAq6XlmnAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="toolStripButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAALZJREFUOE9jGDogvP3BfyiTdBDf/eB/cMM18gyI73n4f+n+///9qy+QbkBE+32w
+        5sxZ//97lZ4gzYDQ1ntgza3rgLZ3/v3vkn+AeAOCW+7+X7T3//8OoOaMOT//29X9/G+fsZ00F9gV3/6f
+        Puf3f/+ub/91Ct/9t0hYT3oY6Kec/29S9OK/Stan/8aRy0g3AAQMkk78l037+l83eB55BoCAfurl/xq+
+        08g3AARUPCZQZsBgBQwMANAUYJgEulBVAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="toolStripButton5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAKNJREFUOE9jGHygcNbz/1AmeSB35rP/Cd33yDckY8rT//P2//6f0HWHPEMSep78
+        n73v1//OrX//u5VeJt2QyK5H/6ds+/W/ZOnf/wnT//63yT1LmiGBzQ//t659D9ZsXPLlv3T0tf/GkcuI
+        N8Sj6v7/krnv4JoVXXpIc4F96d3/gS3PyNMMAhZ5d/7bFFwhTzMIGGbdJl8zCOik3SBf81AEDAwAoH5f
+        oAc0QjgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="toolStripButton6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAASxJREFUOE9jGFygcNbz/1AmBgDJNS14/j9z4mOcahhyZz77n9B9D6sCkNyqI+//
+        h7c/wG1AxpSn/+ft//0/oesOhiKQ3MJ9H/4HN1zDbUBCz5P/s/f9+t+59e9/t9LLKApBctO2vP/vX30B
+        twGRXY/+T9n263/J0r//E6b//W+TexauGCTXu/rDf6/SE7gNCGx++L917XuwZuOSL/+lo6/9N45cBtYA
+        kqub/+6/S/4B3AZ4VN3/XzL3HVyzoksPXDFILn/am//2GdtxG2Bfevd/YMszDM0gAJLLnvz6v0XCetwG
+        WOTd+W9TcAVDMwiA5FL7X8O9hBUYZt3GqhkEQHJhLS//6wbPw22ATtoNnJIgOb/qh/81fKfhNgAfcMq9
+        8l/FYwIYQ4UGBWBgAAC+0b+zuQxOnAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="colApprenticeshipPrerequisteProcessingStatus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -427,6 +479,82 @@
         8l/FYwIYQ4UGBWBgAAC+0b+zuQxOnAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btnEmailClient.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        TkSuQmCC
+</value>
+  </data>
+  <data name="btnCompleteEnrollmentSummary.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="enrollmentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>894, 56</value>
+  </metadata>
+  <metadata name="enrollmentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>894, 56</value>
+  </metadata>
+  <metadata name="enrollmentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>894, 56</value>
+  </metadata>
   <metadata name="ApprenticeshipEnrollmentFormSelect.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -518,151 +646,14 @@
   <metadata name="colApprenticeshipEnrollmentLinkedCourseEndtDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="bindingNavigator9.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>538, 17</value>
-  </metadata>
-  <data name="toolStripButton41.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAASpJREFUOE9jGDygcNbz/00Lnv/PnPj4P1QIA4S3P8Apx5A789n/VUfe/8elKL77
-        wf/ghmu4DciY8vT/wn0fsCqK73n4f+n+///9qy/gNiCh58n/aVveYyiKaL8P1pw56/9/r9ITuA2I7Hr0
-        v3f1BxRFoa33wJpb1wFt7/z73yX/AG4DApsf/q+b/w6uKLjl7v9Fe///7wBqzpjz879d3c//9hnbcRvg
-        UXX/f/60NyiK7Ipv/0+f8/u/f9e3/zqF7/5bJKzHbYB96d3/2ZNfYyjSTzn/36ToxX+VrE//jSOX4TbA
-        Iu/O/9T+11gVGSSd+C+b9vW/bvA83AYYZt3+H9byEqci/dTL/zV8p+E2QCftxn+/6od4Fal4TMBtgFPu
-        lf8gBXgVDULAwAAA8HbAq6XlmnAAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="toolStripButton42.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAALZJREFUOE9jGDogvP3BfyiTdBDf/eB/cMM18gyI73n4f+n+///9qy+QbkBE+32w
-        5sxZ//97lZ4gzYDQ1ntgza3rgLZ3/v3vkn+AeAOCW+7+X7T3//8OoOaMOT//29X9/G+fsZ00F9gV3/6f
-        Puf3f/+ub/91Ct/9t0hYT3oY6Kec/29S9OK/Stan/8aRy0g3AAQMkk78l037+l83eB55BoCAfurl/xq+
-        08g3AARUPCZQZsBgBQwMANAUYJgEulBVAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="toolStripButton43.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAKNJREFUOE9jGHygcNbz/1AmeSB35rP/Cd33yDckY8rT//P2//6f0HWHPEMSep78
-        n73v1//OrX//u5VeJt2QyK5H/6ds+/W/ZOnf/wnT//63yT1LmiGBzQ//t659D9ZsXPLlv3T0tf/GkcuI
-        N8Sj6v7/krnv4JoVXXpIc4F96d3/gS3PyNMMAhZ5d/7bFFwhTzMIGGbdJl8zCOik3SBf81AEDAwAoH5f
-        oAc0QjgAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="toolStripButton44.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAASxJREFUOE9jGFygcNbz/1AmBgDJNS14/j9z4mOcahhyZz77n9B9D6sCkNyqI+//
-        h7c/wG1AxpSn/+ft//0/oesOhiKQ3MJ9H/4HN1zDbUBCz5P/s/f9+t+59e9/t9LLKApBctO2vP/vX30B
-        twGRXY/+T9n263/J0r//E6b//W+TexauGCTXu/rDf6/SE7gNCGx++L917XuwZuOSL/+lo6/9N45cBtYA
-        kqub/+6/S/4B3AZ4VN3/XzL3HVyzoksPXDFILn/am//2GdtxG2Bfevd/YMszDM0gAJLLnvz6v0XCetwG
-        WOTd+W9TcAVDMwiA5FL7X8O9hBUYZt3GqhkEQHJhLS//6wbPw22ATtoNnJIgOb/qh/81fKfhNgAfcMq9
-        8l/FYwIYQ4UGBWBgAAC+0b+zuQxOnAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="colApprenticeshipEnrollmentLinkedCourse.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colApprenticeshipEnrollmentLinkedCourseStartDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colApprenticeshipEnrollmentLinkedCourseEndtDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colApprenticeshipEnrollmentAvailableCourse.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Cost.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Duration.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="curriculumCourseLinkedToEnrollmentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="bindingNavigator2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>692, 17</value>
-  </metadata>
-  <data name="toolStripButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAASpJREFUOE9jGDygcNbz/00Lnv/PnPj4P1QIA4S3P8Apx5A789n/VUfe/8elKL77
-        wf/ghmu4DciY8vT/wn0fsCqK73n4f+n+///9qy/gNiCh58n/aVveYyiKaL8P1pw56/9/r9ITuA2I7Hr0
-        v3f1BxRFoa33wJpb1wFt7/z73yX/AG4DApsf/q+b/w6uKLjl7v9Fe///7wBqzpjz879d3c//9hnbcRvg
-        UXX/f/60NyiK7Ipv/0+f8/u/f9e3/zqF7/5bJKzHbYB96d3/2ZNfYyjSTzn/36ToxX+VrE//jSOX4TbA
-        Iu/O/9T+11gVGSSd+C+b9vW/bvA83AYYZt3+H9byEqci/dTL/zV8p+E2QCftxn+/6od4Fal4TMBtgFPu
-        lf8gBXgVDULAwAAA8HbAq6XlmnAAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="toolStripButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAALZJREFUOE9jGDogvP3BfyiTdBDf/eB/cMM18gyI73n4f+n+///9qy+QbkBE+32w
-        5sxZ//97lZ4gzYDQ1ntgza3rgLZ3/v3vkn+AeAOCW+7+X7T3//8OoOaMOT//29X9/G+fsZ00F9gV3/6f
-        Puf3f/+ub/91Ct/9t0hYT3oY6Kec/29S9OK/Stan/8aRy0g3AAQMkk78l037+l83eB55BoCAfurl/xq+
-        08g3AARUPCZQZsBgBQwMANAUYJgEulBVAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="toolStripButton5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAKNJREFUOE9jGHygcNbz/1AmeSB35rP/Cd33yDckY8rT//P2//6f0HWHPEMSep78
-        n73v1//OrX//u5VeJt2QyK5H/6ds+/W/ZOnf/wnT//63yT1LmiGBzQ//t659D9ZsXPLlv3T0tf/GkcuI
-        N8Sj6v7/krnv4JoVXXpIc4F96d3/gS3PyNMMAhZ5d/7bFFwhTzMIGGbdJl8zCOik3SBf81AEDAwAoH5f
-        oAc0QjgAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="toolStripButton6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAASxJREFUOE9jGFygcNbz/1AmBgDJNS14/j9z4mOcahhyZz77n9B9D6sCkNyqI+//
-        h7c/wG1AxpSn/+ft//0/oesOhiKQ3MJ9H/4HN1zDbUBCz5P/s/f9+t+59e9/t9LLKApBctO2vP/vX30B
-        twGRXY/+T9n263/J0r//E6b//W+TexauGCTXu/rDf6/SE7gNCGx++L917XuwZuOSL/+lo6/9N45cBtYA
-        kqub/+6/S/4B3AZ4VN3/XzL3HVyzoksPXDFILn/am//2GdtxG2Bfevd/YMszDM0gAJLLnvz6v0XCetwG
-        WOTd+W9TcAVDMwiA5FL7X8O9hBUYZt3GqhkEQHJhLS//6wbPw22ATtoNnJIgOb/qh/81fKfhNgAfcMq9
-        8l/FYwIYQ4UGBWBgAAC+0b+zuQxOnAAAAABJRU5ErkJggg==
-</value>
-  </data>
   <metadata name="folderBrowserDialogForDownloading.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>351, 56</value>
   </metadata>
-  <metadata name="colApprenticeshipEnrollmentHistory.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="enrollmentPrerequisitesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>846, 17</value>
   </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colApprenticeshipEnqiry.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colApprenticeshipCurriculum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DateIntitiated.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colApprenticeshipSection.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ApprenticeshipEnrollmentFormSelect.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="FileName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DateCreated.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colApprenticeshipEnrollmentAvailableCourse.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Cost.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Duration.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="curriculumCourseEnrollmentsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>604, 56</value>
   </metadata>
   <metadata name="colApprenticeshipPrerequisteProcessingStatus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -682,13 +673,13 @@
   <metadata name="colApprenticeshipPreRequisiteIsExemptionStatus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="enrollmentPrerequisitesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>846, 17</value>
+  <metadata name="ApprenticeshipEnrollmentFormSelect.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
-  <metadata name="curriculumCourseLinkedToEnrollmentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+  <metadata name="FileName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
-  <metadata name="curriculumCourseEnrollmentsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>604, 56</value>
+  <metadata name="DateCreated.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
 </root>
