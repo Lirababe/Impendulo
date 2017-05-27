@@ -31,13 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtEnrollmentIDForInProgreesEnrollment = new System.Windows.Forms.TextBox();
-            this.txtEquriyIDForInprogressEnrollment = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.cboDepartmentsForInProgressEnrollment = new System.Windows.Forms.ComboBox();
             this.lookupDepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtEquriyIDForInprogressEnrollment = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtEnrollmentIDForInProgreesEnrollment = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookupDepartmentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -70,22 +71,29 @@
             this.groupBox1.Text = "Set In-Progress Form Parameters ";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Enrrolment ID";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 81);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Department";
             // 
-            // txtEnrollmentIDForInProgreesEnrollment
+            // cboDepartmentsForInProgressEnrollment
             // 
-            this.txtEnrollmentIDForInProgreesEnrollment.Location = new System.Drawing.Point(89, 26);
-            this.txtEnrollmentIDForInProgreesEnrollment.Name = "txtEnrollmentIDForInProgreesEnrollment";
-            this.txtEnrollmentIDForInProgreesEnrollment.Size = new System.Drawing.Size(100, 20);
-            this.txtEnrollmentIDForInProgreesEnrollment.TabIndex = 2;
-            this.txtEnrollmentIDForInProgreesEnrollment.Text = "0";
+            this.cboDepartmentsForInProgressEnrollment.DataSource = this.lookupDepartmentBindingSource;
+            this.cboDepartmentsForInProgressEnrollment.DisplayMember = "DepartmentName";
+            this.cboDepartmentsForInProgressEnrollment.FormattingEnabled = true;
+            this.cboDepartmentsForInProgressEnrollment.Location = new System.Drawing.Point(89, 78);
+            this.cboDepartmentsForInProgressEnrollment.Name = "cboDepartmentsForInProgressEnrollment";
+            this.cboDepartmentsForInProgressEnrollment.Size = new System.Drawing.Size(152, 21);
+            this.cboDepartmentsForInProgressEnrollment.TabIndex = 5;
+            this.cboDepartmentsForInProgressEnrollment.ValueMember = "DepartmentID";
+            // 
+            // lookupDepartmentBindingSource
+            // 
+            this.lookupDepartmentBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupDepartment);
             // 
             // txtEquriyIDForInprogressEnrollment
             // 
@@ -104,35 +112,39 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Enquiry ID";
             // 
-            // cboDepartmentsForInProgressEnrollment
+            // txtEnrollmentIDForInProgreesEnrollment
             // 
-            this.cboDepartmentsForInProgressEnrollment.DataSource = this.lookupDepartmentBindingSource;
-            this.cboDepartmentsForInProgressEnrollment.DisplayMember = "DepartmentName";
-            this.cboDepartmentsForInProgressEnrollment.FormattingEnabled = true;
-            this.cboDepartmentsForInProgressEnrollment.Location = new System.Drawing.Point(89, 78);
-            this.cboDepartmentsForInProgressEnrollment.Name = "cboDepartmentsForInProgressEnrollment";
-            this.cboDepartmentsForInProgressEnrollment.Size = new System.Drawing.Size(152, 21);
-            this.cboDepartmentsForInProgressEnrollment.TabIndex = 5;
-            this.cboDepartmentsForInProgressEnrollment.ValueMember = "DepartmentID";
+            this.txtEnrollmentIDForInProgreesEnrollment.Location = new System.Drawing.Point(89, 26);
+            this.txtEnrollmentIDForInProgreesEnrollment.Name = "txtEnrollmentIDForInProgreesEnrollment";
+            this.txtEnrollmentIDForInProgreesEnrollment.Size = new System.Drawing.Size(100, 20);
+            this.txtEnrollmentIDForInProgreesEnrollment.TabIndex = 2;
+            this.txtEnrollmentIDForInProgreesEnrollment.Text = "0";
             // 
-            // lookupDepartmentBindingSource
+            // label1
             // 
-            this.lookupDepartmentBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupDepartment);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Enrrolment ID";
             // 
-            // label3
+            // button2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 81);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Department";
+            this.button2.Location = new System.Drawing.Point(12, 152);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(260, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Schedule Enrollment Coures";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmEnrollmentMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmEnrollmentMenu";
             this.Text = "frmEnrollmentMenu";
@@ -155,5 +167,6 @@
         private System.Windows.Forms.ComboBox cboDepartmentsForInProgressEnrollment;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.BindingSource lookupDepartmentBindingSource;
+        private System.Windows.Forms.Button button2;
     }
 }

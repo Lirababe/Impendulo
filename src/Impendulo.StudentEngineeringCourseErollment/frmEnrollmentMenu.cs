@@ -1,4 +1,5 @@
 ﻿using Impendulo.Data.Models;
+using Impendulo.Scheduling.Deployment.Courses.Apprenticeship;
 using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInprogress;
 using System;
 using System.Collections.Generic;
@@ -56,6 +57,12 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmScheduleApprenticeship frm = new frmScheduleApprenticeship();
+            frm.ShowDialog();
         }
     }
 }
