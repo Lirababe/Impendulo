@@ -46,11 +46,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
 
             this.refreshEnrollment();
 
-            if (enrollmentBindingSource.List.Count > 0)
-            {
-                this.populateApprenticeshipDocumnetTypes((EnumDepartments)((Enrollment)enrollmentBindingSource.Current).Curriculum.DepartmentID);
-                this.refreshEnrollmentLinkedCourses();
-            }
+
         }
 
         #region Common Functions
@@ -121,6 +117,11 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
         private void refreshEnrollment()
         {
             populateApprienticeship();
+            if (enrollmentBindingSource.List.Count > 0)
+            {
+                this.populateApprenticeshipDocumnetTypes((EnumDepartments)((Enrollment)enrollmentBindingSource.Current).Curriculum.DepartmentID);
+                this.refreshEnrollmentLinkedCourses();
+            }
         }
         private void refreshEnrollmentCoursePreRequisites()
         {
@@ -362,9 +363,14 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                     //refreshApprenticeshipCoursePreRequisites();
                     //apprenticeshipPreRequisteCurriculumCourseBindingSource.Position = iCurrentPosition;
                     break;
-                case 2:
+                case 3:
                     frmScheduleApprenticeship frm = new frmScheduleApprenticeship();
                     frm.ShowDialog();
+                    break;
+                case 2:
+                    Enrollment PreEnrollmentObj = (Enrollment)enrollmentPrerequisitesBindingSource.Current;
+                    CurrentEnrollmentID = PreEnrollmentObj.EnrollmentID;
+                    refreshEnrollment();
                     break;
             }
         }
