@@ -1,5 +1,6 @@
 ﻿using Impendulo.Data.Models;
 using Impendulo.Scheduling.Deployment.Courses.Apprenticeship;
+using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentException;
 using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInprogress;
 using System;
 using System.Collections.Generic;
@@ -35,9 +36,9 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment
         private void button1_Click(object sender, EventArgs e)
         {
             frmEnrolmmentInprogress frm = new frmEnrolmmentInprogress();
-            
+
             Employee CurrentEmployeeLoggedIn = null;
-           
+
             //Passes the employee object of the currentlly loggin
             frm.CurrentEmployeeLoggedIn = CurrentEmployeeLoggedIn;
             //Sets the parameters for the for to load the correct enrollments
@@ -63,6 +64,20 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment
         {
             frmScheduleApprenticeship frm = new frmScheduleApprenticeship();
             frm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmEnrollmentException frm = new frmEnrollmentException();
+            frm.CurrentEmployeeLoggedIn = CurrentEmployeeLoggedIn;
+
+            using (var Dbconnection = new MCDEntities())
+            {
+                frm.SelectedEnrollment = (from a in Dbconnection.Enrollments
+                                          orderby a.EnrollmentID descending
+                                          select a).FirstOrDefault<Enrollment>();
+                frm.ShowDialog();
+            }
         }
     }
 }
