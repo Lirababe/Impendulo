@@ -35,7 +35,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
          3. All Enrollments (First 50)
          4. Enrolment filter by search page.
          */
-
+        private Boolean IsLoadingPreRequisiteEnrollment = false;
         public EnumDepartments CurrentSelectedDepartment { get; set; }
         public Employee CurrentEmployeeLoggedIn { get; set; }
         public int CurrentEnrollmentID { get; set; }
@@ -149,25 +149,25 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
         private void populateApprienticeship()
         {
 
+
             this.clearDataBindingSources();
             using (var Dbconnection = new MCDEntities())
             {
 
                 List<Enrollment> AllEnrollments =
                   (from a in Dbconnection.Enrollments
-                   from b in a.CurriculumEnquiries
-
+                       // from b in a.CurriculumEnquiries
+                   orderby a.EnrollmentID descending
                    where
-
-                       // lists the main Enrollemnt Query for the Apprenticeship
-                       a.EnrolmentParentID == 0 &&
-                       //Only List Emrollment that are not yet Completed(Scheduled).
-                       a.LookupEnrollmentProgressStateID == (int)EnumEnrollmentProgressStates.In_Progress &&
-                       //Lists all Enrollemt that from part of the Apprenticeship Department
-                       a.Curriculum.DepartmentID == (int)CurrentSelectedDepartment &&
-                       //The enquiry is not closed - means that the client has not cancelled the Enrollment or enquiry.
-                       b.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed
-                   orderby b.EnquiryID descending, a.DateIntitiated descending
+                      //Only List Emrollment that are not yet Completed(Scheduled).
+                      a.LookupEnrollmentProgressStateID == (int)EnumEnrollmentProgressStates.In_Progress
+                   &&
+                   //Lists all Enrollemt that from part of the Apprenticeship Department
+                    a.Curriculum.DepartmentID == (int)CurrentSelectedDepartment
+                   //&&
+                   //The enquiry is not closed - means that the client has not cancelled the Enrollment or enquiry.
+                   //b.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed
+                   // orderby b.EnquiryID descending, a.DateIntitiated descending
                    select a)
                       .Include("Student")
                       .Include("Student.Individual")
@@ -175,29 +175,37 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                       .Include("CurriculumEnquiries")
                       .Include("CurriculumCourseEnrollments")
                       .Include("Curriculum")
-                      .Take<Enrollment>(50)
+                      // .Take<Enrollment>(50)
                       .ToList<Enrollment>();
 
-                if (CurrentEquiryID > 0)
-                {
-                    AllEnrollments = (from a in AllEnrollments
-                                      from b in a.CurriculumEnquiries
-                                      where b.EnquiryID == CurrentEquiryID
-                                      select a).ToList<Enrollment>();
-                }
+                // lists the main Enrollemnt Query for the Apprenticeship
+
+                //if (IsLoadingPreRequisiteEnrollment)
+                //{
+                //    AllEnrollments = (from a in AllEnrollments
+                //                      where a.EnrolmentParentID > 0
+                //                      select a).ToList<Enrollment>();
+                //}
+                //else
+                //{
+                //    AllEnrollments = (from a in AllEnrollments
+                //                      where a.EnrolmentParentID == 0
+                //                      select a).ToList<Enrollment>();
+                //}
+                //if (CurrentEquiryID > 0)
+                //{
+                //    AllEnrollments = (from a in AllEnrollments
+                //                      from b in a.CurriculumEnquiries
+                //                      where b.EnquiryID == CurrentEquiryID
+                //                      select a).ToList<Enrollment>();
+                //}
                 if (CurrentEnrollmentID > 0)
                 {
                     AllEnrollments = (from a in AllEnrollments
                                       where a.EnrollmentID == CurrentEnrollmentID
                                       select a).ToList<Enrollment>();
                 }
-
-
-
                 enrollmentBindingSource.DataSource = AllEnrollments;
-
-
-
             };
         }
         private void populateApprenticeshipCoursePreRequisites()
@@ -262,6 +270,23 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                     {
                         row.Cells[colApprenticeshipEnqiry.Index].Value = CurriculumEnquiryObj.EnquiryID.ToString();
                     }
+                    else
+                    {
+                        using (var Dbconnection = new MCDEntities())
+                        {
+                            CurriculumEnquiryObj =
+                              (from a in Dbconnection.Enrollments
+                                   // from b in a.CurriculumEnquiries
+                               orderby a.EnrollmentID descending
+                               where
+                                 a.EnrollmentID == EnrollmentObj.EnrolmentParentID
+                               select a)
+                                  .Include("CurriculumEnquiries")
+                                  .FirstOrDefault<Enrollment>().CurriculumEnquiries.FirstOrDefault<CurriculumEnquiry>();
+                            row.Cells[colApprenticeshipEnqiry.Index].Value = CurriculumEnquiryObj.EnquiryID.ToString();
+
+                        };
+                    }
 
 
                 }
@@ -285,8 +310,6 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                                                             .FirstOrDefault<CurriculumCourse>();
                     row.Cells[colApprenticeshipPreRequisiteCourse.Index].Value = CurriculumCourseObj.Course.CourseName.ToString();
                     row.Cells[colApprenticeshipPrerequisteProcessingStatus.Index].Value = EnrollmentObj.LookupEnrollmentProgressState.EnrollmentProgressCurrentState.ToString();
-
-
                 }
             }
         }
@@ -370,6 +393,9 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                 case 2:
                     Enrollment PreEnrollmentObj = (Enrollment)enrollmentPrerequisitesBindingSource.Current;
                     CurrentEnrollmentID = PreEnrollmentObj.EnrollmentID;
+                    CurrentSelectedDepartment = (EnumDepartments)PreEnrollmentObj.Curriculum.DepartmentID;
+                    CurrentEquiryID = 0;
+                    IsLoadingPreRequisiteEnrollment = true;
                     refreshEnrollment();
                     break;
             }

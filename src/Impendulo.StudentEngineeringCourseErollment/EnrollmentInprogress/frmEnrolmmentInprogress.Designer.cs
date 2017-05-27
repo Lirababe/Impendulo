@@ -33,7 +33,7 @@
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label15;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEnrolmmentInprogress));
             this.splitContainerApprenticeship = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -186,6 +186,7 @@
             this.colApprenticeshipPreRequisiteScheduleCourseExcemption = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colPreRequisiteProcessing = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colApprenticeshipPreRequisiteScheduleCourse = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApprenticeshipPreRequisiteCurriculum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApprenticeshipPreRequisiteCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApprenticeshipPreRequisiteIsExemptionStatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -444,9 +445,9 @@
             // 
             this.DateIntitiated.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.DateIntitiated.DataPropertyName = "DateIntitiated";
-            dataGridViewCellStyle1.Format = "D";
-            dataGridViewCellStyle1.NullValue = null;
-            this.DateIntitiated.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "D";
+            dataGridViewCellStyle2.NullValue = null;
+            this.DateIntitiated.DefaultCellStyle = dataGridViewCellStyle2;
             this.DateIntitiated.HeaderText = "Date";
             this.DateIntitiated.Name = "DateIntitiated";
             this.DateIntitiated.ReadOnly = true;
@@ -734,6 +735,7 @@
             this.colApprenticeshipPreRequisiteScheduleCourseExcemption,
             this.colPreRequisiteProcessing,
             this.colApprenticeshipPreRequisiteScheduleCourse,
+            this.Column2,
             this.colApprenticeshipPreRequisiteCurriculum,
             this.colApprenticeshipPreRequisiteCourse,
             this.colApprenticeshipPreRequisiteIsExemptionStatus});
@@ -1834,6 +1836,13 @@
             this.colApprenticeshipPreRequisiteScheduleCourse.Text = "Schedule Course";
             this.colApprenticeshipPreRequisiteScheduleCourse.UseColumnTextForLinkValue = true;
             // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "EnrollmentID";
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
             // colApprenticeshipPreRequisiteCurriculum
             // 
             this.colApprenticeshipPreRequisiteCurriculum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -2090,13 +2099,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lookupEnrollmentProgressStateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apprienticeshipEnrollmentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colApprenticeshipPrerequisteProcessingStatus;
-        private System.Windows.Forms.DataGridViewLinkColumn colApprenticeshipPreRequisiteScheduleCourseExcemption;
-        private System.Windows.Forms.DataGridViewLinkColumn colPreRequisiteProcessing;
-        private System.Windows.Forms.DataGridViewLinkColumn colApprenticeshipPreRequisiteScheduleCourse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colApprenticeshipPreRequisiteCurriculum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colApprenticeshipPreRequisiteCourse;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colApprenticeshipPreRequisiteIsExemptionStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn imageIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contentTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn fileImageDataGridViewImageColumn;
@@ -2115,5 +2117,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseMinimumMaximumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn curriculumDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn lookupEnrollmentTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colApprenticeshipPrerequisteProcessingStatus;
+        private System.Windows.Forms.DataGridViewLinkColumn colApprenticeshipPreRequisiteScheduleCourseExcemption;
+        private System.Windows.Forms.DataGridViewLinkColumn colPreRequisiteProcessing;
+        private System.Windows.Forms.DataGridViewLinkColumn colApprenticeshipPreRequisiteScheduleCourse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colApprenticeshipPreRequisiteCurriculum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colApprenticeshipPreRequisiteCourse;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colApprenticeshipPreRequisiteIsExemptionStatus;
     }
 }

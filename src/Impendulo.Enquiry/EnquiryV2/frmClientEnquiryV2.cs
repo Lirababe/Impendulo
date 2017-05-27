@@ -570,7 +570,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
 
                             };
                         }
-                        DialogResult Rtn1 = MessageBox.Show("Do you wish to View the Enrollment,\and course selection?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        DialogResult Rtn1 = MessageBox.Show("Do you wish to View the Enrollment,and course selection?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (Rtn1 == DialogResult.Yes)
                         {
                             frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
