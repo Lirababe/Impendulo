@@ -33,13 +33,9 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             dtpTo.Value = new DateTime(Todaydate.Year, Todaydate.Month, 1).AddMonths(1).AddDays(-1);
             /*load queries*/
             LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
-            this.FiiChart();
-
             rbEnquiryByMonth.Checked = true;
-            if (rbEnquiryByMonth.Checked == true)
-            {
-                lblGraphTitle.Text = "ENQUIRY BY MONTH";
-            }
+            this.fillChart();
+
         }
 
         /// <summary>
@@ -55,39 +51,10 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             lblNewEnquiry.Text = GetNewEquiry(FromDate, Todate, aDepartment).Count.ToString();
 
             lblOverDueEnquiries.Text = GetOverDueEnquiry(FromDate, Todate, aDepartment).Count.ToString();
-            using (var Dbconnection = new MCDEntities())
-            {
 
-               
+            lblCompanyEnquiry.Text = getCompanyEnquiry(FromDate, Todate, aDepartment).Count.ToString();
 
-                //Over due enquiries
-                //I created the CustomerDateTime static classs inside impendulo.Common
-                DateTime queryDatetime = Impendulo.Common.CustomerDateTime.CustomerDateTime.getCustomDateTime(DateTime.Now, -4);
-                //DateTime queryDatetime = getCustDateTime(DateTime.Now, -4);
-                lblOverDueEnquiries.Text = (from a in Dbconnection.Enquiries
-                                            from b in a.CurriculumEnquiries
-                                            where
-                                            //Enquiriesw are deemed Over Due if not responded to with in 3 Working Days
-                                            a.EnquiryDate <= queryDatetime &&
-                                            b.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed &&
-                                            b.Curriculum.DepartmentID == (int)aDepartment
-                                            select a).Count<Data.Models.Enquiry>().ToString();
-
-                //company enquiries
-                lblCompanyEnquiry.Text = (from a in Dbconnection.Enquiries
-                                          from b in a.Companies
-                                          join c in Dbconnection.Companies on b.CompanyID equals c.CompanyID
-                                          where a.EnquiryID == a.EnquiryID && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate
-                                          select a).Count<Data.Models.Enquiry>().ToString();
-
-                //Private enquiries
-                lblPrivateEquiries.Text = (from a in Dbconnection.Enquiries
-                                           from b in a.Individuals
-                                           join c in Dbconnection.Individuals on b.IndividualID equals c.IndividualID
-                                           where a.EnquiryID == a.EnquiryID && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate
-                                           select a).Count<Data.Models.Enquiry>().ToString();
-            }
-
+            lblPrivateEquiries.Text = getPrivateEnquiry(FromDate, Todate, aDepartment).Count.ToString();
 
         }
         /// <summary>
@@ -118,6 +85,39 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             };
             return Rtn;
         }
+        
+        private List<Data.Models.Enquiry> getCompanyEnquiry(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
+        {
+            List<Data.Models.Enquiry> Rtn = new List<Data.Models.Enquiry>();
+            using (var Dbconnection = new MCDEntities())
+            {
+                //company enquiries
+                //lblCompanyEnquiry.Text
+                Rtn = (from a in Dbconnection.Enquiries
+                                          from b in a.Companies
+                                          join c in Dbconnection.Companies on b.CompanyID equals c.CompanyID
+                                          where a.EnquiryID == a.EnquiryID && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate
+                                          select a).ToList<Data.Models.Enquiry>();
+            }
+            return Rtn;
+        }
+
+        private List<Data.Models.Enquiry> getPrivateEnquiry(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
+        {
+            List<Data.Models.Enquiry> Rtn = new List<Data.Models.Enquiry>();
+            using (var Dbconnection = new MCDEntities())
+            {
+                //lblPrivateEquiries.Text 
+                Rtn = (from a in Dbconnection.Enquiries
+                       from b in a.Individuals
+                       join c in Dbconnection.Individuals on b.IndividualID equals c.IndividualID
+                       where a.EnquiryID == a.EnquiryID && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate
+                       select a).ToList<Data.Models.Enquiry>();
+            }
+
+            return Rtn;
+        }
+
         /// <summary>
         /// Get a list of equiry Object  - Only the new one for the period defined by the dates.
         /// </summary>
@@ -179,22 +179,15 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
         }
 
-        private void FiiChart()
+        private void fillChart()
         {
             using (var Dbconnection = new MCDEntities())
             {
                 //Im creating a List of Enquiries
+                
                 List<Impendulo.Data.Models.Enquiry> lst = (from a in Dbconnection.Enquiries
                                                            select a).ToList<Impendulo.Data.Models.Enquiry>();
-
-                /*Here i was trying to count all enquiries made in a specific date*/
-                /*The idea is to display on a graph the number of enquiries made on specific date*/
-
-
-                //int lst = (from a in Dbconnection.Enquiries
-                //                     where a.EnquiryDate.ToShortDateString() == "2017-04-10"
-                //                     select a).Count<Enquiry>();
-
+                
                 //Filling the chart
                 chart1.DataSource = lst;
                 chart1.Series["Series1"].XValueMember = "EnquiryDate";
@@ -223,25 +216,22 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             this.AmountOfPrivateVSCompanyEnquiriesPerMonth();
         }
 
+        private void rbEnquiryByMonth_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbEnquiryByMonth.Checked == true)
+            {
+                lblGraphTitle.Text = "ENQUIRY BY MONTH";
+                //this.fillChart();
+            }
+        }
+
+        
         private void NewEnquiryByMonth()
         {
             if (rbNewEnquiryByMonth.Checked == true)
             {
                 lblGraphTitle.Text = "NEW ENQUIRY BY MONTH";
-                //using (var Dbconnection = new MCDEntities())
-                //{
-                //    List<Impendulo.Data.Models.Enquiry> newlstOfEnquiries = (from a in Dbconnection.Enquiries
-                //                                                             from b in Dbconnection.CurriculumEnquiries
-                //                                                             where b.LookupEnquiryStatus.EnquiryStatusID == (int)EnumEnquiryStatuses.New
-                //                                                             select a).ToList<Impendulo.Data.Models.Enquiry>();
-
-                //    chart1.DataSource = newlstOfEnquiries;
-                //    chart1.Series["Series1"].XValueMember = "EnquiryDate";
-
-                //    //The YValueMember should be the number of Enquiries not the EnquiryID, the EnquiryID was to check if the code would work
-                //    chart1.Series["Series1"].YValueMembers = "EnquiryStatus";
-
-                //}
+               //Update the chart
             }
         }
 
@@ -251,9 +241,8 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             {
                 lblGraphTitle.Text = "AMOUNT OF PRIVATE VS COMPANY ENQUIRIES";
                 //Update the chart
+
             }
         }
-
-
     }
 }

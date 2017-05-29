@@ -72,11 +72,11 @@
             this.rbNewEnquiryByMonth = new System.Windows.Forms.RadioButton();
             this.rbEnquiryByMonth = new System.Windows.Forms.RadioButton();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblGraphTitle = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.lblGraphTitle = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tpMainPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -99,8 +99,8 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -234,7 +234,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.89874F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 194F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
             this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel3, 2, 0);
@@ -257,7 +257,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.InfoText;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(129, 134);
+            this.panel1.Size = new System.Drawing.Size(128, 134);
             this.panel1.TabIndex = 0;
             // 
             // lblEquiyTotalEquiry
@@ -286,9 +286,9 @@
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.lblNewEnquiry);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(138, 3);
+            this.panel2.Location = new System.Drawing.Point(137, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(140, 134);
+            this.panel2.Size = new System.Drawing.Size(138, 134);
             this.panel2.TabIndex = 1;
             // 
             // label9
@@ -317,7 +317,7 @@
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.lblOverDueEnquiries);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(284, 3);
+            this.panel3.Location = new System.Drawing.Point(281, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(149, 134);
             this.panel3.TabIndex = 2;
@@ -348,7 +348,7 @@
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.lblPrivateEquiries);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(439, 3);
+            this.panel5.Location = new System.Drawing.Point(436, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(152, 134);
             this.panel5.TabIndex = 4;
@@ -379,9 +379,9 @@
             this.panel6.Controls.Add(this.label15);
             this.panel6.Controls.Add(this.lblCompanyEnquiry);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(597, 3);
+            this.panel6.Location = new System.Drawing.Point(594, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(189, 134);
+            this.panel6.Size = new System.Drawing.Size(192, 134);
             this.panel6.TabIndex = 5;
             // 
             // label15
@@ -546,6 +546,7 @@
             this.rbEnquiryByMonth.TabStop = true;
             this.rbEnquiryByMonth.Text = "Equiry by Month";
             this.rbEnquiryByMonth.UseVisualStyleBackColor = true;
+            this.rbEnquiryByMonth.CheckedChanged += new System.EventHandler(this.rbEnquiryByMonth_CheckedChanged);
             // 
             // splitContainer2
             // 
@@ -565,6 +566,25 @@
             this.splitContainer2.Size = new System.Drawing.Size(540, 226);
             this.splitContainer2.SplitterDistance = 49;
             this.splitContainer2.TabIndex = 4;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.lblGraphTitle);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(540, 49);
+            this.panel4.TabIndex = 0;
+            // 
+            // lblGraphTitle
+            // 
+            this.lblGraphTitle.AutoSize = true;
+            this.lblGraphTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGraphTitle.Location = new System.Drawing.Point(60, 19);
+            this.lblGraphTitle.Name = "lblGraphTitle";
+            this.lblGraphTitle.Size = new System.Drawing.Size(347, 18);
+            this.lblGraphTitle.TabIndex = 0;
+            this.lblGraphTitle.Text = "{Graph Title - Change as selected on the left}";
             // 
             // chart1
             // 
@@ -605,25 +625,6 @@
             this.tabPage3.Text = "SoftSkills";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // lblGraphTitle
-            // 
-            this.lblGraphTitle.AutoSize = true;
-            this.lblGraphTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGraphTitle.Location = new System.Drawing.Point(60, 19);
-            this.lblGraphTitle.Name = "lblGraphTitle";
-            this.lblGraphTitle.Size = new System.Drawing.Size(347, 18);
-            this.lblGraphTitle.TabIndex = 0;
-            this.lblGraphTitle.Text = "{Graph Title - Change as selected on the left}";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.lblGraphTitle);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(540, 49);
-            this.panel4.TabIndex = 0;
-            // 
             // frmWorkbanchEnquiries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -662,9 +663,9 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
