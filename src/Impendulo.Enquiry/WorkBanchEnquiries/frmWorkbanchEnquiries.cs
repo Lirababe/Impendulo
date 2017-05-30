@@ -31,10 +31,14 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             lbCurrentDateTime.Text = Todaydate.ToShortDateString();
             dtpFrom.Value = new DateTime(Todaydate.Year, Todaydate.Month, 1);
             dtpTo.Value = new DateTime(Todaydate.Year, Todaydate.Month, 1).AddMonths(1).AddDays(-1);
+            
             /*load queries*/
             LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
+
+            this.fillChart(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
+
             rbEnquiryByMonth.Checked = true;
-            this.fillChart();
+           
 
         }
 
@@ -168,6 +172,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
         private void dtpTo_ValueChanged(object sender, EventArgs e)
         {
             LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
+            //fillChart();
         }
         /// <summary>
         /// Date Added 24 May 2017
@@ -177,24 +182,33 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
         private void btnApprenticeshipFilterSearch_Click(object sender, EventArgs e)
         {
             LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
+            
         }
 
-        private void fillChart()
+        private void fillChart(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
         {
             using (var Dbconnection = new MCDEntities())
             {
-                //Im creating a List of Enquiries
-                
-                List<Impendulo.Data.Models.Enquiry> lst = (from a in Dbconnection.Enquiries
-                                                           select a).ToList<Impendulo.Data.Models.Enquiry>();
-                
-                //Filling the chart
-                chart1.DataSource = lst;
-                chart1.Series["Series1"].XValueMember = "EnquiryDate";
+                //count enquiries made at a specific date
+                var enquiriesByDate = (from a in Dbconnection.Enquiries
+                                       group a by a.EnquiryDate into b
+                                       select new
+                                       {
+                                           key = b.Key,
+                                           count = b.Distinct().Count()
+                                       });
+                                       
+                //filling the chart
+                enquiryBindingSource.DataSource = (from a in Dbconnection.Enquiries
+                                                   //from b in a.CurriculumEnquiries
+                                                   where a.EnquiryID != 1
+                                                   //where a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
+                                                   select a).ToList<Impendulo.Data.Models.Enquiry>();
 
-                //The YValueMember should be the number of Enquiries not the EnquiryID, the EnquiryID was to check if the code would work
                 chart1.Series["Series1"].YValueMembers = "EnquiryID";
-
+                //chart1.Series["Series1"].YValueMembers = enquiriesByDate.Count().ToString();
+                chart1.Series["Series1"].XValueMember = "EnquiryDate";
+                
             }
         }
         /// <summary>
@@ -205,6 +219,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
         private void rbNewEnquiryByMonth_CheckedChanged(object sender, EventArgs e)
         {
             this.NewEnquiryByMonth();
+            
         }
         /// <summary>
         /// 
@@ -221,7 +236,8 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             if (rbEnquiryByMonth.Checked == true)
             {
                 lblGraphTitle.Text = "ENQUIRY BY MONTH";
-                //this.fillChart();
+                this.fillChart(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
+
             }
         }
 
