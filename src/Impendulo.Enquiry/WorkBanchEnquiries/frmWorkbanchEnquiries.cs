@@ -189,26 +189,37 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
         {
             using (var Dbconnection = new MCDEntities())
             {
+
+                /*Notice that i have assigned the YValueMembers with the same name as the field that i created in the Anonymous class flied Name:
+                 * match the numbers to referfence what i mean
+                 * 1.1 YValueMembers =  AmountOfEnquiries is the same as the field name that i created in the anonymous class field name.
+                 * 
+                 * */
+                chart1.Series["Series1"].YValueMembers = "AmountOfEnquiries";   //1.1 HERE MAtch the Class Field Name Below.
+                chart1.Series["Series1"].XValueMember = "Date";                 //1.2 HERE MAtch the Class Field Name Below.
+
                 //count enquiries made at a specific date
                 var enquiriesByDate = (from a in Dbconnection.Enquiries
                                        group a by a.EnquiryDate into b
                                        select new
                                        {
-                                           key = b.Key,
-                                           count = b.Distinct().Count()
+                                           Date = b.Key,                            //1.1 - Same field name "Date" as above SEE 1.1 ABOVE( I made the field name up - the Fieldname is the same as above.)//1.1 - Same field name as above( I made the field name up - the Fieldname is the same as above.
+                                           AmountOfEnquiries = b.Distinct().Count() //1.2 - Same field name "AmountOfEnquiries" as above SEE 1.2 ABOVE( I made the field name up - the Fieldname is the same as above.)
                                        });
-                                       
-                //filling the chart
-                enquiryBindingSource.DataSource = (from a in Dbconnection.Enquiries
-                                                   //from b in a.CurriculumEnquiries
-                                                   where a.EnquiryID != 1
-                                                   //where a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
-                                                   select a).ToList<Impendulo.Data.Models.Enquiry>();
 
-                chart1.Series["Series1"].YValueMembers = "EnquiryID";
-                //chart1.Series["Series1"].YValueMembers = enquiriesByDate.Count().ToString();
-                chart1.Series["Series1"].XValueMember = "EnquiryDate";
-                
+                //filling the chart
+                enquiryBindingSource.DataSource = enquiriesByDate.ToList();
+
+                    //(from a in Dbconnection.Enquiries
+                    //                                   //from b in a.CurriculumEnquiries
+                    //                               where a.EnquiryID != 1
+                    //                               //where a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
+                    //                               select a).ToList<Impendulo.Data.Models.Enquiry>();
+
+                //chart1.Series["Series1"].YValueMembers = "EnquiryID";
+                ////chart1.Series["Series1"].YValueMembers = enquiriesByDate.Count().ToString();
+                //chart1.Series["Series1"].XValueMember = "EnquiryDate";
+
             }
         }
         /// <summary>
