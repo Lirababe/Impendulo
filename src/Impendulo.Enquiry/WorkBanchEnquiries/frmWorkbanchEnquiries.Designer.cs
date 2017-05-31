@@ -260,11 +260,9 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.InfoText;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-<<<<<<< HEAD
+
             this.panel1.Size = new System.Drawing.Size(126, 145);
-=======
-            this.panel1.Size = new System.Drawing.Size(126, 134);
->>>>>>> dbd985791ed8f91fa5d7630c8725c561f4940632
+
             this.panel1.TabIndex = 0;
             // 
             // lblEquiyTotalEquiry
