@@ -260,7 +260,11 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.InfoText;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
+<<<<<<< HEAD
             this.panel1.Size = new System.Drawing.Size(126, 145);
+=======
+            this.panel1.Size = new System.Drawing.Size(126, 134);
+>>>>>>> dbd985791ed8f91fa5d7630c8725c561f4940632
             this.panel1.TabIndex = 0;
             // 
             // lblEquiyTotalEquiry
@@ -384,7 +388,11 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(591, 3);
             this.panel6.Name = "panel6";
+<<<<<<< HEAD
             this.panel6.Size = new System.Drawing.Size(195, 145);
+=======
+            this.panel6.Size = new System.Drawing.Size(195, 134);
+>>>>>>> dbd985791ed8f91fa5d7630c8725c561f4940632
             this.panel6.TabIndex = 5;
             // 
             // label15
@@ -599,16 +607,30 @@
             this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
+<<<<<<< HEAD
             series2.ChartArea = "ChartArea1";
             series2.Color = System.Drawing.Color.RoyalBlue;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chart1.Series.Add(series2);
+=======
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.RoyalBlue;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.XValueMember = "EnquiryDate";
+            this.chart1.Series.Add(series1);
+>>>>>>> dbd985791ed8f91fa5d7630c8725c561f4940632
             this.chart1.Size = new System.Drawing.Size(540, 173);
             this.chart1.TabIndex = 3;
             this.chart1.Text = "chart1";
             title2.Name = "Title1";
             this.chart1.Titles.Add(title2);
+            // 
+            // enquiryBindingSource
+            // 
+            this.enquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
+            this.enquiryBindingSource.Filter = "";
             // 
             // enquiryBindingSource
             // 
