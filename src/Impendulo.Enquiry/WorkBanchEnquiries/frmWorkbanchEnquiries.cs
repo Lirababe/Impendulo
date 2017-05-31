@@ -206,6 +206,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
                                            Date = b.Key,                            //1.1 - Same field name "Date" as above SEE 1.1 ABOVE( I made the field name up - the Fieldname is the same as above.)//1.1 - Same field name as above( I made the field name up - the Fieldname is the same as above.
                                            AmountOfEnquiries = b.Distinct().Count() //1.2 - Same field name "AmountOfEnquiries" as above SEE 1.2 ABOVE( I made the field name up - the Fieldname is the same as above.)
                                        });
+<<<<<<< HEAD
 
                 //filling the chart
                 enquiryBindingSource.DataSource = enquiriesByDate.ToList();
@@ -220,6 +221,21 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
                 ////chart1.Series["Series1"].YValueMembers = enquiriesByDate.Count().ToString();
                 //chart1.Series["Series1"].XValueMember = "EnquiryDate";
 
+=======
+                
+
+                //filling the chart
+                enquiryBindingSource.DataSource = (from a in Dbconnection.Enquiries
+                                                   from b in a.CurriculumEnquiries
+                                                   //where a.EnquiryID != 1
+                                                   where a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
+                                                   select a).ToList<Impendulo.Data.Models.Enquiry>();
+
+                chart1.Series["Series"].Points.DataBindXY("EnquiryDate", enquiriesByDate);
+                //chart1.Series["Series1"].Points.DataBindY(enquiriesByDate);
+                //chart1.Series["Series1"].XValueMember = "EnquiryDate";
+                
+>>>>>>> dbd985791ed8f91fa5d7630c8725c561f4940632
             }
         }
         /// <summary>
