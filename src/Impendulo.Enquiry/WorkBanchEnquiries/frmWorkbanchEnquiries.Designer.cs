@@ -76,9 +76,9 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblGraphTitle = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.enquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.enquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tpMainPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -237,7 +237,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.89874F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 199F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel3, 2, 0);
@@ -260,7 +260,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.InfoText;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(127, 134);
+            this.panel1.Size = new System.Drawing.Size(126, 134);
             this.panel1.TabIndex = 0;
             // 
             // lblEquiyTotalEquiry
@@ -289,7 +289,7 @@
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.lblNewEnquiry);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(136, 3);
+            this.panel2.Location = new System.Drawing.Point(135, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(137, 134);
             this.panel2.TabIndex = 1;
@@ -320,7 +320,7 @@
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.lblOverDueEnquiries);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(279, 3);
+            this.panel3.Location = new System.Drawing.Point(278, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(149, 134);
             this.panel3.TabIndex = 2;
@@ -351,7 +351,7 @@
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.lblPrivateEquiries);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(434, 3);
+            this.panel5.Location = new System.Drawing.Point(433, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(152, 134);
             this.panel5.TabIndex = 4;
@@ -382,9 +382,9 @@
             this.panel6.Controls.Add(this.label15);
             this.panel6.Controls.Add(this.lblCompanyEnquiry);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(592, 3);
+            this.panel6.Location = new System.Drawing.Point(591, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(194, 134);
+            this.panel6.Size = new System.Drawing.Size(195, 134);
             this.panel6.TabIndex = 5;
             // 
             // label15
@@ -603,12 +603,18 @@
             series1.Color = System.Drawing.Color.RoyalBlue;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
+            series1.XValueMember = "EnquiryDate";
             this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(540, 173);
             this.chart1.TabIndex = 3;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
             this.chart1.Titles.Add(title1);
+            // 
+            // enquiryBindingSource
+            // 
+            this.enquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
+            this.enquiryBindingSource.Filter = "";
             // 
             // tabPage1
             // 
@@ -629,11 +635,6 @@
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "SoftSkills";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // enquiryBindingSource
-            // 
-            this.enquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
-            this.enquiryBindingSource.Filter = "";
             // 
             // frmWorkbanchEnquiries
             // 

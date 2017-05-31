@@ -197,17 +197,18 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
                                            key = b.Key,
                                            count = b.Distinct().Count()
                                        });
-                                       
+                
+
                 //filling the chart
                 enquiryBindingSource.DataSource = (from a in Dbconnection.Enquiries
-                                                   //from b in a.CurriculumEnquiries
-                                                   where a.EnquiryID != 1
-                                                   //where a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
+                                                   from b in a.CurriculumEnquiries
+                                                   //where a.EnquiryID != 1
+                                                   where a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
                                                    select a).ToList<Impendulo.Data.Models.Enquiry>();
 
-                chart1.Series["Series1"].YValueMembers = "EnquiryID";
-                //chart1.Series["Series1"].YValueMembers = enquiriesByDate.Count().ToString();
-                chart1.Series["Series1"].XValueMember = "EnquiryDate";
+                chart1.Series["Series"].Points.DataBindXY("EnquiryDate", enquiriesByDate);
+                //chart1.Series["Series1"].Points.DataBindY(enquiriesByDate);
+                //chart1.Series["Series1"].XValueMember = "EnquiryDate";
                 
             }
         }
