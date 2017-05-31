@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpMainPage = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -59,14 +59,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.lblCompanyEnquiry = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbCurrentDateTime = new System.Windows.Forms.Label();
-            this.btnApprenticeshipFilterSearch = new System.Windows.Forms.Button();
-            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.rbAmountOfPrivateVSCompanyEnquiriesPerMonth = new System.Windows.Forms.RadioButton();
@@ -77,6 +69,14 @@
             this.lblGraphTitle = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.enquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbCurrentDateTime = new System.Windows.Forms.Label();
+            this.btnApprenticeshipFilterSearch = new System.Windows.Forms.Button();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
@@ -91,7 +91,6 @@
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -104,6 +103,7 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).BeginInit();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -237,7 +237,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.89874F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 201F));
             this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel3, 2, 0);
@@ -260,9 +260,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.InfoText;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-
             this.panel1.Size = new System.Drawing.Size(126, 145);
-
             this.panel1.TabIndex = 0;
             // 
             // lblEquiyTotalEquiry
@@ -293,7 +291,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(135, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(137, 145);
+            this.panel2.Size = new System.Drawing.Size(136, 145);
             this.panel2.TabIndex = 1;
             // 
             // label9
@@ -322,7 +320,7 @@
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.lblOverDueEnquiries);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(278, 3);
+            this.panel3.Location = new System.Drawing.Point(277, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(149, 145);
             this.panel3.TabIndex = 2;
@@ -353,7 +351,7 @@
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.lblPrivateEquiries);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(433, 3);
+            this.panel5.Location = new System.Drawing.Point(432, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(152, 145);
             this.panel5.TabIndex = 4;
@@ -384,11 +382,15 @@
             this.panel6.Controls.Add(this.label15);
             this.panel6.Controls.Add(this.lblCompanyEnquiry);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(591, 3);
+            this.panel6.Location = new System.Drawing.Point(590, 3);
             this.panel6.Name = "panel6";
+<<<<<<< HEAD
 
             this.panel6.Size = new System.Drawing.Size(195, 134);
 
+=======
+            this.panel6.Size = new System.Drawing.Size(196, 145);
+>>>>>>> 213d3c8f503a84f76b78dd4703a4dbf50adf60ae
             this.panel6.TabIndex = 5;
             // 
             // label15
@@ -410,84 +412,6 @@
             this.lblCompanyEnquiry.Size = new System.Drawing.Size(51, 55);
             this.lblCompanyEnquiry.TabIndex = 3;
             this.lblCompanyEnquiry.Text = "0";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.label1);
-            this.groupBox6.Controls.Add(this.lbCurrentDateTime);
-            this.groupBox6.Controls.Add(this.btnApprenticeshipFilterSearch);
-            this.groupBox6.Controls.Add(this.dtpFrom);
-            this.groupBox6.Controls.Add(this.label16);
-            this.groupBox6.Controls.Add(this.label5);
-            this.groupBox6.Controls.Add(this.dtpTo);
-            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox6.Location = new System.Drawing.Point(3, 3);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(789, 58);
-            this.groupBox6.TabIndex = 2;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Filters";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "ToDay Date:";
-            // 
-            // lbCurrentDateTime
-            // 
-            this.lbCurrentDateTime.AutoSize = true;
-            this.lbCurrentDateTime.Location = new System.Drawing.Point(89, 29);
-            this.lbCurrentDateTime.Name = "lbCurrentDateTime";
-            this.lbCurrentDateTime.Size = new System.Drawing.Size(35, 13);
-            this.lbCurrentDateTime.TabIndex = 9;
-            this.lbCurrentDateTime.Text = "label1";
-            // 
-            // btnApprenticeshipFilterSearch
-            // 
-            this.btnApprenticeshipFilterSearch.Location = new System.Drawing.Point(623, 21);
-            this.btnApprenticeshipFilterSearch.Name = "btnApprenticeshipFilterSearch";
-            this.btnApprenticeshipFilterSearch.Size = new System.Drawing.Size(57, 23);
-            this.btnApprenticeshipFilterSearch.TabIndex = 8;
-            this.btnApprenticeshipFilterSearch.Text = "Search";
-            this.btnApprenticeshipFilterSearch.UseVisualStyleBackColor = true;
-            this.btnApprenticeshipFilterSearch.Click += new System.EventHandler(this.btnApprenticeshipFilterSearch_Click);
-            // 
-            // dtpFrom
-            // 
-            this.dtpFrom.Location = new System.Drawing.Point(222, 24);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(158, 20);
-            this.dtpFrom.TabIndex = 4;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(181, 28);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(33, 13);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "From ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(391, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "To";
-            // 
-            // dtpTo
-            // 
-            this.dtpTo.Location = new System.Drawing.Point(417, 22);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(200, 20);
-            this.dtpTo.TabIndex = 5;
-            this.dtpTo.ValueChanged += new System.EventHandler(this.dtpTo_ValueChanged);
             // 
             // splitContainer1
             // 
@@ -595,31 +519,112 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.DataSource = this.enquiryBindingSource;
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
+<<<<<<< HEAD
 
       
+=======
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.RoyalBlue;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+>>>>>>> 213d3c8f503a84f76b78dd4703a4dbf50adf60ae
             this.chart1.Size = new System.Drawing.Size(540, 173);
             this.chart1.TabIndex = 3;
             this.chart1.Text = "chart1";
-            title2.Name = "Title1";
-            this.chart1.Titles.Add(title2);
+            title1.Name = "Title1";
+            this.chart1.Titles.Add(title1);
             // 
             // enquiryBindingSource
             // 
             this.enquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
             this.enquiryBindingSource.Filter = "";
             // 
-            // enquiryBindingSource
+            // groupBox6
             // 
-            this.enquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
-            this.enquiryBindingSource.Filter = "";
+            this.groupBox6.Controls.Add(this.label1);
+            this.groupBox6.Controls.Add(this.lbCurrentDateTime);
+            this.groupBox6.Controls.Add(this.btnApprenticeshipFilterSearch);
+            this.groupBox6.Controls.Add(this.dtpFrom);
+            this.groupBox6.Controls.Add(this.label16);
+            this.groupBox6.Controls.Add(this.label5);
+            this.groupBox6.Controls.Add(this.dtpTo);
+            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox6.Location = new System.Drawing.Point(3, 3);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(789, 58);
+            this.groupBox6.TabIndex = 2;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Filters";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "ToDay Date:";
+            // 
+            // lbCurrentDateTime
+            // 
+            this.lbCurrentDateTime.AutoSize = true;
+            this.lbCurrentDateTime.Location = new System.Drawing.Point(89, 29);
+            this.lbCurrentDateTime.Name = "lbCurrentDateTime";
+            this.lbCurrentDateTime.Size = new System.Drawing.Size(35, 13);
+            this.lbCurrentDateTime.TabIndex = 9;
+            this.lbCurrentDateTime.Text = "label1";
+            // 
+            // btnApprenticeshipFilterSearch
+            // 
+            this.btnApprenticeshipFilterSearch.Location = new System.Drawing.Point(623, 21);
+            this.btnApprenticeshipFilterSearch.Name = "btnApprenticeshipFilterSearch";
+            this.btnApprenticeshipFilterSearch.Size = new System.Drawing.Size(57, 23);
+            this.btnApprenticeshipFilterSearch.TabIndex = 8;
+            this.btnApprenticeshipFilterSearch.Text = "Search";
+            this.btnApprenticeshipFilterSearch.UseVisualStyleBackColor = true;
+            this.btnApprenticeshipFilterSearch.Click += new System.EventHandler(this.btnApprenticeshipFilterSearch_Click);
+            // 
+            // dtpFrom
+            // 
+            this.dtpFrom.Location = new System.Drawing.Point(222, 24);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(158, 20);
+            this.dtpFrom.TabIndex = 4;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(181, 28);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(33, 13);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "From ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(391, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(20, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "To";
+            // 
+            // dtpTo
+            // 
+            this.dtpTo.Location = new System.Drawing.Point(417, 22);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(200, 20);
+            this.dtpTo.TabIndex = 5;
+            this.dtpTo.ValueChanged += new System.EventHandler(this.dtpTo_ValueChanged);
             // 
             // tabPage1
             // 
@@ -667,8 +672,6 @@
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -683,6 +686,8 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }

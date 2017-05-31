@@ -171,7 +171,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
         }
         private void dtpTo_ValueChanged(object sender, EventArgs e)
         {
-            LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
+            //LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
             //fillChart();
         }
         /// <summary>
@@ -182,14 +182,13 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
         private void btnApprenticeshipFilterSearch_Click(object sender, EventArgs e)
         {
             LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
-            
+            //fillChart(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
         }
 
         private void fillChart(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
         {
             using (var Dbconnection = new MCDEntities())
             {
-
                 /*Notice that i have assigned the YValueMembers with the same name as the field that i created in the Anonymous class flied Name:
                  * match the numbers to referfence what i mean
                  * 1.1 YValueMembers =  AmountOfEnquiries is the same as the field name that i created in the anonymous class field name.
@@ -200,6 +199,8 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 
                 //count enquiries made at a specific date
                 var enquiriesByDate = (from a in Dbconnection.Enquiries
+                                       from b in a.CurriculumEnquiries
+                                       where a.EnquiryID != 1 && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
                                        group a by a.EnquiryDate into b
                                        select new
                                        {
@@ -210,19 +211,6 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 
                 //filling the chart
                 enquiryBindingSource.DataSource = enquiriesByDate.ToList();
-
-                    //(from a in Dbconnection.Enquiries
-                    //                                   //from b in a.CurriculumEnquiries
-                    //                               where a.EnquiryID != 1
-                    //                               //where a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
-                    //                               select a).ToList<Impendulo.Data.Models.Enquiry>();
-
-                //chart1.Series["Series1"].YValueMembers = "EnquiryID";
-                ////chart1.Series["Series1"].YValueMembers = enquiriesByDate.Count().ToString();
-                //chart1.Series["Series1"].XValueMember = "EnquiryDate";
-
-
-            
             }
         }
         /// <summary>
