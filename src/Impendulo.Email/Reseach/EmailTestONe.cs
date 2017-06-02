@@ -70,7 +70,7 @@ namespace Impendulo.Email.Reseach
             //eMail.Recipients.ResolveAll();
 
             eMail.Subject = subjectEmail;
-            eMail.To = toEmail;
+           // eMail.To = toEmail;
             eMail.Body = bodyEmail;
             eMail.Importance = Microsoft.Office.Interop.Outlook.OlImportance.olImportanceLow;
             eMail.Attachments.Add(@"c:\Recovery.txt", Outlook.OlAttachmentType.olByValue, Type.Missing, Type.Missing);

@@ -1,4 +1,5 @@
 ﻿using Impendulo.Email.Development;
+using Impendulo.Email.Reseach;
 using Impendulo.Email.Select_Contacts.Development;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,12 @@ namespace Impendulo.Email
         private void button1_Click(object sender, EventArgs e)
         {
             frmSendEmail frm = new frmSendEmail();
+            frm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            EmailTestONe frm = new EmailTestONe();
             frm.ShowDialog();
         }
     }
