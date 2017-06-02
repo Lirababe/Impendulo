@@ -35,7 +35,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             /*load queries*/
             LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
 
-            this.fillChart(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
+            this.enquiriesByMonth(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
 
             rbEnquiryByMonth.Checked = true;
            
@@ -182,7 +182,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
         private void btnApprenticeshipFilterSearch_Click(object sender, EventArgs e)
         {
             LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
-            //fillChart(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
+            fillChart(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
         }
 
         private void fillChart(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
@@ -200,7 +200,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
                 //count enquiries made at a specific date
                 var enquiriesByDate = (from a in Dbconnection.Enquiries
                                        from b in a.CurriculumEnquiries
-                                       where a.EnquiryID != 1 && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
+                                       where a.EnquiryID != 1 //&& a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
                                        group a by a.EnquiryDate into b
                                        select new
                                        {
@@ -220,7 +220,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
         /// <param name="e"></param>
         private void rbNewEnquiryByMonth_CheckedChanged(object sender, EventArgs e)
         {
-            this.NewEnquiryByMonth();
+            this.NewEnquiryByMonth(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
             
         }
         /// <summary>
@@ -230,35 +230,85 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
         /// <param name="e"></param>
         private void rbAmountOfPrivateVSCompanyEnquiriesPerMonth_CheckedChanged(object sender, EventArgs e)
         {
-            this.AmountOfPrivateVSCompanyEnquiriesPerMonth();
+            this.AmountOfPrivateVSCompanyEnquiriesPerMonth(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
         }
 
         private void rbEnquiryByMonth_CheckedChanged(object sender, EventArgs e)
+        {
+            this.enquiriesByMonth(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
+        }
+
+        private void enquiriesByMonth(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
         {
             if (rbEnquiryByMonth.Checked == true)
             {
                 lblGraphTitle.Text = "ENQUIRY BY MONTH";
                 this.fillChart(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
-
             }
         }
 
-        
-        private void NewEnquiryByMonth()
+        private void NewEnquiryByMonth(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
         {
             if (rbNewEnquiryByMonth.Checked == true)
             {
                 lblGraphTitle.Text = "NEW ENQUIRY BY MONTH";
-               //Update the chart
+                //Update the chart
+                chart1.BackColor = System.Drawing.Color.Gray;
+                using (var Dbconnection = new MCDEntities())
+                {
+                    chart1.Series["Series1"].YValueMembers = "AmountOfEnquiries";   //1.1 HERE MAtch the Class Field Name Below.
+                    chart1.Series["Series1"].XValueMember = "Date";                 //1.2 HERE MAtch the Class Field Name Below.
+
+                    //count enquiries made at a specific date
+                    var enquiriesByDate = (from a in Dbconnection.Enquiries
+                                           from b in a.CurriculumEnquiries
+                                           where a.EnquiryID != 1 //&& a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
+                                           //&& b.LookupEnquiryStatus.EnquiryStatusID == (int)EnumEnquiryStatuses.New
+                                           group a by a.EnquiryDate into b
+                                           select new
+                                           {
+                                               Date = b.Key,                            //1.1 - Same field name "Date" as above SEE 1.1 ABOVE( I made the field name up - the Fieldname is the same as above.)//1.1 - Same field name as above( I made the field name up - the Fieldname is the same as above.
+                                               AmountOfEnquiries = b.Distinct().Count() //1.2 - Same field name "AmountOfEnquiries" as above SEE 1.2 ABOVE( I made the field name up - the Fieldname is the same as above.)
+                                           });
+
+
+                    //filling the chart
+                    enquiryBindingSource.DataSource = enquiriesByDate.ToList();
+                }
             }
         }
 
-        private void AmountOfPrivateVSCompanyEnquiriesPerMonth()
+        private void AmountOfPrivateVSCompanyEnquiriesPerMonth(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
         {
             if (rbAmountOfPrivateVSCompanyEnquiriesPerMonth.Checked == true)
             {
                 lblGraphTitle.Text = "AMOUNT OF PRIVATE VS COMPANY ENQUIRIES";
                 //Update the chart
+                
+                using (var Dbconnection = new MCDEntities())
+                {
+                    chart1.Series["Series1"].YValueMembers = "AmountOfEnquiries";   //1.1 HERE MAtch the Class Field Name Below.
+                    chart1.Series["Series1"].XValueMember = "Date";                 //1.2 HERE MAtch the Class Field Name Below
+                    chart1.Series["series2"].YValueMembers = "AmountOfEnquiries";
+                    chart1.Series["series2"].YValueMembers = "Date";
+
+                    //count enquiries made at a specific date
+                    var enquiriesByDate = (from a in Dbconnection.Enquiries
+                                           from b in a.CurriculumEnquiries
+                                           where a.EnquiryID != 1 //&& a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
+                                           //&& b.LookupEnquiryStatus.EnquiryStatusID == (int)EnumEnquiryStatuses.New
+                                           group a by a.EnquiryDate into b
+                                           select new
+                                           {
+                                               Date = b.Key,                            //1.1 - Same field name "Date" as above SEE 1.1 ABOVE( I made the field name up - the Fieldname is the same as above.)//1.1 - Same field name as above( I made the field name up - the Fieldname is the same as above.
+                                               AmountOfEnquiries = b.Distinct().Count() //1.2 - Same field name "AmountOfEnquiries" as above SEE 1.2 ABOVE( I made the field name up - the Fieldname is the same as above.)
+                                           });
+
+
+                    //filling the chart
+                    enquiryBindingSource.DataSource = enquiriesByDate.ToList();
+                }
+
 
             }
         }
