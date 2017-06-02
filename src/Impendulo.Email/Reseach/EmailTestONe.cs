@@ -64,6 +64,8 @@ namespace Impendulo.Email.Reseach
             foreach (Outlook.Recipient Recp in RecipientsToSendEmail)
             {
                 //(Outlook.Recipient)eMail.Recipients.Add("Brendanw@mweb.co.za")
+                //Outlook.Recipient oRecip = (Outlook.Recipient)oMsg.Recipients.Add("Brendanw@mweb.co.za");
+               
                 oRecip = Recp;
                 oRecip.Resolve();
             }
