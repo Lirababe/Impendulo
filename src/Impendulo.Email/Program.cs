@@ -17,7 +17,7 @@ namespace Impendulo.Email.Development
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSendEmail());
+            Application.Run(new frmEmailMenu());
         }
     }
 }

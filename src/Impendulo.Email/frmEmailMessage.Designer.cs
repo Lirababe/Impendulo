@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSendEmail));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtTestMessage = new System.Windows.Forms.RichTextBox();
             this.btnContacts = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
@@ -57,7 +58,6 @@
             this.txtTestingToAddress = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.openFileDialogForAttachments = new System.Windows.Forms.OpenFileDialog();
-            this.txtTestMessage = new System.Windows.Forms.RichTextBox();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -83,10 +83,18 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(508, 400);
+            this.groupBox4.Size = new System.Drawing.Size(502, 398);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "MCD Email Message";
+            // 
+            // txtTestMessage
+            // 
+            this.txtTestMessage.Location = new System.Drawing.Point(59, 74);
+            this.txtTestMessage.Name = "txtTestMessage";
+            this.txtTestMessage.Size = new System.Drawing.Size(435, 107);
+            this.txtTestMessage.TabIndex = 10;
+            this.txtTestMessage.Text = "";
             // 
             // btnContacts
             // 
@@ -105,9 +113,9 @@
             // 
             this.groupBox5.Controls.Add(this.toolStripContainer1);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox5.Location = new System.Drawing.Point(3, 240);
+            this.groupBox5.Location = new System.Drawing.Point(3, 238);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(502, 157);
+            this.groupBox5.Size = new System.Drawing.Size(496, 157);
             this.groupBox5.TabIndex = 7;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "List Of Attachments";
@@ -118,11 +126,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvFileAttachments);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(496, 113);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(490, 113);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(496, 138);
+            this.toolStripContainer1.Size = new System.Drawing.Size(490, 138);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -143,7 +151,7 @@
             this.dgvFileAttachments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFileAttachments.Location = new System.Drawing.Point(0, 0);
             this.dgvFileAttachments.Name = "dgvFileAttachments";
-            this.dgvFileAttachments.Size = new System.Drawing.Size(496, 113);
+            this.dgvFileAttachments.Size = new System.Drawing.Size(490, 113);
             this.dgvFileAttachments.TabIndex = 0;
             this.dgvFileAttachments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFileAttachments_CellContentClick);
             this.dgvFileAttachments.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvFileAttachments_DataBindingComplete);
@@ -195,7 +203,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(496, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(490, 25);
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 0;
             // 
@@ -335,19 +343,11 @@
             this.openFileDialogForAttachments.FileName = "openFileDialog1";
             this.openFileDialogForAttachments.Multiselect = true;
             // 
-            // txtTestMessage
-            // 
-            this.txtTestMessage.Location = new System.Drawing.Point(59, 74);
-            this.txtTestMessage.Name = "txtTestMessage";
-            this.txtTestMessage.Size = new System.Drawing.Size(435, 107);
-            this.txtTestMessage.TabIndex = 10;
-            this.txtTestMessage.Text = "";
-            // 
             // frmSendEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 400);
+            this.ClientSize = new System.Drawing.Size(502, 398);
             this.Controls.Add(this.groupBox4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmSendEmail";
