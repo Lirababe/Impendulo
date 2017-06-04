@@ -385,6 +385,10 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(589, 3);
             this.panel6.Name = "panel6";
+<<<<<<< HEAD
+=======
+            this.panel6.Size = new System.Drawing.Size(197, 145);
+>>>>>>> 138621caab1d2852dfbb70d88bb8e44efac0d349
 
 
             this.panel6.Size = new System.Drawing.Size(196, 145);
@@ -525,6 +529,14 @@
             this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> 138621caab1d2852dfbb70d88bb8e44efac0d349
             series1.ChartArea = "ChartArea1";
             series1.Color = System.Drawing.Color.RoyalBlue;
             series1.Legend = "Legend1";
