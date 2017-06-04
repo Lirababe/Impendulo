@@ -20,6 +20,7 @@ namespace Impendulo.Email.Reseach
         {
             InitializeComponent();
             eMail = (Outlook.MailItem)this.oApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olMailItem);
+            //            Outlook.MailItem mail = Application.CreateItem(Outlook.OlItemType.olMailItem) as Outlook.MailItem;
         }
 
         private void EmailTestONe_Load(object sender, EventArgs e)
@@ -34,8 +35,8 @@ namespace Impendulo.Email.Reseach
 
         private void SendEmailtoContacts()
         {
-            List<Outlook.Recipient> Recp = new List<Outlook.Recipient>();
-            Recp.Add((Outlook.Recipient)eMail.Recipients.Add("Brendanw@mweb.co.za"));
+            List<string> Recp = new List<string>();
+            Recp.Add("Brendanw@mweb.co.za");
             string subjectEmail = "Meeting has been rescheduled.";
             string bodyEmail = "Meeting is one hour later.";
             //Microsoft.Office.Interop.Outlook.MAPIFolder sentContacts = (Microsoft.Office.Interop.Outlook.MAPIFolder)
@@ -55,24 +56,24 @@ namespace Impendulo.Email.Reseach
             this.CreateEmailItem(Recp, subjectEmail, bodyEmail);
         }
 
-        private void CreateEmailItem(List<Outlook.Recipient> RecipientsToSendEmail, string subjectEmail, string bodyEmail)
+        private void CreateEmailItem(List<string> RecipientsToSendEmail, string subjectEmail, string bodyEmail)
         {
-            Microsoft.Office.Interop.Outlook.MailItem eMail = (Outlook.MailItem)this.oApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olMailItem);
+            //Microsoft.Office.Interop.Outlook.MailItem eMail = (Outlook.MailItem)this.oApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olMailItem);
 
             Outlook.Recipient oRecip;
             // TODO: Change the following recipient where appropriate.
-            foreach (Outlook.Recipient Recp in RecipientsToSendEmail)
+            foreach (string Recp in RecipientsToSendEmail)
             {
                 //(Outlook.Recipient)eMail.Recipients.Add("Brendanw@mweb.co.za")
                 //Outlook.Recipient oRecip = (Outlook.Recipient)oMsg.Recipients.Add("Brendanw@mweb.co.za");
-               
-                oRecip = Recp;
+
+                oRecip = (Outlook.Recipient)eMail.Recipients.Add(Recp);
                 oRecip.Resolve();
             }
             //eMail.Recipients.ResolveAll();
 
             eMail.Subject = subjectEmail;
-           // eMail.To = toEmail;
+            // eMail.To = toEmail;
             eMail.Body = bodyEmail;
             eMail.Importance = Microsoft.Office.Interop.Outlook.OlImportance.olImportanceLow;
             eMail.Attachments.Add(@"c:\Recovery.txt", Outlook.OlAttachmentType.olByValue, Type.Missing, Type.Missing);
@@ -84,11 +85,33 @@ namespace Impendulo.Email.Reseach
             SendEmailtoContacts();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //Microsoft.Office.Interop.Outlook.MailItem eMail = (Outlook.MailItem)this.oApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olMailItem);
 
-        // Add recipient using display name, alias, or smtp address
-        //mail.Recipients.Add(manager.PrimarySmtpAddress);
-        //mail.Recipients.ResolveAll();
-        //mail.Attachments.Add(@"c:\sales reports\fy06q4.xlsx", Outlook.OlAttachmentType.olByValue, Type.Missing,Type.Missing);
-        //mail.Send();
+            // Outlook.MailItem oMsg = (Outlook.MailItem)oApp.CreateItem(Outlook.OlItemType.olMailItem);
+            Outlook.MailItem mail = oApp.CreateItem(Outlook.OlItemType.olMailItem) as Outlook.MailItem;
+            mail.Subject = "Quarterly Sales Report FY06 Q4";
+
+
+            // Add recipient using display name, alias, or smtp address
+            mail.Recipients.Add("Brendanw@mweb.co.za");
+            mail.Recipients.ResolveAll();
+            mail.Attachments.Add(@"c:\Recovery.txt",
+                Outlook.OlAttachmentType.olByValue, Type.Missing,
+                Type.Missing);
+            mail.Attachments.Add(@"c:\Recovery.txt",
+                Outlook.OlAttachmentType.olByValue, Type.Missing,
+                Type.Missing);
+            mail.Send();
+        }
     }
+
+
+    // Add recipient using display name, alias, or smtp address
+    //mail.Recipients.Add(manager.PrimarySmtpAddress);
+    //mail.Recipients.ResolveAll();
+    //mail.Attachments.Add(@"c:\sales reports\fy06q4.xlsx", Outlook.OlAttachmentType.olByValue, Type.Missing,Type.Missing);
+    //mail.Send();
 }
+

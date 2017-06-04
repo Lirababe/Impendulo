@@ -200,11 +200,10 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
                 //count enquiries made at a specific date
                 var enquiriesByDate = (from a in Dbconnection.Enquiries
                                        from b in a.CurriculumEnquiries
-<<<<<<< HEAD
                                        where a.EnquiryID != 1 //&& a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
-=======
+
                                       // where a.EnquiryID != 1 && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
->>>>>>> 18c0f571c644f56c1bcb4ab40f5ffc2f6655ef1b
+
                                        group a by a.EnquiryDate into b
                                        select new
                                        {

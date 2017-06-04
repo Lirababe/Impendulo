@@ -360,7 +360,7 @@
             this.gbEnquiryType.Margin = new System.Windows.Forms.Padding(0);
             this.gbEnquiryType.Name = "gbEnquiryType";
             this.gbEnquiryType.Padding = new System.Windows.Forms.Padding(0);
-            this.gbEnquiryType.Size = new System.Drawing.Size(650, 574);
+            this.gbEnquiryType.Size = new System.Drawing.Size(200, 200);
             this.gbEnquiryType.TabIndex = 5;
             this.gbEnquiryType.TabStop = false;
             this.gbEnquiryType.Tag = "0";
@@ -383,13 +383,13 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 211F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(650, 531);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 157);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // btnEnquiryTypeSelectionIsCompany
             // 
             this.btnEnquiryTypeSelectionIsCompany.Image = ((System.Drawing.Image)(resources.GetObject("btnEnquiryTypeSelectionIsCompany.Image")));
-            this.btnEnquiryTypeSelectionIsCompany.Location = new System.Drawing.Point(102, 83);
+            this.btnEnquiryTypeSelectionIsCompany.Location = new System.Drawing.Point(-123, -10);
             this.btnEnquiryTypeSelectionIsCompany.Name = "btnEnquiryTypeSelectionIsCompany";
             this.btnEnquiryTypeSelectionIsCompany.Size = new System.Drawing.Size(205, 205);
             this.btnEnquiryTypeSelectionIsCompany.TabIndex = 2;
@@ -401,7 +401,7 @@
             // btnEnquiryTypeSelectionIsPrivateIndividual
             // 
             this.btnEnquiryTypeSelectionIsPrivateIndividual.Image = ((System.Drawing.Image)(resources.GetObject("btnEnquiryTypeSelectionIsPrivateIndividual.Image")));
-            this.btnEnquiryTypeSelectionIsPrivateIndividual.Location = new System.Drawing.Point(343, 83);
+            this.btnEnquiryTypeSelectionIsPrivateIndividual.Location = new System.Drawing.Point(118, -10);
             this.btnEnquiryTypeSelectionIsPrivateIndividual.Name = "btnEnquiryTypeSelectionIsPrivateIndividual";
             this.btnEnquiryTypeSelectionIsPrivateIndividual.Size = new System.Drawing.Size(205, 205);
             this.btnEnquiryTypeSelectionIsPrivateIndividual.TabIndex = 3;
@@ -420,7 +420,7 @@
             this.panel6.ForeColor = System.Drawing.Color.White;
             this.panel6.Location = new System.Drawing.Point(0, 15);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(650, 28);
+            this.panel6.Size = new System.Drawing.Size(200, 28);
             this.panel6.TabIndex = 10;
             // 
             // lblEnquiryTypeSelection
@@ -450,11 +450,11 @@
             this.gbContactInfo.Controls.Add(this.splitContainer4);
             this.gbContactInfo.Controls.Add(this.flowLayoutPanel2);
             this.gbContactInfo.Controls.Add(this.label3);
-            this.gbContactInfo.Location = new System.Drawing.Point(0, 574);
+            this.gbContactInfo.Location = new System.Drawing.Point(200, 0);
             this.gbContactInfo.Margin = new System.Windows.Forms.Padding(0);
             this.gbContactInfo.Name = "gbContactInfo";
             this.gbContactInfo.Padding = new System.Windows.Forms.Padding(0);
-            this.gbContactInfo.Size = new System.Drawing.Size(650, 574);
+            this.gbContactInfo.Size = new System.Drawing.Size(200, 200);
             this.gbContactInfo.TabIndex = 5;
             this.gbContactInfo.TabStop = false;
             this.gbContactInfo.Tag = "1";
@@ -476,7 +476,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer4.Size = new System.Drawing.Size(650, 405);
+            this.splitContainer4.Size = new System.Drawing.Size(200, 31);
             this.splitContainer4.SplitterDistance = 225;
             this.splitContainer4.TabIndex = 14;
             // 
@@ -486,7 +486,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(650, 225);
+            this.groupBox4.Size = new System.Drawing.Size(200, 225);
             this.groupBox4.TabIndex = 20;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Contact Details";
@@ -497,11 +497,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvIndividualContactDetails);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(644, 177);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(194, 177);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(3, 18);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(644, 204);
+            this.toolStripContainer1.Size = new System.Drawing.Size(194, 204);
             this.toolStripContainer1.TabIndex = 3;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -526,7 +526,7 @@
             this.dgvIndividualContactDetails.RowHeadersWidth = 15;
             this.dgvIndividualContactDetails.RowTemplate.Height = 24;
             this.dgvIndividualContactDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIndividualContactDetails.Size = new System.Drawing.Size(644, 177);
+            this.dgvIndividualContactDetails.Size = new System.Drawing.Size(194, 177);
             this.dgvIndividualContactDetails.TabIndex = 0;
             this.dgvIndividualContactDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvIndividualContactDetails_DataBindingComplete);
             // 
@@ -577,7 +577,7 @@
             this.bindingNavigator1.MovePreviousItem = this.toolStripButton6;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.toolStripTextBox2;
-            this.bindingNavigator1.Size = new System.Drawing.Size(644, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(194, 27);
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 0;
             // 
@@ -654,7 +654,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(650, 176);
+            this.groupBox1.Size = new System.Drawing.Size(200, 176);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Notes Or Comments:";
@@ -664,7 +664,7 @@
             this.txtSelectedContactNotes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSelectedContactNotes.Location = new System.Drawing.Point(3, 18);
             this.txtSelectedContactNotes.Name = "txtSelectedContactNotes";
-            this.txtSelectedContactNotes.Size = new System.Drawing.Size(644, 155);
+            this.txtSelectedContactNotes.Size = new System.Drawing.Size(194, 155);
             this.txtSelectedContactNotes.TabIndex = 0;
             this.txtSelectedContactNotes.Text = "";
             // 
@@ -676,7 +676,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 15);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(650, 154);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 154);
             this.flowLayoutPanel2.TabIndex = 12;
             // 
             // gbContactInformationCompany
@@ -831,11 +831,11 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.splitContainer2);
-            this.groupBox3.Location = new System.Drawing.Point(0, 1148);
+            this.groupBox3.Location = new System.Drawing.Point(400, 0);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox3.Size = new System.Drawing.Size(650, 574);
+            this.groupBox3.Size = new System.Drawing.Size(200, 200);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Tag = "2";
@@ -857,7 +857,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer2.Size = new System.Drawing.Size(650, 559);
+            this.splitContainer2.Size = new System.Drawing.Size(200, 185);
             this.splitContainer2.SplitterDistance = 325;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -877,7 +877,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.gbCurriculumCourses);
-            this.splitContainer3.Size = new System.Drawing.Size(650, 325);
+            this.splitContainer3.Size = new System.Drawing.Size(200, 325);
             this.splitContainer3.SplitterDistance = 80;
             this.splitContainer3.TabIndex = 12;
             // 
@@ -893,7 +893,7 @@
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(650, 80);
+            this.groupBox5.Size = new System.Drawing.Size(200, 80);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             // 
@@ -976,7 +976,7 @@
             this.gbCurriculumCourses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbCurriculumCourses.Location = new System.Drawing.Point(0, 0);
             this.gbCurriculumCourses.Name = "gbCurriculumCourses";
-            this.gbCurriculumCourses.Size = new System.Drawing.Size(650, 241);
+            this.gbCurriculumCourses.Size = new System.Drawing.Size(200, 241);
             this.gbCurriculumCourses.TabIndex = 11;
             this.gbCurriculumCourses.TabStop = false;
             this.gbCurriculumCourses.Text = "Selected Course Curriculum";
@@ -987,11 +987,11 @@
             // toolStripContainerCurriculumCourses.ContentPanel
             // 
             this.toolStripContainerCurriculumCourses.ContentPanel.Controls.Add(this.dgvSelectedCurrriculum);
-            this.toolStripContainerCurriculumCourses.ContentPanel.Size = new System.Drawing.Size(644, 195);
+            this.toolStripContainerCurriculumCourses.ContentPanel.Size = new System.Drawing.Size(194, 195);
             this.toolStripContainerCurriculumCourses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainerCurriculumCourses.Location = new System.Drawing.Point(3, 18);
             this.toolStripContainerCurriculumCourses.Name = "toolStripContainerCurriculumCourses";
-            this.toolStripContainerCurriculumCourses.Size = new System.Drawing.Size(644, 220);
+            this.toolStripContainerCurriculumCourses.Size = new System.Drawing.Size(194, 220);
             this.toolStripContainerCurriculumCourses.TabIndex = 0;
             // 
             // toolStripContainerCurriculumCourses.TopToolStripPanel
@@ -1024,7 +1024,7 @@
             this.dgvSelectedCurrriculum.RowHeadersWidth = 15;
             this.dgvSelectedCurrriculum.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSelectedCurrriculum.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSelectedCurrriculum.Size = new System.Drawing.Size(644, 195);
+            this.dgvSelectedCurrriculum.Size = new System.Drawing.Size(194, 195);
             this.dgvSelectedCurrriculum.TabIndex = 0;
             this.dgvSelectedCurrriculum.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSelectedCurrriculum_DataBindingComplete);
             // 
@@ -1147,7 +1147,7 @@
             this.bindingNavigator2.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigator2.Name = "bindingNavigator2";
             this.bindingNavigator2.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigator2.Size = new System.Drawing.Size(644, 25);
+            this.bindingNavigator2.Size = new System.Drawing.Size(194, 25);
             this.bindingNavigator2.Stretch = true;
             this.bindingNavigator2.TabIndex = 2;
             // 
@@ -1252,7 +1252,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(650, 230);
+            this.groupBox2.Size = new System.Drawing.Size(200, 230);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Notes Or Comments:";
@@ -1262,18 +1262,18 @@
             this.txtSelectedCurriculumNotes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSelectedCurriculumNotes.Location = new System.Drawing.Point(3, 18);
             this.txtSelectedCurriculumNotes.Name = "txtSelectedCurriculumNotes";
-            this.txtSelectedCurriculumNotes.Size = new System.Drawing.Size(644, 209);
+            this.txtSelectedCurriculumNotes.Size = new System.Drawing.Size(194, 209);
             this.txtSelectedCurriculumNotes.TabIndex = 0;
             this.txtSelectedCurriculumNotes.Text = "";
             // 
             // gbEquirySummary
             // 
             this.gbEquirySummary.Controls.Add(this.tableLayoutPanel4);
-            this.gbEquirySummary.Location = new System.Drawing.Point(0, 1722);
+            this.gbEquirySummary.Location = new System.Drawing.Point(0, 200);
             this.gbEquirySummary.Margin = new System.Windows.Forms.Padding(0);
             this.gbEquirySummary.Name = "gbEquirySummary";
             this.gbEquirySummary.Padding = new System.Windows.Forms.Padding(0);
-            this.gbEquirySummary.Size = new System.Drawing.Size(650, 574);
+            this.gbEquirySummary.Size = new System.Drawing.Size(200, 200);
             this.gbEquirySummary.TabIndex = 4;
             this.gbEquirySummary.TabStop = false;
             this.gbEquirySummary.Tag = "3";
@@ -1292,7 +1292,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 273F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(650, 559);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(200, 185);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // groupBox8
@@ -1301,7 +1301,7 @@
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(3, 276);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(644, 280);
+            this.groupBox8.Size = new System.Drawing.Size(194, 19);
             this.groupBox8.TabIndex = 2;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Selected Course Curriculum";
@@ -1312,7 +1312,7 @@
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox10.Location = new System.Drawing.Point(3, 18);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(638, 259);
+            this.groupBox10.Size = new System.Drawing.Size(188, 0);
             this.groupBox10.TabIndex = 12;
             this.groupBox10.TabStop = false;
             // 
@@ -1342,7 +1342,7 @@
             this.dgvSummarySelectedCurriculum.RowHeadersWidth = 15;
             this.dgvSummarySelectedCurriculum.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSummarySelectedCurriculum.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSummarySelectedCurriculum.Size = new System.Drawing.Size(632, 238);
+            this.dgvSummarySelectedCurriculum.Size = new System.Drawing.Size(182, 0);
             this.dgvSummarySelectedCurriculum.TabIndex = 0;
             this.dgvSummarySelectedCurriculum.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSummarySelectedCurriculum_DataBindingComplete);
             // 
@@ -1444,7 +1444,7 @@
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.Location = new System.Drawing.Point(3, 3);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(644, 267);
+            this.groupBox7.Size = new System.Drawing.Size(194, 267);
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Contact That Initiaited The Enquiry";
@@ -1455,7 +1455,7 @@
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox9.Location = new System.Drawing.Point(3, 78);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(638, 186);
+            this.groupBox9.Size = new System.Drawing.Size(188, 186);
             this.groupBox9.TabIndex = 21;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Contact Details";
@@ -1477,7 +1477,7 @@
             this.dgvSummaryContactDetails.RowHeadersWidth = 15;
             this.dgvSummaryContactDetails.RowTemplate.Height = 24;
             this.dgvSummaryContactDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSummaryContactDetails.Size = new System.Drawing.Size(632, 165);
+            this.dgvSummaryContactDetails.Size = new System.Drawing.Size(182, 165);
             this.dgvSummaryContactDetails.TabIndex = 0;
             this.dgvSummaryContactDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSummaryContactDetails_DataBindingComplete);
             // 

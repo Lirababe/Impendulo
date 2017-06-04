@@ -37,5 +37,11 @@ namespace Impendulo.Email
             EmailTestONe frm = new EmailTestONe();
             frm.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.ShowDialog();
+        }
     }
 }

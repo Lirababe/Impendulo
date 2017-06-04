@@ -15,6 +15,7 @@ using System.IO;
 using System.Net.Mail;
 using System.Runtime.InteropServices;
 using Outlook = Microsoft.Office.Interop.Outlook;
+using Impendulo.Data.Models;
 //using Office = Microsoft.Office.Core;
 
 namespace Impendulo.Email
@@ -86,18 +87,28 @@ namespace Impendulo.Email
 
                 //Set the basic properties.
                 oMsg.Subject = "This is the subject of the test message With modal Dialog";
-                oMsg.Body = "TThis Is When outLook is Closed Testin if it Sends!!!!!!!!!\nversion 34235245";
+                oMsg.Body = "TThis Is When outLook is Closed Testin if it Sends!!!!!!!!!\nversion 34235245 YESYESYESYES" + DateTime.Now;
 
                 //Add an attachment.
                 // TODO: change file path where appropriate
                 String sSource = "C:\\Recovery.txt";
-                String sDisplayName = "MyFirstAttachment";
+                //String sDisplayName = "MyFirstAttachment";
                 int iPosition = (int)oMsg.Body.Length + 1;
                 int iAttachType = (int)Outlook.OlAttachmentType.olByValue;
-                Outlook.Attachment oAttach = oMsg.Attachments.Add(sSource, iAttachType, iPosition, sDisplayName);
+                oMsg.Attachments.Add(sSource, iAttachType, Type.Missing,
+               Type.Missing);
+                byte[] x;
+                using (var Dbconnection = new MCDEntities())
+                {
+                   x = ((from a in Dbconnection.Files
+                              where a.ImageID == 32
+                              select a).FirstOrDefault()).FileImage;
+                };
+                oMsg.Attachments.Add(x, Outlook.OlAttachmentType.olByValue, Type.Missing,
+               Type.Missing);
 
                 // If you want to, display the message.
-                 //oMsg.Display(true);  //modal
+                //oMsg.Display(true);  //modal
 
                 //Send the message.
                 oMsg.Save();
@@ -105,7 +116,7 @@ namespace Impendulo.Email
 
                 //Explicitly release objects.
                 oRecip = null;
-                oAttach = null;
+                //oAttach = null;
                 oMsg = null;
                 oApp = null;
             }
