@@ -162,6 +162,12 @@
             this.contactTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookupContactTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -221,6 +227,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSummaryContactDetails)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label43
@@ -340,6 +349,7 @@
             // MainflowLayoutPanel
             // 
             this.MainflowLayoutPanel.AutoScroll = true;
+            this.MainflowLayoutPanel.Controls.Add(this.groupBox6);
             this.MainflowLayoutPanel.Controls.Add(this.gbEnquiryType);
             this.MainflowLayoutPanel.Controls.Add(this.gbContactInfo);
             this.MainflowLayoutPanel.Controls.Add(this.groupBox3);
@@ -356,7 +366,7 @@
             // 
             this.gbEnquiryType.Controls.Add(this.tableLayoutPanel3);
             this.gbEnquiryType.Controls.Add(this.panel6);
-            this.gbEnquiryType.Location = new System.Drawing.Point(0, 0);
+            this.gbEnquiryType.Location = new System.Drawing.Point(0, 559);
             this.gbEnquiryType.Margin = new System.Windows.Forms.Padding(0);
             this.gbEnquiryType.Name = "gbEnquiryType";
             this.gbEnquiryType.Padding = new System.Windows.Forms.Padding(0);
@@ -450,7 +460,7 @@
             this.gbContactInfo.Controls.Add(this.splitContainer4);
             this.gbContactInfo.Controls.Add(this.flowLayoutPanel2);
             this.gbContactInfo.Controls.Add(this.label3);
-            this.gbContactInfo.Location = new System.Drawing.Point(200, 0);
+            this.gbContactInfo.Location = new System.Drawing.Point(200, 559);
             this.gbContactInfo.Margin = new System.Windows.Forms.Padding(0);
             this.gbContactInfo.Name = "gbContactInfo";
             this.gbContactInfo.Padding = new System.Windows.Forms.Padding(0);
@@ -831,7 +841,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.splitContainer2);
-            this.groupBox3.Location = new System.Drawing.Point(400, 0);
+            this.groupBox3.Location = new System.Drawing.Point(400, 559);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(0);
@@ -1269,7 +1279,7 @@
             // gbEquirySummary
             // 
             this.gbEquirySummary.Controls.Add(this.tableLayoutPanel4);
-            this.gbEquirySummary.Location = new System.Drawing.Point(0, 200);
+            this.gbEquirySummary.Location = new System.Drawing.Point(0, 759);
             this.gbEquirySummary.Margin = new System.Windows.Forms.Padding(0);
             this.gbEquirySummary.Name = "gbEquirySummary";
             this.gbEquirySummary.Padding = new System.Windows.Forms.Padding(0);
@@ -1651,6 +1661,82 @@
             // 
             this.enquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.tableLayoutPanel1);
+            this.groupBox6.Controls.Add(this.panel2);
+            this.groupBox6.Location = new System.Drawing.Point(0, 0);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(0);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(0);
+            this.groupBox6.Size = new System.Drawing.Size(625, 559);
+            this.groupBox6.TabIndex = 8;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Tag = "0";
+            this.groupBox6.Text = "Enquiry Origion";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.Controls.Add(this.groupBox11, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 43);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(625, 516);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.ForeColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(0, 15);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(625, 28);
+            this.panel2.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(189, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 23);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Company";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(189, 23);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Current Selection :";
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox11.Location = new System.Drawing.Point(65, 106);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(494, 303);
+            this.groupBox11.TabIndex = 0;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "groupBox11";
+            // 
             // frmNewEnquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1743,6 +1829,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSummaryContactDetails)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1881,6 +1971,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn curriculumDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn lookupEnquiryStatusDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn enquiryDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
     }
 }
 
