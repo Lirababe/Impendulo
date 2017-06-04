@@ -232,7 +232,25 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
 
         #endregion
 
-        #region Page 2 - Contact Selection
+        #region Page 2 - Equiry Origion
+        #region Refresh Methods
+
+        #endregion
+
+        #region Populate Methods
+
+        #endregion
+
+        #region Control Events
+
+        #endregion
+
+        #region Logical Control Methods
+
+        #endregion
+        #endregion
+
+        #region Page 3 - Contact Selection
 
         #region Refresh Methods
 
@@ -455,7 +473,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
         #endregion
         #endregion
 
-        #region Page 3 - Curriculum Selection
+        #region Page 4 - Curriculum Selection
 
         #region Refresh Methods
         private void refreshSelectedCurriculum()
@@ -592,7 +610,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
 
         #endregion
 
-        #region Page 4 - Summary Confirmation
+        #region Page 5 - Summary Confirmation
 
         #region Control Methods
 
@@ -757,12 +775,15 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                     this.loadupEnquiryContactSelectionType();
                     break;
                 case 1:
-                    this.loadupEnquiryContactSelection();
+                    this.loadupEquiryOrigion();
                     break;
                 case 2:
-                    this.loadupEnquiryCurriculumSelection();
+                    this.loadupEnquiryContactSelection();
                     break;
                 case 3:
+                    this.loadupEnquiryCurriculumSelection();
+                    break;
+                case 4:
                     this.loadupEnquiryConfirmation();
                     break;
                 default:
@@ -864,12 +885,12 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                     CE.LookupEnquiryStatus = null;
                     CE.Enquiry = null;
                     CE.EnquiryID = CurrentEnquiry.EnquiryID;
-                   
+
                     CE.InitialCurriculumEnquiryDocumentationSent = false;
                     CE.LastUpdated = DateTime.Now;
                     CE.EnquiryStatusID = CE.EnquiryStatusID;
                     CurrentEnquiry.CurriculumEnquiries.Add(CE);
-                   
+
                 }
 
                 EquiryHistory AddingContactDetailsHistory = new EquiryHistory

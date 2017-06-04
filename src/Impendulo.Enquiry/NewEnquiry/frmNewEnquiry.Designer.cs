@@ -168,6 +168,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanelEquiryOrigion = new System.Windows.Forms.FlowLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -230,6 +232,7 @@
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // label43
@@ -277,6 +280,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.label40);
             this.panel5.Controls.Add(this.label38);
             this.panel5.Controls.Add(this.label41);
@@ -293,33 +297,33 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label40.Location = new System.Drawing.Point(24, 125);
+            this.label40.Location = new System.Drawing.Point(25, 150);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(68, 17);
             this.label40.TabIndex = 19;
-            this.label40.Tag = "3";
+            this.label40.Tag = "4";
             this.label40.Text = "Summary";
             // 
             // label38
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label38.Location = new System.Drawing.Point(23, 90);
+            this.label38.Location = new System.Drawing.Point(24, 115);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(125, 17);
             this.label38.TabIndex = 17;
-            this.label38.Tag = "2";
+            this.label38.Tag = "3";
             this.label38.Text = "Curriculum Seletion";
             // 
             // label41
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label41.Location = new System.Drawing.Point(23, 52);
+            this.label41.Location = new System.Drawing.Point(24, 77);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(100, 17);
             this.label41.TabIndex = 16;
-            this.label41.Tag = "1";
+            this.label41.Tag = "2";
             this.label41.Text = "Contact Details";
             // 
             // label37
@@ -366,7 +370,7 @@
             // 
             this.gbEnquiryType.Controls.Add(this.tableLayoutPanel3);
             this.gbEnquiryType.Controls.Add(this.panel6);
-            this.gbEnquiryType.Location = new System.Drawing.Point(0, 559);
+            this.gbEnquiryType.Location = new System.Drawing.Point(0, 571);
             this.gbEnquiryType.Margin = new System.Windows.Forms.Padding(0);
             this.gbEnquiryType.Name = "gbEnquiryType";
             this.gbEnquiryType.Padding = new System.Windows.Forms.Padding(0);
@@ -460,14 +464,14 @@
             this.gbContactInfo.Controls.Add(this.splitContainer4);
             this.gbContactInfo.Controls.Add(this.flowLayoutPanel2);
             this.gbContactInfo.Controls.Add(this.label3);
-            this.gbContactInfo.Location = new System.Drawing.Point(200, 559);
+            this.gbContactInfo.Location = new System.Drawing.Point(200, 571);
             this.gbContactInfo.Margin = new System.Windows.Forms.Padding(0);
             this.gbContactInfo.Name = "gbContactInfo";
             this.gbContactInfo.Padding = new System.Windows.Forms.Padding(0);
             this.gbContactInfo.Size = new System.Drawing.Size(200, 200);
             this.gbContactInfo.TabIndex = 5;
             this.gbContactInfo.TabStop = false;
-            this.gbContactInfo.Tag = "1";
+            this.gbContactInfo.Tag = "2";
             this.gbContactInfo.Text = "Contact Information";
             // 
             // splitContainer4
@@ -841,14 +845,14 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.splitContainer2);
-            this.groupBox3.Location = new System.Drawing.Point(400, 559);
+            this.groupBox3.Location = new System.Drawing.Point(400, 571);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox3.Size = new System.Drawing.Size(200, 200);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Tag = "2";
+            this.groupBox3.Tag = "3";
             this.groupBox3.Text = "Select Course Curriculum";
             // 
             // splitContainer2
@@ -1279,14 +1283,14 @@
             // gbEquirySummary
             // 
             this.gbEquirySummary.Controls.Add(this.tableLayoutPanel4);
-            this.gbEquirySummary.Location = new System.Drawing.Point(0, 759);
+            this.gbEquirySummary.Location = new System.Drawing.Point(0, 771);
             this.gbEquirySummary.Margin = new System.Windows.Forms.Padding(0);
             this.gbEquirySummary.Name = "gbEquirySummary";
             this.gbEquirySummary.Padding = new System.Windows.Forms.Padding(0);
             this.gbEquirySummary.Size = new System.Drawing.Size(200, 200);
             this.gbEquirySummary.TabIndex = 4;
             this.gbEquirySummary.TabStop = false;
-            this.gbEquirySummary.Tag = "3";
+            this.gbEquirySummary.Tag = "4";
             this.gbEquirySummary.Text = "Equiry Summary";
             // 
             // tableLayoutPanel4
@@ -1669,10 +1673,10 @@
             this.groupBox6.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox6.Size = new System.Drawing.Size(625, 559);
+            this.groupBox6.Size = new System.Drawing.Size(634, 571);
             this.groupBox6.TabIndex = 8;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Tag = "0";
+            this.groupBox6.Tag = "1";
             this.groupBox6.Text = "Enquiry Origion";
             // 
             // tableLayoutPanel1
@@ -1689,7 +1693,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(625, 516);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(634, 528);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel2
@@ -1702,7 +1706,7 @@
             this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(0, 15);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(625, 28);
+            this.panel2.Size = new System.Drawing.Size(634, 28);
             this.panel2.TabIndex = 10;
             // 
             // label1
@@ -1729,13 +1733,33 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.flowLayoutPanelEquiryOrigion);
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox11.Location = new System.Drawing.Point(65, 106);
+            this.groupBox11.Location = new System.Drawing.Point(66, 108);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(494, 303);
+            this.groupBox11.Size = new System.Drawing.Size(501, 310);
             this.groupBox11.TabIndex = 0;
             this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "groupBox11";
+            this.groupBox11.Text = "Referal Origion";
+            // 
+            // flowLayoutPanelEquiryOrigion
+            // 
+            this.flowLayoutPanelEquiryOrigion.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanelEquiryOrigion.Location = new System.Drawing.Point(3, 18);
+            this.flowLayoutPanelEquiryOrigion.Name = "flowLayoutPanelEquiryOrigion";
+            this.flowLayoutPanelEquiryOrigion.Size = new System.Drawing.Size(236, 289);
+            this.flowLayoutPanelEquiryOrigion.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label6.Location = new System.Drawing.Point(25, 47);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 17);
+            this.label6.TabIndex = 20;
+            this.label6.Tag = "1";
+            this.label6.Text = "Equiry Origion";
             // 
             // frmNewEnquiry
             // 
@@ -1833,6 +1857,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1977,6 +2002,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelEquiryOrigion;
     }
 }
 
