@@ -1229,8 +1229,8 @@
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 15);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 413F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 349F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 72F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(635, 620);
             this.tableLayoutPanel4.TabIndex = 0;
@@ -1239,9 +1239,9 @@
             // 
             this.groupBox8.Controls.Add(this.groupBox10);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox8.Location = new System.Drawing.Point(3, 416);
+            this.groupBox8.Location = new System.Drawing.Point(3, 352);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(629, 201);
+            this.groupBox8.Size = new System.Drawing.Size(629, 265);
             this.groupBox8.TabIndex = 2;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Selected Course Curriculum";
@@ -1252,7 +1252,7 @@
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox10.Location = new System.Drawing.Point(3, 18);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(623, 180);
+            this.groupBox10.Size = new System.Drawing.Size(623, 244);
             this.groupBox10.TabIndex = 12;
             this.groupBox10.TabStop = false;
             // 
@@ -1282,7 +1282,7 @@
             this.dgvSummarySelectedCurriculum.RowHeadersWidth = 15;
             this.dgvSummarySelectedCurriculum.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSummarySelectedCurriculum.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSummarySelectedCurriculum.Size = new System.Drawing.Size(617, 159);
+            this.dgvSummarySelectedCurriculum.Size = new System.Drawing.Size(617, 223);
             this.dgvSummarySelectedCurriculum.TabIndex = 0;
             this.dgvSummarySelectedCurriculum.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSummarySelectedCurriculum_DataBindingComplete);
             // 
@@ -1316,7 +1316,7 @@
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.Location = new System.Drawing.Point(3, 3);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(629, 407);
+            this.groupBox7.Size = new System.Drawing.Size(629, 343);
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Contact That Initiaited The Enquiry";
@@ -1537,8 +1537,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.73881F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.26119F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(635, 620);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -1548,7 +1548,7 @@
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox11.Location = new System.Drawing.Point(108, 23);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(417, 232);
+            this.groupBox11.Size = new System.Drawing.Size(417, 288);
             this.groupBox11.TabIndex = 0;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Referal Options";
@@ -1559,7 +1559,7 @@
             this.flowLayoutPanelEquiryOrigion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelEquiryOrigion.Location = new System.Drawing.Point(3, 18);
             this.flowLayoutPanelEquiryOrigion.Name = "flowLayoutPanelEquiryOrigion";
-            this.flowLayoutPanelEquiryOrigion.Size = new System.Drawing.Size(411, 211);
+            this.flowLayoutPanelEquiryOrigion.Size = new System.Drawing.Size(411, 267);
             this.flowLayoutPanelEquiryOrigion.TabIndex = 0;
             // 
             // label6
@@ -1733,9 +1733,9 @@
             // 
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(108, 261);
+            this.panel2.Location = new System.Drawing.Point(108, 317);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(417, 356);
+            this.panel2.Size = new System.Drawing.Size(417, 300);
             this.panel2.TabIndex = 1;
             // 
             // label1
@@ -1761,7 +1761,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 169F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(623, 386);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(623, 322);
             this.tableLayoutPanel5.TabIndex = 22;
             // 
             // panel3
@@ -1782,7 +1782,7 @@
             this.groupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox12.Location = new System.Drawing.Point(3, 243);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(617, 140);
+            this.groupBox12.Size = new System.Drawing.Size(617, 76);
             this.groupBox12.TabIndex = 22;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Equiry Origion";
@@ -1792,7 +1792,7 @@
             this.flowLayoutPanelEquiryOrigionSummary.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelEquiryOrigionSummary.Location = new System.Drawing.Point(3, 18);
             this.flowLayoutPanelEquiryOrigionSummary.Name = "flowLayoutPanelEquiryOrigionSummary";
-            this.flowLayoutPanelEquiryOrigionSummary.Size = new System.Drawing.Size(611, 119);
+            this.flowLayoutPanelEquiryOrigionSummary.Size = new System.Drawing.Size(611, 55);
             this.flowLayoutPanelEquiryOrigionSummary.TabIndex = 0;
             // 
             // frmNewEnquiry
