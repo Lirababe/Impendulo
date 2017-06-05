@@ -38,6 +38,9 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             this.enquiriesByMonth(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
 
             rbEnquiryByMonth.Checked = true;
+
+            //make chart2 invisible
+            chart2.Visible = false;
            
 
         }
@@ -194,13 +197,13 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
                  * 1.1 YValueMembers =  AmountOfEnquiries is the same as the field name that i created in the anonymous class field name.
                  * 
                  * */
-                chart1.Series["Series1"].YValueMembers = "AmountOfEnquiries";   //1.1 HERE MAtch the Class Field Name Below.
-                chart1.Series["Series1"].XValueMember = "Date";                 //1.2 HERE MAtch the Class Field Name Below.
+                chart1.Series["AllEnquiries"].YValueMembers = "AmountOfEnquiries";   //1.1 HERE MAtch the Class Field Name Below.
+                chart1.Series["AllEnquiries"].XValueMember = "Date";                 //1.2 HERE MAtch the Class Field Name Below.
 
                 //count enquiries made at a specific date
                 var enquiriesByDate = (from a in Dbconnection.Enquiries
                                        from b in a.CurriculumEnquiries
-                                       where a.EnquiryID != 1 //&& a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
+                                       where a.EnquiryID != 1 && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
 
                                       // where a.EnquiryID != 1 && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
 
@@ -250,21 +253,22 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 
         private void NewEnquiryByMonth(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
         {
+            
             if (rbNewEnquiryByMonth.Checked == true)
             {
                 lblGraphTitle.Text = "NEW ENQUIRY BY MONTH";
                 //Update the chart
-                chart1.BackColor = System.Drawing.Color.Gray;
+                //chart1.BackColor = System.Drawing.Color.Gray;
                 using (var Dbconnection = new MCDEntities())
                 {
-                    chart1.Series["Series1"].YValueMembers = "AmountOfEnquiries";   //1.1 HERE MAtch the Class Field Name Below.
-                    chart1.Series["Series1"].XValueMember = "Date";                 //1.2 HERE MAtch the Class Field Name Below.
+                    chart1.Series["AllEnquiries"].YValueMembers = "AmountOfEnquiries";   //1.1 HERE MAtch the Class Field Name Below.
+                    chart1.Series["AllEnquiries"].XValueMember = "Date";                 //1.2 HERE MAtch the Class Field Name Below.
 
                     //count enquiries made at a specific date
                     var enquiriesByDate = (from a in Dbconnection.Enquiries
                                            from b in a.CurriculumEnquiries
-                                           where a.EnquiryID != 1 //&& a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
-                                           //&& b.LookupEnquiryStatus.EnquiryStatusID == (int)EnumEnquiryStatuses.New
+                                           where a.EnquiryID != 1 && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
+                                           && b.LookupEnquiryStatus.EnquiryStatusID == (int)EnumEnquiryStatuses.New
                                            group a by a.EnquiryDate into b
                                            select new
                                            {
@@ -281,33 +285,35 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 
         private void AmountOfPrivateVSCompanyEnquiriesPerMonth(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
         {
+            chart2.Visible = true;
+            //chart1.Visible = false;
             if (rbAmountOfPrivateVSCompanyEnquiriesPerMonth.Checked == true)
             {
                 lblGraphTitle.Text = "AMOUNT OF PRIVATE VS COMPANY ENQUIRIES";
                 //Update the chart
-                
+
+                //Join the enquiries table with the CompanyEnquiries table and EnquiryAssociatedContact table in order to count the number
+                //of enquries made by company an the individual in a certain date. 
                 using (var Dbconnection = new MCDEntities())
                 {
-                    chart1.Series["Series1"].YValueMembers = "AmountOfEnquiries";   //1.1 HERE MAtch the Class Field Name Below.
-                    chart1.Series["Series1"].XValueMember = "Date";                 //1.2 HERE MAtch the Class Field Name Below
-                    chart1.Series["series2"].YValueMembers = "AmountOfEnquiries";
-                    chart1.Series["series2"].YValueMembers = "Date";
+                    var joinabc = from a in Dbconnection.Enquiries
+                                  from b in a.Companies
+                                  from c in b.Individuals
+                                  join d in Dbconnection.Companies on b.CompanyID equals d.CompanyID
+                                  join e in Dbconnection.Individuals on c.IndividualID equals e.IndividualID
+                                  //where a.EnquiryID == b.CompanyID
+                                  group a by a.EnquiryDate into b
+                                  select new
+                                  {
+                                      Date = b.Key,
+                                      CompanyEnquiries = b.Distinct().Count(),
+                                      PrivateEnquries = b.Distinct().Count()
+                                  };
 
-                    //count enquiries made at a specific date
-                    var enquiriesByDate = (from a in Dbconnection.Enquiries
-                                           from b in a.CurriculumEnquiries
-                                           where a.EnquiryID != 1 //&& a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
-                                           //&& b.LookupEnquiryStatus.EnquiryStatusID == (int)EnumEnquiryStatuses.New
-                                           group a by a.EnquiryDate into b
-                                           select new
-                                           {
-                                               Date = b.Key,                            //1.1 - Same field name "Date" as above SEE 1.1 ABOVE( I made the field name up - the Fieldname is the same as above.)//1.1 - Same field name as above( I made the field name up - the Fieldname is the same as above.
-                                               AmountOfEnquiries = b.Distinct().Count() //1.2 - Same field name "AmountOfEnquiries" as above SEE 1.2 ABOVE( I made the field name up - the Fieldname is the same as above.)
-                                           });
+                    enquiryBindingSource1.DataSource = joinabc.ToList();
 
-
-                    //filling the chart
-                    enquiryBindingSource.DataSource = enquiriesByDate.ToList();
+                    chart2.Series["Company"].Points.AddXY("Date", "CompanyEnquiries");
+                    chart2.Series["Private"].Points.AddXY("Date", "PrivateEnqurie");
                 }
 
 
