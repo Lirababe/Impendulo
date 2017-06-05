@@ -102,9 +102,6 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                 // this.Close();
 
             }
-
-
-
             this.setCenterDisplayPanels();
             this.setNavigationControls();
             this.loadupStep();
@@ -269,6 +266,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                 CheckBox chk = new CheckBox();
                 chk.Tag = item.EquiryOriginID;
                 chk.Text = item.EquiryOrigin;
+                chk.Width = 250;
                 flowLayoutPanelEquiryOrigion.Controls.Add(chk);
 
             }
@@ -646,6 +644,29 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
 
         #region Page 5 - Summary Confirmation
 
+        #region Refresh Methods
+
+        private void refreshEquiryOrigionSummary()
+        {
+            flowLayoutPanelEquiryOrigionSummary.Controls.Clear();
+            foreach (Control con in flowLayoutPanelEquiryOrigion.Controls)
+            {
+                if (con is CheckBox)
+                {
+                    if (((CheckBox)con).Checked)
+                    {
+                        CheckBox radObj = new CheckBox();
+                        radObj.Text = con.Text;
+                        radObj.Checked = true;
+                        flowLayoutPanelEquiryOrigionSummary.Controls.Add(radObj);
+
+                    }
+                }
+
+            }
+        }
+
+        #endregion
         #region Control Methods
 
         private void dgvSummarySelectedCurriculum_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -889,7 +910,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
 
         private void loadupEnquiryConfirmation()
         {
-
+            refreshEquiryOrigionSummary();
         }
 
         #endregion
