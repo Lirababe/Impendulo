@@ -2606,7 +2606,6 @@
           <NavigationProperty Name="LookupSetas" Relationship="Self.CurriculumCourseAssociatedSetas" FromRole="CurriculumCourses" ToRole="LookupSetas" />
           <NavigationProperty Name="CurriculumEquirySelectedCourses" Relationship="MCDModel.FK_CurriculumEquirySelectedCourses_CurriculumCourses" FromRole="CurriculumCourse" ToRole="CurriculumEquirySelectedCours" />
           <NavigationProperty Name="CurriculumPrequisiteCourses" Relationship="MCDModel.FK_CurriculumPrequisiteCourses_CurriculumCourses" FromRole="CurriculumCourse" ToRole="CurriculumPrequisiteCours" />
-          <NavigationProperty Name="Schedules" Relationship="MCDModel.FK_Schedules_CurriculumCourses" FromRole="CurriculumCourse" ToRole="Schedule" />
         </EntityType>
         <EntityType Name="Curriculum">
           <Key>
@@ -2888,20 +2887,6 @@
           </Key>
           <Property Name="QualificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="FacilitatorQualifications" Relationship="Self.FK_FacilitatorQualifications_Qualifications" FromRole="Qualifications" ToRole="FacilitatorQualifications" />
-        </EntityType>
-        <EntityType Name="Schedule">
-          <Key>
-            <PropertyRef Name="ScheduleID" />
-          </Key>
-          <Property Name="ScheduleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ScheduleStartDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ScheduleCompletionDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="EnrollmentID" Type="Int32" Nullable="false" />
-          <Property Name="CurriculumCourseID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="CurriculumCours" Relationship="MCDModel.FK_Schedules_CurriculumCourses" FromRole="Schedule" ToRole="CurriculumCourse" />
-          <NavigationProperty Name="Enrollment" Relationship="MCDModel.FK_Schedules_Enrollments" FromRole="Schedule" ToRole="Enrollment" />
-          <Property Name="CurriculumCourseEnrollmentID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="CurriculumCourseEnrollment" Relationship="MCDModel.FK_Schedules_CurriculumCourseEnrollments" FromRole="Schedule" ToRole="CurriculumCourseEnrollment" />
         </EntityType>
         <EntityType Name="SMTPSetting">
           <Key>
@@ -3578,7 +3563,6 @@
           <EntitySet Name="Modules" EntityType="Self.Module" />
           <EntitySet Name="NextOfKins" EntityType="Self.NextOfKin" />
           <EntitySet Name="Qualifications" EntityType="Self.Qualification" />
-          <EntitySet Name="Schedules" EntityType="Self.Schedule" />
           <EntitySet Name="SMTPSettings" EntityType="Self.SMTPSetting" />
           <EntitySet Name="StudentAssociatedCompanies" EntityType="Self.StudentAssociatedCompany" />
           <EntitySet Name="StudentDisabilities" EntityType="Self.StudentDisability" />
@@ -3927,14 +3911,6 @@
             <End Role="LookupEnrollentDocumentType" EntitySet="LookupEnrollentDocumentTypes" />
             <End Role="ApprenticeshipEnrollmentDocument" EntitySet="ApprenticeshipEnrollmentDocuments" />
           </AssociationSet>
-          <AssociationSet Name="FK_Schedules_CurriculumCourses" Association="MCDModel.FK_Schedules_CurriculumCourses">
-            <End Role="CurriculumCourse" EntitySet="CurriculumCourses" />
-            <End Role="Schedule" EntitySet="Schedules" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Schedules_Enrollments" Association="MCDModel.FK_Schedules_Enrollments">
-            <End Role="Enrollment" EntitySet="Enrollments" />
-            <End Role="Schedule" EntitySet="Schedules" />
-          </AssociationSet>
           <EntitySet Name="Files" EntityType="MCDModel.File" />
           <AssociationSet Name="FK_ApprenticeshipEnrollmentDocuments_Files" Association="MCDModel.FK_ApprenticeshipEnrollmentDocuments_Files">
             <End Role="File" EntitySet="Files" />
@@ -3949,13 +3925,18 @@
             <End Role="MessageTemplate" EntitySet="MessageTemplates" />
           </AssociationSet>
           <EntitySet Name="LookupEquiryOrigions" EntityType="MCDModel.LookupEquiryOrigion" />
+          <AssociationSet Name="EquiryOrigions" Association="MCDModel.EquiryOrigions">
+            <End Role="Enquiry" EntitySet="Enquiries" />
+            <End Role="LookupEquiryOrigion" EntitySet="LookupEquiryOrigions" />
+          </AssociationSet>
+          <EntitySet Name="Schedules" EntityType="MCDModel.Schedule" />
           <AssociationSet Name="FK_Schedules_CurriculumCourseEnrollments" Association="MCDModel.FK_Schedules_CurriculumCourseEnrollments">
             <End Role="CurriculumCourseEnrollment" EntitySet="CurriculumCourseEnrollments" />
             <End Role="Schedule" EntitySet="Schedules" />
           </AssociationSet>
-          <AssociationSet Name="EquiryOrigions" Association="MCDModel.EquiryOrigions">
-            <End Role="Enquiry" EntitySet="Enquiries" />
-            <End Role="LookupEquiryOrigion" EntitySet="LookupEquiryOrigions" />
+          <AssociationSet Name="FK_Schedules_Enrollments" Association="MCDModel.FK_Schedules_Enrollments">
+            <End Role="Enrollment" EntitySet="Enrollments" />
+            <End Role="Schedule" EntitySet="Schedules" />
           </AssociationSet>
           </EntityContainer>
         <ComplexType Name="GetCurriculumCourseInOrder_Result">
@@ -4519,30 +4500,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Schedules_CurriculumCourses">
-          <End Type="MCDModel.CurriculumCourse" Role="CurriculumCourse" Multiplicity="1" />
-          <End Type="MCDModel.Schedule" Role="Schedule" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CurriculumCourse">
-              <PropertyRef Name="CurriculumCourseID" />
-            </Principal>
-            <Dependent Role="Schedule">
-              <PropertyRef Name="CurriculumCourseID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Schedules_Enrollments">
-          <End Type="MCDModel.Enrollment" Role="Enrollment" Multiplicity="1" />
-          <End Type="MCDModel.Schedule" Role="Schedule" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Enrollment">
-              <PropertyRef Name="EnrollmentID" />
-            </Principal>
-            <Dependent Role="Schedule">
-              <PropertyRef Name="EnrollmentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="File">
           <Key>
             <PropertyRef Name="ImageID" />
@@ -4585,6 +4542,22 @@
           <Property Name="EquiryOrigin" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Enquiries" Relationship="MCDModel.EquiryOrigions" FromRole="LookupEquiryOrigion" ToRole="Enquiry" />
         </EntityType>
+        <Association Name="EquiryOrigions">
+          <End Type="MCDModel.Enquiry" Role="Enquiry" Multiplicity="*" />
+          <End Type="MCDModel.LookupEquiryOrigion" Role="LookupEquiryOrigion" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="ScheduleID" />
+          </Key>
+          <Property Name="ScheduleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CurriculumCourseEnrollmentID" Type="Int32" Nullable="false" />
+          <Property Name="ScheduleStartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ScheduleCompletionDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EnrollmentID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CurriculumCourseEnrollment" Relationship="MCDModel.FK_Schedules_CurriculumCourseEnrollments" FromRole="Schedule" ToRole="CurriculumCourseEnrollment" />
+          <NavigationProperty Name="Enrollment" Relationship="MCDModel.FK_Schedules_Enrollments" FromRole="Schedule" ToRole="Enrollment" />
+        </EntityType>
         <Association Name="FK_Schedules_CurriculumCourseEnrollments">
           <End Type="MCDModel.CurriculumCourseEnrollment" Role="CurriculumCourseEnrollment" Multiplicity="1" />
           <End Type="MCDModel.Schedule" Role="Schedule" Multiplicity="*" />
@@ -4597,9 +4570,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="EquiryOrigions">
-          <End Type="MCDModel.Enquiry" Role="Enquiry" Multiplicity="*" />
-          <End Type="MCDModel.LookupEquiryOrigion" Role="LookupEquiryOrigion" Multiplicity="*" />
+        <Association Name="FK_Schedules_Enrollments">
+          <End Type="MCDModel.Enrollment" Role="Enrollment" Multiplicity="1" />
+          <End Type="MCDModel.Schedule" Role="Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Enrollment">
+              <PropertyRef Name="EnrollmentID" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="EnrollmentID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         </Schema>
     </edmx:ConceptualModels>
@@ -4976,17 +4957,6 @@
             <EntityTypeMapping TypeName="MCDModel.Qualification">
               <MappingFragment StoreEntitySet="Qualifications">
                 <ScalarProperty Name="QualificationID" ColumnName="QualificationID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Schedules">
-            <EntityTypeMapping TypeName="MCDModel.Schedule">
-              <MappingFragment StoreEntitySet="Schedules">
-                <ScalarProperty Name="CurriculumCourseEnrollmentID" ColumnName="CurriculumCourseEnrollmentID" />
-                <ScalarProperty Name="EnrollmentID" ColumnName="EnrollmentID" />
-                <ScalarProperty Name="ScheduleCompletionDate" ColumnName="ScheduleCompletionDate" />
-                <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
-                <ScalarProperty Name="ScheduleStartDate" ColumnName="ScheduleStartDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5448,6 +5418,17 @@
               <ScalarProperty Name="EnquiryID" ColumnName="EnquiryID" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="Schedules">
+            <EntityTypeMapping TypeName="MCDModel.Schedule">
+              <MappingFragment StoreEntitySet="Schedules">
+                <ScalarProperty Name="EnrollmentID" ColumnName="EnrollmentID" />
+                <ScalarProperty Name="ScheduleCompletionDate" ColumnName="ScheduleCompletionDate" />
+                <ScalarProperty Name="ScheduleStartDate" ColumnName="ScheduleStartDate" />
+                <ScalarProperty Name="CurriculumCourseEnrollmentID" ColumnName="CurriculumCourseEnrollmentID" />
+                <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

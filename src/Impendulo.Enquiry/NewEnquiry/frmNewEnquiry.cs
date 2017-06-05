@@ -245,7 +245,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
         {
             if (flowLayoutPanelEquiryOrigion.Controls.Count == 0)
             {
-
+                buildDynamicControlForEnquiryOrigion();
             }
         }
         #endregion
@@ -258,12 +258,20 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
 
         private void buildDynamicControlForEnquiryOrigion()
         {
-
+            List<LookupEquiryOrigion> LUEO;
             using (var Dbconnection = new MCDEntities())
             {
-                List<LookupEquiryOrigion> LUEO = (from a in Dbconnection.LookupEquiryOrigions
-                                                  select a).ToList<LookupEquiryOrigion>();
+                LUEO = (from a in Dbconnection.LookupEquiryOrigions
+                        select a).ToList<LookupEquiryOrigion>();
             };
+            foreach (LookupEquiryOrigion item in LUEO)
+            {
+                CheckBox chk = new CheckBox();
+                chk.Tag = item.EquiryOriginID;
+                chk.Text = item.EquiryOrigin;
+                flowLayoutPanelEquiryOrigion.Controls.Add(chk);
+
+            }
         }
 
         #endregion

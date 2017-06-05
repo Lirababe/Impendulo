@@ -53,8 +53,6 @@
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dgvIndividualContactDetails = new System.Windows.Forms.DataGridView();
             this.colContactType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
@@ -99,15 +97,6 @@
             this.colDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCurriculum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EnrollmentQuanity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumEnquiryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enquiryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentQuanityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enquiryStatusIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lookupEnquiryStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enquiryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumEnquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
@@ -131,19 +120,10 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumEnquiryIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enquiryIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentQuanityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enquiryStatusIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lookupEnquiryStatusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enquiryDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.dgvSummaryContactDetails = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSummaryContactName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSummaryCompanyName = new System.Windows.Forms.TextBox();
@@ -161,15 +141,34 @@
             this.contactDetailValueDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookupContactTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanelEquiryOrigion = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
+            this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.curriculumEnquiryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enquiryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentQuanityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enquiryStatusIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupEnquiryStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enquiryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumEnquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.curriculumEnquiryIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enquiryIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentQuanityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enquiryStatusIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupEnquiryStatusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enquiryDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -191,7 +190,6 @@
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIndividualContactDetails)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactDetailBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -215,7 +213,6 @@
             this.toolStripContainerCurriculumCourses.TopToolStripPanel.SuspendLayout();
             this.toolStripContainerCurriculumCourses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSelectedCurrriculum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.curriculumEnquiryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
             this.bindingNavigator2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -228,11 +225,13 @@
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSummaryContactDetails)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contactDetailBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.curriculumEnquiryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label43
@@ -553,18 +552,6 @@
             this.colContactType.ReadOnly = true;
             this.colContactType.Width = 120;
             // 
-            // contactDetailValueDataGridViewTextBoxColumn
-            // 
-            this.contactDetailValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.contactDetailValueDataGridViewTextBoxColumn.DataPropertyName = "ContactDetailValue";
-            this.contactDetailValueDataGridViewTextBoxColumn.HeaderText = "Contact Detail";
-            this.contactDetailValueDataGridViewTextBoxColumn.Name = "contactDetailValueDataGridViewTextBoxColumn";
-            this.contactDetailValueDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // contactDetailBindingSource
-            // 
-            this.contactDetailBindingSource.DataSource = typeof(Impendulo.Data.Models.ContactDetail);
-            // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = null;
@@ -668,7 +655,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 176);
+            this.groupBox1.Size = new System.Drawing.Size(200, 25);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Notes Or Comments:";
@@ -678,7 +665,7 @@
             this.txtSelectedContactNotes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSelectedContactNotes.Location = new System.Drawing.Point(3, 18);
             this.txtSelectedContactNotes.Name = "txtSelectedContactNotes";
-            this.txtSelectedContactNotes.Size = new System.Drawing.Size(194, 155);
+            this.txtSelectedContactNotes.Size = new System.Drawing.Size(194, 4);
             this.txtSelectedContactNotes.TabIndex = 0;
             this.txtSelectedContactNotes.Text = "";
             // 
@@ -845,11 +832,11 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.splitContainer2);
-            this.groupBox3.Location = new System.Drawing.Point(400, 571);
+            this.groupBox3.Location = new System.Drawing.Point(0, 771);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox3.Size = new System.Drawing.Size(200, 200);
+            this.groupBox3.Size = new System.Drawing.Size(460, 492);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Tag = "3";
@@ -871,8 +858,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer2.Size = new System.Drawing.Size(200, 185);
-            this.splitContainer2.SplitterDistance = 325;
+            this.splitContainer2.Size = new System.Drawing.Size(460, 477);
+            this.splitContainer2.SplitterDistance = 326;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
@@ -891,7 +878,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.gbCurriculumCourses);
-            this.splitContainer3.Size = new System.Drawing.Size(200, 325);
+            this.splitContainer3.Size = new System.Drawing.Size(460, 326);
             this.splitContainer3.SplitterDistance = 80;
             this.splitContainer3.TabIndex = 12;
             // 
@@ -907,7 +894,7 @@
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(200, 80);
+            this.groupBox5.Size = new System.Drawing.Size(460, 80);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             // 
@@ -990,7 +977,7 @@
             this.gbCurriculumCourses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbCurriculumCourses.Location = new System.Drawing.Point(0, 0);
             this.gbCurriculumCourses.Name = "gbCurriculumCourses";
-            this.gbCurriculumCourses.Size = new System.Drawing.Size(200, 241);
+            this.gbCurriculumCourses.Size = new System.Drawing.Size(460, 242);
             this.gbCurriculumCourses.TabIndex = 11;
             this.gbCurriculumCourses.TabStop = false;
             this.gbCurriculumCourses.Text = "Selected Course Curriculum";
@@ -1001,11 +988,11 @@
             // toolStripContainerCurriculumCourses.ContentPanel
             // 
             this.toolStripContainerCurriculumCourses.ContentPanel.Controls.Add(this.dgvSelectedCurrriculum);
-            this.toolStripContainerCurriculumCourses.ContentPanel.Size = new System.Drawing.Size(194, 195);
+            this.toolStripContainerCurriculumCourses.ContentPanel.Size = new System.Drawing.Size(454, 196);
             this.toolStripContainerCurriculumCourses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainerCurriculumCourses.Location = new System.Drawing.Point(3, 18);
             this.toolStripContainerCurriculumCourses.Name = "toolStripContainerCurriculumCourses";
-            this.toolStripContainerCurriculumCourses.Size = new System.Drawing.Size(194, 220);
+            this.toolStripContainerCurriculumCourses.Size = new System.Drawing.Size(454, 221);
             this.toolStripContainerCurriculumCourses.TabIndex = 0;
             // 
             // toolStripContainerCurriculumCourses.TopToolStripPanel
@@ -1038,7 +1025,7 @@
             this.dgvSelectedCurrriculum.RowHeadersWidth = 15;
             this.dgvSelectedCurrriculum.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSelectedCurrriculum.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSelectedCurrriculum.Size = new System.Drawing.Size(194, 195);
+            this.dgvSelectedCurrriculum.Size = new System.Drawing.Size(454, 196);
             this.dgvSelectedCurrriculum.TabIndex = 0;
             this.dgvSelectedCurrriculum.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSelectedCurrriculum_DataBindingComplete);
             // 
@@ -1065,74 +1052,6 @@
             this.EnrollmentQuanity.HeaderText = "Enrollment Qty";
             this.EnrollmentQuanity.Name = "EnrollmentQuanity";
             this.EnrollmentQuanity.ReadOnly = true;
-            // 
-            // curriculumEnquiryIDDataGridViewTextBoxColumn
-            // 
-            this.curriculumEnquiryIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumEnquiryID";
-            this.curriculumEnquiryIDDataGridViewTextBoxColumn.HeaderText = "CurriculumEnquiryID";
-            this.curriculumEnquiryIDDataGridViewTextBoxColumn.Name = "curriculumEnquiryIDDataGridViewTextBoxColumn";
-            this.curriculumEnquiryIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.curriculumEnquiryIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // enquiryIDDataGridViewTextBoxColumn
-            // 
-            this.enquiryIDDataGridViewTextBoxColumn.DataPropertyName = "EnquiryID";
-            this.enquiryIDDataGridViewTextBoxColumn.HeaderText = "EnquiryID";
-            this.enquiryIDDataGridViewTextBoxColumn.Name = "enquiryIDDataGridViewTextBoxColumn";
-            this.enquiryIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.enquiryIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // curriculumIDDataGridViewTextBoxColumn
-            // 
-            this.curriculumIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumID";
-            this.curriculumIDDataGridViewTextBoxColumn.HeaderText = "CurriculumID";
-            this.curriculumIDDataGridViewTextBoxColumn.Name = "curriculumIDDataGridViewTextBoxColumn";
-            this.curriculumIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.curriculumIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // enrollmentQuanityDataGridViewTextBoxColumn
-            // 
-            this.enrollmentQuanityDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentQuanity";
-            this.enrollmentQuanityDataGridViewTextBoxColumn.HeaderText = "EnrollmentQuanity";
-            this.enrollmentQuanityDataGridViewTextBoxColumn.Name = "enrollmentQuanityDataGridViewTextBoxColumn";
-            this.enrollmentQuanityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // enquiryStatusIDDataGridViewTextBoxColumn
-            // 
-            this.enquiryStatusIDDataGridViewTextBoxColumn.DataPropertyName = "EnquiryStatusID";
-            this.enquiryStatusIDDataGridViewTextBoxColumn.HeaderText = "EnquiryStatusID";
-            this.enquiryStatusIDDataGridViewTextBoxColumn.Name = "enquiryStatusIDDataGridViewTextBoxColumn";
-            this.enquiryStatusIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.enquiryStatusIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // curriculumDataGridViewTextBoxColumn
-            // 
-            this.curriculumDataGridViewTextBoxColumn.DataPropertyName = "Curriculum";
-            this.curriculumDataGridViewTextBoxColumn.HeaderText = "Curriculum";
-            this.curriculumDataGridViewTextBoxColumn.Name = "curriculumDataGridViewTextBoxColumn";
-            this.curriculumDataGridViewTextBoxColumn.ReadOnly = true;
-            this.curriculumDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // lookupEnquiryStatusDataGridViewTextBoxColumn
-            // 
-            this.lookupEnquiryStatusDataGridViewTextBoxColumn.DataPropertyName = "LookupEnquiryStatus";
-            this.lookupEnquiryStatusDataGridViewTextBoxColumn.HeaderText = "LookupEnquiryStatus";
-            this.lookupEnquiryStatusDataGridViewTextBoxColumn.Name = "lookupEnquiryStatusDataGridViewTextBoxColumn";
-            this.lookupEnquiryStatusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lookupEnquiryStatusDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // enquiryDataGridViewTextBoxColumn
-            // 
-            this.enquiryDataGridViewTextBoxColumn.DataPropertyName = "Enquiry";
-            this.enquiryDataGridViewTextBoxColumn.HeaderText = "Enquiry";
-            this.enquiryDataGridViewTextBoxColumn.Name = "enquiryDataGridViewTextBoxColumn";
-            this.enquiryDataGridViewTextBoxColumn.ReadOnly = true;
-            this.enquiryDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // curriculumEnquiryBindingSource
-            // 
-            this.curriculumEnquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.CurriculumEnquiry);
             // 
             // bindingNavigator2
             // 
@@ -1161,7 +1080,7 @@
             this.bindingNavigator2.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigator2.Name = "bindingNavigator2";
             this.bindingNavigator2.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigator2.Size = new System.Drawing.Size(194, 25);
+            this.bindingNavigator2.Size = new System.Drawing.Size(454, 25);
             this.bindingNavigator2.Stretch = true;
             this.bindingNavigator2.TabIndex = 2;
             // 
@@ -1266,7 +1185,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 230);
+            this.groupBox2.Size = new System.Drawing.Size(460, 147);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Notes Or Comments:";
@@ -1276,18 +1195,18 @@
             this.txtSelectedCurriculumNotes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSelectedCurriculumNotes.Location = new System.Drawing.Point(3, 18);
             this.txtSelectedCurriculumNotes.Name = "txtSelectedCurriculumNotes";
-            this.txtSelectedCurriculumNotes.Size = new System.Drawing.Size(194, 209);
+            this.txtSelectedCurriculumNotes.Size = new System.Drawing.Size(454, 126);
             this.txtSelectedCurriculumNotes.TabIndex = 0;
             this.txtSelectedCurriculumNotes.Text = "";
             // 
             // gbEquirySummary
             // 
             this.gbEquirySummary.Controls.Add(this.tableLayoutPanel4);
-            this.gbEquirySummary.Location = new System.Drawing.Point(0, 771);
+            this.gbEquirySummary.Location = new System.Drawing.Point(0, 1263);
             this.gbEquirySummary.Margin = new System.Windows.Forms.Padding(0);
             this.gbEquirySummary.Name = "gbEquirySummary";
             this.gbEquirySummary.Padding = new System.Windows.Forms.Padding(0);
-            this.gbEquirySummary.Size = new System.Drawing.Size(200, 200);
+            this.gbEquirySummary.Size = new System.Drawing.Size(482, 200);
             this.gbEquirySummary.TabIndex = 4;
             this.gbEquirySummary.TabStop = false;
             this.gbEquirySummary.Tag = "4";
@@ -1306,7 +1225,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 273F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(200, 185);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(482, 185);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // groupBox8
@@ -1315,7 +1234,7 @@
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(3, 276);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(194, 19);
+            this.groupBox8.Size = new System.Drawing.Size(476, 19);
             this.groupBox8.TabIndex = 2;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Selected Course Curriculum";
@@ -1326,7 +1245,7 @@
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox10.Location = new System.Drawing.Point(3, 18);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(188, 0);
+            this.groupBox10.Size = new System.Drawing.Size(470, 0);
             this.groupBox10.TabIndex = 12;
             this.groupBox10.TabStop = false;
             // 
@@ -1356,7 +1275,7 @@
             this.dgvSummarySelectedCurriculum.RowHeadersWidth = 15;
             this.dgvSummarySelectedCurriculum.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSummarySelectedCurriculum.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSummarySelectedCurriculum.Size = new System.Drawing.Size(182, 0);
+            this.dgvSummarySelectedCurriculum.Size = new System.Drawing.Size(464, 0);
             this.dgvSummarySelectedCurriculum.TabIndex = 0;
             this.dgvSummarySelectedCurriculum.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSummarySelectedCurriculum_DataBindingComplete);
             // 
@@ -1384,70 +1303,6 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // curriculumEnquiryIDDataGridViewTextBoxColumn1
-            // 
-            this.curriculumEnquiryIDDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumEnquiryID";
-            this.curriculumEnquiryIDDataGridViewTextBoxColumn1.HeaderText = "CurriculumEnquiryID";
-            this.curriculumEnquiryIDDataGridViewTextBoxColumn1.Name = "curriculumEnquiryIDDataGridViewTextBoxColumn1";
-            this.curriculumEnquiryIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.curriculumEnquiryIDDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // enquiryIDDataGridViewTextBoxColumn1
-            // 
-            this.enquiryIDDataGridViewTextBoxColumn1.DataPropertyName = "EnquiryID";
-            this.enquiryIDDataGridViewTextBoxColumn1.HeaderText = "EnquiryID";
-            this.enquiryIDDataGridViewTextBoxColumn1.Name = "enquiryIDDataGridViewTextBoxColumn1";
-            this.enquiryIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.enquiryIDDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // curriculumIDDataGridViewTextBoxColumn1
-            // 
-            this.curriculumIDDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumID";
-            this.curriculumIDDataGridViewTextBoxColumn1.HeaderText = "CurriculumID";
-            this.curriculumIDDataGridViewTextBoxColumn1.Name = "curriculumIDDataGridViewTextBoxColumn1";
-            this.curriculumIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.curriculumIDDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // enrollmentQuanityDataGridViewTextBoxColumn1
-            // 
-            this.enrollmentQuanityDataGridViewTextBoxColumn1.DataPropertyName = "EnrollmentQuanity";
-            this.enrollmentQuanityDataGridViewTextBoxColumn1.HeaderText = "EnrollmentQuanity";
-            this.enrollmentQuanityDataGridViewTextBoxColumn1.Name = "enrollmentQuanityDataGridViewTextBoxColumn1";
-            this.enrollmentQuanityDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.enrollmentQuanityDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // enquiryStatusIDDataGridViewTextBoxColumn1
-            // 
-            this.enquiryStatusIDDataGridViewTextBoxColumn1.DataPropertyName = "EnquiryStatusID";
-            this.enquiryStatusIDDataGridViewTextBoxColumn1.HeaderText = "EnquiryStatusID";
-            this.enquiryStatusIDDataGridViewTextBoxColumn1.Name = "enquiryStatusIDDataGridViewTextBoxColumn1";
-            this.enquiryStatusIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.enquiryStatusIDDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // curriculumDataGridViewTextBoxColumn1
-            // 
-            this.curriculumDataGridViewTextBoxColumn1.DataPropertyName = "Curriculum";
-            this.curriculumDataGridViewTextBoxColumn1.HeaderText = "Curriculum";
-            this.curriculumDataGridViewTextBoxColumn1.Name = "curriculumDataGridViewTextBoxColumn1";
-            this.curriculumDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.curriculumDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // lookupEnquiryStatusDataGridViewTextBoxColumn1
-            // 
-            this.lookupEnquiryStatusDataGridViewTextBoxColumn1.DataPropertyName = "LookupEnquiryStatus";
-            this.lookupEnquiryStatusDataGridViewTextBoxColumn1.HeaderText = "LookupEnquiryStatus";
-            this.lookupEnquiryStatusDataGridViewTextBoxColumn1.Name = "lookupEnquiryStatusDataGridViewTextBoxColumn1";
-            this.lookupEnquiryStatusDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.lookupEnquiryStatusDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // enquiryDataGridViewTextBoxColumn1
-            // 
-            this.enquiryDataGridViewTextBoxColumn1.DataPropertyName = "Enquiry";
-            this.enquiryDataGridViewTextBoxColumn1.HeaderText = "Enquiry";
-            this.enquiryDataGridViewTextBoxColumn1.Name = "enquiryDataGridViewTextBoxColumn1";
-            this.enquiryDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.enquiryDataGridViewTextBoxColumn1.Visible = false;
-            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.groupBox9);
@@ -1458,7 +1313,7 @@
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.Location = new System.Drawing.Point(3, 3);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(194, 267);
+            this.groupBox7.Size = new System.Drawing.Size(476, 267);
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Contact That Initiaited The Enquiry";
@@ -1469,7 +1324,7 @@
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox9.Location = new System.Drawing.Point(3, 78);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(188, 186);
+            this.groupBox9.Size = new System.Drawing.Size(470, 186);
             this.groupBox9.TabIndex = 21;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Contact Details";
@@ -1491,7 +1346,7 @@
             this.dgvSummaryContactDetails.RowHeadersWidth = 15;
             this.dgvSummaryContactDetails.RowTemplate.Height = 24;
             this.dgvSummaryContactDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSummaryContactDetails.Size = new System.Drawing.Size(182, 165);
+            this.dgvSummaryContactDetails.Size = new System.Drawing.Size(464, 165);
             this.dgvSummaryContactDetails.TabIndex = 0;
             this.dgvSummaryContactDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSummaryContactDetails_DataBindingComplete);
             // 
@@ -1503,14 +1358,6 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "ContactDetailValue";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Contact Detail";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // txtSummaryContactName
             // 
@@ -1661,14 +1508,9 @@
             this.lookupContactTypeDataGridViewTextBoxColumn.HeaderText = "LookupContactType";
             this.lookupContactTypeDataGridViewTextBoxColumn.Name = "lookupContactTypeDataGridViewTextBoxColumn";
             // 
-            // enquiryBindingSource
-            // 
-            this.enquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox6.Controls.Add(this.panel2);
             this.groupBox6.Location = new System.Drawing.Point(0, 0);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox6.Name = "groupBox6";
@@ -1682,72 +1524,38 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.Controls.Add(this.groupBox11, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 43);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 15);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(634, 528);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.73881F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.26119F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(634, 556);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(0, 15);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(634, 28);
-            this.panel2.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(189, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 23);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Company";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(189, 23);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Current Selection :";
             // 
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.flowLayoutPanelEquiryOrigion);
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox11.Location = new System.Drawing.Point(66, 108);
+            this.groupBox11.Location = new System.Drawing.Point(108, 23);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(501, 310);
+            this.groupBox11.Size = new System.Drawing.Size(416, 207);
             this.groupBox11.TabIndex = 0;
             this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Referal Origion";
+            this.groupBox11.Text = "Referal Options";
             // 
             // flowLayoutPanelEquiryOrigion
             // 
-            this.flowLayoutPanelEquiryOrigion.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanelEquiryOrigion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelEquiryOrigion.Location = new System.Drawing.Point(3, 18);
             this.flowLayoutPanelEquiryOrigion.Name = "flowLayoutPanelEquiryOrigion";
-            this.flowLayoutPanelEquiryOrigion.Size = new System.Drawing.Size(236, 289);
+            this.flowLayoutPanelEquiryOrigion.Size = new System.Drawing.Size(410, 186);
             this.flowLayoutPanelEquiryOrigion.TabIndex = 0;
             // 
             // label6
@@ -1760,6 +1568,180 @@
             this.label6.TabIndex = 20;
             this.label6.Tag = "1";
             this.label6.Text = "Equiry Origion";
+            // 
+            // contactDetailValueDataGridViewTextBoxColumn
+            // 
+            this.contactDetailValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.contactDetailValueDataGridViewTextBoxColumn.DataPropertyName = "ContactDetailValue";
+            this.contactDetailValueDataGridViewTextBoxColumn.HeaderText = "Contact Detail";
+            this.contactDetailValueDataGridViewTextBoxColumn.Name = "contactDetailValueDataGridViewTextBoxColumn";
+            this.contactDetailValueDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contactDetailBindingSource
+            // 
+            this.contactDetailBindingSource.DataSource = typeof(Impendulo.Data.Models.ContactDetail);
+            // 
+            // curriculumEnquiryIDDataGridViewTextBoxColumn
+            // 
+            this.curriculumEnquiryIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumEnquiryID";
+            this.curriculumEnquiryIDDataGridViewTextBoxColumn.HeaderText = "CurriculumEnquiryID";
+            this.curriculumEnquiryIDDataGridViewTextBoxColumn.Name = "curriculumEnquiryIDDataGridViewTextBoxColumn";
+            this.curriculumEnquiryIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.curriculumEnquiryIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // enquiryIDDataGridViewTextBoxColumn
+            // 
+            this.enquiryIDDataGridViewTextBoxColumn.DataPropertyName = "EnquiryID";
+            this.enquiryIDDataGridViewTextBoxColumn.HeaderText = "EnquiryID";
+            this.enquiryIDDataGridViewTextBoxColumn.Name = "enquiryIDDataGridViewTextBoxColumn";
+            this.enquiryIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.enquiryIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // curriculumIDDataGridViewTextBoxColumn
+            // 
+            this.curriculumIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumID";
+            this.curriculumIDDataGridViewTextBoxColumn.HeaderText = "CurriculumID";
+            this.curriculumIDDataGridViewTextBoxColumn.Name = "curriculumIDDataGridViewTextBoxColumn";
+            this.curriculumIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.curriculumIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // enrollmentQuanityDataGridViewTextBoxColumn
+            // 
+            this.enrollmentQuanityDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentQuanity";
+            this.enrollmentQuanityDataGridViewTextBoxColumn.HeaderText = "EnrollmentQuanity";
+            this.enrollmentQuanityDataGridViewTextBoxColumn.Name = "enrollmentQuanityDataGridViewTextBoxColumn";
+            this.enrollmentQuanityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // enquiryStatusIDDataGridViewTextBoxColumn
+            // 
+            this.enquiryStatusIDDataGridViewTextBoxColumn.DataPropertyName = "EnquiryStatusID";
+            this.enquiryStatusIDDataGridViewTextBoxColumn.HeaderText = "EnquiryStatusID";
+            this.enquiryStatusIDDataGridViewTextBoxColumn.Name = "enquiryStatusIDDataGridViewTextBoxColumn";
+            this.enquiryStatusIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.enquiryStatusIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // curriculumDataGridViewTextBoxColumn
+            // 
+            this.curriculumDataGridViewTextBoxColumn.DataPropertyName = "Curriculum";
+            this.curriculumDataGridViewTextBoxColumn.HeaderText = "Curriculum";
+            this.curriculumDataGridViewTextBoxColumn.Name = "curriculumDataGridViewTextBoxColumn";
+            this.curriculumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.curriculumDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // lookupEnquiryStatusDataGridViewTextBoxColumn
+            // 
+            this.lookupEnquiryStatusDataGridViewTextBoxColumn.DataPropertyName = "LookupEnquiryStatus";
+            this.lookupEnquiryStatusDataGridViewTextBoxColumn.HeaderText = "LookupEnquiryStatus";
+            this.lookupEnquiryStatusDataGridViewTextBoxColumn.Name = "lookupEnquiryStatusDataGridViewTextBoxColumn";
+            this.lookupEnquiryStatusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lookupEnquiryStatusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // enquiryDataGridViewTextBoxColumn
+            // 
+            this.enquiryDataGridViewTextBoxColumn.DataPropertyName = "Enquiry";
+            this.enquiryDataGridViewTextBoxColumn.HeaderText = "Enquiry";
+            this.enquiryDataGridViewTextBoxColumn.Name = "enquiryDataGridViewTextBoxColumn";
+            this.enquiryDataGridViewTextBoxColumn.ReadOnly = true;
+            this.enquiryDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // curriculumEnquiryBindingSource
+            // 
+            this.curriculumEnquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.CurriculumEnquiry);
+            // 
+            // curriculumEnquiryIDDataGridViewTextBoxColumn1
+            // 
+            this.curriculumEnquiryIDDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumEnquiryID";
+            this.curriculumEnquiryIDDataGridViewTextBoxColumn1.HeaderText = "CurriculumEnquiryID";
+            this.curriculumEnquiryIDDataGridViewTextBoxColumn1.Name = "curriculumEnquiryIDDataGridViewTextBoxColumn1";
+            this.curriculumEnquiryIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.curriculumEnquiryIDDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // enquiryIDDataGridViewTextBoxColumn1
+            // 
+            this.enquiryIDDataGridViewTextBoxColumn1.DataPropertyName = "EnquiryID";
+            this.enquiryIDDataGridViewTextBoxColumn1.HeaderText = "EnquiryID";
+            this.enquiryIDDataGridViewTextBoxColumn1.Name = "enquiryIDDataGridViewTextBoxColumn1";
+            this.enquiryIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.enquiryIDDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // curriculumIDDataGridViewTextBoxColumn1
+            // 
+            this.curriculumIDDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumID";
+            this.curriculumIDDataGridViewTextBoxColumn1.HeaderText = "CurriculumID";
+            this.curriculumIDDataGridViewTextBoxColumn1.Name = "curriculumIDDataGridViewTextBoxColumn1";
+            this.curriculumIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.curriculumIDDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // enrollmentQuanityDataGridViewTextBoxColumn1
+            // 
+            this.enrollmentQuanityDataGridViewTextBoxColumn1.DataPropertyName = "EnrollmentQuanity";
+            this.enrollmentQuanityDataGridViewTextBoxColumn1.HeaderText = "EnrollmentQuanity";
+            this.enrollmentQuanityDataGridViewTextBoxColumn1.Name = "enrollmentQuanityDataGridViewTextBoxColumn1";
+            this.enrollmentQuanityDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.enrollmentQuanityDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // enquiryStatusIDDataGridViewTextBoxColumn1
+            // 
+            this.enquiryStatusIDDataGridViewTextBoxColumn1.DataPropertyName = "EnquiryStatusID";
+            this.enquiryStatusIDDataGridViewTextBoxColumn1.HeaderText = "EnquiryStatusID";
+            this.enquiryStatusIDDataGridViewTextBoxColumn1.Name = "enquiryStatusIDDataGridViewTextBoxColumn1";
+            this.enquiryStatusIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.enquiryStatusIDDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // curriculumDataGridViewTextBoxColumn1
+            // 
+            this.curriculumDataGridViewTextBoxColumn1.DataPropertyName = "Curriculum";
+            this.curriculumDataGridViewTextBoxColumn1.HeaderText = "Curriculum";
+            this.curriculumDataGridViewTextBoxColumn1.Name = "curriculumDataGridViewTextBoxColumn1";
+            this.curriculumDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.curriculumDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // lookupEnquiryStatusDataGridViewTextBoxColumn1
+            // 
+            this.lookupEnquiryStatusDataGridViewTextBoxColumn1.DataPropertyName = "LookupEnquiryStatus";
+            this.lookupEnquiryStatusDataGridViewTextBoxColumn1.HeaderText = "LookupEnquiryStatus";
+            this.lookupEnquiryStatusDataGridViewTextBoxColumn1.Name = "lookupEnquiryStatusDataGridViewTextBoxColumn1";
+            this.lookupEnquiryStatusDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.lookupEnquiryStatusDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // enquiryDataGridViewTextBoxColumn1
+            // 
+            this.enquiryDataGridViewTextBoxColumn1.DataPropertyName = "Enquiry";
+            this.enquiryDataGridViewTextBoxColumn1.HeaderText = "Enquiry";
+            this.enquiryDataGridViewTextBoxColumn1.Name = "enquiryDataGridViewTextBoxColumn1";
+            this.enquiryDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.enquiryDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ContactDetailValue";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Contact Detail";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // enquiryBindingSource
+            // 
+            this.enquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(108, 236);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(416, 317);
+            this.panel2.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 14);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Select Form Options Above.";
             // 
             // frmNewEnquiry
             // 
@@ -1807,7 +1789,6 @@
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIndividualContactDetails)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactDetailBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -1837,7 +1818,6 @@
             this.toolStripContainerCurriculumCourses.ResumeLayout(false);
             this.toolStripContainerCurriculumCourses.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSelectedCurrriculum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.curriculumEnquiryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
@@ -1852,12 +1832,14 @@
             this.groupBox9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSummaryContactDetails)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.contactDetailBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.curriculumEnquiryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1999,11 +1981,10 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelEquiryOrigion;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

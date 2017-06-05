@@ -21,7 +21,7 @@
         <EntityTypeShape EntityType="MCDModel.Curriculum" Width="2.125" PointX="3" PointY="11.875" IsExpanded="true" />
         <EntityTypeShape EntityType="MCDModel.Employee" Width="2.625" PointX="4.5" PointY="31.625" IsExpanded="true" />
         <EntityTypeShape EntityType="MCDModel.Enrollment" Width="2.625" PointX="5.875" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MCDModel.EquiryHistory" Width="2.75" PointX="1.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MCDModel.EquiryHistory" Width="2.75" PointX="1" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="MCDModel.FacilitatorAssociatedCourse" Width="2.625" PointX="10.5" PointY="16.625" IsExpanded="true" />
         <EntityTypeShape EntityType="MCDModel.FacilitatorQualification" Width="2.25" PointX="16.375" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="MCDModel.Facilitator" Width="3.625" PointX="7" PointY="0.5" IsExpanded="true" />
@@ -46,7 +46,6 @@
         <EntityTypeShape EntityType="MCDModel.Module" Width="2.375" PointX="1.625" PointY="22.125" IsExpanded="true" />
         <EntityTypeShape EntityType="MCDModel.NextOfKin" Width="2.875" PointX="0.75" PointY="67.875" IsExpanded="true" />
         <EntityTypeShape EntityType="MCDModel.Qualification" Width="3" PointX="15.25" PointY="28.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MCDModel.Schedule" Width="2.375" PointX="2.375" PointY="0.625" IsExpanded="true" />
         <EntityTypeShape EntityType="MCDModel.SMTPSetting" Width="1.5" PointX="13.875" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="MCDModel.StudentAssociatedCompany" Width="3.375" PointX="14.625" PointY="42.125" IsExpanded="true" />
         <EntityTypeShape EntityType="MCDModel.StudentDisability" Width="2.5" PointX="11.75" PointY="33.625" IsExpanded="true" />
@@ -102,28 +101,7 @@
         <AssociationConnector Association="MCDModel.IndividualAddresses" ManuallyRouted="false" />
         <AssociationConnector Association="MCDModel.IndividualContactDetails" ManuallyRouted="false" />
         <AssociationConnector Association="MCDModel.StudentNextOfKins" ManuallyRouted="false" />
-        <AssociationConnector Association="MCDModel.FK_EquiryHistory_Employees" ManuallyRouted="true" >
-          <ConnectorPoint PointX="5.7500005000000005" PointY="31.625" />
-          <ConnectorPoint PointX="5.7500005000000005" PointY="30.653382161458339" />
-          <ConnectorPoint PointX="4.75" PointY="30.653382161458339" />
-          <ConnectorPoint PointX="4.75" PointY="21.845683593750003" />
-          <ConnectorPoint PointX="3.875" PointY="21.845683593750003" />
-          <ConnectorPoint PointX="3.875" PointY="18.114889322916667" />
-          <ConnectorPoint PointX="4.6041661666666664" PointY="18.114889322916667" />
-          <ConnectorPoint PointX="4.7708328333333325" PointY="18.114889322916667" />
-          <ConnectorPoint PointX="5.541666666666667" PointY="18.114889322916667" />
-          <ConnectorPoint PointX="5.708333333333333" PointY="18.114889322916667" />
-          <ConnectorPoint PointX="5.75" PointY="18.114889322916667" />
-          <ConnectorPoint PointX="5.75" PointY="15.009095052083332" />
-          <ConnectorPoint PointX="5.375" PointY="15.009095052083332" />
-          <ConnectorPoint PointX="5.375" PointY="9.34568359375" />
-          <ConnectorPoint PointX="5.270833333333333" PointY="9.34568359375" />
-          <ConnectorPoint PointX="5.104166666666667" PointY="9.34568359375" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="9.34568359375" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="9.34568359375" />
-          <ConnectorPoint PointX="4.75" PointY="9.34568359375" />
-          <ConnectorPoint PointX="4.75" PointY="4.4994926875" />
-          <ConnectorPoint PointX="4.5" PointY="4.4994926875" />
+        <AssociationConnector Association="MCDModel.FK_EquiryHistory_Employees" ManuallyRouted="false" >
         </AssociationConnector>
         <EntityTypeShape EntityType="MCDModel.Login" Width="3.25" PointX="15.5" PointY="46" />
         <AssociationConnector Association="MCDModel.FK_Login_Employees" />
@@ -174,15 +152,15 @@
         <EntityTypeShape EntityType="MCDModel.LookupEnrollentDocumentType" Width="3.25" PointX="24.875" PointY="3" />
         <AssociationConnector Association="MCDModel.FK_ApprenticeshipEnrollmentDocuments_ApprienticeshipEnrollments" />
         <AssociationConnector Association="MCDModel.FK_ApprenticeshipEnrollmentDocuments_LookupEnrollentDocumentTypes" />
-        <AssociationConnector Association="MCDModel.FK_Schedules_CurriculumCourses" />
-        <AssociationConnector Association="MCDModel.FK_Schedules_Enrollments" />
         <EntityTypeShape EntityType="MCDModel.File" Width="1.5" PointX="22" PointY="6.75" />
         <AssociationConnector Association="MCDModel.FK_ApprenticeshipEnrollmentDocuments_Files" />
         <AssociationConnector Association="MCDModel.EmailMessageRepositoryAttachments" />
         <AssociationConnector Association="MCDModel.MessageTemplateAttachments" />
         <EntityTypeShape EntityType="MCDModel.LookupEquiryOrigion" Width="1.5" PointX="25" PointY="27.875" />
-        <AssociationConnector Association="MCDModel.FK_Schedules_CurriculumCourseEnrollments" />
         <AssociationConnector Association="MCDModel.EquiryOrigions" />
+        <EntityTypeShape EntityType="MCDModel.Schedule" Width="1.5" PointX="17.25" PointY="11.5" />
+        <AssociationConnector Association="MCDModel.FK_Schedules_CurriculumCourseEnrollments" />
+        <AssociationConnector Association="MCDModel.FK_Schedules_Enrollments" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

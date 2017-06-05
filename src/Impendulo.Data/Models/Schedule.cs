@@ -15,14 +15,12 @@ namespace Impendulo.Data.Models
     public partial class Schedule
     {
         public int ScheduleID { get; set; }
+        public int CurriculumCourseEnrollmentID { get; set; }
         public System.DateTime ScheduleStartDate { get; set; }
         public System.DateTime ScheduleCompletionDate { get; set; }
         public int EnrollmentID { get; set; }
-        public int CurriculumCourseID { get; set; }
-        public int CurriculumCourseEnrollmentID { get; set; }
     
-        public virtual CurriculumCourse CurriculumCours { get; set; }
-        public virtual Enrollment Enrollment { get; set; }
         public virtual CurriculumCourseEnrollment CurriculumCourseEnrollment { get; set; }
+        public virtual Enrollment Enrollment { get; set; }
     }
 }

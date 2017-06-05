@@ -193,6 +193,9 @@
     <Compile Include="Models\LookupEquiryHistoryType.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LookupEquiryOrigion.cs">
+      <DependentUpon>MCDEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\LookupEthnicity.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>

@@ -24,7 +24,6 @@ namespace Impendulo.Data.Models
             this.LookupSetas = new ObservableListSource<LookupSeta>();
             this.CurriculumEquirySelectedCourses = new ObservableListSource<CurriculumEquirySelectedCours>();
             this.CurriculumPrequisiteCourses = new ObservableListSource<CurriculumPrequisiteCourse>();
-            this.Schedules = new ObservableListSource<Schedule>();
         }
     
         public int CurriculumCourseID { get; set; }
@@ -54,7 +53,5 @@ namespace Impendulo.Data.Models
         public virtual ObservableListSource<CurriculumEquirySelectedCours> CurriculumEquirySelectedCourses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<CurriculumPrequisiteCourse> CurriculumPrequisiteCourses { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<Schedule> Schedules { get; set; }
     }
 }
