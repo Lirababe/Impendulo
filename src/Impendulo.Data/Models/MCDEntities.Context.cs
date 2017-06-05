@@ -96,6 +96,7 @@ namespace Impendulo.Data.Models
         public virtual DbSet<ApprenticeshipEnrollmentDocument> ApprenticeshipEnrollmentDocuments { get; set; }
         public virtual DbSet<LookupEnrollentDocumentType> LookupEnrollentDocumentTypes { get; set; }
         public virtual DbSet<File> Files { get; set; }
+        public virtual DbSet<LookupEquiryOrigion> LookupEquiryOrigions { get; set; }
     
         public virtual ObjectResult<CurriculumCourse> GetCurriculumCourseInOrder(Nullable<int> curriculumID)
         {

@@ -109,21 +109,21 @@
           <ConnectorPoint PointX="4.75" PointY="21.845683593750003" />
           <ConnectorPoint PointX="3.875" PointY="21.845683593750003" />
           <ConnectorPoint PointX="3.875" PointY="18.114889322916667" />
-          <ConnectorPoint PointX="5.948427593455758" PointY="15.483208148526128" />
-          <ConnectorPoint PointX="6.0515724065442411" PointY="15.352292430177567" />
-          <ConnectorPoint PointX="6.125" PointY="15.259095052083332" />
-          <ConnectorPoint PointX="6.083333333333333" PointY="15.259095052083332" />
-          <ConnectorPoint PointX="5.916666666666667" PointY="15.259095052083332" />
-          <ConnectorPoint PointX="5.75" PointY="15.259095052083332" />
-          <ConnectorPoint PointX="5.375" PointY="15.259095052083332" />
+          <ConnectorPoint PointX="4.6041661666666664" PointY="18.114889322916667" />
+          <ConnectorPoint PointX="4.7708328333333325" PointY="18.114889322916667" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="18.114889322916667" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="18.114889322916667" />
+          <ConnectorPoint PointX="5.75" PointY="18.114889322916667" />
+          <ConnectorPoint PointX="5.75" PointY="15.009095052083332" />
+          <ConnectorPoint PointX="5.375" PointY="15.009095052083332" />
           <ConnectorPoint PointX="5.375" PointY="9.34568359375" />
-          <ConnectorPoint PointX="5.1920391954698477" PointY="5.9917636450208374" />
-          <ConnectorPoint PointX="5.1829608045301523" PointY="5.8253444135728945" />
-          <ConnectorPoint PointX="5.125" PointY="4.762844174479163" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="4.7628441744791621" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="4.762844174479163" />
-          <ConnectorPoint PointX="4.75" PointY="4.762844174479163" />
-          <ConnectorPoint PointX="4.5" PointY="4.762844174479163" />
+          <ConnectorPoint PointX="5.270833333333333" PointY="9.34568359375" />
+          <ConnectorPoint PointX="5.104166666666667" PointY="9.34568359375" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="9.34568359375" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="9.34568359375" />
+          <ConnectorPoint PointX="4.75" PointY="9.34568359375" />
+          <ConnectorPoint PointX="4.75" PointY="4.4994926875" />
+          <ConnectorPoint PointX="4.5" PointY="4.4994926875" />
         </AssociationConnector>
         <EntityTypeShape EntityType="MCDModel.Login" Width="3.25" PointX="15.5" PointY="46" />
         <AssociationConnector Association="MCDModel.FK_Login_Employees" />
@@ -180,6 +180,9 @@
         <AssociationConnector Association="MCDModel.FK_ApprenticeshipEnrollmentDocuments_Files" />
         <AssociationConnector Association="MCDModel.EmailMessageRepositoryAttachments" />
         <AssociationConnector Association="MCDModel.MessageTemplateAttachments" />
+        <EntityTypeShape EntityType="MCDModel.LookupEquiryOrigion" Width="1.5" PointX="25" PointY="27.875" />
+        <AssociationConnector Association="MCDModel.FK_Schedules_CurriculumCourseEnrollments" />
+        <AssociationConnector Association="MCDModel.EquiryOrigions" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -345,6 +345,14 @@
           <Property Name="DateEnquiryUpdated" Type="datetime" Nullable="false" />
           <Property Name="EnquiryNotes" Type="varchar(max)" Nullable="false" />
         </EntityType>
+        <EntityType Name="EquiryOrigions">
+          <Key>
+            <PropertyRef Name="EnquiryID" />
+            <PropertyRef Name="EquiryOriginID" />
+          </Key>
+          <Property Name="EnquiryID" Type="int" Nullable="false" />
+          <Property Name="EquiryOriginID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="FacilitatorAssociatedCourses">
           <Key>
             <PropertyRef Name="FacilitatorAssociatedCourseID" />
@@ -500,6 +508,13 @@
           <Property Name="LookupEquiyHistoryTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LookupEquiyHistoryTypeName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="LookupEquiryOrigions">
+          <Key>
+            <PropertyRef Name="EquiryOriginID" />
+          </Key>
+          <Property Name="EquiryOriginID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EquiryOrigin" Type="varchar" MaxLength="150" />
+        </EntityType>
         <EntityType Name="LookupEthnicities">
           <Key>
             <PropertyRef Name="EthnicityID" />
@@ -622,10 +637,10 @@
             <PropertyRef Name="ScheduleID" />
           </Key>
           <Property Name="ScheduleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CurriculumCourseEnrollmentID" Type="int" Nullable="false" />
           <Property Name="ScheduleStartDate" Type="date" Nullable="false" />
           <Property Name="ScheduleCompletionDate" Type="date" Nullable="false" />
           <Property Name="EnrollmentID" Type="int" Nullable="false" />
-          <Property Name="CurriculumCourseID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="SMTPSettings">
           <Key>
@@ -1487,6 +1502,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_EquiryOrigions_Enquiry1">
+          <End Role="Enquiry" Type="Self.Enquiry" Multiplicity="1" />
+          <End Role="EquiryOrigions" Type="Self.EquiryOrigions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Enquiry">
+              <PropertyRef Name="EnquiryID" />
+            </Principal>
+            <Dependent Role="EquiryOrigions">
+              <PropertyRef Name="EnquiryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EquiryOrigions_LookupEquiryOrigions">
+          <End Role="LookupEquiryOrigions" Type="Self.LookupEquiryOrigions" Multiplicity="1" />
+          <End Role="EquiryOrigions" Type="Self.EquiryOrigions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LookupEquiryOrigions">
+              <PropertyRef Name="EquiryOriginID" />
+            </Principal>
+            <Dependent Role="EquiryOrigions">
+              <PropertyRef Name="EquiryOriginID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_FacilitatorAssociatedCourses_Courses">
           <End Role="Courses" Type="Self.Courses" Multiplicity="1" />
           <End Role="FacilitatorAssociatedCourses" Type="Self.FacilitatorAssociatedCourses" Multiplicity="*" />
@@ -1721,15 +1760,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Schedules_CurriculumCourses">
-          <End Role="CurriculumCourses" Type="Self.CurriculumCourses" Multiplicity="1" />
+        <Association Name="FK_Schedules_CurriculumCourseEnrollments">
+          <End Role="CurriculumCourseEnrollments" Type="Self.CurriculumCourseEnrollments" Multiplicity="1" />
           <End Role="Schedules" Type="Self.Schedules" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="CurriculumCourses">
-              <PropertyRef Name="CurriculumCourseID" />
+            <Principal Role="CurriculumCourseEnrollments">
+              <PropertyRef Name="CurriculumCourseEnrollmentID" />
             </Principal>
             <Dependent Role="Schedules">
-              <PropertyRef Name="CurriculumCourseID" />
+              <PropertyRef Name="CurriculumCourseEnrollmentID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1959,6 +1998,7 @@
           <EntitySet Name="Enrollments" EntityType="Self.Enrollments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EquiryAssociatedContacts" EntityType="Self.EquiryAssociatedContacts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EquiryHistory" EntityType="Self.EquiryHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EquiryOrigions" EntityType="Self.EquiryOrigions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FacilitatorAssociatedCourses" EntityType="Self.FacilitatorAssociatedCourses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FacilitatorQualifications" EntityType="Self.FacilitatorQualifications" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Facilitators" EntityType="Self.Facilitators" Schema="dbo" store:Type="Tables" />
@@ -1979,6 +2019,7 @@
           <EntitySet Name="LookupEnrollmentProgressStates" EntityType="Self.LookupEnrollmentProgressStates" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupEnrollmentTypes" EntityType="Self.LookupEnrollmentTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupEquiryHistoryTypes" EntityType="Self.LookupEquiryHistoryTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LookupEquiryOrigions" EntityType="Self.LookupEquiryOrigions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupEthnicities" EntityType="Self.LookupEthnicities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupGenders" EntityType="Self.LookupGenders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupMartialStatuses" EntityType="Self.LookupMartialStatuses" Schema="dbo" store:Type="Tables" />
@@ -2260,6 +2301,14 @@
             <End Role="LookupEquiryHistoryTypes" EntitySet="LookupEquiryHistoryTypes" />
             <End Role="EquiryHistory" EntitySet="EquiryHistory" />
           </AssociationSet>
+          <AssociationSet Name="FK_EquiryOrigions_Enquiry1" Association="Self.FK_EquiryOrigions_Enquiry1">
+            <End Role="Enquiry" EntitySet="Enquiry" />
+            <End Role="EquiryOrigions" EntitySet="EquiryOrigions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EquiryOrigions_LookupEquiryOrigions" Association="Self.FK_EquiryOrigions_LookupEquiryOrigions">
+            <End Role="LookupEquiryOrigions" EntitySet="LookupEquiryOrigions" />
+            <End Role="EquiryOrigions" EntitySet="EquiryOrigions" />
+          </AssociationSet>
           <AssociationSet Name="FK_FacilitatorAssociatedCourses_Courses" Association="Self.FK_FacilitatorAssociatedCourses_Courses">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="FacilitatorAssociatedCourses" EntitySet="FacilitatorAssociatedCourses" />
@@ -2336,8 +2385,8 @@
             <End Role="LookupTypeOfRelations" EntitySet="LookupTypeOfRelations" />
             <End Role="NextOfKins" EntitySet="NextOfKins" />
           </AssociationSet>
-          <AssociationSet Name="FK_Schedules_CurriculumCourses" Association="Self.FK_Schedules_CurriculumCourses">
-            <End Role="CurriculumCourses" EntitySet="CurriculumCourses" />
+          <AssociationSet Name="FK_Schedules_CurriculumCourseEnrollments" Association="Self.FK_Schedules_CurriculumCourseEnrollments">
+            <End Role="CurriculumCourseEnrollments" EntitySet="CurriculumCourseEnrollments" />
             <End Role="Schedules" EntitySet="Schedules" />
           </AssociationSet>
           <AssociationSet Name="FK_Schedules_Enrollments" Association="Self.FK_Schedules_Enrollments">
@@ -2503,6 +2552,7 @@
           <Property Name="EnrollmentID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CurriculumCourse" Relationship="Self.FK_CurriculumCourseEnrollments_CurriculumCourses" FromRole="CurriculumCourseEnrollments" ToRole="CurriculumCourses" />
           <NavigationProperty Name="Enrollment" Relationship="Self.FK_CurriculumCourseEnrollments_Enrollments1" FromRole="CurriculumCourseEnrollments" ToRole="Enrollments" />
+          <NavigationProperty Name="Schedules" Relationship="MCDModel.FK_Schedules_CurriculumCourseEnrollments" FromRole="CurriculumCourseEnrollment" ToRole="Schedule" />
         </EntityType>
         <EntityType Name="CurriculumCourseMinimumMaximum">
           <Key>
@@ -2850,6 +2900,8 @@
           <Property Name="CurriculumCourseID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CurriculumCours" Relationship="MCDModel.FK_Schedules_CurriculumCourses" FromRole="Schedule" ToRole="CurriculumCourse" />
           <NavigationProperty Name="Enrollment" Relationship="MCDModel.FK_Schedules_Enrollments" FromRole="Schedule" ToRole="Enrollment" />
+          <Property Name="CurriculumCourseEnrollmentID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CurriculumCourseEnrollment" Relationship="MCDModel.FK_Schedules_CurriculumCourseEnrollments" FromRole="Schedule" ToRole="CurriculumCourseEnrollment" />
         </EntityType>
         <EntityType Name="SMTPSetting">
           <Key>
@@ -3896,6 +3948,15 @@
             <End Role="File" EntitySet="Files" />
             <End Role="MessageTemplate" EntitySet="MessageTemplates" />
           </AssociationSet>
+          <EntitySet Name="LookupEquiryOrigions" EntityType="MCDModel.LookupEquiryOrigion" />
+          <AssociationSet Name="FK_Schedules_CurriculumCourseEnrollments" Association="MCDModel.FK_Schedules_CurriculumCourseEnrollments">
+            <End Role="CurriculumCourseEnrollment" EntitySet="CurriculumCourseEnrollments" />
+            <End Role="Schedule" EntitySet="Schedules" />
+          </AssociationSet>
+          <AssociationSet Name="EquiryOrigions" Association="MCDModel.EquiryOrigions">
+            <End Role="Enquiry" EntitySet="Enquiries" />
+            <End Role="LookupEquiryOrigion" EntitySet="LookupEquiryOrigions" />
+          </AssociationSet>
           </EntityContainer>
         <ComplexType Name="GetCurriculumCourseInOrder_Result">
           <Property Type="Int32" Name="CurriculumCourseID" Nullable="true" />
@@ -4302,6 +4363,7 @@
           <NavigationProperty Name="EmailMessageRepositories" Relationship="MCDModel.EnquiryEmailCorrespondence" FromRole="Enquiry" ToRole="EmailMessageRepository" />
           <NavigationProperty Name="Individuals" Relationship="MCDModel.EquiryAssociatedContacts" FromRole="Enquiry" ToRole="Individual" />
           <Property Name="InitialConsultationComplete" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="LookupEquiryOrigions" Relationship="MCDModel.EquiryOrigions" FromRole="Enquiry" ToRole="LookupEquiryOrigion" />
         </EntityType>
         <Association Name="FK_CurriculumEnquiries_Curriculums">
           <End Type="MCDModel.Curriculum" Role="Curriculum" Multiplicity="1" />
@@ -4514,6 +4576,30 @@
         <Association Name="MessageTemplateAttachments">
           <End Type="MCDModel.File" Role="File" Multiplicity="*" />
           <End Type="MCDModel.MessageTemplate" Role="MessageTemplate" Multiplicity="*" />
+        </Association>
+        <EntityType Name="LookupEquiryOrigion">
+          <Key>
+            <PropertyRef Name="EquiryOriginID" />
+          </Key>
+          <Property Name="EquiryOriginID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EquiryOrigin" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Enquiries" Relationship="MCDModel.EquiryOrigions" FromRole="LookupEquiryOrigion" ToRole="Enquiry" />
+        </EntityType>
+        <Association Name="FK_Schedules_CurriculumCourseEnrollments">
+          <End Type="MCDModel.CurriculumCourseEnrollment" Role="CurriculumCourseEnrollment" Multiplicity="1" />
+          <End Type="MCDModel.Schedule" Role="Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumCourseEnrollment">
+              <PropertyRef Name="CurriculumCourseEnrollmentID" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="CurriculumCourseEnrollmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EquiryOrigions">
+          <End Type="MCDModel.Enquiry" Role="Enquiry" Multiplicity="*" />
+          <End Type="MCDModel.LookupEquiryOrigion" Role="LookupEquiryOrigion" Multiplicity="*" />
         </Association>
         </Schema>
     </edmx:ConceptualModels>
@@ -4896,7 +4982,7 @@
           <EntitySetMapping Name="Schedules">
             <EntityTypeMapping TypeName="MCDModel.Schedule">
               <MappingFragment StoreEntitySet="Schedules">
-                <ScalarProperty Name="CurriculumCourseID" ColumnName="CurriculumCourseID" />
+                <ScalarProperty Name="CurriculumCourseEnrollmentID" ColumnName="CurriculumCourseEnrollmentID" />
                 <ScalarProperty Name="EnrollmentID" ColumnName="EnrollmentID" />
                 <ScalarProperty Name="ScheduleCompletionDate" ColumnName="ScheduleCompletionDate" />
                 <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
@@ -5344,6 +5430,22 @@
             </EndProperty>
             <EndProperty Name="File">
               <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="LookupEquiryOrigions">
+            <EntityTypeMapping TypeName="MCDModel.LookupEquiryOrigion">
+              <MappingFragment StoreEntitySet="LookupEquiryOrigions">
+                <ScalarProperty Name="EquiryOrigin" ColumnName="EquiryOrigin" />
+                <ScalarProperty Name="EquiryOriginID" ColumnName="EquiryOriginID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="EquiryOrigions" TypeName="MCDModel.EquiryOrigions" StoreEntitySet="EquiryOrigions">
+            <EndProperty Name="LookupEquiryOrigion">
+              <ScalarProperty Name="EquiryOriginID" ColumnName="EquiryOriginID" />
+            </EndProperty>
+            <EndProperty Name="Enquiry">
+              <ScalarProperty Name="EnquiryID" ColumnName="EnquiryID" />
             </EndProperty>
           </AssociationSetMapping>
           </EntityContainerMapping>

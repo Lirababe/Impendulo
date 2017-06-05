@@ -22,6 +22,7 @@ namespace Impendulo.Data.Models
             this.Companies = new ObservableListSource<Company>();
             this.EmailMessageRepositories = new ObservableListSource<EmailMessageRepository>();
             this.Individuals = new ObservableListSource<Individual>();
+            this.LookupEquiryOrigions = new ObservableListSource<LookupEquiryOrigion>();
         }
     
         public int EnquiryID { get; set; }
@@ -38,5 +39,7 @@ namespace Impendulo.Data.Models
         public virtual ObservableListSource<EmailMessageRepository> EmailMessageRepositories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<Individual> Individuals { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<LookupEquiryOrigion> LookupEquiryOrigions { get; set; }
     }
 }

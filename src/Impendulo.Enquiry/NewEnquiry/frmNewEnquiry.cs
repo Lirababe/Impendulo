@@ -234,19 +234,45 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
 
         #region Page 2 - Equiry Origion
         #region Refresh Methods
-
+        private void refreshEquiryOrigion()
+        {
+            this.populateEquiryOrigion();
+        }
         #endregion
 
         #region Populate Methods
+        private void populateEquiryOrigion()
+        {
+            if (flowLayoutPanelEquiryOrigion.Controls.Count == 0)
+            {
 
+            }
+        }
         #endregion
 
         #region Control Events
 
         #endregion
 
-        #region Logical Control Methods
+        #region Build Dynamic Controls
 
+        private void buildDynamicControlForEnquiryOrigion()
+        {
+
+            using (var Dbconnection = new MCDEntities())
+            {
+                List<LookupEquiryOrigion> LUEO = (from a in Dbconnection.LookupEquiryOrigions
+                                                  select a).ToList<LookupEquiryOrigion>();
+            };
+        }
+
+        #endregion
+
+        #region Logical Control Methods
+        private void buildEquiryOrigionControls()
+        {
+
+        }
         #endregion
         #endregion
 
@@ -692,8 +718,6 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
             this.setNavigationControls();
             this.loadupStep();
         }
-
-
         private void setNavigationControls()
         {
             if (iCurrentPosition == 0)
@@ -833,6 +857,11 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
         {
 
 
+        }
+
+        private void loadupEquiryOrigion()
+        {
+            refreshEquiryOrigion();
         }
         private void loadupEnquiryContactSelection()
         {

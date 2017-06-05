@@ -12,21 +12,18 @@ namespace Impendulo.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class CurriculumCourseEnrollment
+    public partial class LookupEquiryOrigion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CurriculumCourseEnrollment()
+        public LookupEquiryOrigion()
         {
-            this.Schedules = new ObservableListSource<Schedule>();
+            this.Enquiries = new ObservableListSource<Enquiry>();
         }
     
-        public int CurriculumCourseEnrollmentID { get; set; }
-        public int CurriculumCourseID { get; set; }
-        public int EnrollmentID { get; set; }
+        public int EquiryOriginID { get; set; }
+        public string EquiryOrigin { get; set; }
     
-        public virtual CurriculumCourse CurriculumCourse { get; set; }
-        public virtual Enrollment Enrollment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<Schedule> Schedules { get; set; }
+        public virtual ObservableListSource<Enquiry> Enquiries { get; set; }
     }
 }
