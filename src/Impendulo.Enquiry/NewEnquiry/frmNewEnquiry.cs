@@ -102,9 +102,6 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                 // this.Close();
 
             }
-
-
-
             this.setCenterDisplayPanels();
             this.setNavigationControls();
             this.loadupStep();
@@ -269,6 +266,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                 CheckBox chk = new CheckBox();
                 chk.Tag = item.EquiryOriginID;
                 chk.Text = item.EquiryOrigin;
+                chk.Width = 250;
                 flowLayoutPanelEquiryOrigion.Controls.Add(chk);
 
             }
