@@ -33,7 +33,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             dtpFrom.Value = new DateTime(Todaydate.Year, Todaydate.Month, 1);
             dtpTo.Value = new DateTime(Todaydate.Year, Todaydate.Month, 1).AddMonths(1).AddDays(-1);
 
-           
+
 
             this.enquiriesByMonth(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
 
@@ -222,7 +222,6 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
         private void rbNewEnquiryByMonth_CheckedChanged(object sender, EventArgs e)
         {
             this.NewEnquiryByMonth(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
-
         }
         /// <summary>
         /// 
@@ -282,7 +281,11 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 
         private void AmountOfPrivateVSCompanyEnquiriesPerMonth(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
         {
+            enquiryBindingSource1.Clear();
             chart2.Visible = true;
+
+            chart2.Series["Company"].Points.Clear();
+            chart2.Series["Private"].Points.Clear();
             //chart1.Visible = false;
             if (rbAmountOfPrivateVSCompanyEnquiriesPerMonth.Checked == true)
             {
@@ -294,17 +297,17 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
                 using (var Dbconnection = new MCDEntities())
                 {
                     var joinabc = from a in Dbconnection.Enquiries
-                                  from b in a.Companies
-                                  from c in b.Individuals
-                                  join d in Dbconnection.Companies on b.CompanyID equals d.CompanyID
-                                  join e in Dbconnection.Individuals on c.IndividualID equals e.IndividualID
-                                  //where a.EnquiryID == b.CompanyID
+                                      //from b in a.Companies
+                                  from c in a.Individuals
+                                      //join d in Dbconnection.Companies on b.CompanyID equals d.CompanyID
+                                      //join e in Dbconnection.Individuals on c.IndividualID equals e.IndividualID
+                                      //where a.EnquiryID == b.CompanyID
                                   group a by a.EnquiryDate into b
                                   select new
                                   {
                                       Date = b.Key,
-                                      CompanyEnquiries = b.Distinct().Count(),
-                                      PrivateEnquries = b.Distinct().Count()
+                                      CompanyEnquiries = b.Where(ab => ab.Companies.Count > 0).Count(),
+                                      PrivateEnquries = b.Select(ac => ac.Individuals.Where( ad => ad.Companies.Count == 0)).Count()
                                   };
 
                     enquiryBindingSource1.DataSource = joinabc.ToList();
@@ -332,7 +335,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
                     //Console.WriteLine("Default case");
                     break;
             }
-           
+
         }
     }
 }
