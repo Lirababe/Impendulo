@@ -47,8 +47,11 @@
             this.curriculumEnquiryBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.enrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enrollmentDataGridView = new System.Windows.Forms.DataGridView();
-            this.colSelection = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSelection = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -224,7 +227,10 @@
             this.enrollmentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.enrollmentDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSelection,
-            this.dataGridViewTextBoxColumn4});
+            this.dataGridViewTextBoxColumn4,
+            this.colFirstName,
+            this.colLastName,
+            this.colStatus});
             this.enrollmentDataGridView.DataSource = this.enrollmentBindingSource;
             this.enrollmentDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.enrollmentDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -232,17 +238,48 @@
             this.enrollmentDataGridView.Size = new System.Drawing.Size(733, 393);
             this.enrollmentDataGridView.TabIndex = 0;
             this.enrollmentDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.enrollmentDataGridView_CellContentClick);
+            this.enrollmentDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.enrollmentDataGridView_DataBindingComplete);
             // 
             // colSelection
             // 
+            this.colSelection.ActiveLinkColor = System.Drawing.Color.Blue;
+            this.colSelection.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colSelection.HeaderText = "";
             this.colSelection.Name = "colSelection";
+            this.colSelection.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSelection.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colSelection.Text = "Select";
+            this.colSelection.UseColumnTextForLinkValue = true;
+            this.colSelection.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.colSelection.Width = 21;
             // 
             // dataGridViewTextBoxColumn4
             // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "DateIntitiated";
-            this.dataGridViewTextBoxColumn4.HeaderText = "DateIntitiated";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Date Enrolled";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 96;
+            // 
+            // colFirstName
+            // 
+            this.colFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colFirstName.HeaderText = "First Name";
+            this.colFirstName.Name = "colFirstName";
+            this.colFirstName.Width = 82;
+            // 
+            // colLastName
+            // 
+            this.colLastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colLastName.HeaderText = "Last Name";
+            this.colLastName.Name = "colLastName";
+            this.colLastName.Width = 83;
+            // 
+            // colStatus
+            // 
+            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStatus.HeaderText = "Progress";
+            this.colStatus.Name = "colStatus";
             // 
             // frmEnrollmentSelectionForEquiry
             // 
@@ -275,8 +312,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.DataGridView enrollmentDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSelection;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.BindingSource enrollmentBindingSource;
         private System.Windows.Forms.BindingNavigator curriculumEnquiryBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
@@ -291,5 +326,10 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton curriculumEnquiryBindingNavigatorSaveItem;
+        private System.Windows.Forms.DataGridViewLinkColumn colSelection;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
     }
 }

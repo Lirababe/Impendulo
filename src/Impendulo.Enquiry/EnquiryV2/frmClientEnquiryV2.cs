@@ -552,35 +552,39 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
                     if (CE.Curriculum.DepartmentID == (int)EnumDepartments.Apprenticeship)
                     {
 
-
-                        frmApprenticeshipEnrollmentFormV2 frm6 = new frmApprenticeshipEnrollmentFormV2();
-                        frm6.CurrentCurriculumEnquiry = CE;
-                        frm6.ShowDialog();
-                        //Check to see if the amoount required to be enrolled equal the amount that have been enrolled.
-                        //if (CE.EnrollmentQuanity <= CE.Enrollments.Count)
-                        //{
-                        //    using (var Dbconnection = new MCDEntities())
-                        //    {
-                        //        Dbconnection.CurriculumEnquiries.Attach(CE);
-                        //        CE.EnquiryStatusID = (int)EnumEnquiryStatuses.Enquiry_Closed;
-                        //        CE.LastUpdated = DateTime.Now;
-                        //        Dbconnection.Entry<CurriculumEnquiry>(CE).State = System.Data.Entity.EntityState.Modified;
-                        //        Dbconnection.SaveChanges();
-                        //        Dbconnection.CurriculumEnquiries.Remove(CE);
-                        //        int currentIndex = NewEnquiryTab_NewEnquiryBindingSource.Position;
-                        //        refreshNewEnquiry();
-                        //        NewEnquiryTab_NewEnquiryBindingSource.Position = currentIndex;
-                        //        dgvNewEnquiryTab_CurriculumEnquiry.Refresh();
-
-                        //    };
-                        //}
-                        DialogResult Rtn1 = MessageBox.Show("Do you wish to View the Enrollment,and course selection?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                        if (Rtn1 == DialogResult.Yes)
+                        if (CE.EnrollmentQuanity >= CE.Enrollments.Count)
                         {
-                            frmEnrolmmentInprogress frm8 = new frmEnrolmmentInprogress();
-                            // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
-                            frm8.ShowDialog();
+                            frmApprenticeshipEnrollmentFormV2 frm6 = new frmApprenticeshipEnrollmentFormV2();
+                            frm6.CurrentCurriculumEnquiry = CE;
+                            curriculumEnquiriesBindingSource.ResetItem(e.RowIndex);
+                            frm6.ShowDialog();
+                            //Check to see if the amoount required to be enrolled equal the amount that have been enrolled.
+                            //if (CE.EnrollmentQuanity <= CE.Enrollments.Count)
+                            //{
+                            //    using (var Dbconnection = new MCDEntities())
+                            //    {
+                            //        Dbconnection.CurriculumEnquiries.Attach(CE);
+                            //        CE.EnquiryStatusID = (int)EnumEnquiryStatuses.Enquiry_Closed;
+                            //        CE.LastUpdated = DateTime.Now;
+                            //        Dbconnection.Entry<CurriculumEnquiry>(CE).State = System.Data.Entity.EntityState.Modified;
+                            //        Dbconnection.SaveChanges();
+                            //        Dbconnection.CurriculumEnquiries.Remove(CE);
+                            //        int currentIndex = NewEnquiryTab_NewEnquiryBindingSource.Position;
+                            //        refreshNewEnquiry();
+                            //        NewEnquiryTab_NewEnquiryBindingSource.Position = currentIndex;
+                            //        dgvNewEnquiryTab_CurriculumEnquiry.Refresh();
+
+                            //    };
+                            //}
+                            DialogResult Rtn1 = MessageBox.Show("Do you wish to View the Enrollment,and course selection?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            if (Rtn1 == DialogResult.Yes)
+                            {
+                                frmEnrolmmentInprogress frm8 = new frmEnrolmmentInprogress();
+                                // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
+                                frm8.ShowDialog();
+                            }
                         }
+
                     }
 
 
@@ -593,10 +597,11 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
                     if (frm10.SelectedEnrollmentID != 0)
                     {
                         frmEnrolmmentInprogress frm9 = new frmEnrolmmentInprogress();
+                        frm9.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
                         frm9.CurrentEnrollmentID = frm10.SelectedEnrollmentID;
                         frm9.ShowDialog();
                     }
-                  
+
                     break;
             }
         }

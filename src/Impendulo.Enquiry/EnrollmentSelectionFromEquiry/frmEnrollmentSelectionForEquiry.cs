@@ -17,6 +17,7 @@ namespace Impendulo.Enquiry.Development.EnrollmentSelectionFromEquiry
 
         public int SelectedCurriculumEnquiryID { get; set; }
         public int SelectedEnrollmentID { get; set; }
+        public Employee CurrentEmployeeLoggedIn { get; set; }
         public frmEnrollmentSelectionForEquiry()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace Impendulo.Enquiry.Development.EnrollmentSelectionFromEquiry
 
         private void frmEnrollmentSelectionForEquiry_Load(object sender, EventArgs e)
         {
-
+            populateEquiryEnrollments();
         }
 
         private void populateEquiryEnrollments()
@@ -34,14 +35,17 @@ namespace Impendulo.Enquiry.Development.EnrollmentSelectionFromEquiry
 
             using (var Dbconnection = new MCDEntities())
             {
-                enrollmentBindingSource.DataSource = (from a in Dbconnection.Enrollments
-                                                      from b in a.CurriculumEnquiries
-                                                      where b.CurriculumEnquiryID == this.SelectedCurriculumEnquiryID
-                                                      select a)
-                                                      .Include("Student")
-                                                      .Include("Curriculum")
-                                                      .Include("LookupEnrollmentProgressState")
-                                                      .ToList<Enrollment>();
+                var Reslut = (from a in Dbconnection.Enrollments
+                              from b in a.CurriculumEnquiries
+                              where b.CurriculumEnquiryID == this.SelectedCurriculumEnquiryID
+                              //&& a.LookupEnrollmentProgressStateID == (int)Common.Enum.EnumEnrollmentProgressStates.In_Progress
+                              select a)
+                                                        .Include("Student")
+                                                        .Include("Student.Individual")
+                                                        .Include("Curriculum")
+                                                        .Include("LookupEnrollmentProgressState")
+                                                        .ToList<Enrollment>();
+                enrollmentBindingSource.DataSource = Reslut;
             };
         }
 
@@ -51,9 +55,26 @@ namespace Impendulo.Enquiry.Development.EnrollmentSelectionFromEquiry
             {
                 case 0:
                     SelectedEnrollmentID = ((Enrollment)enrollmentBindingSource.Current).EnrollmentID;
+                    this.Close();
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void enrollmentDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            var gridView = (DataGridView)sender;
+            foreach (DataGridViewRow row in gridView.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    var EnrollmentObj = (Enrollment)(row.DataBoundItem);
+                    row.Cells[colFirstName.Index].Value = EnrollmentObj.Student.Individual.IndividualFirstName.ToString();
+                    row.Cells[colLastName.Index].Value = EnrollmentObj.Student.Individual.IndividualLastname.ToString();
+                    row.Cells[colStatus.Index].Value = EnrollmentObj.LookupEnrollmentProgressState.EnrollmentProgressCurrentState.ToString();
+
+                }
             }
         }
     }

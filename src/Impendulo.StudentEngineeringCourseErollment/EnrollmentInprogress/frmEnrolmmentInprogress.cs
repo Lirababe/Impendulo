@@ -488,6 +488,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             };
 
             frmSendEmail frm = new frmSendEmail();
+           
 
             List<ContactDetail> CustomEmailPerson = (from a in CurrentEnquiryObj.Individuals
                                                      from b in a.ContactDetails
