@@ -23,6 +23,7 @@ using Impendulo.MessageTemplates.Deployment;
 using Impendulo.Employees.Deployment1;
 using Impendulo.StudentEngineeringCourseErollment.Deployment;
 using Impendulo.Enquiry.Deployment.frmClientEnquiry;
+using Impendulo.WizardForm.ClientEnquiry.Deployment;
 
 namespace Impendulo.MainApplication
 {
@@ -321,6 +322,26 @@ namespace Impendulo.MainApplication
             }
 
             frmMessageTemplates frm = new frmMessageTemplates();
+
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnEnquiyNew_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(frmNewEnquiry))
+                {
+                    f.Activate();
+                    //f.WindowState = FormWindowState.Maximized;
+                    return;
+                }
+            }
+
+            frmNewEnquiry frm = new frmNewEnquiry();
+
+            frm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
 
             frm.MdiParent = this;
             frm.Show();

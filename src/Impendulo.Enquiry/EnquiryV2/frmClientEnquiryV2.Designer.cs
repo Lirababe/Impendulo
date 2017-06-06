@@ -37,15 +37,15 @@
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label12;
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientEnquiryV2));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabEnquiryWorkbench = new System.Windows.Forms.TabControl();
             this.tpEnquiryHome = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -90,7 +90,6 @@
             this.tsbtnRefreshCourseSearch = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCurriculum = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -650,21 +649,22 @@
             // chart1
             // 
             this.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(3, 219);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(820, 179);
             this.chart1.TabIndex = 5;
             this.chart1.TabStop = false;
-            title2.Name = "Summary";
-            this.chart1.Titles.Add(title2);
+            title1.Name = "Summary";
+            this.chart1.Titles.Add(title1);
+            this.chart1.Visible = false;
             // 
             // groupBox4
             // 
@@ -681,6 +681,7 @@
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "In Progress Enquiry";
+            this.groupBox4.Visible = false;
             // 
             // textBox3
             // 
@@ -1107,7 +1108,7 @@
             this.bindingNavigatorCurriculum.BindingSource = this.NewEnquiryTab_NewEnquiryBindingSource;
             this.bindingNavigatorCurriculum.CanOverflow = false;
             this.bindingNavigatorCurriculum.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigatorCurriculum.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingNavigatorCurriculum.DeleteItem = null;
             this.bindingNavigatorCurriculum.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigatorCurriculum.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.bindingNavigatorCurriculum.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1121,7 +1122,6 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.btnAddNewEnquiry,
-            this.bindingNavigatorDeleteItem,
             this.toolStripSeparator10});
             this.bindingNavigatorCurriculum.Location = new System.Drawing.Point(0, 27);
             this.bindingNavigatorCurriculum.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -1140,15 +1140,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -1212,12 +1203,11 @@
             // 
             // btnAddNewEnquiry
             // 
-            this.btnAddNewEnquiry.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnAddNewEnquiry.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewEnquiry.Image")));
             this.btnAddNewEnquiry.Name = "btnAddNewEnquiry";
             this.btnAddNewEnquiry.RightToLeftAutoMirrorImage = true;
-            this.btnAddNewEnquiry.Size = new System.Drawing.Size(23, 22);
-            this.btnAddNewEnquiry.Text = "Add new";
+            this.btnAddNewEnquiry.Size = new System.Drawing.Size(112, 22);
+            this.btnAddNewEnquiry.Text = "Add New Equiry";
             this.btnAddNewEnquiry.Click += new System.EventHandler(this.btnAddNewEnquiry_Click);
             // 
             // toolStripSeparator10
@@ -3556,9 +3546,9 @@
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "EnquiryDate";
-            dataGridViewCellStyle5.Format = "D";
-            dataGridViewCellStyle5.NullValue = null;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Format = "D";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn2.HeaderText = "Enquiry Date";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -3595,9 +3585,9 @@
             // 
             this.lastUpdatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.lastUpdatedDataGridViewTextBoxColumn.DataPropertyName = "LastUpdated";
-            dataGridViewCellStyle6.Format = "f";
-            dataGridViewCellStyle6.NullValue = null;
-            this.lastUpdatedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Format = "f";
+            dataGridViewCellStyle2.NullValue = null;
+            this.lastUpdatedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.lastUpdatedDataGridViewTextBoxColumn.HeaderText = "Last Updated";
             this.lastUpdatedDataGridViewTextBoxColumn.Name = "lastUpdatedDataGridViewTextBoxColumn";
             this.lastUpdatedDataGridViewTextBoxColumn.ReadOnly = true;
@@ -3631,9 +3621,9 @@
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "EnquiryDate";
-            dataGridViewCellStyle7.Format = "D";
-            dataGridViewCellStyle7.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Format = "D";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn5.HeaderText = "Enquiry Date";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
@@ -3655,9 +3645,9 @@
             // lastUpdatedDataGridViewTextBoxColumn3
             // 
             this.lastUpdatedDataGridViewTextBoxColumn3.DataPropertyName = "LastUpdated";
-            dataGridViewCellStyle8.Format = "f";
-            dataGridViewCellStyle8.NullValue = null;
-            this.lastUpdatedDataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Format = "f";
+            dataGridViewCellStyle4.NullValue = null;
+            this.lastUpdatedDataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
             this.lastUpdatedDataGridViewTextBoxColumn3.HeaderText = "Last Updated";
             this.lastUpdatedDataGridViewTextBoxColumn3.Name = "lastUpdatedDataGridViewTextBoxColumn3";
             this.lastUpdatedDataGridViewTextBoxColumn3.ReadOnly = true;
@@ -3896,7 +3886,6 @@
         private System.Windows.Forms.DataGridView dgvNewEnquiryTab_NewEnquiry;
         private System.Windows.Forms.BindingNavigator bindingNavigatorCurriculum;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;

@@ -936,6 +936,20 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                 Dbconnection.Entry(CurrentEnquiry).State = EntityState.Added;
                 Dbconnection.SaveChanges();
 
+                foreach (CheckBox chk in flowLayoutPanelEquiryOrigion.Controls)
+                {
+                    if (chk.Checked)
+                    {
+                        LookupEquiryOrigion LEO = new LookupEquiryOrigion();
+                        LEO.EquiryOriginID = (int)chk.Tag;
+                        Dbconnection.LookupEquiryOrigions.Attach(LEO);
+
+                        CurrentEnquiry.LookupEquiryOrigions.Add(LEO);
+                    }
+                    
+                }
+                Dbconnection.SaveChanges();
+
                 /*Adds Each of the Curriculum Selected for this equiry*/
                 foreach (CurriculumEnquiry CE in SelectedEnquiryCurriculum)
                 {
@@ -948,7 +962,6 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                     CE.LastUpdated = DateTime.Now;
                     CE.EnquiryStatusID = CE.EnquiryStatusID;
                     CurrentEnquiry.CurriculumEnquiries.Add(CE);
-
                 }
 
                 EquiryHistory AddingContactDetailsHistory = new EquiryHistory

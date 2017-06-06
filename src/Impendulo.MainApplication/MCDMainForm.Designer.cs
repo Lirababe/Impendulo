@@ -48,6 +48,7 @@
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel9 = new System.Windows.Forms.RibbonPanel();
             this.btnEquiryList = new System.Windows.Forms.RibbonButton();
+            this.btnEnquiyNew = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
@@ -66,6 +67,7 @@
             this.ribbonPanel14 = new System.Windows.Forms.RibbonPanel();
             this.btnDatabaseSettings = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel17 = new System.Windows.Forms.RibbonPanel();
+            this.tbnEditMessageTemplates = new System.Windows.Forms.RibbonButton();
             this.ribbonTab6 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel15 = new System.Windows.Forms.RibbonPanel();
             this.btnCompany = new System.Windows.Forms.RibbonButton();
@@ -106,7 +108,6 @@
             this.ribbonSeparator9 = new System.Windows.Forms.RibbonSeparator();
             this.ribbonSeparator10 = new System.Windows.Forms.RibbonSeparator();
             this.ribbonTextBox1 = new System.Windows.Forms.RibbonTextBox();
-            this.tbnEditMessageTemplates = new System.Windows.Forms.RibbonButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -258,6 +259,7 @@
             // ribbonPanel9
             // 
             this.ribbonPanel9.Items.Add(this.btnEquiryList);
+            this.ribbonPanel9.Items.Add(this.btnEnquiyNew);
             this.ribbonPanel9.Text = "Enquiries";
             // 
             // btnEquiryList
@@ -265,8 +267,16 @@
             this.btnEquiryList.Image = ((System.Drawing.Image)(resources.GetObject("btnEquiryList.Image")));
             this.btnEquiryList.MinimumSize = new System.Drawing.Size(110, 0);
             this.btnEquiryList.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnEquiryList.SmallImage")));
-            this.btnEquiryList.Text = "Enquires List";
+            this.btnEquiryList.Text = "Enquires Workbench";
             this.btnEquiryList.Click += new System.EventHandler(this.btnEquiryList_Click);
+            // 
+            // btnEnquiyNew
+            // 
+            this.btnEnquiyNew.Image = ((System.Drawing.Image)(resources.GetObject("btnEnquiyNew.Image")));
+            this.btnEnquiyNew.MinimumSize = new System.Drawing.Size(110, 0);
+            this.btnEnquiyNew.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnEnquiyNew.SmallImage")));
+            this.btnEnquiyNew.Text = "New Enquiy";
+            this.btnEnquiyNew.Click += new System.EventHandler(this.btnEnquiyNew_Click);
             // 
             // ribbonPanel10
             // 
@@ -366,6 +376,15 @@
             // 
             this.ribbonPanel17.Items.Add(this.tbnEditMessageTemplates);
             this.ribbonPanel17.Text = "Process Templates";
+            // 
+            // tbnEditMessageTemplates
+            // 
+            this.tbnEditMessageTemplates.Image = ((System.Drawing.Image)(resources.GetObject("tbnEditMessageTemplates.Image")));
+            this.tbnEditMessageTemplates.MinimumSize = new System.Drawing.Size(125, 0);
+            this.tbnEditMessageTemplates.SmallImage = ((System.Drawing.Image)(resources.GetObject("tbnEditMessageTemplates.SmallImage")));
+            this.tbnEditMessageTemplates.Text = "Edit Update";
+            this.tbnEditMessageTemplates.ToolTip = "Shows Message Template Settings";
+            this.tbnEditMessageTemplates.Click += new System.EventHandler(this.btnEditMessageTeplates_Click);
             // 
             // ribbonTab6
             // 
@@ -579,15 +598,6 @@
             this.ribbonTextBox1.Text = "ribbonTextBox1";
             this.ribbonTextBox1.TextBoxText = "";
             // 
-            // tbnEditMessageTemplates
-            // 
-            this.tbnEditMessageTemplates.Image = ((System.Drawing.Image)(resources.GetObject("tbnEditMessageTemplates.Image")));
-            this.tbnEditMessageTemplates.MinimumSize = new System.Drawing.Size(125, 0);
-            this.tbnEditMessageTemplates.SmallImage = ((System.Drawing.Image)(resources.GetObject("tbnEditMessageTemplates.SmallImage")));
-            this.tbnEditMessageTemplates.Text = "Edit Update";
-            this.tbnEditMessageTemplates.ToolTip = "Shows Message Template Settings";
-            this.tbnEditMessageTemplates.Click += new System.EventHandler(this.btnEditMessageTeplates_Click);
-            // 
             // toolTip1
             // 
             this.toolTip1.ToolTipTitle = "Shows Template Settings";
@@ -693,6 +703,7 @@
         private System.Windows.Forms.RibbonTextBox ribbonTextBox1;
         private System.Windows.Forms.RibbonButton tbnEditMessageTemplates;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.RibbonButton btnEnquiyNew;
     }
 }
 

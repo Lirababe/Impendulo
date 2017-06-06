@@ -600,7 +600,6 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
         private void btnUpdateQty_Click(object sender, EventArgs e)
         {
             frmUpdateSelectedCurriculumEnrollQty frm = new frmUpdateSelectedCurriculumEnrollQty();
-
             frm.CurrentCurriculumEnquiry = (CurriculumEnquiry)this.curriculumEnquiryBindingSource.Current;
             frm.ShowDialog();
             this.refreshSelectedCurriculum();
@@ -935,6 +934,20 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
                 Dbconnection.Entry(CurrentEnquiry).State = EntityState.Added;
                 Dbconnection.SaveChanges();
 
+                foreach (CheckBox chk in flowLayoutPanelEquiryOrigion.Controls)
+                {
+                    if (chk.Checked)
+                    {
+                        LookupEquiryOrigion LEO = new LookupEquiryOrigion();
+                        LEO.EquiryOriginID = (int)chk.Tag;
+                        Dbconnection.LookupEquiryOrigions.Attach(LEO);
+
+                        CurrentEnquiry.LookupEquiryOrigions.Add(LEO);
+                    }
+                    
+                }
+                Dbconnection.SaveChanges();
+
                 /*Adds Each of the Curriculum Selected for this equiry*/
                 foreach (CurriculumEnquiry CE in SelectedEnquiryCurriculum)
                 {
@@ -947,7 +960,6 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
                     CE.LastUpdated = DateTime.Now;
                     CE.EnquiryStatusID = CE.EnquiryStatusID;
                     CurrentEnquiry.CurriculumEnquiries.Add(CE);
-
                 }
 
                 EquiryHistory AddingContactDetailsHistory = new EquiryHistory

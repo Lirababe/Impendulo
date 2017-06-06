@@ -133,7 +133,6 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(288, 20);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "Password!";
             // 
             // label1
             // 
@@ -163,7 +162,6 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(288, 20);
             this.txtUserName.TabIndex = 0;
-            this.txtUserName.Text = "Melanie";
             // 
             // frmLogin
             // 
