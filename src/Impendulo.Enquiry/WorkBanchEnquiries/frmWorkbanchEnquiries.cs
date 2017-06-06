@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Impendulo.Data.Models;
 using Impendulo.Common.Enum;
+using System.Data.Entity;
 
 namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 {
@@ -31,9 +32,8 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             lbCurrentDateTime.Text = Todaydate.ToShortDateString();
             dtpFrom.Value = new DateTime(Todaydate.Year, Todaydate.Month, 1);
             dtpTo.Value = new DateTime(Todaydate.Year, Todaydate.Month, 1).AddMonths(1).AddDays(-1);
-            
-            /*load queries*/
-            LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
+
+           
 
             this.enquiriesByMonth(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
 
@@ -41,7 +41,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 
             //make chart2 invisible
             chart2.Visible = false;
-           
+
 
         }
 
@@ -92,7 +92,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             };
             return Rtn;
         }
-        
+
         private List<Data.Models.Enquiry> getCompanyEnquiry(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
         {
             List<Data.Models.Enquiry> Rtn = new List<Data.Models.Enquiry>();
@@ -101,10 +101,8 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
                 //company enquiries
                 //lblCompanyEnquiry.Text
                 Rtn = (from a in Dbconnection.Enquiries
-                                          from b in a.Companies
-                                          join c in Dbconnection.Companies on b.CompanyID equals c.CompanyID
-                                          where a.EnquiryID == a.EnquiryID && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate
-                                          select a).ToList<Data.Models.Enquiry>();
+                       where a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && a.Companies.Count > 0
+                       select a).ToList<Data.Models.Enquiry>();
             }
             return Rtn;
         }
@@ -117,8 +115,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
                 //lblPrivateEquiries.Text 
                 Rtn = (from a in Dbconnection.Enquiries
                        from b in a.Individuals
-                       join c in Dbconnection.Individuals on b.IndividualID equals c.IndividualID
-                       where a.EnquiryID == a.EnquiryID && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate
+                       where a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Companies.Count == 0
                        select a).ToList<Data.Models.Enquiry>();
             }
 
@@ -160,16 +157,16 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
                 DateTime queryDatetime = Impendulo.Common.CustomerDateTime.CustomerDateTime.getCustomDateTime(DateTime.Now, -4);
                 //DateTime queryDatetime = getCustDateTime(DateTime.Now, -4);
                 Rtn = (from a in Dbconnection.Enquiries
-                                            from b in a.CurriculumEnquiries
-                                            where
-                                            //Enquiriesw are deemed Over Due if not responded to with in 3 Working Days
-                                            a.EnquiryDate <= queryDatetime &&
-                                            b.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed &&
-                                            b.Curriculum.DepartmentID == (int)aDepartment
-                                            select a).ToList<Data.Models.Enquiry>();
+                       from b in a.CurriculumEnquiries
+                       where
+                       //Enquiriesw are deemed Over Due if not responded to with in 3 Working Days
+                       a.EnquiryDate <= queryDatetime &&
+                       b.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed &&
+                       b.Curriculum.DepartmentID == (int)aDepartment
+                       select a).ToList<Data.Models.Enquiry>();
             };
             //Over due enquiries
-           
+
             return Rtn;
         }
         private void dtpTo_ValueChanged(object sender, EventArgs e)
@@ -205,7 +202,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
                                        from b in a.CurriculumEnquiries
                                        where a.EnquiryID != 1 && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
 
-                                      // where a.EnquiryID != 1 && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
+                                       // where a.EnquiryID != 1 && a.EnquiryDate >= FromDate && a.EnquiryDate <= Todate && b.Curriculum.DepartmentID == (int)aDepartment
 
                                        group a by a.EnquiryDate into b
                                        select new
@@ -225,7 +222,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
         private void rbNewEnquiryByMonth_CheckedChanged(object sender, EventArgs e)
         {
             this.NewEnquiryByMonth(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
-            
+
         }
         /// <summary>
         /// 
@@ -253,7 +250,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 
         private void NewEnquiryByMonth(DateTime FromDate, DateTime Todate, EnumDepartments aDepartment)
         {
-            
+
             if (rbNewEnquiryByMonth.Checked == true)
             {
                 lblGraphTitle.Text = "NEW ENQUIRY BY MONTH";
@@ -318,6 +315,24 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 
 
             }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabControl1.SelectedIndex)
+            {
+                case 1:
+                    /*load queries*/
+                    LoadItems(dtpFrom.Value, dtpTo.Value, EnumDepartments.Apprenticeship);
+                    break;
+                case 2:
+                    //Console.WriteLine("Case 2");
+                    break;
+                default:
+                    //Console.WriteLine("Default case");
+                    break;
+            }
+           
         }
     }
 }

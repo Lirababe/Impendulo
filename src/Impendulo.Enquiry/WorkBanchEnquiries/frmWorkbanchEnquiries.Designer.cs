@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpMainPage = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -71,7 +71,10 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblGraphTitle = new System.Windows.Forms.Label();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.enquiryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.enquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbCurrentDateTime = new System.Windows.Forms.Label();
@@ -82,9 +85,6 @@
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.enquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.enquiryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tpMainPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -107,11 +107,11 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).BeginInit();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -126,6 +126,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(809, 477);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tpMainPage
             // 
@@ -245,7 +246,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.89874F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 204F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
             this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel3, 2, 0);
@@ -299,7 +300,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(133, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(135, 145);
+            this.panel2.Size = new System.Drawing.Size(134, 145);
             this.panel2.TabIndex = 1;
             // 
             // label9
@@ -328,7 +329,7 @@
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.lblOverDueEnquiries);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(274, 3);
+            this.panel3.Location = new System.Drawing.Point(273, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(149, 145);
             this.panel3.TabIndex = 2;
@@ -359,7 +360,7 @@
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.lblPrivateEquiries);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(429, 3);
+            this.panel5.Location = new System.Drawing.Point(428, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(152, 145);
             this.panel5.TabIndex = 4;
@@ -390,9 +391,9 @@
             this.panel6.Controls.Add(this.label15);
             this.panel6.Controls.Add(this.lblCompanyEnquiry);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(587, 3);
+            this.panel6.Location = new System.Drawing.Point(586, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(199, 145);
+            this.panel6.Size = new System.Drawing.Size(200, 145);
             this.panel6.TabIndex = 5;
             // 
             // label15
@@ -520,6 +521,31 @@
             this.lblGraphTitle.TabIndex = 0;
             this.lblGraphTitle.Text = "{Graph Title - Change as selected on the left}";
             // 
+            // chart2
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            this.chart2.DataSource = this.enquiryBindingSource1;
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
+            this.chart2.Location = new System.Drawing.Point(4, 0);
+            this.chart2.Name = "chart2";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Company";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Private";
+            this.chart2.Series.Add(series1);
+            this.chart2.Series.Add(series2);
+            this.chart2.Size = new System.Drawing.Size(533, 165);
+            this.chart2.TabIndex = 4;
+            this.chart2.Text = "chart2";
+            // 
+            // enquiryBindingSource1
+            // 
+            this.enquiryBindingSource1.DataSource = typeof(Impendulo.Data.Models.Enquiry);
+            // 
             // chart1
             // 
             chartArea2.Name = "ChartArea1";
@@ -540,6 +566,11 @@
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
             this.chart1.Titles.Add(title1);
+            // 
+            // enquiryBindingSource
+            // 
+            this.enquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
+            this.enquiryBindingSource.Filter = "";
             // 
             // groupBox6
             // 
@@ -639,36 +670,6 @@
             this.tabPage3.Text = "SoftSkills";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // chart2
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
-            this.chart2.DataSource = this.enquiryBindingSource1;
-            legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(4, 0);
-            this.chart2.Name = "chart2";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Company";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Private";
-            this.chart2.Series.Add(series1);
-            this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(533, 165);
-            this.chart2.TabIndex = 4;
-            this.chart2.Text = "chart2";
-            // 
-            // enquiryBindingSource
-            // 
-            this.enquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
-            this.enquiryBindingSource.Filter = "";
-            // 
-            // enquiryBindingSource1
-            // 
-            this.enquiryBindingSource1.DataSource = typeof(Impendulo.Data.Models.Enquiry);
-            // 
             // frmWorkbanchEnquiries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -707,12 +708,12 @@
             this.splitContainer2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
