@@ -19,6 +19,8 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
     public partial class frmApprenticeshipEnrollmentForm : Form
     {
 
+
+
         int iCurrentPosition = 0;
         //MCDEntities Dbconnection;
         //Student StudentObj;
@@ -548,7 +550,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
                     };
 
                     CurrentCurriculumEnquiry.Enrollments.Add(CurrentEnrollments);
-                  
+
                     Dbconnection.SaveChanges();
                     /*End Step 1 */
 
@@ -570,19 +572,21 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
                             IndividualID = CurrentSelectedStudent.StudentID,
                             DateIntitiated = DateTime.Now
                         };
+
+                        //CurrentCurriculumEnquiry.Enrollments.Add(PreRequisisteCourseEnrollment);
                         Dbconnection.Enrollments.Add(PreRequisisteCourseEnrollment);
                         Dbconnection.SaveChanges();
 
                         CurriculumCourseEnrollment CCE = new CurriculumCourseEnrollment
                         {
-                             EnrollmentID = PreRequisisteCourseEnrollment.EnrollmentID,
-                              CurriculumCourseID = CurrentCPC.CurriculumCourse.CurriculumCourseID
+                            EnrollmentID = PreRequisisteCourseEnrollment.EnrollmentID,
+                            CurriculumCourseID = CurrentCPC.CurriculumCourse.CurriculumCourseID
                         };
                         Dbconnection.CurriculumCourseEnrollments.Add(CCE);
                         Dbconnection.SaveChanges();
                     }
 
-                    /* End Step 2*/
+                    /* End Step 3*/
 
                     foreach (File f in CurrentEnrollmentFormDocument)
                     {
@@ -590,7 +594,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
                         {
                             ImageID = f.ImageID,
                             EnrollmentID = CurrentEnrollments.EnrollmentID,
-                             LookupEnrollentDocumentTypeID = (int)EnumEnrollentDocumentTypes.Enrollment_Documents
+                            LookupEnrollentDocumentTypeID = (int)EnumEnrollentDocumentTypes.Enrollment_Documents
                         });
                     }
                     foreach (File f in CurrentIDDocument)

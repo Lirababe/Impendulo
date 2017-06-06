@@ -1,6 +1,4 @@
-﻿using Impendulo.WizardForm.ClientEnquiry.Deployment;
-
-namespace Impendulo.WizardForm.ClientEnquiry.Deployment
+﻿namespace Impendulo.WizardForm.ClientEnquiry.Deployment
 {
     partial class frmApprenticeshipEnrollmentForm
     {
@@ -22,9 +20,9 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
 
         /// <summary>
+        #region Windows Form Designer generated code
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
