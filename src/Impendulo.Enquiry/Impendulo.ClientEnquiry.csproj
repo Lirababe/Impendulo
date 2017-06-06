@@ -80,6 +80,12 @@
     <Compile Include="EnquiryV2\frmClientEnquiryV2.Designer.cs">
       <DependentUpon>frmClientEnquiryV2.cs</DependentUpon>
     </Compile>
+    <Compile Include="EnrollmentSelectionFromEquiry\frmEnrollmentSelectionForEquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSelectionFromEquiry\frmEnrollmentSelectionForEquiry.Designer.cs">
+      <DependentUpon>frmEnrollmentSelectionForEquiry.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAllFormInProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     <EmbeddedResource Include="EnquiryV2\frmClientEnquiryV2.resx">
       <DependentUpon>frmClientEnquiryV2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentSelectionFromEquiry\frmEnrollmentSelectionForEquiry.resx">
+      <DependentUpon>frmEnrollmentSelectionForEquiry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAllFormInProject.resx">
       <DependentUpon>frmAllFormInProject.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +226,7 @@
     <None Include="Properties\DataSources\Impendulo.Data.Models.Curriculum.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.CurriculumEnquiry.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.Enquiry.datasource" />
+    <None Include="Properties\DataSources\Impendulo.Data.Models.Enrollment.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.Individual.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.LookupDepartment.datasource" />
     <None Include="Properties\Settings.settings">

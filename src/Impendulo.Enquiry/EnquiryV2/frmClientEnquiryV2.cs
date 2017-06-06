@@ -19,6 +19,7 @@ using Impendulo.Enquiry.Development.ViewHistory;
 using Impendulo.Email.Development;
 using Impendulo.StudentEngineeringCourseErollment.Devlopment;
 using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInprogress;
+using Impendulo.Enquiry.Development.EnrollmentSelectionFromEquiry;
 
 namespace Impendulo.Enquiry.Development.EnquiryV2.Development
 {
@@ -586,9 +587,16 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
                     //frm6.CurrentEnrollments.ApprienticeshipEnrollment.(CE);
                     break;
                 case 11:
-                    frmEnrolmmentInprogress frm9 = new frmEnrolmmentInprogress();
-                    // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
-                    frm9.ShowDialog();
+                    frmEnrollmentSelectionForEquiry frm10 = new frmEnrollmentSelectionForEquiry();
+                    frm10.SelectedCurriculumEnquiryID = CE.CurriculumEnquiryID;
+                    frm10.ShowDialog();
+                    if (frm10.SelectedEnrollmentID != 0)
+                    {
+                        frmEnrolmmentInprogress frm9 = new frmEnrolmmentInprogress();
+                        frm9.CurrentEnrollmentID = frm10.SelectedEnrollmentID;
+                        frm9.ShowDialog();
+                    }
+                  
                     break;
             }
         }
