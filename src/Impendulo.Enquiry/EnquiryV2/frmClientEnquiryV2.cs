@@ -423,7 +423,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
                     break;
                 //Close the Equiry
                 case 3:
-                    
+
                     frmEnquiryViewHistory frm5 = new frmEnquiryViewHistory();
                     frm5.CurrentEnquiryID = CurrentEnquiryObj.EnquiryID;
                     frm5.ShowDialog();
@@ -550,29 +550,29 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
                 case 10:
                     if (CE.Curriculum.DepartmentID == (int)EnumDepartments.Apprenticeship)
                     {
-                        
+
 
                         frmApprenticeshipEnrollmentFormV2 frm6 = new frmApprenticeshipEnrollmentFormV2();
                         frm6.CurrentCurriculumEnquiry = CE;
                         frm6.ShowDialog();
                         //Check to see if the amoount required to be enrolled equal the amount that have been enrolled.
-                        if (CE.EnrollmentQuanity <= CE.Enrollments.Count)
-                        {
-                            using (var Dbconnection = new MCDEntities())
-                            {
-                                Dbconnection.CurriculumEnquiries.Attach(CE);
-                                CE.EnquiryStatusID = (int)EnumEnquiryStatuses.Enquiry_Closed;
-                                CE.LastUpdated = DateTime.Now;
-                                Dbconnection.Entry<CurriculumEnquiry>(CE).State = System.Data.Entity.EntityState.Modified;
-                                Dbconnection.SaveChanges();
-                                Dbconnection.CurriculumEnquiries.Remove(CE);
-                                int currentIndex = NewEnquiryTab_NewEnquiryBindingSource.Position;
-                                refreshNewEnquiry();
-                                NewEnquiryTab_NewEnquiryBindingSource.Position = currentIndex;
-                                dgvNewEnquiryTab_CurriculumEnquiry.Refresh();
+                        //if (CE.EnrollmentQuanity <= CE.Enrollments.Count)
+                        //{
+                        //    using (var Dbconnection = new MCDEntities())
+                        //    {
+                        //        Dbconnection.CurriculumEnquiries.Attach(CE);
+                        //        CE.EnquiryStatusID = (int)EnumEnquiryStatuses.Enquiry_Closed;
+                        //        CE.LastUpdated = DateTime.Now;
+                        //        Dbconnection.Entry<CurriculumEnquiry>(CE).State = System.Data.Entity.EntityState.Modified;
+                        //        Dbconnection.SaveChanges();
+                        //        Dbconnection.CurriculumEnquiries.Remove(CE);
+                        //        int currentIndex = NewEnquiryTab_NewEnquiryBindingSource.Position;
+                        //        refreshNewEnquiry();
+                        //        NewEnquiryTab_NewEnquiryBindingSource.Position = currentIndex;
+                        //        dgvNewEnquiryTab_CurriculumEnquiry.Refresh();
 
-                            };
-                        }
+                        //    };
+                        //}
                         DialogResult Rtn1 = MessageBox.Show("Do you wish to View the Enrollment,and course selection?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (Rtn1 == DialogResult.Yes)
                         {
@@ -584,6 +584,11 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
 
 
                     //frm6.CurrentEnrollments.ApprienticeshipEnrollment.(CE);
+                    break;
+                case 11:
+                    frmEnrolmmentInprogress frm9 = new frmEnrolmmentInprogress();
+                    // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
+                    frm9.ShowDialog();
                     break;
             }
         }

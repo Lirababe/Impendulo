@@ -1,4 +1,4 @@
-﻿namespace Impendulo.StudentForms.Development
+﻿namespace Impendulo.StudentForms.Deployment
 {
     partial class frmAddUpdateStudent
     {
