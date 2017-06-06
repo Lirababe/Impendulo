@@ -461,7 +461,7 @@ namespace Impendulo.StudentForms.Deployment
                 //Dbconnection.Addresses.Attach(ad);
                 //Dbconnection.Entry(ad).State = EntityState.Modified;
                 Dbconnection.SaveChanges();
-                
+
             };
         }
         private void removeStudentAddressDetails()
@@ -1503,10 +1503,14 @@ namespace Impendulo.StudentForms.Deployment
 
         private void btnReviewCompanyDetails_Click(object sender, EventArgs e)
         {
-            frmCompany frm = new frmCompany();
-            frm.txtCompaniesFilterCriteria.Text = ((Data.Models.Company)companyBindingSource.Current).CompanyName.ToString();
-            frm.ShowDialog();
-            this.refreshStudentCompany();
+            if (companyBindingSource.Count > 0)
+            {
+                frmCompany frm = new frmCompany();
+                frm.txtCompaniesFilterCriteria.Text = ((Data.Models.Company)companyBindingSource.Current).CompanyName.ToString();
+                frm.ShowDialog();
+                this.refreshStudentCompany();
+            }
+
         }
     }
 }

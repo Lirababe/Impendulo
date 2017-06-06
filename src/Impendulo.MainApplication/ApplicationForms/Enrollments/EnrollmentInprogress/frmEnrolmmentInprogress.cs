@@ -532,5 +532,10 @@ namespace Impendulo.StudentEngineeringCourseErollment.Deployment.EnrollmentInpro
             frm.ShowDialog();
             refreshEnrollmentLinkedCourses();
         }
+
+        private void btnAddNewEnquiry_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

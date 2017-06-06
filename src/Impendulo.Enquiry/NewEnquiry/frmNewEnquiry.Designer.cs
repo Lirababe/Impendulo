@@ -577,7 +577,7 @@
             // 
             this.splitContainer4.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer4.Size = new System.Drawing.Size(635, 466);
-            this.splitContainer4.SplitterDistance = 225;
+            this.splitContainer4.SplitterDistance = 253;
             this.splitContainer4.TabIndex = 14;
             // 
             // groupBox4
@@ -586,7 +586,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(635, 225);
+            this.groupBox4.Size = new System.Drawing.Size(635, 253);
             this.groupBox4.TabIndex = 20;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Contact Details";
@@ -597,11 +597,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvIndividualContactDetails);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(629, 177);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(629, 205);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(3, 18);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(629, 204);
+            this.toolStripContainer1.Size = new System.Drawing.Size(629, 232);
             this.toolStripContainer1.TabIndex = 3;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -626,7 +626,7 @@
             this.dgvIndividualContactDetails.RowHeadersWidth = 15;
             this.dgvIndividualContactDetails.RowTemplate.Height = 24;
             this.dgvIndividualContactDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIndividualContactDetails.Size = new System.Drawing.Size(629, 177);
+            this.dgvIndividualContactDetails.Size = new System.Drawing.Size(629, 205);
             this.dgvIndividualContactDetails.TabIndex = 0;
             this.dgvIndividualContactDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvIndividualContactDetails_DataBindingComplete);
             // 
@@ -754,7 +754,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(635, 237);
+            this.groupBox1.Size = new System.Drawing.Size(635, 209);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Notes Or Comments:";
@@ -764,7 +764,7 @@
             this.txtSelectedContactNotes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSelectedContactNotes.Location = new System.Drawing.Point(3, 18);
             this.txtSelectedContactNotes.Name = "txtSelectedContactNotes";
-            this.txtSelectedContactNotes.Size = new System.Drawing.Size(629, 216);
+            this.txtSelectedContactNotes.Size = new System.Drawing.Size(629, 188);
             this.txtSelectedContactNotes.TabIndex = 0;
             this.txtSelectedContactNotes.Text = "";
             // 

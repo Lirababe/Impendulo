@@ -548,33 +548,33 @@ namespace Impendulo.Enquiry.Deployment.frmClientEnquiry
                 case 10:
                     if (CE.Curriculum.DepartmentID == (int)EnumDepartments.Apprenticeship)
                     {
-                        //frmApprenticeshipEnrollmentFormV2 frm6 = new frmApprenticeshipEnrollmentFormV2();
-                        //frm6.CurrentCurriculumEnquiry = CE;
-                        //frm6.ShowDialog();
-                        ////Check to see if the amoount required to be enrolled equal the amount that have been enrolled.
-                        //if (CE.EnrollmentQuanity <= CE.Enrollments.Count)
-                        //{
-                        //    using (var Dbconnection = new MCDEntities())
-                        //    {
-                        //        Dbconnection.CurriculumEnquiries.Attach(CE);
-                        //        CE.EnquiryStatusID = (int)EnumEnquiryStatuses.Enquiry_Closed;
-                        //        CE.LastUpdated = DateTime.Now;
-                        //        Dbconnection.Entry<CurriculumEnquiry>(CE).State = System.Data.Entity.EntityState.Modified;
-                        //        Dbconnection.SaveChanges();
-                        //        Dbconnection.CurriculumEnquiries.Remove(CE);
-                        //        int currentIndex = NewEnquiryTab_NewEnquiryBindingSource.Position;
-                        //        refreshNewEnquiry();
-                        //        NewEnquiryTab_NewEnquiryBindingSource.Position = currentIndex;
-                        //        dgvNewEnquiryTab_CurriculumEnquiry.Refresh();
+                        frmApprenticeshipEnrollmentForm frm6 = new frmApprenticeshipEnrollmentForm();
+                        frm6.CurrentCurriculumEnquiry = CE;
+                        frm6.ShowDialog();
+                        //Check to see if the amoount required to be enrolled equal the amount that have been enrolled.
+                        if (CE.EnrollmentQuanity <= CE.Enrollments.Count)
+                        {
+                            using (var Dbconnection = new MCDEntities())
+                            {
+                                Dbconnection.CurriculumEnquiries.Attach(CE);
+                                CE.EnquiryStatusID = (int)EnumEnquiryStatuses.Enquiry_Closed;
+                                CE.LastUpdated = DateTime.Now;
+                                Dbconnection.Entry<CurriculumEnquiry>(CE).State = System.Data.Entity.EntityState.Modified;
+                                Dbconnection.SaveChanges();
+                                Dbconnection.CurriculumEnquiries.Remove(CE);
+                                int currentIndex = NewEnquiryTab_NewEnquiryBindingSource.Position;
+                                refreshNewEnquiry();
+                                NewEnquiryTab_NewEnquiryBindingSource.Position = currentIndex;
+                                dgvNewEnquiryTab_CurriculumEnquiry.Refresh();
 
-                        //    };
-                        //}
-                        //DialogResult Rtn1 = MessageBox.Show("Do you wish to View the Enrollment,and course selection?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                        //if (Rtn1 == DialogResult.Yes)
-                        //{
-                        //    frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
-                        //    frm7.ShowDialog();
-                        //}
+                            };
+                        }
+                        DialogResult Rtn1 = MessageBox.Show("Do you wish to View the Enrollment,and course selection?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (Rtn1 == DialogResult.Yes)
+                        {
+                            frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
+                            frm7.ShowDialog();
+                        }
                     }
 
 

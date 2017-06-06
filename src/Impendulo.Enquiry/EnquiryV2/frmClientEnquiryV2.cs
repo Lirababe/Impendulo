@@ -18,6 +18,7 @@ using Impendulo.Enquiry.Development.InitialDocumentation.ApprenticeshipDocumenta
 using Impendulo.Enquiry.Development.ViewHistory;
 using Impendulo.Email.Development;
 using Impendulo.StudentEngineeringCourseErollment.Devlopment;
+using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInprogress;
 
 namespace Impendulo.Enquiry.Development.EnquiryV2.Development
 {
@@ -549,6 +550,8 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
                 case 10:
                     if (CE.Curriculum.DepartmentID == (int)EnumDepartments.Apprenticeship)
                     {
+                        
+
                         frmApprenticeshipEnrollmentFormV2 frm6 = new frmApprenticeshipEnrollmentFormV2();
                         frm6.CurrentCurriculumEnquiry = CE;
                         frm6.ShowDialog();
@@ -573,8 +576,9 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
                         DialogResult Rtn1 = MessageBox.Show("Do you wish to View the Enrollment,and course selection?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (Rtn1 == DialogResult.Yes)
                         {
-                            frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
-                            frm7.ShowDialog();
+                            frmEnrolmmentInprogress frm8 = new frmEnrolmmentInprogress();
+                            // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
+                            frm8.ShowDialog();
                         }
                     }
 

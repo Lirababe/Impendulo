@@ -106,6 +106,9 @@ namespace Impendulo.Enquiry.SelectContacts.Developemnt
                                                                                select a.Individual)
                                                                                .Except(from a in Dbconnection.Students
                                                                                        select a.Individual)
+                                                                                       .Except(from a in Dbconnection.Individuals
+                                                                                               where a.Companies.Count > 0
+                                                                                               select a)
                                                                .ToList<Individual>();
 
                 individualBindingSource.DataSource = AllIndividuals;
