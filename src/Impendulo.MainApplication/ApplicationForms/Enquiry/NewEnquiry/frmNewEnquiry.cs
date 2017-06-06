@@ -18,7 +18,19 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
 {
     public partial class frmNewEnquiry : Form
     {
-        Boolean CompanyContactSelected = true;
+        private Boolean _CompanyContactSelected = true;
+
+        public Boolean CompanyContactSelected
+        {
+            get
+            {
+                return _CompanyContactSelected;
+            }
+            set
+            {
+                _CompanyContactSelected = value;
+            }
+        }
         int iCurrentPosition = 0;
         //MCDEntities Dbconnection;
         //Student StudentObj;
@@ -76,21 +88,18 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
                 /*
              * Thismust be Commmented out or removed in the production version this is just for Develpoement Testing.
              */
-                //using (var Dbconnection = new MCDEntities())
-                //{
-                //    CurrentEmployeeLoggedIn = (from a in Dbconnection.Employees
-                //                               where a.EmployeeID == 11075
-                //                               select a).FirstOrDefault<Employee>();
-                //};
+                using (var Dbconnection = new MCDEntities())
+                {
+                    CurrentEmployeeLoggedIn = (from a in Dbconnection.Employees
+                                               where a.EmployeeID == 11075
+                                               select a).FirstOrDefault<Employee>();
+                };
 
                 /***************************************************************************************/
-                MessageBox.Show("It is Required that you be logged in to use the feature.\n Login and try again!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
+                // MessageBox.Show("It is Required that you be logged in to use the feature.\n Login and try again!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // this.Close();
 
             }
-
-
-
             this.setCenterDisplayPanels();
             this.setNavigationControls();
             this.loadupStep();
@@ -218,7 +227,60 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
 
         #endregion
 
-        #region Page 2 - Contact Selection
+        #region Page 2 - Equiry Origion
+        #region Refresh Methods
+        private void refreshEquiryOrigion()
+        {
+            this.populateEquiryOrigion();
+        }
+        #endregion
+
+        #region Populate Methods
+        private void populateEquiryOrigion()
+        {
+            if (flowLayoutPanelEquiryOrigion.Controls.Count == 0)
+            {
+                buildDynamicControlForEnquiryOrigion();
+            }
+        }
+        #endregion
+
+        #region Control Events
+
+        #endregion
+
+        #region Build Dynamic Controls
+
+        private void buildDynamicControlForEnquiryOrigion()
+        {
+            List<LookupEquiryOrigion> LUEO;
+            using (var Dbconnection = new MCDEntities())
+            {
+                LUEO = (from a in Dbconnection.LookupEquiryOrigions
+                        select a).ToList<LookupEquiryOrigion>();
+            };
+            foreach (LookupEquiryOrigion item in LUEO)
+            {
+                CheckBox chk = new CheckBox();
+                chk.Tag = item.EquiryOriginID;
+                chk.Text = item.EquiryOrigin;
+                chk.Width = 250;
+                flowLayoutPanelEquiryOrigion.Controls.Add(chk);
+
+            }
+        }
+
+        #endregion
+
+        #region Logical Control Methods
+        private void buildEquiryOrigionControls()
+        {
+
+        }
+        #endregion
+        #endregion
+
+        #region Page 3 - Contact Selection
 
         #region Refresh Methods
 
@@ -441,7 +503,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
         #endregion
         #endregion
 
-        #region Page 3 - Curriculum Selection
+        #region Page 4 - Curriculum Selection
 
         #region Refresh Methods
         private void refreshSelectedCurriculum()
@@ -538,6 +600,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
         private void btnUpdateQty_Click(object sender, EventArgs e)
         {
             frmUpdateSelectedCurriculumEnrollQty frm = new frmUpdateSelectedCurriculumEnrollQty();
+
             frm.CurrentCurriculumEnquiry = (CurriculumEnquiry)this.curriculumEnquiryBindingSource.Current;
             frm.ShowDialog();
             this.refreshSelectedCurriculum();
@@ -578,8 +641,31 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
 
         #endregion
 
-        #region Page 4 - Summary Confirmation
+        #region Page 5 - Summary Confirmation
 
+        #region Refresh Methods
+
+        private void refreshEquiryOrigionSummary()
+        {
+            flowLayoutPanelEquiryOrigionSummary.Controls.Clear();
+            foreach (Control con in flowLayoutPanelEquiryOrigion.Controls)
+            {
+                if (con is CheckBox)
+                {
+                    if (((CheckBox)con).Checked)
+                    {
+                        CheckBox radObj = new CheckBox();
+                        radObj.Text = con.Text;
+                        radObj.Checked = true;
+                        flowLayoutPanelEquiryOrigionSummary.Controls.Add(radObj);
+
+                    }
+                }
+
+            }
+        }
+
+        #endregion
         #region Control Methods
 
         private void dgvSummarySelectedCurriculum_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -660,8 +746,6 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
             this.setNavigationControls();
             this.loadupStep();
         }
-
-
         private void setNavigationControls()
         {
             if (iCurrentPosition == 0)
@@ -743,12 +827,15 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
                     this.loadupEnquiryContactSelectionType();
                     break;
                 case 1:
-                    this.loadupEnquiryContactSelection();
+                    this.loadupEquiryOrigion();
                     break;
                 case 2:
-                    this.loadupEnquiryCurriculumSelection();
+                    this.loadupEnquiryContactSelection();
                     break;
                 case 3:
+                    this.loadupEnquiryCurriculumSelection();
+                    break;
+                case 4:
                     this.loadupEnquiryConfirmation();
                     break;
                 default:
@@ -799,6 +886,11 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
 
 
         }
+
+        private void loadupEquiryOrigion()
+        {
+            refreshEquiryOrigion();
+        }
         private void loadupEnquiryContactSelection()
         {
 
@@ -817,7 +909,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
 
         private void loadupEnquiryConfirmation()
         {
-
+            refreshEquiryOrigionSummary();
         }
 
         #endregion
@@ -846,45 +938,38 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
                 /*Adds Each of the Curriculum Selected for this equiry*/
                 foreach (CurriculumEnquiry CE in SelectedEnquiryCurriculum)
                 {
-                    //CurriculumEnquiryID
-                    //EnquiryID*
-                    //CurriculumID
-                    //EnquiryStatusID*
-                    //LastUpdated
-                    //EnrollmentQuanity
-                    //InitialConsultationComplete*
-                    //InitialCurriculumEnquiryDocumentationSent*
                     CE.Curriculum = null;
                     CE.LookupEnquiryStatus = null;
                     CE.Enquiry = null;
-                    CE.LastUpdated = DateTime.Now;
                     CE.EnquiryID = CurrentEnquiry.EnquiryID;
-                    //CE.InitialConsultationComplete = false;
+
                     CE.InitialCurriculumEnquiryDocumentationSent = false;
+                    CE.LastUpdated = DateTime.Now;
                     CE.EnquiryStatusID = CE.EnquiryStatusID;
                     CurrentEnquiry.CurriculumEnquiries.Add(CE);
+
                 }
 
-                //EquiryHistory AddingContactDetailsHistory = new EquiryHistory
-                //{
-                //    EnquiryID = CurrentEnquiry.EnquiryID,
-                //    EmployeeID = CurrentEmployeeLoggedIn.EmployeeID,
-                //    LookupEquiyHistoryTypeID = (int)EnumEquiryHistoryTypes.Company_Contact_Selection,
-                //    DateEnquiryUpdated = DateTime.Now,
-                //    EnquiryNotes = txtSelectedContactNotes.Text.ToString()
+                EquiryHistory AddingContactDetailsHistory = new EquiryHistory
+                {
+                    EnquiryID = CurrentEnquiry.EnquiryID,
+                    EmployeeID = CurrentEmployeeLoggedIn.EmployeeID,
+                    LookupEquiyHistoryTypeID = (int)EnumEquiryHistoryTypes.Company_Contact_Selection,
+                    DateEnquiryUpdated = DateTime.Now,
+                    EnquiryNotes = txtSelectedContactNotes.Text.ToString()
 
-                //};
-                //EquiryHistory AddingSelectedCurriculumHistory = new EquiryHistory
-                //{
-                //    EnquiryID = CurrentEnquiry.EnquiryID,
-                //    EmployeeID = CurrentEmployeeLoggedIn.EmployeeID,
-                //    LookupEquiyHistoryTypeID = (int)EnumEquiryHistoryTypes.Curriculum_Selection,
-                //    DateEnquiryUpdated = DateTime.Now,
-                //    EnquiryNotes = txtSelectedCurriculumNotes.Text.ToString()
+                };
+                EquiryHistory AddingSelectedCurriculumHistory = new EquiryHistory
+                {
+                    EnquiryID = CurrentEnquiry.EnquiryID,
+                    EmployeeID = CurrentEmployeeLoggedIn.EmployeeID,
+                    LookupEquiyHistoryTypeID = (int)EnumEquiryHistoryTypes.Curriculum_Selection,
+                    DateEnquiryUpdated = DateTime.Now,
+                    EnquiryNotes = txtSelectedCurriculumNotes.Text.ToString()
 
-                //};
-                //CurrentEnquiry.EquiryHistories.Add(AddingContactDetailsHistory);
-                //CurrentEnquiry.EquiryHistories.Add(AddingSelectedCurriculumHistory);
+                };
+                CurrentEnquiry.EquiryHistories.Add(AddingContactDetailsHistory);
+                CurrentEnquiry.EquiryHistories.Add(AddingSelectedCurriculumHistory);
 
                 Dbconnection.SaveChanges();
             };

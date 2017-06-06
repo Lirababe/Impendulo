@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using Impendulo.Data.Models;
 using Impendulo.Common;
 using System.IO;
-
 using Impendulo.Common.Enum;
 using Impendulo.Email.Select_Contacts.Deployment;
 
@@ -21,6 +20,8 @@ namespace Impendulo.Email.Deployment
 
         public List<string> AttachmentsUsingFilePaths { get; set; }
         public List<int> AttachmentsUsingDbImageFileID { get; set; }
+
+        public Boolean IsSent { get; set; }
 
         private List<CustomFileAttributtes> AllFileAttachments = new List<CustomFileAttributtes>();
         public frmSendEmail()
@@ -65,6 +66,8 @@ namespace Impendulo.Email.Deployment
                         // NewMessage.AddAttachment(new System.Net.Mail.Attachment(path));
                     }
                     NewMessage.sendMessage();
+                    this.IsSent = true;
+                    this.Close();
                 };
             }
             else
@@ -76,7 +79,7 @@ namespace Impendulo.Email.Deployment
 
         private void frmSendEmail_Load(object sender, EventArgs e)
         {
-
+            this.IsSent = false;
             this.refreshAttachemntListUsingDatabaseFileID();
             this.refreshTheAttachmentList();
         }
@@ -206,12 +209,12 @@ namespace Impendulo.Email.Deployment
                 }
                 ContactEmailaddresses += _EmailAddress;
             }
-            //if (ContactEmailaddresses.Length > 0)
-            //{
-            //    ContactEmailaddresses += ";";
-            //}
+            if (this.txtTestingToAddress.Text.Length > 0)
+            {
+                this.txtTestingToAddress.Text += ";";
+            }
 
-            this.txtTestingToAddress.Text = ContactEmailaddresses;
+            this.txtTestingToAddress.Text += ContactEmailaddresses;
         }
     }
 }

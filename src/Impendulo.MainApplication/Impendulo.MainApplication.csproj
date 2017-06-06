@@ -218,12 +218,6 @@
     <Compile Include="ApplicationForms\Enquiry\frmClientEnquiry.Designer.cs">
       <DependentUpon>frmClientEnquiry.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationForms\Enquiry\frmClientEnquiryV2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ApplicationForms\Enquiry\frmClientEnquiryV2.Designer.cs">
-      <DependentUpon>frmClientEnquiryV2.cs</DependentUpon>
-    </Compile>
     <Compile Include="ApplicationForms\Enquiry\InitialConsultation\frmEnquiryInitialConsultation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +277,24 @@
     </Compile>
     <Compile Include="ApplicationForms\Enrollments\CurriculumEmrollmentForms\ApprenticeshipEnrollment\frmApprenticeshipEnrollmentForm.Designer.cs">
       <DependentUpon>frmApprenticeshipEnrollmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationForms\Enrollments\EnrollmentCourseSelection\frmEnrollmentCourseSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationForms\Enrollments\EnrollmentCourseSelection\frmEnrollmentCourseSelection.Designer.cs">
+      <DependentUpon>frmEnrollmentCourseSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationForms\Enrollments\EnrollmentException\frmEnrollmentException.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationForms\Enrollments\EnrollmentException\frmEnrollmentException.Designer.cs">
+      <DependentUpon>frmEnrollmentException.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationForms\Enrollments\EnrollmentInprogress\frmEnrolmmentInprogress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationForms\Enrollments\EnrollmentInprogress\frmEnrolmmentInprogress.Designer.cs">
+      <DependentUpon>frmEnrolmmentInprogress.cs</DependentUpon>
     </Compile>
     <Compile Include="ApplicationForms\Enrollments\frmStudentCourseEnrollmentV2.cs">
       <SubType>Form</SubType>
@@ -448,9 +460,6 @@
     <EmbeddedResource Include="ApplicationForms\Enquiry\frmClientEnquiry.resx">
       <DependentUpon>frmClientEnquiry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ApplicationForms\Enquiry\frmClientEnquiryV2.resx">
-      <DependentUpon>frmClientEnquiryV2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\Enquiry\InitialConsultation\frmEnquiryInitialConsultation.resx">
       <DependentUpon>frmEnquiryInitialConsultation.cs</DependentUpon>
     </EmbeddedResource>
@@ -480,6 +489,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\Enrollments\CurriculumEmrollmentForms\ApprenticeshipEnrollment\frmApprenticeshipEnrollmentForm.resx">
       <DependentUpon>frmApprenticeshipEnrollmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationForms\Enrollments\EnrollmentCourseSelection\frmEnrollmentCourseSelection.resx">
+      <DependentUpon>frmEnrollmentCourseSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationForms\Enrollments\EnrollmentException\frmEnrollmentException.resx">
+      <DependentUpon>frmEnrollmentException.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationForms\Enrollments\EnrollmentInprogress\frmEnrolmmentInprogress.resx">
+      <DependentUpon>frmEnrolmmentInprogress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\Enrollments\frmStudentCourseEnrollmentV2.resx">
       <DependentUpon>frmStudentCourseEnrollmentV2.cs</DependentUpon>

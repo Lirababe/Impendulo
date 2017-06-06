@@ -20,10 +20,9 @@ using Impendulo.Company.Deployment;
 using Impendulo.StudentForms.Deployment;
 using Impendulo.Facilitators.Deployment;
 using Impendulo.MessageTemplates.Deployment;
-using Impendulo.ClientEnquiry.Depolyment;
 using Impendulo.Employees.Deployment1;
-using Impendulo.Enquiry.Deployment.EnquiryV2;
 using Impendulo.StudentEngineeringCourseErollment.Deployment;
+using Impendulo.Enquiry.Deployment.frmClientEnquiry;
 
 namespace Impendulo.MainApplication
 {
@@ -293,7 +292,7 @@ namespace Impendulo.MainApplication
         {
             foreach (Form f in this.MdiChildren)
             {
-                if (f.GetType() == typeof(frmClientEnquiryV2))
+                if (f.GetType() == typeof(frmClientEnquiry))
                 {
                     f.Activate();
                     f.WindowState = FormWindowState.Maximized;
@@ -301,7 +300,7 @@ namespace Impendulo.MainApplication
                 }
             }
 
-            frmClientEnquiryV2 frm = new frmClientEnquiryV2();
+            frmClientEnquiry frm = new frmClientEnquiry();
 
             frm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
 
