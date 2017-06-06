@@ -357,8 +357,6 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             switch (e.ColumnIndex)
             {
                 case 0:
-
-
                     frmEnquiryViewHistory frm5 = new frmEnquiryViewHistory();
                     //frm5.CurrentEnquiryID = EnrollmentObj.CurriculumEnquiries.Where(a=>a.Enrollments.;
                     frm5.ShowDialog();

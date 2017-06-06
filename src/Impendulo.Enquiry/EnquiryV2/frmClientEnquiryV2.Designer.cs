@@ -37,15 +37,15 @@
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label12;
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientEnquiryV2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabEnquiryWorkbench = new System.Windows.Forms.TabControl();
             this.tpEnquiryHome = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -403,7 +403,7 @@
             this.lastUpdatedDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.initialCurriculumEnquiryDocumentationSentDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.enrollmentQuanityDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbnUpdate = new System.Windows.Forms.ToolStripButton();
+            this.tbnUpdateQtyEnrolledForCurriculum = new System.Windows.Forms.ToolStripButton();
             individualFirstNameLabel = new System.Windows.Forms.Label();
             companyNameLabel = new System.Windows.Forms.Label();
             individualLastnameLabel = new System.Windows.Forms.Label();
@@ -650,21 +650,21 @@
             // chart1
             // 
             this.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(3, 219);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(820, 179);
             this.chart1.TabIndex = 5;
             this.chart1.TabStop = false;
-            title1.Name = "Summary";
-            this.chart1.Titles.Add(title1);
+            title2.Name = "Summary";
+            this.chart1.Titles.Add(title2);
             // 
             // groupBox4
             // 
@@ -1592,7 +1592,7 @@
             this.toolStripButton5,
             this.toolStripButton6,
             this.toolStripSeparator3,
-            this.tbnUpdate});
+            this.tbnUpdateQtyEnrolledForCurriculum});
             this.bindingNavigator2.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator2.MoveFirstItem = this.toolStripButton3;
             this.bindingNavigator2.MoveLastItem = this.toolStripButton6;
@@ -3556,9 +3556,9 @@
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "EnquiryDate";
-            dataGridViewCellStyle1.Format = "D";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Format = "D";
+            dataGridViewCellStyle5.NullValue = null;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn2.HeaderText = "Enquiry Date";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -3595,9 +3595,9 @@
             // 
             this.lastUpdatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.lastUpdatedDataGridViewTextBoxColumn.DataPropertyName = "LastUpdated";
-            dataGridViewCellStyle2.Format = "f";
-            dataGridViewCellStyle2.NullValue = null;
-            this.lastUpdatedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Format = "f";
+            dataGridViewCellStyle6.NullValue = null;
+            this.lastUpdatedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.lastUpdatedDataGridViewTextBoxColumn.HeaderText = "Last Updated";
             this.lastUpdatedDataGridViewTextBoxColumn.Name = "lastUpdatedDataGridViewTextBoxColumn";
             this.lastUpdatedDataGridViewTextBoxColumn.ReadOnly = true;
@@ -3631,9 +3631,9 @@
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "EnquiryDate";
-            dataGridViewCellStyle3.Format = "D";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Format = "D";
+            dataGridViewCellStyle7.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn5.HeaderText = "Enquiry Date";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
@@ -3655,9 +3655,9 @@
             // lastUpdatedDataGridViewTextBoxColumn3
             // 
             this.lastUpdatedDataGridViewTextBoxColumn3.DataPropertyName = "LastUpdated";
-            dataGridViewCellStyle4.Format = "f";
-            dataGridViewCellStyle4.NullValue = null;
-            this.lastUpdatedDataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Format = "f";
+            dataGridViewCellStyle8.NullValue = null;
+            this.lastUpdatedDataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
             this.lastUpdatedDataGridViewTextBoxColumn3.HeaderText = "Last Updated";
             this.lastUpdatedDataGridViewTextBoxColumn3.Name = "lastUpdatedDataGridViewTextBoxColumn3";
             this.lastUpdatedDataGridViewTextBoxColumn3.ReadOnly = true;
@@ -3679,14 +3679,14 @@
             this.enrollmentQuanityDataGridViewTextBoxColumn3.Name = "enrollmentQuanityDataGridViewTextBoxColumn3";
             this.enrollmentQuanityDataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // tbnUpdate
+            // tbnUpdateQtyEnrolledForCurriculum
             // 
-            this.tbnUpdate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("tbnUpdate.Image")));
-            this.tbnUpdate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbnUpdate.Name = "tbnUpdate";
-            this.tbnUpdate.Size = new System.Drawing.Size(23, 22);
-            this.tbnUpdate.Text = "toolStripButton1";
+            this.tbnUpdateQtyEnrolledForCurriculum.Image = ((System.Drawing.Image)(resources.GetObject("tbnUpdateQtyEnrolledForCurriculum.Image")));
+            this.tbnUpdateQtyEnrolledForCurriculum.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbnUpdateQtyEnrolledForCurriculum.Name = "tbnUpdateQtyEnrolledForCurriculum";
+            this.tbnUpdateQtyEnrolledForCurriculum.Size = new System.Drawing.Size(133, 22);
+            this.tbnUpdateQtyEnrolledForCurriculum.Text = "Update Qty Enrolled";
+            this.tbnUpdateQtyEnrolledForCurriculum.Click += new System.EventHandler(this.tbnUpdateQtyEnrolledForCurriculum_Click);
             // 
             // frmClientEnquiryV2
             // 
@@ -4218,6 +4218,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn InitialCurriculumEnquiryDocumentationSent;
         private System.Windows.Forms.DataGridViewLinkColumn colNewEnquiry_EnrollStudent;
         private System.Windows.Forms.DataGridViewLinkColumn colNewEnquiry_ShowEnrolmentMenu;
-        private System.Windows.Forms.ToolStripButton tbnUpdate;
+        private System.Windows.Forms.ToolStripButton tbnUpdateQtyEnrolledForCurriculum;
     }
 }

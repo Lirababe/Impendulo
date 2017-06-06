@@ -706,5 +706,10 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
         {
 
         }
+
+        private void tbnUpdateQtyEnrolledForCurriculum_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

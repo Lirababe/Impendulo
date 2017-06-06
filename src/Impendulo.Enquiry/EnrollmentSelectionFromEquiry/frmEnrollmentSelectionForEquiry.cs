@@ -69,10 +69,15 @@ namespace Impendulo.Enquiry.Development.EnrollmentSelectionFromEquiry
             {
                 if (!row.IsNewRow)
                 {
+
                     var EnrollmentObj = (Enrollment)(row.DataBoundItem);
                     row.Cells[colFirstName.Index].Value = EnrollmentObj.Student.Individual.IndividualFirstName.ToString();
                     row.Cells[colLastName.Index].Value = EnrollmentObj.Student.Individual.IndividualLastname.ToString();
                     row.Cells[colStatus.Index].Value = EnrollmentObj.LookupEnrollmentProgressState.EnrollmentProgressCurrentState.ToString();
+                    //if (EnrollmentObj.LookupEnrollmentProgressStateID != (int)Common.Enum.EnumEnrollmentProgressStates.In_Progress)
+                    //{
+                    //    row.Cells[colSelection.Index].Value = "";
+                    //}
 
                 }
             }

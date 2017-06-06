@@ -160,6 +160,8 @@
     <Build Include="dbo\Tables\LookupEnrollentDocumentTypes_1.sql" />
     <Build Include="dbo\Tables\CurriculumEnquiryEnrollments_2.sql" />
     <Build Include="dbo\Tables\ApprenticeshipEnrollmentDocuments_1.sql" />
+    <Build Include="dbo\Tables\LookupEquiryOrigions.sql" />
+    <Build Include="dbo\Tables\EquiryOrigions.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Impendulo.Database.publish.xml" />
