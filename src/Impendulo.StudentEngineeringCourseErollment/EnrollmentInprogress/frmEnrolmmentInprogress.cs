@@ -532,9 +532,10 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             refreshEnrollmentLinkedCourses();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnScheduleEnrollement_Click(object sender, EventArgs e)
         {
-            frmScheduleApprenticeship frm = new frmScheduleApprenticeship();
+            ScheduleApprientice.frmScheduleApprience frm = new ScheduleApprientice.frmScheduleApprience();
+            frm.ShowDialog();
         }
     }
 }
