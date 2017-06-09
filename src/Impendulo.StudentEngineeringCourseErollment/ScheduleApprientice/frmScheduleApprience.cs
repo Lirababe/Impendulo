@@ -43,5 +43,10 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.ScheduleApprien
                 }
             }
         }
+
+        private void dgvConfirmSchedule_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

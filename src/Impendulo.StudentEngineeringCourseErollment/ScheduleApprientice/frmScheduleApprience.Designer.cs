@@ -55,6 +55,7 @@
             this.dgvConfirmSchedule.ReadOnly = true;
             this.dgvConfirmSchedule.Size = new System.Drawing.Size(678, 317);
             this.dgvConfirmSchedule.TabIndex = 0;
+            this.dgvConfirmSchedule.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConfirmSchedule_CellContentClick);
             this.dgvConfirmSchedule.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvConfirmSchedule_DataBindingComplete);
             // 
             // colFacilitator
