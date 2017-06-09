@@ -8,7 +8,7 @@ namespace Impendulo.Email
 {
     public interface IMessage
     {
-       
+        enumMessagePriority MessagePriority { get; set; }
         string MessageBody { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace Impendulo.Email
             }
             else
             {
-                //Through Invalid Email Exception
+                throw new InvalidEmailAddressException("The Following Address is In valid: " + strEmailAddress);
             }
         }
         public Boolean ValidateEmailAddress(string strEmailAddress)

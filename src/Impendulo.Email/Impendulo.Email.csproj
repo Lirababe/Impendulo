@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="EmailAddress.cs" />
     <Compile Include="EmailSendingClasses\IEmailMessage.cs" />
+    <Compile Include="enumMessagePriority.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +79,7 @@
     <Compile Include="EmailSendingClasses\IMessage.cs" />
     <Compile Include="EmailSendingClasses\EmailMessage.cs" />
     <Compile Include="IAddress.cs" />
+    <Compile Include="InvalidEmailAddressException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EmailSendingClasses\RegexUtilities.cs" />

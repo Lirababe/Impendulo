@@ -9,20 +9,8 @@ namespace Impendulo.Email
     public abstract class EmailMessage : IEmailMessage
     {
         List<string> _BCCAddress = new List<string>();
-        public List<string> BCCAddress
-        {
-            get
-            {
-                return _BCCAddress;
-            }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public List<string> CCAddress
+        public List<IEmailAddress> BccAddress
         {
             get
             {
@@ -35,7 +23,20 @@ namespace Impendulo.Email
             }
         }
 
-        public string FromAddress
+        public List<IEmailAddress> CcAddresses
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public IEmailAddress FromAddress
         {
             get
             {
@@ -61,7 +62,20 @@ namespace Impendulo.Email
             }
         }
 
-        public List<string> ToAddesses
+        public enumMessagePriority MessagePriority
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public List<IEmailAddress> ToAddesses
         {
             get
             {
