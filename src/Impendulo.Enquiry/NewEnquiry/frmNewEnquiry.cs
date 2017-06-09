@@ -988,5 +988,10 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                 Dbconnection.SaveChanges();
             };
         }
+
+        private void frmNewEnquiry_ResizeEnd(object sender, EventArgs e)
+        {
+            this.setCenterDisplayPanels();
+        }
     }
 }
