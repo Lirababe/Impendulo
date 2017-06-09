@@ -1,66 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Impendulo.Email.EmailMessage">
-    <Position X="2.25" Y="5.75" Width="2" />
+  <Class Name="Impendulo.Email.EmailMessage" BaseTypeListCollapsed="true">
+    <Position X="9" Y="6" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>UAAQAAAAAQAAAAAAABAAAACgAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <HashCode>UAAQABCAAQAAAAAAAFAAAAigAAAQAAAAAIQIAAAAIAA=</HashCode>
       <FileName>EmailSendingClasses\EmailMessage.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Impendulo.Email.RegexUtilities">
-    <Position X="7.5" Y="4.25" Width="1.5" />
+    <Position X="6" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>EmailSendingClasses\RegexUtilities.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Impendulo.Email.EmailAddress">
-    <Position X="10.5" Y="3.25" Width="2.25" />
+    <Position X="5.75" Y="3.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAACAAAAAAAAAAA=</HashCode>
-      <FileName>EmailAddress.cs</FileName>
+      <FileName>EmailSendingClasses\EmailAddress.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Impendulo.Email.InvalidEmailAddressException">
-    <Position X="10.5" Y="6.5" Width="3.25" />
+    <Position X="0.75" Y="5.75" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>InvalidEmailAddressException.cs</FileName>
+      <FileName>EmailSendingClasses\InvalidEmailAddressException.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="System.Exception">
-    <Position X="6.5" Y="7" Width="2.75" />
+    <Position X="1" Y="1" Width="2.75" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Impendulo.Email.EmailSendingClasses.IEmailMessage">
-    <Position X="4.25" Y="2" Width="1.5" />
+    <Position X="5.75" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAQAAAAAAAAAAAAABAAAAAgAAAAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>EmailSendingClasses\IEmailMessage.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Impendulo.Email.IMessage">
-    <Position X="7.25" Y="1" Width="1.5" />
+    <Position X="5.75" Y="6" Width="2" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EmailSendingClasses\IMessage.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Impendulo.Email.IEmailAddress">
-    <Position X="9.5" Y="1" Width="2" />
+    <Position X="9" Y="2.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IAddress.cs</FileName>
+      <FileName>EmailSendingClasses\IAddress.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="Impendulo.Email.enumMessagePriority">
-    <Position X="0.75" Y="2.5" Width="2.25" />
+    <Position X="9" Y="4" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAEAAA=</HashCode>
-      <FileName>enumMessagePriority.cs</FileName>
+      <FileName>EmailSendingClasses\enumMessagePriority.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

@@ -8,10 +8,10 @@ namespace Impendulo.Email.EmailSendingClasses
 {
     public interface IEmailMessage : IMessage
     {
-        List<IEmailAddress> ToAddesses { get; set; }
-        List<IEmailAddress> CcAddresses { get; set; }
-        List<IEmailAddress> BccAddress { get; set; }
-        IEmailAddress FromAddress { get; set; }
+        List<IEmailAddress> ToAddesses { get; }
+        List<IEmailAddress> CcAddresses { get; }
+        List<IEmailAddress> BccAddress { get; }
+        string FromAddress { get; }
         /// <summary>
         /// 
         /// </summary>

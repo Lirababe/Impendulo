@@ -8,18 +8,18 @@ namespace Impendulo.Email
 {
     public abstract class EmailMessage : IEmailMessage
     {
-        List<string> _BCCAddress = new List<string>();
+        List<IEmailAddress> _ToAddesses = new List<IEmailAddress>();
+        List<IEmailAddress> _BCCAddress = new List<IEmailAddress>();
+        List<IEmailAddress> _CcAddresses = new List<IEmailAddress>();
+        enumMessagePriority _MessagePriority = enumMessagePriority.Low;
+        string _FromAddress = "";
+        string _MessageBody = "";
 
         public List<IEmailAddress> BccAddress
         {
             get
             {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
+                return _BCCAddress;
             }
         }
 
@@ -27,25 +27,15 @@ namespace Impendulo.Email
         {
             get
             {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
+                return _CcAddresses;
             }
         }
 
-        public IEmailAddress FromAddress
+        public string FromAddress
         {
             get
             {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
+                return _FromAddress;
             }
         }
 
@@ -53,12 +43,12 @@ namespace Impendulo.Email
         {
             get
             {
-                throw new NotImplementedException();
+                return _MessageBody;
             }
 
             set
             {
-                throw new NotImplementedException();
+                _MessageBody = value;
             }
         }
 
@@ -66,12 +56,12 @@ namespace Impendulo.Email
         {
             get
             {
-                throw new NotImplementedException();
+                return _MessagePriority;
             }
 
             set
             {
-                throw new NotImplementedException();
+                _MessagePriority = value;
             }
         }
 
@@ -79,20 +69,52 @@ namespace Impendulo.Email
         {
             get
             {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
+                return _ToAddesses;
             }
         }
 
-        public void sendMessage()
+        public abstract void sendMessage();
+
+        public void addToAddress(string strEmailAddress)
         {
-            throw new NotImplementedException();
+            try
+            {
+                EmailAddress newEmailAddress = new EmailAddress(strEmailAddress);
+                this._ToAddesses.Add(newEmailAddress);
+            }
+            catch (InvalidEmailAddressException ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message, "Adding Address Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
         }
-
+        public void addBccAddress(string strEmailAddress)
+        {
+            try
+            {
+                EmailAddress newEmailAddress = new EmailAddress(strEmailAddress);
+                this._BCCAddress.Add(newEmailAddress);
+            }
+            catch (InvalidEmailAddressException ex)
+            {
+                throw ex;
+            }
+        }
+        public void addCcAddress(string strEmailAddress)
+        {
+            try
+            {
+                EmailAddress newEmailAddress = new EmailAddress(strEmailAddress);
+                this._CcAddresses.Add(newEmailAddress);
+            }
+            catch (InvalidEmailAddressException ex)
+            {
+                throw ex;
+            }
+        }
+        public void clearToAddress()
+        {
+            this._ToAddesses.Clear();
+        }
 
     }
 }
