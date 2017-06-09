@@ -9,8 +9,8 @@ namespace Impendulo.Email.EmailSendingClasses
     public interface IEmailMessage : IMessage
     {
         List<IEmailAddress> ToAddesses { get; set; }
-        List<IEmailAddress> CCAddresses { get; set; }
-        List<IEmailAddress> BCCAddress { get; set; }
+        List<IEmailAddress> CcAddresses { get; set; }
+        List<IEmailAddress> BccAddress { get; set; }
         IEmailAddress FromAddress { get; set; }
         /// <summary>
         /// 
