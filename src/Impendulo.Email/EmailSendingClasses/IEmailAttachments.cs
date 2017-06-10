@@ -5,4 +5,8 @@ using System.Text;
 
 namespace Impendulo.Email
 {
+    interface IEmailAttachments
+    {
+
+    }
 }
