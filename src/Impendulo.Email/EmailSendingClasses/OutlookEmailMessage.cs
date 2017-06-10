@@ -7,7 +7,7 @@ using Outlook = Microsoft.Office.Interop.Outlook;
 
 namespace Impendulo.Email
 {
-    public class OutlookEmailMessage : EmailMessage
+    public class OutlookEmailMessage : EmailMessage, IDisposable
     {
         private Outlook.Application oApp = new Outlook.Application();
         private Outlook.MailItem eMail;
@@ -31,20 +31,39 @@ namespace Impendulo.Email
         public override void SendMessage()
         {
             Outlook.MailItem mail = oApp.CreateItem(Outlook.OlItemType.olMailItem) as Outlook.MailItem;
-            mail.Subject = this.Subject;
-            // Add recipient using display name, alias, or smtp address
-            AddRecipients(mail);
-            //Add All Attachments to the Message
-            foreach(IAttachment attachment in this.Attachments)
+            try
             {
-                mail.Attachments.Add("@" + attachment.AttachemntPath + "\\" + attachment.AttachmentFullFileName, 
-                    Outlook.OlAttachmentType.olByValue, Type.Missing,
-                    Type.Missing);
+                mail.Subject = this.Subject;
+                // Add recipient using display name, alias, or smtp address
+                AddRecipients(mail);
+                //Add All Attachments to the Message
+                foreach (IAttachment attachment in this.Attachments)
+                {
+                    Outlook.Attachment oAttach =
+                    mail.Attachments.Add("@" + attachment.AttachemntPath + "\\" + attachment.AttachmentFullFileName,
+                        Outlook.OlAttachmentType.olByValue, Type.Missing,
+                        Type.Missing);
+                    oAttach = null;
+                }
+                //If There Are Recipient to send the message to then send the message.
+                if (mail.Recipients.Count > 0)
+                {
+                    mail.Save();
+                    mail.Send();
+                }
             }
-           
-            mail.Save();
-            mail.Send();
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Error Send email Via Oultook - Error : " + ex.Message);
+            }
+            finally
+            {
+                //Explicitly release objects.
+                mail = null;
+            }
         }
+
+
 
         /// <summary>
         ///Refere to where the code was taken from
@@ -82,7 +101,7 @@ namespace Impendulo.Email
                 {
                     recipientTo = recipients.Add((((EmailAddress)address).Address));
                     recipientTo.Type = (int)Outlook.OlMailRecipientType.olBCC;
-                }               
+                }
                 retValue = recipients.ResolveAll();
             }
             catch (Exception ex)
@@ -97,6 +116,11 @@ namespace Impendulo.Email
                 if (recipients != null) Marshal.ReleaseComObject(recipients);
             }
             return retValue;
+        }
+
+        public void Dispose()
+        {
+            oApp = null;
         }
     }
 }

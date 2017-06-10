@@ -40,6 +40,11 @@ namespace Impendulo.Email
 
                 }
             }
+            else
+            {
+                AttachmentFileName = "";
+                AttachmentFileExtension = "";
+            }
         }
     }
 }

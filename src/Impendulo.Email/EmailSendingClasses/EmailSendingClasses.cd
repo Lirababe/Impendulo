@@ -38,16 +38,18 @@
   <Class Name="Impendulo.Email.OutlookEmailMessage">
     <Position X="9.75" Y="5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAACAAAAAABAAAAAAgAAAAAAAIAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAACAAAAAABAAAAAAgAAAAAAAIAAA=</HashCode>
       <FileName>EmailSendingClasses\OutlookEmailMessage.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Impendulo.Email.StandardEmailMessage">
-    <Position X="9.75" Y="7.75" Width="2.75" />
+    <Position X="9.75" Y="8.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAVIAAAAACAAAAABACBAAEAAAAAAAAAAAAAEBAAACAA=</HashCode>
       <FileName>EmailSendingClasses\StandardEmailMessage.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Impendulo.Email.EmailAttachment">
     <Position X="18.25" Y="1.25" Width="2" />
