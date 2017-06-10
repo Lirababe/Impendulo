@@ -15,6 +15,7 @@ namespace Impendulo.Email
         private enumMessagePriority _MessagePriority = enumMessagePriority.Low;
         private string _FromAddress = "";
         private string _MessageBody = "";
+        private string _Subject = "";
 
         public List<IEmailAddress> BccAddress
         {
@@ -82,7 +83,20 @@ namespace Impendulo.Email
             }
         }
 
-        public abstract void sendMessage();
+        public string Subject
+        {
+            get
+            {
+                return _Subject;
+            }
+
+            set
+            {
+                _Subject = value;
+            }
+        }
+
+        public abstract void SendMessage();
 
         public void addAttachment(IAttachment newAttachment)
         {

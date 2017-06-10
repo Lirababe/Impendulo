@@ -20,7 +20,7 @@ namespace Impendulo.Email.Reseach
         {
             InitializeComponent();
             eMail = (Outlook.MailItem)this.oApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olMailItem);
-            //            Outlook.MailItem mail = Application.CreateItem(Outlook.OlItemType.olMailItem) as Outlook.MailItem;
+           
         }
 
         private void EmailTestONe_Load(object sender, EventArgs e)

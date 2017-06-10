@@ -3,7 +3,7 @@
   <Class Name="Impendulo.Email.EmailMessage" BaseTypeListCollapsed="true">
     <Position X="0.5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>UAAQABCAAQRAAAEAAFIQAAigABAQAAAAAIQIAAAAIQA=</HashCode>
+      <HashCode>UAAQABCAAQRAAAEAAPIQAAiAABAQAAAAAIQIAAAAISA=</HashCode>
       <FileName>EmailSendingClasses\EmailMessage.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -24,26 +24,26 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Impendulo.Email.InvalidEmailAddressException">
-    <Position X="3.25" Y="5.5" Width="3.25" />
+    <Position X="2.75" Y="1.5" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EmailSendingClasses\InvalidEmailAddressException.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="System.Exception">
-    <Position X="6" Y="0.75" Width="2.75" />
+    <Position X="6.5" Y="1" Width="2.75" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Impendulo.Email.OutlookEmailMessage" Collapsed="true">
-    <Position X="3" Y="0.75" Width="2" />
+  <Class Name="Impendulo.Email.OutlookEmailMessage">
+    <Position X="9.75" Y="5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAABAAAAAAgAAAAAAAIAAA=</HashCode>
       <FileName>EmailSendingClasses\OutlookEmailMessage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Impendulo.Email.StandardEmailMessage">
-    <Position X="3" Y="1.75" Width="2.5" />
+    <Position X="9.75" Y="7.75" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EmailSendingClasses\StandardEmailMessage.cs</FileName>
@@ -74,7 +74,7 @@
   <Interface Name="Impendulo.Email.EmailSendingClasses.IEmailMessage">
     <Position X="5.75" Y="7.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>QAAQAAAAAAAAAAEAABAAAAAgAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <HashCode>QAAQAAAAAAAAAAEAAJAAAAAgAAAAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>EmailSendingClasses\IEmailMessage.cs</FileName>
     </TypeIdentifier>
   </Interface>

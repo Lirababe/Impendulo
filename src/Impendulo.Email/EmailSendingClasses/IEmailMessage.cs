@@ -12,6 +12,7 @@ namespace Impendulo.Email.EmailSendingClasses
         List<IEmailAddress> CcAddresses { get; }
         List<IEmailAddress> BccAddress { get; }
         List<IAttachment> Attachments { get; }
+        string Subject { get; set; }
         string FromAddress { get; }
         /// <summary>
         /// 

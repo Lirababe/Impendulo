@@ -18,7 +18,7 @@ namespace Impendulo.Email
             this.addFromAddress(fromAddress);
         }
 
-        public override void sendMessage()
+        public override void SendMessage()
         {
             throw new NotImplementedException();
         }
