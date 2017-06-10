@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Outlook = Microsoft.Office.Interop.Outlook;
 
-namespace Impendulo.Common.EmailSendingClasses
+namespace Impendulo.Common.EmailSending
 {
     public class OutlookEmailMessage : EmailMessage, IDisposable
     {
@@ -34,6 +34,7 @@ namespace Impendulo.Common.EmailSendingClasses
             try
             {
                 mail.Subject = this.Subject;
+                
                 //mail.Body = this.MessageBody;
                 // Add recipient using display name, alias, or smtp address
                 AddRecipients(mail);
@@ -110,6 +111,7 @@ namespace Impendulo.Common.EmailSendingClasses
                 {
                     recipientTo = recipients.Add((((EmailAddress)address).Address));
                     recipientTo.Type = (int)Outlook.OlMailRecipientType.olTo;
+                    
                 }
                 foreach (IEmailAddress address in this.CcAddresses)
                 {

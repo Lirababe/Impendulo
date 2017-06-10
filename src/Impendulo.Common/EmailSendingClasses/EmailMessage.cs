@@ -1,10 +1,9 @@
-﻿using Impendulo.Email.EmailSendingClasses;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Impendulo.Common.EmailSendingClasses
+namespace Impendulo.Common.EmailSending
 {
     public abstract class EmailMessage : IEmailMessage
     {

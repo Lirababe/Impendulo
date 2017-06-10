@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 
-namespace Impendulo.Common.EmailSendingClasses
+namespace Impendulo.Common.EmailSending
 {
     public class StandardEmailMessage : EmailMessage, IDisposable
     {

@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace Impendulo.Common.EmailSendingClasses
+namespace Impendulo.Common.EmailSending
 {
     /// <summary>
     /// Link to where the info for this class was created from:

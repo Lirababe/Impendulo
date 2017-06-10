@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace Impendulo.Common.EmailSendingClasses
+namespace Impendulo.Common.EmailSending
 {
     public class InvalidEmailAddressException : Exception
     {

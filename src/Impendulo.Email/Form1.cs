@@ -16,6 +16,7 @@ using System.Net.Mail;
 using System.Runtime.InteropServices;
 using Outlook = Microsoft.Office.Interop.Outlook;
 using Impendulo.Data.Models;
+using Impendulo.Common.EmailSending;
 //using Office = Microsoft.Office.Core;
 
 namespace Impendulo.Email
