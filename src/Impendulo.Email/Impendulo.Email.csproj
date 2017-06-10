@@ -101,7 +101,7 @@
     <Compile Include="Select Contacts\frmSelectEmailContacts.Designer.cs">
       <DependentUpon>frmSelectEmailContacts.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmailSendingClasses\StandardEmailMessage.cs" />
+    <Compile Include="EmailSendingClasses\StandardEmailMessage1.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
