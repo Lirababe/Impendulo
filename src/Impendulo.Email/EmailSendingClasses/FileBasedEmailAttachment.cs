@@ -11,11 +11,11 @@ namespace Impendulo.Email
     {
         public FileBasedEmailAttachment()
         {
-            this.AttachemntPath = "C:\\MCDAttachemntsTemp";
+            // this.AttachemntPath = "C:/MCDAttachemntsTemp";
         }
         public FileBasedEmailAttachment(string FileName)
         {
-            this.AttachemntPath = "C:\\MCDAttachemntsTemp".ToString();
+            // this.AttachemntPath = "C:\\MCDAttachemntsTemp";
             FileInfo fileInfo = new FileInfo(FileName);
 
             Char delimiter = '.';
@@ -37,6 +37,7 @@ namespace Impendulo.Email
                     Char delimiter = '.';
                     AttachmentFileName = fileInfo.Name.Split(delimiter)[0];
                     AttachmentFileExtension = fileInfo.Extension.Replace(".", "");
+                    this.AttachemntPath = LocalFileName;
 
                 }
             }
@@ -44,6 +45,7 @@ namespace Impendulo.Email
             {
                 AttachmentFileName = "";
                 AttachmentFileExtension = "";
+                this.AttachemntPath = "";
             }
         }
     }

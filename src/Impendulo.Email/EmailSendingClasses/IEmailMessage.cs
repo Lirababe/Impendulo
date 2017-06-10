@@ -14,6 +14,7 @@ namespace Impendulo.Email.EmailSendingClasses
         List<IAttachment> Attachments { get; }
         string Subject { get; set; }
         string FromAddress { get; }
+        string DisplayName { get; set; }
         /// <summary>
         /// 
         /// </summary>

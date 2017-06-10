@@ -146,10 +146,10 @@ namespace Impendulo.Email
 
             outlookMessage.Subject = "This Is test message testing my new code!!";
 
-            //FileBasedEmailAttachment x = new FileBasedEmailAttachment();
+            FileBasedEmailAttachment x = new FileBasedEmailAttachment();
 
-            //x.GetAttachment();
-            //outlookMessage.addAttachment(x);
+            x.GetAttachment();
+            outlookMessage.addAttachment(x);
 
             outlookMessage.SendMessage();
         }

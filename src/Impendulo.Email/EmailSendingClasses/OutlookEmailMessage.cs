@@ -41,7 +41,7 @@ namespace Impendulo.Email
                 foreach (IAttachment attachment in this.Attachments)
                 {
                     Outlook.Attachment oAttach =
-                    mail.Attachments.Add(attachment.AttachemntPath + "\\" + attachment.AttachmentFullFileName,
+                    mail.Attachments.Add(attachment.AttachemntPath,
                         Outlook.OlAttachmentType.olByValue, Type.Missing,
                         Type.Missing);
                     oAttach = null;
@@ -51,8 +51,22 @@ namespace Impendulo.Email
                 {
                     Outlook.Inspector myInspector = mail.GetInspector;
                     String text;
-                    text = "mail text" + mail.HTMLBody;
+                    text = this.MessageBody + mail.HTMLBody;
                     mail.HTMLBody = text;
+
+                    if (this.MessagePriority == enumMessagePriority.Low)
+                    {
+                        mail.Importance = Microsoft.Office.Interop.Outlook.OlImportance.olImportanceLow;
+                    }
+                    if (this.MessagePriority == enumMessagePriority.Medium)
+                    {
+                        mail.Importance = Microsoft.Office.Interop.Outlook.OlImportance.olImportanceNormal;
+                    }
+                    if (this.MessagePriority == enumMessagePriority.High)
+                    {
+                        mail.Importance = Microsoft.Office.Interop.Outlook.OlImportance.olImportanceHigh;
+                    }
+
                     mail.Save();
                     mail.Send();
                 }

@@ -16,6 +16,7 @@ namespace Impendulo.Email
         private string _FromAddress = "";
         private string _MessageBody = "";
         private string _Subject = "";
+        private string _DisplayName = "";
 
         public List<IEmailAddress> BccAddress
         {
@@ -93,6 +94,19 @@ namespace Impendulo.Email
             set
             {
                 _Subject = value;
+            }
+        }
+
+        public string DisplayName
+        {
+            get
+            {
+                return _DisplayName;
+            }
+
+            set
+            {
+                DisplayName = value;
             }
         }
 
