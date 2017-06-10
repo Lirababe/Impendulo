@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Created 9 June 2017.&#xD;&#xA;Author: Brendan Wood&#xD;&#xA;Last Updated 10 June 2017">
+    <Position X="4.635" Y="1.458" Height="0.906" Width="2.013" />
+  </Comment>
+  <Class Name="Impendulo.Common.EmailSendingClasses.EmailMessage" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>UAAQEBCAAQRAAAEAAPIQAAiAABAQAAAAAIQIAAQAISA=</HashCode>
+      <FileName>EmailSendingClasses\EmailMessage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Impendulo.Common.EmailSendingClasses.RegexUtilities">
+    <Position X="10.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>EmailSendingClasses\RegexUtilities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Impendulo.Common.EmailSendingClasses.EmailAddress">
+    <Position X="7.5" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>EmailSendingClasses\EmailAddress.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Impendulo.Common.EmailSendingClasses.InvalidEmailAddressException">
+    <Position X="10.5" Y="9.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EmailSendingClasses\InvalidEmailAddressException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Exception">
+    <Position X="7.25" Y="8" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Impendulo.Common.EmailSendingClasses.OutlookEmailMessage">
+    <Position X="0.5" Y="9.25" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAACAAAAAABAAAAAAgAAAAAAAIAAA=</HashCode>
+      <FileName>EmailSendingClasses\OutlookEmailMessage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Impendulo.Common.EmailSendingClasses.EmailAttachment">
+    <Position X="12.5" Y="3.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAEAEIIACAAAAAAAAAAAAAIgAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>EmailSendingClasses\EmailAttachments.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Impendulo.Common.EmailSendingClasses.FileBasedEmailAttachment">
+    <Position X="10.5" Y="7.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EmailSendingClasses\FileBasedEmailAttachment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Impendulo.Common.EmailSendingClasses.FileImageBasedEmailAttachment">
+    <Position X="14.25" Y="7.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAIAAAAAAAAAAAAAAIAAQA=</HashCode>
+      <FileName>EmailSendingClasses\FileImageBasedEmailAttachment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object">
+    <Position X="7.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Impendulo.Common.EmailSendingClasses.StandardEmailMessage">
+    <Position X="4" Y="9.25" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAVIAgAAACAAAEABACJAAEAAAAAACAACAQAEBBQgCAA=</HashCode>
+      <FileName>EmailSendingClasses\StandardEmailMessage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Impendulo.Common.EmailSendingClasses.IEmailMessage">
+    <Position X="5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAQEAAAAAAAAAEAALAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>EmailSendingClasses\IEmailMessage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Impendulo.Common.EmailSendingClasses.IMessage">
+    <Position X="5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EmailSendingClasses\IMessage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Impendulo.Common.EmailSendingClasses.IEmailAddress">
+    <Position X="7.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EmailSendingClasses\IAddress.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Impendulo.Common.EmailSendingClasses.IAttachment">
+    <Position X="12.5" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEAEAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>EmailSendingClasses\IAttachment.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Impendulo.Common.EmailSendingClasses.enumMessagePriority">
+    <Position X="2" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>EmailSendingClasses\enumMessagePriority.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
