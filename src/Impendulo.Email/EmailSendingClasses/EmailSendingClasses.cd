@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Impendulo.Email.EmailMessage" BaseTypeListCollapsed="true">
-    <Position X="9" Y="6" Width="2.75" />
+    <Position X="12.75" Y="3.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>UAAQABCAAQAAAAAAAFAAAAigAAAQAAAAAIQIAAAAIAA=</HashCode>
+      <HashCode>UAAQABCAAQRAAAEAAFIQAAigABAQAAAAAIQIAAAAIQA=</HashCode>
       <FileName>EmailSendingClasses\EmailMessage.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -35,10 +35,25 @@
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="Impendulo.Email.EmailSendingClasses.IEmailMessage">
-    <Position X="5.75" Y="8" Width="1.5" />
+  <Class Name="Impendulo.Email.OutlookEmailMessage">
+    <Position X="8.75" Y="10.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>QAAQAAAAAAAAAAAAABAAAAAgAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OutlookEmailMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Impendulo.Email.EmailAttachments">
+    <Position X="19" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEAEIIACAAAAAAAAAAAAAAgAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>EmailAttachments.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Impendulo.Email.EmailSendingClasses.IEmailMessage">
+    <Position X="5.75" Y="8" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QAAQAAAAAAAAAAEAABAAAAAgAAAAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>EmailSendingClasses\IEmailMessage.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -54,6 +69,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EmailSendingClasses\IAddress.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Impendulo.Email.IAttachment">
+    <Position X="18.25" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEAEAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>IAttachment.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="Impendulo.Email.enumMessagePriority">

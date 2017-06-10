@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmailAttachments.cs" />
     <Compile Include="EmailSendingClasses\EmailAddress.cs" />
     <Compile Include="EmailSendingClasses\IEmailMessage.cs" />
     <Compile Include="EmailSendingClasses\enumMessagePriority.cs" />
@@ -80,6 +81,9 @@
     <Compile Include="EmailSendingClasses\EmailMessage.cs" />
     <Compile Include="EmailSendingClasses\IAddress.cs" />
     <Compile Include="EmailSendingClasses\InvalidEmailAddressException.cs" />
+    <Compile Include="IAttachment.cs" />
+    <Compile Include="IEmailAttachments.cs" />
+    <Compile Include="OutlookEmailMessage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EmailSendingClasses\RegexUtilities.cs" />

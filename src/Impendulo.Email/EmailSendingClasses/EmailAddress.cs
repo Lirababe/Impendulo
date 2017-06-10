@@ -7,7 +7,7 @@ namespace Impendulo.Email
 {
     public class EmailAddress : RegexUtilities, IEmailAddress
     {
-        string Address { get; set; }
+        public string Address { get; set; }
         public EmailAddress(string strEmailAddress)
         {
             if (ValidateEmailAddress(strEmailAddress))
@@ -16,12 +16,12 @@ namespace Impendulo.Email
             }
             else
             {
-                throw new InvalidEmailAddressException("The Following Address is In valid: " + strEmailAddress);
+                throw new InvalidEmailAddressException("The Following Address is Invalid: " + strEmailAddress + ", Address Not Added.");
             }
         }
         public Boolean ValidateEmailAddress(string strEmailAddress)
         {
-            return IsValidEmail(strEmailAddress);
+            return base.IsValidEmail(strEmailAddress);
         }
     }
 }

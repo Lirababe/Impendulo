@@ -11,6 +11,7 @@ namespace Impendulo.Email.EmailSendingClasses
         List<IEmailAddress> ToAddesses { get; }
         List<IEmailAddress> CcAddresses { get; }
         List<IEmailAddress> BccAddress { get; }
+        List<IAttachment> Attachments { get; }
         string FromAddress { get; }
         /// <summary>
         /// 

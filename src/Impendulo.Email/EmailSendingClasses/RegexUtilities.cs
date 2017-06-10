@@ -12,7 +12,7 @@ namespace Impendulo.Email
     {
         bool invalid = false;
 
-        public bool IsValidEmail(string strIn)
+        protected bool IsValidEmail(string strIn)
         {
             invalid = false;
             if (String.IsNullOrEmpty(strIn))

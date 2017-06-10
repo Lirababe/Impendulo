@@ -8,12 +8,13 @@ namespace Impendulo.Email
 {
     public abstract class EmailMessage : IEmailMessage
     {
-        List<IEmailAddress> _ToAddesses = new List<IEmailAddress>();
-        List<IEmailAddress> _BCCAddress = new List<IEmailAddress>();
-        List<IEmailAddress> _CcAddresses = new List<IEmailAddress>();
-        enumMessagePriority _MessagePriority = enumMessagePriority.Low;
-        string _FromAddress = "";
-        string _MessageBody = "";
+        private List<IEmailAddress> _ToAddesses = new List<IEmailAddress>();
+        private List<IEmailAddress> _BCCAddress = new List<IEmailAddress>();
+        private List<IEmailAddress> _CcAddresses = new List<IEmailAddress>();
+        private List<IAttachment> _Attachments = new List<IAttachment>();
+        private enumMessagePriority _MessagePriority = enumMessagePriority.Low;
+        private string _FromAddress = "";
+        private string _MessageBody = "";
 
         public List<IEmailAddress> BccAddress
         {
@@ -73,8 +74,20 @@ namespace Impendulo.Email
             }
         }
 
+        public List<IAttachment> Attachments
+        {
+            get
+            {
+                return _Attachments;
+            }
+        }
+
         public abstract void sendMessage();
 
+        public void addAttachment(IAttachment newAttachment)
+        {
+            _Attachments.Add(newAttachment);
+        }
         public void addToAddress(string strEmailAddress)
         {
             try
@@ -84,7 +97,7 @@ namespace Impendulo.Email
             }
             catch (InvalidEmailAddressException ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message, "Adding Address Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                System.Windows.Forms.MessageBox.Show(ex.Message, "Adding ToAddress Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
         }
         public void addBccAddress(string strEmailAddress)
@@ -96,7 +109,7 @@ namespace Impendulo.Email
             }
             catch (InvalidEmailAddressException ex)
             {
-                throw ex;
+                System.Windows.Forms.MessageBox.Show(ex.Message, "Adding Bcc Address Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
         }
         public void addCcAddress(string strEmailAddress)
@@ -108,10 +121,31 @@ namespace Impendulo.Email
             }
             catch (InvalidEmailAddressException ex)
             {
-                throw ex;
+                System.Windows.Forms.MessageBox.Show(ex.Message, "Adding Cc Address Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
+        }
+        public void addFromAddress(string strEmailAddress)
+        {
+            try
+            {
+                EmailAddress newEmailAddress = new EmailAddress(strEmailAddress);
+                this._FromAddress = newEmailAddress.Address;
+            }
+            catch (InvalidEmailAddressException ex)
+            {
+                System.Windows.Forms.MessageBox.Show(
+                    ex.Message, "Adding From Address Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
         }
         public void clearToAddress()
+        {
+            this._ToAddesses.Clear();
+        }
+        public void clearCcAddress()
+        {
+            this._CcAddresses.Clear();
+        }
+        public void clearBccAddress()
         {
             this._ToAddesses.Clear();
         }
