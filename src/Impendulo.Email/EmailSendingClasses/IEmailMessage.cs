@@ -17,6 +17,6 @@ namespace Impendulo.Email.EmailSendingClasses
         /// <summary>
         /// 
         /// </summary>
-        void sendMessage();
+        void SendMessage();
     }
 }

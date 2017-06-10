@@ -34,13 +34,14 @@ namespace Impendulo.Email
             try
             {
                 mail.Subject = this.Subject;
+                //mail.Body = this.MessageBody;
                 // Add recipient using display name, alias, or smtp address
                 AddRecipients(mail);
                 //Add All Attachments to the Message
                 foreach (IAttachment attachment in this.Attachments)
                 {
                     Outlook.Attachment oAttach =
-                    mail.Attachments.Add("@" + attachment.AttachemntPath + "\\" + attachment.AttachmentFullFileName,
+                    mail.Attachments.Add(attachment.AttachemntPath + "\\" + attachment.AttachmentFullFileName,
                         Outlook.OlAttachmentType.olByValue, Type.Missing,
                         Type.Missing);
                     oAttach = null;
@@ -48,6 +49,10 @@ namespace Impendulo.Email
                 //If There Are Recipient to send the message to then send the message.
                 if (mail.Recipients.Count > 0)
                 {
+                    Outlook.Inspector myInspector = mail.GetInspector;
+                    String text;
+                    text = "mail text" + mail.HTMLBody;
+                    mail.HTMLBody = text;
                     mail.Save();
                     mail.Send();
                 }

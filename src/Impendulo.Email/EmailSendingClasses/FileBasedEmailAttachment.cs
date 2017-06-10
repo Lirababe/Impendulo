@@ -15,7 +15,7 @@ namespace Impendulo.Email
         }
         public FileBasedEmailAttachment(string FileName)
         {
-            this.AttachemntPath = "C:\\MCDAttachemntsTemp";
+            this.AttachemntPath = "C:\\MCDAttachemntsTemp".ToString();
             FileInfo fileInfo = new FileInfo(FileName);
 
             Char delimiter = '.';
