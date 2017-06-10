@@ -135,7 +135,23 @@ namespace Impendulo.Email
 
         private void button3_Click(object sender, EventArgs e)
         {
+            OutlookEmailMessage outlookMessage = new OutlookEmailMessage("Brendanw@mweb.co.za");
 
+            outlookMessage.addToAddress("brendanw@mweb.co.za");
+            outlookMessage.addToAddress("mcsfrangipani@gmail.com");
+
+            outlookMessage.addBccAddress("brendanw1@mweb.co.za");
+
+            outlookMessage.MessageBody = "This Id GOing TO BE how I Test the New Classes.......";
+
+            outlookMessage.Subject = "This Is test message testing my new code!!";
+
+            FileBasedEmailAttachment x = new FileBasedEmailAttachment();
+
+            x.GetAttachment();
+            outlookMessage.addAttachment(x);
+
+            outlookMessage.SendMessage();
         }
     }
 }
