@@ -4,7 +4,7 @@
     <Position X="4.635" Y="1.458" Height="0.906" Width="2.013" />
   </Comment>
   <Class Name="Impendulo.Email.EmailMessage" BaseTypeListCollapsed="true">
-    <Position X="2.75" Y="3.75" Width="1.5" />
+    <Position X="2.25" Y="3.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
@@ -114,14 +114,14 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Impendulo.Email.IAttachment">
-    <Position X="12.5" Y="1.5" Width="2" />
+    <Position X="12.5" Y="1.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAEAEAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>EmailSendingClasses\IAttachment.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="Impendulo.Email.enumMessagePriority">
-    <Position X="2.5" Y="2" Width="1.75" />
+    <Position X="2" Y="1.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>EmailSendingClasses\enumMessagePriority.cs</FileName>

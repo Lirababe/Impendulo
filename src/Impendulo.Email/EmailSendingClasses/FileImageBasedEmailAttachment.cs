@@ -24,8 +24,9 @@ namespace Impendulo.Email
 
                 this.AttachmentFileName = CurrentFile.FileName;
                 this.AttachmentFileExtension = CurrentFile.FileExtension;
+               
 
-                System.IO.File.WriteAllBytes(AttachemntPath + "\\" + this.AttachmentFullFileName + "_" +this.FileID.ToString(), CurrentFile.FileImage);
+                System.IO.File.WriteAllBytes(AttachemntPath + "\\" + this.FileID.ToString() + "_" + this.AttachmentFullFileName, CurrentFile.FileImage);
             }
         }
         public Boolean ClearCreateTempDirectory()
@@ -78,7 +79,7 @@ namespace Impendulo.Email
             catch (Exception ex)
             {
                 Rtn = false;
-                System.Windows.Forms.MessageBox.Show("Error clearing or Creating Temp Folder for Attachments" + ": " + ex.Message.ToString(), "Attachment Temp Folder Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                System.Windows.Forms.MessageBox.Show("Error Clearing or Creating Temp Folder for Attachments" + ": " + ex.Message.ToString(), "Attachment Temp Folder Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
 
             return Rtn;

@@ -106,7 +106,7 @@ namespace Impendulo.Email
 
             set
             {
-                DisplayName = value;
+                _DisplayName = value;
             }
         }
 

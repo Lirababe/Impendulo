@@ -100,9 +100,9 @@ namespace Impendulo.Email
                 byte[] x;
                 using (var Dbconnection = new MCDEntities())
                 {
-                   x = ((from a in Dbconnection.Files
-                              where a.ImageID == 32
-                              select a).FirstOrDefault()).FileImage;
+                    x = ((from a in Dbconnection.Files
+                          where a.ImageID == 32
+                          select a).FirstOrDefault()).FileImage;
                 };
                 oMsg.Attachments.Add(x, Outlook.OlAttachmentType.olByValue, Type.Missing,
                Type.Missing);
@@ -140,18 +140,53 @@ namespace Impendulo.Email
             outlookMessage.addToAddress("brendanw@mweb.co.za");
             outlookMessage.addToAddress("mcsfrangipani@gmail.com");
 
-            outlookMessage.addBccAddress("brendanw1@mweb.co.za");
+            // outlookMessage.addBccAddress("brendanw1mweb.co.za");
 
             outlookMessage.MessageBody = "This Id GOing TO BE how I Test the New Classes.......";
 
-            outlookMessage.Subject = "This Is test message testing my new code!!";
+            outlookMessage.Subject = "This Is test message testing my new code Sent Via Outlook!!";
+
+            FileBasedEmailAttachment x = new FileBasedEmailAttachment();
+            x.GetAttachment();
+
+            FileImageBasedEmailAttachment y = new FileImageBasedEmailAttachment(32);
+            y.ClearCreateTempDirectory();
+            y.GetAttachment();
+            y.AttachemntPath = y.AttachemntPath + "\\" + 32 + "_" + y.AttachmentFullFileName;
+
+            outlookMessage.addAttachment(x);
+            outlookMessage.addAttachment(y);
+
+            outlookMessage.SendMessage();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            StandardEmailMessage standardMessage = new StandardEmailMessage("Brendanw@mweb.co.za", enumMessagePriority.High);
+
+            standardMessage.addToAddress("brendanw@mweb.co.za");
+            standardMessage.addToAddress("mcsfrangipani@gmail.com");
+
+            standardMessage.MessageBody = "This Id GOing TO BE how I Test the New Classes.......";
+
+            standardMessage.Subject = "This Is test message testing my new code Sent Via .net!!";
 
             FileBasedEmailAttachment x = new FileBasedEmailAttachment();
 
             x.GetAttachment();
-            outlookMessage.addAttachment(x);
 
-            outlookMessage.SendMessage();
+
+            FileImageBasedEmailAttachment y = new FileImageBasedEmailAttachment(32);
+            y.ClearCreateTempDirectory();
+            y.GetAttachment();
+            y.AttachemntPath = y.AttachemntPath + "\\" + 32 + "_" + y.AttachmentFullFileName;
+
+            standardMessage.addAttachment(x);
+            standardMessage.addAttachment(y);
+
+            standardMessage.SendMessage();
+
+
         }
     }
 }
