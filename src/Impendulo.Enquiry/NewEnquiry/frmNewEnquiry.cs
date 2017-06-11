@@ -15,6 +15,7 @@ using Impendulo.Enquiry.SelectCourseCurriculum.Development;
 using Impendulo.Enquiry.SelectContacts.Developemnt;
 using Impendulo.Enquiry.UpdateSelectedCurriculumEnrollQty.Development;
 using Impendulo.Enquiry.SelectContacts.Deployment1;
+using Impendulo.Common.EmailSending;
 
 namespace Impendulo.WizardForm.ClientEnquiry.Development
 {
@@ -987,6 +988,48 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
 
                 Dbconnection.SaveChanges();
             };
+            sendEmailNotifications();
+        }
+        /// <summary>
+        /// Send notification to Client that initiated the Enquiry.
+        /// Also Sends a notification to the Consultants that are relivant to the enquiry.
+        /// </summary>
+        private void sendEmailNotifications()
+        {
+
+            /*Setps for the Notification sent after enquiry created.
+             Step 1 get the 
+              */
+
+            OutlookEmailMessage newOutlookEmailMessage = new OutlookEmailMessage();
+
+            newOutlookEmailMessage.MessagePriority = enumMessagePriority.High;
+            newOutlookEmailMessage.Subject = "Equiry Feedback From MCD Training - Ref " + CurrentEnquiry.EnquiryID;
+            newOutlookEmailMessage.MessageBody = "Client Intitial Welcome Notice.";
+
+            //Step 1 - Notify the Client 
+            //Step 1.1 get list of enquiry associated contacts.
+            List<Individual> ContactWhichInitiatedTheEquiry = (from a in CurrentEnquiry.Individuals
+                                                               select a).ToList<Individual>();
+
+            foreach (Individual individualToEmail in CurrentEnquiry.Individuals)
+            {
+                foreach(ContactDetail IndividualContactDetails in individualToEmail.ContactDetails)
+                {
+                    if(IndividualContactDetails.ContactTypeID == (int)EnumContactTypes.Email_Address)
+                    {
+                        newOutlookEmailMessage.addToAddress(IndividualContactDetails.ContactDetailValue);
+                    }
+                }
+            }
+
+            newOutlookEmailMessage.SendMessage();
+
+            /*For Development and testing purposes the email will be sent to the person that create the equiry*/
+
+
+
+
         }
 
         private void frmNewEnquiry_ResizeEnd(object sender, EventArgs e)

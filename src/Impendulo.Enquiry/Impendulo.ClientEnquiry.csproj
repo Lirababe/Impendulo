@@ -62,6 +62,12 @@
     <Compile Include="Configuration\frmEnquiryDocumentsToSend.Designer.cs">
       <DependentUpon>frmEnquiryDocumentsToSend.cs</DependentUpon>
     </Compile>
+    <Compile Include="EnquiryHistory\frmEquiryHistroy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnquiryHistory\frmEquiryHistroy.Designer.cs">
+      <DependentUpon>frmEquiryHistroy.cs</DependentUpon>
+    </Compile>
     <Compile Include="EnquiryProcessing\Aprenticeship\Step1-DocumentsToSend\frmEnquiryDocumentsToSend_Apprenticeship.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </Compile>
     <EmbeddedResource Include="Configuration\frmEnquiryDocumentsToSend.resx">
       <DependentUpon>frmEnquiryDocumentsToSend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryHistory\frmEquiryHistroy.resx">
+      <DependentUpon>frmEquiryHistroy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EnquiryProcessing\Aprenticeship\Step1-DocumentsToSend\frmEnquiryDocumentsToSend_Apprenticeship.resx">
       <DependentUpon>frmEnquiryDocumentsToSend_Apprenticeship.cs</DependentUpon>
