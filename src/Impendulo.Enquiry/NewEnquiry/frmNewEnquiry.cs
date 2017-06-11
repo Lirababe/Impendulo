@@ -95,7 +95,9 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                 {
                     CurrentEmployeeLoggedIn = (from a in Dbconnection.Employees
                                                where a.EmployeeID == 11075
-                                               select a).FirstOrDefault<Employee>();
+                                               select a)
+                                               .Include("Individual")
+                                               .FirstOrDefault<Employee>();
                 };
 
                 /***************************************************************************************/
@@ -947,7 +949,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
 
                         CurrentEnquiry.LookupEquiryOrigions.Add(LEO);
                     }
-                    
+
                 }
                 Dbconnection.SaveChanges();
 
@@ -1000,8 +1002,8 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
             /*Setps for the Notification sent after enquiry created.
              Step 1 get the 
               */
+            sendClientNotification();
 
-           
             /*For Development and testing purposes the email will be sent to the person that create the equiry*/
         }
 
@@ -1013,17 +1015,32 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
 
             newOutlookEmailMessage.MessagePriority = enumMessagePriority.High;
             newOutlookEmailMessage.Subject = "Equiry Feedback From MCD Training - Ref " + CurrentEnquiry.EnquiryID;
-            newOutlookEmailMessage.MessageBody = "Client Intitial Welcome Notice.";
-
-           
 
             //Step 1 - Notify the Client 
             //Step 1.1 get list of enquiry associated contacts.
             List<Individual> ContactWhichInitiatedTheEquiry = (from a in CurrentEnquiry.Individuals
                                                                select a).ToList<Individual>();
 
-            string sPersonFullName = ContactWhichInitiatedTheEquiry.FirstOrDefault().
+            string sPersonFullName = ContactWhichInitiatedTheEquiry.FirstOrDefault().FullName;
 
+            string ClientMessage = "<span style='font-size: 16pt'>Good Day " + sPersonFullName + "<br/>";
+
+            ClientMessage += "<!DOCTYPE HTML>";
+            ClientMessage += "<html>";
+            //ClientMessage += "<head>";
+            //ClientMessage += "<title>Enquiry Response</title>";
+            //ClientMessage += "</head>";
+            ClientMessage += "<body style=\"font-size: 12pt; font-family: Tahoma;\">";
+            ClientMessage = "<br>Good Day " + sPersonFullName + "<br>";
+            ClientMessage += "Thank you for you equiry.<br><br>";
+            ClientMessage += "<p>";
+            ClientMessage += "For further enquiry about details you may not be sure of or for follow on this enquiry please refer to the following reference number:<br/>";
+            ClientMessage += "Equiry Reference Number:<strong>" + CurrentEnquiry.EnquiryID + "</strong><br><br>";
+            ClientMessage += "Your enquiry was answered by:<strong> " + CurrentEmployeeLoggedIn.Individual.FullName + "</strong>.<br/>";
+            ClientMessage += "The details of your enquiry that where disccussed:<br>";
+            ClientMessage += "</p>";
+            ClientMessage += "</body>";
+            ClientMessage += "</html>";
             foreach (Individual individualToEmail in CurrentEnquiry.Individuals)
             {
                 foreach (ContactDetail IndividualContactDetails in individualToEmail.ContactDetails)
@@ -1034,12 +1051,12 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                     }
                 }
             }
-
+            newOutlookEmailMessage.MessageBody = ClientMessage;
             newOutlookEmailMessage.SendMessage();
         }
         private void sendConsultantNotification()
         {
-            ThereIsGoing
+
         }
 
         #endregion
