@@ -1001,22 +1001,34 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
              Step 1 get the 
               */
 
+           
+            /*For Development and testing purposes the email will be sent to the person that create the equiry*/
+        }
+
+        #region Notifications
+
+        private void sendClientNotification()
+        {
             OutlookEmailMessage newOutlookEmailMessage = new OutlookEmailMessage();
 
             newOutlookEmailMessage.MessagePriority = enumMessagePriority.High;
             newOutlookEmailMessage.Subject = "Equiry Feedback From MCD Training - Ref " + CurrentEnquiry.EnquiryID;
             newOutlookEmailMessage.MessageBody = "Client Intitial Welcome Notice.";
 
+           
+
             //Step 1 - Notify the Client 
             //Step 1.1 get list of enquiry associated contacts.
             List<Individual> ContactWhichInitiatedTheEquiry = (from a in CurrentEnquiry.Individuals
                                                                select a).ToList<Individual>();
 
+            string sPersonFullName = ContactWhichInitiatedTheEquiry.FirstOrDefault().
+
             foreach (Individual individualToEmail in CurrentEnquiry.Individuals)
             {
-                foreach(ContactDetail IndividualContactDetails in individualToEmail.ContactDetails)
+                foreach (ContactDetail IndividualContactDetails in individualToEmail.ContactDetails)
                 {
-                    if(IndividualContactDetails.ContactTypeID == (int)EnumContactTypes.Email_Address)
+                    if (IndividualContactDetails.ContactTypeID == (int)EnumContactTypes.Email_Address)
                     {
                         newOutlookEmailMessage.addToAddress(IndividualContactDetails.ContactDetailValue);
                     }
@@ -1024,13 +1036,13 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
             }
 
             newOutlookEmailMessage.SendMessage();
-
-            /*For Development and testing purposes the email will be sent to the person that create the equiry*/
-
-
-
-
         }
+        private void sendConsultantNotification()
+        {
+            ThereIsGoing
+        }
+
+        #endregion
 
         private void frmNewEnquiry_ResizeEnd(object sender, EventArgs e)
         {

@@ -26,7 +26,7 @@
         <EntityTypeShape EntityType="MCDModel.FacilitatorQualification" Width="2.25" PointX="16.375" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="MCDModel.Facilitator" Width="3.625" PointX="7" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="MCDModel.FacilitatorSetaAccreditation" Width="2.625" PointX="10.625" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MCDModel.Individual" Width="2.375" PointX="0.75" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MCDModel.Individual" Width="2.375" PointX="1" PointY="29.125" IsExpanded="true" />
         <EntityTypeShape EntityType="MCDModel.LookupAddressType" Width="2.125" PointX="1.5" PointY="55" IsExpanded="true" />
         <EntityTypeShape EntityType="MCDModel.LookupContactType" Width="2.5" PointX="1.5" PointY="9.5" IsExpanded="true" />
         <EntityTypeShape EntityType="MCDModel.LookupCountry" Width="2.25" PointX="1.5" PointY="57.375" IsExpanded="true" />

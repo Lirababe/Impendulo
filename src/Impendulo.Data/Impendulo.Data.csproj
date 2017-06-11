@@ -136,6 +136,7 @@
     <Compile Include="Models\EquiryHistory.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ExtendedClasses\Individual.cs" />
     <Compile Include="Models\Facilitator.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
