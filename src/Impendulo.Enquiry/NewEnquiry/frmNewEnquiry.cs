@@ -1034,8 +1034,8 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
             ClientMessage = "<br>Good Day " + sPersonFullName + "<br>";
             ClientMessage += "Thank you for you equiry.<br><br>";
             ClientMessage += "<p>";
-            ClientMessage += "For further enquiry about details you may not be sure of or for follow on this enquiry please refer to the following reference number:<br/>";
             ClientMessage += "Equiry Reference Number:<strong>" + CurrentEnquiry.EnquiryID + "</strong><br><br>";
+            ClientMessage += "Please refer to the above mentioned reference number to follow up on your enquiry.<br/>";
             ClientMessage += "Your enquiry was answered by:<strong> " + CurrentEmployeeLoggedIn.Individual.FullName + "</strong>.<br/>";
             ClientMessage += "The details of your enquiry that where disccussed:<br>";
             ClientMessage += "</p>";

@@ -11,6 +11,7 @@ using Impendulo.Data.Models;
 using Impendulo.DatabaseSettings;
 using Impendulo.MainApplication;
 using Impendulo.DatabaseSettings.Deployment;
+using System.Data.Entity;
 
 namespace Impendulo.SystemLogin.Development
 {
@@ -47,7 +48,10 @@ namespace Impendulo.SystemLogin.Development
 
                 //check to see if username exists
                 List<Impendulo.Data.Models.Login> LoginDetails = (from a in Dbconnection.Logins
-                                                                  select a).ToList<Impendulo.Data.Models.Login>();
+                                                                  select a)
+                                                                  .Include("Employee")
+                                                                  .Include("Employee.Individual")
+                                                                  .ToList<Impendulo.Data.Models.Login>();
                 foreach (Impendulo.Data.Models.Login CurrentLoginDetails in LoginDetails)
                 {
                     if (CurrentLoginDetails.UserName.ToLower().Equals(txtUserName.Text.ToLower()))
@@ -66,7 +70,7 @@ namespace Impendulo.SystemLogin.Development
                     MCDMainForm frm = new MCDMainForm();
                     if (this.CurrentEmployee != null)
                     {
-                        //frm.CurrentEmployee = this.CurrentEmployee;
+                        frm.CurrentEmployeeLoggedIn = this.CurrentEmployee;
                         this.Hide();
                         frm.ShowDialog();
                         this.Close();
@@ -81,7 +85,7 @@ namespace Impendulo.SystemLogin.Development
                 }
                 else
                 {
-                    MessageBox.Show("User Name and Password Incorrect Or Not Found!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("User Name and Password Incorrect Or Not Found!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             };
