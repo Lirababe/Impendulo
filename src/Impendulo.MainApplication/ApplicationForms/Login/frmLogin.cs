@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.Entity;
 using Impendulo.Data.Models;
+using Impendulo.DatabaseSettings;
 using Impendulo.MainApplication;
 using Impendulo.DatabaseSettings.Deployment;
+using System.Data.Entity;
 
 namespace Impendulo.SystemLogin.Deployment
 {
@@ -48,7 +49,8 @@ namespace Impendulo.SystemLogin.Deployment
                 //check to see if username exists
                 List<Impendulo.Data.Models.Login> LoginDetails = (from a in Dbconnection.Logins
                                                                   select a)
-                                                                  .Include("Employee.LookupDepartments")
+                                                                  .Include("Employee")
+                                                                  .Include("Employee.Individual")
                                                                   .ToList<Impendulo.Data.Models.Login>();
                 foreach (Impendulo.Data.Models.Login CurrentLoginDetails in LoginDetails)
                 {
@@ -71,34 +73,19 @@ namespace Impendulo.SystemLogin.Deployment
                         frm.CurrentEmployeeLoggedIn = this.CurrentEmployee;
                         this.Hide();
                         frm.ShowDialog();
-                        if (frm.IsLogOut)
-                        {
-                            this.Show();
-                        }
-                        else
-                        {
-                            this.Close();
-                        }
-
+                        this.Close();
                     }
                     else
                     {
                         frm.SystemAdminLogin = this.SystemAdminLogin;
                         this.Hide();
                         frm.ShowDialog();
-                        if (frm.IsLogOut)
-                        {
-                            this.Show();
-                        }
-                        else
-                        {
-                            this.Close();
-                        }
+                        this.Close();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("User Name and Password Incorrect Or Not Found!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("User Name and Password Incorrect Or Not Found!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             };

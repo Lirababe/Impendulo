@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database Enumeration\frmDatabaseEnumeration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Database Enumeration\frmDatabaseEnumeration.Designer.cs">
+      <DependentUpon>frmDatabaseEnumeration.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDynamicallySetConnectionString.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Database Enumeration\frmDatabaseEnumeration.resx">
+      <DependentUpon>frmDatabaseEnumeration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDynamicallySetConnectionString.resx">
       <DependentUpon>frmDynamicallySetConnectionString.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +109,7 @@
       <Name>Impendulo.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
