@@ -13,6 +13,7 @@ using Impendulo.Common.AppSettings;
 using System.Data.SqlClient;
 using System.Data.Entity.Core.EntityClient;
 using Impendulo.Data.Models;
+using System.Data.Sql;
 
 namespace Impendulo.DatabaseSettings.Deployment
 {
@@ -25,11 +26,12 @@ namespace Impendulo.DatabaseSettings.Deployment
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             cboServer.Items.Add(".");
             cboServer.Items.Add("(Local)");
             cboServer.Items.Add("LocalHost");
             cboServer.Items.Add(@".\SQLEXPRESS");
-            cboServer.Items.Add(string.Format(@"{0}\SQLEXPRESS", Environment.MachineName));
+            //cboServer.Items.Add(string.Format(@"{0}\SQLEXPRESS", Environment.MachineName));
             cboServer.SelectedIndex = 2;
             chkUseIntergaratedSecurity.Checked = true;
             if (chkUseIntergaratedSecurity.Checked)
@@ -41,6 +43,24 @@ namespace Impendulo.DatabaseSettings.Deployment
             {
                 txtPassword.Enabled = true;
                 txtUsername.Enabled = true;
+            }
+
+            SqlDataSourceEnumerator instance = SqlDataSourceEnumerator.Instance;
+            System.Data.DataTable table = instance.GetDataSources();
+
+            foreach (System.Data.DataRow row in table.Rows)
+            {
+                cboServer.Items.Add(string.Format(@"{0}\SQLEXPRESS", row["ServerName"].ToString()));
+                cboServer.Items.Add(string.Format(@"{0}", row["ServerName"].ToString()));
+                //ServerName
+                //txtRichTextBox.Text += row["ServerName"] + "\n";
+
+                //foreach (System.Data.DataColumn col in table.Columns)
+                //{
+                //    //Console.WriteLine("{0} = {1}", col.ColumnName, row[col]);
+                //    txtRichTextBox.Text += col.ColumnName + " " + row[col] + "\n";
+                //}
+
             }
 
         }

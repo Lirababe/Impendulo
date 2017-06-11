@@ -51,6 +51,7 @@ namespace Impendulo.SystemLogin.Development
                                                                   select a)
                                                                   .Include("Employee")
                                                                   .Include("Employee.Individual")
+                                                                  .Include("Employee.Individual.ContactDetails")
                                                                   .ToList<Impendulo.Data.Models.Login>();
                 foreach (Impendulo.Data.Models.Login CurrentLoginDetails in LoginDetails)
                 {
