@@ -42,9 +42,7 @@ namespace Impendulo.Common.EmailSending
                 foreach (IAttachment attachment in this.Attachments)
                 {
                     Outlook.Attachment oAttach =
-                    mail.Attachments.Add(attachment.AttachemntPath,
-                        Outlook.OlAttachmentType.olByValue, Type.Missing,
-                        Type.Missing);
+                    mail.Attachments.Add(attachment.AttachemntPath, Outlook.OlAttachmentType.olByValue, Type.Missing, Type.Missing);
                     oAttach = null;
                 }
                 //If There Are Recipient to send the message to then send the message.
