@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Impendulo.Data.Models;
 using System.Data.Entity;
 using Impendulo.Common.Enum;
+
+using Impendulo.Common.EmailSending;
 using Impendulo.Enquiry.SelectContacts.Deployment;
 using Impendulo.Enquiry.SelectCourseCurriculum.Deployment;
 using Impendulo.Enquiry.UpdateSelectedCurriculumEnrollQty.Deployment;
@@ -91,8 +93,13 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
                 using (var Dbconnection = new MCDEntities())
                 {
                     CurrentEmployeeLoggedIn = (from a in Dbconnection.Employees
-                                               where a.EmployeeID == 11075
-                                               select a).FirstOrDefault<Employee>();
+                                               where a.EmployeeID == 14086
+                                               select a)
+                                                .Include("Individual")
+                                                .Include("Individual.ContactDetails")
+                                                .Include("Individual.ContactDetails.LookupContactType")
+                                                .Include("LookupDepartments")
+                                               .FirstOrDefault<Employee>();
                 };
 
                 /***************************************************************************************/
@@ -944,7 +951,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
 
                         CurrentEnquiry.LookupEquiryOrigions.Add(LEO);
                     }
-                    
+
                 }
                 Dbconnection.SaveChanges();
 
@@ -984,7 +991,257 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
                 CurrentEnquiry.EquiryHistories.Add(AddingSelectedCurriculumHistory);
 
                 Dbconnection.SaveChanges();
+
+                //Dbconnection.Entry(CurrentEnquiry).Collection("CurriculumEnquiries").Load();
+
+
+                //foreach (CurriculumEnquiry CE in CurrentEnquiry.CurriculumEnquiries)
+                //{
+                //    Dbconnection.CurriculumEnquiries.Attach(CE);
+                //    Dbconnection.Entry(CE).Reference("Curriculum").Load();
+                //    Dbconnection.Entry(CE).Reference("Curriculum.LookupDepartment").Load();
+
+                //    //foreach (Curriculum in CE.Curriculum.LookupDepartment)
+                //    //Dbconnection.Entry(CE).Collection("Curriculum.LookupDepartment").Load();
+                //}
+
+
+                //Dbconnection.Entry(CurrentEnquiry).Reference("CurriculumEnquiries.Curriculum.LookupDepartment").Load();
             };
+            sendEmailNotifications();
+        }
+        /// <summary>
+        /// Send notification to Client that initiated the Enquiry.
+        /// Also Sends a notification to the Consultants that are relivant to the enquiry.
+        /// </summary>
+        private void sendEmailNotifications()
+        {
+
+            /*Setps for the Notification sent after enquiry created.
+             Step 1 get the 
+              */
+            sendClientNotification();
+            sendConsultantNotification();
+
+            /*For Development and testing purposes the email will be sent to the person that create the equiry*/
+        }
+
+        #region Notifications
+
+        private void sendClientNotification()
+        {
+            OutlookEmailMessage newOutlookEmailMessage = new OutlookEmailMessage();
+
+            newOutlookEmailMessage.MessagePriority = enumMessagePriority.High;
+            newOutlookEmailMessage.Subject = "Equiry Feedback From MCD Training - Ref " + CurrentEnquiry.EnquiryID;
+
+            //Step 1 - Notify the Client 
+            //Step 1.1 get list of enquiry associated contacts.
+            List<Individual> ContactWhichInitiatedTheEquiry = (from a in CurrentEnquiry.Individuals
+                                                               select a).ToList<Individual>();
+
+            string sPersonFullName = ContactWhichInitiatedTheEquiry.FirstOrDefault().FullName;
+
+            string ClientMessage = "";
+
+            ClientMessage += "<!DOCTYPE HTML>";
+            ClientMessage += "<html>";
+            //ClientMessage += "<head>";
+            //ClientMessage += "<title>Enquiry Response</title>";
+            //ClientMessage += "</head>";
+            ClientMessage += "<body >";
+            ClientMessage = "<span style=\"font-size: 12pt; font-family: Tahoma;\">Good Day " + sPersonFullName + "<br><br>";
+            ClientMessage += "Thank you for you equiry.<br><br>";
+            ClientMessage += "<p>";
+            ClientMessage += "Equiry Reference Number:<strong>" + CurrentEnquiry.EnquiryID + "</strong><br><br>";
+            ClientMessage += "Please refer to the above mentioned reference number to follow up on your enquiry.<br/>";
+            ClientMessage += "Your enquiry was answered by:<strong> " + CurrentEmployeeLoggedIn.Individual.FullName + "</strong>.<br/>";
+            ClientMessage += "The details of your enquiry that where disccussed:<br><br>";
+            ClientMessage += "Contact Details:<br></hr>";
+            ClientMessage += "<table border=\"1\" style=\"font-size: 12pt; font-family: Tahoma;\">";
+
+            foreach (Individual individualToEmail in CurrentEnquiry.Individuals.OrderBy(a => a.FullName))
+            {
+                ClientMessage += "<tr>";
+                ClientMessage += "<td colspan='2' style=\"padding: 5px;\">Contact Person: <strong>" + individualToEmail.FullName + "</strong></td>";
+                ClientMessage += "</tr>";
+                foreach (ContactDetail IndividualContactDetails in individualToEmail.ContactDetails.OrderBy(a => a.ContactTypeID))
+                {
+                    ClientMessage += "<tr>";
+                    if (IndividualContactDetails.ContactTypeID == (int)EnumContactTypes.Email_Address)
+                    {
+                        ClientMessage += "<td>" + IndividualContactDetails.LookupContactType.ContactType + "</td><td>" + IndividualContactDetails.ContactDetailValue + "</td>";
+                        newOutlookEmailMessage.addToAddress(IndividualContactDetails.ContactDetailValue);
+                    }
+                    else
+                    {
+                        ClientMessage += "<td>" + IndividualContactDetails.LookupContactType.ContactType + "</td><td>" + IndividualContactDetails.ContactDetailValue + "</td>";
+                    }
+                    ClientMessage += "</tr>";
+                }
+            }
+
+            ClientMessage += "</table>";
+            ClientMessage += "<strong>Enquiry Details:</strong><br><br></hr>";
+            ClientMessage += "<table border=\"1\" style=\"font-size: 12pt; font-family: Tahoma;\">";
+            ClientMessage += "<tr><td><strong>Department</strong></td><td><strong>Curriculum</strong></td><td><strong>Qantity To Enroll</strong></td></tr>";
+            List<CurriculumEnquiry> CE;
+            using (var Dbconnection = new MCDEntities())
+            {
+                CE = (from a in Dbconnection.CurriculumEnquiries
+                          //from b in a.Curriculum.LookupDepartment
+                          //from c in b.Curriculum.LookupDepartment
+                      where a.EnquiryID == CurrentEnquiry.EnquiryID
+                      select a)
+                                             .Include("Curriculum")
+                                             .Include("Curriculum.LookupDepartment")
+                                             .ToList<CurriculumEnquiry>();
+            };
+            foreach (CurriculumEnquiry CurriculumEnquiries in CE.OrderBy(a => a.Curriculum.DepartmentID))
+            {
+                ClientMessage += "<tr>";
+                ClientMessage += "<td>" + CurriculumEnquiries.Curriculum.LookupDepartment.DepartmentName + "</td><td>" + CurriculumEnquiries.Curriculum.CurriculumName + "</td><td>" + CurriculumEnquiries.EnrollmentQuanity + "</td>";
+                ClientMessage += "</tr>";
+            }
+
+            ClientMessage += "</table><br>";
+            ClientMessage += "One Of the Following Consultants will be in contact shortly.";
+
+            ClientMessage += "</body>";
+            ClientMessage += "</html>";
+
+            newOutlookEmailMessage.MessageBody = ClientMessage;
+            newOutlookEmailMessage.SendMessage();
+        }
+        private void sendConsultantNotification()
+        {
+
+
+            List<Employee> EmployeeResposibleForEnquiry = new List<Employee>();
+
+            List<CurriculumEnquiry> CE;
+
+            using (var Dbconnection = new MCDEntities())
+            {
+                CE = (from a in Dbconnection.CurriculumEnquiries
+                          //from b in a.Curriculum.LookupDepartment
+                          //from c in b.Curriculum.LookupDepartment
+                      where a.EnquiryID == CurrentEnquiry.EnquiryID
+                      select a)
+                        .Include("Curriculum")
+                        .Include("Curriculum.LookupDepartment")
+                        .ToList<CurriculumEnquiry>();
+
+
+                foreach (int DepID in CE.Select(a => a.Curriculum.DepartmentID).Distinct<int>())
+                {
+                    EmployeeResposibleForEnquiry.Add((from a in Dbconnection.Employees
+                                                      from b in a.LookupDepartments
+                                                      where b.DepartmentID == DepID
+                                                      select a)
+                                                        .Include("Individual")
+                                                        .Include("Individual.ContactDetails")
+                                                        .Include("LookupDepartments")
+                                                      .FirstOrDefault<Employee>());
+                }
+            };
+            //Step 1 - Notify the Client 
+            //Step 1.1 get list of enquiry associated contacts.
+
+            List<Individual> ContactWhichInitiatedTheEquiry = (from a in CurrentEnquiry.Individuals
+                                                               select a).ToList<Individual>();
+
+
+
+            foreach (Employee Empl in EmployeeResposibleForEnquiry.Distinct<Employee>())
+            {
+                foreach (ContactDetail ConDetail in Empl.Individual.ContactDetails)
+                {
+                    if (ConDetail.ContactTypeID == (int)EnumContactTypes.Email_Address)
+                    {
+
+                        OutlookEmailMessage newOutlookEmailMessage = new OutlookEmailMessage();
+
+                        newOutlookEmailMessage.addToAddress(ConDetail.ContactDetailValue);
+
+                        string sConsultantFullName = Empl.Individual.FullName;
+
+                        string ClientMessage = "";
+
+
+                        ClientMessage += "<!DOCTYPE HTML>";
+                        ClientMessage += "<html>";
+                        //ClientMessage += "<head>";
+                        //ClientMessage += "<title>Enquiry Response</title>";
+                        //ClientMessage += "</head>";
+                        ClientMessage += "<body >";
+                        ClientMessage = "<span style=\"font-size: 12pt; font-family: Tahoma;\">Good Day " + sConsultantFullName + "<br><br>";
+                        ClientMessage += "<strong>New Equiry</strong>.<br><br>";
+                        ClientMessage += "<p>";
+                        ClientMessage += "Equiry Reference Number:<strong>" + CurrentEnquiry.EnquiryID + "</strong><br><br>";
+                        ClientMessage += "Please refer to the above mentioned reference number to follow up on your enquiry.<br/>";
+                        ClientMessage += "The enquiry was captured by:<strong> " + CurrentEmployeeLoggedIn.Individual.FullName + "</strong>.<br/>";
+                        ClientMessage += "The details of your enquiry that where disccussed:<br><br>";
+                        ClientMessage += "Contact Details:<br></hr>";
+                        ClientMessage += "<table border=\"1\" style=\"font-size: 12pt; font-family: Tahoma;\">";
+
+                        foreach (Individual individualToEmail in CurrentEnquiry.Individuals.OrderBy(a => a.FullName))
+                        {
+                            ClientMessage += "<tr>";
+                            ClientMessage += "<td colspan='2' style=\"padding: 5px;\">Contact Person: <strong>" + individualToEmail.FullName + "</strong></td>";
+                            ClientMessage += "</tr>";
+                            foreach (ContactDetail IndividualContactDetails in individualToEmail.ContactDetails.OrderBy(a => a.ContactTypeID))
+                            {
+                                ClientMessage += "<tr>";
+                                ClientMessage += "<td>" + IndividualContactDetails.LookupContactType.ContactType + "</td><td>" + IndividualContactDetails.ContactDetailValue + "</td>";
+                                ClientMessage += "</tr>";
+                            }
+                        }
+
+                        ClientMessage += "</table>";
+                        ClientMessage += "<strong>Enquiry Details:</strong><br><br></hr>";
+                        ClientMessage += "<table border=\"1\" style=\"font-size: 12pt; font-family: Tahoma;\">";
+                        ClientMessage += "<tr><td><strong>Department</strong></td><td><strong>Curriculum</strong></td><td><strong>Qantity To Enroll</strong></td></tr>";
+
+                        foreach (CurriculumEnquiry CurriculumEnquiries in CE.OrderBy(a => a.Curriculum.DepartmentID))
+                        {
+                            int iDepartmentID = CurriculumEnquiries.Curriculum.DepartmentID;
+
+                            if ((from a in Empl.LookupDepartments
+                                 where a.DepartmentID == CurriculumEnquiries.Curriculum.DepartmentID
+                                 select a).Count<LookupDepartment>() > 0)
+                            {
+                                ClientMessage += "<tr>";
+                                ClientMessage += "<td>" + CurriculumEnquiries.Curriculum.LookupDepartment.DepartmentName + "</td><td>" + CurriculumEnquiries.Curriculum.CurriculumName + "</td><td>" + CurriculumEnquiries.EnrollmentQuanity + "</td>";
+                                ClientMessage += "</tr>";
+                            }
+                        }
+
+                        ClientMessage += "</table><br>";
+                        // ClientMessage += "One Of the Following Consultants will be in contact shortly.";
+
+                        ClientMessage += "</body>";
+                        ClientMessage += "</html>";
+
+                        newOutlookEmailMessage.MessagePriority = enumMessagePriority.High;
+                        newOutlookEmailMessage.Subject = "New Equiry Required Feed back - Ref " + CurrentEnquiry.EnquiryID;
+                        newOutlookEmailMessage.MessageBody = ClientMessage;
+                        newOutlookEmailMessage.SendMessage();
+                        newOutlookEmailMessage.Dispose();
+                    }
+                }
+
+            }
+
+
+
+        }
+
+        #endregion
+
+        private void frmNewEnquiry_ResizeEnd(object sender, EventArgs e)
+        {
+            this.setCenterDisplayPanels();
         }
     }
 }

@@ -1812,8 +1812,10 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Enquiry";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNewEnquiry_FormClosing);
             this.Load += new System.EventHandler(this.frmAddUpdateStudent_Load);
+            this.ResizeEnd += new System.EventHandler(this.frmNewEnquiry_ResizeEnd);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
