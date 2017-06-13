@@ -150,12 +150,14 @@
       <DependentUpon>frmApprenticeshipEnrollmentSectionTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Impendulo.Data.Models.CourseSchedule.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.Curriculum.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.CurriculumCourse.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.CurriculumCourseEnrollment.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.Enrollment.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.File.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.LookupDepartment.datasource" />
+    <None Include="Properties\DataSources\Impendulo.Data.Models.Schedule.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.Student.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

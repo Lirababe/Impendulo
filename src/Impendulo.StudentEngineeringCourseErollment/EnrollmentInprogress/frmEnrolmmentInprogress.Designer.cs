@@ -33,7 +33,7 @@
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label15;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEnrolmmentInprogress));
             this.splitContainerApprenticeship = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -157,10 +157,8 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStripContainer10 = new System.Windows.Forms.ToolStripContainer();
-            this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.colApprenticeshipEnrollmentLinkedCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApprenticeshipEnrollmentLinkedCourseStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApprenticeshipEnrollmentLinkedCourseEndtDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCourseSschedule = new System.Windows.Forms.DataGridView();
+            this.courseScheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator9 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel9 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton41 = new System.Windows.Forms.ToolStripButton();
@@ -201,6 +199,11 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.folderBrowserDialogForDownloading = new System.Windows.Forms.FolderBrowserDialog();
             this.curriculumCourseEnrollmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.scheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.courseScheduleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.colApprenticeshipEnrollmentLinkedCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scheduleStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scheduleCompletionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             label8 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -263,7 +266,8 @@
             this.toolStripContainer10.ContentPanel.SuspendLayout();
             this.toolStripContainer10.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCourseSschedule)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseScheduleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator9)).BeginInit();
             this.bindingNavigator9.SuspendLayout();
             this.toolStripContainer2.ContentPanel.SuspendLayout();
@@ -274,6 +278,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
             this.bindingNavigator2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseEnrollmentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseScheduleBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -456,9 +462,9 @@
             // 
             this.DateIntitiated.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.DateIntitiated.DataPropertyName = "DateIntitiated";
-            dataGridViewCellStyle1.Format = "D";
-            dataGridViewCellStyle1.NullValue = null;
-            this.DateIntitiated.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Format = "D";
+            dataGridViewCellStyle6.NullValue = null;
+            this.DateIntitiated.DefaultCellStyle = dataGridViewCellStyle6;
             this.DateIntitiated.HeaderText = "Date";
             this.DateIntitiated.Name = "DateIntitiated";
             this.DateIntitiated.ReadOnly = true;
@@ -1563,7 +1569,7 @@
             // 
             // toolStripContainer10.ContentPanel
             // 
-            this.toolStripContainer10.ContentPanel.Controls.Add(this.dataGridView7);
+            this.toolStripContainer10.ContentPanel.Controls.Add(this.dgvCourseSschedule);
             this.toolStripContainer10.ContentPanel.Size = new System.Drawing.Size(243, 341);
             this.toolStripContainer10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer10.Location = new System.Drawing.Point(271, 3);
@@ -1576,40 +1582,25 @@
             // 
             this.toolStripContainer10.TopToolStripPanel.Controls.Add(this.bindingNavigator9);
             // 
-            // dataGridView7
+            // dgvCourseSschedule
             // 
-            this.dataGridView7.AllowUserToAddRows = false;
-            this.dataGridView7.AllowUserToDeleteRows = false;
-            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCourseSschedule.AllowUserToAddRows = false;
+            this.dgvCourseSschedule.AllowUserToDeleteRows = false;
+            this.dgvCourseSschedule.AutoGenerateColumns = false;
+            this.dgvCourseSschedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCourseSschedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colApprenticeshipEnrollmentLinkedCourse,
-            this.colApprenticeshipEnrollmentLinkedCourseStartDate,
-            this.colApprenticeshipEnrollmentLinkedCourseEndtDate});
-            this.dataGridView7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView7.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.ReadOnly = true;
-            this.dataGridView7.RowHeadersWidth = 15;
-            this.dataGridView7.Size = new System.Drawing.Size(243, 341);
-            this.dataGridView7.TabIndex = 1;
-            // 
-            // colApprenticeshipEnrollmentLinkedCourse
-            // 
-            this.colApprenticeshipEnrollmentLinkedCourse.HeaderText = "Course";
-            this.colApprenticeshipEnrollmentLinkedCourse.Name = "colApprenticeshipEnrollmentLinkedCourse";
-            this.colApprenticeshipEnrollmentLinkedCourse.ReadOnly = true;
-            // 
-            // colApprenticeshipEnrollmentLinkedCourseStartDate
-            // 
-            this.colApprenticeshipEnrollmentLinkedCourseStartDate.HeaderText = "Start Date";
-            this.colApprenticeshipEnrollmentLinkedCourseStartDate.Name = "colApprenticeshipEnrollmentLinkedCourseStartDate";
-            this.colApprenticeshipEnrollmentLinkedCourseStartDate.ReadOnly = true;
-            // 
-            // colApprenticeshipEnrollmentLinkedCourseEndtDate
-            // 
-            this.colApprenticeshipEnrollmentLinkedCourseEndtDate.HeaderText = "End Date";
-            this.colApprenticeshipEnrollmentLinkedCourseEndtDate.Name = "colApprenticeshipEnrollmentLinkedCourseEndtDate";
-            this.colApprenticeshipEnrollmentLinkedCourseEndtDate.ReadOnly = true;
+            this.scheduleStartDateDataGridViewTextBoxColumn,
+            this.scheduleCompletionDateDataGridViewTextBoxColumn});
+            this.dgvCourseSschedule.DataSource = this.scheduleBindingSource;
+            this.dgvCourseSschedule.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCourseSschedule.Location = new System.Drawing.Point(0, 0);
+            this.dgvCourseSschedule.Name = "dgvCourseSschedule";
+            this.dgvCourseSschedule.ReadOnly = true;
+            this.dgvCourseSschedule.RowHeadersWidth = 15;
+            this.dgvCourseSschedule.Size = new System.Drawing.Size(243, 341);
+            this.dgvCourseSschedule.TabIndex = 1;
+            this.dgvCourseSschedule.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvCourseSschedule_DataBindingComplete);
             // 
             // bindingNavigator9
             // 
@@ -1967,6 +1958,34 @@
             // 
             this.curriculumCourseEnrollmentsBindingSource.DataMember = "CurriculumCourseEnrollments";
             // 
+            // scheduleBindingSource
+            // 
+            this.scheduleBindingSource.DataSource = typeof(Impendulo.Data.Models.Schedule);
+            // 
+            // courseScheduleBindingSource1
+            // 
+            this.courseScheduleBindingSource1.DataSource = typeof(Impendulo.Data.Models.CourseSchedule);
+            // 
+            // colApprenticeshipEnrollmentLinkedCourse
+            // 
+            this.colApprenticeshipEnrollmentLinkedCourse.HeaderText = "Course";
+            this.colApprenticeshipEnrollmentLinkedCourse.Name = "colApprenticeshipEnrollmentLinkedCourse";
+            this.colApprenticeshipEnrollmentLinkedCourse.ReadOnly = true;
+            // 
+            // scheduleStartDateDataGridViewTextBoxColumn
+            // 
+            this.scheduleStartDateDataGridViewTextBoxColumn.DataPropertyName = "Start Date";
+            this.scheduleStartDateDataGridViewTextBoxColumn.HeaderText = "Start Date";
+            this.scheduleStartDateDataGridViewTextBoxColumn.Name = "scheduleStartDateDataGridViewTextBoxColumn";
+            this.scheduleStartDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // scheduleCompletionDateDataGridViewTextBoxColumn
+            // 
+            this.scheduleCompletionDateDataGridViewTextBoxColumn.DataPropertyName = "End Date";
+            this.scheduleCompletionDateDataGridViewTextBoxColumn.HeaderText = "Completion Date";
+            this.scheduleCompletionDateDataGridViewTextBoxColumn.Name = "scheduleCompletionDateDataGridViewTextBoxColumn";
+            this.scheduleCompletionDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // frmEnrolmmentInprogress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2049,7 +2068,8 @@
             this.toolStripContainer10.TopToolStripPanel.PerformLayout();
             this.toolStripContainer10.ResumeLayout(false);
             this.toolStripContainer10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCourseSschedule)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseScheduleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator9)).EndInit();
             this.bindingNavigator9.ResumeLayout(false);
             this.bindingNavigator9.PerformLayout();
@@ -2064,6 +2084,8 @@
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseEnrollmentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseScheduleBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2143,10 +2165,7 @@
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ToolStripContainer toolStripContainer10;
-        private System.Windows.Forms.DataGridView dataGridView7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colApprenticeshipEnrollmentLinkedCourse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colApprenticeshipEnrollmentLinkedCourseStartDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colApprenticeshipEnrollmentLinkedCourseEndtDate;
+        private System.Windows.Forms.DataGridView dgvCourseSschedule;
         private System.Windows.Forms.BindingNavigator bindingNavigator9;
         private System.Windows.Forms.ToolStripLabel toolStripLabel9;
         private System.Windows.Forms.ToolStripButton toolStripButton41;
@@ -2236,5 +2255,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lookupEnrollmentProgressStateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apprienticeshipEnrollmentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource courseScheduleBindingSource;
+        private System.Windows.Forms.BindingSource scheduleBindingSource;
+        private System.Windows.Forms.BindingSource courseScheduleBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colApprenticeshipEnrollmentLinkedCourse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn scheduleStartDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn scheduleCompletionDateDataGridViewTextBoxColumn;
     }
 }

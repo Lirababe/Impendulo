@@ -42,9 +42,15 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
         public int CurrentEquiryID { get; set; }
         private void frmEnrolmmentInprogress_Load(object sender, EventArgs e)
         {
+            if (dgvPrerequisiteCourses.Rows.Count <= 0)
+            {
+                btnEditCourseSelection.Enabled = true;
+            }
+            else
+                btnEditCourseSelection.Enabled = false;
             CurrentSelectedDepartment = EnumDepartments.Apprenticeship;
-
             this.refreshEnrollment();
+            
 
 
         }
@@ -121,6 +127,9 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             {
                 this.populateApprenticeshipDocumnetTypes((EnumDepartments)((Enrollment)enrollmentBindingSource.Current).Curriculum.DepartmentID);
                 this.refreshEnrollmentLinkedCourses();
+                this.refreshScheduleCoursePriliminaryDate();
+
+
             }
         }
         private void refreshEnrollmentCoursePreRequisites()
@@ -128,7 +137,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             populateApprenticeshipCoursePreRequisites();
         }
 
-
+        
         private void refreshEnrollmentLinkedCourses()
         {
             int _EnrollmentID = 0;
@@ -137,6 +146,16 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                 _EnrollmentID = ((Enrollment)(enrollmentBindingSource.Current)).EnrollmentID;
             }
             populateApprienticeshipLinkedCourse(_EnrollmentID);
+        }
+
+        private void refreshScheduleCoursePriliminaryDate()
+        {
+            int _EnrollmentID = 0;
+            if (enrollmentBindingSource.List.Count > 0)
+            {
+                _EnrollmentID = ((Enrollment)(enrollmentBindingSource.Current)).EnrollmentID;
+            }
+            populateCourseSchedulePreliminaryDates(_EnrollmentID);
         }
 
         #endregion
@@ -244,6 +263,17 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                                                                               where b.EnrollmentID == _EnrollmentID
                                                                               select a).ToList<CurriculumCourse>();
             };
+        }
+
+        private void populateCourseSchedulePreliminaryDates(int _EnrollmentID)
+        {
+            using (var Dbconnection = new MCDEntities())
+            {
+                scheduleBindingSource.DataSource = (from a in Dbconnection.CurriculumCourses
+                                                          from b in a.CurriculumCourseEnrollments
+                                                          where b.EnrollmentID == _EnrollmentID
+                                                          select a).ToList<CurriculumCourse>();
+            }
         }
         #endregion
 
@@ -454,6 +484,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             {
                 populateApprenticeshipDocumnetTypes((EnumDepartments)((Enrollment)(enrollmentBindingSource.Current)).Curriculum.DepartmentID);
                 this.refreshEnrollmentLinkedCourses();
+                this.refreshScheduleCoursePriliminaryDate();
             }
         }
 
@@ -536,6 +567,23 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
         {
             ScheduleApprientice.frmScheduleApprience frm = new ScheduleApprientice.frmScheduleApprience();
             frm.ShowDialog();
+        }
+
+        private void dgvCourseSschedule_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            var gridView = (DataGridView)sender;
+            foreach (DataGridViewRow row in gridView.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    CurriculumCourse CurriculumCourseObj = (CurriculumCourse)(row.DataBoundItem);
+                    //Schedule CourseScheduleObj = (Schedule)(row.DataBoundItem);
+
+                    row.Cells[colApprenticeshipEnrollmentLinkedCourse.Index].Value = CurriculumCourseObj.Course.CourseName.ToString();
+                    //row.Cells[colApprenticeshipEnrollmentLinkedCourseStartDate.Index].Value = CourseScheduleObj.ScheduleStartDate.ToShortDateString();
+                    //row.Cells[colApprenticeshipEnrollmentLinkedCourseEndtDate.Index].Value = CourseScheduleObj.ScheduleCompletionDate.ToShortDateString();
+                }
+            }
         }
     }
 }
