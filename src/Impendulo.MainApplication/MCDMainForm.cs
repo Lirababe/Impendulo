@@ -22,8 +22,9 @@ using Impendulo.Facilitators.Deployment;
 using Impendulo.MessageTemplates.Deployment;
 using Impendulo.Employees.Deployment1;
 using Impendulo.StudentEngineeringCourseErollment.Deployment;
-using Impendulo.Enquiry.Deployment.frmClientEnquiry;
+
 using Impendulo.WizardForm.ClientEnquiry.Deployment;
+using Impendulo.Enquiry.Development.Enquiry.Deployment;
 
 namespace Impendulo.MainApplication
 {

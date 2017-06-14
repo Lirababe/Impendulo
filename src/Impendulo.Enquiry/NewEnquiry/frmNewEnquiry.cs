@@ -607,10 +607,13 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
 
         private void btnUpdateQty_Click(object sender, EventArgs e)
         {
-            frmUpdateSelectedCurriculumEnrollQty frm = new frmUpdateSelectedCurriculumEnrollQty();
-            frm.CurrentCurriculumEnquiry = (CurriculumEnquiry)this.curriculumEnquiryBindingSource.Current;
-            frm.ShowDialog();
-            this.refreshSelectedCurriculum();
+            if (curriculumEnquiryBindingSource.Count > 0)
+            {
+                frmUpdateSelectedCurriculumEnrollQty frm = new frmUpdateSelectedCurriculumEnrollQty();
+                frm.CurrentCurriculumEnquiry = (CurriculumEnquiry)this.curriculumEnquiryBindingSource.Current;
+                frm.ShowDialog();
+                this.refreshSelectedCurriculum();
+            }
         }
 
         private void btnRemoveSelectedCurriculum_Click(object sender, EventArgs e)
