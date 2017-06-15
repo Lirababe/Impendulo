@@ -212,6 +212,12 @@
     <Compile Include="ApplicationForms\Enquiry\EnquiryProcessing\Aprenticeship\Step2 - DocumentationRecieved\frmDocumentationRecieved.Designer.cs">
       <DependentUpon>frmDocumentationRecieved.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApplicationForms\Enquiry\EnrollmentSelectionFromEquiry\frmEnrollmentSelectionForEquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationForms\Enquiry\EnrollmentSelectionFromEquiry\frmEnrollmentSelectionForEquiry.Designer.cs">
+      <DependentUpon>frmEnrollmentSelectionForEquiry.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationForms\Enquiry\frmClientEnquiry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -456,6 +462,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\Enquiry\EnquiryProcessing\Aprenticeship\Step2 - DocumentationRecieved\frmDocumentationRecieved.resx">
       <DependentUpon>frmDocumentationRecieved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationForms\Enquiry\EnrollmentSelectionFromEquiry\frmEnrollmentSelectionForEquiry.resx">
+      <DependentUpon>frmEnrollmentSelectionForEquiry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\Enquiry\frmClientEnquiry.resx">
       <DependentUpon>frmClientEnquiry.cs</DependentUpon>

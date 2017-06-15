@@ -606,10 +606,13 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
 
         private void btnUpdateQty_Click(object sender, EventArgs e)
         {
-            frmUpdateSelectedCurriculumEnrollQty frm = new frmUpdateSelectedCurriculumEnrollQty();
-            frm.CurrentCurriculumEnquiry = (CurriculumEnquiry)this.curriculumEnquiryBindingSource.Current;
-            frm.ShowDialog();
-            this.refreshSelectedCurriculum();
+            if (curriculumEnquiryBindingSource.Count > 0)
+            {
+                frmUpdateSelectedCurriculumEnrollQty frm = new frmUpdateSelectedCurriculumEnrollQty();
+                frm.CurrentCurriculumEnquiry = (CurriculumEnquiry)this.curriculumEnquiryBindingSource.Current;
+                frm.ShowDialog();
+                this.refreshSelectedCurriculum();
+            }
         }
 
         private void btnRemoveSelectedCurriculum_Click(object sender, EventArgs e)
@@ -1124,8 +1127,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
             using (var Dbconnection = new MCDEntities())
             {
                 CE = (from a in Dbconnection.CurriculumEnquiries
-                          //from b in a.Curriculum.LookupDepartment
-                          //from c in b.Curriculum.LookupDepartment
+                         
                       where a.EnquiryID == CurrentEnquiry.EnquiryID
                       select a)
                         .Include("Curriculum")

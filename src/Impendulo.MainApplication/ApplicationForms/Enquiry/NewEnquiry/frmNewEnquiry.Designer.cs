@@ -1336,13 +1336,11 @@
             // 
             // btnUpdateQty
             // 
-            this.btnUpdateQty.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnUpdateQty.Enabled = false;
-            this.btnUpdateQty.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateQty.ForeColor = System.Drawing.Color.Black;
             this.btnUpdateQty.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateQty.Image")));
             this.btnUpdateQty.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUpdateQty.Name = "btnUpdateQty";
-            this.btnUpdateQty.Size = new System.Drawing.Size(71, 22);
+            this.btnUpdateQty.Size = new System.Drawing.Size(87, 22);
             this.btnUpdateQty.Text = "Update Qty";
             this.btnUpdateQty.Click += new System.EventHandler(this.btnUpdateQty_Click);
             // 
