@@ -33,7 +33,7 @@
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label15;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEnrolmmentInprogress));
             this.splitContainerApprenticeship = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -202,8 +202,8 @@
             this.scheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.courseScheduleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.colApprenticeshipEnrollmentLinkedCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scheduleStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scheduleCompletionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colScheduleStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colScheduleEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             label8 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -462,9 +462,9 @@
             // 
             this.DateIntitiated.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.DateIntitiated.DataPropertyName = "DateIntitiated";
-            dataGridViewCellStyle6.Format = "D";
-            dataGridViewCellStyle6.NullValue = null;
-            this.DateIntitiated.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle13.Format = "D";
+            dataGridViewCellStyle13.NullValue = null;
+            this.DateIntitiated.DefaultCellStyle = dataGridViewCellStyle13;
             this.DateIntitiated.HeaderText = "Date";
             this.DateIntitiated.Name = "DateIntitiated";
             this.DateIntitiated.ReadOnly = true;
@@ -1590,8 +1590,8 @@
             this.dgvCourseSschedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCourseSschedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colApprenticeshipEnrollmentLinkedCourse,
-            this.scheduleStartDateDataGridViewTextBoxColumn,
-            this.scheduleCompletionDateDataGridViewTextBoxColumn});
+            this.colScheduleStartDate,
+            this.colScheduleEndDate});
             this.dgvCourseSschedule.DataSource = this.scheduleBindingSource;
             this.dgvCourseSschedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCourseSschedule.Location = new System.Drawing.Point(0, 0);
@@ -1600,6 +1600,9 @@
             this.dgvCourseSschedule.RowHeadersWidth = 15;
             this.dgvCourseSschedule.Size = new System.Drawing.Size(243, 341);
             this.dgvCourseSschedule.TabIndex = 1;
+            this.dgvCourseSschedule.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvCourseSschedule_CellBeginEdit);
+            this.dgvCourseSschedule.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourseSschedule_CellClick);
+            this.dgvCourseSschedule.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourseSschedule_CellEndEdit);
             this.dgvCourseSschedule.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvCourseSschedule_DataBindingComplete);
             // 
             // bindingNavigator9
@@ -1972,19 +1975,17 @@
             this.colApprenticeshipEnrollmentLinkedCourse.Name = "colApprenticeshipEnrollmentLinkedCourse";
             this.colApprenticeshipEnrollmentLinkedCourse.ReadOnly = true;
             // 
-            // scheduleStartDateDataGridViewTextBoxColumn
+            // colScheduleStartDate
             // 
-            this.scheduleStartDateDataGridViewTextBoxColumn.DataPropertyName = "Start Date";
-            this.scheduleStartDateDataGridViewTextBoxColumn.HeaderText = "Start Date";
-            this.scheduleStartDateDataGridViewTextBoxColumn.Name = "scheduleStartDateDataGridViewTextBoxColumn";
-            this.scheduleStartDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colScheduleStartDate.HeaderText = "Start Date";
+            this.colScheduleStartDate.Name = "colScheduleStartDate";
+            this.colScheduleStartDate.ReadOnly = true;
             // 
-            // scheduleCompletionDateDataGridViewTextBoxColumn
+            // colScheduleEndDate
             // 
-            this.scheduleCompletionDateDataGridViewTextBoxColumn.DataPropertyName = "End Date";
-            this.scheduleCompletionDateDataGridViewTextBoxColumn.HeaderText = "Completion Date";
-            this.scheduleCompletionDateDataGridViewTextBoxColumn.Name = "scheduleCompletionDateDataGridViewTextBoxColumn";
-            this.scheduleCompletionDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colScheduleEndDate.HeaderText = "End Date";
+            this.colScheduleEndDate.Name = "colScheduleEndDate";
+            this.colScheduleEndDate.ReadOnly = true;
             // 
             // frmEnrolmmentInprogress
             // 
@@ -2259,7 +2260,7 @@
         private System.Windows.Forms.BindingSource scheduleBindingSource;
         private System.Windows.Forms.BindingSource courseScheduleBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colApprenticeshipEnrollmentLinkedCourse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn scheduleStartDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn scheduleCompletionDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colScheduleStartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colScheduleEndDate;
     }
 }
