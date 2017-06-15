@@ -3,7 +3,7 @@
   <Comment CommentText="Created 9 June 2017.&#xD;&#xA;Author: Brendan Wood&#xD;&#xA;Last Updated 10 June 2017">
     <Position X="4.635" Y="1.458" Height="0.906" Width="2.013" />
   </Comment>
-  <Class Name="namespace Impendulo.Common.EmailSending.EmailMessage" BaseTypeListCollapsed="true">
+  <Class Name="Impendulo.Common.EmailSending.EmailMessage" BaseTypeListCollapsed="true">
     <Position X="2.25" Y="3.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
@@ -14,14 +14,14 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="namespace Impendulo.Common.EmailSending.RegexUtilities">
+  <Class Name="Impendulo.Common.EmailSending.RegexUtilities">
     <Position X="10.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>EmailSendingClasses\RegexUtilities.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="namespace Impendulo.Common.EmailSending.EmailAddress">
+  <Class Name="Impendulo.Common.EmailSending.EmailAddress">
     <Position X="7.25" Y="5.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAACAAAAAAAAAAA=</HashCode>
@@ -29,19 +29,12 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="namespace Impendulo.Common.EmailSending.InvalidEmailAddressException">
-    <Position X="10.5" Y="9.5" Width="3.25" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>EmailSendingClasses\InvalidEmailAddressException.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="System.Exception">
     <Position X="7.25" Y="8" Width="2.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="namespace Impendulo.Common.EmailSending.OutlookEmailMessage">
+  <Class Name="Impendulo.Common.EmailSending.OutlookEmailMessage">
     <Position X="0.5" Y="9.25" Width="2.75" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
@@ -52,7 +45,7 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="namespace Impendulo.Common.EmailSending.EmailAttachment">
+  <Class Name="Impendulo.Common.EmailSending.EmailAttachment">
     <Position X="12.5" Y="3.75" Width="2" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
@@ -63,14 +56,14 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="namespace Impendulo.Common.EmailSending.FileBasedEmailAttachment">
+  <Class Name="Impendulo.Common.EmailSending.FileBasedEmailAttachment">
     <Position X="10.5" Y="7.5" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EmailSendingClasses\FileBasedEmailAttachment.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="namespace Impendulo.Common.EmailSending.FileImageBasedEmailAttachment">
+  <Class Name="Impendulo.Common.EmailSending.FileImageBasedEmailAttachment">
     <Position X="14.25" Y="7.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAAAAAIAAAAAAAAAAAAAAIAAQA=</HashCode>
@@ -81,7 +74,7 @@
     <Position X="7.5" Y="0.5" Width="1.75" />
     <TypeIdentifier />
   </Class>
-  <Class Name="namespace Impendulo.Common.EmailSending.StandardEmailMessage">
+  <Class Name="Impendulo.Common.EmailSending.StandardEmailMessage">
     <Position X="3.75" Y="9.25" Width="2.75" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
@@ -92,35 +85,42 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="namespace Impendulo.Common.EmailSending.IEmailMessage">
+  <Class Name="Impendulo.Common.EmailSending.InvalidEmailAddressException">
+    <Position X="12" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EmailSendingClasses\InvalidEmailAddressException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Impendulo.Common.EmailSending.IEmailMessage">
     <Position X="4.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAQEAAAAAAAAAEAALAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>EmailSendingClasses\IEmailMessage.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="namespace Impendulo.Common.EmailSending.IMessage">
+  <Interface Name="Impendulo.Common.EmailSending.IMessage">
     <Position X="4.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EmailSendingClasses\IMessage.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="namespace Impendulo.Common.EmailSending.IEmailAddress">
+  <Interface Name="Impendulo.Common.EmailSending.IEmailAddress">
     <Position X="7.5" Y="3.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EmailSendingClasses\IAddress.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="namespace Impendulo.Common.EmailSending.IAttachment">
+  <Interface Name="Impendulo.Common.EmailSending.IAttachment">
     <Position X="12.5" Y="1.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAEAEAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>EmailSendingClasses\IAttachment.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="namespace Impendulo.Common.EmailSending.enumMessagePriority">
+  <Enum Name="Impendulo.Common.EmailSending.enumMessagePriority">
     <Position X="2" Y="1.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAEAAA=</HashCode>
