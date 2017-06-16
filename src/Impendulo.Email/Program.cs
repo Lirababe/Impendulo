@@ -1,4 +1,4 @@
-﻿using Impendulo.Email.Select_Contacts;
+﻿using Impendulo.Email.Email_Message_Version_2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ namespace Impendulo.Email.Development
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmEmailMessageV2());
         }
     }
 }

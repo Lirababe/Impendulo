@@ -151,7 +151,7 @@
             // ribbon1
             // 
             this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ribbon1.Location = new System.Drawing.Point(0, 0);
+            this.ribbon1.Location = new System.Drawing.Point(20, 60);
             this.ribbon1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbon1.Minimized = false;
             this.ribbon1.Name = "ribbon1";
@@ -170,14 +170,14 @@
             this.ribbon1.OrbDropDown.TabIndex = 0;
             this.ribbon1.OrbImage = null;
             this.ribbon1.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2010;
-            this.ribbon1.OrbText = "File";
+            this.ribbon1.OrbText = "Menu";
             // 
             // 
             // 
             this.ribbon1.QuickAcessToolbar.DropDownButtonItems.Add(this.ribbonLabel1);
             this.ribbon1.QuickAcessToolbar.Items.Add(this.ribbonButton1);
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.ribbon1.Size = new System.Drawing.Size(1063, 174);
+            this.ribbon1.Size = new System.Drawing.Size(1023, 174);
             this.ribbon1.TabIndex = 5;
             this.ribbon1.Tabs.Add(this.ribbonTab1);
             this.ribbon1.Tabs.Add(this.ribbonTab2);
@@ -188,7 +188,6 @@
             this.ribbon1.Tabs.Add(this.ribbonTab7);
             this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
             this.ribbon1.Text = "ribbon1";
-            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Black;
             this.ribbon1.Click += new System.EventHandler(this.ribbon1_Click);
             this.ribbon1.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.ribbon1_ControlAdded);
             // 
@@ -581,9 +580,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 672);
+            this.statusStrip1.Location = new System.Drawing.Point(20, 652);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1063, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1023, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
