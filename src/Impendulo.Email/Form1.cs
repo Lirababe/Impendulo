@@ -150,7 +150,7 @@ namespace Impendulo.Email
             FileBasedEmailAttachment x = new FileBasedEmailAttachment();
             x.GetAttachment();
 
-            FileImageBasedEmailAttachment y = new FileImageBasedEmailAttachment(32);
+            FileImageBasedEmailAttachment y = new FileImageBasedEmailAttachment(32, true);
             y.ClearCreateTempDirectory();
             y.GetAttachment();
             y.AttachemntPath = y.AttachemntPath + "\\" + 32 + "_" + y.AttachmentFullFileName;
@@ -177,7 +177,7 @@ namespace Impendulo.Email
             x.GetAttachment();
 
 
-            FileImageBasedEmailAttachment y = new FileImageBasedEmailAttachment(32);
+            FileImageBasedEmailAttachment y = new FileImageBasedEmailAttachment(32, false);
             y.ClearCreateTempDirectory();
             y.GetAttachment();
             y.AttachemntPath = y.AttachemntPath + "\\" + 32 + "_" + y.AttachmentFullFileName;

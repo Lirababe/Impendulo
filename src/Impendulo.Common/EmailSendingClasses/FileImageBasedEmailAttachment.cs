@@ -10,10 +10,15 @@ namespace Impendulo.Common.EmailSending
     public class FileImageBasedEmailAttachment : EmailAttachment
     {
         public int FileID { get; }
-        public FileImageBasedEmailAttachment(int FileID)
+        public FileImageBasedEmailAttachment(int FileID, bool clearTempFolder)
         {
+            if (clearTempFolder)
+            {
+                ClearCreateTempDirectory();
+            }
             this.AttachemntPath = "C:\\MCDAttachemntsTemp";
             this.FileID = FileID;
+            this.GetAttachment();
         }
 
         public override void GetAttachment()
@@ -21,12 +26,13 @@ namespace Impendulo.Common.EmailSending
             if (checkTempFolderExists())
             {
                 Data.Models.File CurrentFile = Common.FileHandeling.FileHandeling.GetFile(this.FileID);
-
-                this.AttachmentFileName = CurrentFile.FileName;
-                this.AttachmentFileExtension = CurrentFile.FileExtension;
-               
-
-                System.IO.File.WriteAllBytes(AttachemntPath + "\\" + this.FileID.ToString() + "_" + this.AttachmentFullFileName, CurrentFile.FileImage);
+                if (CurrentFile != null)
+                {
+                    this.AttachmentFileName = CurrentFile.FileName;
+                    this.AttachmentFileExtension = CurrentFile.FileExtension;
+                    System.IO.File.WriteAllBytes(AttachemntPath + "\\" + this.FileID.ToString() + "_" + this.AttachmentFullFileName, CurrentFile.FileImage);
+                    this.AttachemntPath = AttachemntPath + "\\" + this.FileID.ToString() + "_" + this.AttachmentFullFileName;
+                }
             }
         }
         public Boolean ClearCreateTempDirectory()
@@ -65,9 +71,8 @@ namespace Impendulo.Common.EmailSending
             Boolean Rtn = false;
             try
             {
-                if (System.IO.Directory.Exists("C:\\MCDAttachemntsTemp"))
+                if (System.IO.Directory.Exists(AttachemntPath))
                 {
-                    DirectoryInfo directory = new DirectoryInfo("C:\\MCDAttachemntsTemp");
                     Rtn = true;
                 }
                 else

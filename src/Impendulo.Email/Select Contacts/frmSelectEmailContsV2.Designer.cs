@@ -798,7 +798,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.gbFitlerOptions);
             this.Name = "frmSelectEmailContsV2";
-            this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.DropShadow;
+           // this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.DropShadow;
             this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Text = "Select Email Contacts";
             this.Load += new System.EventHandler(this.frmSelectEmailContsV2_Load);

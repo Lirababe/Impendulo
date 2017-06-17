@@ -12,6 +12,7 @@ namespace Impendulo.Common.EmailSending
         public FileBasedEmailAttachment()
         {
             // this.AttachemntPath = "C:/MCDAttachemntsTemp";
+            this.GetAttachment();
         }
         public FileBasedEmailAttachment(string FileName)
         {
