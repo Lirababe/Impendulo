@@ -111,7 +111,43 @@ namespace Impendulo.Email.Email_Message_Version_2
         }
         #endregion
         #region Form Methods
+        private Boolean verfiyIfAddressAlreadyAdded(AddressType CurrentAddressType, string EmailAddress)
+        {
+            Boolean Rtn = false;
 
+            if (CurrentAddressType == AddressType.ToAddress)
+            {
+                foreach (EmailAddress x in NewMessage.ToAddesses)
+                {
+                    if (x.Address == EmailAddress)
+                    {
+                        Rtn = true;
+                    }
+                }
+            }
+            if (CurrentAddressType == AddressType.BccAddress)
+            {
+                foreach (EmailAddress x in NewMessage.BccAddress)
+                {
+                    if (x.Address == EmailAddress)
+                    {
+                        Rtn = true;
+                    }
+                }
+            }
+            if (CurrentAddressType == AddressType.CcAddress)
+            {
+                foreach (EmailAddress x in NewMessage.CcAddresses)
+                {
+                    if (x.Address == EmailAddress)
+                    {
+                        Rtn = true;
+                    }
+                }
+            }
+
+            return Rtn;
+        }
 
         /// <summary>
         /// Adds an attachemnt retrieved from the database based of the FileID Provided.
@@ -145,6 +181,50 @@ namespace Impendulo.Email.Email_Message_Version_2
             return Rtn;
 
         }
+        private void populateToAddresses()
+        {
+            this.txtMessageToAddress.Clear();
+            foreach (EmailAddress add in NewMessage.ToAddesses)
+            {
+                if (txtMessageToAddress.Text.Length > 0)
+                {
+                    this.txtMessageToAddress.Text += ";";
+                }
+                this.txtMessageToAddress.Text += add.Address;
+            }
+        }
+        private void populateBccAddresses()
+        {
+            this.txtMessageBccAddress.Clear();
+            foreach (EmailAddress add in NewMessage.BccAddress)
+            {
+                if (txtMessageBccAddress.Text.Length > 0)
+                {
+                    this.txtMessageBccAddress.Text += ";";
+                }
+                this.txtMessageBccAddress.Text += add.Address;
+            }
+        }
+        private void populateCcAddresses()
+        {
+            this.txtMessageCcAddress.Clear();
+            foreach (EmailAddress add in NewMessage.CcAddresses)
+            {
+                if (txtMessageCcAddress.Text.Length > 0)
+                {
+                    this.txtMessageCcAddress.Text += ";";
+                }
+                this.txtMessageCcAddress.Text += add.Address;
+            }
+        }
+        #endregion
+        #region Enum Classes
+        private enum AddressType
+        {
+            ToAddress,
+            BccAddress,
+            CcAddress
+        }
         #endregion
         #region Control Click Events
         private void btnToAddress_Click(object sender, EventArgs e)
@@ -152,9 +232,21 @@ namespace Impendulo.Email.Email_Message_Version_2
             using (frmSelectEmailContsV2 frm = new frmSelectEmailContsV2())
             {
                 frm.ShowDialog();
+                frm.LoadExistingContacts(NewMessage.ToAddesses);
+                List<string> EmailAddresses = (from a in frm.SelectedContacts
+                                               from b in a.ContactDetails
+                                               where b.ContactTypeID == (int)Common.Enum.EnumContactTypes.Email_Address
+                                               select b.ContactDetailValue).ToList<string>();
+                foreach (string _EmailAddress in EmailAddresses)
+                {
+                    if (!verfiyIfAddressAlreadyAdded(AddressType.ToAddress, _EmailAddress))
+                    {
+                        NewMessage.addToAddress(_EmailAddress);
+                    }
+                }
             }
+            populateToAddresses();
         }
-
         private void btnCCAddress_Click(object sender, EventArgs e)
         {
             using (frmSelectEmailContsV2 frm = new frmSelectEmailContsV2())
@@ -243,7 +335,19 @@ namespace Impendulo.Email.Email_Message_Version_2
                 this.Close();
             }
         }
+
+        private void btnManualAddedEmailAddess_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddAddressFromOutlookContacts_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
+
+
     }
 }
 

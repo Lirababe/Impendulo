@@ -29,16 +29,39 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectEmailContsV2));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.miniToolStrip = new System.Windows.Forms.BindingNavigator(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanelForCheckBoxes = new System.Windows.Forms.FlowLayoutPanel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.chkAllContacts = new MetroFramework.Controls.MetroToggle();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.chkStudent = new MetroFramework.Controls.MetroToggle();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.chkCompany = new MetroFramework.Controls.MetroToggle();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.chkAssessor = new MetroFramework.Controls.MetroToggle();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.chkEmployee = new MetroFramework.Controls.MetroToggle();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.chkFaclitator = new MetroFramework.Controls.MetroToggle();
             this.gbFitlerOptions = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.dgvAvaiableContacts = new System.Windows.Forms.DataGridView();
+            this.dgvAvaiableContacts = new MetroFramework.Controls.MetroGrid();
+            this.colSelectContactToLink = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContactToLinkBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -58,7 +81,8 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
-            this.dgvLinkedContacts = new System.Windows.Forms.DataGridView();
+            this.dgvLinkedContacts = new MetroFramework.Controls.MetroGrid();
+            this.ContactsSelectedBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
@@ -72,27 +96,8 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDeselectContacts = new System.Windows.Forms.Button();
             this.btnLinkContact = new System.Windows.Forms.Button();
-            this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroToggle2 = new MetroFramework.Controls.MetroToggle();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroToggle3 = new MetroFramework.Controls.MetroToggle();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroToggle4 = new MetroFramework.Controls.MetroToggle();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroToggle5 = new MetroFramework.Controls.MetroToggle();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroToggle6 = new MetroFramework.Controls.MetroToggle();
-            this.contactToLinkBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contactsLinkedBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colSelectContactToLinked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.fullNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSelectContactToLink = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAvailableContactEmailaddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.miniToolStrip)).BeginInit();
             this.flowLayoutPanelForCheckBoxes.SuspendLayout();
@@ -103,6 +108,7 @@
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvaiableContacts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContactToLinkBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -111,11 +117,10 @@
             this.toolStripContainer2.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLinkedContacts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContactsSelectedBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
             this.bindingNavigator2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contactToLinkBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactsLinkedBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -128,6 +133,28 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1050, 31);
             this.flowLayoutPanel1.TabIndex = 3;
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroButton1.Location = new System.Drawing.Point(936, 3);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(111, 23);
+            this.metroButton1.TabIndex = 2;
+            this.metroButton1.Text = "Select Contacts";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroButton2.Location = new System.Drawing.Point(819, 3);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(111, 23);
+            this.metroButton2.TabIndex = 3;
+            this.metroButton2.Text = "Cancel";
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // miniToolStrip
             // 
@@ -162,21 +189,161 @@
             // flowLayoutPanelForCheckBoxes
             // 
             this.flowLayoutPanelForCheckBoxes.Controls.Add(this.metroLabel6);
-            this.flowLayoutPanelForCheckBoxes.Controls.Add(this.metroToggle1);
+            this.flowLayoutPanelForCheckBoxes.Controls.Add(this.chkAllContacts);
             this.flowLayoutPanelForCheckBoxes.Controls.Add(this.metroLabel4);
-            this.flowLayoutPanelForCheckBoxes.Controls.Add(this.metroToggle2);
+            this.flowLayoutPanelForCheckBoxes.Controls.Add(this.chkStudent);
             this.flowLayoutPanelForCheckBoxes.Controls.Add(this.metroLabel3);
-            this.flowLayoutPanelForCheckBoxes.Controls.Add(this.metroToggle3);
+            this.flowLayoutPanelForCheckBoxes.Controls.Add(this.chkCompany);
             this.flowLayoutPanelForCheckBoxes.Controls.Add(this.metroLabel2);
-            this.flowLayoutPanelForCheckBoxes.Controls.Add(this.metroToggle4);
+            this.flowLayoutPanelForCheckBoxes.Controls.Add(this.chkAssessor);
             this.flowLayoutPanelForCheckBoxes.Controls.Add(this.metroLabel5);
-            this.flowLayoutPanelForCheckBoxes.Controls.Add(this.metroToggle5);
+            this.flowLayoutPanelForCheckBoxes.Controls.Add(this.chkEmployee);
             this.flowLayoutPanelForCheckBoxes.Controls.Add(this.metroLabel1);
-            this.flowLayoutPanelForCheckBoxes.Controls.Add(this.metroToggle6);
+            this.flowLayoutPanelForCheckBoxes.Controls.Add(this.chkFaclitator);
             this.flowLayoutPanelForCheckBoxes.Location = new System.Drawing.Point(59, 19);
             this.flowLayoutPanelForCheckBoxes.Name = "flowLayoutPanelForCheckBoxes";
             this.flowLayoutPanelForCheckBoxes.Size = new System.Drawing.Size(950, 29);
             this.flowLayoutPanelForCheckBoxes.TabIndex = 35;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(3, 0);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(78, 19);
+            this.metroLabel6.TabIndex = 45;
+            this.metroLabel6.Text = "All Contacts";
+            // 
+            // chkAllContacts
+            // 
+            this.chkAllContacts.AutoSize = true;
+            this.chkAllContacts.Checked = true;
+            this.chkAllContacts.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkAllContacts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkAllContacts.Location = new System.Drawing.Point(87, 3);
+            this.chkAllContacts.Name = "chkAllContacts";
+            this.chkAllContacts.Size = new System.Drawing.Size(80, 17);
+            this.chkAllContacts.TabIndex = 35;
+            this.chkAllContacts.Tag = "0";
+            this.chkAllContacts.Text = "On";
+            this.chkAllContacts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkAllContacts.UseSelectable = true;
+            this.chkAllContacts.Click += new System.EventHandler(this.chk_Click);
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(173, 0);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(58, 19);
+            this.metroLabel4.TabIndex = 41;
+            this.metroLabel4.Text = "Students";
+            // 
+            // chkStudent
+            // 
+            this.chkStudent.AutoSize = true;
+            this.chkStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkStudent.Location = new System.Drawing.Point(237, 3);
+            this.chkStudent.Name = "chkStudent";
+            this.chkStudent.Size = new System.Drawing.Size(80, 17);
+            this.chkStudent.TabIndex = 37;
+            this.chkStudent.Tag = "1";
+            this.chkStudent.Text = "Off";
+            this.chkStudent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkStudent.UseSelectable = true;
+            this.chkStudent.Click += new System.EventHandler(this.chk_Click);
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(323, 0);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel3.TabIndex = 40;
+            this.metroLabel3.Text = "Company";
+            // 
+            // chkCompany
+            // 
+            this.chkCompany.AutoSize = true;
+            this.chkCompany.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkCompany.Location = new System.Drawing.Point(395, 3);
+            this.chkCompany.Name = "chkCompany";
+            this.chkCompany.Size = new System.Drawing.Size(80, 17);
+            this.chkCompany.TabIndex = 39;
+            this.chkCompany.Tag = "2";
+            this.chkCompany.Text = "Off";
+            this.chkCompany.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkCompany.UseSelectable = true;
+            this.chkCompany.Click += new System.EventHandler(this.chk_Click);
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(481, 0);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(60, 19);
+            this.metroLabel2.TabIndex = 38;
+            this.metroLabel2.Text = "Accessor";
+            // 
+            // chkAssessor
+            // 
+            this.chkAssessor.AutoSize = true;
+            this.chkAssessor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkAssessor.Location = new System.Drawing.Point(547, 3);
+            this.chkAssessor.Name = "chkAssessor";
+            this.chkAssessor.Size = new System.Drawing.Size(80, 17);
+            this.chkAssessor.TabIndex = 42;
+            this.chkAssessor.Tag = "3";
+            this.chkAssessor.Text = "Off";
+            this.chkAssessor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkAssessor.UseSelectable = true;
+            this.chkAssessor.Click += new System.EventHandler(this.chk_Click);
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(633, 0);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(72, 19);
+            this.metroLabel5.TabIndex = 43;
+            this.metroLabel5.Text = "Employees";
+            // 
+            // chkEmployee
+            // 
+            this.chkEmployee.AutoSize = true;
+            this.chkEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkEmployee.Location = new System.Drawing.Point(711, 3);
+            this.chkEmployee.Name = "chkEmployee";
+            this.chkEmployee.Size = new System.Drawing.Size(80, 17);
+            this.chkEmployee.TabIndex = 44;
+            this.chkEmployee.Tag = "4";
+            this.chkEmployee.Text = "Off";
+            this.chkEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkEmployee.UseSelectable = true;
+            this.chkEmployee.Click += new System.EventHandler(this.chk_Click);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(797, 0);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(62, 19);
+            this.metroLabel1.TabIndex = 36;
+            this.metroLabel1.Text = "Faclitator";
+            // 
+            // chkFaclitator
+            // 
+            this.chkFaclitator.AutoSize = true;
+            this.chkFaclitator.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkFaclitator.Location = new System.Drawing.Point(865, 3);
+            this.chkFaclitator.Name = "chkFaclitator";
+            this.chkFaclitator.Size = new System.Drawing.Size(80, 17);
+            this.chkFaclitator.TabIndex = 46;
+            this.chkFaclitator.Tag = "5";
+            this.chkFaclitator.Text = "Off";
+            this.chkFaclitator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkFaclitator.UseSelectable = true;
+            this.chkFaclitator.Click += new System.EventHandler(this.chk_Click);
             // 
             // gbFitlerOptions
             // 
@@ -242,24 +409,76 @@
             // 
             this.dgvAvaiableContacts.AllowUserToAddRows = false;
             this.dgvAvaiableContacts.AllowUserToDeleteRows = false;
+            this.dgvAvaiableContacts.AllowUserToResizeRows = false;
             this.dgvAvaiableContacts.AutoGenerateColumns = false;
+            this.dgvAvaiableContacts.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvAvaiableContacts.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAvaiableContacts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvAvaiableContacts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAvaiableContacts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvAvaiableContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAvaiableContacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSelectContactToLink,
-            this.fullNameDataGridViewTextBoxColumn,
-            this.colAvailableContactEmailaddress});
-            this.dgvAvaiableContacts.DataSource = this.contactToLinkBindingSource;
+            this.fullNameDataGridViewTextBoxColumn});
+            this.dgvAvaiableContacts.DataSource = this.ContactToLinkBindingSource;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAvaiableContacts.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvAvaiableContacts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAvaiableContacts.EnableHeadersVisualStyles = false;
+            this.dgvAvaiableContacts.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvAvaiableContacts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvAvaiableContacts.Location = new System.Drawing.Point(0, 0);
             this.dgvAvaiableContacts.Name = "dgvAvaiableContacts";
-            this.dgvAvaiableContacts.RowHeadersWidth = 15;
+            this.dgvAvaiableContacts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAvaiableContacts.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvAvaiableContacts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvAvaiableContacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAvaiableContacts.Size = new System.Drawing.Size(488, 412);
             this.dgvAvaiableContacts.TabIndex = 0;
+            // 
+            // colSelectContactToLink
+            // 
+            this.colSelectContactToLink.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colSelectContactToLink.HeaderText = "";
+            this.colSelectContactToLink.Name = "colSelectContactToLink";
+            this.colSelectContactToLink.Width = 5;
+            // 
+            // fullNameDataGridViewTextBoxColumn
+            // 
+            this.fullNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "Full Name";
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ContactToLinkBindingSource
+            // 
+            this.ContactToLinkBindingSource.DataSource = typeof(Impendulo.Data.Models.Individual);
             // 
             // toolStrip1
             // 
             this.toolStrip1.CanOverflow = false;
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -318,11 +537,11 @@
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = null;
-            this.bindingNavigator1.BindingSource = this.contactToLinkBindingSource;
+            this.bindingNavigator1.BindingSource = this.ContactToLinkBindingSource;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.CountItemFormat = "of {0} Contacts";
             this.bindingNavigator1.DeleteItem = null;
-            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -445,27 +664,64 @@
             // 
             this.dgvLinkedContacts.AllowUserToAddRows = false;
             this.dgvLinkedContacts.AllowUserToDeleteRows = false;
+            this.dgvLinkedContacts.AllowUserToResizeRows = false;
             this.dgvLinkedContacts.AutoGenerateColumns = false;
+            this.dgvLinkedContacts.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvLinkedContacts.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvLinkedContacts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvLinkedContacts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLinkedContacts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvLinkedContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLinkedContacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn1,
+            this.colSelectContactToLinked,
             this.fullNameDataGridViewTextBoxColumn1});
-            this.dgvLinkedContacts.DataSource = this.contactsLinkedBindingSource;
+            this.dgvLinkedContacts.DataSource = this.ContactsSelectedBindingSource;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLinkedContacts.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvLinkedContacts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLinkedContacts.EnableHeadersVisualStyles = false;
+            this.dgvLinkedContacts.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvLinkedContacts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvLinkedContacts.Location = new System.Drawing.Point(0, 0);
             this.dgvLinkedContacts.Name = "dgvLinkedContacts";
-            this.dgvLinkedContacts.ReadOnly = true;
-            this.dgvLinkedContacts.RowHeadersWidth = 15;
+            this.dgvLinkedContacts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLinkedContacts.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvLinkedContacts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvLinkedContacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLinkedContacts.Size = new System.Drawing.Size(488, 439);
-            this.dgvLinkedContacts.TabIndex = 1;
+            this.dgvLinkedContacts.TabIndex = 0;
+            // 
+            // ContactsSelectedBindingSource
+            // 
+            this.ContactsSelectedBindingSource.DataSource = typeof(Impendulo.Data.Models.Individual);
             // 
             // bindingNavigator2
             // 
             this.bindingNavigator2.AddNewItem = null;
-            this.bindingNavigator2.BindingSource = this.contactsLinkedBindingSource;
+            this.bindingNavigator2.BindingSource = this.ContactsSelectedBindingSource;
             this.bindingNavigator2.CountItem = this.bindingNavigatorCountItem1;
             this.bindingNavigator2.DeleteItem = null;
-            this.bindingNavigator2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bindingNavigator2.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.bindingNavigator2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem1,
@@ -581,6 +837,7 @@
             this.btnDeselectContacts.Size = new System.Drawing.Size(38, 40);
             this.btnDeselectContacts.TabIndex = 2;
             this.btnDeselectContacts.UseVisualStyleBackColor = true;
+            this.btnDeselectContacts.Click += new System.EventHandler(this.btnDeselectContacts_Click);
             // 
             // btnLinkContact
             // 
@@ -592,201 +849,22 @@
             this.btnLinkContact.Size = new System.Drawing.Size(38, 40);
             this.btnLinkContact.TabIndex = 0;
             this.btnLinkContact.UseVisualStyleBackColor = true;
+            this.btnLinkContact.Click += new System.EventHandler(this.btnLinkContact_Click);
             // 
-            // metroToggle1
+            // colSelectContactToLinked
             // 
-            this.metroToggle1.AutoSize = true;
-            this.metroToggle1.Checked = true;
-            this.metroToggle1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.metroToggle1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroToggle1.Location = new System.Drawing.Point(87, 3);
-            this.metroToggle1.Name = "metroToggle1";
-            this.metroToggle1.Size = new System.Drawing.Size(80, 17);
-            this.metroToggle1.TabIndex = 35;
-            this.metroToggle1.Text = "On";
-            this.metroToggle1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroToggle1.UseVisualStyleBackColor = true;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(797, 0);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(62, 19);
-            this.metroLabel1.TabIndex = 36;
-            this.metroLabel1.Text = "Faclitator";
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroButton1.Location = new System.Drawing.Point(936, 3);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(111, 23);
-            this.metroButton1.TabIndex = 2;
-            this.metroButton1.Text = "Select Contacts";
-            // 
-            // metroButton2
-            // 
-            this.metroButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroButton2.Location = new System.Drawing.Point(819, 3);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(111, 23);
-            this.metroButton2.TabIndex = 3;
-            this.metroButton2.Text = "Cancel";
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
-            // 
-            // metroToggle2
-            // 
-            this.metroToggle2.AutoSize = true;
-            this.metroToggle2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroToggle2.Location = new System.Drawing.Point(237, 3);
-            this.metroToggle2.Name = "metroToggle2";
-            this.metroToggle2.Size = new System.Drawing.Size(80, 17);
-            this.metroToggle2.TabIndex = 37;
-            this.metroToggle2.Text = "Off";
-            this.metroToggle2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroToggle2.UseVisualStyleBackColor = true;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(481, 0);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(60, 19);
-            this.metroLabel2.TabIndex = 38;
-            this.metroLabel2.Text = "Accessor";
-            // 
-            // metroToggle3
-            // 
-            this.metroToggle3.AutoSize = true;
-            this.metroToggle3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroToggle3.Location = new System.Drawing.Point(395, 3);
-            this.metroToggle3.Name = "metroToggle3";
-            this.metroToggle3.Size = new System.Drawing.Size(80, 17);
-            this.metroToggle3.TabIndex = 39;
-            this.metroToggle3.Text = "Off";
-            this.metroToggle3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroToggle3.UseVisualStyleBackColor = true;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(323, 0);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(66, 19);
-            this.metroLabel3.TabIndex = 40;
-            this.metroLabel3.Text = "Company";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(173, 0);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(58, 19);
-            this.metroLabel4.TabIndex = 41;
-            this.metroLabel4.Text = "Students";
-            // 
-            // metroToggle4
-            // 
-            this.metroToggle4.AutoSize = true;
-            this.metroToggle4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroToggle4.Location = new System.Drawing.Point(547, 3);
-            this.metroToggle4.Name = "metroToggle4";
-            this.metroToggle4.Size = new System.Drawing.Size(80, 17);
-            this.metroToggle4.TabIndex = 42;
-            this.metroToggle4.Text = "Off";
-            this.metroToggle4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroToggle4.UseVisualStyleBackColor = true;
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(633, 0);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(72, 19);
-            this.metroLabel5.TabIndex = 43;
-            this.metroLabel5.Text = "Employees";
-            // 
-            // metroToggle5
-            // 
-            this.metroToggle5.AutoSize = true;
-            this.metroToggle5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroToggle5.Location = new System.Drawing.Point(711, 3);
-            this.metroToggle5.Name = "metroToggle5";
-            this.metroToggle5.Size = new System.Drawing.Size(80, 17);
-            this.metroToggle5.TabIndex = 44;
-            this.metroToggle5.Text = "Off";
-            this.metroToggle5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroToggle5.UseVisualStyleBackColor = true;
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(3, 0);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(78, 19);
-            this.metroLabel6.TabIndex = 45;
-            this.metroLabel6.Text = "All Contacts";
-            // 
-            // metroToggle6
-            // 
-            this.metroToggle6.AutoSize = true;
-            this.metroToggle6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroToggle6.Location = new System.Drawing.Point(865, 3);
-            this.metroToggle6.Name = "metroToggle6";
-            this.metroToggle6.Size = new System.Drawing.Size(80, 17);
-            this.metroToggle6.TabIndex = 46;
-            this.metroToggle6.Text = "Off";
-            this.metroToggle6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroToggle6.UseVisualStyleBackColor = true;
-            // 
-            // contactToLinkBindingSource
-            // 
-            this.contactToLinkBindingSource.DataSource = typeof(Impendulo.Data.Models.Individual);
-            // 
-            // contactsLinkedBindingSource
-            // 
-            this.contactsLinkedBindingSource.DataSource = typeof(Impendulo.Data.Models.Individual);
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewCheckBoxColumn1.HeaderText = "";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Width = 5;
+            this.colSelectContactToLinked.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colSelectContactToLinked.HeaderText = "";
+            this.colSelectContactToLinked.Name = "colSelectContactToLinked";
+            this.colSelectContactToLinked.Width = 5;
             // 
             // fullNameDataGridViewTextBoxColumn1
             // 
-            this.fullNameDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fullNameDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.fullNameDataGridViewTextBoxColumn1.DataPropertyName = "FullName";
-            this.fullNameDataGridViewTextBoxColumn1.HeaderText = "Full Name";
+            this.fullNameDataGridViewTextBoxColumn1.HeaderText = "FullName";
             this.fullNameDataGridViewTextBoxColumn1.Name = "fullNameDataGridViewTextBoxColumn1";
             this.fullNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.fullNameDataGridViewTextBoxColumn1.Width = 79;
-            // 
-            // colSelectContactToLink
-            // 
-            this.colSelectContactToLink.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colSelectContactToLink.HeaderText = "";
-            this.colSelectContactToLink.Name = "colSelectContactToLink";
-            this.colSelectContactToLink.ReadOnly = true;
-            this.colSelectContactToLink.Width = 5;
-            // 
-            // fullNameDataGridViewTextBoxColumn
-            // 
-            this.fullNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
-            this.fullNameDataGridViewTextBoxColumn.HeaderText = "Full Name";
-            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
-            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fullNameDataGridViewTextBoxColumn.Width = 79;
-            // 
-            // colAvailableContactEmailaddress
-            // 
-            this.colAvailableContactEmailaddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colAvailableContactEmailaddress.HeaderText = "Email Address";
-            this.colAvailableContactEmailaddress.Name = "colAvailableContactEmailaddress";
             // 
             // frmSelectEmailContsV2
             // 
@@ -798,7 +876,6 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.gbFitlerOptions);
             this.Name = "frmSelectEmailContsV2";
-           // this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.DropShadow;
             this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Text = "Select Email Contacts";
             this.Load += new System.EventHandler(this.frmSelectEmailContsV2_Load);
@@ -816,6 +893,7 @@
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvaiableContacts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContactToLinkBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
@@ -828,12 +906,11 @@
             this.toolStripContainer2.ResumeLayout(false);
             this.toolStripContainer2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLinkedContacts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContactsSelectedBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.contactToLinkBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactsLinkedBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -844,12 +921,11 @@
         private System.Windows.Forms.BindingNavigator miniToolStrip;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelForCheckBoxes;
-        private MetroFramework.Controls.MetroToggle metroToggle1;
+        private MetroFramework.Controls.MetroToggle chkAllContacts;
         private System.Windows.Forms.GroupBox gbFitlerOptions;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.DataGridView dgvAvaiableContacts;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -869,7 +945,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ToolStripContainer toolStripContainer2;
-        private System.Windows.Forms.DataGridView dgvLinkedContacts;
         private System.Windows.Forms.BindingNavigator bindingNavigator2;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem1;
@@ -887,21 +962,22 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroToggle metroToggle2;
+        private MetroFramework.Controls.MetroToggle chkStudent;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroToggle metroToggle3;
+        private MetroFramework.Controls.MetroToggle chkCompany;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroToggle metroToggle4;
+        private MetroFramework.Controls.MetroToggle chkAssessor;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroToggle metroToggle5;
-        private MetroFramework.Controls.MetroToggle metroToggle6;
-        private System.Windows.Forms.BindingSource contactToLinkBindingSource;
+        private MetroFramework.Controls.MetroToggle chkEmployee;
+        private MetroFramework.Controls.MetroToggle chkFaclitator;
+        private System.Windows.Forms.BindingSource ContactToLinkBindingSource;
+        private System.Windows.Forms.BindingSource ContactsSelectedBindingSource;
+        private MetroFramework.Controls.MetroGrid dgvAvaiableContacts;
+        private MetroFramework.Controls.MetroGrid dgvLinkedContacts;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colSelectContactToLink;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAvailableContactEmailaddress;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colSelectContactToLinked;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.BindingSource contactsLinkedBindingSource;
     }
 }

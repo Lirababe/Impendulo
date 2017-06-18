@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmailMessageV2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnManualAddedEmailAddess = new MetroFramework.Controls.MetroButton();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnAddAddressFromOutlookContacts = new MetroFramework.Controls.MetroButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btnSendEmailMessage = new MetroFramework.Controls.MetroTile();
             this.btnCCAddress = new MetroFramework.Controls.MetroButton();
@@ -47,6 +51,9 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dgvMessageAttachments = new MetroFramework.Controls.MetroGrid();
+            this.colFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFileExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileAttachmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -63,26 +70,29 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.fileAttachmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFileExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMessageAttachments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileAttachmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fileAttachmentsBindingSource)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnManualAddedEmailAddess);
+            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Controls.Add(this.btnAddAddressFromOutlookContacts);
+            this.groupBox4.Controls.Add(this.textBox1);
             this.groupBox4.Controls.Add(this.metroLabel1);
             this.groupBox4.Controls.Add(this.btnSendEmailMessage);
             this.groupBox4.Controls.Add(this.btnCCAddress);
@@ -90,20 +100,67 @@
             this.groupBox4.Controls.Add(this.btnToAddress);
             this.groupBox4.Controls.Add(this.txtMessageCcAddress);
             this.groupBox4.Controls.Add(this.txtMessageBccAddress);
-            this.groupBox4.Controls.Add(this.txtMessageBody);
             this.groupBox4.Controls.Add(this.txtMessageSubject);
             this.groupBox4.Controls.Add(this.txtMessageToAddress);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(683, 286);
+            this.groupBox4.Size = new System.Drawing.Size(683, 196);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
+            // 
+            // btnManualAddedEmailAddess
+            // 
+            this.btnManualAddedEmailAddess.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManualAddedEmailAddess.Location = new System.Drawing.Point(119, 103);
+            this.btnManualAddedEmailAddess.Name = "btnManualAddedEmailAddess";
+            this.btnManualAddedEmailAddess.Size = new System.Drawing.Size(108, 23);
+            this.btnManualAddedEmailAddess.TabIndex = 26;
+            this.btnManualAddedEmailAddess.TabStop = false;
+            this.btnManualAddedEmailAddess.Text = "Manual...";
+            this.toolTip1.SetToolTip(this.btnManualAddedEmailAddess, "Select Contact(s) To Send To.");
+            this.btnManualAddedEmailAddess.UseSelectable = true;
+            this.btnManualAddedEmailAddess.Click += new System.EventHandler(this.btnManualAddedEmailAddess_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Location = new System.Drawing.Point(233, 103);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(438, 20);
+            this.textBox2.TabIndex = 25;
+            this.textBox2.TabStop = false;
+            // 
+            // btnAddAddressFromOutlookContacts
+            // 
+            this.btnAddAddressFromOutlookContacts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAddressFromOutlookContacts.Location = new System.Drawing.Point(119, 132);
+            this.btnAddAddressFromOutlookContacts.Name = "btnAddAddressFromOutlookContacts";
+            this.btnAddAddressFromOutlookContacts.Size = new System.Drawing.Size(108, 23);
+            this.btnAddAddressFromOutlookContacts.TabIndex = 24;
+            this.btnAddAddressFromOutlookContacts.TabStop = false;
+            this.btnAddAddressFromOutlookContacts.Text = "Outlook Contacts...";
+            this.toolTip1.SetToolTip(this.btnAddAddressFromOutlookContacts, "Select Contact(s) To Send To.");
+            this.btnAddAddressFromOutlookContacts.UseSelectable = true;
+            this.btnAddAddressFromOutlookContacts.Click += new System.EventHandler(this.btnAddAddressFromOutlookContacts_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(233, 135);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(438, 20);
+            this.textBox1.TabIndex = 23;
+            this.textBox1.TabStop = false;
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(126, 107);
+            this.metroLabel1.Location = new System.Drawing.Point(169, 162);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(58, 19);
             this.metroLabel1.TabIndex = 19;
@@ -115,9 +172,9 @@
             this.btnSendEmailMessage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSendEmailMessage.Location = new System.Drawing.Point(6, 19);
             this.btnSendEmailMessage.Name = "btnSendEmailMessage";
-            this.btnSendEmailMessage.Size = new System.Drawing.Size(107, 108);
-            this.btnSendEmailMessage.TabIndex = 18;
-            this.btnSendEmailMessage.Text = "Send Message";
+            this.btnSendEmailMessage.Size = new System.Drawing.Size(107, 136);
+            this.btnSendEmailMessage.TabIndex = 2;
+            this.btnSendEmailMessage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSendEmailMessage.TileImage = ((System.Drawing.Image)(resources.GetObject("btnSendEmailMessage.TileImage")));
             this.btnSendEmailMessage.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.btnSendEmailMessage, "Send Email Mesage");
@@ -128,10 +185,11 @@
             // btnCCAddress
             // 
             this.btnCCAddress.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCCAddress.Location = new System.Drawing.Point(119, 48);
+            this.btnCCAddress.Location = new System.Drawing.Point(119, 45);
             this.btnCCAddress.Name = "btnCCAddress";
-            this.btnCCAddress.Size = new System.Drawing.Size(65, 23);
+            this.btnCCAddress.Size = new System.Drawing.Size(108, 23);
             this.btnCCAddress.TabIndex = 17;
+            this.btnCCAddress.TabStop = false;
             this.btnCCAddress.Text = "Cc...";
             this.toolTip1.SetToolTip(this.btnCCAddress, "Select Contact(s) To Carbon Copy.");
             this.btnCCAddress.UseSelectable = true;
@@ -140,10 +198,11 @@
             // btnBCCddress
             // 
             this.btnBCCddress.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBCCddress.Location = new System.Drawing.Point(119, 77);
+            this.btnBCCddress.Location = new System.Drawing.Point(119, 74);
             this.btnBCCddress.Name = "btnBCCddress";
-            this.btnBCCddress.Size = new System.Drawing.Size(65, 23);
+            this.btnBCCddress.Size = new System.Drawing.Size(108, 23);
             this.btnBCCddress.TabIndex = 16;
+            this.btnBCCddress.TabStop = false;
             this.btnBCCddress.Text = "Bcc...";
             this.toolTip1.SetToolTip(this.btnBCCddress, "Select Contact(s) To Blind  to Send a Copy");
             this.btnBCCddress.UseSelectable = true;
@@ -152,10 +211,11 @@
             // btnToAddress
             // 
             this.btnToAddress.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnToAddress.Location = new System.Drawing.Point(119, 19);
+            this.btnToAddress.Location = new System.Drawing.Point(119, 16);
             this.btnToAddress.Name = "btnToAddress";
-            this.btnToAddress.Size = new System.Drawing.Size(65, 23);
+            this.btnToAddress.Size = new System.Drawing.Size(108, 23);
             this.btnToAddress.TabIndex = 15;
+            this.btnToAddress.TabStop = false;
             this.btnToAddress.Text = "To...";
             this.toolTip1.SetToolTip(this.btnToAddress, "Select Contact(s) To Send To.");
             this.btnToAddress.UseSelectable = true;
@@ -165,56 +225,62 @@
             // 
             this.txtMessageCcAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMessageCcAddress.Location = new System.Drawing.Point(190, 51);
+            this.txtMessageCcAddress.Location = new System.Drawing.Point(233, 48);
             this.txtMessageCcAddress.Name = "txtMessageCcAddress";
-            this.txtMessageCcAddress.Size = new System.Drawing.Size(481, 20);
+            this.txtMessageCcAddress.ReadOnly = true;
+            this.txtMessageCcAddress.Size = new System.Drawing.Size(438, 20);
             this.txtMessageCcAddress.TabIndex = 14;
+            this.txtMessageCcAddress.TabStop = false;
             // 
             // txtMessageBccAddress
             // 
             this.txtMessageBccAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMessageBccAddress.Location = new System.Drawing.Point(190, 80);
+            this.txtMessageBccAddress.Location = new System.Drawing.Point(233, 77);
             this.txtMessageBccAddress.Name = "txtMessageBccAddress";
-            this.txtMessageBccAddress.Size = new System.Drawing.Size(481, 20);
+            this.txtMessageBccAddress.ReadOnly = true;
+            this.txtMessageBccAddress.Size = new System.Drawing.Size(438, 20);
             this.txtMessageBccAddress.TabIndex = 12;
+            this.txtMessageBccAddress.TabStop = false;
             // 
             // txtMessageBody
             // 
             this.txtMessageBody.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMessageBody.Location = new System.Drawing.Point(6, 133);
+            this.txtMessageBody.Location = new System.Drawing.Point(3, 3);
             this.txtMessageBody.Name = "txtMessageBody";
-            this.txtMessageBody.Size = new System.Drawing.Size(665, 147);
-            this.txtMessageBody.TabIndex = 10;
+            this.txtMessageBody.Size = new System.Drawing.Size(677, 206);
+            this.txtMessageBody.TabIndex = 1;
             this.txtMessageBody.Text = "";
             // 
             // txtMessageSubject
             // 
             this.txtMessageSubject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMessageSubject.Location = new System.Drawing.Point(190, 107);
+            this.txtMessageSubject.Location = new System.Drawing.Point(233, 161);
             this.txtMessageSubject.Name = "txtMessageSubject";
-            this.txtMessageSubject.Size = new System.Drawing.Size(481, 20);
-            this.txtMessageSubject.TabIndex = 6;
+            this.txtMessageSubject.Size = new System.Drawing.Size(438, 20);
+            this.txtMessageSubject.TabIndex = 0;
             // 
             // txtMessageToAddress
             // 
             this.txtMessageToAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMessageToAddress.Location = new System.Drawing.Point(190, 22);
+            this.txtMessageToAddress.Location = new System.Drawing.Point(233, 19);
             this.txtMessageToAddress.Name = "txtMessageToAddress";
-            this.txtMessageToAddress.Size = new System.Drawing.Size(481, 20);
+            this.txtMessageToAddress.ReadOnly = true;
+            this.txtMessageToAddress.Size = new System.Drawing.Size(438, 20);
             this.txtMessageToAddress.TabIndex = 1;
+            this.txtMessageToAddress.TabStop = false;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.toolStripContainer1);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(0, 0);
+            this.groupBox5.Location = new System.Drawing.Point(3, 215);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(683, 180);
+            this.groupBox5.Size = new System.Drawing.Size(677, 211);
             this.groupBox5.TabIndex = 7;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "List Of Attachments";
@@ -225,11 +291,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvMessageAttachments);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(677, 136);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(671, 167);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(677, 161);
+            this.toolStripContainer1.Size = new System.Drawing.Size(671, 192);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -247,27 +313,27 @@
             this.dgvMessageAttachments.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMessageAttachments.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMessageAttachments.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMessageAttachments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMessageAttachments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMessageAttachments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMessageAttachments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colFileName,
             this.colFileExtension});
             this.dgvMessageAttachments.DataSource = this.fileAttachmentsBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMessageAttachments.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMessageAttachments.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvMessageAttachments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMessageAttachments.EnableHeadersVisualStyles = false;
             this.dgvMessageAttachments.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -276,18 +342,36 @@
             this.dgvMessageAttachments.Name = "dgvMessageAttachments";
             this.dgvMessageAttachments.ReadOnly = true;
             this.dgvMessageAttachments.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMessageAttachments.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMessageAttachments.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvMessageAttachments.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvMessageAttachments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMessageAttachments.Size = new System.Drawing.Size(677, 136);
+            this.dgvMessageAttachments.Size = new System.Drawing.Size(671, 167);
             this.dgvMessageAttachments.TabIndex = 0;
+            this.dgvMessageAttachments.TabStop = false;
+            // 
+            // colFileName
+            // 
+            this.colFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colFileName.DataPropertyName = "AttachmentFileName";
+            this.colFileName.HeaderText = "File Name";
+            this.colFileName.Name = "colFileName";
+            this.colFileName.ReadOnly = true;
+            this.colFileName.Width = 80;
+            // 
+            // colFileExtension
+            // 
+            this.colFileExtension.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colFileExtension.DataPropertyName = "AttachmentFileExtension";
+            this.colFileExtension.HeaderText = "Extension";
+            this.colFileExtension.Name = "colFileExtension";
+            this.colFileExtension.ReadOnly = true;
             // 
             // bindingNavigator1
             // 
@@ -318,9 +402,10 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(677, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(671, 25);
             this.bindingNavigator1.Stretch = true;
-            this.bindingNavigator1.TabIndex = 0;
+            this.bindingNavigator1.TabIndex = 500;
+            this.bindingNavigator1.TabStop = true;
             // 
             // bindingNavigatorCountItem
             // 
@@ -421,7 +506,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(20, 60);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -432,9 +517,9 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox5);
-            this.splitContainer1.Size = new System.Drawing.Size(683, 470);
-            this.splitContainer1.SplitterDistance = 286;
+            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
+            this.splitContainer1.Size = new System.Drawing.Size(683, 629);
+            this.splitContainer1.SplitterDistance = 196;
             this.splitContainer1.TabIndex = 3;
             // 
             // toolTip1
@@ -445,28 +530,26 @@
             this.toolTip1.ReshowDelay = 250;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
-            // colFileName
+            // tableLayoutPanel1
             // 
-            this.colFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colFileName.DataPropertyName = "AttachmentFileName";
-            this.colFileName.HeaderText = "File Name";
-            this.colFileName.Name = "colFileName";
-            this.colFileName.ReadOnly = true;
-            this.colFileName.Width = 80;
-            // 
-            // colFileExtension
-            // 
-            this.colFileExtension.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colFileExtension.DataPropertyName = "AttachmentFileExtension";
-            this.colFileExtension.HeaderText = "Extension";
-            this.colFileExtension.Name = "colFileExtension";
-            this.colFileExtension.ReadOnly = true;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtMessageBody, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.62963F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.37037F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(683, 429);
+            this.tableLayoutPanel1.TabIndex = 8;
             // 
             // frmEmailMessageV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 550);
+            this.ClientSize = new System.Drawing.Size(723, 709);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmEmailMessageV2";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -482,6 +565,7 @@
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMessageAttachments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileAttachmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -489,7 +573,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fileAttachmentsBindingSource)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -529,5 +613,10 @@
         private System.Windows.Forms.BindingSource fileAttachmentsBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFileName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFileExtension;
+        private MetroFramework.Controls.MetroButton btnManualAddedEmailAddess;
+        public System.Windows.Forms.TextBox textBox2;
+        private MetroFramework.Controls.MetroButton btnAddAddressFromOutlookContacts;
+        public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

@@ -156,8 +156,6 @@ namespace Impendulo.Email.Select_Contacts.Development
 
         private void btnDeselectContacts_Click(object sender, EventArgs e)
         {
-
-
             var gridView = (DataGridView)dgvLinkedContacts;
             foreach (DataGridViewRow row in gridView.Rows)
             {

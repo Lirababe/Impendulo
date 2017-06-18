@@ -191,11 +191,11 @@ namespace Impendulo.Email.Development
             }
 
         }
-
         private void btnContacts_Click(object sender, EventArgs e)
         {
             frmSelectEmailContacts frm = new frmSelectEmailContacts();
             frm.ShowDialog();
+
             List<string> EmailAddresses = (from a in frm.SelectedContacts
                                            from b in a.ContactDetails
                                            where b.ContactTypeID == (int)Common.Enum.EnumContactTypes.Email_Address
@@ -213,7 +213,6 @@ namespace Impendulo.Email.Development
             {
                 this.txtTestingToAddress.Text += ";";
             }
-
             this.txtTestingToAddress.Text += ContactEmailaddresses;
         }
     }
