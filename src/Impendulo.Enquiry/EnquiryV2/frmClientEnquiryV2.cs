@@ -619,34 +619,42 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
 
         private void dgvNewEnquiryTab_NewEnquiry_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            Data.Models.Enquiry En = (Data.Models.Enquiry)dgvNewEnquiryTab_NewEnquiry.Rows[e.RowIndex].DataBoundItem;
+            Data.Models.Enquiry En = null;
+            if (curriculumEnquiriesBindingSource.List.Count > 0)
+            {
+              En = (Data.Models.Enquiry)dgvNewEnquiryTab_NewEnquiry.Rows[e.RowIndex].DataBoundItem;
+            }
+           
             switch (e.ColumnIndex)
             {
                 case 2:
-                    if (!(Boolean)En.InitialConsultationComplete)
+                    if (En != null)
                     {
-                        DialogResult Rtn1 = MessageBox.Show("Is Intial Consultation Completed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                        if (Rtn1 == DialogResult.Yes)
+                        if (!(Boolean)En.InitialConsultationComplete)
                         {
-                            frmEnquiryInitialConsultation frm3 = new frmEnquiryInitialConsultation();
+                            DialogResult Rtn1 = MessageBox.Show("Is Intial Consultation Completed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            if (Rtn1 == DialogResult.Yes)
+                            {
+                                frmEnquiryInitialConsultation frm3 = new frmEnquiryInitialConsultation();
 
-                            frm3.CurrentEnquiry = En;
-                            frm3.EmployeeID = CurrentEmployeeLoggedIn.EmployeeID;
-                            frm3.ShowDialog();
-                            dgvNewEnquiryTab_NewEnquiry.Refresh();
+                                frm3.CurrentEnquiry = En;
+                                frm3.EmployeeID = CurrentEmployeeLoggedIn.EmployeeID;
+                                frm3.ShowDialog();
+                                dgvNewEnquiryTab_NewEnquiry.Refresh();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Consultation Already Completed,See History.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("Consultation Already Completed,See History.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                   
 
                     break;
                 //SEnd Email Message
 
                 case 4:
-                    //CurriculumEnquiry CE = En.CurriculumEnquiries;
+                  
 
                     frmSendEmail frm = new frmSendEmail();
                     frm.ShowDialog();

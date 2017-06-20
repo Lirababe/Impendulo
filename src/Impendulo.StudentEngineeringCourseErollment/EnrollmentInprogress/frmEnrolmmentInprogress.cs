@@ -42,19 +42,45 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
         public int CurrentEquiryID { get; set; }
         private void frmEnrolmmentInprogress_Load(object sender, EventArgs e)
         {
-            if (dgvPrerequisiteCourses.Rows.Count <= 0)
+            CurrentSelectedDepartment = EnumDepartments.Apprenticeship;
+            this.refreshEnrollment();
+            if (CheckIfAllPreRequisitesAreCompleted())
+            {
+                btnEditCourseSelection.Enabled = false;
+            }
+            else
             {
                 btnEditCourseSelection.Enabled = true;
             }
-            else
-                btnEditCourseSelection.Enabled = false;
-            CurrentSelectedDepartment = EnumDepartments.Apprenticeship;
-            this.refreshEnrollment();
+                
+
+
 
             //datepickertimer
-           
 
-            
+
+
+        }
+
+        private Boolean CheckIfAllPreRequisitesAreCompleted()
+        {
+            Boolean Rtn = false;
+
+            //Check to see if there are any prerequisites
+            if (enrollmentPrerequisitesBindingSource.Count > 0)
+            {
+                //checks to see if tehere are any are incompleted.
+                foreach (Enrollment Enroll in enrollmentPrerequisitesBindingSource.List)
+                {
+                    if (Enroll.LookupEnrollmentProgressStateID == (int)Common.Enum.EnumEnrollmentProgressStates.In_Progress)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return Rtn;
+
         }
 
         #region Common Functions
@@ -139,7 +165,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             populateApprenticeshipCoursePreRequisites();
         }
 
-        
+
         private void refreshEnrollmentLinkedCourses()
         {
             int _EnrollmentID = 0;
@@ -272,9 +298,9 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             using (var Dbconnection = new MCDEntities())
             {
                 scheduleBindingSource.DataSource = (from a in Dbconnection.CurriculumCourses
-                                                          from b in a.CurriculumCourseEnrollments
-                                                          where b.EnrollmentID == _EnrollmentID
-                                                          select a).ToList<CurriculumCourse>();
+                                                    from b in a.CurriculumCourseEnrollments
+                                                    where b.EnrollmentID == _EnrollmentID
+                                                    select a).ToList<CurriculumCourse>();
             }
         }
         #endregion
@@ -519,7 +545,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             };
 
             frmSendEmail frm = new frmSendEmail();
-           
+
 
             List<ContactDetail> CustomEmailPerson = (from a in CurrentEnquiryObj.Individuals
                                                      from b in a.ContactDetails
@@ -583,7 +609,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                     //Schedule CourseScheduleObj = (Schedule)(row.DataBoundItem);
 
                     row.Cells[colApprenticeshipEnrollmentLinkedCourse.Index].Value = CurriculumCourseObj.Course.CourseName.ToString();
-                   
+
                     //row.Cells[colApprenticeshipEnrollmentLinkedCourseStartDate.Index].Value = CourseScheduleObj.ScheduleStartDate.ToShortDateString();
                     //row.Cells[colApprenticeshipEnrollmentLinkedCourseEndtDate.Index].Value = CourseScheduleObj.ScheduleCompletionDate.ToShortDateString();
                 }
@@ -668,7 +694,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
 
                 dtp.Visible = true;
             }
-            
+
         }
         private void dtp_OnTextChange(object sender, EventArgs e)
         {

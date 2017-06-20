@@ -33,7 +33,7 @@
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label15;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEnrolmmentInprogress));
             this.splitContainerApprenticeship = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -158,7 +158,17 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStripContainer10 = new System.Windows.Forms.ToolStripContainer();
             this.dgvCourseSschedule = new System.Windows.Forms.DataGridView();
-            this.courseScheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colApprenticeshipEnrollmentLinkedCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colScheduleStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colScheduleEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.scheduleIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scheduleStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scheduleCompletionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumCourseEnrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigator9 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel9 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton41 = new System.Windows.Forms.ToolStripButton();
@@ -197,13 +207,10 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.courseScheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.folderBrowserDialogForDownloading = new System.Windows.Forms.FolderBrowserDialog();
             this.curriculumCourseEnrollmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.scheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.courseScheduleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.colApprenticeshipEnrollmentLinkedCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScheduleStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScheduleEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             label8 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -267,7 +274,7 @@
             this.toolStripContainer10.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseSschedule)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseScheduleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator9)).BeginInit();
             this.bindingNavigator9.SuspendLayout();
             this.toolStripContainer2.ContentPanel.SuspendLayout();
@@ -277,8 +284,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseLinkedToEnrollmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
             this.bindingNavigator2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.courseScheduleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseEnrollmentsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseScheduleBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -462,9 +469,9 @@
             // 
             this.DateIntitiated.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.DateIntitiated.DataPropertyName = "DateIntitiated";
-            dataGridViewCellStyle13.Format = "D";
-            dataGridViewCellStyle13.NullValue = null;
-            this.DateIntitiated.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Format = "D";
+            dataGridViewCellStyle1.NullValue = null;
+            this.DateIntitiated.DefaultCellStyle = dataGridViewCellStyle1;
             this.DateIntitiated.HeaderText = "Date";
             this.DateIntitiated.Name = "DateIntitiated";
             this.DateIntitiated.ReadOnly = true;
@@ -1591,7 +1598,14 @@
             this.dgvCourseSschedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colApprenticeshipEnrollmentLinkedCourse,
             this.colScheduleStartDate,
-            this.colScheduleEndDate});
+            this.colScheduleEndDate,
+            this.scheduleIDDataGridViewTextBoxColumn,
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn,
+            this.scheduleStartDateDataGridViewTextBoxColumn,
+            this.scheduleCompletionDateDataGridViewTextBoxColumn,
+            this.enrollmentIDDataGridViewTextBoxColumn2,
+            this.curriculumCourseEnrollmentDataGridViewTextBoxColumn,
+            this.enrollmentDataGridViewTextBoxColumn});
             this.dgvCourseSschedule.DataSource = this.scheduleBindingSource;
             this.dgvCourseSschedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCourseSschedule.Location = new System.Drawing.Point(0, 0);
@@ -1604,6 +1618,77 @@
             this.dgvCourseSschedule.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourseSschedule_CellClick);
             this.dgvCourseSschedule.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourseSschedule_CellEndEdit);
             this.dgvCourseSschedule.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvCourseSschedule_DataBindingComplete);
+            // 
+            // colApprenticeshipEnrollmentLinkedCourse
+            // 
+            this.colApprenticeshipEnrollmentLinkedCourse.HeaderText = "Course";
+            this.colApprenticeshipEnrollmentLinkedCourse.Name = "colApprenticeshipEnrollmentLinkedCourse";
+            this.colApprenticeshipEnrollmentLinkedCourse.ReadOnly = true;
+            // 
+            // colScheduleStartDate
+            // 
+            this.colScheduleStartDate.HeaderText = "Start Date";
+            this.colScheduleStartDate.Name = "colScheduleStartDate";
+            this.colScheduleStartDate.ReadOnly = true;
+            // 
+            // colScheduleEndDate
+            // 
+            this.colScheduleEndDate.HeaderText = "End Date";
+            this.colScheduleEndDate.Name = "colScheduleEndDate";
+            this.colScheduleEndDate.ReadOnly = true;
+            // 
+            // scheduleBindingSource
+            // 
+            this.scheduleBindingSource.DataSource = typeof(Impendulo.Data.Models.Schedule);
+            // 
+            // scheduleIDDataGridViewTextBoxColumn
+            // 
+            this.scheduleIDDataGridViewTextBoxColumn.DataPropertyName = "ScheduleID";
+            this.scheduleIDDataGridViewTextBoxColumn.HeaderText = "ScheduleID";
+            this.scheduleIDDataGridViewTextBoxColumn.Name = "scheduleIDDataGridViewTextBoxColumn";
+            this.scheduleIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // curriculumCourseEnrollmentIDDataGridViewTextBoxColumn
+            // 
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumCourseEnrollmentID";
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn.HeaderText = "CurriculumCourseEnrollmentID";
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn.Name = "curriculumCourseEnrollmentIDDataGridViewTextBoxColumn";
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // scheduleStartDateDataGridViewTextBoxColumn
+            // 
+            this.scheduleStartDateDataGridViewTextBoxColumn.DataPropertyName = "ScheduleStartDate";
+            this.scheduleStartDateDataGridViewTextBoxColumn.HeaderText = "ScheduleStartDate";
+            this.scheduleStartDateDataGridViewTextBoxColumn.Name = "scheduleStartDateDataGridViewTextBoxColumn";
+            this.scheduleStartDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // scheduleCompletionDateDataGridViewTextBoxColumn
+            // 
+            this.scheduleCompletionDateDataGridViewTextBoxColumn.DataPropertyName = "ScheduleCompletionDate";
+            this.scheduleCompletionDateDataGridViewTextBoxColumn.HeaderText = "ScheduleCompletionDate";
+            this.scheduleCompletionDateDataGridViewTextBoxColumn.Name = "scheduleCompletionDateDataGridViewTextBoxColumn";
+            this.scheduleCompletionDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // enrollmentIDDataGridViewTextBoxColumn2
+            // 
+            this.enrollmentIDDataGridViewTextBoxColumn2.DataPropertyName = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn2.HeaderText = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn2.Name = "enrollmentIDDataGridViewTextBoxColumn2";
+            this.enrollmentIDDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // curriculumCourseEnrollmentDataGridViewTextBoxColumn
+            // 
+            this.curriculumCourseEnrollmentDataGridViewTextBoxColumn.DataPropertyName = "CurriculumCourseEnrollment";
+            this.curriculumCourseEnrollmentDataGridViewTextBoxColumn.HeaderText = "CurriculumCourseEnrollment";
+            this.curriculumCourseEnrollmentDataGridViewTextBoxColumn.Name = "curriculumCourseEnrollmentDataGridViewTextBoxColumn";
+            this.curriculumCourseEnrollmentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // enrollmentDataGridViewTextBoxColumn
+            // 
+            this.enrollmentDataGridViewTextBoxColumn.DataPropertyName = "Enrollment";
+            this.enrollmentDataGridViewTextBoxColumn.HeaderText = "Enrollment";
+            this.enrollmentDataGridViewTextBoxColumn.Name = "enrollmentDataGridViewTextBoxColumn";
+            this.enrollmentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bindingNavigator9
             // 
@@ -1961,31 +2046,9 @@
             // 
             this.curriculumCourseEnrollmentsBindingSource.DataMember = "CurriculumCourseEnrollments";
             // 
-            // scheduleBindingSource
-            // 
-            this.scheduleBindingSource.DataSource = typeof(Impendulo.Data.Models.Schedule);
-            // 
             // courseScheduleBindingSource1
             // 
             this.courseScheduleBindingSource1.DataSource = typeof(Impendulo.Data.Models.CourseSchedule);
-            // 
-            // colApprenticeshipEnrollmentLinkedCourse
-            // 
-            this.colApprenticeshipEnrollmentLinkedCourse.HeaderText = "Course";
-            this.colApprenticeshipEnrollmentLinkedCourse.Name = "colApprenticeshipEnrollmentLinkedCourse";
-            this.colApprenticeshipEnrollmentLinkedCourse.ReadOnly = true;
-            // 
-            // colScheduleStartDate
-            // 
-            this.colScheduleStartDate.HeaderText = "Start Date";
-            this.colScheduleStartDate.Name = "colScheduleStartDate";
-            this.colScheduleStartDate.ReadOnly = true;
-            // 
-            // colScheduleEndDate
-            // 
-            this.colScheduleEndDate.HeaderText = "End Date";
-            this.colScheduleEndDate.Name = "colScheduleEndDate";
-            this.colScheduleEndDate.ReadOnly = true;
             // 
             // frmEnrolmmentInprogress
             // 
@@ -2070,7 +2133,7 @@
             this.toolStripContainer10.ResumeLayout(false);
             this.toolStripContainer10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseSschedule)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseScheduleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator9)).EndInit();
             this.bindingNavigator9.ResumeLayout(false);
             this.bindingNavigator9.PerformLayout();
@@ -2084,8 +2147,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.courseScheduleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseEnrollmentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseScheduleBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -2262,5 +2325,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colApprenticeshipEnrollmentLinkedCourse;
         private System.Windows.Forms.DataGridViewTextBoxColumn colScheduleStartDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colScheduleEndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn scheduleIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseEnrollmentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn scheduleStartDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn scheduleCompletionDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentIDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseEnrollmentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentDataGridViewTextBoxColumn;
     }
 }

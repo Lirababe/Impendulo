@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Impendulo.Common.CustomerDateTime
+namespace Impendulo.Common
 {
-    public static class CustomerDateTime
+    public static class CustomDateTime
     {
         public static DateTime getCustomDateTime(DateTime CurrentDate, int AmountDaysToAdd)
         {

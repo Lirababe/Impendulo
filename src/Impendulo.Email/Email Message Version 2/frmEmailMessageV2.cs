@@ -9,9 +9,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Outlook = Microsoft.Office.Interop.Outlook;
 
 
 namespace Impendulo.Email.Email_Message_Version_2
@@ -19,10 +21,14 @@ namespace Impendulo.Email.Email_Message_Version_2
     public partial class frmEmailMessageV2 : MetroFramework.Forms.MetroForm
     {
 
+
         public List<string> AttachmentsUsingFilePaths { get; set; }
 
         public OutlookEmailMessage NewMessage { get; set; }
         public Employee CurrentEmployeeLoggedIn { get; set; }
+
+        private List<Individual> _SelectedToAddresses = new List<Individual>();
+        private List<Individual> SelectedToAddresses { get; set; }
 
         public Boolean IsSent { get; set; }
 
@@ -231,8 +237,14 @@ namespace Impendulo.Email.Email_Message_Version_2
         {
             using (frmSelectEmailContsV2 frm = new frmSelectEmailContsV2())
             {
-                frm.ShowDialog();
                 frm.LoadExistingContacts(NewMessage.ToAddesses);
+                foreach (Individual Individ in SelectedToAddresses)
+                {
+                    frm.SelectedContacts.Add(Individ);
+                }
+                
+                frm.ShowDialog();
+
                 List<string> EmailAddresses = (from a in frm.SelectedContacts
                                                from b in a.ContactDetails
                                                where b.ContactTypeID == (int)Common.Enum.EnumContactTypes.Email_Address
@@ -244,6 +256,7 @@ namespace Impendulo.Email.Email_Message_Version_2
                         NewMessage.addToAddress(_EmailAddress);
                     }
                 }
+
             }
             populateToAddresses();
         }
@@ -343,10 +356,93 @@ namespace Impendulo.Email.Email_Message_Version_2
 
         private void btnAddAddressFromOutlookContacts_Click(object sender, EventArgs e)
         {
+            Outlook.Application oApp = null;
+            List<Outlook.ContactItem> listOfContacts;
+            try
+            {
+                oApp = new Outlook.Application();
+                listOfContacts = GetListOfContacts(oApp);
+                foreach (Outlook.ContactItem CT in listOfContacts)
+                {
+                    if (CT.Email1DisplayName != null && CT.Email1Address != null)
+                    {
+                        txtMessageBody.Text += CT.Email1DisplayName.ToString() + " - " + CT.Email1Address.ToString() + "\n";
+                    }
 
+                }
+            }
+            catch (Exception ex)
+            {
+                MetroMessageBox.Show(this, ex.Message.ToString());
+            }
+            finally
+            {
+
+                if (oApp != null)
+                {
+                    Marshal.ReleaseComObject(oApp);
+                }
+            }
         }
+
+
         #endregion
 
+        private List<Outlook.ContactItem> GetListOfContacts(Outlook._Application Application)
+        {
+            List<Outlook.ContactItem> contactItemsList = null;
+            Outlook.Items folderItems = null;
+            Outlook.MAPIFolder folderSuggestedContacts = null;
+            Outlook.NameSpace ns = null;
+            Outlook.MAPIFolder folderContacts = null;
+            object itemObj = null;
+            try
+            {
+                contactItemsList = new List<Outlook.ContactItem>();
+                ns = Application.GetNamespace("MAPI");
+                // getting items from the Contacts folder in Outlook
+                folderContacts = ns.GetDefaultFolder(Outlook.OlDefaultFolders.olFolderContacts);
+                folderItems = folderContacts.Items;
+                for (int i = 1; folderItems.Count >= i; i++)
+                {
+                    itemObj = folderItems[i];
+                    if (itemObj is Outlook.ContactItem)
+                        contactItemsList.Add(itemObj as Outlook.ContactItem);
+                    else
+                        Marshal.ReleaseComObject(itemObj);
+                }
+                Marshal.ReleaseComObject(folderItems);
+                folderItems = null;
+                //// getting items from the Suggested Contacts folder in Outlook
+                //folderSuggestedContacts = ns.GetDefaultFolder(
+                //                          Outlook.OlDefaultFolders.olFolderSuggestedContacts);
+                //folderItems = folderSuggestedContacts.Items;
+                //for (int i = 1; folderItems.Count >= i; i++)
+                //{
+                //    itemObj = folderItems[i];
+                //    if (itemObj is Outlook.ContactItem)
+                //        contactItemsList.Add(itemObj as Outlook.ContactItem);
+                //    else
+                //        Marshal.ReleaseComObject(itemObj);
+                //}
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (folderItems != null)
+                    Marshal.ReleaseComObject(folderItems);
+                if (folderContacts != null)
+                    Marshal.ReleaseComObject(folderContacts);
+                if (folderSuggestedContacts != null)
+                    Marshal.ReleaseComObject(folderSuggestedContacts);
+                if (ns != null)
+                    Marshal.ReleaseComObject(ns);
+            }
+            return contactItemsList;
+        }
 
     }
 }

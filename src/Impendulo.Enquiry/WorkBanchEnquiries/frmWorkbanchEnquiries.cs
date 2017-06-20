@@ -154,7 +154,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
             using (var Dbconnection = new MCDEntities())
             {
                 //I created the CustomerDateTime static classs inside impendulo.Common
-                DateTime queryDatetime = Impendulo.Common.CustomerDateTime.CustomerDateTime.getCustomDateTime(DateTime.Now, -4);
+                DateTime queryDatetime = Impendulo.Common.CustomDateTime.getCustomDateTime(DateTime.Now, -4);
                 //DateTime queryDatetime = getCustDateTime(DateTime.Now, -4);
                 Rtn = (from a in Dbconnection.Enquiries
                        from b in a.CurriculumEnquiries

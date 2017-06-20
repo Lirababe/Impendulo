@@ -38,6 +38,9 @@
             this.btnAddEditSeta = new System.Windows.Forms.Button();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CheckedColumns = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.setaAbbriviationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.setsNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.setaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -57,9 +60,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cboDepartments = new System.Windows.Forms.ComboBox();
             this.AvailableCoursesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CheckedColumns = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.setaAbbriviationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.setsNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -79,7 +79,7 @@
             this.groupBox1.Controls.Add(this.txtSeta);
             this.groupBox1.Controls.Add(this.btnAddEditSeta);
             this.groupBox1.Controls.Add(this.toolStripContainer1);
-            this.groupBox1.Location = new System.Drawing.Point(52, 26);
+            this.groupBox1.Location = new System.Drawing.Point(453, 323);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(563, 272);
             this.groupBox1.TabIndex = 0;
@@ -163,6 +163,27 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(557, 150);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // CheckedColumns
+            // 
+            this.CheckedColumns.HeaderText = "checked column";
+            this.CheckedColumns.Name = "CheckedColumns";
+            this.CheckedColumns.ReadOnly = true;
+            // 
+            // setaAbbriviationDataGridViewTextBoxColumn
+            // 
+            this.setaAbbriviationDataGridViewTextBoxColumn.DataPropertyName = "SetaAbbriviation";
+            this.setaAbbriviationDataGridViewTextBoxColumn.HeaderText = "Seta";
+            this.setaAbbriviationDataGridViewTextBoxColumn.Name = "setaAbbriviationDataGridViewTextBoxColumn";
+            this.setaAbbriviationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // setsNameDataGridViewTextBoxColumn
+            // 
+            this.setsNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.setsNameDataGridViewTextBoxColumn.DataPropertyName = "SetsName";
+            this.setsNameDataGridViewTextBoxColumn.HeaderText = "Seta Name";
+            this.setsNameDataGridViewTextBoxColumn.Name = "setsNameDataGridViewTextBoxColumn";
+            this.setsNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // setaBindingSource
             // 
@@ -280,7 +301,7 @@
             this.listBox1.DataSource = this.setaBindingSource;
             this.listBox1.DisplayMember = "SetaAbbriviation";
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(704, 179);
+            this.listBox1.Location = new System.Drawing.Point(750, 63);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(266, 199);
             this.listBox1.TabIndex = 1;
@@ -292,7 +313,7 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.listView1.Location = new System.Drawing.Point(171, 380);
+            this.listView1.Location = new System.Drawing.Point(56, 267);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(332, 168);
             this.listView1.TabIndex = 2;
@@ -301,31 +322,10 @@
             // cboDepartments
             // 
             this.cboDepartments.FormattingEnabled = true;
-            this.cboDepartments.Location = new System.Drawing.Point(52, -1);
+            this.cboDepartments.Location = new System.Drawing.Point(32, 166);
             this.cboDepartments.Name = "cboDepartments";
             this.cboDepartments.Size = new System.Drawing.Size(560, 21);
             this.cboDepartments.TabIndex = 3;
-            // 
-            // CheckedColumns
-            // 
-            this.CheckedColumns.HeaderText = "checked column";
-            this.CheckedColumns.Name = "CheckedColumns";
-            this.CheckedColumns.ReadOnly = true;
-            // 
-            // setaAbbriviationDataGridViewTextBoxColumn
-            // 
-            this.setaAbbriviationDataGridViewTextBoxColumn.DataPropertyName = "SetaAbbriviation";
-            this.setaAbbriviationDataGridViewTextBoxColumn.HeaderText = "Seta";
-            this.setaAbbriviationDataGridViewTextBoxColumn.Name = "setaAbbriviationDataGridViewTextBoxColumn";
-            this.setaAbbriviationDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // setsNameDataGridViewTextBoxColumn
-            // 
-            this.setsNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.setsNameDataGridViewTextBoxColumn.DataPropertyName = "SetsName";
-            this.setsNameDataGridViewTextBoxColumn.HeaderText = "Seta Name";
-            this.setsNameDataGridViewTextBoxColumn.Name = "setsNameDataGridViewTextBoxColumn";
-            this.setsNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Form1
             // 

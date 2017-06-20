@@ -38,7 +38,6 @@ namespace Impendulo.Email.Select_Contacts
             using (var Dbconnection = new MCDEntities())
             {
 
-
                 AvailableContacts = (from a in Dbconnection.Individuals
                                      from b in a.ContactDetails
                                      where b.ContactTypeID == (int)EnumContactTypes.Email_Address
@@ -51,9 +50,10 @@ namespace Impendulo.Email.Select_Contacts
                                      .Include("Student")
                                      .Include("Companies.Individuals.ContactDetails")
                                      .ToList<Individual>();
-
-
             };
+
+            //remove the individuals that are already in the selected list.
+           
 
 
         }
@@ -66,6 +66,7 @@ namespace Impendulo.Email.Select_Contacts
         private void frmSelectEmailContsV2_Load(object sender, EventArgs e)
         {
             this.refreshAvailableContacts();
+            this.refreshSelectedContacts();
         }
         public void LoadExistingContacts(List<IEmailAddress> x)
         {
@@ -77,8 +78,7 @@ namespace Impendulo.Email.Select_Contacts
                                               from b in a.ContactDetails
                                               where b.ContactTypeID == (int)EnumContactTypes.Email_Address
                                               && b.ContactDetailValue.Contains(y.Address)
-                                              select a)
-                                    .Include("ContactDetails")
+                                              select a).Include("ContactDetails")
                                     .Include("Companies")
                                     .Include("Employee")
                                     .Include("Assessor")
@@ -110,7 +110,7 @@ namespace Impendulo.Email.Select_Contacts
                      where (a.IndividualFirstName.ToString().ToLower()).Contains(txtContactFilterCriteria.Text.ToString().ToLower())
                      select a).Except(
                         SelectedContacts
-                        ).ToList<Individual>(); ;
+                        ).ToList<Individual>();
             }
             else
             {
