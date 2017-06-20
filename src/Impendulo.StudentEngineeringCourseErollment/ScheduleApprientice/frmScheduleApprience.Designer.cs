@@ -29,18 +29,24 @@
         private void InitializeComponent()
         {
             this.dgvConfirmSchedule = new System.Windows.Forms.DataGridView();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.gbfilters = new System.Windows.Forms.GroupBox();
+            this.cbVanues = new System.Windows.Forms.ComboBox();
+            this.cbFacilitators = new System.Windows.Forms.ComboBox();
+            this.lblVanues = new System.Windows.Forms.Label();
+            this.lblFacilitators = new System.Windows.Forms.Label();
+            this.colSelect = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colStartdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFacilitator = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVanue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaximum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCurrentlyScheduled = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConfirmSchedule = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.gbfilters = new System.Windows.Forms.GroupBox();
-            this.lblFacilitators = new System.Windows.Forms.Label();
-            this.lblVanues = new System.Windows.Forms.Label();
-            this.cbFacilitators = new System.Windows.Forms.ComboBox();
-            this.cbVanues = new System.Windows.Forms.ComboBox();
+            this.lblTodate = new System.Windows.Forms.Label();
+            this.lblFromdate = new System.Windows.Forms.Label();
+            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpTodate = new System.Windows.Forms.DateTimePicker();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConfirmSchedule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -54,20 +60,107 @@
             this.dgvConfirmSchedule.AllowUserToDeleteRows = false;
             this.dgvConfirmSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConfirmSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colSelect,
+            this.colStartdate,
             this.colFacilitator,
             this.colVanue,
             this.colMaximum,
             this.colCurrentlyScheduled,
-            this.colStatus,
-            this.colConfirmSchedule});
+            this.colStatus});
             this.dgvConfirmSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvConfirmSchedule.Location = new System.Drawing.Point(0, 0);
             this.dgvConfirmSchedule.Name = "dgvConfirmSchedule";
             this.dgvConfirmSchedule.ReadOnly = true;
-            this.dgvConfirmSchedule.Size = new System.Drawing.Size(678, 251);
+            this.dgvConfirmSchedule.Size = new System.Drawing.Size(863, 173);
             this.dgvConfirmSchedule.TabIndex = 0;
             this.dgvConfirmSchedule.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConfirmSchedule_CellContentClick);
             this.dgvConfirmSchedule.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvConfirmSchedule_DataBindingComplete);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.gbfilters);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dgvConfirmSchedule);
+            this.splitContainer1.Size = new System.Drawing.Size(863, 317);
+            this.splitContainer1.SplitterDistance = 140;
+            this.splitContainer1.TabIndex = 1;
+            // 
+            // gbfilters
+            // 
+            this.gbfilters.Controls.Add(this.btnSearch);
+            this.gbfilters.Controls.Add(this.dtpTodate);
+            this.gbfilters.Controls.Add(this.dtpFromDate);
+            this.gbfilters.Controls.Add(this.lblTodate);
+            this.gbfilters.Controls.Add(this.lblFromdate);
+            this.gbfilters.Controls.Add(this.cbVanues);
+            this.gbfilters.Controls.Add(this.cbFacilitators);
+            this.gbfilters.Controls.Add(this.lblVanues);
+            this.gbfilters.Controls.Add(this.lblFacilitators);
+            this.gbfilters.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbfilters.Location = new System.Drawing.Point(0, 0);
+            this.gbfilters.Name = "gbfilters";
+            this.gbfilters.Size = new System.Drawing.Size(863, 140);
+            this.gbfilters.TabIndex = 0;
+            this.gbfilters.TabStop = false;
+            this.gbfilters.Text = "Filters";
+            this.gbfilters.Enter += new System.EventHandler(this.gbfilters_Enter);
+            // 
+            // cbVanues
+            // 
+            this.cbVanues.FormattingEnabled = true;
+            this.cbVanues.Location = new System.Drawing.Point(66, 49);
+            this.cbVanues.Name = "cbVanues";
+            this.cbVanues.Size = new System.Drawing.Size(208, 21);
+            this.cbVanues.TabIndex = 3;
+            // 
+            // cbFacilitators
+            // 
+            this.cbFacilitators.FormattingEnabled = true;
+            this.cbFacilitators.Location = new System.Drawing.Point(66, 22);
+            this.cbFacilitators.Name = "cbFacilitators";
+            this.cbFacilitators.Size = new System.Drawing.Size(208, 21);
+            this.cbFacilitators.TabIndex = 2;
+            // 
+            // lblVanues
+            // 
+            this.lblVanues.AutoSize = true;
+            this.lblVanues.Location = new System.Drawing.Point(11, 57);
+            this.lblVanues.Name = "lblVanues";
+            this.lblVanues.Size = new System.Drawing.Size(41, 13);
+            this.lblVanues.TabIndex = 1;
+            this.lblVanues.Text = "Venue:";
+            // 
+            // lblFacilitators
+            // 
+            this.lblFacilitators.AutoSize = true;
+            this.lblFacilitators.Location = new System.Drawing.Point(11, 30);
+            this.lblFacilitators.Name = "lblFacilitators";
+            this.lblFacilitators.Size = new System.Drawing.Size(55, 13);
+            this.lblFacilitators.TabIndex = 0;
+            this.lblFacilitators.Text = "Facilitator:";
+            // 
+            // colSelect
+            // 
+            this.colSelect.HeaderText = "";
+            this.colSelect.Name = "colSelect";
+            this.colSelect.ReadOnly = true;
+            this.colSelect.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSelect.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colStartdate
+            // 
+            this.colStartdate.HeaderText = "Start Date";
+            this.colStartdate.Name = "colStartdate";
+            this.colStartdate.ReadOnly = true;
             // 
             // colFacilitator
             // 
@@ -100,85 +193,52 @@
             this.colStatus.Name = "colStatus";
             this.colStatus.ReadOnly = true;
             // 
-            // colConfirmSchedule
+            // lblTodate
             // 
-            this.colConfirmSchedule.HeaderText = "ConfirmSchedule";
-            this.colConfirmSchedule.Name = "colConfirmSchedule";
-            this.colConfirmSchedule.ReadOnly = true;
-            this.colConfirmSchedule.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colConfirmSchedule.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.lblTodate.AutoSize = true;
+            this.lblTodate.Location = new System.Drawing.Point(11, 111);
+            this.lblTodate.Name = "lblTodate";
+            this.lblTodate.Size = new System.Drawing.Size(25, 13);
+            this.lblTodate.TabIndex = 5;
+            this.lblTodate.Text = "TO:";
             // 
-            // splitContainer1
+            // lblFromdate
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.lblFromdate.AutoSize = true;
+            this.lblFromdate.Location = new System.Drawing.Point(11, 85);
+            this.lblFromdate.Name = "lblFromdate";
+            this.lblFromdate.Size = new System.Drawing.Size(41, 13);
+            this.lblFromdate.TabIndex = 4;
+            this.lblFromdate.Text = "FROM:";
             // 
-            // splitContainer1.Panel1
+            // dtpFromDate
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.gbfilters);
+            this.dtpFromDate.Location = new System.Drawing.Point(66, 77);
+            this.dtpFromDate.Name = "dtpFromDate";
+            this.dtpFromDate.Size = new System.Drawing.Size(208, 20);
+            this.dtpFromDate.TabIndex = 6;
             // 
-            // splitContainer1.Panel2
+            // dtpTodate
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvConfirmSchedule);
-            this.splitContainer1.Size = new System.Drawing.Size(678, 317);
-            this.splitContainer1.SplitterDistance = 62;
-            this.splitContainer1.TabIndex = 1;
+            this.dtpTodate.Location = new System.Drawing.Point(66, 104);
+            this.dtpTodate.Name = "dtpTodate";
+            this.dtpTodate.Size = new System.Drawing.Size(208, 20);
+            this.dtpTodate.TabIndex = 7;
             // 
-            // gbfilters
+            // btnSearch
             // 
-            this.gbfilters.Controls.Add(this.cbVanues);
-            this.gbfilters.Controls.Add(this.cbFacilitators);
-            this.gbfilters.Controls.Add(this.lblVanues);
-            this.gbfilters.Controls.Add(this.lblFacilitators);
-            this.gbfilters.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbfilters.Location = new System.Drawing.Point(0, 0);
-            this.gbfilters.Name = "gbfilters";
-            this.gbfilters.Size = new System.Drawing.Size(678, 62);
-            this.gbfilters.TabIndex = 0;
-            this.gbfilters.TabStop = false;
-            this.gbfilters.Text = "Filters";
-            // 
-            // lblFacilitators
-            // 
-            this.lblFacilitators.AutoSize = true;
-            this.lblFacilitators.Location = new System.Drawing.Point(6, 34);
-            this.lblFacilitators.Name = "lblFacilitators";
-            this.lblFacilitators.Size = new System.Drawing.Size(55, 13);
-            this.lblFacilitators.TabIndex = 0;
-            this.lblFacilitators.Text = "Facilitator:";
-            // 
-            // lblVanues
-            // 
-            this.lblVanues.AutoSize = true;
-            this.lblVanues.Location = new System.Drawing.Point(411, 31);
-            this.lblVanues.Name = "lblVanues";
-            this.lblVanues.Size = new System.Drawing.Size(41, 13);
-            this.lblVanues.TabIndex = 1;
-            this.lblVanues.Text = "Venue:";
-            // 
-            // cbFacilitators
-            // 
-            this.cbFacilitators.FormattingEnabled = true;
-            this.cbFacilitators.Location = new System.Drawing.Point(67, 26);
-            this.cbFacilitators.Name = "cbFacilitators";
-            this.cbFacilitators.Size = new System.Drawing.Size(186, 21);
-            this.cbFacilitators.TabIndex = 2;
-            // 
-            // cbVanues
-            // 
-            this.cbVanues.FormattingEnabled = true;
-            this.cbVanues.Location = new System.Drawing.Point(458, 23);
-            this.cbVanues.Name = "cbVanues";
-            this.cbVanues.Size = new System.Drawing.Size(208, 21);
-            this.cbVanues.TabIndex = 3;
+            this.btnSearch.Image = global::Impendulo.StudentEngineeringCourseErollment.Devlopment.Properties.Resources.search;
+            this.btnSearch.Location = new System.Drawing.Point(280, 22);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(106, 102);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // frmScheduleApprience
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 317);
+            this.ClientSize = new System.Drawing.Size(863, 317);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmScheduleApprience";
             this.Text = "frmScheduleApprience";
@@ -197,17 +257,23 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvConfirmSchedule;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFacilitator;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVanue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaximum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCurrentlyScheduled;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
-        private System.Windows.Forms.DataGridViewLinkColumn colConfirmSchedule;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox gbfilters;
         private System.Windows.Forms.ComboBox cbVanues;
         private System.Windows.Forms.ComboBox cbFacilitators;
         private System.Windows.Forms.Label lblVanues;
         private System.Windows.Forms.Label lblFacilitators;
+        private System.Windows.Forms.DataGridViewLinkColumn colSelect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStartdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFacilitator;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVanue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaximum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCurrentlyScheduled;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DateTimePicker dtpTodate;
+        private System.Windows.Forms.DateTimePicker dtpFromDate;
+        private System.Windows.Forms.Label lblTodate;
+        private System.Windows.Forms.Label lblFromdate;
     }
 }

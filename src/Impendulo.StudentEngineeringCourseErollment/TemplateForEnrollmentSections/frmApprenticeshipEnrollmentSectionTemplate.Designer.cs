@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmApprenticeshipEnrollmentSectionTemplate));
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label15;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmApprenticeshipEnrollmentSectionTemplate));
             this.splitContainerApprenticeship = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.Enrollment = new System.Windows.Forms.GroupBox();
@@ -56,7 +55,7 @@
             this.toolStripSeparator39 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton49 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton50 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCurriculum = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCurriculum = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -77,7 +76,7 @@
             this.colApprenticeshipPreRequisiteIsExemptionStatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colApprenticeshipPreRequisiteCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApprenticeshipPreRequisiteCurriculum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
@@ -105,7 +104,7 @@
             this.ApprenticeshipEnrollmentFormSelect = new System.Windows.Forms.DataGridViewLinkColumn();
             this.FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigator12 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigator12 = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorAddNewItem3 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem4 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem4 = new System.Windows.Forms.ToolStripButton();
@@ -129,7 +128,7 @@
             this.colApprenticeshipEnrollmentLinkedCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApprenticeshipEnrollmentLinkedCourseStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApprenticeshipEnrollmentLinkedCourseEndtDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigator9 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigator9 = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel9 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton41 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton42 = new System.Windows.Forms.ToolStripButton();
@@ -142,7 +141,7 @@
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses = new System.Windows.Forms.DataGridView();
             this.colApprenticeshipEnrollmentAvailableCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
@@ -225,6 +224,24 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(3, 48);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(38, 13);
+            label6.TabIndex = 28;
+            label6.Text = "Name:";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new System.Drawing.Point(3, 22);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(61, 13);
+            label15.TabIndex = 27;
+            label15.Text = "ID Number:";
+            // 
             // splitContainerApprenticeship
             // 
             this.splitContainerApprenticeship.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -241,7 +258,7 @@
             // 
             this.splitContainerApprenticeship.Panel2.AutoScroll = true;
             this.splitContainerApprenticeship.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainerApprenticeship.Size = new System.Drawing.Size(1092, 774);
+            this.splitContainerApprenticeship.Size = new System.Drawing.Size(1092, 750);
             this.splitContainerApprenticeship.SplitterDistance = 216;
             this.splitContainerApprenticeship.TabIndex = 1;
             // 
@@ -814,7 +831,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.groupBox15);
-            this.splitContainer3.Size = new System.Drawing.Size(1092, 554);
+            this.splitContainer3.Size = new System.Drawing.Size(1092, 530);
             this.splitContainer3.SplitterDistance = 450;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -833,7 +850,7 @@
             // splitContainer12.Panel2
             // 
             this.splitContainer12.Panel2.Controls.Add(this.groupBox4);
-            this.splitContainer12.Size = new System.Drawing.Size(450, 554);
+            this.splitContainer12.Size = new System.Drawing.Size(450, 530);
             this.splitContainer12.SplitterDistance = 75;
             this.splitContainer12.TabIndex = 13;
             // 
@@ -882,24 +899,6 @@
             this.textBox17.Size = new System.Drawing.Size(122, 20);
             this.textBox17.TabIndex = 31;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(3, 48);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(38, 13);
-            label6.TabIndex = 28;
-            label6.Text = "Name:";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new System.Drawing.Point(3, 22);
-            label15.Name = "label15";
-            label15.Size = new System.Drawing.Size(61, 13);
-            label15.TabIndex = 27;
-            label15.Text = "ID Number:";
-            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.Control;
@@ -908,7 +907,7 @@
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(450, 475);
+            this.groupBox4.Size = new System.Drawing.Size(450, 451);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Documentation";
@@ -928,7 +927,7 @@
             // splitContainer13.Panel2
             // 
             this.splitContainer13.Panel2.Controls.Add(this.toolStripContainer11);
-            this.splitContainer13.Size = new System.Drawing.Size(444, 456);
+            this.splitContainer13.Size = new System.Drawing.Size(444, 432);
             this.splitContainer13.SplitterDistance = 49;
             this.splitContainer13.TabIndex = 1;
             // 
@@ -958,11 +957,11 @@
             // toolStripContainer11.ContentPanel
             // 
             this.toolStripContainer11.ContentPanel.Controls.Add(this.dataGridView10);
-            this.toolStripContainer11.ContentPanel.Size = new System.Drawing.Size(444, 378);
+            this.toolStripContainer11.ContentPanel.Size = new System.Drawing.Size(444, 354);
             this.toolStripContainer11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer11.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer11.Name = "toolStripContainer11";
-            this.toolStripContainer11.Size = new System.Drawing.Size(444, 403);
+            this.toolStripContainer11.Size = new System.Drawing.Size(444, 379);
             this.toolStripContainer11.TabIndex = 0;
             this.toolStripContainer11.Text = "toolStripContainer11";
             // 
@@ -983,7 +982,7 @@
             this.dataGridView10.Location = new System.Drawing.Point(0, 0);
             this.dataGridView10.Name = "dataGridView10";
             this.dataGridView10.ReadOnly = true;
-            this.dataGridView10.Size = new System.Drawing.Size(444, 378);
+            this.dataGridView10.Size = new System.Drawing.Size(444, 354);
             this.dataGridView10.TabIndex = 0;
             // 
             // ApprenticeshipEnrollmentFormSelect
@@ -1141,7 +1140,7 @@
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox15.Location = new System.Drawing.Point(0, 0);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(638, 554);
+            this.groupBox15.Size = new System.Drawing.Size(638, 530);
             this.groupBox15.TabIndex = 5;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Selected Courses";
@@ -1161,7 +1160,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox5);
-            this.splitContainer1.Size = new System.Drawing.Size(632, 535);
+            this.splitContainer1.Size = new System.Drawing.Size(632, 511);
             this.splitContainer1.SplitterDistance = 44;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -1190,7 +1189,7 @@
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(632, 487);
+            this.groupBox5.Size = new System.Drawing.Size(632, 463);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Course Selector";
@@ -1209,7 +1208,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(626, 468);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(626, 444);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // toolStripContainer10
@@ -1218,11 +1217,11 @@
             // toolStripContainer10.ContentPanel
             // 
             this.toolStripContainer10.ContentPanel.Controls.Add(this.dataGridView7);
-            this.toolStripContainer10.ContentPanel.Size = new System.Drawing.Size(275, 437);
+            this.toolStripContainer10.ContentPanel.Size = new System.Drawing.Size(275, 413);
             this.toolStripContainer10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer10.Location = new System.Drawing.Point(348, 3);
             this.toolStripContainer10.Name = "toolStripContainer10";
-            this.toolStripContainer10.Size = new System.Drawing.Size(275, 462);
+            this.toolStripContainer10.Size = new System.Drawing.Size(275, 438);
             this.toolStripContainer10.TabIndex = 7;
             this.toolStripContainer10.Text = "toolStripContainer10";
             // 
@@ -1244,7 +1243,7 @@
             this.dataGridView7.Name = "dataGridView7";
             this.dataGridView7.ReadOnly = true;
             this.dataGridView7.RowHeadersWidth = 15;
-            this.dataGridView7.Size = new System.Drawing.Size(275, 437);
+            this.dataGridView7.Size = new System.Drawing.Size(275, 413);
             this.dataGridView7.TabIndex = 1;
             // 
             // colApprenticeshipEnrollmentLinkedCourse
@@ -1366,11 +1365,11 @@
             // toolStripContainer2.ContentPanel
             // 
             this.toolStripContainer2.ContentPanel.Controls.Add(this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses);
-            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(274, 437);
+            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(274, 413);
             this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer2.Location = new System.Drawing.Point(3, 3);
             this.toolStripContainer2.Name = "toolStripContainer2";
-            this.toolStripContainer2.Size = new System.Drawing.Size(274, 462);
+            this.toolStripContainer2.Size = new System.Drawing.Size(274, 438);
             this.toolStripContainer2.TabIndex = 5;
             this.toolStripContainer2.Text = "toolStripContainer2";
             // 
@@ -1390,7 +1389,7 @@
             this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses.Name = "dgvApprenticeshipEnrollmentAvaiableCurriculumCourses";
             this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses.ReadOnly = true;
             this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses.RowHeadersWidth = 15;
-            this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses.Size = new System.Drawing.Size(274, 437);
+            this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses.Size = new System.Drawing.Size(274, 413);
             this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses.TabIndex = 1;
             // 
             // colApprenticeshipEnrollmentAvailableCourse
@@ -1509,14 +1508,14 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(59, 462);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(59, 438);
             this.tableLayoutPanel5.TabIndex = 8;
             // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button1.ImageIndex = 0;
-            this.button1.Location = new System.Drawing.Point(3, 165);
+            this.button1.Location = new System.Drawing.Point(3, 153);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(53, 53);
             this.button1.TabIndex = 0;
@@ -1526,7 +1525,7 @@
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.ImageIndex = 1;
-            this.button2.Location = new System.Drawing.Point(3, 244);
+            this.button2.Location = new System.Drawing.Point(3, 232);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(53, 53);
             this.button2.TabIndex = 1;
@@ -1536,7 +1535,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 774);
+            this.ClientSize = new System.Drawing.Size(1092, 750);
             this.Controls.Add(this.splitContainerApprenticeship);
             this.Name = "frmApprenticeshipEnrollmentSectionTemplate";
             this.Text = "frmApprenticeshipEnrollmentSectionTemplate";
