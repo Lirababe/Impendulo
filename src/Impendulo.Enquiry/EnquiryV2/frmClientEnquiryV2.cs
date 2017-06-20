@@ -378,48 +378,53 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
                     break;
                 //Accept the Enquiry
                 case 2:
-                    frmSendEmail frm = new frmSendEmail();
-
-                    List<ContactDetail> CustomEmailPerson = (from a in CurrentEnquiryObj.Individuals
-                                                             from b in a.ContactDetails
-                                                             where b.ContactTypeID == (int)Common.Enum.EnumContactTypes.Email_Address
-                                                             select b).ToList<ContactDetail>();
-
-                    //Sets the Email Address For the Currently Selected Contact For this Enquiry
-                    foreach (ContactDetail ConDetObj in CustomEmailPerson)
+                    using (frmSendEmail frm = new frmSendEmail())
                     {
-                        if (frm.txtTestingToAddress.Text.Length > 0)
+
+                        List<ContactDetail> CustomEmailPerson = (from a in CurrentEnquiryObj.Individuals
+                                                                 from b in a.ContactDetails
+                                                                 where b.ContactTypeID == (int)Common.Enum.EnumContactTypes.Email_Address
+                                                                 select b).ToList<ContactDetail>();
+
+                        //Sets the Email Address For the Currently Selected Contact For this Enquiry
+                        foreach (ContactDetail ConDetObj in CustomEmailPerson)
                         {
-                            frm.txtTestingToAddress.Text += ";";
+                            if (frm.txtTestingToAddress.Text.Length > 0)
+                            {
+                                frm.txtTestingToAddress.Text += ";";
+                            }
+                            frm.txtTestingToAddress.Text += ConDetObj.ContactDetailValue;
                         }
-                        frm.txtTestingToAddress.Text += ConDetObj.ContactDetailValue;
+
+                        frm.txtTestSubject.Text = "Enquiry No: ( " + CE.EnquiryID + "-" + CE.CurriculumEnquiryID + " ) Enquiry Feed Back";
+
+                        frm.ShowDialog();
+                        using (var Dbconnection = new MCDEntities())
+                        {
+                            EquiryHistory hist = new EquiryHistory
+                            {
+                                EnquiryID = CE.EnquiryID,
+                                EmployeeID = this.CurrentEmployeeLoggedIn.EmployeeID,
+                                LookupEquiyHistoryTypeID = (int)EnumEquiryHistoryTypes.Enquiry_Custom_Email_Message_Sent,
+                                DateEnquiryUpdated = DateTime.Now,
+                                EnquiryNotes = "Custom Message Sent To Client Via Email\nSubject of the Message was:\n\n{" + frm.txtTestSubject.Text + "}\n\nBody Of the Message read:\n" + frm.txtTestMessage.Text
+                            };
+                            Dbconnection.EquiryHistories.Add(hist);
+                            int IsSaved = Dbconnection.SaveChanges();
+                            if (IsSaved > 0)
+                            {
+                                Dbconnection.CurriculumEnquiries.Attach(CE);
+                                CE.LastUpdated = DateTime.Now;
+                                Dbconnection.Entry<CurriculumEnquiry>(CE).State = EntityState.Modified;
+                                Dbconnection.SaveChanges();
+
+                            }
+                            dgvNewEnquiryTab_CurriculumEnquiry.Refresh();
+                        };
                     }
 
-                    frm.txtTestSubject.Text = "Enquiry No: ( " + CE.EnquiryID + "-" + CE.CurriculumEnquiryID + " ) Enquiry Feed Back";
 
-                    frm.ShowDialog();
-                    using (var Dbconnection = new MCDEntities())
-                    {
-                        EquiryHistory hist = new EquiryHistory
-                        {
-                            EnquiryID = CE.EnquiryID,
-                            EmployeeID = this.CurrentEmployeeLoggedIn.EmployeeID,
-                            LookupEquiyHistoryTypeID = (int)EnumEquiryHistoryTypes.Enquiry_Custom_Email_Message_Sent,
-                            DateEnquiryUpdated = DateTime.Now,
-                            EnquiryNotes = "Custom Message Sent To Client Via Email\nSubject of the Message was:\n\n{" + frm.txtTestSubject.Text + "}\n\nBody Of the Message read:\n" + frm.txtTestMessage.Text
-                        };
-                        Dbconnection.EquiryHistories.Add(hist);
-                        int IsSaved = Dbconnection.SaveChanges();
-                        if (IsSaved > 0)
-                        {
-                            Dbconnection.CurriculumEnquiries.Attach(CE);
-                            CE.LastUpdated = DateTime.Now;
-                            Dbconnection.Entry<CurriculumEnquiry>(CE).State = EntityState.Modified;
-                            Dbconnection.SaveChanges();
 
-                        }
-                        dgvNewEnquiryTab_CurriculumEnquiry.Refresh();
-                    };
 
                     break;
                 //Close the Equiry
@@ -579,9 +584,15 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
                             DialogResult Rtn1 = MessageBox.Show("Do you wish to View the Enrollment,and course selection?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                             if (Rtn1 == DialogResult.Yes)
                             {
-                                frmEnrolmmentInprogress frm8 = new frmEnrolmmentInprogress();
-                                // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
-                                frm8.ShowDialog();
+                                using (frmEnrolmmentInprogress frm = new frmEnrolmmentInprogress())
+                                {
+                                    frm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
+                                    frm.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)CE.Curriculum.DepartmentID;
+                                    // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
+                                    frm.ShowDialog();
+                                }
+
+
                             }
                         }
 
@@ -591,16 +602,20 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
                     //frm6.CurrentEnrollments.ApprienticeshipEnrollment.(CE);
                     break;
                 case 11:
-                    frmEnrollmentSelectionForEquiry frm10 = new frmEnrollmentSelectionForEquiry();
-                    frm10.SelectedCurriculumEnquiryID = CE.CurriculumEnquiryID;
-                    frm10.ShowDialog();
-                    if (frm10.SelectedEnrollmentID != 0)
+                    using (frmEnrollmentSelectionForEquiry frm = new frmEnrollmentSelectionForEquiry())
                     {
-                        frmEnrolmmentInprogress frm9 = new frmEnrolmmentInprogress();
-                        frm9.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
-                        frm9.CurrentEnrollmentID = frm10.SelectedEnrollmentID;
-                        frm9.ShowDialog();
+                        frm.SelectedCurriculumEnquiryID = CE.CurriculumEnquiryID;
+                        frm.ShowDialog();
+                        if (frm.SelectedEnrollmentID != 0)
+                        {
+                            frmEnrolmmentInprogress frm9 = new frmEnrolmmentInprogress();
+                            frm9.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
+                            frm9.CurrentEnrollmentID = frm.SelectedEnrollmentID;
+                            frm9.ShowDialog();
+                        }
                     }
+
+
 
                     break;
             }
@@ -622,9 +637,9 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
             Data.Models.Enquiry En = null;
             if (curriculumEnquiriesBindingSource.List.Count > 0)
             {
-              En = (Data.Models.Enquiry)dgvNewEnquiryTab_NewEnquiry.Rows[e.RowIndex].DataBoundItem;
+                En = (Data.Models.Enquiry)dgvNewEnquiryTab_NewEnquiry.Rows[e.RowIndex].DataBoundItem;
             }
-           
+
             switch (e.ColumnIndex)
             {
                 case 2:
@@ -648,13 +663,13 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
                             MessageBox.Show("Consultation Already Completed,See History.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
-                   
+
 
                     break;
                 //SEnd Email Message
 
                 case 4:
-                  
+
 
                     frmSendEmail frm = new frmSendEmail();
                     frm.ShowDialog();
@@ -717,7 +732,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
 
         private void tbnUpdateQtyEnrolledForCurriculum_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

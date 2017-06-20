@@ -42,7 +42,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
         public int CurrentEquiryID { get; set; }
         private void frmEnrolmmentInprogress_Load(object sender, EventArgs e)
         {
-            CurrentSelectedDepartment = EnumDepartments.Apprenticeship;
+           // CurrentSelectedDepartment = EnumDepartments.Apprenticeship;
             this.refreshEnrollment();
             if (CheckIfAllPreRequisitesAreCompleted())
             {
