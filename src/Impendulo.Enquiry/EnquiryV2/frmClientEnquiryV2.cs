@@ -608,10 +608,13 @@ namespace Impendulo.Enquiry.Development.EnquiryV2.Development
                         frm.ShowDialog();
                         if (frm.SelectedEnrollmentID != 0)
                         {
-                            frmEnrolmmentInprogress frm9 = new frmEnrolmmentInprogress();
-                            frm9.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
-                            frm9.CurrentEnrollmentID = frm.SelectedEnrollmentID;
-                            frm9.ShowDialog();
+                            using (frmEnrolmmentInprogress innerFrm = new frmEnrolmmentInprogress())
+                            {
+                                innerFrm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
+                                innerFrm.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)CE.Curriculum.DepartmentID;
+                                innerFrm.CurrentEnrollmentID = frm.SelectedEnrollmentID;
+                                innerFrm.ShowDialog();
+                            }
                         }
                     }
 
