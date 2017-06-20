@@ -48,5 +48,10 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.ScheduleApprien
         {
 
         }
+
+        private void gbfilters_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

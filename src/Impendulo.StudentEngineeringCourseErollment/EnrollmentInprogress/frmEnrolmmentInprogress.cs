@@ -80,7 +80,6 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             }
 
             return Rtn;
-
         }
 
         #region Common Functions
