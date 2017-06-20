@@ -42,8 +42,14 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
         public int CurrentEquiryID { get; set; }
         private void frmEnrolmmentInprogress_Load(object sender, EventArgs e)
         {
-           // CurrentSelectedDepartment = EnumDepartments.Apprenticeship;
+            CurrentSelectedDepartment = EnumDepartments.Apprenticeship;
             this.refreshEnrollment();
+           
+
+        }
+
+        private void CheckIfAllPreRequisitesAreCompletedRefresh()
+        {
             if (CheckIfAllPreRequisitesAreCompleted())
             {
                 btnEditCourseSelection.Enabled = false;
@@ -52,14 +58,6 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             {
                 btnEditCourseSelection.Enabled = true;
             }
-                
-
-
-
-            //datepickertimer
-
-
-
         }
 
         private Boolean CheckIfAllPreRequisitesAreCompleted()
@@ -80,6 +78,18 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             }
 
             return Rtn;
+        }
+
+        private void CheckIFThereAreCoursesToSchedule()
+        {
+            if(curriculumCourseLinkedToEnrollmentBindingSource.Count > 0)
+            {
+                btnScheduleEnrollement.Enabled = true;
+            }
+            else
+            {
+                btnScheduleEnrollement.Enabled = false;
+            }
         }
 
         #region Common Functions
@@ -155,13 +165,17 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                 this.populateApprenticeshipDocumnetTypes((EnumDepartments)((Enrollment)enrollmentBindingSource.Current).Curriculum.DepartmentID);
                 this.refreshEnrollmentLinkedCourses();
                 this.refreshScheduleCoursePriliminaryDate();
+                
 
 
             }
         }
         private void refreshEnrollmentCoursePreRequisites()
         {
+            
             populateApprenticeshipCoursePreRequisites();
+            
+
         }
 
 
@@ -173,6 +187,11 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                 _EnrollmentID = ((Enrollment)(enrollmentBindingSource.Current)).EnrollmentID;
             }
             populateApprienticeshipLinkedCourse(_EnrollmentID);
+            this.CheckIFThereAreCoursesToSchedule();
+            CheckIfAllPreRequisitesAreCompletedRefresh();
+
+
+
         }
 
         private void refreshScheduleCoursePriliminaryDate()
@@ -183,6 +202,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                 _EnrollmentID = ((Enrollment)(enrollmentBindingSource.Current)).EnrollmentID;
             }
             populateCourseSchedulePreliminaryDates(_EnrollmentID);
+            
         }
 
         #endregion
