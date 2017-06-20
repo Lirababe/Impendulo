@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Impendulo.Enquiry.Development.EnquiryV3
 {
-    public partial class frmClientEnquiryV3 : Form
+    public partial class frmClientEnquiryV3 : MetroFramework.Forms.MetroForm
     {
         public frmClientEnquiryV3()
         {
             InitializeComponent();
+        }
+
+        private void frmClientEnquiryV3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
