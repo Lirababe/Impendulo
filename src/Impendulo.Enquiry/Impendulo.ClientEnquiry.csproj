@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -40,6 +55,19 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\lib\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\winforms-modernui\MetroFramework.Design\bin\Debug\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\..\..\winforms-modernui\MetroFramework.Design\bin\Debug\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\..\..\winforms-modernui\MetroFramework.Fonts\bin\Debug\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Properties.Resources.Designer.cs">
+      <HintPath>..\..\..\winforms-modernui\MetroFramework\obj\Debug\TempPE\Properties.Resources.Designer.cs.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -85,6 +113,12 @@
     </Compile>
     <Compile Include="EnquiryV2\frmClientEnquiryV2.Designer.cs">
       <DependentUpon>frmClientEnquiryV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnquiryV3\frmClientEnquiryV3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnquiryV3\frmClientEnquiryV3.Designer.cs">
+      <DependentUpon>frmClientEnquiryV3.cs</DependentUpon>
     </Compile>
     <Compile Include="EnrollmentSelectionFromEquiry\frmEnrollmentSelectionForEquiry.cs">
       <SubType>Form</SubType>
@@ -180,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EnquiryV2\frmClientEnquiryV2.resx">
       <DependentUpon>frmClientEnquiryV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquiryV3\frmClientEnquiryV3.resx">
+      <DependentUpon>frmClientEnquiryV3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EnrollmentSelectionFromEquiry\frmEnrollmentSelectionForEquiry.resx">
       <DependentUpon>frmEnrollmentSelectionForEquiry.cs</DependentUpon>
@@ -285,7 +322,13 @@
       <Name>Impendulo.Students</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

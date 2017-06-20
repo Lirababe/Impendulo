@@ -1,4 +1,5 @@
 ﻿using Impendulo.Enquiry.Development.EnquiryV2.Development;
+using Impendulo.Enquiry.Development.EnquiryV3;
 using Impendulo.Enquiry.Development.InitaialConsultation;
 using Impendulo.Enquiry.Development.InitialDocumentation.ApprenticeshipDocumentation;
 using Impendulo.Enquiry.Development.ViewHistory;
@@ -90,6 +91,14 @@ namespace Impendulo.Enquiry.Development
         private void frmAllFormInProject_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            using (frmClientEnquiryV3 frm = new frmClientEnquiryV3())
+            {
+                frm.ShowDialog();
+            }
         }
         //
         //frmSelectCompanyContact
