@@ -21,5 +21,10 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
         {
 
         }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
