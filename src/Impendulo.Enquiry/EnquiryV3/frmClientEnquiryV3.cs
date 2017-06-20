@@ -19,7 +19,6 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
 
         private void frmClientEnquiryV3_Load(object sender, EventArgs e)
         {
-
         }
 
         private void groupBox4_Enter(object sender, EventArgs e)
