@@ -170,7 +170,9 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                     using (frmEmailMessageV2 frm = new frmEmailMessageV2())
                     {
                         frm.txtMessageSubject.Text = "MCD Communication - Follow On Enquiry - " + txtEnquiryInProgressEnquiryID.Text;
+                        frm.txtMessageSubject.ReadOnly = true;
                         frm.ShowDialog();
+
 
                     }
                 }
@@ -227,16 +229,16 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
             gbInProgressContactDetails.Enabled = true;
             gbInProgressEnquiryEnrrolmentQueries.Enabled = true;
         }
+
+
+
+
+
+
+
         #endregion
 
         #endregion
-
-
-
-
-
-
-
 
     }
 }

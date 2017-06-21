@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEmailAddressManual\frmAddEmailAddressManually.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmailAddressManual\frmAddEmailAddressManually.Designer.cs">
+      <DependentUpon>frmAddEmailAddressManually.cs</DependentUpon>
+    </Compile>
     <Compile Include="Email Message Version 2\frmEmailMessageV2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     <Compile Include="testform.Designer.cs">
       <DependentUpon>testform.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddEmailAddressManual\frmAddEmailAddressManually.resx">
+      <DependentUpon>frmAddEmailAddressManually.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Email Message Version 2\frmEmailMessageV2.resx">
       <DependentUpon>frmEmailMessageV2.cs</DependentUpon>
     </EmbeddedResource>

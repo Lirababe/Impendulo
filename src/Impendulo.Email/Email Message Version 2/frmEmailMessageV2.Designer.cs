@@ -128,7 +128,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Location = new System.Drawing.Point(233, 103);
             this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(438, 20);
             this.textBox2.TabIndex = 25;
             this.textBox2.TabStop = false;
@@ -547,9 +546,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackLocation = MetroFramework.Forms.BackLocation.TopLeft;
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.None;
             this.ClientSize = new System.Drawing.Size(723, 598);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmEmailMessageV2";
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.Flat;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "New Email Message";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
