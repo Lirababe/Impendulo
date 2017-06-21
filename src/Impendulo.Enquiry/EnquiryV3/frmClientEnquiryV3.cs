@@ -3,6 +3,8 @@ using Impendulo.Data.Models;
 using Impendulo.Email.Email_Message_Version_2;
 using Impendulo.Enquiry.Development.InitaialConsultation;
 using Impendulo.Enquiry.Development.SearchForSelectedEnquiry;
+using Impendulo.Enquiry.Development.ViewHistory;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -180,13 +182,21 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
         }
         private void btnInitialConsultationConfirmation_Click(object sender, EventArgs e)
         {
-            using (frmEnquiryInitialConsultationV2 frm = new frmEnquiryInitialConsultationV2())
+            if (!(((Data.Models.Enquiry)enquiryInprogressBindingSource.Current).InitialConsultationComplete))
             {
-                frm.EmployeeID = CurrentEmployeeLoggedIn.EmployeeID;
-                frm.CurrentEnquiry = (Data.Models.Enquiry)enquiryInprogressBindingSource.Current;
-                frm.ShowDialog();
-                this.enquiryInprogressBindingSource.ResetCurrentItem();
+                using (frmEnquiryInitialConsultationV2 frm = new frmEnquiryInitialConsultationV2())
+                {
+                    frm.EmployeeID = CurrentEmployeeLoggedIn.EmployeeID;
+                    frm.CurrentEnquiry = (Data.Models.Enquiry)enquiryInprogressBindingSource.Current;
+                    frm.ShowDialog();
+                    this.enquiryInprogressBindingSource.ResetCurrentItem();
+                }
             }
+            else
+            {
+                MetroMessageBox.Show(this, "Initial Consultaion is completed, See History for details.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
         private void enquiryDateTextBox_TextChanged(object sender, EventArgs e)
@@ -240,5 +250,13 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
 
         #endregion
 
+        private void btnViewProgressInProgressSections_Click(object sender, EventArgs e)
+        {
+            using (frmEquiryViewHistoryV2 frm = new frmEquiryViewHistoryV2())
+            {
+                frm.EnquiryID = Convert.ToInt32(txtEnquiryInProgressEnquiryID.Text);
+                frm.ShowDialog();
+            }
+        }
     }
 }

@@ -58,7 +58,6 @@
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-
       <HintPath>..\..\lib\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -69,7 +68,6 @@
     <Reference Include="MetroFramework.Fonts">
       <HintPath>..\..\lib\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
       <Private>True</Private>
-
       <HintPath>..\..\..\winforms-modernui\MetroFramework.Demo\bin\Debug\MetroFramework.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
@@ -79,7 +77,6 @@
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\winforms-modernui\MetroFramework.Demo\bin\Debug\MetroFramework.Fonts.dll</HintPath>
-
     </Reference>
     <Reference Include="Properties.Resources.Designer.cs">
       <HintPath>..\..\..\winforms-modernui\MetroFramework\obj\Debug\TempPE\Properties.Resources.Designer.cs.dll</HintPath>
@@ -179,6 +176,18 @@
     <Compile Include="SelectCourseCurriculum\frmSelectCourseCurriculumForClientEnquiry.Designer.cs">
       <DependentUpon>frmSelectCourseCurriculumForClientEnquiry.cs</DependentUpon>
     </Compile>
+    <Compile Include="SwitchEnquiryContacts\frmSwitchEnquiryContactsToPrivate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SwitchEnquiryContacts\frmSwitchEnquiryContactsToPrivate.Designer.cs">
+      <DependentUpon>frmSwitchEnquiryContactsToPrivate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SwitchEnquiryContacts\frmSwitchEnquiryContactToCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SwitchEnquiryContacts\frmSwitchEnquiryContactToCompany.Designer.cs">
+      <DependentUpon>frmSwitchEnquiryContactToCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateSelectedCurriculumEnrollQty\frmUpdateSelectedCurriculumEnrollQty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,11 +200,23 @@
     <Compile Include="ViewContactInformation\frmEnquiryViewContactInformation.Designer.cs">
       <DependentUpon>frmEnquiryViewContactInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewHistory\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewHistory\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewHistory\frmEnquiryViewHistory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewHistory\frmEnquiryViewHistory.Designer.cs">
       <DependentUpon>frmEnquiryViewHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewHistory\frmEquiryViewHistoryV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewHistory\frmEquiryViewHistoryV2.Designer.cs">
+      <DependentUpon>frmEquiryViewHistoryV2.cs</DependentUpon>
     </Compile>
     <Compile Include="WorkBanchEnquiries\frmWorkbanchEnquiries.cs">
       <SubType>Form</SubType>
@@ -252,14 +273,26 @@
     <EmbeddedResource Include="SelectCourseCurriculum\frmSelectCourseCurriculumForClientEnquiry.resx">
       <DependentUpon>frmSelectCourseCurriculumForClientEnquiry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SwitchEnquiryContacts\frmSwitchEnquiryContactsToPrivate.resx">
+      <DependentUpon>frmSwitchEnquiryContactsToPrivate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SwitchEnquiryContacts\frmSwitchEnquiryContactToCompany.resx">
+      <DependentUpon>frmSwitchEnquiryContactToCompany.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateSelectedCurriculumEnrollQty\frmUpdateSelectedCurriculumEnrollQty.resx">
       <DependentUpon>frmUpdateSelectedCurriculumEnrollQty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewContactInformation\frmEnquiryViewContactInformation.resx">
       <DependentUpon>frmEnquiryViewContactInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewHistory\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewHistory\frmEnquiryViewHistory.resx">
       <DependentUpon>frmEnquiryViewHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewHistory\frmEquiryViewHistoryV2.resx">
+      <DependentUpon>frmEquiryViewHistoryV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WorkBanchEnquiries\frmWorkbanchEnquiries.resx">
       <DependentUpon>frmWorkbanchEnquiries.cs</DependentUpon>
@@ -270,6 +303,7 @@
     <None Include="Properties\DataSources\Impendulo.Data.Models.CurriculumEnquiry.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.Enquiry.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.Enrollment.datasource" />
+    <None Include="Properties\DataSources\Impendulo.Data.Models.EquiryHistory.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.Individual.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.LookupDepartment.datasource" />
     <None Include="Properties\Settings.settings">

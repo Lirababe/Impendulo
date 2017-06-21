@@ -109,6 +109,20 @@ namespace Impendulo.Enquiry.Development
                 frm.ShowDialog();
             }
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            using (frmEquiryViewHistoryV2 frm = new frmEquiryViewHistoryV2())
+            {
+                frm.EnquiryID = 7182;
+                frm.ShowDialog();
+            }
+
+            //using(Form1 frm = new Form1())
+            //{
+            //    frm.ShowDialog();
+            //}
+        }
         //
         //frmSelectCompanyContact
     }
