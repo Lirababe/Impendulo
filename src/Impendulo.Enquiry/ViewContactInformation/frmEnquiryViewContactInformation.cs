@@ -12,10 +12,11 @@ using Impendulo.ContactDetails.Development;
 using Impendulo.Common.Enum;
 using Impendulo.Email.Development;
 using System.Data.Entity;
+using MetroFramework.Forms;
 
 namespace Impendulo.Enquiry.ViewContactInformation.Development
 {
-    public partial class frmEnquiryViewContactInformation : Form
+    public partial class frmEnquiryViewContactInformation : MetroForm
     {
         public Data.Models.Enquiry CurrentEnquiry { get; set; }
         private int _EnquiryID = 0;

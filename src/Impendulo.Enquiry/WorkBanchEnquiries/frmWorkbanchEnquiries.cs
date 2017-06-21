@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Impendulo.Data.Models;
 using Impendulo.Common.Enum;
 using System.Data.Entity;
+using MetroFramework.Forms;
 
 namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
 {
@@ -17,7 +18,7 @@ namespace Impendulo.Enquiry.Development.WorkBanchEnquiries
      * How to data bind and create chart control with entity framework
      * https://www.codeproject.com/Articles/221931/Entity-Framework-in-WinForms
      * *****************************************************************/
-    public partial class frmWorkbanchEnquiries : Form
+    public partial class frmWorkbanchEnquiries : MetroForm
     {
         public frmWorkbanchEnquiries()
         {

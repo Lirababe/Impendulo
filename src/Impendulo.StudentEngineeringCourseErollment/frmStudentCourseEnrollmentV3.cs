@@ -15,10 +15,11 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace Impendulo.StudentEngineeringCourseErollment.Devlopment
 {
-    public partial class frmStudentCourseEnrollmentV3 : Form
+    public partial class frmStudentCourseEnrollmentV3 : MetroForm
     {
         public frmStudentCourseEnrollmentV3()
         {

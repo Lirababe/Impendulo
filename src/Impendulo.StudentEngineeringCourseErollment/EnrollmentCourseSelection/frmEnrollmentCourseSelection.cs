@@ -8,10 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 using System.Data.Entity;
 namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentCourseSelection
 {
-    public partial class frmEnrollmentCourseSelection : Form
+    public partial class frmEnrollmentCourseSelection : MetroForm
     {
         public frmEnrollmentCourseSelection()
         {

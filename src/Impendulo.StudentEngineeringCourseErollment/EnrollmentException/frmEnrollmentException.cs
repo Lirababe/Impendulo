@@ -9,10 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentException
 {
-    public partial class frmEnrollmentException : Form
+    public partial class frmEnrollmentException : MetroForm
     {
         public frmEnrollmentException()
         {

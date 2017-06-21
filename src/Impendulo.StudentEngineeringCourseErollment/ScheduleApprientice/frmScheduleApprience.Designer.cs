@@ -31,22 +31,23 @@
             this.dgvConfirmSchedule = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gbfilters = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.dtpTodate = new System.Windows.Forms.DateTimePicker();
+            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
+            this.lblTodate = new System.Windows.Forms.Label();
+            this.lblFromdate = new System.Windows.Forms.Label();
             this.cbVanues = new System.Windows.Forms.ComboBox();
             this.cbFacilitators = new System.Windows.Forms.ComboBox();
             this.lblVanues = new System.Windows.Forms.Label();
             this.lblFacilitators = new System.Windows.Forms.Label();
             this.colSelect = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colScheduledCourses = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStartdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFacilitator = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVanue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaximum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCurrentlyScheduled = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblTodate = new System.Windows.Forms.Label();
-            this.lblFromdate = new System.Windows.Forms.Label();
-            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpTodate = new System.Windows.Forms.DateTimePicker();
-            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConfirmSchedule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -61,6 +62,7 @@
             this.dgvConfirmSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConfirmSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSelect,
+            this.colScheduledCourses,
             this.colStartdate,
             this.colFacilitator,
             this.colVanue,
@@ -112,7 +114,48 @@
             this.gbfilters.TabIndex = 0;
             this.gbfilters.TabStop = false;
             this.gbfilters.Text = "Filters";
-            this.gbfilters.Enter += new System.EventHandler(this.gbfilters_Enter);
+            //this.gbfilters.Enter += new System.EventHandler(this.gbfilters_Enter);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = global::Impendulo.StudentEngineeringCourseErollment.Devlopment.Properties.Resources.search;
+            this.btnSearch.Location = new System.Drawing.Point(280, 22);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(99, 102);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // dtpTodate
+            // 
+            this.dtpTodate.Location = new System.Drawing.Point(66, 104);
+            this.dtpTodate.Name = "dtpTodate";
+            this.dtpTodate.Size = new System.Drawing.Size(208, 20);
+            this.dtpTodate.TabIndex = 7;
+            // 
+            // dtpFromDate
+            // 
+            this.dtpFromDate.Location = new System.Drawing.Point(66, 77);
+            this.dtpFromDate.Name = "dtpFromDate";
+            this.dtpFromDate.Size = new System.Drawing.Size(208, 20);
+            this.dtpFromDate.TabIndex = 6;
+            // 
+            // lblTodate
+            // 
+            this.lblTodate.AutoSize = true;
+            this.lblTodate.Location = new System.Drawing.Point(11, 111);
+            this.lblTodate.Name = "lblTodate";
+            this.lblTodate.Size = new System.Drawing.Size(25, 13);
+            this.lblTodate.TabIndex = 5;
+            this.lblTodate.Text = "TO:";
+            // 
+            // lblFromdate
+            // 
+            this.lblFromdate.AutoSize = true;
+            this.lblFromdate.Location = new System.Drawing.Point(11, 85);
+            this.lblFromdate.Name = "lblFromdate";
+            this.lblFromdate.Size = new System.Drawing.Size(41, 13);
+            this.lblFromdate.TabIndex = 4;
+            this.lblFromdate.Text = "FROM:";
             // 
             // cbVanues
             // 
@@ -156,6 +199,12 @@
             this.colSelect.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colSelect.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // colScheduledCourses
+            // 
+            this.colScheduledCourses.HeaderText = "Courses";
+            this.colScheduledCourses.Name = "colScheduledCourses";
+            this.colScheduledCourses.ReadOnly = true;
+            // 
             // colStartdate
             // 
             this.colStartdate.HeaderText = "Start Date";
@@ -193,47 +242,6 @@
             this.colStatus.Name = "colStatus";
             this.colStatus.ReadOnly = true;
             // 
-            // lblTodate
-            // 
-            this.lblTodate.AutoSize = true;
-            this.lblTodate.Location = new System.Drawing.Point(11, 111);
-            this.lblTodate.Name = "lblTodate";
-            this.lblTodate.Size = new System.Drawing.Size(25, 13);
-            this.lblTodate.TabIndex = 5;
-            this.lblTodate.Text = "TO:";
-            // 
-            // lblFromdate
-            // 
-            this.lblFromdate.AutoSize = true;
-            this.lblFromdate.Location = new System.Drawing.Point(11, 85);
-            this.lblFromdate.Name = "lblFromdate";
-            this.lblFromdate.Size = new System.Drawing.Size(41, 13);
-            this.lblFromdate.TabIndex = 4;
-            this.lblFromdate.Text = "FROM:";
-            // 
-            // dtpFromDate
-            // 
-            this.dtpFromDate.Location = new System.Drawing.Point(66, 77);
-            this.dtpFromDate.Name = "dtpFromDate";
-            this.dtpFromDate.Size = new System.Drawing.Size(208, 20);
-            this.dtpFromDate.TabIndex = 6;
-            // 
-            // dtpTodate
-            // 
-            this.dtpTodate.Location = new System.Drawing.Point(66, 104);
-            this.dtpTodate.Name = "dtpTodate";
-            this.dtpTodate.Size = new System.Drawing.Size(208, 20);
-            this.dtpTodate.TabIndex = 7;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Image = global::Impendulo.StudentEngineeringCourseErollment.Devlopment.Properties.Resources.search;
-            this.btnSearch.Location = new System.Drawing.Point(280, 22);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(106, 102);
-            this.btnSearch.TabIndex = 8;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
             // frmScheduleApprience
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,17 +271,18 @@
         private System.Windows.Forms.ComboBox cbFacilitators;
         private System.Windows.Forms.Label lblVanues;
         private System.Windows.Forms.Label lblFacilitators;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DateTimePicker dtpTodate;
+        private System.Windows.Forms.DateTimePicker dtpFromDate;
+        private System.Windows.Forms.Label lblTodate;
+        private System.Windows.Forms.Label lblFromdate;
         private System.Windows.Forms.DataGridViewLinkColumn colSelect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colScheduledCourses;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStartdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFacilitator;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVanue;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaximum;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCurrentlyScheduled;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DateTimePicker dtpTodate;
-        private System.Windows.Forms.DateTimePicker dtpFromDate;
-        private System.Windows.Forms.Label lblTodate;
-        private System.Windows.Forms.Label lblFromdate;
     }
 }

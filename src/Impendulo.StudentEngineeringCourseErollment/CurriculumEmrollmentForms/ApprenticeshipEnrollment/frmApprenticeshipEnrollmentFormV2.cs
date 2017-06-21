@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 using Impendulo.Data.Models;
 using System.Data.Entity;
 using Impendulo.Common.Enum;
@@ -15,7 +16,7 @@ using Impendulo.Common.FileHandeling;
 
 namespace Impendulo.WizardForm.ClientEnquiry.Development
 {
-    public partial class frmApprenticeshipEnrollmentFormV2 : Form
+    public partial class frmApprenticeshipEnrollmentFormV2 : MetroForm
     {
 
 

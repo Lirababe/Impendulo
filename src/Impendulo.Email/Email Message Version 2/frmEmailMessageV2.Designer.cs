@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmailMessageV2));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmailMessageV2));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnManualAddedEmailAddess = new MetroFramework.Controls.MetroButton();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnAddAddressFromOutlookContacts = new MetroFramework.Controls.MetroButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.btnSendEmailMessage = new MetroFramework.Controls.MetroTile();
             this.btnCCAddress = new MetroFramework.Controls.MetroButton();
             this.btnBCCddress = new MetroFramework.Controls.MetroButton();
             this.btnToAddress = new MetroFramework.Controls.MetroButton();
@@ -53,31 +52,31 @@
             this.dgvMessageAttachments = new MetroFramework.Controls.MetroGrid();
             this.colFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFileExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileAttachmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnAddAttachment = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnRemoveAttachemnt = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnSendEmailMessage = new MetroFramework.Controls.MetroTile();
+            this.fileAttachmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.btnAddAttachment = new System.Windows.Forms.ToolStripButton();
+            this.btnRemoveAttachemnt = new System.Windows.Forms.ToolStripButton();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMessageAttachments)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileAttachmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -85,6 +84,7 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileAttachmentsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -164,22 +164,6 @@
             this.metroLabel1.Size = new System.Drawing.Size(58, 19);
             this.metroLabel1.TabIndex = 19;
             this.metroLabel1.Text = "Subject :";
-            // 
-            // btnSendEmailMessage
-            // 
-            this.btnSendEmailMessage.ActiveControl = null;
-            this.btnSendEmailMessage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSendEmailMessage.Location = new System.Drawing.Point(6, 16);
-            this.btnSendEmailMessage.Name = "btnSendEmailMessage";
-            this.btnSendEmailMessage.Size = new System.Drawing.Size(107, 107);
-            this.btnSendEmailMessage.TabIndex = 2;
-            this.btnSendEmailMessage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSendEmailMessage.TileImage = ((System.Drawing.Image)(resources.GetObject("btnSendEmailMessage.TileImage")));
-            this.btnSendEmailMessage.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.toolTip1.SetToolTip(this.btnSendEmailMessage, "Send Email Mesage");
-            this.btnSendEmailMessage.UseSelectable = true;
-            this.btnSendEmailMessage.UseTileImage = true;
-            this.btnSendEmailMessage.Click += new System.EventHandler(this.btnSendEmailMessage_Click);
             // 
             // btnCCAddress
             // 
@@ -413,24 +397,6 @@
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
@@ -450,52 +416,15 @@
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // btnAddAttachment
-            // 
-            this.btnAddAttachment.Image = ((System.Drawing.Image)(resources.GetObject("btnAddAttachment.Image")));
-            this.btnAddAttachment.Name = "btnAddAttachment";
-            this.btnAddAttachment.RightToLeftAutoMirrorImage = true;
-            this.btnAddAttachment.Size = new System.Drawing.Size(115, 22);
-            this.btnAddAttachment.Text = "Add Attachment";
-            this.btnAddAttachment.ToolTipText = "Add New Attachment";
-            this.btnAddAttachment.Click += new System.EventHandler(this.btnAddAttachment_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnRemoveAttachemnt
-            // 
-            this.btnRemoveAttachemnt.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveAttachemnt.Image")));
-            this.btnRemoveAttachemnt.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnRemoveAttachemnt.Name = "btnRemoveAttachemnt";
-            this.btnRemoveAttachemnt.Size = new System.Drawing.Size(136, 22);
-            this.btnRemoveAttachemnt.Text = "Remove Attachment";
-            this.btnRemoveAttachemnt.Click += new System.EventHandler(this.btnRemoveAttachemnt_Click);
             // 
             // toolStripSeparator2
             // 
@@ -542,6 +471,77 @@
             this.toolTip1.InitialDelay = 500;
             this.toolTip1.ReshowDelay = 250;
             // 
+            // btnSendEmailMessage
+            // 
+            this.btnSendEmailMessage.ActiveControl = null;
+            this.btnSendEmailMessage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSendEmailMessage.Location = new System.Drawing.Point(6, 16);
+            this.btnSendEmailMessage.Name = "btnSendEmailMessage";
+            this.btnSendEmailMessage.Size = new System.Drawing.Size(107, 107);
+            this.btnSendEmailMessage.TabIndex = 2;
+            this.btnSendEmailMessage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSendEmailMessage.TileImage = ((System.Drawing.Image)(resources.GetObject("btnSendEmailMessage.TileImage")));
+            this.btnSendEmailMessage.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnSendEmailMessage, "Send Email Mesage");
+            this.btnSendEmailMessage.UseSelectable = true;
+            this.btnSendEmailMessage.UseTileImage = true;
+            this.btnSendEmailMessage.Click += new System.EventHandler(this.btnSendEmailMessage_Click);
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // btnAddAttachment
+            // 
+            this.btnAddAttachment.Image = ((System.Drawing.Image)(resources.GetObject("btnAddAttachment.Image")));
+            this.btnAddAttachment.Name = "btnAddAttachment";
+            this.btnAddAttachment.RightToLeftAutoMirrorImage = true;
+            this.btnAddAttachment.Size = new System.Drawing.Size(115, 22);
+            this.btnAddAttachment.Text = "Add Attachment";
+            this.btnAddAttachment.ToolTipText = "Add New Attachment";
+            this.btnAddAttachment.Click += new System.EventHandler(this.btnAddAttachment_Click);
+            // 
+            // btnRemoveAttachemnt
+            // 
+            this.btnRemoveAttachemnt.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveAttachemnt.Image")));
+            this.btnRemoveAttachemnt.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRemoveAttachemnt.Name = "btnRemoveAttachemnt";
+            this.btnRemoveAttachemnt.Size = new System.Drawing.Size(136, 22);
+            this.btnRemoveAttachemnt.Text = "Remove Attachment";
+            this.btnRemoveAttachemnt.Click += new System.EventHandler(this.btnRemoveAttachemnt_Click);
+            // 
             // frmEmailMessageV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -565,7 +565,6 @@
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMessageAttachments)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileAttachmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -574,6 +573,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fileAttachmentsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -41,6 +41,19 @@
       <HintPath>..\..\lib\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\..\lib\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\..\lib\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -85,12 +98,6 @@
     <Compile Include="frmEnrollmentMenu.Designer.cs">
       <DependentUpon>frmEnrollmentMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStudentCourseEnrollmentV2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmStudentCourseEnrollmentV2.Designer.cs">
-      <DependentUpon>frmStudentCourseEnrollmentV2.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmStudentCourseEnrollmentV3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,9 +133,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEnrollmentMenu.resx">
       <DependentUpon>frmEnrollmentMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmStudentCourseEnrollmentV2.resx">
-      <DependentUpon>frmStudentCourseEnrollmentV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStudentCourseEnrollmentV3.resx">
       <DependentUpon>frmStudentCourseEnrollmentV3.cs</DependentUpon>

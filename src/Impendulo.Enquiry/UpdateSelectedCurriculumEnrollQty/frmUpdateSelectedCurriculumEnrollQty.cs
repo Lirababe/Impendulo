@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Impendulo.Data.Models;
+using MetroFramework.Forms;
 
 namespace Impendulo.Enquiry.UpdateSelectedCurriculumEnrollQty.Development
 {
-    public partial class frmUpdateSelectedCurriculumEnrollQty : Form
+    public partial class frmUpdateSelectedCurriculumEnrollQty : MetroForm
     {
 
         public CurriculumEnquiry CurrentCurriculumEnquiry { get; set; }

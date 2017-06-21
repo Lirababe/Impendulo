@@ -13,11 +13,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace Impendulo.Enquiry.SelectContacts.Deployment1
 
 {
-    public partial class frmSelectCompanyContact : Form
+    public partial class frmSelectCompanyContact : MetroForm
     {
         public Data.Models.Company CurrentCompany { get; set; }
         public Individual SelectedIndividual { get; set; }

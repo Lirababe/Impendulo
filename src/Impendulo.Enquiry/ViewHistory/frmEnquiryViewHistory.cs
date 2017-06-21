@@ -9,10 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
+using MetroFramework.Forms;
 
 namespace Impendulo.Enquiry.Development.ViewHistory
 {
-    public partial class frmEnquiryViewHistory : Form
+    public partial class frmEnquiryViewHistory : MetroForm
     {
         public int CurrentEnquiryID { get; set; }
         public frmEnquiryViewHistory()

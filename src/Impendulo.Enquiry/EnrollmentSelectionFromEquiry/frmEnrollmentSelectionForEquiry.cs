@@ -9,10 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace Impendulo.Enquiry.Development.EnrollmentSelectionFromEquiry
 {
-    public partial class frmEnrollmentSelectionForEquiry : Form
+    public partial class frmEnrollmentSelectionForEquiry : MetroForm
     {
 
         public int SelectedCurriculumEnquiryID { get; set; }

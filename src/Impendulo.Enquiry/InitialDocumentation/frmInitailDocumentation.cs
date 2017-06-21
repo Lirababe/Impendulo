@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace Impendulo.Enquiry.Development.InitialDocumentation.ApprenticeshipDocumentation
 {
-    public partial class frmInitailDocumentation : Form
+    public partial class frmInitailDocumentation : MetroForm
     {
         public Boolean UseEmail { get; set; }
         public Boolean IsCanceled { get; set; }

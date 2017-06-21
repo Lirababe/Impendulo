@@ -17,11 +17,12 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 
 namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInprogress
 {
-    public partial class frmEnrolmmentInprogress : Form
+    public partial class frmEnrolmmentInprogress : MetroForm
     {
         public frmEnrolmmentInprogress()
         {
