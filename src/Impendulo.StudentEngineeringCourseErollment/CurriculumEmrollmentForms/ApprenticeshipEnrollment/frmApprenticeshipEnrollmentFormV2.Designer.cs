@@ -393,7 +393,7 @@
             this.tableLayoutPanel4.ColumnCount = 3;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.46939F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.53061F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 147F));
             this.tableLayoutPanel4.Controls.Add(this.lblIDDocumentStatus, 2, 2);
             this.tableLayoutPanel4.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.lnkUploadIDDocument, 0, 2);
@@ -420,10 +420,10 @@
             this.lblIDDocumentStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblIDDocumentStatus.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.lblIDDocumentStatus.ForeColor = System.Drawing.Color.White;
-            this.lblIDDocumentStatus.Location = new System.Drawing.Point(389, 53);
+            this.lblIDDocumentStatus.Location = new System.Drawing.Point(388, 53);
             this.lblIDDocumentStatus.Name = "lblIDDocumentStatus";
             this.lblIDDocumentStatus.Padding = new System.Windows.Forms.Padding(5);
-            this.lblIDDocumentStatus.Size = new System.Drawing.Size(141, 25);
+            this.lblIDDocumentStatus.Size = new System.Drawing.Size(142, 25);
             this.lblIDDocumentStatus.TabIndex = 14;
             this.lblIDDocumentStatus.Text = "Not Uploaded";
             // 
@@ -473,7 +473,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(389, 0);
+            this.label5.Location = new System.Drawing.Point(388, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 6;
@@ -508,10 +508,10 @@
             this.lblEnrollmentFormStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEnrollmentFormStatus.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.lblEnrollmentFormStatus.ForeColor = System.Drawing.Color.White;
-            this.lblEnrollmentFormStatus.Location = new System.Drawing.Point(389, 27);
+            this.lblEnrollmentFormStatus.Location = new System.Drawing.Point(388, 27);
             this.lblEnrollmentFormStatus.Name = "lblEnrollmentFormStatus";
             this.lblEnrollmentFormStatus.Padding = new System.Windows.Forms.Padding(5);
-            this.lblEnrollmentFormStatus.Size = new System.Drawing.Size(141, 26);
+            this.lblEnrollmentFormStatus.Size = new System.Drawing.Size(142, 26);
             this.lblEnrollmentFormStatus.TabIndex = 13;
             this.lblEnrollmentFormStatus.Text = "Not Uploaded";
             // 
@@ -782,7 +782,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmApprenticeshipEnrollmentFormV2";

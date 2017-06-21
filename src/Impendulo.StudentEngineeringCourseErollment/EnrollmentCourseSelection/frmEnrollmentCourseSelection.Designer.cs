@@ -108,12 +108,12 @@
             this.tableLayoutPanel1.Controls.Add(this.groupBox5, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 60);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(856, 448);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(816, 368);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox5
@@ -122,7 +122,7 @@
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(3, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(850, 407);
+            this.groupBox5.Size = new System.Drawing.Size(810, 327);
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Course Selector";
@@ -141,7 +141,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(844, 388);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(804, 308);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // tableLayoutPanel5
@@ -151,13 +151,13 @@
             this.tableLayoutPanel5.Controls.Add(this.btnLinkCourse, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.RemoveCourse, 0, 2);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(392, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(372, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(59, 382);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(59, 302);
             this.tableLayoutPanel5.TabIndex = 8;
             // 
             // btnLinkCourse
@@ -165,7 +165,7 @@
             this.btnLinkCourse.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLinkCourse.ImageIndex = 0;
             this.btnLinkCourse.ImageList = this.imageListWizardControlButtons;
-            this.btnLinkCourse.Location = new System.Drawing.Point(3, 125);
+            this.btnLinkCourse.Location = new System.Drawing.Point(3, 85);
             this.btnLinkCourse.Name = "btnLinkCourse";
             this.btnLinkCourse.Size = new System.Drawing.Size(53, 53);
             this.btnLinkCourse.TabIndex = 0;
@@ -185,7 +185,7 @@
             this.RemoveCourse.Dock = System.Windows.Forms.DockStyle.Top;
             this.RemoveCourse.ImageIndex = 1;
             this.RemoveCourse.ImageList = this.imageListWizardControlButtons;
-            this.RemoveCourse.Location = new System.Drawing.Point(3, 204);
+            this.RemoveCourse.Location = new System.Drawing.Point(3, 164);
             this.RemoveCourse.Name = "RemoveCourse";
             this.RemoveCourse.Size = new System.Drawing.Size(53, 53);
             this.RemoveCourse.TabIndex = 1;
@@ -198,7 +198,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(383, 382);
+            this.groupBox1.Size = new System.Drawing.Size(363, 302);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Avaiable Courses";
@@ -209,11 +209,11 @@
             // toolStripContainer2.ContentPanel
             // 
             this.toolStripContainer2.ContentPanel.Controls.Add(this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses);
-            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(377, 338);
+            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(357, 258);
             this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer2.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainer2.Name = "toolStripContainer2";
-            this.toolStripContainer2.Size = new System.Drawing.Size(377, 363);
+            this.toolStripContainer2.Size = new System.Drawing.Size(357, 283);
             this.toolStripContainer2.TabIndex = 6;
             this.toolStripContainer2.Text = "toolStripContainer2";
             // 
@@ -238,7 +238,7 @@
             this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses.Name = "dgvApprenticeshipEnrollmentAvaiableCurriculumCourses";
             this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses.ReadOnly = true;
             this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses.RowHeadersWidth = 15;
-            this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses.Size = new System.Drawing.Size(377, 338);
+            this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses.Size = new System.Drawing.Size(357, 258);
             this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses.TabIndex = 1;
             this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses_CellContentClick);
             this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvApprenticeshipEnrollmentAvaiableCurriculumCourses_DataBindingComplete);
@@ -305,7 +305,7 @@
             this.bindingNavigator2.MovePreviousItem = this.toolStripButton4;
             this.bindingNavigator2.Name = "bindingNavigator2";
             this.bindingNavigator2.PositionItem = this.toolStripTextBox1;
-            this.bindingNavigator2.Size = new System.Drawing.Size(377, 25);
+            this.bindingNavigator2.Size = new System.Drawing.Size(357, 25);
             this.bindingNavigator2.Stretch = true;
             this.bindingNavigator2.TabIndex = 0;
             // 
@@ -405,9 +405,9 @@
             // 
             this.groupBox2.Controls.Add(this.toolStripContainer10);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(457, 3);
+            this.groupBox2.Location = new System.Drawing.Point(437, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(384, 382);
+            this.groupBox2.Size = new System.Drawing.Size(364, 302);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Linked Courses";
@@ -418,11 +418,11 @@
             // toolStripContainer10.ContentPanel
             // 
             this.toolStripContainer10.ContentPanel.Controls.Add(this.dgvApprenticeshipEnrollmentLinkedCurriculumCourses);
-            this.toolStripContainer10.ContentPanel.Size = new System.Drawing.Size(378, 338);
+            this.toolStripContainer10.ContentPanel.Size = new System.Drawing.Size(358, 258);
             this.toolStripContainer10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer10.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainer10.Name = "toolStripContainer10";
-            this.toolStripContainer10.Size = new System.Drawing.Size(378, 363);
+            this.toolStripContainer10.Size = new System.Drawing.Size(358, 283);
             this.toolStripContainer10.TabIndex = 8;
             this.toolStripContainer10.Text = "toolStripContainer10";
             // 
@@ -447,7 +447,7 @@
             this.dgvApprenticeshipEnrollmentLinkedCurriculumCourses.Name = "dgvApprenticeshipEnrollmentLinkedCurriculumCourses";
             this.dgvApprenticeshipEnrollmentLinkedCurriculumCourses.ReadOnly = true;
             this.dgvApprenticeshipEnrollmentLinkedCurriculumCourses.RowHeadersWidth = 15;
-            this.dgvApprenticeshipEnrollmentLinkedCurriculumCourses.Size = new System.Drawing.Size(378, 338);
+            this.dgvApprenticeshipEnrollmentLinkedCurriculumCourses.Size = new System.Drawing.Size(358, 258);
             this.dgvApprenticeshipEnrollmentLinkedCurriculumCourses.TabIndex = 1;
             this.dgvApprenticeshipEnrollmentLinkedCurriculumCourses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView7_CellContentClick);
             this.dgvApprenticeshipEnrollmentLinkedCurriculumCourses.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvApprenticeshipEnrollmentLinkedCurriculumCourses_DataBindingComplete);
@@ -509,7 +509,7 @@
             this.bindingNavigator9.MovePreviousItem = this.toolStripButton42;
             this.bindingNavigator9.Name = "bindingNavigator9";
             this.bindingNavigator9.PositionItem = this.toolStripTextBox10;
-            this.bindingNavigator9.Size = new System.Drawing.Size(378, 25);
+            this.bindingNavigator9.Size = new System.Drawing.Size(358, 25);
             this.bindingNavigator9.Stretch = true;
             this.bindingNavigator9.TabIndex = 0;
             // 
@@ -585,14 +585,14 @@
             this.flowLayoutPanel1.Controls.Add(this.btnClose);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 416);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 336);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(850, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(810, 29);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(772, 3);
+            this.btnClose.Location = new System.Drawing.Point(732, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 1;
@@ -606,7 +606,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 448);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmEnrollmentCourseSelection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Enrollment Course Selection";

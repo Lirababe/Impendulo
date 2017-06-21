@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Impendulo.Data.Models;
 using System.Data.Entity;
 using Impendulo.Common.Enum;
-
+using MetroFramework.Forms;
 using Impendulo.Enquiry.SelectCourseCurriculum.Development;
 using Impendulo.Enquiry.SelectContacts.Developemnt;
 using Impendulo.Enquiry.UpdateSelectedCurriculumEnrollQty.Development;
@@ -19,7 +19,7 @@ using Impendulo.Common.EmailSending;
 
 namespace Impendulo.WizardForm.ClientEnquiry.Development
 {
-    public partial class frmNewEnquiry : Form
+    public partial class frmNewEnquiry : MetroForm
     {
         private Boolean _CompanyContactSelected = true;
 

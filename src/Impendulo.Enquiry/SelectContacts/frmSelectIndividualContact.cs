@@ -10,10 +10,11 @@ using System.Windows.Forms;
 using Impendulo.Data.Models;
 using Impendulo.ContactDetails.Development;
 using Impendulo.Contacts.Development;
+using MetroFramework.Forms;
 
 namespace Impendulo.Enquiry.SelectContacts.Developemnt
 {
-    public partial class frmSelectIndividualContact : Form
+    public partial class frmSelectIndividualContact : MetroForm
     {
         public frmSelectIndividualContact()
         {

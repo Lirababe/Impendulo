@@ -256,7 +256,7 @@
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Location = new System.Drawing.Point(20, 60);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -268,7 +268,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.MainflowLayoutPanel);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(834, 636);
+            this.splitContainer1.Size = new System.Drawing.Size(794, 556);
             this.splitContainer1.SplitterDistance = 175;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -280,7 +280,7 @@
             this.NavigationPanel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NavigationPanel.Location = new System.Drawing.Point(0, 0);
             this.NavigationPanel.Name = "NavigationPanel";
-            this.NavigationPanel.Size = new System.Drawing.Size(173, 634);
+            this.NavigationPanel.Size = new System.Drawing.Size(173, 554);
             this.NavigationPanel.TabIndex = 8;
             // 
             // panel5
@@ -296,7 +296,7 @@
             this.panel5.ForeColor = System.Drawing.SystemColors.WindowText;
             this.panel5.Location = new System.Drawing.Point(0, 44);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(173, 590);
+            this.panel5.Size = new System.Drawing.Size(173, 510);
             this.panel5.TabIndex = 0;
             // 
             // label6
@@ -380,7 +380,7 @@
             this.MainflowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.MainflowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.MainflowLayoutPanel.Name = "MainflowLayoutPanel";
-            this.MainflowLayoutPanel.Size = new System.Drawing.Size(653, 580);
+            this.MainflowLayoutPanel.Size = new System.Drawing.Size(613, 500);
             this.MainflowLayoutPanel.TabIndex = 2;
             // 
             // groupBox6
@@ -1683,10 +1683,10 @@
             this.panel1.Controls.Add(this.btnPreviousSection);
             this.panel1.Controls.Add(this.btnNextSection);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 580);
+            this.panel1.Location = new System.Drawing.Point(0, 500);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(653, 54);
+            this.panel1.Size = new System.Drawing.Size(613, 54);
             this.panel1.TabIndex = 0;
             // 
             // btnPreviousSection
@@ -1721,7 +1721,7 @@
             this.btnNextSection.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNextSection.ImageIndex = 0;
             this.btnNextSection.ImageList = this.imageListWizardControlButtons;
-            this.btnNextSection.Location = new System.Drawing.Point(446, 5);
+            this.btnNextSection.Location = new System.Drawing.Point(406, 5);
             this.btnNextSection.Name = "btnNextSection";
             this.btnNextSection.Size = new System.Drawing.Size(200, 42);
             this.btnNextSection.TabIndex = 1;
@@ -1797,7 +1797,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(834, 636);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1808,7 +1807,6 @@
             this.Name = "frmNewEnquiry";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Enquiry";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNewEnquiry_FormClosing);

@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Impendulo.Data.Models;
+using MetroFramework.Forms;
 
 namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.ScheduleApprientice
 {
-    public partial class frmScheduleApprience : Form
+    public partial class frmScheduleApprience : MetroForm
     {
         public frmScheduleApprience()
         {
@@ -45,11 +46,6 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.ScheduleApprien
         }
 
         private void dgvConfirmSchedule_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void gbfilters_Enter(object sender, EventArgs e)
         {
 
         }

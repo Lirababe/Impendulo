@@ -121,10 +121,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(20, 60);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(809, 477);
+            this.tabControl1.Size = new System.Drawing.Size(769, 397);
             this.tabControl1.TabIndex = 1;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -134,7 +134,7 @@
             this.tpMainPage.Location = new System.Drawing.Point(4, 22);
             this.tpMainPage.Name = "tpMainPage";
             this.tpMainPage.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMainPage.Size = new System.Drawing.Size(801, 451);
+            this.tpMainPage.Size = new System.Drawing.Size(761, 371);
             this.tpMainPage.TabIndex = 0;
             this.tpMainPage.Text = "Main ";
             this.tpMainPage.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.65343F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.34657F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 164F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(795, 445);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(755, 365);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox1
@@ -161,7 +161,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(789, 127);
+            this.groupBox1.Size = new System.Drawing.Size(749, 89);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Notification";
@@ -169,9 +169,9 @@
             // groupBox3
             // 
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(3, 283);
+            this.groupBox3.Location = new System.Drawing.Point(3, 203);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(789, 159);
+            this.groupBox3.Size = new System.Drawing.Size(749, 159);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Announcements";
@@ -184,11 +184,11 @@
             this.tableLayoutPanel2.Controls.Add(this.groupBox2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.groupBox4, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 136);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 98);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(789, 141);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(749, 99);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // groupBox2
@@ -196,7 +196,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(388, 135);
+            this.groupBox2.Size = new System.Drawing.Size(368, 93);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Important Dates";
@@ -204,9 +204,9 @@
             // groupBox4
             // 
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(397, 3);
+            this.groupBox4.Location = new System.Drawing.Point(377, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(389, 135);
+            this.groupBox4.Size = new System.Drawing.Size(369, 93);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Scheduled Dates";
@@ -217,7 +217,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(801, 451);
+            this.tabPage2.Size = new System.Drawing.Size(761, 371);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Apprenticeship";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -236,7 +236,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 157F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 232F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(795, 445);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(755, 365);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -246,7 +246,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.89874F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 206F));
             this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel3, 2, 0);
@@ -257,7 +257,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(789, 151);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(749, 151);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // panel1
@@ -269,7 +269,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.InfoText;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(124, 145);
+            this.panel1.Size = new System.Drawing.Size(104, 145);
             this.panel1.TabIndex = 0;
             // 
             // lblEquiyTotalEquiry
@@ -298,9 +298,9 @@
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.lblNewEnquiry);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(133, 3);
+            this.panel2.Location = new System.Drawing.Point(113, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(134, 145);
+            this.panel2.Size = new System.Drawing.Size(113, 145);
             this.panel2.TabIndex = 1;
             // 
             // label9
@@ -329,7 +329,7 @@
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.lblOverDueEnquiries);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(273, 3);
+            this.panel3.Location = new System.Drawing.Point(232, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(149, 145);
             this.panel3.TabIndex = 2;
@@ -360,7 +360,7 @@
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.lblPrivateEquiries);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(428, 3);
+            this.panel5.Location = new System.Drawing.Point(387, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(152, 145);
             this.panel5.TabIndex = 4;
@@ -391,9 +391,9 @@
             this.panel6.Controls.Add(this.label15);
             this.panel6.Controls.Add(this.lblCompanyEnquiry);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(586, 3);
+            this.panel6.Location = new System.Drawing.Point(545, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(200, 145);
+            this.panel6.Size = new System.Drawing.Size(201, 145);
             this.panel6.TabIndex = 5;
             // 
             // label15
@@ -429,8 +429,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(789, 226);
-            this.splitContainer1.SplitterDistance = 245;
+            this.splitContainer1.Size = new System.Drawing.Size(749, 226);
+            this.splitContainer1.SplitterDistance = 232;
             this.splitContainer1.TabIndex = 3;
             // 
             // groupBox5
@@ -441,7 +441,7 @@
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(245, 226);
+            this.groupBox5.Size = new System.Drawing.Size(232, 226);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Filter Graph by:";
@@ -498,7 +498,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.chart2);
             this.splitContainer2.Panel2.Controls.Add(this.chart1);
-            this.splitContainer2.Size = new System.Drawing.Size(540, 226);
+            this.splitContainer2.Size = new System.Drawing.Size(513, 226);
             this.splitContainer2.SplitterDistance = 49;
             this.splitContainer2.TabIndex = 4;
             // 
@@ -508,7 +508,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(540, 49);
+            this.panel4.Size = new System.Drawing.Size(513, 49);
             this.panel4.TabIndex = 0;
             // 
             // lblGraphTitle
@@ -561,7 +561,7 @@
             series3.Legend = "Legend1";
             series3.Name = "AllEnquiries";
             this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(540, 173);
+            this.chart1.Size = new System.Drawing.Size(513, 173);
             this.chart1.TabIndex = 3;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
@@ -584,7 +584,7 @@
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(3, 3);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(789, 58);
+            this.groupBox6.Size = new System.Drawing.Size(749, 58);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Filters";
@@ -655,7 +655,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(801, 451);
+            this.tabPage1.Size = new System.Drawing.Size(761, 371);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "LOTP";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -665,7 +665,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(801, 451);
+            this.tabPage3.Size = new System.Drawing.Size(761, 371);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "SoftSkills";
             this.tabPage3.UseVisualStyleBackColor = true;

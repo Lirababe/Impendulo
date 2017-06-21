@@ -12,18 +12,19 @@ using System.Data.Entity;
 using Impendulo.WizardForm.ClientEnquiry.Development;
 using Impendulo.Enquiry.ViewContactInformation.Development;
 using Impendulo.Common.Enum;
-using Impendulo.Enquiry.Development.EnquiryProcessing.Aprenticeship.Step2___DocumentationRecieved.Development;
+//using Impendulo.Enquiry.Development.EnquiryProcessing.Aprenticeship.Step2___DocumentationRecieved.Development;
 using Impendulo.Enquiry.Development.InitaialConsultation;
 using Impendulo.Enquiry.Development.InitialDocumentation.ApprenticeshipDocumentation;
 using Impendulo.Enquiry.Development.ViewHistory;
 using Impendulo.Email.Development;
+using MetroFramework.Forms;
 using Impendulo.StudentEngineeringCourseErollment.Devlopment;
 using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInprogress;
 using Impendulo.Enquiry.Development.EnrollmentSelectionFromEquiry;
 
 namespace Impendulo.Enquiry.Development.EnquiryV2.Development
 {
-    public partial class frmClientEnquiryV2 : Form
+    public partial class frmClientEnquiryV2 : MetroForm
     {
 
         public Data.Models.Enquiry CurrentNewEquiry { get; set; }

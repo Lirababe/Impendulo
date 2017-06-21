@@ -34,7 +34,7 @@
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label15;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudentCourseEnrollmentV3));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabEnrollmentWorkbench = new System.Windows.Forms.TabControl();
             this.tpEnrollmentHome = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -68,7 +68,24 @@
             this.Enrollment = new System.Windows.Forms.GroupBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dgvEnrollment = new System.Windows.Forms.DataGridView();
+            this.colApprenticeshipEnrollmentHistory = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApprenticeshipEnqiry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApprenticeshipCurriculum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateIntitiated = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApprenticeshipSection = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.enrollmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateIntitiatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrolmentParentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentExcemptDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigatorCurriculum = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
@@ -87,7 +104,24 @@
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer5 = new System.Windows.Forms.ToolStripContainer();
             this.dgvPrerequisiteCourses = new System.Windows.Forms.DataGridView();
+            this.colApprenticeshipPrerequisteProcessingStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApprenticeshipPreRequisiteScheduleCourseExcemption = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colApprenticeshipPreRequisiteScheduleCourse = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colApprenticeshipPreRequisiteCurriculum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApprenticeshipPreRequisiteCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApprenticeshipPreRequisiteIsExemptionStatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.enrollmentPrerequisitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.enrollmentIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateIntitiatedDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrolmentParentIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentExcemptDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
@@ -159,7 +193,22 @@
             this.toolStripSeparator33 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.dgvEnrollmenLinkedCurriculumCourses = new System.Windows.Forms.DataGridView();
+            this.colApprenticeshipEnrollmentAvailableCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumCourseLinkedToEnrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.curriculumCourseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumCourseParentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curricullumCourseCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumCourseMinimumMaximumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupEnrollmentTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -177,21 +226,6 @@
             this.imageListTabHeadings = new System.Windows.Forms.ImageList(this.components);
             this.folderBrowserDialogForDownloading = new System.Windows.Forms.FolderBrowserDialog();
             this.curriculumCourseEnrollmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colApprenticeshipEnrollmentHistory = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApprenticeshipEnqiry = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApprenticeshipCurriculum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateIntitiated = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApprenticeshipSection = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApprenticeshipPrerequisteProcessingStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApprenticeshipPreRequisiteScheduleCourseExcemption = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colApprenticeshipPreRequisiteScheduleCourse = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colApprenticeshipPreRequisiteCurriculum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApprenticeshipPreRequisiteCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApprenticeshipPreRequisiteIsExemptionStatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colApprenticeshipEnrollmentAvailableCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             label8 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -334,11 +368,11 @@
             this.tabEnrollmentWorkbench.Controls.Add(this.tpCompletedEnquiry);
             this.tabEnrollmentWorkbench.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabEnrollmentWorkbench.ImageList = this.imageListTabHeadings;
-            this.tabEnrollmentWorkbench.Location = new System.Drawing.Point(0, 0);
+            this.tabEnrollmentWorkbench.Location = new System.Drawing.Point(20, 60);
             this.tabEnrollmentWorkbench.Name = "tabEnrollmentWorkbench";
             this.tabEnrollmentWorkbench.SelectedIndex = 0;
             this.tabEnrollmentWorkbench.ShowToolTips = true;
-            this.tabEnrollmentWorkbench.Size = new System.Drawing.Size(1231, 739);
+            this.tabEnrollmentWorkbench.Size = new System.Drawing.Size(1191, 659);
             this.tabEnrollmentWorkbench.TabIndex = 2;
             this.tabEnrollmentWorkbench.SelectedIndexChanged += new System.EventHandler(this.tabEnrollmentWorkbench_SelectedIndexChanged);
             // 
@@ -349,7 +383,7 @@
             this.tpEnrollmentHome.Location = new System.Drawing.Point(4, 58);
             this.tpEnrollmentHome.Name = "tpEnrollmentHome";
             this.tpEnrollmentHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tpEnrollmentHome.Size = new System.Drawing.Size(1223, 677);
+            this.tpEnrollmentHome.Size = new System.Drawing.Size(1183, 597);
             this.tpEnrollmentHome.TabIndex = 0;
             this.tpEnrollmentHome.Text = "Enrollment Home";
             this.tpEnrollmentHome.UseVisualStyleBackColor = true;
@@ -360,7 +394,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1217, 671);
+            this.groupBox1.Size = new System.Drawing.Size(1177, 591);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Summary";
@@ -378,7 +412,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 108F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 108F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 92F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1211, 401);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1171, 401);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox4
@@ -392,7 +426,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(3, 111);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1205, 102);
+            this.groupBox4.Size = new System.Drawing.Size(1165, 102);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "In Progress Enquiry";
@@ -426,7 +460,7 @@
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox5.Location = new System.Drawing.Point(3, 51);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1199, 48);
+            this.groupBox5.Size = new System.Drawing.Size(1159, 48);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Options:";
@@ -502,7 +536,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1205, 102);
+            this.groupBox2.Size = new System.Drawing.Size(1165, 102);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "New Enquiry";
@@ -536,7 +570,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox3.Location = new System.Drawing.Point(3, 51);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1199, 48);
+            this.groupBox3.Size = new System.Drawing.Size(1159, 48);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Options:";
@@ -734,7 +768,18 @@
             this.colApprenticeshipEnqiry,
             this.colApprenticeshipCurriculum,
             this.DateIntitiated,
-            this.colApprenticeshipSection});
+            this.colApprenticeshipSection,
+            this.enrollmentIDDataGridViewTextBoxColumn,
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn,
+            this.curriculumIDDataGridViewTextBoxColumn,
+            this.dateIntitiatedDataGridViewTextBoxColumn,
+            this.individualIDDataGridViewTextBoxColumn,
+            this.enrolmentParentIDDataGridViewTextBoxColumn,
+            this.enrollmentExcemptDataGridViewTextBoxColumn,
+            this.curriculumDataGridViewTextBoxColumn,
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn,
+            this.studentDataGridViewTextBoxColumn,
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn});
             this.dgvEnrollment.DataSource = this.enrollmentBindingSource;
             this.dgvEnrollment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEnrollment.Location = new System.Drawing.Point(0, 0);
@@ -747,10 +792,142 @@
             this.dgvEnrollment.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvEnrollment_DataBindingComplete);
             this.dgvEnrollment.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvEnrollment_DataError);
             // 
+            // colApprenticeshipEnrollmentHistory
+            // 
+            this.colApprenticeshipEnrollmentHistory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colApprenticeshipEnrollmentHistory.HeaderText = "";
+            this.colApprenticeshipEnrollmentHistory.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colApprenticeshipEnrollmentHistory.Name = "colApprenticeshipEnrollmentHistory";
+            this.colApprenticeshipEnrollmentHistory.ReadOnly = true;
+            this.colApprenticeshipEnrollmentHistory.Text = "History";
+            this.colApprenticeshipEnrollmentHistory.UseColumnTextForLinkValue = true;
+            this.colApprenticeshipEnrollmentHistory.Width = 5;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.DataPropertyName = "EnrollmentID";
+            this.Column1.HeaderText = "Enrollment";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 81;
+            // 
+            // colApprenticeshipEnqiry
+            // 
+            this.colApprenticeshipEnqiry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colApprenticeshipEnqiry.HeaderText = "Enquiry";
+            this.colApprenticeshipEnqiry.Name = "colApprenticeshipEnqiry";
+            this.colApprenticeshipEnqiry.ReadOnly = true;
+            this.colApprenticeshipEnqiry.Width = 67;
+            // 
+            // colApprenticeshipCurriculum
+            // 
+            this.colApprenticeshipCurriculum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colApprenticeshipCurriculum.HeaderText = "Curriculum";
+            this.colApprenticeshipCurriculum.Name = "colApprenticeshipCurriculum";
+            this.colApprenticeshipCurriculum.ReadOnly = true;
+            this.colApprenticeshipCurriculum.Width = 81;
+            // 
+            // DateIntitiated
+            // 
+            this.DateIntitiated.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DateIntitiated.DataPropertyName = "DateIntitiated";
+            dataGridViewCellStyle1.Format = "D";
+            dataGridViewCellStyle1.NullValue = null;
+            this.DateIntitiated.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DateIntitiated.HeaderText = "Date";
+            this.DateIntitiated.Name = "DateIntitiated";
+            this.DateIntitiated.ReadOnly = true;
+            this.DateIntitiated.Width = 55;
+            // 
+            // colApprenticeshipSection
+            // 
+            this.colApprenticeshipSection.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colApprenticeshipSection.HeaderText = "Section";
+            this.colApprenticeshipSection.Name = "colApprenticeshipSection";
+            this.colApprenticeshipSection.ReadOnly = true;
+            // 
             // enrollmentBindingSource
             // 
             this.enrollmentBindingSource.DataSource = typeof(Impendulo.Data.Models.Enrollment);
             this.enrollmentBindingSource.PositionChanged += new System.EventHandler(this.enrollmentBindingSource_PositionChanged);
+            // 
+            // enrollmentIDDataGridViewTextBoxColumn
+            // 
+            this.enrollmentIDDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn.HeaderText = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn.Name = "enrollmentIDDataGridViewTextBoxColumn";
+            this.enrollmentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn
+            // 
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn.DataPropertyName = "LookupEnrollmentProgressStateID";
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn.HeaderText = "LookupEnrollmentProgressStateID";
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn.Name = "lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn";
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // curriculumIDDataGridViewTextBoxColumn
+            // 
+            this.curriculumIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumID";
+            this.curriculumIDDataGridViewTextBoxColumn.HeaderText = "CurriculumID";
+            this.curriculumIDDataGridViewTextBoxColumn.Name = "curriculumIDDataGridViewTextBoxColumn";
+            this.curriculumIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateIntitiatedDataGridViewTextBoxColumn
+            // 
+            this.dateIntitiatedDataGridViewTextBoxColumn.DataPropertyName = "DateIntitiated";
+            this.dateIntitiatedDataGridViewTextBoxColumn.HeaderText = "DateIntitiated";
+            this.dateIntitiatedDataGridViewTextBoxColumn.Name = "dateIntitiatedDataGridViewTextBoxColumn";
+            this.dateIntitiatedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // individualIDDataGridViewTextBoxColumn
+            // 
+            this.individualIDDataGridViewTextBoxColumn.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn.Name = "individualIDDataGridViewTextBoxColumn";
+            this.individualIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // enrolmentParentIDDataGridViewTextBoxColumn
+            // 
+            this.enrolmentParentIDDataGridViewTextBoxColumn.DataPropertyName = "EnrolmentParentID";
+            this.enrolmentParentIDDataGridViewTextBoxColumn.HeaderText = "EnrolmentParentID";
+            this.enrolmentParentIDDataGridViewTextBoxColumn.Name = "enrolmentParentIDDataGridViewTextBoxColumn";
+            this.enrolmentParentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // enrollmentExcemptDataGridViewTextBoxColumn
+            // 
+            this.enrollmentExcemptDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentExcempt";
+            this.enrollmentExcemptDataGridViewTextBoxColumn.HeaderText = "EnrollmentExcempt";
+            this.enrollmentExcemptDataGridViewTextBoxColumn.Name = "enrollmentExcemptDataGridViewTextBoxColumn";
+            this.enrollmentExcemptDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // curriculumDataGridViewTextBoxColumn
+            // 
+            this.curriculumDataGridViewTextBoxColumn.DataPropertyName = "Curriculum";
+            this.curriculumDataGridViewTextBoxColumn.HeaderText = "Curriculum";
+            this.curriculumDataGridViewTextBoxColumn.Name = "curriculumDataGridViewTextBoxColumn";
+            this.curriculumDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lookupEnrollmentProgressStateDataGridViewTextBoxColumn
+            // 
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.DataPropertyName = "LookupEnrollmentProgressState";
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.HeaderText = "LookupEnrollmentProgressState";
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.Name = "lookupEnrollmentProgressStateDataGridViewTextBoxColumn";
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studentDataGridViewTextBoxColumn
+            // 
+            this.studentDataGridViewTextBoxColumn.DataPropertyName = "Student";
+            this.studentDataGridViewTextBoxColumn.HeaderText = "Student";
+            this.studentDataGridViewTextBoxColumn.Name = "studentDataGridViewTextBoxColumn";
+            this.studentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // apprienticeshipEnrollmentDataGridViewTextBoxColumn
+            // 
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn.DataPropertyName = "ApprienticeshipEnrollment";
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn.HeaderText = "ApprienticeshipEnrollment";
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn.Name = "apprienticeshipEnrollmentDataGridViewTextBoxColumn";
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bindingNavigatorCurriculum
             // 
@@ -936,7 +1113,18 @@
             this.colApprenticeshipPreRequisiteScheduleCourse,
             this.colApprenticeshipPreRequisiteCurriculum,
             this.colApprenticeshipPreRequisiteCourse,
-            this.colApprenticeshipPreRequisiteIsExemptionStatus});
+            this.colApprenticeshipPreRequisiteIsExemptionStatus,
+            this.enrollmentIDDataGridViewTextBoxColumn1,
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1,
+            this.curriculumIDDataGridViewTextBoxColumn1,
+            this.dateIntitiatedDataGridViewTextBoxColumn1,
+            this.individualIDDataGridViewTextBoxColumn1,
+            this.enrolmentParentIDDataGridViewTextBoxColumn1,
+            this.enrollmentExcemptDataGridViewTextBoxColumn1,
+            this.curriculumDataGridViewTextBoxColumn1,
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1,
+            this.studentDataGridViewTextBoxColumn1,
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1});
             this.dgvPrerequisiteCourses.DataSource = this.enrollmentPrerequisitesBindingSource;
             this.dgvPrerequisiteCourses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPrerequisiteCourses.Location = new System.Drawing.Point(0, 0);
@@ -949,9 +1137,141 @@
             this.dgvPrerequisiteCourses.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvPrerequisiteCourses_DataBindingComplete);
             this.dgvPrerequisiteCourses.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvPrerequisiteCourses_DataError);
             // 
+            // colApprenticeshipPrerequisteProcessingStatus
+            // 
+            this.colApprenticeshipPrerequisteProcessingStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colApprenticeshipPrerequisteProcessingStatus.HeaderText = "Status";
+            this.colApprenticeshipPrerequisteProcessingStatus.Name = "colApprenticeshipPrerequisteProcessingStatus";
+            this.colApprenticeshipPrerequisteProcessingStatus.ReadOnly = true;
+            this.colApprenticeshipPrerequisteProcessingStatus.Width = 62;
+            // 
+            // colApprenticeshipPreRequisiteScheduleCourseExcemption
+            // 
+            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.DataPropertyName = "CurriculumCourseID";
+            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.HeaderText = "";
+            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.Name = "colApprenticeshipPreRequisiteScheduleCourseExcemption";
+            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.ReadOnly = true;
+            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.Text = "Excempt";
+            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.UseColumnTextForLinkValue = true;
+            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.Width = 19;
+            // 
+            // colApprenticeshipPreRequisiteScheduleCourse
+            // 
+            this.colApprenticeshipPreRequisiteScheduleCourse.HeaderText = "";
+            this.colApprenticeshipPreRequisiteScheduleCourse.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colApprenticeshipPreRequisiteScheduleCourse.Name = "colApprenticeshipPreRequisiteScheduleCourse";
+            this.colApprenticeshipPreRequisiteScheduleCourse.ReadOnly = true;
+            this.colApprenticeshipPreRequisiteScheduleCourse.Text = "Schedule Course";
+            this.colApprenticeshipPreRequisiteScheduleCourse.UseColumnTextForLinkValue = true;
+            // 
+            // colApprenticeshipPreRequisiteCurriculum
+            // 
+            this.colApprenticeshipPreRequisiteCurriculum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colApprenticeshipPreRequisiteCurriculum.HeaderText = "Curriculum";
+            this.colApprenticeshipPreRequisiteCurriculum.Name = "colApprenticeshipPreRequisiteCurriculum";
+            this.colApprenticeshipPreRequisiteCurriculum.ReadOnly = true;
+            this.colApprenticeshipPreRequisiteCurriculum.Width = 81;
+            // 
+            // colApprenticeshipPreRequisiteCourse
+            // 
+            this.colApprenticeshipPreRequisiteCourse.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colApprenticeshipPreRequisiteCourse.HeaderText = "Course";
+            this.colApprenticeshipPreRequisiteCourse.Name = "colApprenticeshipPreRequisiteCourse";
+            this.colApprenticeshipPreRequisiteCourse.ReadOnly = true;
+            this.colApprenticeshipPreRequisiteCourse.Width = 65;
+            // 
+            // colApprenticeshipPreRequisiteIsExemptionStatus
+            // 
+            this.colApprenticeshipPreRequisiteIsExemptionStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colApprenticeshipPreRequisiteIsExemptionStatus.HeaderText = "Status";
+            this.colApprenticeshipPreRequisiteIsExemptionStatus.Name = "colApprenticeshipPreRequisiteIsExemptionStatus";
+            this.colApprenticeshipPreRequisiteIsExemptionStatus.ReadOnly = true;
+            this.colApprenticeshipPreRequisiteIsExemptionStatus.Width = 43;
+            // 
             // enrollmentPrerequisitesBindingSource
             // 
             this.enrollmentPrerequisitesBindingSource.DataSource = typeof(Impendulo.Data.Models.Enrollment);
+            // 
+            // enrollmentIDDataGridViewTextBoxColumn1
+            // 
+            this.enrollmentIDDataGridViewTextBoxColumn1.DataPropertyName = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn1.HeaderText = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn1.Name = "enrollmentIDDataGridViewTextBoxColumn1";
+            this.enrollmentIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1
+            // 
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.DataPropertyName = "LookupEnrollmentProgressStateID";
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.HeaderText = "LookupEnrollmentProgressStateID";
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.Name = "lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1";
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // curriculumIDDataGridViewTextBoxColumn1
+            // 
+            this.curriculumIDDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumID";
+            this.curriculumIDDataGridViewTextBoxColumn1.HeaderText = "CurriculumID";
+            this.curriculumIDDataGridViewTextBoxColumn1.Name = "curriculumIDDataGridViewTextBoxColumn1";
+            this.curriculumIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dateIntitiatedDataGridViewTextBoxColumn1
+            // 
+            this.dateIntitiatedDataGridViewTextBoxColumn1.DataPropertyName = "DateIntitiated";
+            this.dateIntitiatedDataGridViewTextBoxColumn1.HeaderText = "DateIntitiated";
+            this.dateIntitiatedDataGridViewTextBoxColumn1.Name = "dateIntitiatedDataGridViewTextBoxColumn1";
+            this.dateIntitiatedDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // individualIDDataGridViewTextBoxColumn1
+            // 
+            this.individualIDDataGridViewTextBoxColumn1.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn1.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn1.Name = "individualIDDataGridViewTextBoxColumn1";
+            this.individualIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // enrolmentParentIDDataGridViewTextBoxColumn1
+            // 
+            this.enrolmentParentIDDataGridViewTextBoxColumn1.DataPropertyName = "EnrolmentParentID";
+            this.enrolmentParentIDDataGridViewTextBoxColumn1.HeaderText = "EnrolmentParentID";
+            this.enrolmentParentIDDataGridViewTextBoxColumn1.Name = "enrolmentParentIDDataGridViewTextBoxColumn1";
+            this.enrolmentParentIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // enrollmentExcemptDataGridViewTextBoxColumn1
+            // 
+            this.enrollmentExcemptDataGridViewTextBoxColumn1.DataPropertyName = "EnrollmentExcempt";
+            this.enrollmentExcemptDataGridViewTextBoxColumn1.HeaderText = "EnrollmentExcempt";
+            this.enrollmentExcemptDataGridViewTextBoxColumn1.Name = "enrollmentExcemptDataGridViewTextBoxColumn1";
+            this.enrollmentExcemptDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // curriculumDataGridViewTextBoxColumn1
+            // 
+            this.curriculumDataGridViewTextBoxColumn1.DataPropertyName = "Curriculum";
+            this.curriculumDataGridViewTextBoxColumn1.HeaderText = "Curriculum";
+            this.curriculumDataGridViewTextBoxColumn1.Name = "curriculumDataGridViewTextBoxColumn1";
+            this.curriculumDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // lookupEnrollmentProgressStateDataGridViewTextBoxColumn1
+            // 
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.DataPropertyName = "LookupEnrollmentProgressState";
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.HeaderText = "LookupEnrollmentProgressState";
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.Name = "lookupEnrollmentProgressStateDataGridViewTextBoxColumn1";
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // studentDataGridViewTextBoxColumn1
+            // 
+            this.studentDataGridViewTextBoxColumn1.DataPropertyName = "Student";
+            this.studentDataGridViewTextBoxColumn1.HeaderText = "Student";
+            this.studentDataGridViewTextBoxColumn1.Name = "studentDataGridViewTextBoxColumn1";
+            this.studentDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // apprienticeshipEnrollmentDataGridViewTextBoxColumn1
+            // 
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1.DataPropertyName = "ApprienticeshipEnrollment";
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1.HeaderText = "ApprienticeshipEnrollment";
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1.Name = "apprienticeshipEnrollmentDataGridViewTextBoxColumn1";
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // bindingNavigator1
             // 
@@ -1718,7 +2038,19 @@
             this.dgvEnrollmenLinkedCurriculumCourses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colApprenticeshipEnrollmentAvailableCourse,
             this.Cost,
-            this.Duration});
+            this.Duration,
+            this.curriculumCourseIDDataGridViewTextBoxColumn,
+            this.curriculumCourseParentIDDataGridViewTextBoxColumn,
+            this.curriculumIDDataGridViewTextBoxColumn2,
+            this.courseIDDataGridViewTextBoxColumn,
+            this.enrollmentTypeIDDataGridViewTextBoxColumn,
+            this.durationDataGridViewTextBoxColumn,
+            this.costDataGridViewTextBoxColumn,
+            this.courseDataGridViewTextBoxColumn,
+            this.curricullumCourseCodeDataGridViewTextBoxColumn,
+            this.curriculumCourseMinimumMaximumDataGridViewTextBoxColumn,
+            this.curriculumDataGridViewTextBoxColumn2,
+            this.lookupEnrollmentTypeDataGridViewTextBoxColumn});
             this.dgvEnrollmenLinkedCurriculumCourses.DataSource = this.curriculumCourseLinkedToEnrollmentBindingSource;
             this.dgvEnrollmenLinkedCurriculumCourses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEnrollmenLinkedCurriculumCourses.Location = new System.Drawing.Point(0, 0);
@@ -1731,9 +2063,115 @@
             this.dgvEnrollmenLinkedCurriculumCourses.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvEnrollmenLinkedCurriculumCourses_DataBindingComplete);
             this.dgvEnrollmenLinkedCurriculumCourses.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvEnrollmenLinkedCurriculumCourses_DataError);
             // 
+            // colApprenticeshipEnrollmentAvailableCourse
+            // 
+            this.colApprenticeshipEnrollmentAvailableCourse.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colApprenticeshipEnrollmentAvailableCourse.HeaderText = "Course";
+            this.colApprenticeshipEnrollmentAvailableCourse.Name = "colApprenticeshipEnrollmentAvailableCourse";
+            this.colApprenticeshipEnrollmentAvailableCourse.ReadOnly = true;
+            this.colApprenticeshipEnrollmentAvailableCourse.Width = 65;
+            // 
+            // Cost
+            // 
+            this.Cost.DataPropertyName = "Cost";
+            this.Cost.HeaderText = "Cost";
+            this.Cost.Name = "Cost";
+            this.Cost.ReadOnly = true;
+            // 
+            // Duration
+            // 
+            this.Duration.DataPropertyName = "Duration";
+            this.Duration.HeaderText = "Duration";
+            this.Duration.Name = "Duration";
+            this.Duration.ReadOnly = true;
+            // 
             // curriculumCourseLinkedToEnrollmentBindingSource
             // 
             this.curriculumCourseLinkedToEnrollmentBindingSource.DataSource = typeof(Impendulo.Data.Models.CurriculumCourse);
+            // 
+            // curriculumCourseIDDataGridViewTextBoxColumn
+            // 
+            this.curriculumCourseIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumCourseID";
+            this.curriculumCourseIDDataGridViewTextBoxColumn.HeaderText = "CurriculumCourseID";
+            this.curriculumCourseIDDataGridViewTextBoxColumn.Name = "curriculumCourseIDDataGridViewTextBoxColumn";
+            this.curriculumCourseIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // curriculumCourseParentIDDataGridViewTextBoxColumn
+            // 
+            this.curriculumCourseParentIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumCourseParentID";
+            this.curriculumCourseParentIDDataGridViewTextBoxColumn.HeaderText = "CurriculumCourseParentID";
+            this.curriculumCourseParentIDDataGridViewTextBoxColumn.Name = "curriculumCourseParentIDDataGridViewTextBoxColumn";
+            this.curriculumCourseParentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // curriculumIDDataGridViewTextBoxColumn2
+            // 
+            this.curriculumIDDataGridViewTextBoxColumn2.DataPropertyName = "CurriculumID";
+            this.curriculumIDDataGridViewTextBoxColumn2.HeaderText = "CurriculumID";
+            this.curriculumIDDataGridViewTextBoxColumn2.Name = "curriculumIDDataGridViewTextBoxColumn2";
+            this.curriculumIDDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // courseIDDataGridViewTextBoxColumn
+            // 
+            this.courseIDDataGridViewTextBoxColumn.DataPropertyName = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn.HeaderText = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn.Name = "courseIDDataGridViewTextBoxColumn";
+            this.courseIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // enrollmentTypeIDDataGridViewTextBoxColumn
+            // 
+            this.enrollmentTypeIDDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentTypeID";
+            this.enrollmentTypeIDDataGridViewTextBoxColumn.HeaderText = "EnrollmentTypeID";
+            this.enrollmentTypeIDDataGridViewTextBoxColumn.Name = "enrollmentTypeIDDataGridViewTextBoxColumn";
+            this.enrollmentTypeIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // durationDataGridViewTextBoxColumn
+            // 
+            this.durationDataGridViewTextBoxColumn.DataPropertyName = "Duration";
+            this.durationDataGridViewTextBoxColumn.HeaderText = "Duration";
+            this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
+            this.durationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.costDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // courseDataGridViewTextBoxColumn
+            // 
+            this.courseDataGridViewTextBoxColumn.DataPropertyName = "Course";
+            this.courseDataGridViewTextBoxColumn.HeaderText = "Course";
+            this.courseDataGridViewTextBoxColumn.Name = "courseDataGridViewTextBoxColumn";
+            this.courseDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // curricullumCourseCodeDataGridViewTextBoxColumn
+            // 
+            this.curricullumCourseCodeDataGridViewTextBoxColumn.DataPropertyName = "CurricullumCourseCode";
+            this.curricullumCourseCodeDataGridViewTextBoxColumn.HeaderText = "CurricullumCourseCode";
+            this.curricullumCourseCodeDataGridViewTextBoxColumn.Name = "curricullumCourseCodeDataGridViewTextBoxColumn";
+            this.curricullumCourseCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // curriculumCourseMinimumMaximumDataGridViewTextBoxColumn
+            // 
+            this.curriculumCourseMinimumMaximumDataGridViewTextBoxColumn.DataPropertyName = "CurriculumCourseMinimumMaximum";
+            this.curriculumCourseMinimumMaximumDataGridViewTextBoxColumn.HeaderText = "CurriculumCourseMinimumMaximum";
+            this.curriculumCourseMinimumMaximumDataGridViewTextBoxColumn.Name = "curriculumCourseMinimumMaximumDataGridViewTextBoxColumn";
+            this.curriculumCourseMinimumMaximumDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // curriculumDataGridViewTextBoxColumn2
+            // 
+            this.curriculumDataGridViewTextBoxColumn2.DataPropertyName = "Curriculum";
+            this.curriculumDataGridViewTextBoxColumn2.HeaderText = "Curriculum";
+            this.curriculumDataGridViewTextBoxColumn2.Name = "curriculumDataGridViewTextBoxColumn2";
+            this.curriculumDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // lookupEnrollmentTypeDataGridViewTextBoxColumn
+            // 
+            this.lookupEnrollmentTypeDataGridViewTextBoxColumn.DataPropertyName = "LookupEnrollmentType";
+            this.lookupEnrollmentTypeDataGridViewTextBoxColumn.HeaderText = "LookupEnrollmentType";
+            this.lookupEnrollmentTypeDataGridViewTextBoxColumn.Name = "lookupEnrollmentTypeDataGridViewTextBoxColumn";
+            this.lookupEnrollmentTypeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bindingNavigator2
             // 
@@ -1892,145 +2330,12 @@
             this.curriculumCourseEnrollmentsBindingSource.DataMember = "CurriculumCourseEnrollments";
             this.curriculumCourseEnrollmentsBindingSource.DataSource = this.enrollmentBindingSource;
             // 
-            // colApprenticeshipEnrollmentHistory
-            // 
-            this.colApprenticeshipEnrollmentHistory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colApprenticeshipEnrollmentHistory.HeaderText = "";
-            this.colApprenticeshipEnrollmentHistory.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colApprenticeshipEnrollmentHistory.Name = "colApprenticeshipEnrollmentHistory";
-            this.colApprenticeshipEnrollmentHistory.ReadOnly = true;
-            this.colApprenticeshipEnrollmentHistory.Text = "History";
-            this.colApprenticeshipEnrollmentHistory.UseColumnTextForLinkValue = true;
-            this.colApprenticeshipEnrollmentHistory.Width = 5;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.DataPropertyName = "EnrollmentID";
-            this.Column1.HeaderText = "Enrollment";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 81;
-            // 
-            // colApprenticeshipEnqiry
-            // 
-            this.colApprenticeshipEnqiry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colApprenticeshipEnqiry.HeaderText = "Enquiry";
-            this.colApprenticeshipEnqiry.Name = "colApprenticeshipEnqiry";
-            this.colApprenticeshipEnqiry.ReadOnly = true;
-            this.colApprenticeshipEnqiry.Width = 67;
-            // 
-            // colApprenticeshipCurriculum
-            // 
-            this.colApprenticeshipCurriculum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colApprenticeshipCurriculum.HeaderText = "Curriculum";
-            this.colApprenticeshipCurriculum.Name = "colApprenticeshipCurriculum";
-            this.colApprenticeshipCurriculum.ReadOnly = true;
-            this.colApprenticeshipCurriculum.Width = 81;
-            // 
-            // DateIntitiated
-            // 
-            this.DateIntitiated.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DateIntitiated.DataPropertyName = "DateIntitiated";
-            dataGridViewCellStyle2.Format = "D";
-            dataGridViewCellStyle2.NullValue = null;
-            this.DateIntitiated.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DateIntitiated.HeaderText = "Date";
-            this.DateIntitiated.Name = "DateIntitiated";
-            this.DateIntitiated.ReadOnly = true;
-            this.DateIntitiated.Width = 55;
-            // 
-            // colApprenticeshipSection
-            // 
-            this.colApprenticeshipSection.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colApprenticeshipSection.HeaderText = "Section";
-            this.colApprenticeshipSection.Name = "colApprenticeshipSection";
-            this.colApprenticeshipSection.ReadOnly = true;
-            // 
-            // colApprenticeshipPrerequisteProcessingStatus
-            // 
-            this.colApprenticeshipPrerequisteProcessingStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colApprenticeshipPrerequisteProcessingStatus.HeaderText = "Status";
-            this.colApprenticeshipPrerequisteProcessingStatus.Name = "colApprenticeshipPrerequisteProcessingStatus";
-            this.colApprenticeshipPrerequisteProcessingStatus.ReadOnly = true;
-            this.colApprenticeshipPrerequisteProcessingStatus.Width = 62;
-            // 
-            // colApprenticeshipPreRequisiteScheduleCourseExcemption
-            // 
-            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.DataPropertyName = "CurriculumCourseID";
-            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.HeaderText = "";
-            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.Name = "colApprenticeshipPreRequisiteScheduleCourseExcemption";
-            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.ReadOnly = true;
-            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.Text = "Excempt";
-            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.UseColumnTextForLinkValue = true;
-            this.colApprenticeshipPreRequisiteScheduleCourseExcemption.Width = 19;
-            // 
-            // colApprenticeshipPreRequisiteScheduleCourse
-            // 
-            this.colApprenticeshipPreRequisiteScheduleCourse.HeaderText = "";
-            this.colApprenticeshipPreRequisiteScheduleCourse.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colApprenticeshipPreRequisiteScheduleCourse.Name = "colApprenticeshipPreRequisiteScheduleCourse";
-            this.colApprenticeshipPreRequisiteScheduleCourse.ReadOnly = true;
-            this.colApprenticeshipPreRequisiteScheduleCourse.Text = "Schedule Course";
-            this.colApprenticeshipPreRequisiteScheduleCourse.UseColumnTextForLinkValue = true;
-            // 
-            // colApprenticeshipPreRequisiteCurriculum
-            // 
-            this.colApprenticeshipPreRequisiteCurriculum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colApprenticeshipPreRequisiteCurriculum.HeaderText = "Curriculum";
-            this.colApprenticeshipPreRequisiteCurriculum.Name = "colApprenticeshipPreRequisiteCurriculum";
-            this.colApprenticeshipPreRequisiteCurriculum.ReadOnly = true;
-            this.colApprenticeshipPreRequisiteCurriculum.Width = 81;
-            // 
-            // colApprenticeshipPreRequisiteCourse
-            // 
-            this.colApprenticeshipPreRequisiteCourse.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colApprenticeshipPreRequisiteCourse.HeaderText = "Course";
-            this.colApprenticeshipPreRequisiteCourse.Name = "colApprenticeshipPreRequisiteCourse";
-            this.colApprenticeshipPreRequisiteCourse.ReadOnly = true;
-            this.colApprenticeshipPreRequisiteCourse.Width = 65;
-            // 
-            // colApprenticeshipPreRequisiteIsExemptionStatus
-            // 
-            this.colApprenticeshipPreRequisiteIsExemptionStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colApprenticeshipPreRequisiteIsExemptionStatus.HeaderText = "Status";
-            this.colApprenticeshipPreRequisiteIsExemptionStatus.Name = "colApprenticeshipPreRequisiteIsExemptionStatus";
-            this.colApprenticeshipPreRequisiteIsExemptionStatus.ReadOnly = true;
-            this.colApprenticeshipPreRequisiteIsExemptionStatus.Width = 43;
-            // 
-            // colApprenticeshipEnrollmentAvailableCourse
-            // 
-            this.colApprenticeshipEnrollmentAvailableCourse.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colApprenticeshipEnrollmentAvailableCourse.HeaderText = "Course";
-            this.colApprenticeshipEnrollmentAvailableCourse.Name = "colApprenticeshipEnrollmentAvailableCourse";
-            this.colApprenticeshipEnrollmentAvailableCourse.ReadOnly = true;
-            this.colApprenticeshipEnrollmentAvailableCourse.Width = 65;
-            // 
-            // Cost
-            // 
-            this.Cost.DataPropertyName = "Cost";
-            this.Cost.HeaderText = "Cost";
-            this.Cost.Name = "Cost";
-            this.Cost.ReadOnly = true;
-            // 
-            // Duration
-            // 
-            this.Duration.DataPropertyName = "Duration";
-            this.Duration.HeaderText = "Duration";
-            this.Duration.Name = "Duration";
-            this.Duration.ReadOnly = true;
-            // 
             // frmStudentCourseEnrollmentV3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1231, 739);
             this.Controls.Add(this.tabEnrollmentWorkbench);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmStudentCourseEnrollmentV3";
             this.Text = "Student Course Enrollment";
             this.Load += new System.EventHandler(this.frmStudentCourseEnrollmentV3_Load);
@@ -2311,5 +2616,39 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colApprenticeshipEnrollmentAvailableCourse;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateIntitiatedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enrolmentParentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentExcemptDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lookupEnrollmentProgressStateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apprienticeshipEnrollmentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateIntitiatedDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enrolmentParentIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentExcemptDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lookupEnrollmentProgressStateDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apprienticeshipEnrollmentDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseParentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumIDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentTypeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn durationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curricullumCourseCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseMinimumMaximumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lookupEnrollmentTypeDataGridViewTextBoxColumn;
     }
 }

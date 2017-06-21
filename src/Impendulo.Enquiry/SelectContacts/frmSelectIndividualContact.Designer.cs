@@ -639,6 +639,7 @@
             this.ClientSize = new System.Drawing.Size(764, 351);
             this.Controls.Add(this.panelStudentSearchResults);
             this.Controls.Add(this.gbSearchForStudent);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSelectIndividualContact";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Contact";

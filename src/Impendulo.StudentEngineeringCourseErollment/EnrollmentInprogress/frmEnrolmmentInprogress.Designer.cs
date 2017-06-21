@@ -161,7 +161,6 @@
             this.colApprenticeshipEnrollmentLinkedCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colScheduleStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colScheduleEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.scheduleIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scheduleStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -169,6 +168,7 @@
             this.enrollmentIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumCourseEnrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator9 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel9 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton41 = new System.Windows.Forms.ToolStripButton();
@@ -329,7 +329,7 @@
             // 
             this.splitContainerApprenticeship.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerApprenticeship.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainerApprenticeship.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerApprenticeship.Location = new System.Drawing.Point(20, 60);
             this.splitContainerApprenticeship.Name = "splitContainerApprenticeship";
             this.splitContainerApprenticeship.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -341,7 +341,7 @@
             // 
             this.splitContainerApprenticeship.Panel2.AutoScroll = true;
             this.splitContainerApprenticeship.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainerApprenticeship.Size = new System.Drawing.Size(996, 677);
+            this.splitContainerApprenticeship.Size = new System.Drawing.Size(956, 597);
             this.splitContainerApprenticeship.SplitterDistance = 215;
             this.splitContainerApprenticeship.TabIndex = 2;
             // 
@@ -359,7 +359,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.groupBox9);
-            this.splitContainer3.Size = new System.Drawing.Size(996, 215);
+            this.splitContainer3.Size = new System.Drawing.Size(956, 215);
             this.splitContainer3.SplitterDistance = 499;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -725,7 +725,7 @@
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Location = new System.Drawing.Point(0, 0);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(493, 215);
+            this.groupBox9.Size = new System.Drawing.Size(453, 215);
             this.groupBox9.TabIndex = 13;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Course Prerequisites";
@@ -736,11 +736,11 @@
             // toolStripContainer5.ContentPanel
             // 
             this.toolStripContainer5.ContentPanel.Controls.Add(this.dgvPrerequisiteCourses);
-            this.toolStripContainer5.ContentPanel.Size = new System.Drawing.Size(487, 171);
+            this.toolStripContainer5.ContentPanel.Size = new System.Drawing.Size(447, 171);
             this.toolStripContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer5.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainer5.Name = "toolStripContainer5";
-            this.toolStripContainer5.Size = new System.Drawing.Size(487, 196);
+            this.toolStripContainer5.Size = new System.Drawing.Size(447, 196);
             this.toolStripContainer5.TabIndex = 0;
             this.toolStripContainer5.Text = "toolStripContainer5";
             // 
@@ -780,7 +780,7 @@
             this.dgvPrerequisiteCourses.Name = "dgvPrerequisiteCourses";
             this.dgvPrerequisiteCourses.ReadOnly = true;
             this.dgvPrerequisiteCourses.RowHeadersWidth = 15;
-            this.dgvPrerequisiteCourses.Size = new System.Drawing.Size(487, 171);
+            this.dgvPrerequisiteCourses.Size = new System.Drawing.Size(447, 171);
             this.dgvPrerequisiteCourses.TabIndex = 8;
             this.dgvPrerequisiteCourses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrerequisiteCourses_CellContentClick);
             this.dgvPrerequisiteCourses.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvPrerequisiteCourses_DataBindingComplete);
@@ -965,7 +965,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(487, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(447, 25);
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 0;
             // 
@@ -1070,7 +1070,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.groupBox15);
-            this.splitContainer4.Size = new System.Drawing.Size(996, 458);
+            this.splitContainer4.Size = new System.Drawing.Size(956, 378);
             this.splitContainer4.SplitterDistance = 463;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -1089,7 +1089,7 @@
             // splitContainer12.Panel2
             // 
             this.splitContainer12.Panel2.Controls.Add(this.groupBox6);
-            this.splitContainer12.Size = new System.Drawing.Size(463, 458);
+            this.splitContainer12.Size = new System.Drawing.Size(463, 378);
             this.splitContainer12.SplitterDistance = 127;
             this.splitContainer12.TabIndex = 13;
             // 
@@ -1178,7 +1178,7 @@
             this.groupBox6.ForeColor = System.Drawing.Color.Black;
             this.groupBox6.Location = new System.Drawing.Point(0, 0);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(463, 327);
+            this.groupBox6.Size = new System.Drawing.Size(463, 247);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Documentation";
@@ -1198,7 +1198,7 @@
             // splitContainer13.Panel2
             // 
             this.splitContainer13.Panel2.Controls.Add(this.toolStripContainer11);
-            this.splitContainer13.Size = new System.Drawing.Size(457, 308);
+            this.splitContainer13.Size = new System.Drawing.Size(457, 228);
             this.splitContainer13.SplitterDistance = 49;
             this.splitContainer13.TabIndex = 1;
             // 
@@ -1228,11 +1228,11 @@
             // toolStripContainer11.ContentPanel
             // 
             this.toolStripContainer11.ContentPanel.Controls.Add(this.dgvEnollmentFiles);
-            this.toolStripContainer11.ContentPanel.Size = new System.Drawing.Size(457, 230);
+            this.toolStripContainer11.ContentPanel.Size = new System.Drawing.Size(457, 150);
             this.toolStripContainer11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer11.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer11.Name = "toolStripContainer11";
-            this.toolStripContainer11.Size = new System.Drawing.Size(457, 255);
+            this.toolStripContainer11.Size = new System.Drawing.Size(457, 175);
             this.toolStripContainer11.TabIndex = 0;
             this.toolStripContainer11.Text = "toolStripContainer11";
             // 
@@ -1261,7 +1261,7 @@
             this.dgvEnollmentFiles.Location = new System.Drawing.Point(0, 0);
             this.dgvEnollmentFiles.Name = "dgvEnollmentFiles";
             this.dgvEnollmentFiles.ReadOnly = true;
-            this.dgvEnollmentFiles.Size = new System.Drawing.Size(457, 230);
+            this.dgvEnollmentFiles.Size = new System.Drawing.Size(457, 150);
             this.dgvEnollmentFiles.TabIndex = 0;
             this.dgvEnollmentFiles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnollmentFiles_CellContentClick);
             this.dgvEnollmentFiles.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvEnollmentFiles_DataBindingComplete);
@@ -1469,7 +1469,7 @@
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox15.Location = new System.Drawing.Point(0, 0);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(529, 458);
+            this.groupBox15.Size = new System.Drawing.Size(489, 378);
             this.groupBox15.TabIndex = 5;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Selected Courses";
@@ -1489,7 +1489,7 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.groupBox10);
-            this.splitContainer5.Size = new System.Drawing.Size(523, 439);
+            this.splitContainer5.Size = new System.Drawing.Size(483, 359);
             this.splitContainer5.SplitterDistance = 44;
             this.splitContainer5.TabIndex = 1;
             // 
@@ -1499,7 +1499,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(523, 44);
+            this.panel1.Size = new System.Drawing.Size(483, 44);
             this.panel1.TabIndex = 1;
             // 
             // groupBox8
@@ -1510,7 +1510,7 @@
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(0, 0);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(523, 44);
+            this.groupBox8.Size = new System.Drawing.Size(483, 44);
             this.groupBox8.TabIndex = 0;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Options";
@@ -1550,7 +1550,7 @@
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox10.Location = new System.Drawing.Point(0, 0);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(523, 391);
+            this.groupBox10.Size = new System.Drawing.Size(483, 311);
             this.groupBox10.TabIndex = 0;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Course Selection And Schedule";
@@ -1568,7 +1568,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(517, 372);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(477, 292);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // toolStripContainer10
@@ -1577,11 +1577,11 @@
             // toolStripContainer10.ContentPanel
             // 
             this.toolStripContainer10.ContentPanel.Controls.Add(this.dgvCourseSschedule);
-            this.toolStripContainer10.ContentPanel.Size = new System.Drawing.Size(243, 341);
+            this.toolStripContainer10.ContentPanel.Size = new System.Drawing.Size(223, 261);
             this.toolStripContainer10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer10.Location = new System.Drawing.Point(271, 3);
+            this.toolStripContainer10.Location = new System.Drawing.Point(251, 3);
             this.toolStripContainer10.Name = "toolStripContainer10";
-            this.toolStripContainer10.Size = new System.Drawing.Size(243, 366);
+            this.toolStripContainer10.Size = new System.Drawing.Size(223, 286);
             this.toolStripContainer10.TabIndex = 7;
             this.toolStripContainer10.Text = "toolStripContainer10";
             // 
@@ -1612,7 +1612,7 @@
             this.dgvCourseSschedule.Name = "dgvCourseSschedule";
             this.dgvCourseSschedule.ReadOnly = true;
             this.dgvCourseSschedule.RowHeadersWidth = 15;
-            this.dgvCourseSschedule.Size = new System.Drawing.Size(243, 341);
+            this.dgvCourseSschedule.Size = new System.Drawing.Size(223, 261);
             this.dgvCourseSschedule.TabIndex = 1;
             this.dgvCourseSschedule.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvCourseSschedule_CellBeginEdit);
             this.dgvCourseSschedule.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourseSschedule_CellClick);
@@ -1636,10 +1636,6 @@
             this.colScheduleEndDate.HeaderText = "End Date";
             this.colScheduleEndDate.Name = "colScheduleEndDate";
             this.colScheduleEndDate.ReadOnly = true;
-            // 
-            // scheduleBindingSource
-            // 
-            this.scheduleBindingSource.DataSource = typeof(Impendulo.Data.Models.Schedule);
             // 
             // scheduleIDDataGridViewTextBoxColumn
             // 
@@ -1690,6 +1686,10 @@
             this.enrollmentDataGridViewTextBoxColumn.Name = "enrollmentDataGridViewTextBoxColumn";
             this.enrollmentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // scheduleBindingSource
+            // 
+            this.scheduleBindingSource.DataSource = typeof(Impendulo.Data.Models.Schedule);
+            // 
             // bindingNavigator9
             // 
             this.bindingNavigator9.AddNewItem = null;
@@ -1714,7 +1714,7 @@
             this.bindingNavigator9.MovePreviousItem = this.toolStripButton42;
             this.bindingNavigator9.Name = "bindingNavigator9";
             this.bindingNavigator9.PositionItem = this.toolStripTextBox10;
-            this.bindingNavigator9.Size = new System.Drawing.Size(243, 25);
+            this.bindingNavigator9.Size = new System.Drawing.Size(223, 25);
             this.bindingNavigator9.Stretch = true;
             this.bindingNavigator9.TabIndex = 0;
             // 
@@ -1791,11 +1791,11 @@
             // toolStripContainer2.ContentPanel
             // 
             this.toolStripContainer2.ContentPanel.Controls.Add(this.dgvEnrollmenLinkedCurriculumCourses);
-            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(242, 341);
+            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(222, 261);
             this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer2.Location = new System.Drawing.Point(3, 3);
             this.toolStripContainer2.Name = "toolStripContainer2";
-            this.toolStripContainer2.Size = new System.Drawing.Size(242, 366);
+            this.toolStripContainer2.Size = new System.Drawing.Size(222, 286);
             this.toolStripContainer2.TabIndex = 5;
             this.toolStripContainer2.Text = "toolStripContainer2";
             // 
@@ -1831,7 +1831,7 @@
             this.dgvEnrollmenLinkedCurriculumCourses.Name = "dgvEnrollmenLinkedCurriculumCourses";
             this.dgvEnrollmenLinkedCurriculumCourses.ReadOnly = true;
             this.dgvEnrollmenLinkedCurriculumCourses.RowHeadersWidth = 15;
-            this.dgvEnrollmenLinkedCurriculumCourses.Size = new System.Drawing.Size(242, 341);
+            this.dgvEnrollmenLinkedCurriculumCourses.Size = new System.Drawing.Size(222, 261);
             this.dgvEnrollmenLinkedCurriculumCourses.TabIndex = 1;
             this.dgvEnrollmenLinkedCurriculumCourses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnrollmenLinkedCurriculumCourses_CellContentClick);
             this.dgvEnrollmenLinkedCurriculumCourses.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvEnrollmenLinkedCurriculumCourses_DataBindingComplete);
@@ -1971,7 +1971,7 @@
             this.bindingNavigator2.MovePreviousItem = this.toolStripButton4;
             this.bindingNavigator2.Name = "bindingNavigator2";
             this.bindingNavigator2.PositionItem = this.toolStripTextBox1;
-            this.bindingNavigator2.Size = new System.Drawing.Size(242, 25);
+            this.bindingNavigator2.Size = new System.Drawing.Size(222, 25);
             this.bindingNavigator2.Stretch = true;
             this.bindingNavigator2.TabIndex = 0;
             // 
@@ -2056,11 +2056,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 677);
             this.Controls.Add(this.splitContainerApprenticeship);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmEnrolmmentInprogress";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Enrolmment Inprogress";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmEnrolmmentInprogress_Load);
             this.splitContainerApprenticeship.Panel1.ResumeLayout(false);
             this.splitContainerApprenticeship.Panel2.ResumeLayout(false);

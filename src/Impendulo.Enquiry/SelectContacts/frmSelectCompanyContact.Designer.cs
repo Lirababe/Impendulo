@@ -36,6 +36,23 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.dgvCompanyContacts = new System.Windows.Forms.DataGridView();
+            this.colContactTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colContactFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IndividualFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IndividualLastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualSecondNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualLastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowVersionDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.assessorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facilitatorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nextOfKinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.systemAdministratorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.individualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.txtContactsFilterCriteria = new System.Windows.Forms.ToolStripTextBox();
@@ -78,23 +95,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAddCompany = new System.Windows.Forms.Button();
             this.btnSelectCompany = new System.Windows.Forms.Button();
-            this.colContactTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colContactFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IndividualFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IndividualLastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.individualIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.individualFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.individualSecondNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.individualLastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowVersionDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.assessorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.facilitatorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lookupTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nextOfKinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.systemAdministratorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbContacts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
@@ -221,6 +221,143 @@
             this.dgvCompanyContacts.Size = new System.Drawing.Size(388, 178);
             this.dgvCompanyContacts.TabIndex = 0;
             this.dgvCompanyContacts.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvCompanyContacts_DataBindingComplete);
+            // 
+            // colContactTitle
+            // 
+            this.colContactTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colContactTitle.HeaderText = "Title";
+            this.colContactTitle.Name = "colContactTitle";
+            this.colContactTitle.ReadOnly = true;
+            this.colContactTitle.Width = 52;
+            // 
+            // colContactFullName
+            // 
+            this.colContactFullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colContactFullName.HeaderText = "Full Name";
+            this.colContactFullName.Name = "colContactFullName";
+            this.colContactFullName.ReadOnly = true;
+            this.colContactFullName.Width = 79;
+            // 
+            // IndividualFirstName
+            // 
+            this.IndividualFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.IndividualFirstName.DataPropertyName = "IndividualFirstName";
+            this.IndividualFirstName.HeaderText = "First Name";
+            this.IndividualFirstName.Name = "IndividualFirstName";
+            this.IndividualFirstName.ReadOnly = true;
+            this.IndividualFirstName.Width = 82;
+            // 
+            // IndividualLastname
+            // 
+            this.IndividualLastname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.IndividualLastname.DataPropertyName = "IndividualLastname";
+            this.IndividualLastname.HeaderText = "Last Name";
+            this.IndividualLastname.Name = "IndividualLastname";
+            this.IndividualLastname.ReadOnly = true;
+            // 
+            // individualIDDataGridViewTextBoxColumn
+            // 
+            this.individualIDDataGridViewTextBoxColumn.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn.Name = "individualIDDataGridViewTextBoxColumn";
+            this.individualIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.individualIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // titleIDDataGridViewTextBoxColumn
+            // 
+            this.titleIDDataGridViewTextBoxColumn.DataPropertyName = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn.HeaderText = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn.Name = "titleIDDataGridViewTextBoxColumn";
+            this.titleIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.titleIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // individualFirstNameDataGridViewTextBoxColumn
+            // 
+            this.individualFirstNameDataGridViewTextBoxColumn.DataPropertyName = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn.HeaderText = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn.Name = "individualFirstNameDataGridViewTextBoxColumn";
+            this.individualFirstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.individualFirstNameDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // individualSecondNameDataGridViewTextBoxColumn
+            // 
+            this.individualSecondNameDataGridViewTextBoxColumn.DataPropertyName = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn.HeaderText = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn.Name = "individualSecondNameDataGridViewTextBoxColumn";
+            this.individualSecondNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.individualSecondNameDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // individualLastnameDataGridViewTextBoxColumn
+            // 
+            this.individualLastnameDataGridViewTextBoxColumn.DataPropertyName = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn.HeaderText = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn.Name = "individualLastnameDataGridViewTextBoxColumn";
+            this.individualLastnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.individualLastnameDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // rowVersionDataGridViewImageColumn
+            // 
+            this.rowVersionDataGridViewImageColumn.DataPropertyName = "RowVersion";
+            this.rowVersionDataGridViewImageColumn.HeaderText = "RowVersion";
+            this.rowVersionDataGridViewImageColumn.Name = "rowVersionDataGridViewImageColumn";
+            this.rowVersionDataGridViewImageColumn.ReadOnly = true;
+            this.rowVersionDataGridViewImageColumn.Visible = false;
+            // 
+            // assessorDataGridViewTextBoxColumn
+            // 
+            this.assessorDataGridViewTextBoxColumn.DataPropertyName = "Assessor";
+            this.assessorDataGridViewTextBoxColumn.HeaderText = "Assessor";
+            this.assessorDataGridViewTextBoxColumn.Name = "assessorDataGridViewTextBoxColumn";
+            this.assessorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.assessorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // employeeDataGridViewTextBoxColumn
+            // 
+            this.employeeDataGridViewTextBoxColumn.DataPropertyName = "Employee";
+            this.employeeDataGridViewTextBoxColumn.HeaderText = "Employee";
+            this.employeeDataGridViewTextBoxColumn.Name = "employeeDataGridViewTextBoxColumn";
+            this.employeeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.employeeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // facilitatorDataGridViewTextBoxColumn
+            // 
+            this.facilitatorDataGridViewTextBoxColumn.DataPropertyName = "Facilitator";
+            this.facilitatorDataGridViewTextBoxColumn.HeaderText = "Facilitator";
+            this.facilitatorDataGridViewTextBoxColumn.Name = "facilitatorDataGridViewTextBoxColumn";
+            this.facilitatorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.facilitatorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // lookupTitleDataGridViewTextBoxColumn
+            // 
+            this.lookupTitleDataGridViewTextBoxColumn.DataPropertyName = "LookupTitle";
+            this.lookupTitleDataGridViewTextBoxColumn.HeaderText = "LookupTitle";
+            this.lookupTitleDataGridViewTextBoxColumn.Name = "lookupTitleDataGridViewTextBoxColumn";
+            this.lookupTitleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lookupTitleDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nextOfKinDataGridViewTextBoxColumn
+            // 
+            this.nextOfKinDataGridViewTextBoxColumn.DataPropertyName = "NextOfKin";
+            this.nextOfKinDataGridViewTextBoxColumn.HeaderText = "NextOfKin";
+            this.nextOfKinDataGridViewTextBoxColumn.Name = "nextOfKinDataGridViewTextBoxColumn";
+            this.nextOfKinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nextOfKinDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // studentDataGridViewTextBoxColumn
+            // 
+            this.studentDataGridViewTextBoxColumn.DataPropertyName = "Student";
+            this.studentDataGridViewTextBoxColumn.HeaderText = "Student";
+            this.studentDataGridViewTextBoxColumn.Name = "studentDataGridViewTextBoxColumn";
+            this.studentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.studentDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // systemAdministratorDataGridViewTextBoxColumn
+            // 
+            this.systemAdministratorDataGridViewTextBoxColumn.DataPropertyName = "SystemAdministrator";
+            this.systemAdministratorDataGridViewTextBoxColumn.HeaderText = "SystemAdministrator";
+            this.systemAdministratorDataGridViewTextBoxColumn.Name = "systemAdministratorDataGridViewTextBoxColumn";
+            this.systemAdministratorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.systemAdministratorDataGridViewTextBoxColumn.Visible = false;
             // 
             // individualBindingSource
             // 
@@ -649,143 +786,6 @@
             this.btnSelectCompany.UseVisualStyleBackColor = true;
             this.btnSelectCompany.Click += new System.EventHandler(this.btnSelectCompany_Click);
             // 
-            // colContactTitle
-            // 
-            this.colContactTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colContactTitle.HeaderText = "Title";
-            this.colContactTitle.Name = "colContactTitle";
-            this.colContactTitle.ReadOnly = true;
-            this.colContactTitle.Width = 52;
-            // 
-            // colContactFullName
-            // 
-            this.colContactFullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colContactFullName.HeaderText = "Full Name";
-            this.colContactFullName.Name = "colContactFullName";
-            this.colContactFullName.ReadOnly = true;
-            this.colContactFullName.Width = 79;
-            // 
-            // IndividualFirstName
-            // 
-            this.IndividualFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.IndividualFirstName.DataPropertyName = "IndividualFirstName";
-            this.IndividualFirstName.HeaderText = "First Name";
-            this.IndividualFirstName.Name = "IndividualFirstName";
-            this.IndividualFirstName.ReadOnly = true;
-            this.IndividualFirstName.Width = 82;
-            // 
-            // IndividualLastname
-            // 
-            this.IndividualLastname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.IndividualLastname.DataPropertyName = "IndividualLastname";
-            this.IndividualLastname.HeaderText = "Last Name";
-            this.IndividualLastname.Name = "IndividualLastname";
-            this.IndividualLastname.ReadOnly = true;
-            // 
-            // individualIDDataGridViewTextBoxColumn
-            // 
-            this.individualIDDataGridViewTextBoxColumn.DataPropertyName = "IndividualID";
-            this.individualIDDataGridViewTextBoxColumn.HeaderText = "IndividualID";
-            this.individualIDDataGridViewTextBoxColumn.Name = "individualIDDataGridViewTextBoxColumn";
-            this.individualIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.individualIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // titleIDDataGridViewTextBoxColumn
-            // 
-            this.titleIDDataGridViewTextBoxColumn.DataPropertyName = "TitleID";
-            this.titleIDDataGridViewTextBoxColumn.HeaderText = "TitleID";
-            this.titleIDDataGridViewTextBoxColumn.Name = "titleIDDataGridViewTextBoxColumn";
-            this.titleIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.titleIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // individualFirstNameDataGridViewTextBoxColumn
-            // 
-            this.individualFirstNameDataGridViewTextBoxColumn.DataPropertyName = "IndividualFirstName";
-            this.individualFirstNameDataGridViewTextBoxColumn.HeaderText = "IndividualFirstName";
-            this.individualFirstNameDataGridViewTextBoxColumn.Name = "individualFirstNameDataGridViewTextBoxColumn";
-            this.individualFirstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.individualFirstNameDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // individualSecondNameDataGridViewTextBoxColumn
-            // 
-            this.individualSecondNameDataGridViewTextBoxColumn.DataPropertyName = "IndividualSecondName";
-            this.individualSecondNameDataGridViewTextBoxColumn.HeaderText = "IndividualSecondName";
-            this.individualSecondNameDataGridViewTextBoxColumn.Name = "individualSecondNameDataGridViewTextBoxColumn";
-            this.individualSecondNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.individualSecondNameDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // individualLastnameDataGridViewTextBoxColumn
-            // 
-            this.individualLastnameDataGridViewTextBoxColumn.DataPropertyName = "IndividualLastname";
-            this.individualLastnameDataGridViewTextBoxColumn.HeaderText = "IndividualLastname";
-            this.individualLastnameDataGridViewTextBoxColumn.Name = "individualLastnameDataGridViewTextBoxColumn";
-            this.individualLastnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.individualLastnameDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // rowVersionDataGridViewImageColumn
-            // 
-            this.rowVersionDataGridViewImageColumn.DataPropertyName = "RowVersion";
-            this.rowVersionDataGridViewImageColumn.HeaderText = "RowVersion";
-            this.rowVersionDataGridViewImageColumn.Name = "rowVersionDataGridViewImageColumn";
-            this.rowVersionDataGridViewImageColumn.ReadOnly = true;
-            this.rowVersionDataGridViewImageColumn.Visible = false;
-            // 
-            // assessorDataGridViewTextBoxColumn
-            // 
-            this.assessorDataGridViewTextBoxColumn.DataPropertyName = "Assessor";
-            this.assessorDataGridViewTextBoxColumn.HeaderText = "Assessor";
-            this.assessorDataGridViewTextBoxColumn.Name = "assessorDataGridViewTextBoxColumn";
-            this.assessorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.assessorDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // employeeDataGridViewTextBoxColumn
-            // 
-            this.employeeDataGridViewTextBoxColumn.DataPropertyName = "Employee";
-            this.employeeDataGridViewTextBoxColumn.HeaderText = "Employee";
-            this.employeeDataGridViewTextBoxColumn.Name = "employeeDataGridViewTextBoxColumn";
-            this.employeeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.employeeDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // facilitatorDataGridViewTextBoxColumn
-            // 
-            this.facilitatorDataGridViewTextBoxColumn.DataPropertyName = "Facilitator";
-            this.facilitatorDataGridViewTextBoxColumn.HeaderText = "Facilitator";
-            this.facilitatorDataGridViewTextBoxColumn.Name = "facilitatorDataGridViewTextBoxColumn";
-            this.facilitatorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.facilitatorDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // lookupTitleDataGridViewTextBoxColumn
-            // 
-            this.lookupTitleDataGridViewTextBoxColumn.DataPropertyName = "LookupTitle";
-            this.lookupTitleDataGridViewTextBoxColumn.HeaderText = "LookupTitle";
-            this.lookupTitleDataGridViewTextBoxColumn.Name = "lookupTitleDataGridViewTextBoxColumn";
-            this.lookupTitleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lookupTitleDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nextOfKinDataGridViewTextBoxColumn
-            // 
-            this.nextOfKinDataGridViewTextBoxColumn.DataPropertyName = "NextOfKin";
-            this.nextOfKinDataGridViewTextBoxColumn.HeaderText = "NextOfKin";
-            this.nextOfKinDataGridViewTextBoxColumn.Name = "nextOfKinDataGridViewTextBoxColumn";
-            this.nextOfKinDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nextOfKinDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // studentDataGridViewTextBoxColumn
-            // 
-            this.studentDataGridViewTextBoxColumn.DataPropertyName = "Student";
-            this.studentDataGridViewTextBoxColumn.HeaderText = "Student";
-            this.studentDataGridViewTextBoxColumn.Name = "studentDataGridViewTextBoxColumn";
-            this.studentDataGridViewTextBoxColumn.ReadOnly = true;
-            this.studentDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // systemAdministratorDataGridViewTextBoxColumn
-            // 
-            this.systemAdministratorDataGridViewTextBoxColumn.DataPropertyName = "SystemAdministrator";
-            this.systemAdministratorDataGridViewTextBoxColumn.HeaderText = "SystemAdministrator";
-            this.systemAdministratorDataGridViewTextBoxColumn.Name = "systemAdministratorDataGridViewTextBoxColumn";
-            this.systemAdministratorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.systemAdministratorDataGridViewTextBoxColumn.Visible = false;
-            // 
             // frmSelectCompanyContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -797,7 +797,7 @@
             this.Controls.Add(this.gbContacts);
             this.Controls.Add(this.txtCompanyName);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSelectCompanyContact";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
