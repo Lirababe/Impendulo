@@ -85,7 +85,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                     DataSourceList = new List<CurriculumEnquiry>();
                     foreach (CurriculumEnquiry CE in x.CurriculumEnquiries)
                     {
-                        if (CE.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed)
+                        if (CE.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed && DetermineIfPartOfDepartment(CE.Curriculum.DepartmentID))
                         {
                             DataSourceList.Add(CE);
                         }
@@ -95,7 +95,11 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                     {
                         x.CurriculumEnquiries.Add(CE);
                     }
-
+                    //FilteredListWithNoCurriculumEnquiryItemsListed = (from a in FilteredListWithNoCurriculumEnquiryItemsListed
+                    //                                                  orderby a.EnquiryID descending
+                    //                                                  select a).ToList<Data.Models.Enquiry>();
+                    //NewEnquiryTab_NewEnquiryBindingSource.DataSource = FilteredListWithNoCurriculumEnquiryItemsListed;
+                    //
                     enquiryInprogressBindingSource.DataSource = x;
                 }
 
@@ -191,6 +195,20 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
         #endregion
 
         #region Form Logic Control Flow Methods
+        private Boolean DetermineIfPartOfDepartment(int DepartmentIdToCheck)
+        {
+            Boolean IsPart = false;
+            foreach (LookupDepartment EmployDep in CurrentEmployeeLoggedIn.LookupDepartments)
+            {
+                if (EmployDep.DepartmentID == DepartmentIdToCheck)
+                {
+                    IsPart = true;
+                }
+            }
+
+            return IsPart;
+
+        }
         private void disableFormControlsIfNoEnquiryLoaded()
         {
             btnViewProgressInProgressSections.Visible = false;

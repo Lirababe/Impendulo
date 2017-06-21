@@ -57,7 +57,7 @@ namespace Impendulo.Common.Enum
     }
     public enum EnumEquiryOrigions : int
     {
-        Internet_Advert = 1, Facebook = 2, Referal = 3, Twitter = 4, Existing_Customer = 5, Flyer_Advert = 6, Consultant_Referal = 7
+        Internet_Advert = 1, Facebook = 2, Referal = 3, Twitter = 4, Existing_Customer = 5, Flyer_Advert = 6, Consultant_Referal = 7, UnKnown = 8
     }
     public enum EnumEthnicities : int
     {

@@ -156,11 +156,13 @@
         <AssociationConnector Association="MCDModel.FK_ApprenticeshipEnrollmentDocuments_Files" />
         <AssociationConnector Association="MCDModel.EmailMessageRepositoryAttachments" />
         <AssociationConnector Association="MCDModel.MessageTemplateAttachments" />
-        <EntityTypeShape EntityType="MCDModel.LookupEquiryOrigion" Width="1.5" PointX="25" PointY="27.875" />
+        <EntityTypeShape EntityType="MCDModel.LookupEquiryOrigion" Width="2.375" PointX="25" PointY="27.875" />
         <AssociationConnector Association="MCDModel.EquiryOrigions" />
         <EntityTypeShape EntityType="MCDModel.Schedule" Width="2.375" PointX="17.375" PointY="12" />
         <AssociationConnector Association="MCDModel.FK_Schedules_CurriculumCourseEnrollments" />
         <AssociationConnector Association="MCDModel.FK_Schedules_Enrollments" />
+        <EntityTypeShape EntityType="MCDModel.C__RefactorLog" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="MCDModel.FK_Enquiry_LookupEnquiryStatuses" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
