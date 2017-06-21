@@ -1,7 +1,6 @@
 ﻿using Impendulo.Common.EmailSending;
 using Impendulo.Common.Enum;
 using Impendulo.Data.Models;
-using Impendulo.Email.Development.AddEmailAddressManual;
 using Impendulo.Email.Select_Contacts;
 using MetroFramework;
 using MetroFramework.Forms;
@@ -47,12 +46,6 @@ namespace Impendulo.Email.Email_Message_Version_2
         {
             get { return _SelectedBccAddresses; }
             set { _SelectedBccAddresses = value; }
-        }
-        private List<EmailAddress> _SelectedManualAddresses = new List<EmailAddress>();
-        private List<EmailAddress> SelectedManualAddress
-        {
-            get { return _SelectedManualAddresses; }
-            set { _SelectedManualAddresses = value; }
         }
 
         public Boolean IsSent { get; set; }
@@ -429,16 +422,7 @@ namespace Impendulo.Email.Email_Message_Version_2
 
         private void btnManualAddedEmailAddess_Click(object sender, EventArgs e)
         {
-            using (frmAddEmailAddressManually frm = new frmAddEmailAddressManually())
-            {
-                frm.CurrentEmailAddress = SelectedManualAddress;
-                frm.ShowDialog();
-            }
-            //string returnValue = "";
-            //if (MetroMessageBox.Show(this, "Enter The Email Address", "Email Address", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, ref returnValue) == System.Windows.Forms.DialogResult.OK)
-            //{
-            //    //metroLabel21.Text = "You entered: " + returnValue;
-            //}
+
         }
 
         private void btnAddAddressFromOutlookContacts_Click(object sender, EventArgs e)
