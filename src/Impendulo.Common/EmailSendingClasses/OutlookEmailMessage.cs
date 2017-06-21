@@ -1,84 +1,113 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Windows.Forms;
 using Outlook = Microsoft.Office.Interop.Outlook;
 
 namespace Impendulo.Common.EmailSending
 {
     public class OutlookEmailMessage : EmailMessage, IDisposable
     {
-        private Outlook.Application oApp = new Outlook.Application();
+        private Outlook.Application oApp;//= new Outlook.Application();
         private Outlook.MailItem eMail;
 
         public OutlookEmailMessage()
         {
-            eMail = (Outlook.MailItem)this.oApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olMailItem);
+            try
+            {
+                oApp = (Outlook.Application)Marshal.GetActiveObject("Outlook.Application");
+            }
+            catch
+            {
+                System.Diagnostics.Process.Start("OUTLOOK.EXE");
+                //oApp = (Outlook.Application)Marshal.GetActiveObject("Outlook.Application");
+                // open your new instance
+            }
+            
         }
-        public OutlookEmailMessage(string strFromAddress)
+        public OutlookEmailMessage(string strFromAddress) : this()
         {
-            eMail = (Outlook.MailItem)this.oApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olMailItem);
+            // eMail = (Outlook.MailItem)this.oApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olMailItem);
             this.addFromAddress(strFromAddress);
         }
-        public OutlookEmailMessage(string fromAddress, enumMessagePriority MessagePriority)
+        public OutlookEmailMessage(string fromAddress, enumMessagePriority MessagePriority) : this()
         {
-            eMail = (Outlook.MailItem)this.oApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olMailItem);
+            // eMail = (Outlook.MailItem)this.oApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olMailItem);
             this.addFromAddress(fromAddress);
             this.MessagePriority = MessagePriority;
         }
 
         public override void SendMessage()
         {
-            Outlook.MailItem mail = oApp.CreateItem(Outlook.OlItemType.olMailItem) as Outlook.MailItem;
             try
             {
-                mail.Subject = this.Subject;
-                
-                //mail.Body = this.MessageBody;
-                // Add recipient using display name, alias, or smtp address
-                AddRecipients(mail);
-                //Add All Attachments to the Message
-                foreach (IAttachment attachment in this.Attachments)
+                oApp = (Outlook.Application)Marshal.GetActiveObject("Outlook.Application");
+               // eMail = (Outlook.MailItem)this.oApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olMailItem);
+                Outlook.MailItem mail = oApp.CreateItem(Outlook.OlItemType.olMailItem) as Outlook.MailItem;
+                try
                 {
-                    Outlook.Attachment oAttach =
-                    mail.Attachments.Add(attachment.AttachemntPath, Outlook.OlAttachmentType.olByValue, Type.Missing, Type.Missing);
-                    oAttach = null;
+                    mail.Subject = this.Subject;
+
+                    //mail.Body = this.MessageBody;
+                    // Add recipient using display name, alias, or smtp address
+                    AddRecipients(mail);
+                    //Add All Attachments to the Message
+                    foreach (IAttachment attachment in this.Attachments)
+                    {
+                        Outlook.Attachment oAttach =
+                        mail.Attachments.Add(attachment.AttachemntPath, Outlook.OlAttachmentType.olByValue, Type.Missing, Type.Missing);
+                        oAttach = null;
+                    }
+                    //If There Are Recipient to send the message to then send the message.
+                    if (mail.Recipients.Count > 0)
+                    {
+                        Outlook.Inspector myInspector = mail.GetInspector;
+                        String text;
+                        text = this.MessageBody + mail.HTMLBody;
+                        mail.HTMLBody = text;
+
+                        if (this.MessagePriority == enumMessagePriority.Low)
+                        {
+                            mail.Importance = Microsoft.Office.Interop.Outlook.OlImportance.olImportanceLow;
+                        }
+                        if (this.MessagePriority == enumMessagePriority.Medium)
+                        {
+                            mail.Importance = Microsoft.Office.Interop.Outlook.OlImportance.olImportanceNormal;
+                        }
+                        if (this.MessagePriority == enumMessagePriority.High)
+                        {
+                            mail.Importance = Microsoft.Office.Interop.Outlook.OlImportance.olImportanceHigh;
+                        }
+
+                        mail.Save();
+                        mail.Send();
+                    }
                 }
-                //If There Are Recipient to send the message to then send the message.
-                if (mail.Recipients.Count > 0)
+                catch (Exception ex)
                 {
-                    Outlook.Inspector myInspector = mail.GetInspector;
-                    String text;
-                    text = this.MessageBody + mail.HTMLBody;
-                    mail.HTMLBody = text;
-
-                    if (this.MessagePriority == enumMessagePriority.Low)
+                    DialogResult Rtn = System.Windows.Forms.MessageBox.Show("Error Send email Via Oultook Open Outlook First and try again - Error : " + ex.Message, "Outlook Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning);
+                    if (Rtn == DialogResult.Retry)
                     {
-                        mail.Importance = Microsoft.Office.Interop.Outlook.OlImportance.olImportanceLow;
+                        this.SendMessage();
                     }
-                    if (this.MessagePriority == enumMessagePriority.Medium)
-                    {
-                        mail.Importance = Microsoft.Office.Interop.Outlook.OlImportance.olImportanceNormal;
-                    }
-                    if (this.MessagePriority == enumMessagePriority.High)
-                    {
-                        mail.Importance = Microsoft.Office.Interop.Outlook.OlImportance.olImportanceHigh;
-                    }
-
-                    mail.Save();
-                    mail.Send();
+                }
+                finally
+                {
+                    //Explicitly release objects.
+                    mail = null;
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                System.Windows.Forms.MessageBox.Show("Error Send email Via Oultook - Error : " + ex.Message);
+                // System.Diagnostics.Process.Start("OUTLOOK.EXE");
+                //oApp = (Outlook.Application)Marshal.GetActiveObject("Outlook.Application");
+                // open your new instance
             }
-            finally
-            {
-                //Explicitly release objects.
-                mail = null;
-            }
+
+
         }
 
 
@@ -109,7 +138,7 @@ namespace Impendulo.Common.EmailSending
                 {
                     recipientTo = recipients.Add((((EmailAddress)address).Address));
                     recipientTo.Type = (int)Outlook.OlMailRecipientType.olTo;
-                    
+
                 }
                 foreach (IEmailAddress address in this.CcAddresses)
                 {

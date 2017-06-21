@@ -541,9 +541,7 @@
             // 
             this.toolTip1.AutoPopDelay = 5000;
             this.toolTip1.InitialDelay = 500;
-            this.toolTip1.IsBalloon = true;
             this.toolTip1.ReshowDelay = 250;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // frmEmailMessageV2
             // 

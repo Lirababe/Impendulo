@@ -18,6 +18,8 @@ namespace Impendulo.Email.Select_Contacts
 {
     public partial class frmSelectEmailContsV2 : MetroFramework.Forms.MetroForm
     {
+        public Boolean CancelClicked = false;
+
         private List<Individual> _AvailableContacts = new List<Individual>();
         public List<Individual> AvailableContacts { get { return _AvailableContacts; } set { _AvailableContacts = value; } }
 
@@ -53,7 +55,7 @@ namespace Impendulo.Email.Select_Contacts
             };
 
             //remove the individuals that are already in the selected list.
-           
+
 
 
         }
@@ -68,31 +70,35 @@ namespace Impendulo.Email.Select_Contacts
             this.refreshAvailableContacts();
             this.refreshSelectedContacts();
         }
-        public void LoadExistingContacts(List<IEmailAddress> x)
+        public void LoadExistingContacts(List<Individual> x)
         {
-            using (var Dbconnection = new MCDEntities())
+            foreach (Individual y in x)
             {
-                foreach (EmailAddress y in x)
-                {
-                    foreach (Individual z in (from a in Dbconnection.Individuals
-                                              from b in a.ContactDetails
-                                              where b.ContactTypeID == (int)EnumContactTypes.Email_Address
-                                              && b.ContactDetailValue.Contains(y.Address)
-                                              select a).Include("ContactDetails")
-                                    .Include("Companies")
-                                    .Include("Employee")
-                                    .Include("Assessor")
-                                    .Include("Facilitator")
-                                    .Include("Student")
-                                    .Include("Companies.Individuals.ContactDetails")
-                                    .ToList<Individual>())
-                    {
-                        SelectedContacts.Add(z);
-                    }
-                    SelectedContacts = (from a in SelectedContacts
-                                        select a).Distinct<Individual>().ToList<Individual>();
-                }
-            };
+                SelectedContacts.Add(y);
+            }
+            //using (var Dbconnection = new MCDEntities())
+            //{
+            //    foreach (EmailAddress y in x)
+            //    {
+            //        foreach (Individual z in (from a in Dbconnection.Individuals
+            //                                  from b in a.ContactDetails
+            //                                  where b.ContactTypeID == (int)EnumContactTypes.Email_Address
+            //                                  && b.ContactDetailValue.Contains(y.Address)
+            //                                  select a).Include("ContactDetails")
+            //                        .Include("Companies")
+            //                        .Include("Employee")
+            //                        .Include("Assessor")
+            //                        .Include("Facilitator")
+            //                        .Include("Student")
+            //                        .Include("Companies.Individuals.ContactDetails")
+            //                        .ToList<Individual>())
+            //        {
+            //            SelectedContacts.Add(z);
+            //        }
+            //        SelectedContacts = (from a in SelectedContacts
+            //                            select a).Distinct<Individual>().ToList<Individual>();
+            //    }
+            //};
         }
 
         private void refreshAvailableContacts()
@@ -105,12 +111,10 @@ namespace Impendulo.Email.Select_Contacts
             List<Individual> TempList = new List<Individual>();
             if (chkAllContacts.Checked)
             {
-                ContactToLinkBindingSource.DataSource =
+                TempList =
                     (from a in AvailableContacts
                      where (a.IndividualFirstName.ToString().ToLower()).Contains(txtContactFilterCriteria.Text.ToString().ToLower())
-                     select a).Except(
-                        SelectedContacts
-                        ).ToList<Individual>();
+                     select a).ToList<Individual>();
             }
             else
             {
@@ -149,15 +153,39 @@ namespace Impendulo.Email.Select_Contacts
 
                                        select a).ToList<Individual>());
                 }
-                ContactToLinkBindingSource.DataSource = (from a in TempList
-                                                         where (a.IndividualFirstName.ToString().ToLower()).Contains(txtContactFilterCriteria.Text.ToString().ToLower())
-                                                         select a).Except(SelectedContacts).ToList<Individual>();
+
+            }
+            List<Individual> FinalAvaibaleContacts = new List<Individual>();
+
+            foreach (Individual x in TempList)
+            {
+                if (!(IsSelectedContact(x.IndividualID)))
+                {
+                    FinalAvaibaleContacts.Add(x);
+                }
             }
 
+            ContactToLinkBindingSource.DataSource = (from a in FinalAvaibaleContacts
+                                                     where (a.IndividualFirstName.ToString().ToLower()).Contains(txtContactFilterCriteria.Text.ToString().ToLower())
+                                                     select a).Distinct<Individual>().ToList<Individual>();
+
+        }
+        private Boolean IsSelectedContact(int IndividualID)
+        {
+            Boolean Rtn = false;
+            foreach (Individual x in SelectedContacts)
+            {
+                if (x.IndividualID == IndividualID)
+                {
+                    Rtn = true;
+                }
+            }
+            return Rtn;
         }
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            this.SelectedContacts.Clear();
+            CancelClicked = true;
+            //this.SelectedContacts.Clear();
             this.Close();
         }
 

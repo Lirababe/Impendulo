@@ -29,7 +29,24 @@ namespace Impendulo.Email.Email_Message_Version_2
         public Employee CurrentEmployeeLoggedIn { get; set; }
 
         private List<Individual> _SelectedToAddresses = new List<Individual>();
-        private List<Individual> SelectedToAddresses { get; set; }
+        private List<Individual> SelectedToAddresses
+        {
+            get { return _SelectedToAddresses; }
+            set { _SelectedToAddresses = value; }
+        }
+
+        private List<Individual> _SelectedCCAddresses = new List<Individual>();
+        private List<Individual> SelectedCcAddresses
+        {
+            get { return _SelectedCCAddresses; }
+            set { _SelectedCCAddresses = value; }
+        }
+        private List<Individual> _SelectedBccAddresses = new List<Individual>();
+        private List<Individual> SelectedBCCAddresses
+        {
+            get { return _SelectedBccAddresses; }
+            set { _SelectedBccAddresses = value; }
+        }
 
         public Boolean IsSent { get; set; }
 
@@ -238,26 +255,30 @@ namespace Impendulo.Email.Email_Message_Version_2
         {
             using (frmSelectEmailContsV2 frm = new frmSelectEmailContsV2())
             {
-                frm.LoadExistingContacts(NewMessage.ToAddesses);
-                foreach (Individual Individ in SelectedToAddresses)
-                {
-                    frm.SelectedContacts.Add(Individ);
-                }
-                
-                frm.ShowDialog();
+                frm.LoadExistingContacts(SelectedToAddresses);
 
-                List<string> EmailAddresses = (from a in frm.SelectedContacts
-                                               from b in a.ContactDetails
-                                               where b.ContactTypeID == (int)Common.Enum.EnumContactTypes.Email_Address
-                                               select b.ContactDetailValue).ToList<string>();
-                foreach (string _EmailAddress in EmailAddresses)
+                frm.ShowDialog();
+                if (!frm.CancelClicked)
                 {
-                    if (!verfiyIfAddressAlreadyAdded(AddressType.ToAddress, _EmailAddress))
+                    SelectedToAddresses.Clear();
+                    foreach (Individual Individ in frm.SelectedContacts)
                     {
-                        NewMessage.addToAddress(_EmailAddress);
+                        SelectedToAddresses.Add(Individ);
+                    }
+
+                    List<string> EmailAddresses = (from a in frm.SelectedContacts
+                                                   from b in a.ContactDetails
+                                                   where b.ContactTypeID == (int)Common.Enum.EnumContactTypes.Email_Address
+                                                   select b.ContactDetailValue).ToList<string>();
+                    NewMessage.clearToAddress();
+                    foreach (string _EmailAddress in EmailAddresses)
+                    {
+                        if (!verfiyIfAddressAlreadyAdded(AddressType.ToAddress, _EmailAddress))
+                        {
+                            NewMessage.addToAddress(_EmailAddress);
+                        }
                     }
                 }
-
             }
             populateToAddresses();
         }
@@ -265,16 +286,64 @@ namespace Impendulo.Email.Email_Message_Version_2
         {
             using (frmSelectEmailContsV2 frm = new frmSelectEmailContsV2())
             {
+                frm.LoadExistingContacts(SelectedCcAddresses);
+
                 frm.ShowDialog();
+                if (!frm.CancelClicked)
+                {
+                    SelectedCcAddresses.Clear();
+                    foreach (Individual Individ in frm.SelectedContacts)
+                    {
+                        SelectedCcAddresses.Add(Individ);
+                    }
+
+                    List<string> EmailAddresses = (from a in frm.SelectedContacts
+                                                   from b in a.ContactDetails
+                                                   where b.ContactTypeID == (int)Common.Enum.EnumContactTypes.Email_Address
+                                                   select b.ContactDetailValue).ToList<string>();
+                    NewMessage.clearCcAddress();
+                    foreach (string _EmailAddress in EmailAddresses)
+                    {
+                        if (!verfiyIfAddressAlreadyAdded(AddressType.CcAddress, _EmailAddress))
+                        {
+                            NewMessage.addCcAddress(_EmailAddress);
+                        }
+                    }
+                }
             }
+            populateCcAddresses();
         }
 
         private void btnBCCddress_Click(object sender, EventArgs e)
         {
             using (frmSelectEmailContsV2 frm = new frmSelectEmailContsV2())
             {
+                frm.LoadExistingContacts(SelectedBCCAddresses);
+
                 frm.ShowDialog();
+                if (!frm.CancelClicked)
+                {
+                    SelectedBCCAddresses.Clear();
+                    foreach (Individual Individ in frm.SelectedContacts)
+                    {
+                        SelectedBCCAddresses.Add(Individ);
+                    }
+
+                    List<string> EmailAddresses = (from a in frm.SelectedContacts
+                                                   from b in a.ContactDetails
+                                                   where b.ContactTypeID == (int)Common.Enum.EnumContactTypes.Email_Address
+                                                   select b.ContactDetailValue).ToList<string>();
+                    NewMessage.clearBccAddress();
+                    foreach (string _EmailAddress in EmailAddresses)
+                    {
+                        if (!verfiyIfAddressAlreadyAdded(AddressType.BccAddress, _EmailAddress))
+                        {
+                            NewMessage.addBccAddress(_EmailAddress);
+                        }
+                    }
+                }
             }
+            populateBccAddresses();
         }
 
         private void btnAddAttachment_Click(object sender, EventArgs e)
@@ -345,6 +414,7 @@ namespace Impendulo.Email.Email_Message_Version_2
             }
             else
             {
+                NewMessage.Subject = txtMessageSubject.Text;
                 NewMessage.SendMessage();
                 this.Close();
             }
