@@ -50,6 +50,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
             }
             //Loads up the Currently Selected Equiry - Is Blank.
             this.refreshInProgressEnquiry(_CurrentSelectedEnquiryID);
+            this.disableFormControlsIfNoEnquiryLoaded();
         }
 
         #region Inprogress Enquiry
@@ -102,20 +103,18 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
         }
         #endregion
         #region Control Event Methods
-
-        private void btnSearchForEnquiry_Click(object sender, EventArgs e)
+        private void enquiryInprogressBindingSource_BindingComplete(object sender, BindingCompleteEventArgs e)
         {
-            using (frmSearchForSelectedEquiry frm = new frmSearchForSelectedEquiry())
+            Data.Models.Enquiry EnquiryObj = (Data.Models.Enquiry)(enquiryInprogressBindingSource.Current);
+            if (EnquiryObj != null)
             {
-                frm.ShowDialog();
-                this.refreshInProgressEnquiry(frm.SelectedEnquiryID);
+
+                if (EnquiryObj.Companies.Count == 0)
+                {
+                    txtInprogressCompanyName.Text = "NA - Private Enquiry";
+                }
             }
         }
-
-        #endregion
-
-        #endregion
-
         private void dgvInprogressContactDetails_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             var gridView = (DataGridView)sender;
@@ -138,16 +137,19 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
         }
 
 
-
-        private void enquiryInprogressBindingSource_BindingComplete(object sender, BindingCompleteEventArgs e)
+        private void btnSearchForEnquiry_Click(object sender, EventArgs e)
         {
-            Data.Models.Enquiry EnquiryObj = (Data.Models.Enquiry)(enquiryInprogressBindingSource.Current);
-            if (EnquiryObj != null)
+            using (frmSearchForSelectedEquiry frm = new frmSearchForSelectedEquiry())
             {
-
-                if (EnquiryObj.Companies.Count == 0)
+                frm.ShowDialog();
+                this.refreshInProgressEnquiry(frm.SelectedEnquiryID);
+                if (enquiryInprogressBindingSource.Count > 0)
                 {
-                    txtInprogressCompanyName.Text = "NA - Private Enquiry";
+                    this.enableFormControlsIfNoEnquiryLoaded();
+                }
+                else
+                {
+                    this.disableFormControlsIfNoEnquiryLoaded();
                 }
             }
         }
@@ -167,31 +169,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                     }
                 }
             }
-
-            //foreach (DataGridViewRow row in gridView.Rows)
-            //{
-            //    if (!row.IsNewRow)
-            //    {
-            //        var ContactDetailObj = (ContactDetail)(row.DataBoundItem);
-            //        row.Cells[colInProgressContactType.Index].Value = ContactDetailObj.LookupContactType.ContactType.ToString();
-            //        if (ContactDetailObj.ContactTypeID == (int)Common.Enum.EnumContactTypes.Email_Address)
-            //        {
-            //            row.Cells[colInProgressContactDetailSendOption.Index].Value = "[ Send Email ]";
-            //        }
-            //        if (ContactDetailObj.ContactTypeID == (int)Common.Enum.EnumContactTypes.Cell_Number)
-            //        {
-            //            row.Cells[colInProgressContactDetailSendOption.Index].Value = "[ Send SMS ]";
-            //        }
-            //    }
-            //}
         }
-
-        private void enquiryDateTextBox_TextChanged(object sender, EventArgs e)
-        {
-            TextBox x = (TextBox)sender;
-            x.Text = Convert.ToDateTime(x.Text).ToString("D");
-        }
-
         private void btnInitialConsultationConfirmation_Click(object sender, EventArgs e)
         {
             using (frmEnquiryInitialConsultationV2 frm = new frmEnquiryInitialConsultationV2())
@@ -199,9 +177,46 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                 frm.EmployeeID = CurrentEmployeeLoggedIn.EmployeeID;
                 frm.CurrentEnquiry = (Data.Models.Enquiry)enquiryInprogressBindingSource.Current;
                 frm.ShowDialog();
-                //this.refreshInProgressEnquiry(_CurrentSelectedEnquiryID);
                 this.enquiryInprogressBindingSource.ResetCurrentItem();
             }
         }
+
+        private void enquiryDateTextBox_TextChanged(object sender, EventArgs e)
+        {
+            TextBox x = (TextBox)sender;
+            x.Text = Convert.ToDateTime(x.Text).ToString("D");
+        }
+        #endregion
+
+        #region Form Logic Control Flow Methods
+        private void disableFormControlsIfNoEnquiryLoaded()
+        {
+            btnViewProgressInProgressSections.Visible = false;
+            btnInitialConsultationConfirmationInProgressSection.Visible = false;
+            btnCloseInprogressEnquiry.Visible = false;
+            gbInprogressContactNameAndCompanyName.Enabled = false;
+            gbInProgressContactDetails.Enabled = false;
+            gbInProgressEnquiryEnrrolmentQueries.Enabled = false;
+        }
+        private void enableFormControlsIfNoEnquiryLoaded()
+        {
+            btnViewProgressInProgressSections.Visible = true;
+            btnInitialConsultationConfirmationInProgressSection.Visible = true;
+            btnCloseInprogressEnquiry.Visible = true;
+            gbInprogressContactNameAndCompanyName.Enabled = true;
+            gbInProgressContactDetails.Enabled = true;
+            gbInProgressEnquiryEnrrolmentQueries.Enabled = true;
+        }
+        #endregion
+
+        #endregion
+
+
+
+
+
+
+
+
     }
 }
