@@ -5,6 +5,12 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="MCDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
         <EntityType Name="Activities">
           <Key>
             <PropertyRef Name="ActivityID" />
@@ -304,6 +310,7 @@
           </Key>
           <Property Name="EnquiryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EnquiryDate" Type="date" Nullable="false" />
+          <Property Name="EnquiryStatusID" Type="int" Nullable="false" />
           <Property Name="InitialConsultationComplete" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="EnquiryEmailCorrespondence">
@@ -1382,6 +1389,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Enquiry_LookupEnquiryStatuses">
+          <End Role="LookupEnquiryStatuses" Type="Self.LookupEnquiryStatuses" Multiplicity="1" />
+          <End Role="Enquiry" Type="Self.Enquiry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LookupEnquiryStatuses">
+              <PropertyRef Name="EnquiryStatusID" />
+            </Principal>
+            <Dependent Role="Enquiry">
+              <PropertyRef Name="EnquiryStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_EnquiryEmailCorrespondence_EmailMessageRepository">
           <End Role="EmailMessageRepository" Type="Self.EmailMessageRepository" Multiplicity="1" />
           <End Role="EnquiryEmailCorrespondence" Type="Self.EnquiryEmailCorrespondence" Multiplicity="*" />
@@ -1959,6 +1978,7 @@
         <Function Name="Report_StudentInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Reports_StudentReports" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="MCDModelStoreContainer">
+          <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Activities" EntityType="Self.Activities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Addresses" EntityType="Self.Addresses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ApprenticeshipEnrollmentDocuments" EntityType="Self.ApprenticeshipEnrollmentDocuments" Schema="dbo" store:Type="Tables" />
@@ -2260,6 +2280,10 @@
           <AssociationSet Name="FK_Employees_Individuals" Association="Self.FK_Employees_Individuals">
             <End Role="Individuals" EntitySet="Individuals" />
             <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Enquiry_LookupEnquiryStatuses" Association="Self.FK_Enquiry_LookupEnquiryStatuses">
+            <End Role="LookupEnquiryStatuses" EntitySet="LookupEnquiryStatuses" />
+            <End Role="Enquiry" EntitySet="Enquiry" />
           </AssociationSet>
           <AssociationSet Name="FK_EnquiryEmailCorrespondence_EmailMessageRepository" Association="Self.FK_EnquiryEmailCorrespondence_EmailMessageRepository">
             <End Role="EmailMessageRepository" EntitySet="EmailMessageRepository" />
@@ -3938,6 +3962,11 @@
             <End Role="Enrollment" EntitySet="Enrollments" />
             <End Role="Schedule" EntitySet="Schedules" />
           </AssociationSet>
+          <EntitySet Name="C__RefactorLog" EntityType="MCDModel.C__RefactorLog" />
+          <AssociationSet Name="FK_Enquiry_LookupEnquiryStatuses" Association="MCDModel.FK_Enquiry_LookupEnquiryStatuses">
+            <End Role="LookupEnquiryStatus" EntitySet="LookupEnquiryStatuses" />
+            <End Role="Enquiry" EntitySet="Enquiries" />
+          </AssociationSet>
           </EntityContainer>
         <ComplexType Name="GetCurriculumCourseInOrder_Result">
           <Property Type="Int32" Name="CurriculumCourseID" Nullable="true" />
@@ -4113,6 +4142,7 @@
           <Property Name="EnquiryStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EnquiryStatus" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CurriculumEnquiries" Relationship="MCDModel.FK_CurriculumEnquiries_LookupEnquiryStatuses" FromRole="LookupEnquiryStatus" ToRole="CurriculumEnquiry" />
+          <NavigationProperty Name="Enquiries" Relationship="MCDModel.FK_Enquiry_LookupEnquiryStatuses" FromRole="LookupEnquiryStatus" ToRole="Enquiry" />
         </EntityType>
         <EntityType Name="LookupEquiryHistoryType">
           <Key>
@@ -4345,6 +4375,8 @@
           <NavigationProperty Name="Individuals" Relationship="MCDModel.EquiryAssociatedContacts" FromRole="Enquiry" ToRole="Individual" />
           <Property Name="InitialConsultationComplete" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="LookupEquiryOrigions" Relationship="MCDModel.EquiryOrigions" FromRole="Enquiry" ToRole="LookupEquiryOrigion" />
+          <Property Name="EnquiryStatusID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LookupEnquiryStatus" Relationship="MCDModel.FK_Enquiry_LookupEnquiryStatuses" FromRole="Enquiry" ToRole="LookupEnquiryStatus" />
         </EntityType>
         <Association Name="FK_CurriculumEnquiries_Curriculums">
           <End Type="MCDModel.Curriculum" Role="Curriculum" Multiplicity="1" />
@@ -4579,6 +4611,24 @@
             </Principal>
             <Dependent Role="Schedule">
               <PropertyRef Name="EnrollmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="C__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Name="OperationKey" Type="Guid" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Enquiry_LookupEnquiryStatuses">
+          <End Type="MCDModel.LookupEnquiryStatus" Role="LookupEnquiryStatus" Multiplicity="1" />
+          <End Type="MCDModel.Enquiry" Role="Enquiry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LookupEnquiryStatus">
+              <PropertyRef Name="EnquiryStatusID" />
+            </Principal>
+            <Dependent Role="Enquiry">
+              <PropertyRef Name="EnquiryStatusID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5310,6 +5360,7 @@
           <EntitySetMapping Name="Enquiries">
             <EntityTypeMapping TypeName="MCDModel.Enquiry">
               <MappingFragment StoreEntitySet="Enquiry">
+                <ScalarProperty Name="EnquiryStatusID" ColumnName="EnquiryStatusID" />
                 <ScalarProperty Name="InitialConsultationComplete" ColumnName="InitialConsultationComplete" />
                 <ScalarProperty Name="EnquiryDate" ColumnName="EnquiryDate" />
                 <ScalarProperty Name="EnquiryID" ColumnName="EnquiryID" />
@@ -5426,6 +5477,13 @@
                 <ScalarProperty Name="ScheduleStartDate" ColumnName="ScheduleStartDate" />
                 <ScalarProperty Name="CurriculumCourseEnrollmentID" ColumnName="CurriculumCourseEnrollmentID" />
                 <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="C__RefactorLog">
+            <EntityTypeMapping TypeName="MCDModel.C__RefactorLog">
+              <MappingFragment StoreEntitySet="__RefactorLog">
+                <ScalarProperty Name="OperationKey" ColumnName="OperationKey" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

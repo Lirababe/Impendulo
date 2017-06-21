@@ -58,6 +58,7 @@
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+
       <HintPath>..\..\lib\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -68,6 +69,17 @@
     <Reference Include="MetroFramework.Fonts">
       <HintPath>..\..\lib\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
       <Private>True</Private>
+
+      <HintPath>..\..\..\winforms-modernui\MetroFramework.Demo\bin\Debug\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\winforms-modernui\MetroFramework.Demo\bin\Debug\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\winforms-modernui\MetroFramework.Demo\bin\Debug\MetroFramework.Fonts.dll</HintPath>
+
     </Reference>
     <Reference Include="Properties.Resources.Designer.cs">
       <HintPath>..\..\..\winforms-modernui\MetroFramework\obj\Debug\TempPE\Properties.Resources.Designer.cs.dll</HintPath>

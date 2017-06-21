@@ -112,6 +112,9 @@
     <Compile Include="Models\CurriculumPrequisiteCourse.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\C__RefactorLog.cs">
+      <DependentUpon>MCDEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EmailMessageRepository.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>

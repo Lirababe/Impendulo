@@ -97,6 +97,7 @@ namespace Impendulo.Data.Models
         public virtual DbSet<File> Files { get; set; }
         public virtual DbSet<LookupEquiryOrigion> LookupEquiryOrigions { get; set; }
         public virtual DbSet<Schedule> Schedules { get; set; }
+        public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
     
         public virtual ObjectResult<CurriculumCourse> GetCurriculumCourseInOrder(Nullable<int> curriculumID)
         {
