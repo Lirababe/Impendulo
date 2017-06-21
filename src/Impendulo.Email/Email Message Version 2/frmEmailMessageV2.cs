@@ -3,6 +3,7 @@ using Impendulo.Common.Enum;
 using Impendulo.Data.Models;
 using Impendulo.Email.Select_Contacts;
 using MetroFramework;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ using Outlook = Microsoft.Office.Interop.Outlook;
 
 namespace Impendulo.Email.Email_Message_Version_2
 {
-    public partial class frmEmailMessageV2 : MetroFramework.Forms.MetroForm
+    public partial class frmEmailMessageV2 : MetroForm
     {
 
 

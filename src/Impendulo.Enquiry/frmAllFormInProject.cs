@@ -2,6 +2,7 @@
 using Impendulo.Enquiry.Development.EnquiryV3;
 using Impendulo.Enquiry.Development.InitaialConsultation;
 using Impendulo.Enquiry.Development.InitialDocumentation.ApprenticeshipDocumentation;
+using Impendulo.Enquiry.Development.SearchForSelectedEnquiry;
 using Impendulo.Enquiry.Development.ViewHistory;
 using Impendulo.Enquiry.Development.WorkBanchEnquiries;
 using Impendulo.Enquiry.SelectContacts.Deployment1;
@@ -96,6 +97,14 @@ namespace Impendulo.Enquiry.Development
         private void button11_Click(object sender, EventArgs e)
         {
             using (frmClientEnquiryV3 frm = new frmClientEnquiryV3())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            using (frmSearchForSelectedEquiry frm = new frmSearchForSelectedEquiry())
             {
                 frm.ShowDialog();
             }

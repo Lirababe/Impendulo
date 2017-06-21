@@ -270,7 +270,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMessageBody.Location = new System.Drawing.Point(3, 3);
             this.txtMessageBody.Name = "txtMessageBody";
-            this.txtMessageBody.Size = new System.Drawing.Size(677, 206);
+            this.txtMessageBody.Size = new System.Drawing.Size(677, 162);
             this.txtMessageBody.TabIndex = 1;
             this.txtMessageBody.Text = "";
             // 
@@ -278,9 +278,9 @@
             // 
             this.groupBox5.Controls.Add(this.toolStripContainer1);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(3, 215);
+            this.groupBox5.Location = new System.Drawing.Point(3, 171);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(677, 211);
+            this.groupBox5.Size = new System.Drawing.Size(677, 144);
             this.groupBox5.TabIndex = 7;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "List Of Attachments";
@@ -291,11 +291,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvMessageAttachments);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(671, 167);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(671, 100);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(671, 192);
+            this.toolStripContainer1.Size = new System.Drawing.Size(671, 125);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -352,7 +352,7 @@
             this.dgvMessageAttachments.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMessageAttachments.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvMessageAttachments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMessageAttachments.Size = new System.Drawing.Size(671, 167);
+            this.dgvMessageAttachments.Size = new System.Drawing.Size(671, 100);
             this.dgvMessageAttachments.TabIndex = 0;
             this.dgvMessageAttachments.TabStop = false;
             // 
@@ -518,7 +518,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(683, 629);
+            this.splitContainer1.Size = new System.Drawing.Size(683, 518);
             this.splitContainer1.SplitterDistance = 196;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -532,9 +532,9 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.62963F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.37037F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(683, 429);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.83019F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.16981F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(683, 318);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // toolTip1
@@ -549,7 +549,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 709);
+            this.ClientSize = new System.Drawing.Size(723, 598);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmEmailMessageV2";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

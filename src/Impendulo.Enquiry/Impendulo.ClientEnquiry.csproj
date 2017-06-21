@@ -144,6 +144,12 @@
     <Compile Include="InitaialConsultation\frmEnquiryInitialConsultation.Designer.cs">
       <DependentUpon>frmEnquiryInitialConsultation.cs</DependentUpon>
     </Compile>
+    <Compile Include="InitaialConsultation\frmEnquiryInitialConsultationV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitaialConsultation\frmEnquiryInitialConsultationV2.Designer.cs">
+      <DependentUpon>frmEnquiryInitialConsultationV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="InitialDocumentation\frmInitailDocumentation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InitaialConsultation\frmEnquiryInitialConsultation.resx">
       <DependentUpon>frmEnquiryInitialConsultation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitaialConsultation\frmEnquiryInitialConsultationV2.resx">
+      <DependentUpon>frmEnquiryInitialConsultationV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InitialDocumentation\frmInitailDocumentation.resx">
       <DependentUpon>frmInitailDocumentation.cs</DependentUpon>

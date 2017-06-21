@@ -13,16 +13,19 @@ using System.Windows.Forms;
 
 namespace Impendulo.Enquiry.Development.InitaialConsultation
 {
-    public partial class frmEnquiryInitialConsultation : Form
+    public partial class frmEnquiryInitialConsultationV2 : MetroForm
     {
         public int EmployeeID { get; set; }
         public Data.Models.Enquiry CurrentEnquiry { get; set; }
-        public frmEnquiryInitialConsultation()
+        public frmEnquiryInitialConsultationV2()
         {
             InitializeComponent();
-
         }
 
+        private void frmEnquiryInitialConsultationV2_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -47,11 +50,6 @@ namespace Impendulo.Enquiry.Development.InitaialConsultation
                 }
             };
             this.Close();
-        }
-
-        private void frmEnquiryInitialConsultation_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
