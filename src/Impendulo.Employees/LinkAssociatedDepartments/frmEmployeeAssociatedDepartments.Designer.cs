@@ -34,6 +34,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.lstAvailableDepartments = new System.Windows.Forms.ListBox();
+            this.avaiableDepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorAvaiableDepartments = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -47,6 +48,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.lstLinkedDeparments = new System.Windows.Forms.ListBox();
+            this.LinkedDepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorLinkedDepartments = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -60,24 +62,22 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnRemoveDepartments = new System.Windows.Forms.Button();
             this.btnLinkDepartments = new System.Windows.Forms.Button();
-            this.avaiableDepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.LinkedDepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.toolStripContainer2.ContentPanel.SuspendLayout();
             this.toolStripContainer2.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avaiableDepartmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorAvaiableDepartments)).BeginInit();
             this.bindingNavigatorAvaiableDepartments.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LinkedDepartmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorLinkedDepartments)).BeginInit();
             this.bindingNavigatorLinkedDepartments.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avaiableDepartmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LinkedDepartmentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -137,6 +137,10 @@
             this.lstAvailableDepartments.Size = new System.Drawing.Size(250, 302);
             this.lstAvailableDepartments.TabIndex = 1;
             this.lstAvailableDepartments.ValueMember = "DepartmentID";
+            // 
+            // avaiableDepartmentBindingSource
+            // 
+            this.avaiableDepartmentBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupDepartment);
             // 
             // bindingNavigatorAvaiableDepartments
             // 
@@ -274,6 +278,10 @@
             this.lstLinkedDeparments.TabIndex = 0;
             this.lstLinkedDeparments.ValueMember = "DepartmentID";
             // 
+            // LinkedDepartmentBindingSource
+            // 
+            this.LinkedDepartmentBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupDepartment);
+            // 
             // bindingNavigatorLinkedDepartments
             // 
             this.bindingNavigatorLinkedDepartments.AddNewItem = null;
@@ -407,21 +415,13 @@
             this.btnLinkDepartments.UseVisualStyleBackColor = true;
             this.btnLinkDepartments.Click += new System.EventHandler(this.btnLinkDepartments_Click);
             // 
-            // avaiableDepartmentBindingSource
-            // 
-            this.avaiableDepartmentBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupDepartment);
-            // 
-            // LinkedDepartmentBindingSource
-            // 
-            this.LinkedDepartmentBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupDepartment);
-            // 
             // frmEmployeeAssociatedDepartments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 352);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEmployeeAssociatedDepartments";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -435,6 +435,7 @@
             this.toolStripContainer2.TopToolStripPanel.PerformLayout();
             this.toolStripContainer2.ResumeLayout(false);
             this.toolStripContainer2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avaiableDepartmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorAvaiableDepartments)).EndInit();
             this.bindingNavigatorAvaiableDepartments.ResumeLayout(false);
             this.bindingNavigatorAvaiableDepartments.PerformLayout();
@@ -444,12 +445,11 @@
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LinkedDepartmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorLinkedDepartments)).EndInit();
             this.bindingNavigatorLinkedDepartments.ResumeLayout(false);
             this.bindingNavigatorLinkedDepartments.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.avaiableDepartmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LinkedDepartmentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -44,6 +44,10 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
+            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.txtEmployeeFilterCriteria = new System.Windows.Forms.ToolStripTextBox();
@@ -129,7 +133,6 @@
             this.contactDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lookupTitleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             employeeNumberLabel = new System.Windows.Forms.Label();
             individualFirstNameLabel = new System.Windows.Forms.Label();
             individualLastnameLabel = new System.Windows.Forms.Label();
@@ -232,11 +235,11 @@
             // 
             this.groupBox1.Controls.Add(this.splitContainer1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Location = new System.Drawing.Point(20, 60);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(1044, 400);
+            this.groupBox1.Size = new System.Drawing.Size(1004, 428);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee Details";
@@ -255,7 +258,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1040, 383);
+            this.splitContainer1.Size = new System.Drawing.Size(1000, 411);
             this.splitContainer1.SplitterDistance = 262;
             this.splitContainer1.TabIndex = 28;
             // 
@@ -265,11 +268,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvEmployees);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(262, 331);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(262, 359);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(262, 383);
+            this.toolStripContainer1.Size = new System.Drawing.Size(262, 411);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -285,17 +288,48 @@
             this.dgvEmployees.AutoGenerateColumns = false;
             this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EmployeeName});
+            this.EmployeeName,
+            this.employeeIDDataGridViewTextBoxColumn,
+            this.employeeNumberDataGridViewTextBoxColumn,
+            this.individualDataGridViewTextBoxColumn});
             this.dgvEmployees.DataSource = this.employeeBindingSource;
             this.dgvEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmployees.Location = new System.Drawing.Point(0, 0);
             this.dgvEmployees.Name = "dgvEmployees";
             this.dgvEmployees.ReadOnly = true;
-            this.dgvEmployees.Size = new System.Drawing.Size(262, 331);
+            this.dgvEmployees.Size = new System.Drawing.Size(262, 359);
             this.dgvEmployees.TabIndex = 0;
             this.dgvEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployees_CellContentClick);
             this.dgvEmployees.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvEmployees_DataBindingComplete);
             this.dgvEmployees.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvEmployees_DataError);
+            // 
+            // EmployeeName
+            // 
+            this.EmployeeName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EmployeeName.HeaderText = "Employee";
+            this.EmployeeName.Name = "EmployeeName";
+            this.EmployeeName.ReadOnly = true;
+            // 
+            // employeeIDDataGridViewTextBoxColumn
+            // 
+            this.employeeIDDataGridViewTextBoxColumn.DataPropertyName = "EmployeeID";
+            this.employeeIDDataGridViewTextBoxColumn.HeaderText = "EmployeeID";
+            this.employeeIDDataGridViewTextBoxColumn.Name = "employeeIDDataGridViewTextBoxColumn";
+            this.employeeIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // employeeNumberDataGridViewTextBoxColumn
+            // 
+            this.employeeNumberDataGridViewTextBoxColumn.DataPropertyName = "EmployeeNumber";
+            this.employeeNumberDataGridViewTextBoxColumn.HeaderText = "EmployeeNumber";
+            this.employeeNumberDataGridViewTextBoxColumn.Name = "employeeNumberDataGridViewTextBoxColumn";
+            this.employeeNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // individualDataGridViewTextBoxColumn
+            // 
+            this.individualDataGridViewTextBoxColumn.DataPropertyName = "Individual";
+            this.individualDataGridViewTextBoxColumn.HeaderText = "Individual";
+            this.individualDataGridViewTextBoxColumn.Name = "individualDataGridViewTextBoxColumn";
+            this.individualDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // employeeBindingSource
             // 
@@ -489,7 +523,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox4);
-            this.splitContainer2.Size = new System.Drawing.Size(774, 383);
+            this.splitContainer2.Size = new System.Drawing.Size(734, 411);
             this.splitContainer2.SplitterDistance = 230;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -507,7 +541,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.groupBox5);
-            this.splitContainer3.Size = new System.Drawing.Size(774, 230);
+            this.splitContainer3.Size = new System.Drawing.Size(734, 230);
             this.splitContainer3.SplitterDistance = 394;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -625,7 +659,7 @@
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(376, 230);
+            this.groupBox5.Size = new System.Drawing.Size(336, 230);
             this.groupBox5.TabIndex = 14;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Contact Details";
@@ -637,11 +671,11 @@
             // 
             this.toolStripContainerStudentContacts.ContentPanel.AutoScroll = true;
             this.toolStripContainerStudentContacts.ContentPanel.Controls.Add(this.contactDetailDataGridView);
-            this.toolStripContainerStudentContacts.ContentPanel.Size = new System.Drawing.Size(370, 184);
+            this.toolStripContainerStudentContacts.ContentPanel.Size = new System.Drawing.Size(330, 184);
             this.toolStripContainerStudentContacts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainerStudentContacts.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainerStudentContacts.Name = "toolStripContainerStudentContacts";
-            this.toolStripContainerStudentContacts.Size = new System.Drawing.Size(370, 211);
+            this.toolStripContainerStudentContacts.Size = new System.Drawing.Size(330, 211);
             this.toolStripContainerStudentContacts.TabIndex = 3;
             this.toolStripContainerStudentContacts.Text = "toolStripContainer1";
             // 
@@ -663,7 +697,7 @@
             this.contactDetailDataGridView.Location = new System.Drawing.Point(0, 0);
             this.contactDetailDataGridView.Name = "contactDetailDataGridView";
             this.contactDetailDataGridView.ReadOnly = true;
-            this.contactDetailDataGridView.Size = new System.Drawing.Size(370, 184);
+            this.contactDetailDataGridView.Size = new System.Drawing.Size(330, 184);
             this.contactDetailDataGridView.TabIndex = 0;
             this.contactDetailDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.contactDetailDataGridView_DataBindingComplete);
             this.contactDetailDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.contactDetailDataGridView_DataError);
@@ -717,7 +751,7 @@
             this.BindingNavigatorStudentContactInfo.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.BindingNavigatorStudentContactInfo.Name = "BindingNavigatorStudentContactInfo";
             this.BindingNavigatorStudentContactInfo.PositionItem = this.bindingNavigatorPositionItem1;
-            this.BindingNavigatorStudentContactInfo.Size = new System.Drawing.Size(370, 27);
+            this.BindingNavigatorStudentContactInfo.Size = new System.Drawing.Size(330, 27);
             this.BindingNavigatorStudentContactInfo.Stretch = true;
             this.BindingNavigatorStudentContactInfo.TabIndex = 0;
             // 
@@ -831,7 +865,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(774, 149);
+            this.groupBox4.Size = new System.Drawing.Size(734, 177);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Employee Addresses";
@@ -842,11 +876,11 @@
             // ToolStripContainerCompanyAddresses.ContentPanel
             // 
             this.ToolStripContainerCompanyAddresses.ContentPanel.Controls.Add(this.dgvEmployeeAddresses);
-            this.ToolStripContainerCompanyAddresses.ContentPanel.Size = new System.Drawing.Size(768, 103);
+            this.ToolStripContainerCompanyAddresses.ContentPanel.Size = new System.Drawing.Size(728, 131);
             this.ToolStripContainerCompanyAddresses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ToolStripContainerCompanyAddresses.Location = new System.Drawing.Point(3, 16);
             this.ToolStripContainerCompanyAddresses.Name = "ToolStripContainerCompanyAddresses";
-            this.ToolStripContainerCompanyAddresses.Size = new System.Drawing.Size(768, 130);
+            this.ToolStripContainerCompanyAddresses.Size = new System.Drawing.Size(728, 158);
             this.ToolStripContainerCompanyAddresses.TabIndex = 40;
             this.ToolStripContainerCompanyAddresses.Text = "toolStripContainer1";
             // 
@@ -880,7 +914,7 @@
             this.dgvEmployeeAddresses.ReadOnly = true;
             this.dgvEmployeeAddresses.RowTemplate.Height = 24;
             this.dgvEmployeeAddresses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmployeeAddresses.Size = new System.Drawing.Size(768, 103);
+            this.dgvEmployeeAddresses.Size = new System.Drawing.Size(728, 131);
             this.dgvEmployeeAddresses.TabIndex = 37;
             this.dgvEmployeeAddresses.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvEmployeeAddresses_DataBindingComplete);
             this.dgvEmployeeAddresses.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvEmployeeAddresses_DataError);
@@ -1001,7 +1035,7 @@
             this.BindingNavigatorStudentAddresses.MovePreviousItem = this.toolStripButton4;
             this.BindingNavigatorStudentAddresses.Name = "BindingNavigatorStudentAddresses";
             this.BindingNavigatorStudentAddresses.PositionItem = this.toolStripTextBox2;
-            this.BindingNavigatorStudentAddresses.Size = new System.Drawing.Size(768, 27);
+            this.BindingNavigatorStudentAddresses.Size = new System.Drawing.Size(728, 27);
             this.BindingNavigatorStudentAddresses.Stretch = true;
             this.BindingNavigatorStudentAddresses.TabIndex = 2;
             this.BindingNavigatorStudentAddresses.Text = "bindingNavigator1";
@@ -1130,20 +1164,12 @@
             // 
             this.bindingSource1.DataSource = typeof(Impendulo.Data.Models.Address);
             // 
-            // EmployeeName
-            // 
-            this.EmployeeName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.EmployeeName.HeaderText = "Employee";
-            this.EmployeeName.Name = "EmployeeName";
-            this.EmployeeName.ReadOnly = true;
-            // 
             // frmAddUpdateEmployeeDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 400);
+            this.ClientSize = new System.Drawing.Size(1044, 508);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAddUpdateEmployeeDetails";
             this.Text = "Add/Update Employee Details";
@@ -1300,6 +1326,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualDataGridViewTextBoxColumn;
     }
 }
 

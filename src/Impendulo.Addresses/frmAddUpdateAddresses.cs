@@ -11,7 +11,7 @@ using Impendulo.Data.Models;
 
 namespace Impendulo.Addresses.Development
 {
-    public partial class frmAddUpdateAddresses : Form
+    public partial class frmAddUpdateAddresses : MetroFramework.Forms.MetroForm
     {
         public int AddressID { get; set; }
         public Address CurrentAddress { get; set; }

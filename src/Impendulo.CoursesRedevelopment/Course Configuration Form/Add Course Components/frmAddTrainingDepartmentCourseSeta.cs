@@ -11,7 +11,7 @@ using Impendulo.Data.Models;
 
 namespace Impendulo.Courses.InputForms.Development
 {
-    public partial class frmAddTrainingDepartmentCourseSeta : Form
+    public partial class frmAddTrainingDepartmentCourseSeta : MetroFramework.Forms.MetroForm
     {
 
         public frmAddTrainingDepartmentCourseSeta()

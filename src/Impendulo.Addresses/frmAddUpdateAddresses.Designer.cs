@@ -162,9 +162,9 @@
             this.groupBox1.Controls.Add(this.txtStudentAddressAreaCode);
             this.groupBox1.Controls.Add(this.chkStudnetAddressIsDefault);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Location = new System.Drawing.Point(20, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(524, 331);
+            this.groupBox1.Size = new System.Drawing.Size(674, 339);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Address Details";
@@ -176,15 +176,15 @@
             this.flowLayoutPanel1.Controls.Add(this.btnlCancel);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 285);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 293);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(518, 43);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(668, 43);
             this.flowLayoutPanel1.TabIndex = 66;
             // 
             // btnUpdateAddress
             // 
             this.btnUpdateAddress.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdateAddress.Location = new System.Drawing.Point(438, 3);
+            this.btnUpdateAddress.Location = new System.Drawing.Point(588, 3);
             this.btnUpdateAddress.Name = "btnUpdateAddress";
             this.btnUpdateAddress.Size = new System.Drawing.Size(77, 37);
             this.btnUpdateAddress.TabIndex = 65;
@@ -195,7 +195,7 @@
             // btnAddAddress
             // 
             this.btnAddAddress.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddAddress.Location = new System.Drawing.Point(355, 3);
+            this.btnAddAddress.Location = new System.Drawing.Point(505, 3);
             this.btnAddAddress.Name = "btnAddAddress";
             this.btnAddAddress.Size = new System.Drawing.Size(77, 37);
             this.btnAddAddress.TabIndex = 66;
@@ -205,7 +205,7 @@
             // 
             // btnlCancel
             // 
-            this.btnlCancel.Location = new System.Drawing.Point(274, 3);
+            this.btnlCancel.Location = new System.Drawing.Point(424, 3);
             this.btnlCancel.Name = "btnlCancel";
             this.btnlCancel.Size = new System.Drawing.Size(75, 36);
             this.btnlCancel.TabIndex = 64;
@@ -306,12 +306,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 331);
+            this.ClientSize = new System.Drawing.Size(714, 419);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAddUpdateAddresses";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add/Update";
             this.Load += new System.EventHandler(this.frmAddresses_Load);
             this.groupBox1.ResumeLayout(false);

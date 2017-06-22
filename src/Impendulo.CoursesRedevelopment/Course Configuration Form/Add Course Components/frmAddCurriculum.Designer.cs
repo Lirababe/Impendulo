@@ -47,7 +47,7 @@
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(190, 126);
+            this.button2.Location = new System.Drawing.Point(201, 177);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 30);
             this.button2.TabIndex = 7;
@@ -60,7 +60,7 @@
             // 
             this.btnAddTrainingDepartment.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTrainingDepartment.Image")));
             this.btnAddTrainingDepartment.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddTrainingDepartment.Location = new System.Drawing.Point(271, 126);
+            this.btnAddTrainingDepartment.Location = new System.Drawing.Point(282, 177);
             this.btnAddTrainingDepartment.Name = "btnAddTrainingDepartment";
             this.btnAddTrainingDepartment.Size = new System.Drawing.Size(99, 30);
             this.btnAddTrainingDepartment.TabIndex = 6;
@@ -79,12 +79,11 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtAddCurriculum);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(23, 63);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(358, 108);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // chkIsSequencedCourse
             // 
@@ -101,7 +100,7 @@
             this.cboCostingModel.DataSource = this.costingModelBindingSource;
             this.cboCostingModel.DisplayMember = "CostingModelName";
             this.cboCostingModel.FormattingEnabled = true;
-            this.cboCostingModel.Location = new System.Drawing.Point(126, 50);
+            this.cboCostingModel.Location = new System.Drawing.Point(126, 51);
             this.cboCostingModel.Name = "cboCostingModel";
             this.cboCostingModel.Size = new System.Drawing.Size(224, 21);
             this.cboCostingModel.TabIndex = 16;
@@ -135,12 +134,11 @@
             // frmAddCurriculum
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(378, 165);
+            this.ClientSize = new System.Drawing.Size(419, 224);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAddTrainingDepartment);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAddCurriculum";

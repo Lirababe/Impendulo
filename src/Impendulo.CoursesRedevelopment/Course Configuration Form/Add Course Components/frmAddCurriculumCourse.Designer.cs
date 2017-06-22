@@ -109,7 +109,7 @@
             // 
             this.gbCourseProperties.Controls.Add(this.panel3);
             this.gbCourseProperties.Controls.Add(this.panel1);
-            this.gbCourseProperties.Location = new System.Drawing.Point(428, 12);
+            this.gbCourseProperties.Location = new System.Drawing.Point(440, 63);
             this.gbCourseProperties.Name = "gbCourseProperties";
             this.gbCourseProperties.Size = new System.Drawing.Size(423, 308);
             this.gbCourseProperties.TabIndex = 27;
@@ -382,7 +382,7 @@
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.cboDepartments);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(24, 63);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(413, 308);
             this.groupBox2.TabIndex = 28;
@@ -458,7 +458,7 @@
             this.txtTrainingDepartmentCourse.Name = "txtTrainingDepartmentCourse";
             this.txtTrainingDepartmentCourse.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTrainingDepartmentCourse.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtTrainingDepartmentCourse.Size = new System.Drawing.Size(275, 39);
+            this.txtTrainingDepartmentCourse.Size = new System.Drawing.Size(251, 39);
             // 
             // lstCourses
             // 
@@ -572,7 +572,7 @@
             this.txtCourseFilterCriteria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCourseFilterCriteria.Name = "txtCourseFilterCriteria";
             this.txtCourseFilterCriteria.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtCourseFilterCriteria.Size = new System.Drawing.Size(105, 31);
+            this.txtCourseFilterCriteria.Size = new System.Drawing.Size(81, 31);
             // 
             // tsbtnSearchCourses
             // 
@@ -631,17 +631,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 327);
+            this.ClientSize = new System.Drawing.Size(886, 383);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbCourseProperties);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmAddCurriculumCourse";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Curriculum Course";
             this.Load += new System.EventHandler(this.frmAddCourseMetaData_Load);
             this.gbCourseProperties.ResumeLayout(false);

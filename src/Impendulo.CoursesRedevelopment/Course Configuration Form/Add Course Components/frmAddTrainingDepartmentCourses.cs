@@ -12,7 +12,7 @@ using System.Data.Entity.Validation;
 
 namespace Impendulo.Courses.InputForms.Development
 {
-    public partial class frmAddTrainingDeparmentCourses : Form
+    public partial class frmAddTrainingDeparmentCourses : MetroFramework.Forms.MetroForm
     {
         public int TrainingDepartmentID { get; set; }
         public frmAddTrainingDeparmentCourses()

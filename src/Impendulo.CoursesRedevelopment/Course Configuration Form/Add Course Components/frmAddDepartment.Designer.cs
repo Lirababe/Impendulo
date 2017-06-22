@@ -37,7 +37,7 @@
             // 
             // txtAddDepartment
             // 
-            this.txtAddDepartment.Location = new System.Drawing.Point(100, 12);
+            this.txtAddDepartment.Location = new System.Drawing.Point(109, 63);
             this.txtAddDepartment.Name = "txtAddDepartment";
             this.txtAddDepartment.Size = new System.Drawing.Size(355, 20);
             this.txtAddDepartment.TabIndex = 0;
@@ -45,7 +45,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(21, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             this.btnAddDepartment.Image = ((System.Drawing.Image)(resources.GetObject("btnAddDepartment.Image")));
             this.btnAddDepartment.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddDepartment.Location = new System.Drawing.Point(339, 40);
+            this.btnAddDepartment.Location = new System.Drawing.Point(348, 91);
             this.btnAddDepartment.Name = "btnAddDepartment";
             this.btnAddDepartment.Size = new System.Drawing.Size(117, 30);
             this.btnAddDepartment.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(262, 40);
+            this.button2.Location = new System.Drawing.Point(271, 91);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(71, 30);
             this.button2.TabIndex = 3;
@@ -80,19 +80,17 @@
             // frmAddDepartment
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(460, 73);
+            this.ClientSize = new System.Drawing.Size(500, 137);
             this.ControlBox = false;
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAddDepartment);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAddDepartment);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAddDepartment";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Department";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmAddDepartment_Load);

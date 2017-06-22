@@ -47,14 +47,14 @@
             // cboServer
             // 
             this.cboServer.FormattingEnabled = true;
-            this.cboServer.Location = new System.Drawing.Point(91, 107);
+            this.cboServer.Location = new System.Drawing.Point(73, 30);
             this.cboServer.Name = "cboServer";
             this.cboServer.Size = new System.Drawing.Size(193, 21);
             this.cboServer.TabIndex = 0;
             // 
             // txtDatabase
             // 
-            this.txtDatabase.Location = new System.Drawing.Point(91, 134);
+            this.txtDatabase.Location = new System.Drawing.Point(73, 57);
             this.txtDatabase.Name = "txtDatabase";
             this.txtDatabase.Size = new System.Drawing.Size(261, 20);
             this.txtDatabase.TabIndex = 1;
@@ -63,7 +63,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 110);
+            this.label1.Location = new System.Drawing.Point(11, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 2;
@@ -72,7 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 137);
+            this.label2.Location = new System.Drawing.Point(11, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 3;
@@ -81,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 186);
+            this.label3.Location = new System.Drawing.Point(11, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 5;
@@ -89,7 +89,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(91, 183);
+            this.txtUsername.Location = new System.Drawing.Point(73, 106);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(261, 20);
             this.txtUsername.TabIndex = 4;
@@ -97,7 +97,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 210);
+            this.label4.Location = new System.Drawing.Point(11, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 7;
@@ -105,14 +105,14 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(91, 210);
+            this.txtPassword.Location = new System.Drawing.Point(73, 133);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(261, 20);
             this.txtPassword.TabIndex = 6;
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(32, 257);
+            this.btnConnect.Location = new System.Drawing.Point(14, 180);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(155, 23);
             this.btnConnect.TabIndex = 8;
@@ -122,7 +122,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(32, 288);
+            this.btnSave.Location = new System.Drawing.Point(14, 211);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(323, 23);
             this.btnSave.TabIndex = 9;
@@ -133,7 +133,7 @@
             // chkUseIntergaratedSecurity
             // 
             this.chkUseIntergaratedSecurity.AutoSize = true;
-            this.chkUseIntergaratedSecurity.Location = new System.Drawing.Point(91, 160);
+            this.chkUseIntergaratedSecurity.Location = new System.Drawing.Point(73, 83);
             this.chkUseIntergaratedSecurity.Name = "chkUseIntergaratedSecurity";
             this.chkUseIntergaratedSecurity.Size = new System.Drawing.Size(140, 17);
             this.chkUseIntergaratedSecurity.TabIndex = 10;
@@ -143,7 +143,7 @@
             // 
             // btnTestEntityConnection
             // 
-            this.btnTestEntityConnection.Location = new System.Drawing.Point(193, 257);
+            this.btnTestEntityConnection.Location = new System.Drawing.Point(175, 180);
             this.btnTestEntityConnection.Name = "btnTestEntityConnection";
             this.btnTestEntityConnection.Size = new System.Drawing.Size(158, 23);
             this.btnTestEntityConnection.TabIndex = 11;
@@ -166,9 +166,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Location = new System.Drawing.Point(20, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(490, 343);
+            this.groupBox1.Size = new System.Drawing.Size(370, 251);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Options";
@@ -177,11 +177,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 343);
+            this.ClientSize = new System.Drawing.Size(410, 331);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmDynamicallySetConnectionString";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dynamically Set Connection String";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

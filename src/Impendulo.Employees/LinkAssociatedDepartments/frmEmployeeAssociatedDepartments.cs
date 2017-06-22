@@ -11,7 +11,7 @@ using Impendulo.Data.Models;
 
 namespace Impendulo.Employees.LinkAssociatedDepartments.Development
 {
-    public partial class frmEmployeeAssociatedDepartments : Form
+    public partial class frmEmployeeAssociatedDepartments : MetroFramework.Forms.MetroForm
     {
         public frmEmployeeAssociatedDepartments()
         {

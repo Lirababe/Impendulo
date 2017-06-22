@@ -16,7 +16,7 @@ using Impendulo.Addresses.Deployment;
 
 namespace Impendulo.Company.Development
 {
-    public partial class frmCompany : Form
+    public partial class frmCompany : MetroFramework.Forms.MetroForm
     {
         public Individual NewIndividuialObj { get; set; }
         private string SerachCriteriaCompanyName { get; set; }

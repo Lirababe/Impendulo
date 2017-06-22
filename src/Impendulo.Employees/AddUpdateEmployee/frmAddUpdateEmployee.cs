@@ -12,7 +12,7 @@ using System.Data.Entity.Validation;
 
 namespace Impendulo.Employees.AddUpdateEmployee.Development
 {
-    public partial class frmAddUpdateEmployee : Form
+    public partial class frmAddUpdateEmployee : MetroFramework.Forms.MetroForm
     {
         public Employee CurrentEmployee { get; set; }
         public frmAddUpdateEmployee()

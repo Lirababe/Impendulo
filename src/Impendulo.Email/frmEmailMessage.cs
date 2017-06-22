@@ -15,7 +15,7 @@ using Impendulo.Common.Enum;
 
 namespace Impendulo.Email.Development
 {
-    public partial class frmSendEmail : Form
+    public partial class frmSendEmail : MetroFramework.Forms.MetroForm
     {
 
         public List<string> AttachmentsUsingFilePaths { get; set; }

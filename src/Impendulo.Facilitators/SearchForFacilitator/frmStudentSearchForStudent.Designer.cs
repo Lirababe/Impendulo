@@ -44,8 +44,6 @@
             this.colSelectStudent = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.individualSecondName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.individualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -56,15 +54,17 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.colLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbSearchForStudent.SuspendLayout();
             this.panelStudentSearchResults.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentSearchResults)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.individualBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.individualBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gbSearchForStudent
@@ -223,18 +223,6 @@
             this.individualSecondName.Name = "individualSecondName";
             this.individualSecondName.ReadOnly = true;
             // 
-            // colLastName
-            // 
-            this.colLastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colLastName.DataPropertyName = "IndividualLastname";
-            this.colLastName.HeaderText = "Last Name";
-            this.colLastName.Name = "colLastName";
-            this.colLastName.ReadOnly = true;
-            // 
-            // individualBindingSource
-            // 
-            this.individualBindingSource.DataSource = typeof(Impendulo.Data.Models.Individual);
-            // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = null;
@@ -331,6 +319,18 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
+            // colLastName
+            // 
+            this.colLastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colLastName.DataPropertyName = "IndividualLastname";
+            this.colLastName.HeaderText = "Last Name";
+            this.colLastName.Name = "colLastName";
+            this.colLastName.ReadOnly = true;
+            // 
+            // individualBindingSource
+            // 
+            this.individualBindingSource.DataSource = typeof(Impendulo.Data.Models.Individual);
+            // 
             // frmStudentSearchForFacilitator
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -338,7 +338,7 @@
             this.Controls.Add(this.panelStudentSearchResults);
             this.Controls.Add(this.gbSearchForStudent);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmStudentSearchForFacilitator";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -354,10 +354,10 @@
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentSearchResults)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.individualBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.individualBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
