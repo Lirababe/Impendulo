@@ -16,7 +16,7 @@ using Impendulo.Addresses.Deployment;
 
 namespace Impendulo.Employees.Development
 {
-    public partial class frmAddUpdateEmployeeDetails : Form
+    public partial class frmAddUpdateEmployeeDetails : MetroFramework.Forms.MetroForm
     {
         public Employee CurrentEmployee { get; set; }
         public int EmployeeID { get; set; }

@@ -123,9 +123,9 @@
             this.groupBox1.Controls.Add(individualFirstNameLabel);
             this.groupBox1.Controls.Add(this.txtEmployeeFirstName);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Location = new System.Drawing.Point(20, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(392, 294);
+            this.groupBox1.Size = new System.Drawing.Size(387, 301);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee Details";
@@ -141,9 +141,9 @@
             this.gbUsernameAndPassword.Controls.Add(this.label4);
             this.gbUsernameAndPassword.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gbUsernameAndPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gbUsernameAndPassword.Location = new System.Drawing.Point(3, 154);
+            this.gbUsernameAndPassword.Location = new System.Drawing.Point(3, 161);
             this.gbUsernameAndPassword.Name = "gbUsernameAndPassword";
-            this.gbUsernameAndPassword.Size = new System.Drawing.Size(386, 106);
+            this.gbUsernameAndPassword.Size = new System.Drawing.Size(381, 106);
             this.gbUsernameAndPassword.TabIndex = 43;
             this.gbUsernameAndPassword.TabStop = false;
             this.gbUsernameAndPassword.Text = "Username And Password";
@@ -203,14 +203,14 @@
             this.flowLayoutPanel1.Controls.Add(this.btmCancel);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 260);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 267);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(386, 31);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(381, 31);
             this.flowLayoutPanel1.TabIndex = 42;
             // 
             // btnAddEmployee
             // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(308, 3);
+            this.btnAddEmployee.Location = new System.Drawing.Point(303, 3);
             this.btnAddEmployee.Name = "btnAddEmployee";
             this.btnAddEmployee.Size = new System.Drawing.Size(75, 23);
             this.btnAddEmployee.TabIndex = 0;
@@ -220,7 +220,7 @@
             // 
             // btnUpdateEmployee
             // 
-            this.btnUpdateEmployee.Location = new System.Drawing.Point(227, 3);
+            this.btnUpdateEmployee.Location = new System.Drawing.Point(222, 3);
             this.btnUpdateEmployee.Name = "btnUpdateEmployee";
             this.btnUpdateEmployee.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateEmployee.TabIndex = 1;
@@ -230,7 +230,7 @@
             // 
             // btmCancel
             // 
-            this.btmCancel.Location = new System.Drawing.Point(146, 3);
+            this.btmCancel.Location = new System.Drawing.Point(141, 3);
             this.btmCancel.Name = "btmCancel";
             this.btmCancel.Size = new System.Drawing.Size(75, 23);
             this.btmCancel.TabIndex = 2;
@@ -285,11 +285,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 294);
+            this.ClientSize = new System.Drawing.Size(427, 381);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAddUpdateEmployee";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add/Update Employee Details";
             this.Load += new System.EventHandler(this.frmAddUpdateEmployee_Load);
             this.groupBox1.ResumeLayout(false);

@@ -11,7 +11,7 @@ using Impendulo.Data.Models;
 
 namespace Impendulo.Employees.EmployeeUserNamePassword.Development
 {
-    public partial class frmEmployeeUserNamePassword : Form
+    public partial class frmEmployeeUserNamePassword : MetroFramework.Forms.MetroForm
     {
         public Employee CurrentEmployee { get; set; }
         public frmEmployeeUserNamePassword()
