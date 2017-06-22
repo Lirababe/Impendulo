@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtIdNumber = new System.Windows.Forms.TextBox();
             this.lblIDNumber = new System.Windows.Forms.Label();
             this.cboIndividualTitle = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,7 +43,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lookupTitleBindingSource = new System.Windows.Forms.BindingSource();
+            this.lookupTitleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtIDNumber = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookupTitleBindingSource)).BeginInit();
@@ -51,7 +52,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtIdNumber);
+            this.groupBox1.Controls.Add(this.txtIDNumber);
             this.groupBox1.Controls.Add(this.lblIDNumber);
             this.groupBox1.Controls.Add(this.cboIndividualTitle);
             this.groupBox1.Controls.Add(this.label4);
@@ -69,13 +70,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Details";
-            // 
-            // txtIdNumber
-            // 
-            this.txtIdNumber.Location = new System.Drawing.Point(256, 19);
-            this.txtIdNumber.Name = "txtIdNumber";
-            this.txtIdNumber.Size = new System.Drawing.Size(234, 20);
-            this.txtIdNumber.TabIndex = 1;
             // 
             // lblIDNumber
             // 
@@ -155,7 +149,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 105);
+            this.label3.Location = new System.Drawing.Point(12, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 4;
@@ -197,6 +191,14 @@
             // 
             this.lookupTitleBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupTitle);
             // 
+            // txtIDNumber
+            // 
+            this.txtIDNumber.Location = new System.Drawing.Point(256, 19);
+            this.txtIDNumber.Mask = "0000000000000";
+            this.txtIDNumber.Name = "txtIDNumber";
+            this.txtIDNumber.Size = new System.Drawing.Size(107, 20);
+            this.txtIDNumber.TabIndex = 13;
+            // 
             // frmContactsV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,7 +219,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtIdNumber;
         private System.Windows.Forms.Label lblIDNumber;
         private System.Windows.Forms.ComboBox cboIndividualTitle;
         private System.Windows.Forms.Label label4;
@@ -232,5 +233,6 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource lookupTitleBindingSource;
+        private System.Windows.Forms.MaskedTextBox txtIDNumber;
     }
 }

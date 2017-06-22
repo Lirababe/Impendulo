@@ -15,13 +15,14 @@ namespace Impendulo.Development.Contacts
     public partial class frmContactsV2 : MetroForm
     {
 
-        
+        public Boolean IsStudent { get; set; }
         public Individual CurrentContact { get; set; }
         public int IndividualID { get; set; }
 
         public frmContactsV2()
         {
             IndividualID = 0;
+            IsStudent = false;
             InitializeComponent();
         }
 
