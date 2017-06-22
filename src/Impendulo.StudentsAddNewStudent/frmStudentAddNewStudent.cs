@@ -1493,6 +1493,7 @@ namespace Impendulo.StudentForms.Development
                             StudentID = CurrentStudent.StudentID,
                             IsCurrentCompany = true
 
+
                         });
                         Dbconnection.SaveChanges();
                     }

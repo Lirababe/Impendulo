@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label addressAreaCodeLabel;
             System.Windows.Forms.Label addressSuburbLabel;
             System.Windows.Forms.Label addressTownLabel;
@@ -69,7 +68,7 @@
             this.gbStudentCompany = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.companyNameTextBox = new System.Windows.Forms.TextBox();
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.companyBindingSource = new System.Windows.Forms.BindingSource();
             this.companySicCodeTextBox = new System.Windows.Forms.TextBox();
             this.companySARSLevyRegistrationNumberTextBox = new System.Windows.Forms.TextBox();
             this.companySETANumberTextBox = new System.Windows.Forms.TextBox();
@@ -79,7 +78,7 @@
             this.gbStudnetNextOfKin = new System.Windows.Forms.GroupBox();
             this.toolStripContainerStudentNextOfKin = new System.Windows.Forms.ToolStripContainer();
             this.dgvStudentNextOfKin = new System.Windows.Forms.DataGridView();
-            this.BindingNavigatorStudnetNextOfKin = new System.Windows.Forms.BindingNavigator(this.components);
+            this.BindingNavigatorStudnetNextOfKin = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorAddNewItem3 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem4 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem4 = new System.Windows.Forms.ToolStripButton();
@@ -96,14 +95,14 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gbSutdentAddressAddEdit = new System.Windows.Forms.GroupBox();
             this.btnStudentAddressAddUpdate = new System.Windows.Forms.Button();
-            this.imageListStudentRegisteration = new System.Windows.Forms.ImageList(this.components);
+            this.imageListStudentRegisteration = new System.Windows.Forms.ImageList();
             this.btnStudentAddressCancelAddUpdate = new System.Windows.Forms.Button();
             this.cboStudentAddressProvince = new System.Windows.Forms.ComboBox();
-            this.BindingSourceStudentAddressProvinces = new System.Windows.Forms.BindingSource(this.components);
+            this.BindingSourceStudentAddressProvinces = new System.Windows.Forms.BindingSource();
             this.cboStudentAddressCountry = new System.Windows.Forms.ComboBox();
-            this.BindingSourceStudentAddressCountry = new System.Windows.Forms.BindingSource(this.components);
+            this.BindingSourceStudentAddressCountry = new System.Windows.Forms.BindingSource();
             this.cboStudentAddressAddressType = new System.Windows.Forms.ComboBox();
-            this.BindingSourceStudentAddressAddressType = new System.Windows.Forms.BindingSource(this.components);
+            this.BindingSourceStudentAddressAddressType = new System.Windows.Forms.BindingSource();
             this.txtStudentAddressLineOne = new System.Windows.Forms.TextBox();
             this.txtStudentAddressLineTwo = new System.Windows.Forms.TextBox();
             this.txtStudentAddressTown = new System.Windows.Forms.TextBox();
@@ -122,8 +121,8 @@
             this.addressAreaCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Country = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressModifiedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BindingSourceStudentAddresses = new System.Windows.Forms.BindingSource(this.components);
-            this.BindingNavigatorStudentAddresses = new System.Windows.Forms.BindingNavigator(this.components);
+            this.BindingSourceStudentAddresses = new System.Windows.Forms.BindingSource();
+            this.BindingNavigatorStudentAddresses = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -157,8 +156,8 @@
             this.dgvStudentContactInfo = new System.Windows.Forms.DataGridView();
             this.ContactType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BindingSourceStudentContactDetails = new System.Windows.Forms.BindingSource(this.components);
-            this.BindingNavigatorStudentContactInfo = new System.Windows.Forms.BindingNavigator(this.components);
+            this.BindingSourceStudentContactDetails = new System.Windows.Forms.BindingSource();
+            this.BindingNavigatorStudentContactInfo = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
@@ -185,8 +184,8 @@
             this.dgvStudentDisablity = new System.Windows.Forms.DataGridView();
             this.AssignnedDisablity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentDisabilityNotesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BindingSourceStudentDisablity = new System.Windows.Forms.BindingSource(this.components);
-            this.BindingNavigatorStudentDisablity = new System.Windows.Forms.BindingNavigator(this.components);
+            this.BindingSourceStudentDisablity = new System.Windows.Forms.BindingSource();
+            this.BindingNavigatorStudentDisablity = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem2 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem2 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem2 = new System.Windows.Forms.ToolStripButton();
@@ -217,7 +216,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNextSection = new System.Windows.Forms.Button();
             this.btnPreviousSection = new System.Windows.Forms.Button();
-            this.BindingSourceStudentContactInfoContactType = new System.Windows.Forms.BindingSource(this.components);
+            this.BindingSourceStudentContactInfoContactType = new System.Windows.Forms.BindingSource();
             addressAreaCodeLabel = new System.Windows.Forms.Label();
             addressSuburbLabel = new System.Windows.Forms.Label();
             addressTownLabel = new System.Windows.Forms.Label();
