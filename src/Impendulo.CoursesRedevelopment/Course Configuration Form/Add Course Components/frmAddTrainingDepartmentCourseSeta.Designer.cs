@@ -33,6 +33,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.toolStripContainerAvaiableSeta = new System.Windows.Forms.ToolStripContainer();
             this.dgvAvailableSeta = new System.Windows.Forms.DataGridView();
+            this.setaAbbriviationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.setsNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceAvailableSeta = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorAvailableSeta = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
@@ -49,6 +51,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolStripContainerLinkedSeta = new System.Windows.Forms.ToolStripContainer();
             this.dgvLinkedSeta = new System.Windows.Forms.DataGridView();
+            this.setaAbbriviationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.setsNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceLinkedSeta = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorLinkedSeta = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -60,10 +64,6 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.setaAbbriviationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.setsNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.setaAbbriviationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.setsNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.toolStripContainerAvaiableSeta.ContentPanel.SuspendLayout();
             this.toolStripContainerAvaiableSeta.TopToolStripPanel.SuspendLayout();
@@ -85,10 +85,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.toolStripContainerAvaiableSeta);
-            this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(26, 62);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(400, 280);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -100,11 +100,11 @@
             // toolStripContainerAvaiableSeta.ContentPanel
             // 
             this.toolStripContainerAvaiableSeta.ContentPanel.Controls.Add(this.dgvAvailableSeta);
-            this.toolStripContainerAvaiableSeta.ContentPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.toolStripContainerAvaiableSeta.ContentPanel.Margin = new System.Windows.Forms.Padding(2);
             this.toolStripContainerAvaiableSeta.ContentPanel.Size = new System.Drawing.Size(396, 236);
             this.toolStripContainerAvaiableSeta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainerAvaiableSeta.Location = new System.Drawing.Point(2, 15);
-            this.toolStripContainerAvaiableSeta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.toolStripContainerAvaiableSeta.Margin = new System.Windows.Forms.Padding(2);
             this.toolStripContainerAvaiableSeta.Name = "toolStripContainerAvaiableSeta";
             this.toolStripContainerAvaiableSeta.Size = new System.Drawing.Size(396, 263);
             this.toolStripContainerAvaiableSeta.TabIndex = 1;
@@ -126,12 +126,29 @@
             this.dgvAvailableSeta.DataSource = this.bindingSourceAvailableSeta;
             this.dgvAvailableSeta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAvailableSeta.Location = new System.Drawing.Point(0, 0);
-            this.dgvAvailableSeta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAvailableSeta.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAvailableSeta.Name = "dgvAvailableSeta";
             this.dgvAvailableSeta.ReadOnly = true;
             this.dgvAvailableSeta.RowTemplate.Height = 24;
             this.dgvAvailableSeta.Size = new System.Drawing.Size(396, 236);
             this.dgvAvailableSeta.TabIndex = 0;
+            // 
+            // setaAbbriviationDataGridViewTextBoxColumn
+            // 
+            this.setaAbbriviationDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.setaAbbriviationDataGridViewTextBoxColumn.DataPropertyName = "SetaAbbriviation";
+            this.setaAbbriviationDataGridViewTextBoxColumn.HeaderText = "SETA";
+            this.setaAbbriviationDataGridViewTextBoxColumn.Name = "setaAbbriviationDataGridViewTextBoxColumn";
+            this.setaAbbriviationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.setaAbbriviationDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // setsNameDataGridViewTextBoxColumn
+            // 
+            this.setsNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.setsNameDataGridViewTextBoxColumn.DataPropertyName = "SetsName";
+            this.setsNameDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.setsNameDataGridViewTextBoxColumn.Name = "setsNameDataGridViewTextBoxColumn";
+            this.setsNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bindingSourceAvailableSeta
             // 
@@ -237,8 +254,8 @@
             // btnRemoveSeta
             // 
             this.btnRemoveSeta.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveSeta.Image")));
-            this.btnRemoveSeta.Location = new System.Drawing.Point(411, 146);
-            this.btnRemoveSeta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveSeta.Location = new System.Drawing.Point(428, 198);
+            this.btnRemoveSeta.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveSeta.Name = "btnRemoveSeta";
             this.btnRemoveSeta.Size = new System.Drawing.Size(56, 67);
             this.btnRemoveSeta.TabIndex = 9;
@@ -248,8 +265,8 @@
             // btnLinkSeta
             // 
             this.btnLinkSeta.Image = ((System.Drawing.Image)(resources.GetObject("btnLinkSeta.Image")));
-            this.btnLinkSeta.Location = new System.Drawing.Point(411, 75);
-            this.btnLinkSeta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLinkSeta.Location = new System.Drawing.Point(428, 127);
+            this.btnLinkSeta.Margin = new System.Windows.Forms.Padding(2);
             this.btnLinkSeta.Name = "btnLinkSeta";
             this.btnLinkSeta.Size = new System.Drawing.Size(56, 67);
             this.btnLinkSeta.TabIndex = 8;
@@ -259,10 +276,10 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.toolStripContainerLinkedSeta);
-            this.groupBox2.Location = new System.Drawing.Point(471, 10);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(488, 62);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(400, 278);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -274,11 +291,11 @@
             // toolStripContainerLinkedSeta.ContentPanel
             // 
             this.toolStripContainerLinkedSeta.ContentPanel.Controls.Add(this.dgvLinkedSeta);
-            this.toolStripContainerLinkedSeta.ContentPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.toolStripContainerLinkedSeta.ContentPanel.Margin = new System.Windows.Forms.Padding(2);
             this.toolStripContainerLinkedSeta.ContentPanel.Size = new System.Drawing.Size(396, 234);
             this.toolStripContainerLinkedSeta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainerLinkedSeta.Location = new System.Drawing.Point(2, 15);
-            this.toolStripContainerLinkedSeta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.toolStripContainerLinkedSeta.Margin = new System.Windows.Forms.Padding(2);
             this.toolStripContainerLinkedSeta.Name = "toolStripContainerLinkedSeta";
             this.toolStripContainerLinkedSeta.Size = new System.Drawing.Size(396, 261);
             this.toolStripContainerLinkedSeta.TabIndex = 0;
@@ -300,12 +317,29 @@
             this.dgvLinkedSeta.DataSource = this.bindingSourceLinkedSeta;
             this.dgvLinkedSeta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvLinkedSeta.Location = new System.Drawing.Point(0, 0);
-            this.dgvLinkedSeta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvLinkedSeta.Margin = new System.Windows.Forms.Padding(2);
             this.dgvLinkedSeta.Name = "dgvLinkedSeta";
             this.dgvLinkedSeta.ReadOnly = true;
             this.dgvLinkedSeta.RowTemplate.Height = 24;
             this.dgvLinkedSeta.Size = new System.Drawing.Size(396, 234);
             this.dgvLinkedSeta.TabIndex = 0;
+            // 
+            // setaAbbriviationDataGridViewTextBoxColumn1
+            // 
+            this.setaAbbriviationDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.setaAbbriviationDataGridViewTextBoxColumn1.DataPropertyName = "SetaAbbriviation";
+            this.setaAbbriviationDataGridViewTextBoxColumn1.HeaderText = "SETA";
+            this.setaAbbriviationDataGridViewTextBoxColumn1.Name = "setaAbbriviationDataGridViewTextBoxColumn1";
+            this.setaAbbriviationDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.setaAbbriviationDataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // setsNameDataGridViewTextBoxColumn1
+            // 
+            this.setsNameDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.setsNameDataGridViewTextBoxColumn1.DataPropertyName = "SetsName";
+            this.setsNameDataGridViewTextBoxColumn1.HeaderText = "Description";
+            this.setsNameDataGridViewTextBoxColumn1.Name = "setsNameDataGridViewTextBoxColumn1";
+            this.setsNameDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // bindingSourceLinkedSeta
             // 
@@ -408,53 +442,17 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // setaAbbriviationDataGridViewTextBoxColumn1
-            // 
-            this.setaAbbriviationDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.setaAbbriviationDataGridViewTextBoxColumn1.DataPropertyName = "SetaAbbriviation";
-            this.setaAbbriviationDataGridViewTextBoxColumn1.HeaderText = "SETA";
-            this.setaAbbriviationDataGridViewTextBoxColumn1.Name = "setaAbbriviationDataGridViewTextBoxColumn1";
-            this.setaAbbriviationDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.setaAbbriviationDataGridViewTextBoxColumn1.Width = 60;
-            // 
-            // setsNameDataGridViewTextBoxColumn1
-            // 
-            this.setsNameDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.setsNameDataGridViewTextBoxColumn1.DataPropertyName = "SetsName";
-            this.setsNameDataGridViewTextBoxColumn1.HeaderText = "Description";
-            this.setsNameDataGridViewTextBoxColumn1.Name = "setsNameDataGridViewTextBoxColumn1";
-            this.setsNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // setaAbbriviationDataGridViewTextBoxColumn
-            // 
-            this.setaAbbriviationDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.setaAbbriviationDataGridViewTextBoxColumn.DataPropertyName = "SetaAbbriviation";
-            this.setaAbbriviationDataGridViewTextBoxColumn.HeaderText = "SETA";
-            this.setaAbbriviationDataGridViewTextBoxColumn.Name = "setaAbbriviationDataGridViewTextBoxColumn";
-            this.setaAbbriviationDataGridViewTextBoxColumn.ReadOnly = true;
-            this.setaAbbriviationDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // setsNameDataGridViewTextBoxColumn
-            // 
-            this.setsNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.setsNameDataGridViewTextBoxColumn.DataPropertyName = "SetsName";
-            this.setsNameDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.setsNameDataGridViewTextBoxColumn.Name = "setsNameDataGridViewTextBoxColumn";
-            this.setsNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // frmAddTrainingDepartmentCourseSeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 296);
+            this.ClientSize = new System.Drawing.Size(921, 367);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnRemoveSeta);
             this.Controls.Add(this.btnLinkSeta);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAddTrainingDepartmentCourseSeta";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course Accedited Seta";
             this.Load += new System.EventHandler(this.frmAddTrainingDepartmentCourseSeta_Load);
             this.groupBox1.ResumeLayout(false);

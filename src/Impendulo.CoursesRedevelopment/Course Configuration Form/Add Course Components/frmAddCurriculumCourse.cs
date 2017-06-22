@@ -11,7 +11,7 @@ using Impendulo.Data.Models;
 
 namespace Impendulo.Courses.InputForms.Development
 {
-    public partial class frmAddCurriculumCourse : Form
+    public partial class frmAddCurriculumCourse : MetroFramework.Forms.MetroForm
     {
         public int CurriculumID { get; set; }
         public int DepartmentID { set; get; }

@@ -35,6 +35,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.dgvLinkedActivities = new System.Windows.Forms.DataGridView();
+            this.activityCodeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LinkedActivityTotalDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activitiyDescriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceLinkedModuleActivities = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorLinkedActivities = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
@@ -51,6 +54,8 @@
             this.splitContainerAvailableActivities = new System.Windows.Forms.SplitContainer();
             this.toolStripContainerAvailableActivities = new System.Windows.Forms.ToolStripContainer();
             this.dgvAvailableActivities = new System.Windows.Forms.DataGridView();
+            this.activityCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activitiyDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceAvailableModuleActivities = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorAvailableActivities = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -72,11 +77,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cboModules = new System.Windows.Forms.ComboBox();
             this.bindingSourceModules = new System.Windows.Forms.BindingSource(this.components);
-            this.activityCodeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LinkedActivityTotalDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activitiyDescriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activityCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activitiyDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.toolStripContainer2.ContentPanel.SuspendLayout();
             this.toolStripContainer2.TopToolStripPanel.SuspendLayout();
@@ -106,7 +106,7 @@
             // btnRemoveActivities
             // 
             this.btnRemoveActivities.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveActivities.Image")));
-            this.btnRemoveActivities.Location = new System.Drawing.Point(453, 217);
+            this.btnRemoveActivities.Location = new System.Drawing.Point(458, 263);
             this.btnRemoveActivities.Name = "btnRemoveActivities";
             this.btnRemoveActivities.Size = new System.Drawing.Size(75, 83);
             this.btnRemoveActivities.TabIndex = 7;
@@ -116,7 +116,7 @@
             // btnLinkActivities
             // 
             this.btnLinkActivities.Image = ((System.Drawing.Image)(resources.GetObject("btnLinkActivities.Image")));
-            this.btnLinkActivities.Location = new System.Drawing.Point(453, 117);
+            this.btnLinkActivities.Location = new System.Drawing.Point(458, 163);
             this.btnLinkActivities.Name = "btnLinkActivities";
             this.btnLinkActivities.Size = new System.Drawing.Size(75, 83);
             this.btnLinkActivities.TabIndex = 6;
@@ -126,7 +126,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.toolStripContainer2);
-            this.groupBox2.Location = new System.Drawing.Point(534, 12);
+            this.groupBox2.Location = new System.Drawing.Point(539, 58);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(435, 448);
             this.groupBox2.TabIndex = 5;
@@ -170,6 +170,27 @@
             this.dgvLinkedActivities.Size = new System.Drawing.Size(429, 402);
             this.dgvLinkedActivities.TabIndex = 0;
             this.dgvLinkedActivities.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvLinkedActivities_DataBindingComplete);
+            // 
+            // activityCodeDataGridViewTextBoxColumn1
+            // 
+            this.activityCodeDataGridViewTextBoxColumn1.DataPropertyName = "ActivityCode";
+            this.activityCodeDataGridViewTextBoxColumn1.HeaderText = "Code";
+            this.activityCodeDataGridViewTextBoxColumn1.Name = "activityCodeDataGridViewTextBoxColumn1";
+            this.activityCodeDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // LinkedActivityTotalDuration
+            // 
+            this.LinkedActivityTotalDuration.HeaderText = "Duration";
+            this.LinkedActivityTotalDuration.Name = "LinkedActivityTotalDuration";
+            this.LinkedActivityTotalDuration.ReadOnly = true;
+            // 
+            // activitiyDescriptionDataGridViewTextBoxColumn1
+            // 
+            this.activitiyDescriptionDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.activitiyDescriptionDataGridViewTextBoxColumn1.DataPropertyName = "ActivitiyDescription";
+            this.activitiyDescriptionDataGridViewTextBoxColumn1.HeaderText = "Description";
+            this.activitiyDescriptionDataGridViewTextBoxColumn1.Name = "activitiyDescriptionDataGridViewTextBoxColumn1";
+            this.activitiyDescriptionDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // bindingSourceLinkedModuleActivities
             // 
@@ -276,7 +297,7 @@
             // 
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(17, 58);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(435, 448);
             this.groupBox1.TabIndex = 4;
@@ -346,6 +367,23 @@
             this.dgvAvailableActivities.Size = new System.Drawing.Size(429, 204);
             this.dgvAvailableActivities.TabIndex = 0;
             this.dgvAvailableActivities.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvAvailableActivities_DataBindingComplete);
+            // 
+            // activityCodeDataGridViewTextBoxColumn
+            // 
+            this.activityCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.activityCodeDataGridViewTextBoxColumn.DataPropertyName = "ActivityCode";
+            this.activityCodeDataGridViewTextBoxColumn.HeaderText = "Code";
+            this.activityCodeDataGridViewTextBoxColumn.Name = "activityCodeDataGridViewTextBoxColumn";
+            this.activityCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.activityCodeDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // activitiyDescriptionDataGridViewTextBoxColumn
+            // 
+            this.activitiyDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.activitiyDescriptionDataGridViewTextBoxColumn.DataPropertyName = "ActivitiyDescription";
+            this.activitiyDescriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.activitiyDescriptionDataGridViewTextBoxColumn.Name = "activitiyDescriptionDataGridViewTextBoxColumn";
+            this.activitiyDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bindingSourceAvailableModuleActivities
             // 
@@ -550,55 +588,15 @@
             // 
             this.bindingSourceModules.DataSource = typeof(Impendulo.Data.Models.Module);
             // 
-            // activityCodeDataGridViewTextBoxColumn1
-            // 
-            this.activityCodeDataGridViewTextBoxColumn1.DataPropertyName = "ActivityCode";
-            this.activityCodeDataGridViewTextBoxColumn1.HeaderText = "Code";
-            this.activityCodeDataGridViewTextBoxColumn1.Name = "activityCodeDataGridViewTextBoxColumn1";
-            this.activityCodeDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // LinkedActivityTotalDuration
-            // 
-            this.LinkedActivityTotalDuration.HeaderText = "Duration";
-            this.LinkedActivityTotalDuration.Name = "LinkedActivityTotalDuration";
-            this.LinkedActivityTotalDuration.ReadOnly = true;
-            // 
-            // activitiyDescriptionDataGridViewTextBoxColumn1
-            // 
-            this.activitiyDescriptionDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.activitiyDescriptionDataGridViewTextBoxColumn1.DataPropertyName = "ActivitiyDescription";
-            this.activitiyDescriptionDataGridViewTextBoxColumn1.HeaderText = "Description";
-            this.activitiyDescriptionDataGridViewTextBoxColumn1.Name = "activitiyDescriptionDataGridViewTextBoxColumn1";
-            this.activitiyDescriptionDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // activityCodeDataGridViewTextBoxColumn
-            // 
-            this.activityCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.activityCodeDataGridViewTextBoxColumn.DataPropertyName = "ActivityCode";
-            this.activityCodeDataGridViewTextBoxColumn.HeaderText = "Code";
-            this.activityCodeDataGridViewTextBoxColumn.Name = "activityCodeDataGridViewTextBoxColumn";
-            this.activityCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.activityCodeDataGridViewTextBoxColumn.Width = 57;
-            // 
-            // activitiyDescriptionDataGridViewTextBoxColumn
-            // 
-            this.activitiyDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.activitiyDescriptionDataGridViewTextBoxColumn.DataPropertyName = "ActivitiyDescription";
-            this.activitiyDescriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.activitiyDescriptionDataGridViewTextBoxColumn.Name = "activitiyDescriptionDataGridViewTextBoxColumn";
-            this.activitiyDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // frmAddModuleActivities
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(980, 469);
+            this.ClientSize = new System.Drawing.Size(988, 520);
             this.Controls.Add(this.btnRemoveActivities);
             this.Controls.Add(this.btnLinkActivities);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAddModuleActivities";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Activities";
             this.Load += new System.EventHandler(this.frmAddTrainingDepartmentCourseEnrollmentTypeModuleActivities_Load);
             this.groupBox2.ResumeLayout(false);
