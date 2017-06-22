@@ -17,7 +17,7 @@ using System.Data.Sql;
 
 namespace Impendulo.DatabaseSettings.Development
 {
-    public partial class frmDynamicallySetConnectionString : Form
+    public partial class frmDynamicallySetConnectionString : MetroFramework.Forms.MetroForm
     {
         public frmDynamicallySetConnectionString()
         {

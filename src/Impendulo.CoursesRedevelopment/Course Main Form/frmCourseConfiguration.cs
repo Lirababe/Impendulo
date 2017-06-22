@@ -16,7 +16,7 @@ using Impendulo.CoursesRedevelopment.Course_Configuration_Form.Add_Course_PreReq
 
 namespace Impendulo.Courses.Configuration.Development
 {
-    public partial class frmCourseConfiguration : Form
+    public partial class frmCourseConfiguration : MetroFramework.Forms.MetroForm
     {
         public frmCourseConfiguration()
         {

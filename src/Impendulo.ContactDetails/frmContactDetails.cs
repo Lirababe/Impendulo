@@ -15,7 +15,7 @@ namespace Impendulo.ContactDetails.Development
 {
     /// <summary>
     /// </summary>
-    public partial class frmAddUpdateContactDetails : Form
+    public partial class frmAddUpdateContactDetails : MetroFramework.Forms.MetroForm
     {
         public int ContactDetailID { get; set; }
         public ContactDetail CurrentDetail { get; set; }
