@@ -16,5 +16,10 @@ namespace Impendulo.Contacts.SearchContacts
         {
             InitializeComponent();
         }
+
+        private void frmSearchContacts_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

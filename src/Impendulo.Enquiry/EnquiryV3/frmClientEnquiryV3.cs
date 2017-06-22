@@ -272,12 +272,53 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
             }
             else
             {
+                //Selects From List Of All Students from the Custom Student Search Form
                 using (frmSelectIndividualContact frm = new frmSelectIndividualContact())
                 {
                     frm.ShowDialog();
+                    //get the Individual Selected Which represents the Student Selected.
+
+                    if (frm.SelectedIndividual != null)
+                    {
+
+                        using (var Dbconnection = new MCDEntities())
+                        {
+                            /*1. Removes the current Slected Company Contact*/
+                            Data.Models.Enquiry CurrentEnquiry = ((Data.Models.Enquiry)enquiryInprogressBindingSource.Current);
+
+                            Dbconnection.Enquiries.Attach(CurrentEnquiry);
+
+                            List<Individual> temp = ((Data.Models.Enquiry)enquiryInprogressBindingSource.Current).Individuals.ToList<Individual>();
+                            List<Data.Models.Company> tempCompanies = ((Data.Models.Enquiry)enquiryInprogressBindingSource.Current).Companies.ToList<Data.Models.Company>();
+                            foreach (Individual individ in temp)
+                            {
+                                ((Data.Models.Enquiry)enquiryInprogressBindingSource.Current).Individuals.Remove(individ);
+                            }
+                            foreach (Data.Models.Company comp in tempCompanies)
+                            {
+                                ((Data.Models.Enquiry)enquiryInprogressBindingSource.Current).Companies.Remove(comp);
+                            }
+                            // Dbconnection.Entry(CurrentEnquiry).State = EntityState.Modified;
+                            Dbconnection.SaveChanges();
+                            /*1. End Removal of Current Enquiry Contact*/
+
+
+                            /*2. Adds The Cuurentlty Selected Student Contact to be linked with the Enquiry for future contacting*/
+                            Individual IndividualToLink = (from a in Dbconnection.Individuals
+                                                           where a.IndividualID == frm.SelectedIndividual.IndividualID
+                                                           select a).FirstOrDefault<Individual>();
+                            CurrentEnquiry.Individuals.Add(IndividualToLink);
+                            Dbconnection.SaveChanges();
+                            /*2. End Adding the Student Contact Details To the Enquiry.*/
+                        };
+                    }
+                    this.refreshInProgressEnquiry(CurrentSelectedEnquiryID);
+
+
                 }
             }
 
         }
+
     }
 }

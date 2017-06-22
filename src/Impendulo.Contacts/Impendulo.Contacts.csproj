@@ -79,6 +79,12 @@
     <Compile Include="frmContactsV2.Designer.cs">
       <DependentUpon>frmContactsV2.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMenuForForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuForForms.Designer.cs">
+      <DependentUpon>frmMenuForForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchContacts\frmSearchContacts.cs">
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmContactsV2.resx">
       <DependentUpon>frmContactsV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuForForms.resx">
+      <DependentUpon>frmMenuForForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

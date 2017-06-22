@@ -10,8 +10,20 @@ namespace Impendulo.Data.Models
     {
         public string FullName
         {
-            get { return string.Format("{0} {1} {2}", IndividualFirstName, IndividualSecondName, IndividualLastname); }
+            get
+            {
+                return string.Format("{0} {1}", IndividualFirstName, IndividualLastname);
+            }
         }
+
+        public override string ToString()
+        {
+            return FullName;
+        }
+        //public string FullName
+        //{
+        //    get { return string.Format("{0} {1} {2}", IndividualFirstName, IndividualSecondName, IndividualLastname); }
+        //}
         //public override string ToString()
         //{
         //    return FullName;

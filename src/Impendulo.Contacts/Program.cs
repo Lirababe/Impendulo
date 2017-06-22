@@ -1,4 +1,5 @@
 ﻿using Impendulo.Contacts;
+using Impendulo.Development.Contacts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Impendulo.Contacts.Development
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmContacts());
+            Application.Run(new frmMenuForForms());
         }
     }
 }

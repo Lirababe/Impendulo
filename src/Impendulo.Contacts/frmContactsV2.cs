@@ -1,4 +1,5 @@
-﻿using Impendulo.Data.Models;
+﻿using Impendulo.Common.Enum;
+using Impendulo.Data.Models;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,16 @@ namespace Impendulo.Development.Contacts
         private void frmContactsV2_Load(object sender, EventArgs e)
         {
             this.populateTitles();
+            if (IsStudent)
+            {
+                txtIDNumber.Visible = true;
+                lblIDNumber.Visible = true;
+            }
+            else
+            {
+                txtIDNumber.Visible = false;
+                lblIDNumber.Visible = false;
+            }
             if (IndividualID != 0)
             {
                 this.setControls();
@@ -89,18 +100,85 @@ namespace Impendulo.Development.Contacts
 
         private void btnAddContact_Click(object sender, EventArgs e)
         {
+            if (IsStudent)
+            {
+                Student StudentObj = new Student()
+                {
+                    EthnicityID = (int)EnumEthnicities.Other_Unspecified,
+                    GenderID = (int)EnumGenders.Male,
+                    MartialStatusID = (int)EnumMartialStatuses.Single,
+                    QualificationLevelID = (int)EnumQualificationLevels.NQF_1_Grade_9_National_Certificate,
+                    StudentlInitialDate = DateTime.Today,
+                    StudentIDNumber = txtIDNumber.Text,
+                    StudentCurrentPosition = "",
+                    Individual = new Individual()
+                    {
+                        // IndividualID = 0,
+                        TitleID = Convert.ToInt32(cboIndividualTitle.SelectedValue),
+                        IndividualFirstName = txtFirstName.Text.ToString(),
+                        IndividualSecondName = txtSecondName.Text.ToString(),
+                        IndividualLastname = txtLastName.Text.ToString()
 
+                    }
+                };
+
+                using (MCDEntities DbConnection = new MCDEntities())
+                {
+                    //We are saving a new student into the Student Collection
+                    DbConnection.Students.Add(StudentObj);
+                    DbConnection.SaveChanges();
+
+                }
+                CurrentContact = StudentObj.Individual;
+            }
+            else
+            {
+                using (var Dbconnection = new MCDEntities())
+                {
+                    CurrentContact = new Individual
+                    {
+                        TitleID = Convert.ToInt32(cboIndividualTitle.SelectedValue),
+                        IndividualFirstName = txtFirstName.Text.ToString(),
+                        IndividualSecondName = txtSecondName.Text.ToString(),
+                        IndividualLastname = txtLastName.Text.ToString()
+                    };
+                    Dbconnection.Individuals.Add(CurrentContact);
+                    Dbconnection.SaveChanges();
+                };
+
+            }
+            this.Close();
         }
 
         private void btnUpdateContact_Click(object sender, EventArgs e)
         {
 
+            using (var Dbconnection = new MCDEntities())
+            {
+                Individual IndividualToUpdate = (from a in Dbconnection.Individuals
+                                                 where a.IndividualID == IndividualID
+                                                 select a).FirstOrDefault<Individual>();
+                IndividualToUpdate.TitleID = Convert.ToInt32(cboIndividualTitle.SelectedValue);
+                IndividualToUpdate.IndividualFirstName = txtFirstName.Text.ToString();
+                IndividualToUpdate.IndividualSecondName = txtSecondName.Text.ToString();
+                IndividualToUpdate.IndividualLastname = txtLastName.Text.ToString();
+                Dbconnection.SaveChanges();
+            };
+            if (CurrentContact != null)
+            {
+                CurrentContact.TitleID = Convert.ToInt32(cboIndividualTitle.SelectedValue);
+                CurrentContact.IndividualFirstName = txtFirstName.Text.ToString();
+                CurrentContact.IndividualSecondName = txtSecondName.Text.ToString();
+                CurrentContact.IndividualLastname = txtLastName.Text.ToString();
+            }
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
 
     }
 }

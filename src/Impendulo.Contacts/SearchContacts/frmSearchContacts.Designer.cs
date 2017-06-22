@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(734, 560);
             this.Name = "frmSearchContacts";
             this.Text = "frmSearchContacts";
+            this.Load += new System.EventHandler(this.frmSearchContacts_Load);
             this.ResumeLayout(false);
 
         }

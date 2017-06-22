@@ -12,6 +12,7 @@ using Impendulo.ContactDetails.Development;
 using Impendulo.Contacts.Development;
 using MetroFramework.Forms;
 using System.Data.Entity;
+using Impendulo.Development.Contacts;
 
 namespace Impendulo.Enquiry.SelectContacts.Developemnt
 {
@@ -167,9 +168,11 @@ namespace Impendulo.Enquiry.SelectContacts.Developemnt
                                                         a.Individual.IndividualFirstName.Contains(_FirstName)
                                                         && a.Individual.IndividualLastname.Contains(_LastName)
                                                         && a.StudentIDNumber.Contains(_IDNumber)
+                                                   orderby a.Individual.IndividualFirstName
                                                    select a.Individual)
                                                     .Include("ContactDetails")
                                                     .Include("ContactDetails.LookupContactType")
+                                                    .Take<Individual>(50)
                                                     .ToList<Individual>();
 
                 individualBindingSource.DataSource = AllIndividuals;
@@ -211,24 +214,27 @@ namespace Impendulo.Enquiry.SelectContacts.Developemnt
 
         private void btnAddContactInfo_Click(object sender, EventArgs e)
         {
-            Individual CurrentContact = (Individual)individualBindingSource.Current;
-            frmAddUpdateContactDetails frm = new frmAddUpdateContactDetails();
-            frm.ShowDialog();
-            if (frm.CurrentDetail != null)
+            using (frmAddUpdateContactDetails frm = new frmAddUpdateContactDetails())
             {
-                using (var Dbconnection = new MCDEntities())
+                Individual CurrentContact = (Individual)individualBindingSource.Current;
+
+                frm.ShowDialog();
+                if (frm.CurrentDetail != null)
                 {
-                    Dbconnection.Individuals.Attach(CurrentContact);
+                    using (var Dbconnection = new MCDEntities())
+                    {
+                        Dbconnection.Individuals.Attach(CurrentContact);
 
-                    Dbconnection.ContactDetails.Attach(frm.CurrentDetail);
+                        Dbconnection.ContactDetails.Attach(frm.CurrentDetail);
 
-                    CurrentContact.ContactDetails.Add(frm.CurrentDetail);
+                        CurrentContact.ContactDetails.Add(frm.CurrentDetail);
 
-                    Dbconnection.SaveChanges();
+                        Dbconnection.SaveChanges();
 
-                    Dbconnection.Entry(frm.CurrentDetail).Reference("LookupContactType").Load();
-                };
-                this.refreshContactDetails();
+                        Dbconnection.Entry(frm.CurrentDetail).Reference("LookupContactType").Load();
+                    };
+                    this.refreshContactDetails();
+                }
             }
         }
 
@@ -243,14 +249,40 @@ namespace Impendulo.Enquiry.SelectContacts.Developemnt
 
         private void btnAddContact_Click(object sender, EventArgs e)
         {
-            frmContacts frm = new frmContacts();
-            frm.ShowDialog();
-            refreshContacts();
+            using (frmContactsV2 frm = new frmContactsV2())
+            {
+                frm.IsStudent = true;
+                frm.ShowDialog();
+                refreshContacts();
+            }
         }
 
         private void btnUpdateContactDetials_Click(object sender, EventArgs e)
         {
+            using (frmAddUpdateContactDetails frm = new frmAddUpdateContactDetails())
+            {
+                ContactDetail CurrentDetail = (ContactDetail)contactDetailBindingSource.Current;
+                frm.CurrentDetail = CurrentDetail;
+                frm.ContactDetailID = CurrentDetail.ContactDetailID;
 
+                Individual CurrentContact = (Individual)individualBindingSource.Current;
+
+                frm.ShowDialog();
+                if (frm.CurrentDetail != null)
+                {
+                    using (var Dbconnection = new MCDEntities())
+                    {
+                        Dbconnection.ContactDetails.Attach(CurrentDetail);
+
+                        Dbconnection.Entry(CurrentDetail).State = EntityState.Modified;
+
+                        Dbconnection.SaveChanges();
+
+                        Dbconnection.Entry(frm.CurrentDetail).Reference("LookupContactType").Load();
+                    };
+                    this.refreshContactDetails();
+                }
+            }
         }
     }
 }

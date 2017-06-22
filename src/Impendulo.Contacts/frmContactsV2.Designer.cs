@@ -30,8 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtIDNumber = new System.Windows.Forms.MaskedTextBox();
             this.lblIDNumber = new System.Windows.Forms.Label();
             this.cboIndividualTitle = new System.Windows.Forms.ComboBox();
+            this.lookupTitleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAddContact = new System.Windows.Forms.Button();
@@ -43,11 +45,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lookupTitleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtIDNumber = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookupTitleBindingSource)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -71,6 +71,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Details";
             // 
+            // txtIDNumber
+            // 
+            this.txtIDNumber.Location = new System.Drawing.Point(256, 19);
+            this.txtIDNumber.Mask = "0000000000000";
+            this.txtIDNumber.Name = "txtIDNumber";
+            this.txtIDNumber.Size = new System.Drawing.Size(107, 20);
+            this.txtIDNumber.TabIndex = 13;
+            // 
             // lblIDNumber
             // 
             this.lblIDNumber.AutoSize = true;
@@ -90,6 +98,10 @@
             this.cboIndividualTitle.Size = new System.Drawing.Size(82, 21);
             this.cboIndividualTitle.TabIndex = 0;
             this.cboIndividualTitle.ValueMember = "TitleID";
+            // 
+            // lookupTitleBindingSource
+            // 
+            this.lookupTitleBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupTitle);
             // 
             // label4
             // 
@@ -120,6 +132,7 @@
             this.btnAddContact.TabIndex = 5;
             this.btnAddContact.Text = "Add Contact";
             this.btnAddContact.UseVisualStyleBackColor = true;
+            this.btnAddContact.Click += new System.EventHandler(this.btnAddContact_Click);
             // 
             // btnUpdateContact
             // 
@@ -129,6 +142,7 @@
             this.btnUpdateContact.TabIndex = 6;
             this.btnUpdateContact.Text = "Update Contact";
             this.btnUpdateContact.UseVisualStyleBackColor = true;
+            this.btnUpdateContact.Click += new System.EventHandler(this.btnUpdateContact_Click);
             // 
             // btnCancel
             // 
@@ -138,6 +152,7 @@
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtLastName
             // 
@@ -187,18 +202,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name";
             // 
-            // lookupTitleBindingSource
-            // 
-            this.lookupTitleBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupTitle);
-            // 
-            // txtIDNumber
-            // 
-            this.txtIDNumber.Location = new System.Drawing.Point(256, 19);
-            this.txtIDNumber.Mask = "0000000000000";
-            this.txtIDNumber.Name = "txtIDNumber";
-            this.txtIDNumber.Size = new System.Drawing.Size(107, 20);
-            this.txtIDNumber.TabIndex = 13;
-            // 
             // frmContactsV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,8 +213,8 @@
             this.Load += new System.EventHandler(this.frmContactsV2_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lookupTitleBindingSource)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

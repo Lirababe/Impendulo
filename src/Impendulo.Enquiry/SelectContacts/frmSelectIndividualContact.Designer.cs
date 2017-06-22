@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectIndividualContact));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -44,10 +43,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvContactsSearchResults = new System.Windows.Forms.DataGridView();
-            this.colSelectStudent = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.individualFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.individualSecondNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.individualLastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.panelStudentSearchResults = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -79,9 +74,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.gbSearchForStudent = new System.Windows.Forms.GroupBox();
-            this.btnAddContact = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIDNumber = new System.Windows.Forms.TextBox();
+            this.btnAddContact = new System.Windows.Forms.PictureBox();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.individualBindingSource)).BeginInit();
@@ -193,7 +190,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(394, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(419, 27);
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 0;
             // 
@@ -222,10 +219,8 @@
             this.dgvContactsSearchResults.AutoGenerateColumns = false;
             this.dgvContactsSearchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContactsSearchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colSelectStudent,
-            this.individualFirstNameDataGridViewTextBoxColumn,
-            this.individualSecondNameDataGridViewTextBoxColumn,
-            this.individualLastnameDataGridViewTextBoxColumn});
+            this.FullName,
+            this.colIDNumber});
             this.dgvContactsSearchResults.DataSource = this.individualBindingSource;
             this.dgvContactsSearchResults.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvContactsSearchResults.Location = new System.Drawing.Point(0, 0);
@@ -233,46 +228,8 @@
             this.dgvContactsSearchResults.ReadOnly = true;
             this.dgvContactsSearchResults.RowTemplate.Height = 24;
             this.dgvContactsSearchResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContactsSearchResults.Size = new System.Drawing.Size(394, 144);
+            this.dgvContactsSearchResults.Size = new System.Drawing.Size(419, 144);
             this.dgvContactsSearchResults.TabIndex = 0;
-            // 
-            // colSelectStudent
-            // 
-            this.colSelectStudent.ActiveLinkColor = System.Drawing.Color.Black;
-            this.colSelectStudent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.colSelectStudent.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colSelectStudent.HeaderText = "Select";
-            this.colSelectStudent.LinkColor = System.Drawing.Color.Black;
-            this.colSelectStudent.Name = "colSelectStudent";
-            this.colSelectStudent.ReadOnly = true;
-            this.colSelectStudent.Text = "Select";
-            this.colSelectStudent.TrackVisitedState = false;
-            this.colSelectStudent.UseColumnTextForLinkValue = true;
-            this.colSelectStudent.VisitedLinkColor = System.Drawing.Color.Black;
-            this.colSelectStudent.Width = 43;
-            // 
-            // individualFirstNameDataGridViewTextBoxColumn
-            // 
-            this.individualFirstNameDataGridViewTextBoxColumn.DataPropertyName = "IndividualFirstName";
-            this.individualFirstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.individualFirstNameDataGridViewTextBoxColumn.Name = "individualFirstNameDataGridViewTextBoxColumn";
-            this.individualFirstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // individualSecondNameDataGridViewTextBoxColumn
-            // 
-            this.individualSecondNameDataGridViewTextBoxColumn.DataPropertyName = "IndividualSecondName";
-            this.individualSecondNameDataGridViewTextBoxColumn.HeaderText = "Second Name";
-            this.individualSecondNameDataGridViewTextBoxColumn.Name = "individualSecondNameDataGridViewTextBoxColumn";
-            this.individualSecondNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // individualLastnameDataGridViewTextBoxColumn
-            // 
-            this.individualLastnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.individualLastnameDataGridViewTextBoxColumn.DataPropertyName = "IndividualLastname";
-            this.individualLastnameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.individualLastnameDataGridViewTextBoxColumn.Name = "individualLastnameDataGridViewTextBoxColumn";
-            this.individualLastnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // toolStripContainer1
             // 
@@ -280,11 +237,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvContactsSearchResults);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(394, 144);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(419, 144);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(394, 171);
+            this.toolStripContainer1.Size = new System.Drawing.Size(419, 171);
             this.toolStripContainer1.TabIndex = 11;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -298,7 +255,7 @@
             this.panelStudentSearchResults.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelStudentSearchResults.Location = new System.Drawing.Point(20, 169);
             this.panelStudentSearchResults.Name = "panelStudentSearchResults";
-            this.panelStudentSearchResults.Size = new System.Drawing.Size(758, 212);
+            this.panelStudentSearchResults.Size = new System.Drawing.Size(885, 212);
             this.panelStudentSearchResults.TabIndex = 14;
             // 
             // tableLayoutPanel1
@@ -313,7 +270,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(758, 212);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(885, 212);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
             // flowLayoutPanel1
@@ -323,13 +280,13 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 180);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(752, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(879, 29);
             this.flowLayoutPanel1.TabIndex = 14;
             // 
             // btnSelectContact
             // 
             this.btnSelectContact.Enabled = false;
-            this.btnSelectContact.Location = new System.Drawing.Point(625, 3);
+            this.btnSelectContact.Location = new System.Drawing.Point(752, 3);
             this.btnSelectContact.Name = "btnSelectContact";
             this.btnSelectContact.Size = new System.Drawing.Size(124, 23);
             this.btnSelectContact.TabIndex = 0;
@@ -351,8 +308,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox5);
-            this.splitContainer1.Size = new System.Drawing.Size(752, 171);
-            this.splitContainer1.SplitterDistance = 394;
+            this.splitContainer1.Size = new System.Drawing.Size(879, 171);
+            this.splitContainer1.SplitterDistance = 419;
             this.splitContainer1.TabIndex = 13;
             // 
             // groupBox5
@@ -361,7 +318,7 @@
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(354, 171);
+            this.groupBox5.Size = new System.Drawing.Size(456, 171);
             this.groupBox5.TabIndex = 12;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Contact Details";
@@ -372,11 +329,11 @@
             // toolStripContainerStudentContacts.ContentPanel
             // 
             this.toolStripContainerStudentContacts.ContentPanel.Controls.Add(this.dgvContactInfo);
-            this.toolStripContainerStudentContacts.ContentPanel.Size = new System.Drawing.Size(348, 125);
+            this.toolStripContainerStudentContacts.ContentPanel.Size = new System.Drawing.Size(450, 125);
             this.toolStripContainerStudentContacts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainerStudentContacts.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainerStudentContacts.Name = "toolStripContainerStudentContacts";
-            this.toolStripContainerStudentContacts.Size = new System.Drawing.Size(348, 152);
+            this.toolStripContainerStudentContacts.Size = new System.Drawing.Size(450, 152);
             this.toolStripContainerStudentContacts.TabIndex = 3;
             this.toolStripContainerStudentContacts.Text = "toolStripContainer1";
             // 
@@ -401,7 +358,7 @@
             this.dgvContactInfo.RowHeadersWidth = 15;
             this.dgvContactInfo.RowTemplate.Height = 24;
             this.dgvContactInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContactInfo.Size = new System.Drawing.Size(348, 125);
+            this.dgvContactInfo.Size = new System.Drawing.Size(450, 125);
             this.dgvContactInfo.TabIndex = 0;
             this.dgvContactInfo.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvContactInfo_DataBindingComplete);
             // 
@@ -454,7 +411,7 @@
             this.BindingNavigatorStudentContactInfo.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.BindingNavigatorStudentContactInfo.Name = "BindingNavigatorStudentContactInfo";
             this.BindingNavigatorStudentContactInfo.PositionItem = this.bindingNavigatorPositionItem1;
-            this.BindingNavigatorStudentContactInfo.Size = new System.Drawing.Size(348, 27);
+            this.BindingNavigatorStudentContactInfo.Size = new System.Drawing.Size(450, 27);
             this.BindingNavigatorStudentContactInfo.Stretch = true;
             this.BindingNavigatorStudentContactInfo.TabIndex = 0;
             // 
@@ -618,23 +575,10 @@
             this.gbSearchForStudent.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbSearchForStudent.Location = new System.Drawing.Point(20, 60);
             this.gbSearchForStudent.Name = "gbSearchForStudent";
-            this.gbSearchForStudent.Size = new System.Drawing.Size(758, 109);
+            this.gbSearchForStudent.Size = new System.Drawing.Size(885, 109);
             this.gbSearchForStudent.TabIndex = 13;
             this.gbSearchForStudent.TabStop = false;
             this.gbSearchForStudent.Text = "Sereach Criteria";
-            // 
-            // btnAddContact
-            // 
-            this.btnAddContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnAddContact.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddContact.Image = ((System.Drawing.Image)(resources.GetObject("btnAddContact.Image")));
-            this.btnAddContact.Location = new System.Drawing.Point(496, 19);
-            this.btnAddContact.Name = "btnAddContact";
-            this.btnAddContact.Size = new System.Drawing.Size(76, 72);
-            this.btnAddContact.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAddContact.TabIndex = 16;
-            this.btnAddContact.TabStop = false;
-            this.btnAddContact.Click += new System.EventHandler(this.btnAddContact_Click);
             // 
             // label1
             // 
@@ -652,11 +596,40 @@
             this.txtIDNumber.Size = new System.Drawing.Size(239, 20);
             this.txtIDNumber.TabIndex = 17;
             // 
+            // btnAddContact
+            // 
+            this.btnAddContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnAddContact.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddContact.Image = ((System.Drawing.Image)(resources.GetObject("btnAddContact.Image")));
+            this.btnAddContact.Location = new System.Drawing.Point(496, 19);
+            this.btnAddContact.Name = "btnAddContact";
+            this.btnAddContact.Size = new System.Drawing.Size(76, 72);
+            this.btnAddContact.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAddContact.TabIndex = 16;
+            this.btnAddContact.TabStop = false;
+            this.btnAddContact.Click += new System.EventHandler(this.btnAddContact_Click);
+            // 
+            // FullName
+            // 
+            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.HeaderText = "FullName";
+            this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
+            this.FullName.Width = 76;
+            // 
+            // colIDNumber
+            // 
+            this.colIDNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colIDNumber.HeaderText = "ID Number";
+            this.colIDNumber.Name = "colIDNumber";
+            this.colIDNumber.ReadOnly = true;
+            // 
             // frmSelectIndividualContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 401);
+            this.ClientSize = new System.Drawing.Size(925, 401);
             this.Controls.Add(this.panelStudentSearchResults);
             this.Controls.Add(this.gbSearchForStudent);
             this.Name = "frmSelectIndividualContact";
@@ -712,10 +685,6 @@
         private System.Windows.Forms.BindingSource studentBindingSource;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.DataGridView dgvContactsSearchResults;
-        private System.Windows.Forms.DataGridViewLinkColumn colSelectStudent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn individualFirstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn individualSecondNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn individualLastnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource individualBindingSource;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.Panel panelStudentSearchResults;
@@ -751,5 +720,7 @@
         private System.Windows.Forms.PictureBox btnAddContact;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIDNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDNumber;
     }
 }
