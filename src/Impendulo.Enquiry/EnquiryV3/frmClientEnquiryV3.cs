@@ -111,6 +111,20 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
         }
         #endregion
         #region Control Event Methods
+        private void btnAddContactDetail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRemoveContactDetail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnuUpdateContactDetails_Click(object sender, EventArgs e)
+        {
+
+        }
         private void enquiryInprogressBindingSource_BindingComplete(object sender, BindingCompleteEventArgs e)
         {
             Data.Models.Enquiry EnquiryObj = (Data.Models.Enquiry)(enquiryInprogressBindingSource.Current);
@@ -261,7 +275,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
             }
         }
 
-        private void metroTile2_Click(object sender, EventArgs e)
+        private void btnInProgressSwitchBetweenCompanyANdPrivate_Click(object sender, EventArgs e)
         {
             if (((Data.Models.Enquiry)enquiryInprogressBindingSource.Current).Companies.Count == 0)
             {
@@ -317,8 +331,6 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
 
                 }
             }
-
         }
-
     }
 }

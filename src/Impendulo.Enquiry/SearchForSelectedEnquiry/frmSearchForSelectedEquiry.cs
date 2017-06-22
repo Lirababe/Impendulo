@@ -205,8 +205,14 @@ namespace Impendulo.Enquiry.Development.SearchForSelectedEnquiry
                                                             from b in a.CurriculumEnquiries
                                                             orderby a.EnquiryID descending
                                                             where a.EnquiryID == ID
+                                                            && (a.EnquiryDate <= Common.CustomDateTime.getCustomDateTime(datFromDate.Value, 0) && a.EnquiryDate >= Common.CustomDateTime.getCustomDateTime(datToDate.Value, -1))
                                                             && b.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed
-                                                            select a).ToList<Data.Models.Enquiry>();
+                                                            select a)
+                                                            .Include("Individuals")
+                                                           .Include("Individuals.Companies")
+                                                           .Include("CurriculumEnquiries")
+                                                           .Include("CurriculumEnquiries.Curriculum")
+                                                           .ToList<Data.Models.Enquiry>();
                 };
             }
             else
@@ -219,11 +225,9 @@ namespace Impendulo.Enquiry.Development.SearchForSelectedEnquiry
                 {
                     if (chkUseDepartment.Checked)
                     {
-                        this.enquiryBindingSource.DataSource = (from a in Dbconnection.Enquiries
-                                                                from b in a.Individuals
-                                                                from c in a.CurriculumEnquiries
+                        List<Data.Models.Enquiry> lstEnquiry = (from a in Dbconnection.Enquiries
                                                                 where
-                                                                  (a.EnquiryDate >= dtFilterDate)
+                                                                  (a.EnquiryDate <= Common.CustomDateTime.getCustomDateTime(datFromDate.Value, 0) && a.EnquiryDate >= Common.CustomDateTime.getCustomDateTime(datToDate.Value, -1))
                                                                   &&
                                                                    (b.IndividualFirstName.Contains(txtContactName.Text) ||
                                                                     b.IndividualLastname.Contains(txtContactName.Text))
@@ -232,6 +236,34 @@ namespace Impendulo.Enquiry.Development.SearchForSelectedEnquiry
                                                                 orderby a.EnquiryID descending
                                                                 select a)
                                                            .Include("Individuals")
+                                                           .Include("Individuals.Companies")
+                                                           .Include("CurriculumEnquiries")
+                                                           .Include("CurriculumEnquiries.Curriculum")
+                                                           .ToList<Data.Models.Enquiry>();
+
+                        List<Data.Models.Enquiry> EnquiriesFilteredByName = new List<Data.Models.Enquiry>();
+                        foreach (Data.Models.Enquiry EnquiryObj in lstEnquiry)
+                        {
+                            foreach (Individual IndividualObj in EnquiryObj.Individuals)
+                            {
+                                EnquiriesFilteredByName.Add(EnquiryObj);
+                            }
+                        }
+
+                        this.enquiryBindingSource.DataSource = (from a in Dbconnection.Enquiries
+                                                                from b in a.Individuals
+                                                                from c in a.CurriculumEnquiries
+                                                                where
+                                                                  (a.EnquiryDate <= Common.CustomDateTime.getCustomDateTime(datFromDate.Value, 0) && a.EnquiryDate >= Common.CustomDateTime.getCustomDateTime(datToDate.Value, -1))
+                                                                  &&
+                                                                   (b.IndividualFirstName.Contains(txtContactName.Text) ||
+                                                                    b.IndividualLastname.Contains(txtContactName.Text))
+                                                                    && c.Curriculum.DepartmentID == DepartmentID
+                                                                    && c.CurriculumID == CurriculumID
+                                                                orderby a.EnquiryID descending
+                                                                select a)
+                                                           .Include("Individuals")
+                                                           .Include("Individuals.Companies")
                                                            .Include("CurriculumEnquiries")
                                                            .Include("CurriculumEnquiries.Curriculum")
                                                            .ToList<Data.Models.Enquiry>();
@@ -242,7 +274,7 @@ namespace Impendulo.Enquiry.Development.SearchForSelectedEnquiry
                         this.enquiryBindingSource.DataSource = (from a in Dbconnection.Enquiries
                                                                 from b in a.Individuals
                                                                 where
-                                                                   (a.EnquiryDate >= dtFilterDate)
+                                                                   (a.EnquiryDate <= Common.CustomDateTime.getCustomDateTime(datFromDate.Value, 0) && a.EnquiryDate >= Common.CustomDateTime.getCustomDateTime(datToDate.Value, -1))
                                                                   &&
                                                                    (b.IndividualFirstName.Contains(txtContactName.Text) ||
                                                                     b.IndividualLastname.Contains(txtContactName.Text))
@@ -250,6 +282,7 @@ namespace Impendulo.Enquiry.Development.SearchForSelectedEnquiry
                                                                 orderby a.EnquiryID descending
                                                                 select a)
                                                            .Include("Individuals")
+                                                           .Include("Individuals.Companies")
                                                            .Include("CurriculumEnquiries")
                                                            .Include("CurriculumEnquiries.Curriculum")
                                                            .ToList<Data.Models.Enquiry>();
@@ -280,8 +313,16 @@ namespace Impendulo.Enquiry.Development.SearchForSelectedEnquiry
             {
                 if (!row.IsNewRow)
                 {
-                    //var ContactDetailObj = (ContactDetail)(row.DataBoundItem);
-                    //row.Cells[colNewEquiry_ContactType.Index].Value = ContactDetailObj.LookupContactType.ContactType.ToString();
+                    Individual IndividualObj = (Individual)(row.DataBoundItem);
+                    if (IndividualObj.Companies.Count > 0)
+                    {
+                        row.Cells[colContactCompany.Index].Value = IndividualObj.Companies.FirstOrDefault().CompanyName.ToString();
+                    }
+                    else
+                    {
+                        row.Cells[colContactCompany.Index].Value = "NA - Private Client";
+                    }
+
 
                 }
             }

@@ -284,5 +284,18 @@ namespace Impendulo.Enquiry.SelectContacts.Developemnt
                 }
             }
         }
+
+        private void dgvContactsSearchResults_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            var gridView = (DataGridView)sender;
+            foreach (DataGridViewRow row in gridView.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    Individual IndividualObj = (Individual)(row.DataBoundItem);
+                    row.Cells[colContactTitle.Index].Value = IndividualObj.LookupTitle.Title.ToString();
+                }
+            }
+        }
     }
 }

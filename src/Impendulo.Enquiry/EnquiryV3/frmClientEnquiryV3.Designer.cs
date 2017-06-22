@@ -57,7 +57,7 @@
             this.gbInprogressContactNameAndCompanyName = new System.Windows.Forms.GroupBox();
             this.initialConsultationCompleteCheckBox = new System.Windows.Forms.CheckBox();
             this.enquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.btnInProgressSwitchBetweenCompanyANdPrivate = new MetroFramework.Controls.MetroTile();
             this.fullNameTextBox = new System.Windows.Forms.TextBox();
             this.individualsInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtInprogressCompanyName = new System.Windows.Forms.TextBox();
@@ -72,9 +72,7 @@
             this.colInProgressContactDetailSendOption = new System.Windows.Forms.DataGridViewLinkColumn();
             this.contactDetailsInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -83,6 +81,11 @@
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnAddContactDetail = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnRemoveContactDetail = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnuUpdateContactDetails = new System.Windows.Forms.ToolStripButton();
             this.gbInProgressEnquiryEnrrolmentQueries = new System.Windows.Forms.GroupBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dgvInProgressCurriculumEnquiries = new MetroFramework.Controls.MetroGrid();
@@ -93,9 +96,7 @@
             this.colInProgressEnquiryQuantityCurrentlyEnrolled = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumEnquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enquiryInprogressBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -104,7 +105,8 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.enquiryBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -123,6 +125,8 @@
             this.studentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.systemAdministratorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companiesInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnInProgressChangeContact = new MetroFramework.Controls.MetroTile();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             enquiryDateLabel = new System.Windows.Forms.Label();
             enquiryIDLabel = new System.Windows.Forms.Label();
             fullNameLabel = new System.Windows.Forms.Label();
@@ -161,6 +165,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingNavigator)).BeginInit();
             this.enquiryInprogressBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companiesInprogressBindingSource)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // enquiryDateLabel
@@ -289,7 +294,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.gbInProgressContactDetails);
             this.splitContainer2.Size = new System.Drawing.Size(801, 179);
-            this.splitContainer2.SplitterDistance = 415;
+            this.splitContainer2.SplitterDistance = 450;
             this.splitContainer2.TabIndex = 0;
             // 
             // groupBox2
@@ -303,7 +308,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(415, 179);
+            this.groupBox2.Size = new System.Drawing.Size(450, 179);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Enquiry";
@@ -319,11 +324,11 @@
             this.tableLayoutPanel1.Controls.Add(this.btnViewProgressInProgressSections, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnCloseInprogressEnquiry, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnInitialConsultationConfirmationInProgressSection, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(204, 16);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(204, 19);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(202, 51);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(234, 45);
             this.tableLayoutPanel1.TabIndex = 12;
             // 
             // btnSearchForEnquiry
@@ -332,7 +337,7 @@
             this.btnSearchForEnquiry.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearchForEnquiry.Location = new System.Drawing.Point(3, 3);
             this.btnSearchForEnquiry.Name = "btnSearchForEnquiry";
-            this.btnSearchForEnquiry.Size = new System.Drawing.Size(44, 45);
+            this.btnSearchForEnquiry.Size = new System.Drawing.Size(52, 39);
             this.btnSearchForEnquiry.TabIndex = 6;
             this.btnSearchForEnquiry.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearchForEnquiry.TileImage = ((System.Drawing.Image)(resources.GetObject("btnSearchForEnquiry.TileImage")));
@@ -346,9 +351,9 @@
             // 
             this.btnViewProgressInProgressSections.ActiveControl = null;
             this.btnViewProgressInProgressSections.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnViewProgressInProgressSections.Location = new System.Drawing.Point(53, 3);
+            this.btnViewProgressInProgressSections.Location = new System.Drawing.Point(61, 3);
             this.btnViewProgressInProgressSections.Name = "btnViewProgressInProgressSections";
-            this.btnViewProgressInProgressSections.Size = new System.Drawing.Size(44, 45);
+            this.btnViewProgressInProgressSections.Size = new System.Drawing.Size(52, 39);
             this.btnViewProgressInProgressSections.TabIndex = 10;
             this.btnViewProgressInProgressSections.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnViewProgressInProgressSections.TileImage = ((System.Drawing.Image)(resources.GetObject("btnViewProgressInProgressSections.TileImage")));
@@ -362,9 +367,9 @@
             // 
             this.btnCloseInprogressEnquiry.ActiveControl = null;
             this.btnCloseInprogressEnquiry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCloseInprogressEnquiry.Location = new System.Drawing.Point(153, 3);
+            this.btnCloseInprogressEnquiry.Location = new System.Drawing.Point(177, 3);
             this.btnCloseInprogressEnquiry.Name = "btnCloseInprogressEnquiry";
-            this.btnCloseInprogressEnquiry.Size = new System.Drawing.Size(46, 45);
+            this.btnCloseInprogressEnquiry.Size = new System.Drawing.Size(54, 39);
             this.btnCloseInprogressEnquiry.TabIndex = 11;
             this.btnCloseInprogressEnquiry.TileImage = ((System.Drawing.Image)(resources.GetObject("btnCloseInprogressEnquiry.TileImage")));
             this.btnCloseInprogressEnquiry.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -377,9 +382,9 @@
             this.btnInitialConsultationConfirmationInProgressSection.ActiveControl = null;
             this.btnInitialConsultationConfirmationInProgressSection.BackColor = System.Drawing.Color.Olive;
             this.btnInitialConsultationConfirmationInProgressSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnInitialConsultationConfirmationInProgressSection.Location = new System.Drawing.Point(103, 3);
+            this.btnInitialConsultationConfirmationInProgressSection.Location = new System.Drawing.Point(119, 3);
             this.btnInitialConsultationConfirmationInProgressSection.Name = "btnInitialConsultationConfirmationInProgressSection";
-            this.btnInitialConsultationConfirmationInProgressSection.Size = new System.Drawing.Size(44, 45);
+            this.btnInitialConsultationConfirmationInProgressSection.Size = new System.Drawing.Size(52, 39);
             this.btnInitialConsultationConfirmationInProgressSection.TabIndex = 12;
             this.btnInitialConsultationConfirmationInProgressSection.TileImage = ((System.Drawing.Image)(resources.GetObject("btnInitialConsultationConfirmationInProgressSection.TileImage")));
             this.btnInitialConsultationConfirmationInProgressSection.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -390,9 +395,9 @@
             // 
             // gbInprogressContactNameAndCompanyName
             // 
+            this.gbInprogressContactNameAndCompanyName.Controls.Add(this.tableLayoutPanel2);
             this.gbInprogressContactNameAndCompanyName.Controls.Add(initialConsultationCompleteLabel);
             this.gbInprogressContactNameAndCompanyName.Controls.Add(this.initialConsultationCompleteCheckBox);
-            this.gbInprogressContactNameAndCompanyName.Controls.Add(this.metroTile2);
             this.gbInprogressContactNameAndCompanyName.Controls.Add(this.fullNameTextBox);
             this.gbInprogressContactNameAndCompanyName.Controls.Add(companyNameLabel1);
             this.gbInprogressContactNameAndCompanyName.Controls.Add(this.txtInprogressCompanyName);
@@ -400,7 +405,7 @@
             this.gbInprogressContactNameAndCompanyName.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gbInprogressContactNameAndCompanyName.Location = new System.Drawing.Point(3, 73);
             this.gbInprogressContactNameAndCompanyName.Name = "gbInprogressContactNameAndCompanyName";
-            this.gbInprogressContactNameAndCompanyName.Size = new System.Drawing.Size(409, 103);
+            this.gbInprogressContactNameAndCompanyName.Size = new System.Drawing.Size(444, 103);
             this.gbInprogressContactNameAndCompanyName.TabIndex = 9;
             this.gbInprogressContactNameAndCompanyName.TabStop = false;
             this.gbInprogressContactNameAndCompanyName.Text = "Company Contact Or ( Student Details if Private )";
@@ -420,19 +425,20 @@
             this.enquiryInprogressBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
             this.enquiryInprogressBindingSource.BindingComplete += new System.Windows.Forms.BindingCompleteEventHandler(this.enquiryInprogressBindingSource_BindingComplete);
             // 
-            // metroTile2
+            // btnInProgressSwitchBetweenCompanyANdPrivate
             // 
-            this.metroTile2.ActiveControl = null;
-            this.metroTile2.Location = new System.Drawing.Point(343, 19);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(57, 46);
-            this.metroTile2.TabIndex = 12;
-            this.metroTile2.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile2.TileImage")));
-            this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.toolTip1.SetToolTip(this.metroTile2, "Switch between Company And Private");
-            this.metroTile2.UseSelectable = true;
-            this.metroTile2.UseTileImage = true;
-            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
+            this.btnInProgressSwitchBetweenCompanyANdPrivate.ActiveControl = null;
+            this.btnInProgressSwitchBetweenCompanyANdPrivate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnInProgressSwitchBetweenCompanyANdPrivate.Location = new System.Drawing.Point(3, 3);
+            this.btnInProgressSwitchBetweenCompanyANdPrivate.Name = "btnInProgressSwitchBetweenCompanyANdPrivate";
+            this.btnInProgressSwitchBetweenCompanyANdPrivate.Size = new System.Drawing.Size(41, 40);
+            this.btnInProgressSwitchBetweenCompanyANdPrivate.TabIndex = 12;
+            this.btnInProgressSwitchBetweenCompanyANdPrivate.TileImage = ((System.Drawing.Image)(resources.GetObject("btnInProgressSwitchBetweenCompanyANdPrivate.TileImage")));
+            this.btnInProgressSwitchBetweenCompanyANdPrivate.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnInProgressSwitchBetweenCompanyANdPrivate, "Switch between Company And Private");
+            this.btnInProgressSwitchBetweenCompanyANdPrivate.UseSelectable = true;
+            this.btnInProgressSwitchBetweenCompanyANdPrivate.UseTileImage = true;
+            this.btnInProgressSwitchBetweenCompanyANdPrivate.Click += new System.EventHandler(this.btnInProgressSwitchBetweenCompanyANdPrivate_Click);
             // 
             // fullNameTextBox
             // 
@@ -487,7 +493,7 @@
             this.gbInProgressContactDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbInProgressContactDetails.Location = new System.Drawing.Point(0, 0);
             this.gbInProgressContactDetails.Name = "gbInProgressContactDetails";
-            this.gbInProgressContactDetails.Size = new System.Drawing.Size(382, 179);
+            this.gbInProgressContactDetails.Size = new System.Drawing.Size(347, 179);
             this.gbInProgressContactDetails.TabIndex = 0;
             this.gbInProgressContactDetails.TabStop = false;
             this.gbInProgressContactDetails.Text = "Contact Details";
@@ -498,11 +504,11 @@
             // toolStripContainer2.ContentPanel
             // 
             this.toolStripContainer2.ContentPanel.Controls.Add(this.dgvInprogressContactDetails);
-            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(376, 135);
+            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(341, 135);
             this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer2.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainer2.Name = "toolStripContainer2";
-            this.toolStripContainer2.Size = new System.Drawing.Size(376, 160);
+            this.toolStripContainer2.Size = new System.Drawing.Size(341, 160);
             this.toolStripContainer2.TabIndex = 0;
             this.toolStripContainer2.Text = "toolStripContainer2";
             // 
@@ -512,6 +518,8 @@
             // 
             // dgvInprogressContactDetails
             // 
+            this.dgvInprogressContactDetails.AllowUserToAddRows = false;
+            this.dgvInprogressContactDetails.AllowUserToDeleteRows = false;
             this.dgvInprogressContactDetails.AllowUserToResizeRows = false;
             this.dgvInprogressContactDetails.AutoGenerateColumns = false;
             this.dgvInprogressContactDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -546,6 +554,7 @@
             this.dgvInprogressContactDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvInprogressContactDetails.Location = new System.Drawing.Point(0, 0);
             this.dgvInprogressContactDetails.Name = "dgvInprogressContactDetails";
+            this.dgvInprogressContactDetails.ReadOnly = true;
             this.dgvInprogressContactDetails.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -558,7 +567,7 @@
             this.dgvInprogressContactDetails.RowHeadersWidth = 15;
             this.dgvInprogressContactDetails.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvInprogressContactDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvInprogressContactDetails.Size = new System.Drawing.Size(376, 135);
+            this.dgvInprogressContactDetails.Size = new System.Drawing.Size(341, 135);
             this.dgvInprogressContactDetails.TabIndex = 0;
             this.dgvInprogressContactDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInprogressContactDetails_CellContentClick);
             this.dgvInprogressContactDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvInprogressContactDetails_DataBindingComplete);
@@ -567,6 +576,7 @@
             // 
             this.colInProgressContactType.HeaderText = "Contact Type";
             this.colInProgressContactType.Name = "colInProgressContactType";
+            this.colInProgressContactType.ReadOnly = true;
             // 
             // contactDetailValueDataGridViewTextBoxColumn
             // 
@@ -575,6 +585,7 @@
             this.contactDetailValueDataGridViewTextBoxColumn.HeaderText = "Contact Detail";
             this.contactDetailValueDataGridViewTextBoxColumn.MinimumWidth = 105;
             this.contactDetailValueDataGridViewTextBoxColumn.Name = "contactDetailValueDataGridViewTextBoxColumn";
+            this.contactDetailValueDataGridViewTextBoxColumn.ReadOnly = true;
             this.contactDetailValueDataGridViewTextBoxColumn.Width = 105;
             // 
             // colInProgressContactDetailSendOption
@@ -583,6 +594,7 @@
             this.colInProgressContactDetailSendOption.HeaderText = "Option";
             this.colInProgressContactDetailSendOption.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.colInProgressContactDetailSendOption.Name = "colInProgressContactDetailSendOption";
+            this.colInProgressContactDetailSendOption.ReadOnly = true;
             this.colInProgressContactDetailSendOption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colInProgressContactDetailSendOption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colInProgressContactDetailSendOption.ToolTipText = "Select To Send Message";
@@ -595,10 +607,10 @@
             // 
             // bindingNavigator1
             // 
-            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem1;
+            this.bindingNavigator1.AddNewItem = null;
             this.bindingNavigator1.BindingSource = this.contactDetailsInprogressBindingSource;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem1;
-            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem1;
+            this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -611,8 +623,11 @@
             this.bindingNavigatorMoveNextItem1,
             this.bindingNavigatorMoveLastItem1,
             this.bindingNavigatorSeparator5,
-            this.bindingNavigatorAddNewItem1,
-            this.bindingNavigatorDeleteItem1});
+            this.btnAddContactDetail,
+            this.toolStripSeparator1,
+            this.btnRemoveContactDetail,
+            this.toolStripSeparator2,
+            this.btnuUpdateContactDetails});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem1;
@@ -620,18 +635,9 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(376, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(341, 25);
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 0;
-            // 
-            // bindingNavigatorAddNewItem1
-            // 
-            this.bindingNavigatorAddNewItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem1.Image")));
-            this.bindingNavigatorAddNewItem1.Name = "bindingNavigatorAddNewItem1";
-            this.bindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem1.Text = "Add new";
             // 
             // bindingNavigatorCountItem1
             // 
@@ -639,15 +645,6 @@
             this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem1.Text = "of {0}";
             this.bindingNavigatorCountItem1.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem1
-            // 
-            this.bindingNavigatorDeleteItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem1.Image")));
-            this.bindingNavigatorDeleteItem1.Name = "bindingNavigatorDeleteItem1";
-            this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem1.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem1
             // 
@@ -708,6 +705,47 @@
             // 
             this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
             this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnAddContactDetail
+            // 
+            this.btnAddContactDetail.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAddContactDetail.Image = ((System.Drawing.Image)(resources.GetObject("btnAddContactDetail.Image")));
+            this.btnAddContactDetail.Name = "btnAddContactDetail";
+            this.btnAddContactDetail.RightToLeftAutoMirrorImage = true;
+            this.btnAddContactDetail.Size = new System.Drawing.Size(23, 22);
+            this.btnAddContactDetail.Text = "Add new";
+            this.btnAddContactDetail.Click += new System.EventHandler(this.btnAddContactDetail_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnRemoveContactDetail
+            // 
+            this.btnRemoveContactDetail.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnRemoveContactDetail.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveContactDetail.Image")));
+            this.btnRemoveContactDetail.Name = "btnRemoveContactDetail";
+            this.btnRemoveContactDetail.RightToLeftAutoMirrorImage = true;
+            this.btnRemoveContactDetail.Size = new System.Drawing.Size(23, 22);
+            this.btnRemoveContactDetail.Text = "Delete";
+            this.btnRemoveContactDetail.Click += new System.EventHandler(this.btnRemoveContactDetail_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnuUpdateContactDetails
+            // 
+            this.btnuUpdateContactDetails.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnuUpdateContactDetails.Image = ((System.Drawing.Image)(resources.GetObject("btnuUpdateContactDetails.Image")));
+            this.btnuUpdateContactDetails.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnuUpdateContactDetails.Name = "btnuUpdateContactDetails";
+            this.btnuUpdateContactDetails.Size = new System.Drawing.Size(23, 22);
+            this.btnuUpdateContactDetails.Text = "toolStripButton1";
+            this.btnuUpdateContactDetails.ToolTipText = "Update Contact Detail";
+            this.btnuUpdateContactDetails.Click += new System.EventHandler(this.btnuUpdateContactDetails_Click);
             // 
             // gbInProgressEnquiryEnrrolmentQueries
             // 
@@ -845,10 +883,10 @@
             // 
             // enquiryInprogressBindingNavigator
             // 
-            this.enquiryInprogressBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.enquiryInprogressBindingNavigator.AddNewItem = null;
             this.enquiryInprogressBindingNavigator.BindingSource = this.curriculumEnquiryInprogressBindingSource;
             this.enquiryInprogressBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.enquiryInprogressBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.enquiryInprogressBindingNavigator.DeleteItem = null;
             this.enquiryInprogressBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
             this.enquiryInprogressBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -861,8 +899,7 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.enquiryBindingNavigatorSaveItem});
+            this.bindingNavigatorDeleteItem});
             this.enquiryInprogressBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.enquiryInprogressBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.enquiryInprogressBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -875,30 +912,12 @@
             this.enquiryInprogressBindingNavigator.TabIndex = 1;
             this.enquiryInprogressBindingNavigator.Text = "bindingNavigator1";
             // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -960,14 +979,23 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // enquiryBindingNavigatorSaveItem
+            // bindingNavigatorAddNewItem
             // 
-            this.enquiryBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.enquiryBindingNavigatorSaveItem.Enabled = false;
-            this.enquiryBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("enquiryBindingNavigatorSaveItem.Image")));
-            this.enquiryBindingNavigatorSaveItem.Name = "enquiryBindingNavigatorSaveItem";
-            this.enquiryBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.enquiryBindingNavigatorSaveItem.Text = "Save Data";
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // metroTabPage3
             // 
@@ -1085,6 +1113,34 @@
             this.companiesInprogressBindingSource.DataMember = "Companies";
             this.companiesInprogressBindingSource.DataSource = this.individualsInprogressBindingSource;
             // 
+            // btnInProgressChangeContact
+            // 
+            this.btnInProgressChangeContact.ActiveControl = null;
+            this.btnInProgressChangeContact.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnInProgressChangeContact.Location = new System.Drawing.Point(50, 3);
+            this.btnInProgressChangeContact.Name = "btnInProgressChangeContact";
+            this.btnInProgressChangeContact.Size = new System.Drawing.Size(42, 40);
+            this.btnInProgressChangeContact.TabIndex = 15;
+            this.btnInProgressChangeContact.TileImage = ((System.Drawing.Image)(resources.GetObject("btnInProgressChangeContact.TileImage")));
+            this.btnInProgressChangeContact.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnInProgressChangeContact, "Change Enquiry Contact");
+            this.btnInProgressChangeContact.UseSelectable = true;
+            this.btnInProgressChangeContact.UseTileImage = true;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.btnInProgressSwitchBetweenCompanyANdPrivate, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnInProgressChangeContact, 1, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(343, 19);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(95, 46);
+            this.tableLayoutPanel2.TabIndex = 16;
+            // 
             // frmClientEnquiryV3
             // 
             this.ApplyImageInvert = true;
@@ -1140,6 +1196,7 @@
             this.enquiryInprogressBindingNavigator.ResumeLayout(false);
             this.enquiryInprogressBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companiesInprogressBindingSource)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1164,7 +1221,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton enquiryBindingNavigatorSaveItem;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.GroupBox gbInProgressEnquiryEnrrolmentQueries;
@@ -1179,9 +1235,9 @@
         private MetroFramework.Controls.MetroGrid dgvInprogressContactDetails;
         private System.Windows.Forms.BindingSource contactDetailsInprogressBindingSource;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem1;
+        private System.Windows.Forms.ToolStripButton btnAddContactDetail;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem1;
+        private System.Windows.Forms.ToolStripButton btnRemoveContactDetail;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem1;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator3;
@@ -1198,7 +1254,7 @@
         private System.Windows.Forms.BindingSource companiesBindingSource;
         private System.Windows.Forms.TextBox fullNameTextBox;
         private MetroFramework.Controls.MetroTile btnViewProgressInProgressSections;
-        private MetroFramework.Controls.MetroTile metroTile2;
+        private MetroFramework.Controls.MetroTile btnInProgressSwitchBetweenCompanyANdPrivate;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn individualIDDataGridViewTextBoxColumn;
@@ -1226,5 +1282,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colInProgressContactType;
         private System.Windows.Forms.DataGridViewTextBoxColumn contactDetailValueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewLinkColumn colInProgressContactDetailSendOption;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton btnuUpdateContactDetails;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private MetroFramework.Controls.MetroTile btnInProgressChangeContact;
     }
 }

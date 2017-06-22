@@ -29,20 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSearchForSelectedEquiry));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dgvEquirySearchResults = new MetroFramework.Controls.MetroGrid();
+            this.colSelect = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.enquiryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.initialConsultationCompleteDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.enquiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -57,9 +61,24 @@
             this.panelStudentSearchResults = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvClientFullName = new MetroFramework.Controls.MetroGrid();
             this.individualsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvAssociatedEquiryCurriculum = new MetroFramework.Controls.MetroGrid();
+            this.enrollmentQuanityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCurriculumName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastUpdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumEnquiriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbSearchForStudent = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.datFromDate = new MetroFramework.Controls.MetroDateTime();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.datToDate = new MetroFramework.Controls.MetroDateTime();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.chkUseDepartment = new MetroFramework.Controls.MetroCheckBox();
             this.txtContactName = new System.Windows.Forms.TextBox();
             this.txtEquiryRef = new System.Windows.Forms.MaskedTextBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
@@ -70,29 +89,11 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.cboCurriculum = new MetroFramework.Controls.MetroComboBox();
             this.curriculumsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.datToDate = new MetroFramework.Controls.MetroDateTime();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.individualsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvAssociatedEquiryCurriculum = new MetroFramework.Controls.MetroGrid();
-            this.curriculumEnquiriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.enrollmentQuanityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCurriculumName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastUpdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSelect = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.enquiryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.initialConsultationCompleteDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.enquiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chkUseDepartment = new MetroFramework.Controls.MetroCheckBox();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.datFromDate = new MetroFramework.Controls.MetroDateTime();
+            this.colContactCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -106,21 +107,21 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientFullName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.individualsBindingSource1)).BeginInit();
-            this.gbSearchForStudent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookupDepartmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.curriculumsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.individualsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientFullName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.individualsBindingSource1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssociatedEquiryCurriculum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.curriculumEnquiriesBindingSource)).BeginInit();
+            this.gbSearchForStudent.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookupDepartmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.curriculumsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.individualsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -151,14 +152,14 @@
             this.dgvEquirySearchResults.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEquirySearchResults.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvEquirySearchResults.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEquirySearchResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEquirySearchResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEquirySearchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEquirySearchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSelect,
@@ -166,14 +167,14 @@
             this.initialConsultationCompleteDataGridViewCheckBoxColumn,
             this.enquiryDateDataGridViewTextBoxColumn});
             this.dgvEquirySearchResults.DataSource = this.enquiryBindingSource;
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle58.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle58.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEquirySearchResults.DefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEquirySearchResults.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEquirySearchResults.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEquirySearchResults.EnableHeadersVisualStyles = false;
             this.dgvEquirySearchResults.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -182,14 +183,14 @@
             this.dgvEquirySearchResults.Name = "dgvEquirySearchResults";
             this.dgvEquirySearchResults.ReadOnly = true;
             this.dgvEquirySearchResults.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle59.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEquirySearchResults.RowHeadersDefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEquirySearchResults.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEquirySearchResults.RowHeadersWidth = 15;
             this.dgvEquirySearchResults.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvEquirySearchResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -197,6 +198,49 @@
             this.dgvEquirySearchResults.TabIndex = 0;
             this.dgvEquirySearchResults.TabStop = false;
             this.dgvEquirySearchResults.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEquirySearchResults_CellContentClick);
+            // 
+            // colSelect
+            // 
+            this.colSelect.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colSelect.HeaderText = "";
+            this.colSelect.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colSelect.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.colSelect.Name = "colSelect";
+            this.colSelect.ReadOnly = true;
+            this.colSelect.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colSelect.Text = "[ Select Enquiry ]";
+            this.colSelect.TrackVisitedState = false;
+            this.colSelect.UseColumnTextForLinkValue = true;
+            this.colSelect.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.colSelect.Width = 5;
+            // 
+            // enquiryIDDataGridViewTextBoxColumn
+            // 
+            this.enquiryIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.enquiryIDDataGridViewTextBoxColumn.DataPropertyName = "EnquiryID";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.enquiryIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.enquiryIDDataGridViewTextBoxColumn.HeaderText = "Enquiry Ref#";
+            this.enquiryIDDataGridViewTextBoxColumn.Name = "enquiryIDDataGridViewTextBoxColumn";
+            this.enquiryIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.enquiryIDDataGridViewTextBoxColumn.Width = 96;
+            // 
+            // initialConsultationCompleteDataGridViewCheckBoxColumn
+            // 
+            this.initialConsultationCompleteDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.initialConsultationCompleteDataGridViewCheckBoxColumn.DataPropertyName = "InitialConsultationComplete";
+            this.initialConsultationCompleteDataGridViewCheckBoxColumn.HeaderText = "Initial Complete";
+            this.initialConsultationCompleteDataGridViewCheckBoxColumn.Name = "initialConsultationCompleteDataGridViewCheckBoxColumn";
+            this.initialConsultationCompleteDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.initialConsultationCompleteDataGridViewCheckBoxColumn.Width = 92;
+            // 
+            // enquiryDateDataGridViewTextBoxColumn
+            // 
+            this.enquiryDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.enquiryDateDataGridViewTextBoxColumn.DataPropertyName = "EnquiryDate";
+            this.enquiryDateDataGridViewTextBoxColumn.HeaderText = "Date Created";
+            this.enquiryDateDataGridViewTextBoxColumn.Name = "enquiryDateDataGridViewTextBoxColumn";
+            this.enquiryDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // enquiryBindingSource
             // 
@@ -336,6 +380,36 @@
             this.splitContainer1.SplitterDistance = 434;
             this.splitContainer1.TabIndex = 12;
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.groupBox1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.groupBox3);
+            this.splitContainer2.Size = new System.Drawing.Size(407, 235);
+            this.splitContainer2.SplitterDistance = 108;
+            this.splitContainer2.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvClientFullName);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(407, 108);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Client Full Name";
+            // 
             // dgvClientFullName
             // 
             this.dgvClientFullName.AllowUserToAddRows = false;
@@ -346,26 +420,27 @@
             this.dgvClientFullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvClientFullName.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvClientFullName.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle60.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle60.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle60.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle60.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientFullName.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClientFullName.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvClientFullName.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientFullName.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fullNameDataGridViewTextBoxColumn});
+            this.fullNameDataGridViewTextBoxColumn,
+            this.colContactCompany});
             this.dgvClientFullName.DataSource = this.individualsBindingSource1;
-            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle61.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle61.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle61.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle61.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClientFullName.DefaultCellStyle = dataGridViewCellStyle61;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClientFullName.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvClientFullName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvClientFullName.EnableHeadersVisualStyles = false;
             this.dgvClientFullName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -374,16 +449,18 @@
             this.dgvClientFullName.MultiSelect = false;
             this.dgvClientFullName.Name = "dgvClientFullName";
             this.dgvClientFullName.ReadOnly = true;
-            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle62.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle62.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle62.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle62.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle62.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientFullName.RowHeadersDefaultCellStyle = dataGridViewCellStyle62;
+            this.dgvClientFullName.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClientFullName.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvClientFullName.RowHeadersWidth = 15;
             this.dgvClientFullName.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvClientFullName.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientFullName.Size = new System.Drawing.Size(401, 89);
             this.dgvClientFullName.TabIndex = 0;
             this.dgvClientFullName.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvClientFullName_DataBindingComplete);
@@ -392,6 +469,104 @@
             // 
             this.individualsBindingSource1.DataMember = "Individuals";
             this.individualsBindingSource1.DataSource = this.enquiryBindingSource;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dgvAssociatedEquiryCurriculum);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(407, 123);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Associated Enquiry Curriculum";
+            // 
+            // dgvAssociatedEquiryCurriculum
+            // 
+            this.dgvAssociatedEquiryCurriculum.AllowUserToAddRows = false;
+            this.dgvAssociatedEquiryCurriculum.AllowUserToDeleteRows = false;
+            this.dgvAssociatedEquiryCurriculum.AllowUserToResizeRows = false;
+            this.dgvAssociatedEquiryCurriculum.AutoGenerateColumns = false;
+            this.dgvAssociatedEquiryCurriculum.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvAssociatedEquiryCurriculum.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAssociatedEquiryCurriculum.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvAssociatedEquiryCurriculum.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAssociatedEquiryCurriculum.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvAssociatedEquiryCurriculum.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAssociatedEquiryCurriculum.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.enrollmentQuanityDataGridViewTextBoxColumn,
+            this.ColCurriculumName,
+            this.lastUpdatedDataGridViewTextBoxColumn});
+            this.dgvAssociatedEquiryCurriculum.DataSource = this.curriculumEnquiriesBindingSource;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAssociatedEquiryCurriculum.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvAssociatedEquiryCurriculum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAssociatedEquiryCurriculum.EnableHeadersVisualStyles = false;
+            this.dgvAssociatedEquiryCurriculum.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvAssociatedEquiryCurriculum.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvAssociatedEquiryCurriculum.Location = new System.Drawing.Point(3, 16);
+            this.dgvAssociatedEquiryCurriculum.Name = "dgvAssociatedEquiryCurriculum";
+            this.dgvAssociatedEquiryCurriculum.ReadOnly = true;
+            this.dgvAssociatedEquiryCurriculum.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAssociatedEquiryCurriculum.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvAssociatedEquiryCurriculum.RowHeadersWidth = 15;
+            this.dgvAssociatedEquiryCurriculum.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvAssociatedEquiryCurriculum.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvAssociatedEquiryCurriculum.Size = new System.Drawing.Size(401, 104);
+            this.dgvAssociatedEquiryCurriculum.TabIndex = 0;
+            this.dgvAssociatedEquiryCurriculum.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvAssociatedEquiryCurriculum_DataBindingComplete);
+            // 
+            // enrollmentQuanityDataGridViewTextBoxColumn
+            // 
+            this.enrollmentQuanityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentQuanity";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.HeaderText = "Qty Enrolled";
+            this.enrollmentQuanityDataGridViewTextBoxColumn.Name = "enrollmentQuanityDataGridViewTextBoxColumn";
+            this.enrollmentQuanityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // ColCurriculumName
+            // 
+            this.ColCurriculumName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColCurriculumName.HeaderText = "Curriculum";
+            this.ColCurriculumName.Name = "ColCurriculumName";
+            this.ColCurriculumName.ReadOnly = true;
+            this.ColCurriculumName.Width = 86;
+            // 
+            // lastUpdatedDataGridViewTextBoxColumn
+            // 
+            this.lastUpdatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lastUpdatedDataGridViewTextBoxColumn.DataPropertyName = "LastUpdated";
+            this.lastUpdatedDataGridViewTextBoxColumn.HeaderText = "Last Updated";
+            this.lastUpdatedDataGridViewTextBoxColumn.Name = "lastUpdatedDataGridViewTextBoxColumn";
+            this.lastUpdatedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // curriculumEnquiriesBindingSource
+            // 
+            this.curriculumEnquiriesBindingSource.DataMember = "CurriculumEnquiries";
+            this.curriculumEnquiriesBindingSource.DataSource = this.enquiryBindingSource;
             // 
             // gbSearchForStudent
             // 
@@ -414,6 +589,81 @@
             this.gbSearchForStudent.TabIndex = 13;
             this.gbSearchForStudent.TabStop = false;
             this.gbSearchForStudent.Text = "Search Fields";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.metroLabel4);
+            this.flowLayoutPanel1.Controls.Add(this.datFromDate);
+            this.flowLayoutPanel1.Controls.Add(this.metroLabel1);
+            this.flowLayoutPanel1.Controls.Add(this.datToDate);
+            this.flowLayoutPanel1.Controls.Add(this.metroLabel7);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(56, 166);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(719, 37);
+            this.flowLayoutPanel1.TabIndex = 30;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(3, 7);
+            this.metroLabel4.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(140, 19);
+            this.metroLabel4.TabIndex = 18;
+            this.metroLabel4.Text = "Enquiry Date Between:";
+            // 
+            // datFromDate
+            // 
+            this.datFromDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.datFromDate.Location = new System.Drawing.Point(149, 3);
+            this.datFromDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.datFromDate.Name = "datFromDate";
+            this.datFromDate.Size = new System.Drawing.Size(174, 29);
+            this.datFromDate.TabIndex = 31;
+            this.datFromDate.TabStop = false;
+            this.datFromDate.ValueChanged += new System.EventHandler(this.datFromDate_ValueChanged);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(329, 7);
+            this.metroLabel1.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(31, 19);
+            this.metroLabel1.TabIndex = 14;
+            this.metroLabel1.Text = "and";
+            // 
+            // datToDate
+            // 
+            this.datToDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.datToDate.Location = new System.Drawing.Point(366, 3);
+            this.datToDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.datToDate.Name = "datToDate";
+            this.datToDate.Size = new System.Drawing.Size(174, 29);
+            this.datToDate.TabIndex = 15;
+            this.datToDate.TabStop = false;
+            this.datToDate.ValueChanged += new System.EventHandler(this.datToDate_ValueChanged);
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(546, 7);
+            this.metroLabel7.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(148, 19);
+            this.metroLabel7.TabIndex = 29;
+            this.metroLabel7.Text = "(Default is 10 Days Back)";
+            // 
+            // chkUseDepartment
+            // 
+            this.chkUseDepartment.AutoSize = true;
+            this.chkUseDepartment.Location = new System.Drawing.Point(161, 50);
+            this.chkUseDepartment.Name = "chkUseDepartment";
+            this.chkUseDepartment.Size = new System.Drawing.Size(108, 15);
+            this.chkUseDepartment.TabIndex = 27;
+            this.chkUseDepartment.Text = "Use Department";
+            this.chkUseDepartment.UseSelectable = true;
+            this.chkUseDepartment.CheckedChanged += new System.EventHandler(this.chkUseDepartment_CheckedChanged);
             // 
             // txtContactName
             // 
@@ -523,16 +773,6 @@
             this.curriculumsBindingSource.DataMember = "Curriculums";
             this.curriculumsBindingSource.DataSource = this.lookupDepartmentBindingSource;
             // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(3, 7);
-            this.metroLabel4.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(140, 19);
-            this.metroLabel4.TabIndex = 18;
-            this.metroLabel4.Text = "Enquiry Date Between:";
-            // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
@@ -551,27 +791,6 @@
             this.metroLabel2.TabIndex = 16;
             this.metroLabel2.Text = "Cuuriculum:";
             // 
-            // datToDate
-            // 
-            this.datToDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.datToDate.Location = new System.Drawing.Point(366, 3);
-            this.datToDate.MinimumSize = new System.Drawing.Size(0, 29);
-            this.datToDate.Name = "datToDate";
-            this.datToDate.Size = new System.Drawing.Size(174, 29);
-            this.datToDate.TabIndex = 15;
-            this.datToDate.TabStop = false;
-            this.datToDate.ValueChanged += new System.EventHandler(this.datToDate_ValueChanged);
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(329, 7);
-            this.metroLabel1.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(31, 19);
-            this.metroLabel1.TabIndex = 14;
-            this.metroLabel1.Text = "and";
-            // 
             // individualsBindingSource
             // 
             this.individualsBindingSource.DataMember = "Individuals";
@@ -579,226 +798,20 @@
             // 
             // fullNameDataGridViewTextBoxColumn
             // 
-            this.fullNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fullNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
-            this.fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "Contact Name";
+            this.fullNameDataGridViewTextBoxColumn.MinimumWidth = 105;
             this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
             this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fullNameDataGridViewTextBoxColumn.Width = 105;
             // 
-            // splitContainer2
+            // colContactCompany
             // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.groupBox1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.groupBox3);
-            this.splitContainer2.Size = new System.Drawing.Size(407, 235);
-            this.splitContainer2.SplitterDistance = 108;
-            this.splitContainer2.TabIndex = 1;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgvClientFullName);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(407, 108);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Client Full Name";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dgvAssociatedEquiryCurriculum);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(0, 0);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(407, 123);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Associated Enquiry Curriculum";
-            // 
-            // dgvAssociatedEquiryCurriculum
-            // 
-            this.dgvAssociatedEquiryCurriculum.AllowUserToAddRows = false;
-            this.dgvAssociatedEquiryCurriculum.AllowUserToDeleteRows = false;
-            this.dgvAssociatedEquiryCurriculum.AllowUserToResizeRows = false;
-            this.dgvAssociatedEquiryCurriculum.AutoGenerateColumns = false;
-            this.dgvAssociatedEquiryCurriculum.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvAssociatedEquiryCurriculum.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvAssociatedEquiryCurriculum.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvAssociatedEquiryCurriculum.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle63.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle63.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle63.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle63.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle63.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle63.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAssociatedEquiryCurriculum.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle63;
-            this.dgvAssociatedEquiryCurriculum.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAssociatedEquiryCurriculum.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.enrollmentQuanityDataGridViewTextBoxColumn,
-            this.ColCurriculumName,
-            this.lastUpdatedDataGridViewTextBoxColumn});
-            this.dgvAssociatedEquiryCurriculum.DataSource = this.curriculumEnquiriesBindingSource;
-            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle65.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle65.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle65.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle65.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle65.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle65.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAssociatedEquiryCurriculum.DefaultCellStyle = dataGridViewCellStyle65;
-            this.dgvAssociatedEquiryCurriculum.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAssociatedEquiryCurriculum.EnableHeadersVisualStyles = false;
-            this.dgvAssociatedEquiryCurriculum.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dgvAssociatedEquiryCurriculum.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvAssociatedEquiryCurriculum.Location = new System.Drawing.Point(3, 16);
-            this.dgvAssociatedEquiryCurriculum.Name = "dgvAssociatedEquiryCurriculum";
-            this.dgvAssociatedEquiryCurriculum.ReadOnly = true;
-            this.dgvAssociatedEquiryCurriculum.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle66.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle66.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle66.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle66.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle66.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle66.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAssociatedEquiryCurriculum.RowHeadersDefaultCellStyle = dataGridViewCellStyle66;
-            this.dgvAssociatedEquiryCurriculum.RowHeadersWidth = 15;
-            this.dgvAssociatedEquiryCurriculum.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvAssociatedEquiryCurriculum.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvAssociatedEquiryCurriculum.Size = new System.Drawing.Size(401, 104);
-            this.dgvAssociatedEquiryCurriculum.TabIndex = 0;
-            this.dgvAssociatedEquiryCurriculum.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvAssociatedEquiryCurriculum_DataBindingComplete);
-            // 
-            // curriculumEnquiriesBindingSource
-            // 
-            this.curriculumEnquiriesBindingSource.DataMember = "CurriculumEnquiries";
-            this.curriculumEnquiriesBindingSource.DataSource = this.enquiryBindingSource;
-            // 
-            // enrollmentQuanityDataGridViewTextBoxColumn
-            // 
-            this.enrollmentQuanityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentQuanity";
-            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle64;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.HeaderText = "Qty Enrolled";
-            this.enrollmentQuanityDataGridViewTextBoxColumn.Name = "enrollmentQuanityDataGridViewTextBoxColumn";
-            this.enrollmentQuanityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.Width = 93;
-            // 
-            // ColCurriculumName
-            // 
-            this.ColCurriculumName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColCurriculumName.HeaderText = "Curriculum";
-            this.ColCurriculumName.Name = "ColCurriculumName";
-            this.ColCurriculumName.ReadOnly = true;
-            this.ColCurriculumName.Width = 86;
-            // 
-            // lastUpdatedDataGridViewTextBoxColumn
-            // 
-            this.lastUpdatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.lastUpdatedDataGridViewTextBoxColumn.DataPropertyName = "LastUpdated";
-            this.lastUpdatedDataGridViewTextBoxColumn.HeaderText = "Last Updated";
-            this.lastUpdatedDataGridViewTextBoxColumn.Name = "lastUpdatedDataGridViewTextBoxColumn";
-            this.lastUpdatedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // colSelect
-            // 
-            this.colSelect.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colSelect.HeaderText = "";
-            this.colSelect.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colSelect.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.colSelect.Name = "colSelect";
-            this.colSelect.ReadOnly = true;
-            this.colSelect.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colSelect.Text = "[ Select Enquiry ]";
-            this.colSelect.TrackVisitedState = false;
-            this.colSelect.UseColumnTextForLinkValue = true;
-            this.colSelect.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.colSelect.Width = 5;
-            // 
-            // enquiryIDDataGridViewTextBoxColumn
-            // 
-            this.enquiryIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.enquiryIDDataGridViewTextBoxColumn.DataPropertyName = "EnquiryID";
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.enquiryIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle57;
-            this.enquiryIDDataGridViewTextBoxColumn.HeaderText = "Enquiry Ref#";
-            this.enquiryIDDataGridViewTextBoxColumn.Name = "enquiryIDDataGridViewTextBoxColumn";
-            this.enquiryIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.enquiryIDDataGridViewTextBoxColumn.Width = 96;
-            // 
-            // initialConsultationCompleteDataGridViewCheckBoxColumn
-            // 
-            this.initialConsultationCompleteDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.initialConsultationCompleteDataGridViewCheckBoxColumn.DataPropertyName = "InitialConsultationComplete";
-            this.initialConsultationCompleteDataGridViewCheckBoxColumn.HeaderText = "Initial Complete";
-            this.initialConsultationCompleteDataGridViewCheckBoxColumn.Name = "initialConsultationCompleteDataGridViewCheckBoxColumn";
-            this.initialConsultationCompleteDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.initialConsultationCompleteDataGridViewCheckBoxColumn.Width = 83;
-            // 
-            // enquiryDateDataGridViewTextBoxColumn
-            // 
-            this.enquiryDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.enquiryDateDataGridViewTextBoxColumn.DataPropertyName = "EnquiryDate";
-            this.enquiryDateDataGridViewTextBoxColumn.HeaderText = "Date Created";
-            this.enquiryDateDataGridViewTextBoxColumn.Name = "enquiryDateDataGridViewTextBoxColumn";
-            this.enquiryDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // chkUseDepartment
-            // 
-            this.chkUseDepartment.AutoSize = true;
-            this.chkUseDepartment.Location = new System.Drawing.Point(161, 50);
-            this.chkUseDepartment.Name = "chkUseDepartment";
-            this.chkUseDepartment.Size = new System.Drawing.Size(108, 15);
-            this.chkUseDepartment.TabIndex = 27;
-            this.chkUseDepartment.Text = "Use Department";
-            this.chkUseDepartment.UseSelectable = true;
-            this.chkUseDepartment.CheckedChanged += new System.EventHandler(this.chkUseDepartment_CheckedChanged);
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(546, 7);
-            this.metroLabel7.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(148, 19);
-            this.metroLabel7.TabIndex = 29;
-            this.metroLabel7.Text = "(Default is 10 Days Back)";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.metroLabel4);
-            this.flowLayoutPanel1.Controls.Add(this.datFromDate);
-            this.flowLayoutPanel1.Controls.Add(this.metroLabel1);
-            this.flowLayoutPanel1.Controls.Add(this.datToDate);
-            this.flowLayoutPanel1.Controls.Add(this.metroLabel7);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(56, 166);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(719, 37);
-            this.flowLayoutPanel1.TabIndex = 30;
-            // 
-            // datFromDate
-            // 
-            this.datFromDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.datFromDate.Location = new System.Drawing.Point(149, 3);
-            this.datFromDate.MinimumSize = new System.Drawing.Size(0, 29);
-            this.datFromDate.Name = "datFromDate";
-            this.datFromDate.Size = new System.Drawing.Size(174, 29);
-            this.datFromDate.TabIndex = 31;
-            this.datFromDate.TabStop = false;
-            this.datFromDate.ValueChanged += new System.EventHandler(this.datFromDate_ValueChanged);
+            this.colContactCompany.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colContactCompany.HeaderText = "Company";
+            this.colContactCompany.Name = "colContactCompany";
+            this.colContactCompany.ReadOnly = true;
             // 
             // frmSearchForSelectedEquiry
             // 
@@ -826,23 +839,23 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientFullName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.individualsBindingSource1)).EndInit();
-            this.gbSearchForStudent.ResumeLayout(false);
-            this.gbSearchForStudent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookupDepartmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.curriculumsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.individualsBindingSource)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientFullName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.individualsBindingSource1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssociatedEquiryCurriculum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.curriculumEnquiriesBindingSource)).EndInit();
+            this.gbSearchForStudent.ResumeLayout(false);
+            this.gbSearchForStudent.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookupDepartmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.curriculumsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.individualsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -884,7 +897,6 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private MetroFramework.Controls.MetroGrid dgvClientFullName;
         private System.Windows.Forms.BindingSource individualsBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -901,5 +913,7 @@
         private MetroFramework.Controls.MetroCheckBox chkUseDepartment;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private MetroFramework.Controls.MetroDateTime datFromDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContactCompany;
     }
 }

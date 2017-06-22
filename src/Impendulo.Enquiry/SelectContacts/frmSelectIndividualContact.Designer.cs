@@ -39,9 +39,7 @@
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.individualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvContactsSearchResults = new System.Windows.Forms.DataGridView();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.panelStudentSearchResults = new System.Windows.Forms.Panel();
@@ -53,8 +51,6 @@
             this.toolStripContainerStudentContacts = new System.Windows.Forms.ToolStripContainer();
             this.dgvContactInfo = new System.Windows.Forms.DataGridView();
             this.colContactType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BindingNavigatorStudentContactInfo = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
@@ -77,12 +73,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtIDNumber = new System.Windows.Forms.TextBox();
             this.btnAddContact = new System.Windows.Forms.PictureBox();
+            this.individualBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colContactTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIDNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.individualBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactsSearchResults)).BeginInit();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -99,11 +97,13 @@
             this.toolStripContainerStudentContacts.TopToolStripPanel.SuspendLayout();
             this.toolStripContainerStudentContacts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactDetailBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingNavigatorStudentContactInfo)).BeginInit();
             this.BindingNavigatorStudentContactInfo.SuspendLayout();
             this.gbSearchForStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddContact)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.individualBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactDetailBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigatorSeparator2
@@ -194,11 +194,6 @@
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 0;
             // 
-            // individualBindingSource
-            // 
-            this.individualBindingSource.DataSource = typeof(Impendulo.Data.Models.Individual);
-            this.individualBindingSource.PositionChanged += new System.EventHandler(this.individualBindingSource_PositionChanged);
-            // 
             // bindingNavigatorMoveLastItem
             // 
             this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -208,10 +203,6 @@
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(Impendulo.Data.Models.Student);
-            // 
             // dgvContactsSearchResults
             // 
             this.dgvContactsSearchResults.AllowUserToAddRows = false;
@@ -219,8 +210,8 @@
             this.dgvContactsSearchResults.AutoGenerateColumns = false;
             this.dgvContactsSearchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContactsSearchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FullName,
-            this.colIDNumber});
+            this.colContactTitle,
+            this.FullName});
             this.dgvContactsSearchResults.DataSource = this.individualBindingSource;
             this.dgvContactsSearchResults.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvContactsSearchResults.Location = new System.Drawing.Point(0, 0);
@@ -230,6 +221,7 @@
             this.dgvContactsSearchResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContactsSearchResults.Size = new System.Drawing.Size(419, 144);
             this.dgvContactsSearchResults.TabIndex = 0;
+            this.dgvContactsSearchResults.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvContactsSearchResults_DataBindingComplete);
             // 
             // toolStripContainer1
             // 
@@ -370,18 +362,6 @@
             this.colContactType.Name = "colContactType";
             this.colContactType.ReadOnly = true;
             this.colContactType.Width = 120;
-            // 
-            // contactDetailValueDataGridViewTextBoxColumn
-            // 
-            this.contactDetailValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.contactDetailValueDataGridViewTextBoxColumn.DataPropertyName = "ContactDetailValue";
-            this.contactDetailValueDataGridViewTextBoxColumn.HeaderText = "Contact";
-            this.contactDetailValueDataGridViewTextBoxColumn.Name = "contactDetailValueDataGridViewTextBoxColumn";
-            this.contactDetailValueDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // contactDetailBindingSource
-            // 
-            this.contactDetailBindingSource.DataSource = typeof(Impendulo.Data.Models.ContactDetail);
             // 
             // BindingNavigatorStudentContactInfo
             // 
@@ -609,21 +589,42 @@
             this.btnAddContact.TabStop = false;
             this.btnAddContact.Click += new System.EventHandler(this.btnAddContact_Click);
             // 
+            // individualBindingSource
+            // 
+            this.individualBindingSource.DataSource = typeof(Impendulo.Data.Models.Individual);
+            this.individualBindingSource.PositionChanged += new System.EventHandler(this.individualBindingSource_PositionChanged);
+            // 
+            // contactDetailValueDataGridViewTextBoxColumn
+            // 
+            this.contactDetailValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.contactDetailValueDataGridViewTextBoxColumn.DataPropertyName = "ContactDetailValue";
+            this.contactDetailValueDataGridViewTextBoxColumn.HeaderText = "Contact";
+            this.contactDetailValueDataGridViewTextBoxColumn.Name = "contactDetailValueDataGridViewTextBoxColumn";
+            this.contactDetailValueDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contactDetailBindingSource
+            // 
+            this.contactDetailBindingSource.DataSource = typeof(Impendulo.Data.Models.ContactDetail);
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(Impendulo.Data.Models.Student);
+            // 
+            // colContactTitle
+            // 
+            this.colContactTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colContactTitle.HeaderText = "Title";
+            this.colContactTitle.Name = "colContactTitle";
+            this.colContactTitle.ReadOnly = true;
+            this.colContactTitle.Width = 52;
+            // 
             // FullName
             // 
-            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.FullName.DataPropertyName = "FullName";
             this.FullName.HeaderText = "FullName";
             this.FullName.Name = "FullName";
             this.FullName.ReadOnly = true;
-            this.FullName.Width = 76;
-            // 
-            // colIDNumber
-            // 
-            this.colIDNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colIDNumber.HeaderText = "ID Number";
-            this.colIDNumber.Name = "colIDNumber";
-            this.colIDNumber.ReadOnly = true;
             // 
             // frmSelectIndividualContact
             // 
@@ -638,8 +639,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.individualBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactsSearchResults)).EndInit();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
@@ -660,13 +659,15 @@
             this.toolStripContainerStudentContacts.ResumeLayout(false);
             this.toolStripContainerStudentContacts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactDetailBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingNavigatorStudentContactInfo)).EndInit();
             this.BindingNavigatorStudentContactInfo.ResumeLayout(false);
             this.BindingNavigatorStudentContactInfo.PerformLayout();
             this.gbSearchForStudent.ResumeLayout(false);
             this.gbSearchForStudent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddContact)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.individualBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactDetailBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -720,7 +721,7 @@
         private System.Windows.Forms.PictureBox btnAddContact;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIDNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContactTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIDNumber;
     }
 }
