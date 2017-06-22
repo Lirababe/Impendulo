@@ -1424,7 +1424,7 @@
             this.ClientSize = new System.Drawing.Size(1345, 611);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCompany";
             this.ShowIcon = false;
             this.Text = "Company Information";
