@@ -403,7 +403,7 @@
             this.gbInprogressContactNameAndCompanyName.Size = new System.Drawing.Size(409, 103);
             this.gbInprogressContactNameAndCompanyName.TabIndex = 9;
             this.gbInprogressContactNameAndCompanyName.TabStop = false;
-            this.gbInprogressContactNameAndCompanyName.Text = "Contact Name and ( Company or Private )";
+            this.gbInprogressContactNameAndCompanyName.Text = "Company Contact Or ( Student Details if Private )";
             // 
             // initialConsultationCompleteCheckBox
             // 
@@ -632,7 +632,6 @@
             this.bindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem1.Text = "Add new";
-
             // 
             // bindingNavigatorCountItem1
             // 

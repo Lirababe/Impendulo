@@ -76,7 +76,8 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
             InitializeComponent();
             CurrentEnquiry = new Data.Models.Enquiry
             {
-                EnquiryDate = DateTime.Now
+                EnquiryDate = DateTime.Now,
+                EnquiryStatusID = (int)EnumEnquiryStatuses.New
             };
         }
 
