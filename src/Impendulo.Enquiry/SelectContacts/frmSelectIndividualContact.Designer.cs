@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSelectIndividualContact));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -80,6 +80,8 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.gbSearchForStudent = new System.Windows.Forms.GroupBox();
             this.btnAddContact = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtIDNumber = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.individualBindingSource)).BeginInit();
@@ -191,7 +193,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(370, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(394, 27);
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 0;
             // 
@@ -231,15 +233,15 @@
             this.dgvContactsSearchResults.ReadOnly = true;
             this.dgvContactsSearchResults.RowTemplate.Height = 24;
             this.dgvContactsSearchResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContactsSearchResults.Size = new System.Drawing.Size(370, 187);
+            this.dgvContactsSearchResults.Size = new System.Drawing.Size(394, 144);
             this.dgvContactsSearchResults.TabIndex = 0;
             // 
             // colSelectStudent
             // 
             this.colSelectStudent.ActiveLinkColor = System.Drawing.Color.Black;
             this.colSelectStudent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.colSelectStudent.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.colSelectStudent.DefaultCellStyle = dataGridViewCellStyle2;
             this.colSelectStudent.HeaderText = "Select";
             this.colSelectStudent.LinkColor = System.Drawing.Color.Black;
             this.colSelectStudent.Name = "colSelectStudent";
@@ -278,11 +280,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvContactsSearchResults);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(370, 187);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(394, 144);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(370, 214);
+            this.toolStripContainer1.Size = new System.Drawing.Size(394, 171);
             this.toolStripContainer1.TabIndex = 11;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -294,9 +296,9 @@
             // 
             this.panelStudentSearchResults.Controls.Add(this.tableLayoutPanel1);
             this.panelStudentSearchResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelStudentSearchResults.Location = new System.Drawing.Point(0, 96);
+            this.panelStudentSearchResults.Location = new System.Drawing.Point(20, 169);
             this.panelStudentSearchResults.Name = "panelStudentSearchResults";
-            this.panelStudentSearchResults.Size = new System.Drawing.Size(764, 255);
+            this.panelStudentSearchResults.Size = new System.Drawing.Size(758, 212);
             this.panelStudentSearchResults.TabIndex = 14;
             // 
             // tableLayoutPanel1
@@ -311,7 +313,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(764, 255);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(758, 212);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
             // flowLayoutPanel1
@@ -319,15 +321,15 @@
             this.flowLayoutPanel1.Controls.Add(this.btnSelectContact);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 223);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 180);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(758, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(752, 29);
             this.flowLayoutPanel1.TabIndex = 14;
             // 
             // btnSelectContact
             // 
             this.btnSelectContact.Enabled = false;
-            this.btnSelectContact.Location = new System.Drawing.Point(631, 3);
+            this.btnSelectContact.Location = new System.Drawing.Point(625, 3);
             this.btnSelectContact.Name = "btnSelectContact";
             this.btnSelectContact.Size = new System.Drawing.Size(124, 23);
             this.btnSelectContact.TabIndex = 0;
@@ -349,8 +351,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox5);
-            this.splitContainer1.Size = new System.Drawing.Size(758, 214);
-            this.splitContainer1.SplitterDistance = 370;
+            this.splitContainer1.Size = new System.Drawing.Size(752, 171);
+            this.splitContainer1.SplitterDistance = 394;
             this.splitContainer1.TabIndex = 13;
             // 
             // groupBox5
@@ -359,7 +361,7 @@
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(384, 214);
+            this.groupBox5.Size = new System.Drawing.Size(354, 171);
             this.groupBox5.TabIndex = 12;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Contact Details";
@@ -370,11 +372,11 @@
             // toolStripContainerStudentContacts.ContentPanel
             // 
             this.toolStripContainerStudentContacts.ContentPanel.Controls.Add(this.dgvContactInfo);
-            this.toolStripContainerStudentContacts.ContentPanel.Size = new System.Drawing.Size(378, 168);
+            this.toolStripContainerStudentContacts.ContentPanel.Size = new System.Drawing.Size(348, 125);
             this.toolStripContainerStudentContacts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainerStudentContacts.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainerStudentContacts.Name = "toolStripContainerStudentContacts";
-            this.toolStripContainerStudentContacts.Size = new System.Drawing.Size(378, 195);
+            this.toolStripContainerStudentContacts.Size = new System.Drawing.Size(348, 152);
             this.toolStripContainerStudentContacts.TabIndex = 3;
             this.toolStripContainerStudentContacts.Text = "toolStripContainer1";
             // 
@@ -399,7 +401,7 @@
             this.dgvContactInfo.RowHeadersWidth = 15;
             this.dgvContactInfo.RowTemplate.Height = 24;
             this.dgvContactInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContactInfo.Size = new System.Drawing.Size(378, 168);
+            this.dgvContactInfo.Size = new System.Drawing.Size(348, 125);
             this.dgvContactInfo.TabIndex = 0;
             this.dgvContactInfo.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvContactInfo_DataBindingComplete);
             // 
@@ -452,7 +454,7 @@
             this.BindingNavigatorStudentContactInfo.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.BindingNavigatorStudentContactInfo.Name = "BindingNavigatorStudentContactInfo";
             this.BindingNavigatorStudentContactInfo.PositionItem = this.bindingNavigatorPositionItem1;
-            this.BindingNavigatorStudentContactInfo.Size = new System.Drawing.Size(378, 27);
+            this.BindingNavigatorStudentContactInfo.Size = new System.Drawing.Size(348, 27);
             this.BindingNavigatorStudentContactInfo.Stretch = true;
             this.BindingNavigatorStudentContactInfo.TabIndex = 0;
             // 
@@ -548,9 +550,9 @@
             // 
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
             this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRefresh.Location = new System.Drawing.Point(414, 19);
+            this.btnRefresh.Location = new System.Drawing.Point(415, 19);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 68);
+            this.btnRefresh.Size = new System.Drawing.Size(75, 72);
             this.btnRefresh.TabIndex = 10;
             this.btnRefresh.Text = "Reset";
             this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -561,9 +563,9 @@
             // 
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSearch.Location = new System.Drawing.Point(333, 19);
+            this.btnSearch.Location = new System.Drawing.Point(334, 19);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 68);
+            this.btnSearch.Size = new System.Drawing.Size(75, 72);
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Search";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -573,7 +575,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 55);
+            this.label3.Location = new System.Drawing.Point(25, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 8;
@@ -581,7 +583,7 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(80, 52);
+            this.txtLastName.Location = new System.Drawing.Point(89, 45);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(239, 20);
             this.txtLastName.TabIndex = 7;
@@ -589,7 +591,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 27);
+            this.label4.Location = new System.Drawing.Point(25, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 6;
@@ -597,13 +599,15 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(80, 24);
+            this.txtFirstName.Location = new System.Drawing.Point(89, 19);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(239, 20);
             this.txtFirstName.TabIndex = 5;
             // 
             // gbSearchForStudent
             // 
+            this.gbSearchForStudent.Controls.Add(this.label1);
+            this.gbSearchForStudent.Controls.Add(this.txtIDNumber);
             this.gbSearchForStudent.Controls.Add(this.btnAddContact);
             this.gbSearchForStudent.Controls.Add(this.btnRefresh);
             this.gbSearchForStudent.Controls.Add(this.btnSearch);
@@ -612,9 +616,9 @@
             this.gbSearchForStudent.Controls.Add(this.label4);
             this.gbSearchForStudent.Controls.Add(this.txtFirstName);
             this.gbSearchForStudent.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbSearchForStudent.Location = new System.Drawing.Point(0, 0);
+            this.gbSearchForStudent.Location = new System.Drawing.Point(20, 60);
             this.gbSearchForStudent.Name = "gbSearchForStudent";
-            this.gbSearchForStudent.Size = new System.Drawing.Size(764, 96);
+            this.gbSearchForStudent.Size = new System.Drawing.Size(758, 109);
             this.gbSearchForStudent.TabIndex = 13;
             this.gbSearchForStudent.TabStop = false;
             this.gbSearchForStudent.Text = "Sereach Criteria";
@@ -624,24 +628,38 @@
             this.btnAddContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnAddContact.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddContact.Image = ((System.Drawing.Image)(resources.GetObject("btnAddContact.Image")));
-            this.btnAddContact.Location = new System.Drawing.Point(495, 19);
+            this.btnAddContact.Location = new System.Drawing.Point(496, 19);
             this.btnAddContact.Name = "btnAddContact";
-            this.btnAddContact.Size = new System.Drawing.Size(76, 68);
+            this.btnAddContact.Size = new System.Drawing.Size(76, 72);
             this.btnAddContact.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnAddContact.TabIndex = 16;
             this.btnAddContact.TabStop = false;
             this.btnAddContact.Click += new System.EventHandler(this.btnAddContact_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "ID Number";
+            // 
+            // txtIDNumber
+            // 
+            this.txtIDNumber.Location = new System.Drawing.Point(89, 71);
+            this.txtIDNumber.Name = "txtIDNumber";
+            this.txtIDNumber.Size = new System.Drawing.Size(239, 20);
+            this.txtIDNumber.TabIndex = 17;
+            // 
             // frmSelectIndividualContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 351);
+            this.ClientSize = new System.Drawing.Size(798, 401);
             this.Controls.Add(this.panelStudentSearchResults);
             this.Controls.Add(this.gbSearchForStudent);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSelectIndividualContact";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Contact";
             this.Load += new System.EventHandler(this.frmSelectIndividualContact_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
@@ -731,5 +749,7 @@
         private System.Windows.Forms.ToolStripButton btnAddContactInfo;
         private System.Windows.Forms.ToolStripButton btnUpdateContactDetials;
         private System.Windows.Forms.PictureBox btnAddContact;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtIDNumber;
     }
 }

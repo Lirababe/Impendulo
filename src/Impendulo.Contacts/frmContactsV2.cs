@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Impendulo.Data.Models;
+using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,24 +9,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Impendulo.Data.Models;
-using Impendulo.Company.Development;
-using MetroFramework.Forms;
 
-namespace Impendulo.Contacts.Development
+namespace Impendulo.Development.Contacts
 {
-    public partial class frmContacts : Form
+    public partial class frmContactsV2 : MetroForm
     {
+
         
         public Individual CurrentContact { get; set; }
         public int IndividualID { get; set; }
 
-        public frmContacts()
+        public frmContactsV2()
         {
             IndividualID = 0;
             InitializeComponent();
         }
-        private void frmContacts_Load(object sender, EventArgs e)
+
+        private void frmContactsV2_Load(object sender, EventArgs e)
         {
             this.populateTitles();
             if (IndividualID != 0)
@@ -87,44 +88,12 @@ namespace Impendulo.Contacts.Development
 
         private void btnAddContact_Click(object sender, EventArgs e)
         {
-            using (var Dbconnection = new MCDEntities())
-            {
-                CurrentContact = new Individual
-                {
-                    TitleID = Convert.ToInt32(cboIndividualTitle.SelectedValue),
-                    IndividualFirstName = txtFirstName.Text.ToString(),
-                    IndividualSecondName = txtSecondName.Text.ToString(),
-                    IndividualLastname = txtLastName.Text.ToString()
-                };
-                Dbconnection.Individuals.Add(CurrentContact);
-                Dbconnection.SaveChanges();
-            };
-            this.Close();
 
         }
 
         private void btnUpdateContact_Click(object sender, EventArgs e)
         {
 
-            using (var Dbconnection = new MCDEntities())
-            {
-                Individual IndividualToUpdate = (from a in Dbconnection.Individuals
-                                                 where a.IndividualID == IndividualID
-                                                 select a).FirstOrDefault<Individual>();
-                IndividualToUpdate.TitleID = Convert.ToInt32(cboIndividualTitle.SelectedValue);
-                IndividualToUpdate.IndividualFirstName = txtFirstName.Text.ToString();
-                IndividualToUpdate.IndividualSecondName = txtSecondName.Text.ToString();
-                IndividualToUpdate.IndividualLastname = txtLastName.Text.ToString();
-                Dbconnection.SaveChanges();
-            };
-            if (CurrentContact != null)
-            {
-                CurrentContact.TitleID = Convert.ToInt32(cboIndividualTitle.SelectedValue);
-                CurrentContact.IndividualFirstName = txtFirstName.Text.ToString();
-                CurrentContact.IndividualSecondName = txtSecondName.Text.ToString();
-                CurrentContact.IndividualLastname = txtLastName.Text.ToString();
-            }
-            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -132,9 +101,5 @@ namespace Impendulo.Contacts.Development
             this.Close();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

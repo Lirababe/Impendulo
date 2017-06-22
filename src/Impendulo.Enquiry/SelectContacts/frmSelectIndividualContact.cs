@@ -11,6 +11,7 @@ using Impendulo.Data.Models;
 using Impendulo.ContactDetails.Development;
 using Impendulo.Contacts.Development;
 using MetroFramework.Forms;
+using System.Data.Entity;
 
 namespace Impendulo.Enquiry.SelectContacts.Developemnt
 {
@@ -23,6 +24,7 @@ namespace Impendulo.Enquiry.SelectContacts.Developemnt
 
         private string _FirstName = "";
         private string _LastName = "";
+        private string _IDNumber = "";
 
         private Individual _CurrentSelectedIndividual;
         public Individual SelectedIndividual
@@ -40,23 +42,71 @@ namespace Impendulo.Enquiry.SelectContacts.Developemnt
 
         private void frmSelectIndividualContact_Load(object sender, EventArgs e)
         {
-            if(SelectedIndividual.IndividualID != 0)
+            if (SelectedIndividual.IndividualID != 0)
             {
                 txtFirstName.Text = SelectedIndividual.IndividualFirstName;
                 txtLastName.Text = SelectedIndividual.IndividualLastname;
                 setSearchControls();
-            }else
+            }
+            else
             {
 
             }
+            LoadSuggestions();
             this.refreshContacts();
             // this.refreshContactDetails();
+        }
+
+        private void LoadSuggestions()
+        {
+
+            AutoCompleteStringCollection StudentFirstNames = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection StudentLastNames = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection StudentIDNumbers = new AutoCompleteStringCollection();
+
+            List<Student> x = new List<Student>();
+            using (var Dbconnection = new MCDEntities())
+            {
+                x = (from a in Dbconnection.Students
+                     select a)
+                     .Include("Individual")
+                     .ToList<Student>();
+
+
+            };
+            foreach (Student stud in x)
+            {
+                StudentFirstNames.Add(stud.Individual.IndividualFirstName);
+            }
+
+            txtFirstName.AutoCompleteCustomSource = StudentFirstNames;
+            txtFirstName.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtFirstName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            foreach (Student stud in x)
+            {
+                StudentLastNames.Add(stud.Individual.IndividualLastname);
+            }
+
+            txtLastName.AutoCompleteCustomSource = StudentLastNames;
+            txtLastName.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtLastName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            foreach (Student stud in x)
+            {
+                StudentIDNumbers.Add(stud.StudentIDNumber);
+            }
+
+            txtIDNumber.AutoCompleteCustomSource = StudentIDNumbers;
+            txtIDNumber.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtIDNumber.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private void setSearchControls()
         {
             _FirstName = this.txtFirstName.Text.ToString();
             _LastName = this.txtLastName.Text.ToString();
+            _IDNumber = this.txtIDNumber.Text.ToString();
             this.refreshContacts();
         }
         private void refreshContacts()
@@ -94,23 +144,33 @@ namespace Impendulo.Enquiry.SelectContacts.Developemnt
         {
             using (var Dbconnection = new MCDEntities())
             {
-                List<Individual> AllIndividuals = (from a in Dbconnection.Individuals
-                                                      .Include("ContactDetails")
-                                                      .Include("ContactDetails.LookupContactType")
-                                                   where a.IndividualFirstName.Contains(_FirstName) && a.IndividualLastname.Contains(_LastName)
-                                                   select a)
-                                                       .Except(from a in Dbconnection.Facilitators
-                                                               select a.Individual)
-                                                               .Except(from a in Dbconnection.Employees
-                                                                       select a.Individual)
-                                                                       .Except(from a in Dbconnection.Assessors
-                                                                               select a.Individual)
-                                                                               .Except(from a in Dbconnection.Students
-                                                                                       select a.Individual)
-                                                                                       .Except(from a in Dbconnection.Individuals
-                                                                                               where a.Companies.Count > 0
-                                                                                               select a)
-                                                               .ToList<Individual>();
+                //List<Individual> AllIndividuals = (from a in Dbconnection.Individuals
+                //                                      .Include("ContactDetails")
+                //                                      .Include("ContactDetails.LookupContactType")
+                //                                   where a.IndividualFirstName.Contains(_FirstName) && a.IndividualLastname.Contains(_LastName)
+                //                                   select a)
+                //                                       .Except(from a in Dbconnection.Facilitators
+                //                                               select a.Individual)
+                //                                               .Except(from a in Dbconnection.Employees
+                //                                                       select a.Individual)
+                //                                                       .Except(from a in Dbconnection.Assessors
+                //                                                               select a.Individual)
+                //                                                                       //.Except(from a in Dbconnection.Students
+                //                                                                       //        select a.Individual)
+                //                                                                       .Except(from a in Dbconnection.Individuals
+                //                                                                               where a.Companies.Count > 0
+                //                                                                               select a)
+                //                                               .ToList<Individual>();
+
+                List<Individual> AllIndividuals = (from a in Dbconnection.Students
+                                                   where
+                                                        a.Individual.IndividualFirstName.Contains(_FirstName)
+                                                        && a.Individual.IndividualLastname.Contains(_LastName)
+                                                        && a.StudentIDNumber.Contains(_IDNumber)
+                                                   select a.Individual)
+                                                    .Include("ContactDetails")
+                                                    .Include("ContactDetails.LookupContactType")
+                                                    .ToList<Individual>();
 
                 individualBindingSource.DataSource = AllIndividuals;
             };
@@ -126,6 +186,7 @@ namespace Impendulo.Enquiry.SelectContacts.Developemnt
         {
             txtFirstName.Clear();
             txtLastName.Clear();
+            txtIDNumber.Clear();
             this.setSearchControls();
             this.refreshContactDetails();
         }

@@ -4,6 +4,8 @@ using Impendulo.Email.Email_Message_Version_2;
 using Impendulo.Enquiry.Development.InitaialConsultation;
 using Impendulo.Enquiry.Development.SearchForSelectedEnquiry;
 using Impendulo.Enquiry.Development.ViewHistory;
+using Impendulo.Enquiry.SelectContacts.Deployment1;
+using Impendulo.Enquiry.SelectContacts.Developemnt;
 using MetroFramework;
 using System;
 using System.Collections.Generic;
@@ -257,6 +259,25 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                 frm.EnquiryID = Convert.ToInt32(txtEnquiryInProgressEnquiryID.Text);
                 frm.ShowDialog();
             }
+        }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            if (((Data.Models.Enquiry)enquiryInprogressBindingSource.Current).Companies.Count == 0)
+            {
+                using (frmSelectCompanyContact frm = new frmSelectCompanyContact())
+                {
+                    frm.ShowDialog();
+                }
+            }
+            else
+            {
+                using (frmSelectIndividualContact frm = new frmSelectIndividualContact())
+                {
+                    frm.ShowDialog();
+                }
+            }
+
         }
     }
 }

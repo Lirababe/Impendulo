@@ -57,26 +57,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <HintPath>..\..\lib\Winform.Metroframework.1.4.0\lib\net20\MetroFramework.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="MetroFramework.Design">
-      <HintPath>..\..\lib\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MetroFramework.Fonts">
-      <HintPath>..\..\lib\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
-      <Private>True</Private>
-      <HintPath>..\..\..\winforms-modernui\MetroFramework.Demo\bin\Debug\MetroFramework.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\winforms-modernui\MetroFramework.Demo\bin\Debug\MetroFramework.Design.dll</HintPath>
+      <HintPath>..\..\lib\Winform.Metroframework.Design.1.4.0\lib\net20\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\winforms-modernui\MetroFramework.Demo\bin\Debug\MetroFramework.Fonts.dll</HintPath>
+      <HintPath>..\..\lib\Winform.Metroframework.Fonts.1.4.0\lib\net20\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Properties.Resources.Designer.cs">
       <HintPath>..\..\..\winforms-modernui\MetroFramework\obj\Debug\TempPE\Properties.Resources.Designer.cs.dll</HintPath>

@@ -7,7 +7,7 @@
     <ProjectGuid>{326C2DB0-4488-4820-882D-13FB3526F596}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Impendulo.Contacts</RootNamespace>
+    <RootNamespace>Impendulo.Development.Contacts</RootNamespace>
     <AssemblyName>Impendulo.Contacts</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,6 +41,18 @@
       <HintPath>..\..\lib\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Winform.Metroframework.1.4.0\lib\net20\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Winform.Metroframework.Design.1.4.0\lib\net20\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Winform.Metroframework.Fonts.1.4.0\lib\net20\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -61,6 +73,12 @@
     <Compile Include="frmContacts.Designer.cs">
       <DependentUpon>frmContacts.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmContactsV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContactsV2.Designer.cs">
+      <DependentUpon>frmContactsV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchContacts\frmSearchContacts.cs">
@@ -72,6 +90,9 @@
     <EmbeddedResource Include="frmContacts.resx">
       <DependentUpon>frmContacts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmContactsV2.resx">
+      <DependentUpon>frmContactsV2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -80,6 +101,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SearchContacts\frmSearchContacts.resx">
       <DependentUpon>frmSearchContacts.cs</DependentUpon>
