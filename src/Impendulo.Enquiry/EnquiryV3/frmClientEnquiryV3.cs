@@ -1,4 +1,5 @@
 ﻿using Impendulo.Common.Enum;
+using Impendulo.ContactDetails.Development;
 using Impendulo.Data.Models;
 using Impendulo.Email.Email_Message_Version_2;
 using Impendulo.Enquiry.Development.InitaialConsultation;
@@ -6,6 +7,8 @@ using Impendulo.Enquiry.Development.SearchForSelectedEnquiry;
 using Impendulo.Enquiry.Development.ViewHistory;
 using Impendulo.Enquiry.SelectContacts.Deployment1;
 using Impendulo.Enquiry.SelectContacts.Developemnt;
+using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInprogress;
+using Impendulo.WizardForm.ClientEnquiry.Development;
 using MetroFramework;
 using System;
 using System.Collections.Generic;
@@ -75,7 +78,11 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                 Data.Models.Enquiry x = (from a in Dbconnection.Enquiries
                                          where a.EnquiryID == _EnquiryID
                                          select a)
+                                         .Include("Individuals")
+                                         .Include("Individuals.ContactDetails")
+                                         .Include("Individuals.ContactDetails.LookupContactType")
                                           .Include("CurriculumEnquiries")
+                                          .Include("CurriculumEnquiries.Curriculum")
                                           .Include("Companies")
                                           .FirstOrDefault<Data.Models.Enquiry>();
 
@@ -113,7 +120,37 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
         #region Control Event Methods
         private void btnAddContactDetail_Click(object sender, EventArgs e)
         {
+            using (frmAddUpdateContactDetails frm = new frmAddUpdateContactDetails())
+            {
+                Individual CurrentContact = (Individual)((Data.Models.Enquiry)enquiryInprogressBindingSource.Current).Individuals.FirstOrDefault<Individual>();
 
+                frm.ShowDialog();
+                if (frm.CurrentDetail != null)
+                {
+                    using (var Dbconnection = new MCDEntities())
+                    {
+
+                        Dbconnection.Individuals.Attach(CurrentContact);
+
+                        ContactDetail Con = new ContactDetail
+                        {
+                            ContactTypeID = frm.CurrentDetail.ContactTypeID,
+                            ContactDetailValue = frm.CurrentDetail.ContactDetailValue
+                        };
+
+                        Dbconnection.ContactDetails.Attach(frm.CurrentDetail);
+
+                        Dbconnection.Entry(frm.CurrentDetail).Reference(a => a.LookupContactType).Load();
+                        CurrentContact.ContactDetails.Add(frm.CurrentDetail);
+
+                        Dbconnection.SaveChanges();
+
+
+
+                    };
+                    // refreshInProgressEnquiry(CurrentSelectedEnquiryID);
+                }
+            }
         }
 
         private void btnRemoveContactDetail_Click(object sender, EventArgs e)
@@ -330,6 +367,89 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
 
 
                 }
+            }
+        }
+
+        private void dgvInProgressCurriculumEnquiries_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            var gridView = (DataGridView)sender;
+            foreach (DataGridViewRow row in gridView.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    var CurriculumEnquiryObj = (CurriculumEnquiry)(row.DataBoundItem);
+                    row.Cells[colInProgressCurriculumName.Index].Value = CurriculumEnquiryObj.Curriculum.CurriculumName.ToString();
+                    row.Cells[colInProgressEnquiryQuantityCurrentlyEnrolled.Index].Value = "0";
+
+
+                    //if (ContactDetailObj.ContactTypeID == (int)Common.Enum.EnumContactTypes.Email_Address)
+                    //{
+                    //    row.Cells[colInProgressContactDetailSendOption.Index].Value = "[ Send Email ]";
+                    //}
+                    //if (ContactDetailObj.ContactTypeID == (int)Common.Enum.EnumContactTypes.Cell_Number)
+                    //{
+                    //    row.Cells[colInProgressContactDetailSendOption.Index].Value = "[ Send SMS ]";
+                    //}
+                }
+            }
+        }
+
+        private void dgvInProgressCurriculumEnquiries_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CurriculumEnquiry CE = (CurriculumEnquiry)dgvInProgressCurriculumEnquiries.Rows[e.RowIndex].DataBoundItem;
+            switch (e.ColumnIndex)
+            {
+                case 5:
+                    if (CE.Curriculum.DepartmentID == (int)EnumDepartments.Apprenticeship)
+                    {
+
+                        using (var Dbconnection = new MCDEntities())
+                        {
+                            Dbconnection.CurriculumEnquiries.Attach(CE);
+                            Dbconnection.Entry(CE).Collection(a => a.Enrollments).Load();
+                              //.Include("CurriculumEnquiries.Enrollments")
+                        };
+                        if (CE.EnrollmentQuanity >= CE.Enrollments.Count)
+                        {
+                            frmApprenticeshipEnrollmentFormV2 frm6 = new frmApprenticeshipEnrollmentFormV2();
+                            frm6.CurrentCurriculumEnquiry = CE;
+                            // curriculumEnquiriesBindingSource.ResetItem(e.RowIndex);
+                            frm6.ShowDialog();
+                            //Check to see if the amoount required to be enrolled equal the amount that have been enrolled.
+                            //if (CE.EnrollmentQuanity <= CE.Enrollments.Count)
+                            //{
+                            //    using (var Dbconnection = new MCDEntities())
+                            //    {
+                            //        Dbconnection.CurriculumEnquiries.Attach(CE);
+                            //        CE.EnquiryStatusID = (int)EnumEnquiryStatuses.Enquiry_Closed;
+                            //        CE.LastUpdated = DateTime.Now;
+                            //        Dbconnection.Entry<CurriculumEnquiry>(CE).State = System.Data.Entity.EntityState.Modified;
+                            //        Dbconnection.SaveChanges();
+                            //        Dbconnection.CurriculumEnquiries.Remove(CE);
+                            //        int currentIndex = NewEnquiryTab_NewEnquiryBindingSource.Position;
+                            //        refreshNewEnquiry();
+                            //        NewEnquiryTab_NewEnquiryBindingSource.Position = currentIndex;
+                            //        dgvNewEnquiryTab_CurriculumEnquiry.Refresh();
+
+                            //    };
+                            //}
+                            DialogResult Rtn1 = MessageBox.Show("Do you wish to View the Enrollment,and course selection?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            if (Rtn1 == DialogResult.Yes)
+                            {
+                                using (frmEnrolmmentInprogress frm = new frmEnrolmmentInprogress())
+                                {
+                                    frm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
+                                    frm.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)CE.Curriculum.DepartmentID;
+                                    // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
+                                    frm.ShowDialog();
+                                }
+
+
+                            }
+                        }
+
+                    }
+                    break;
             }
         }
     }
