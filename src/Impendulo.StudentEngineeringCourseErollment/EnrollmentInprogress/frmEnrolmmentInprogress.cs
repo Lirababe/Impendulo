@@ -165,7 +165,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             {
                 this.populateApprenticeshipDocumnetTypes((EnumDepartments)((Enrollment)enrollmentBindingSource.Current).Curriculum.DepartmentID);
                 this.refreshEnrollmentLinkedCourses();
-                this.refreshScheduleCoursePriliminaryDate();
+                //this.refreshScheduleCoursePriliminaryDate();
                 
 
 
@@ -197,12 +197,12 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
 
         private void refreshScheduleCoursePriliminaryDate()
         {
-            int _EnrollmentID = 0;
-            if (enrollmentBindingSource.List.Count > 0)
-            {
-                _EnrollmentID = ((Enrollment)(enrollmentBindingSource.Current)).EnrollmentID;
-            }
-            populateCourseSchedulePreliminaryDates(_EnrollmentID);
+            //int _EnrollmentID = 0;
+            //if (enrollmentBindingSource.List.Count > 0)
+            //{
+            //    _EnrollmentID = ((Enrollment)(enrollmentBindingSource.Current)).EnrollmentID;
+            //}
+            //populateCourseSchedulePreliminaryDates(_EnrollmentID);
             
         }
 
@@ -313,16 +313,6 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             };
         }
 
-        private void populateCourseSchedulePreliminaryDates(int _EnrollmentID)
-        {
-            using (var Dbconnection = new MCDEntities())
-            {
-                scheduleBindingSource.DataSource = (from a in Dbconnection.CurriculumCourses
-                                                    from b in a.CurriculumCourseEnrollments
-                                                    where b.EnrollmentID == _EnrollmentID
-                                                    select a).ToList<CurriculumCourse>();
-            }
-        }
         #endregion
 
         #region Control Event Methods
@@ -619,21 +609,21 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
 
         private void dgvCourseSschedule_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            DateTimePicker dtp = new DateTimePicker();
-            var gridView = (DataGridView)sender;
-            foreach (DataGridViewRow row in gridView.Rows)
-            {
-                if (!row.IsNewRow)
-                {
-                    CurriculumCourse CurriculumCourseObj = (CurriculumCourse)(row.DataBoundItem);
-                    //Schedule CourseScheduleObj = (Schedule)(row.DataBoundItem);
+            //DateTimePicker dtp = new DateTimePicker();
+            //var gridView = (DataGridView)sender;
+            //foreach (DataGridViewRow row in gridView.Rows)
+            //{
+            //    if (!row.IsNewRow)
+            //    {
+            //        CurriculumCourse CurriculumCourseObj = (CurriculumCourse)(row.DataBoundItem);
+            //        //Schedule CourseScheduleObj = (Schedule)(row.DataBoundItem);
 
-                    row.Cells[colApprenticeshipEnrollmentLinkedCourse.Index].Value = CurriculumCourseObj.Course.CourseName.ToString();
+            //        row.Cells[colApprenticeshipEnrollmentLinkedCourse.Index].Value = CurriculumCourseObj.Course.CourseName.ToString();
 
-                    //row.Cells[colApprenticeshipEnrollmentLinkedCourseStartDate.Index].Value = CourseScheduleObj.ScheduleStartDate.ToShortDateString();
-                    //row.Cells[colApprenticeshipEnrollmentLinkedCourseEndtDate.Index].Value = CourseScheduleObj.ScheduleCompletionDate.ToShortDateString();
-                }
-            }
+            //        //row.Cells[colApprenticeshipEnrollmentLinkedCourseStartDate.Index].Value = CourseScheduleObj.ScheduleStartDate.ToShortDateString();
+            //        //row.Cells[colApprenticeshipEnrollmentLinkedCourseEndtDate.Index].Value = CourseScheduleObj.ScheduleCompletionDate.ToShortDateString();
+            //    }
+            //}
         }
 
         DateTimePicker dtp = new DateTimePicker();
@@ -699,30 +689,30 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
 
         private void dgvCourseSschedule_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 1)
-            {
-                dtp = new DateTimePicker();
-                dgvCourseSschedule.Controls.Add(dtp);
-                dtp.Format = DateTimePickerFormat.Short;
-                Rectangle Rectangle = dgvCourseSschedule.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
-                dtp.Size = new Size(Rectangle.Width, Rectangle.Height);
-                dtp.Location = new Point(Rectangle.X, Rectangle.Y);
+            //if (e.ColumnIndex == 1)
+            //{
+            //    dtp = new DateTimePicker();
+            //    dgvCourseSschedule.Controls.Add(dtp);
+            //    dtp.Format = DateTimePickerFormat.Short;
+            //    Rectangle Rectangle = dgvCourseSschedule.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+            //    dtp.Size = new Size(Rectangle.Width, Rectangle.Height);
+            //    dtp.Location = new Point(Rectangle.X, Rectangle.Y);
 
-                dtp.CloseUp += new EventHandler(dtp_CloseUp);
-                dtp.TextChanged += new EventHandler(dtp_OnTextChange);
+            //    dtp.CloseUp += new EventHandler(dtp_CloseUp);
+            //    dtp.TextChanged += new EventHandler(dtp_OnTextChange);
 
 
-                dtp.Visible = true;
-            }
+            //    dtp.Visible = true;
+            //}
 
         }
-        private void dtp_OnTextChange(object sender, EventArgs e)
-        {
-            dgvCourseSschedule.CurrentCell.Value = dtp.Text.ToString();
-        }
-        void dtp_CloseUp(object sender, EventArgs e)
-        {
-            dtp.Visible = false;
-        }
+        //private void dtp_OnTextChange(object sender, EventArgs e)
+        //{
+        //    dgvCourseSschedule.CurrentCell.Value = dtp.Text.ToString();
+        //}
+        //void dtp_CloseUp(object sender, EventArgs e)
+        //{
+        //    dtp.Visible = false;
+        //}
     }
 }

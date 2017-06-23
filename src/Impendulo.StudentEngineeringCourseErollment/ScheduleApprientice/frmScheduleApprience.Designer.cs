@@ -28,60 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvConfirmSchedule = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gbfilters = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.dtpTodate = new System.Windows.Forms.DateTimePicker();
-            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
-            this.lblTodate = new System.Windows.Forms.Label();
-            this.lblFromdate = new System.Windows.Forms.Label();
-            this.cbVanues = new System.Windows.Forms.ComboBox();
-            this.cbFacilitators = new System.Windows.Forms.ComboBox();
-            this.lblVanues = new System.Windows.Forms.Label();
-            this.lblFacilitators = new System.Windows.Forms.Label();
-            this.colSelect = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colScheduledCourses = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStartdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFacilitator = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVanue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaximum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCurrentlyScheduled = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConfirmSchedule)).BeginInit();
+            this.mdgvScheduleApprienticeship = new MetroFramework.Controls.MetroGrid();
+            this.colCourseSelect = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colCourses = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCourseStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCourseFacilitator = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCourseVanue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCourseMaximum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCoursecurrentSchedules = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colcourseAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
+            this.metroDateTime2 = new MetroFramework.Controls.MetroDateTime();
+            this.mlblFacilitator = new MetroFramework.Controls.MetroLabel();
+            this.mlblVanue = new MetroFramework.Controls.MetroLabel();
+            this.mlblFromdate = new MetroFramework.Controls.MetroLabel();
+            this.mlblToDate = new MetroFramework.Controls.MetroLabel();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.mbtnSearch = new MetroFramework.Controls.MetroButton();
+            this.ScheduleApprienticeshipbindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.gbfilters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mdgvScheduleApprienticeship)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScheduleApprienticeshipbindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvConfirmSchedule
-            // 
-            this.dgvConfirmSchedule.AllowUserToDeleteRows = false;
-            this.dgvConfirmSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConfirmSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colSelect,
-            this.colScheduledCourses,
-            this.colStartdate,
-            this.colFacilitator,
-            this.colVanue,
-            this.colMaximum,
-            this.colCurrentlyScheduled,
-            this.colStatus});
-            this.dgvConfirmSchedule.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvConfirmSchedule.Location = new System.Drawing.Point(0, 0);
-            this.dgvConfirmSchedule.Name = "dgvConfirmSchedule";
-            this.dgvConfirmSchedule.ReadOnly = true;
-            this.dgvConfirmSchedule.Size = new System.Drawing.Size(863, 173);
-            this.dgvConfirmSchedule.TabIndex = 0;
-            this.dgvConfirmSchedule.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConfirmSchedule_CellContentClick);
-            this.dgvConfirmSchedule.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvConfirmSchedule_DataBindingComplete);
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Location = new System.Drawing.Point(20, 60);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -91,198 +75,260 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvConfirmSchedule);
-            this.splitContainer1.Size = new System.Drawing.Size(863, 317);
-            this.splitContainer1.SplitterDistance = 140;
+            this.splitContainer1.Panel2.Controls.Add(this.mdgvScheduleApprienticeship);
+            this.splitContainer1.Size = new System.Drawing.Size(834, 382);
+            this.splitContainer1.SplitterDistance = 168;
             this.splitContainer1.TabIndex = 1;
             // 
             // gbfilters
             // 
-            this.gbfilters.Controls.Add(this.btnSearch);
-            this.gbfilters.Controls.Add(this.dtpTodate);
-            this.gbfilters.Controls.Add(this.dtpFromDate);
-            this.gbfilters.Controls.Add(this.lblTodate);
-            this.gbfilters.Controls.Add(this.lblFromdate);
-            this.gbfilters.Controls.Add(this.cbVanues);
-            this.gbfilters.Controls.Add(this.cbFacilitators);
-            this.gbfilters.Controls.Add(this.lblVanues);
-            this.gbfilters.Controls.Add(this.lblFacilitators);
+            this.gbfilters.Controls.Add(this.mbtnSearch);
+            this.gbfilters.Controls.Add(this.metroComboBox2);
+            this.gbfilters.Controls.Add(this.metroComboBox1);
+            this.gbfilters.Controls.Add(this.mlblToDate);
+            this.gbfilters.Controls.Add(this.mlblFromdate);
+            this.gbfilters.Controls.Add(this.mlblVanue);
+            this.gbfilters.Controls.Add(this.mlblFacilitator);
+            this.gbfilters.Controls.Add(this.metroDateTime2);
+            this.gbfilters.Controls.Add(this.metroDateTime1);
             this.gbfilters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbfilters.Location = new System.Drawing.Point(0, 0);
             this.gbfilters.Name = "gbfilters";
-            this.gbfilters.Size = new System.Drawing.Size(863, 140);
+            this.gbfilters.Size = new System.Drawing.Size(834, 168);
             this.gbfilters.TabIndex = 0;
             this.gbfilters.TabStop = false;
             this.gbfilters.Text = "Filters";
-            //this.gbfilters.Enter += new System.EventHandler(this.gbfilters_Enter);
             // 
-            // btnSearch
+            // mdgvScheduleApprienticeship
             // 
-            this.btnSearch.Image = global::Impendulo.StudentEngineeringCourseErollment.Devlopment.Properties.Resources.search;
-            this.btnSearch.Location = new System.Drawing.Point(280, 22);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(99, 102);
-            this.btnSearch.TabIndex = 8;
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.mdgvScheduleApprienticeship.AllowUserToAddRows = false;
+            this.mdgvScheduleApprienticeship.AllowUserToDeleteRows = false;
+            this.mdgvScheduleApprienticeship.AllowUserToResizeRows = false;
+            this.mdgvScheduleApprienticeship.AutoGenerateColumns = false;
+            this.mdgvScheduleApprienticeship.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mdgvScheduleApprienticeship.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mdgvScheduleApprienticeship.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.mdgvScheduleApprienticeship.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mdgvScheduleApprienticeship.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.mdgvScheduleApprienticeship.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mdgvScheduleApprienticeship.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCourseSelect,
+            this.colCourses,
+            this.colCourseStartDate,
+            this.colCourseFacilitator,
+            this.colCourseVanue,
+            this.colCourseMaximum,
+            this.colCoursecurrentSchedules,
+            this.colcourseAvailable});
+            this.mdgvScheduleApprienticeship.DataSource = this.ScheduleApprienticeshipbindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.mdgvScheduleApprienticeship.DefaultCellStyle = dataGridViewCellStyle2;
+            this.mdgvScheduleApprienticeship.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mdgvScheduleApprienticeship.EnableHeadersVisualStyles = false;
+            this.mdgvScheduleApprienticeship.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mdgvScheduleApprienticeship.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mdgvScheduleApprienticeship.Location = new System.Drawing.Point(0, 0);
+            this.mdgvScheduleApprienticeship.Name = "mdgvScheduleApprienticeship";
+            this.mdgvScheduleApprienticeship.ReadOnly = true;
+            this.mdgvScheduleApprienticeship.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mdgvScheduleApprienticeship.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.mdgvScheduleApprienticeship.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.mdgvScheduleApprienticeship.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.mdgvScheduleApprienticeship.Size = new System.Drawing.Size(834, 210);
+            this.mdgvScheduleApprienticeship.TabIndex = 1;
+            this.mdgvScheduleApprienticeship.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.mdgvScheduleApprienticeship_DataBindingComplete);
             // 
-            // dtpTodate
+            // colCourseSelect
             // 
-            this.dtpTodate.Location = new System.Drawing.Point(66, 104);
-            this.dtpTodate.Name = "dtpTodate";
-            this.dtpTodate.Size = new System.Drawing.Size(208, 20);
-            this.dtpTodate.TabIndex = 7;
+            this.colCourseSelect.HeaderText = "Select";
+            this.colCourseSelect.Name = "colCourseSelect";
+            this.colCourseSelect.ReadOnly = true;
             // 
-            // dtpFromDate
+            // colCourses
             // 
-            this.dtpFromDate.Location = new System.Drawing.Point(66, 77);
-            this.dtpFromDate.Name = "dtpFromDate";
-            this.dtpFromDate.Size = new System.Drawing.Size(208, 20);
-            this.dtpFromDate.TabIndex = 6;
+            this.colCourses.HeaderText = "Courses";
+            this.colCourses.Name = "colCourses";
+            this.colCourses.ReadOnly = true;
             // 
-            // lblTodate
+            // colCourseStartDate
             // 
-            this.lblTodate.AutoSize = true;
-            this.lblTodate.Location = new System.Drawing.Point(11, 111);
-            this.lblTodate.Name = "lblTodate";
-            this.lblTodate.Size = new System.Drawing.Size(25, 13);
-            this.lblTodate.TabIndex = 5;
-            this.lblTodate.Text = "TO:";
+            this.colCourseStartDate.HeaderText = "Start date";
+            this.colCourseStartDate.Name = "colCourseStartDate";
+            this.colCourseStartDate.ReadOnly = true;
             // 
-            // lblFromdate
+            // colCourseFacilitator
             // 
-            this.lblFromdate.AutoSize = true;
-            this.lblFromdate.Location = new System.Drawing.Point(11, 85);
-            this.lblFromdate.Name = "lblFromdate";
-            this.lblFromdate.Size = new System.Drawing.Size(41, 13);
-            this.lblFromdate.TabIndex = 4;
-            this.lblFromdate.Text = "FROM:";
+            this.colCourseFacilitator.HeaderText = "Facilitator";
+            this.colCourseFacilitator.Name = "colCourseFacilitator";
+            this.colCourseFacilitator.ReadOnly = true;
             // 
-            // cbVanues
+            // colCourseVanue
             // 
-            this.cbVanues.FormattingEnabled = true;
-            this.cbVanues.Location = new System.Drawing.Point(66, 49);
-            this.cbVanues.Name = "cbVanues";
-            this.cbVanues.Size = new System.Drawing.Size(208, 21);
-            this.cbVanues.TabIndex = 3;
+            this.colCourseVanue.HeaderText = "Vanue";
+            this.colCourseVanue.Name = "colCourseVanue";
+            this.colCourseVanue.ReadOnly = true;
             // 
-            // cbFacilitators
+            // colCourseMaximum
             // 
-            this.cbFacilitators.FormattingEnabled = true;
-            this.cbFacilitators.Location = new System.Drawing.Point(66, 22);
-            this.cbFacilitators.Name = "cbFacilitators";
-            this.cbFacilitators.Size = new System.Drawing.Size(208, 21);
-            this.cbFacilitators.TabIndex = 2;
+            this.colCourseMaximum.HeaderText = "Maximum";
+            this.colCourseMaximum.Name = "colCourseMaximum";
+            this.colCourseMaximum.ReadOnly = true;
             // 
-            // lblVanues
+            // colCoursecurrentSchedules
             // 
-            this.lblVanues.AutoSize = true;
-            this.lblVanues.Location = new System.Drawing.Point(11, 57);
-            this.lblVanues.Name = "lblVanues";
-            this.lblVanues.Size = new System.Drawing.Size(41, 13);
-            this.lblVanues.TabIndex = 1;
-            this.lblVanues.Text = "Venue:";
+            this.colCoursecurrentSchedules.HeaderText = "Current Scheduled";
+            this.colCoursecurrentSchedules.Name = "colCoursecurrentSchedules";
+            this.colCoursecurrentSchedules.ReadOnly = true;
             // 
-            // lblFacilitators
+            // colcourseAvailable
             // 
-            this.lblFacilitators.AutoSize = true;
-            this.lblFacilitators.Location = new System.Drawing.Point(11, 30);
-            this.lblFacilitators.Name = "lblFacilitators";
-            this.lblFacilitators.Size = new System.Drawing.Size(55, 13);
-            this.lblFacilitators.TabIndex = 0;
-            this.lblFacilitators.Text = "Facilitator:";
+            this.colcourseAvailable.HeaderText = "Available";
+            this.colcourseAvailable.Name = "colcourseAvailable";
+            this.colcourseAvailable.ReadOnly = true;
             // 
-            // colSelect
+            // metroDateTime1
             // 
-            this.colSelect.HeaderText = "";
-            this.colSelect.Name = "colSelect";
-            this.colSelect.ReadOnly = true;
-            this.colSelect.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colSelect.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.metroDateTime1.Location = new System.Drawing.Point(77, 84);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime1.Name = "metroDateTime1";
+            this.metroDateTime1.Size = new System.Drawing.Size(208, 29);
+            this.metroDateTime1.TabIndex = 8;
             // 
-            // colScheduledCourses
+            // metroDateTime2
             // 
-            this.colScheduledCourses.HeaderText = "Courses";
-            this.colScheduledCourses.Name = "colScheduledCourses";
-            this.colScheduledCourses.ReadOnly = true;
+            this.metroDateTime2.Location = new System.Drawing.Point(77, 119);
+            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime2.Name = "metroDateTime2";
+            this.metroDateTime2.Size = new System.Drawing.Size(208, 29);
+            this.metroDateTime2.TabIndex = 9;
             // 
-            // colStartdate
+            // mlblFacilitator
             // 
-            this.colStartdate.HeaderText = "Start Date";
-            this.colStartdate.Name = "colStartdate";
-            this.colStartdate.ReadOnly = true;
+            this.mlblFacilitator.AutoSize = true;
+            this.mlblFacilitator.Location = new System.Drawing.Point(6, 24);
+            this.mlblFacilitator.Name = "mlblFacilitator";
+            this.mlblFacilitator.Size = new System.Drawing.Size(65, 19);
+            this.mlblFacilitator.TabIndex = 10;
+            this.mlblFacilitator.Text = "Faciliator:";
             // 
-            // colFacilitator
+            // mlblVanue
             // 
-            this.colFacilitator.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colFacilitator.HeaderText = "Facilitator";
-            this.colFacilitator.Name = "colFacilitator";
-            this.colFacilitator.ReadOnly = true;
+            this.mlblVanue.AutoSize = true;
+            this.mlblVanue.Location = new System.Drawing.Point(6, 59);
+            this.mlblVanue.Name = "mlblVanue";
+            this.mlblVanue.Size = new System.Drawing.Size(48, 19);
+            this.mlblVanue.TabIndex = 11;
+            this.mlblVanue.Text = "Vanue:";
             // 
-            // colVanue
+            // mlblFromdate
             // 
-            this.colVanue.HeaderText = "Vanue";
-            this.colVanue.Name = "colVanue";
-            this.colVanue.ReadOnly = true;
+            this.mlblFromdate.AutoSize = true;
+            this.mlblFromdate.Location = new System.Drawing.Point(6, 94);
+            this.mlblFromdate.Name = "mlblFromdate";
+            this.mlblFromdate.Size = new System.Drawing.Size(44, 19);
+            this.mlblFromdate.TabIndex = 12;
+            this.mlblFromdate.Text = "From:";
             // 
-            // colMaximum
+            // mlblToDate
             // 
-            this.colMaximum.HeaderText = "Maximum";
-            this.colMaximum.Name = "colMaximum";
-            this.colMaximum.ReadOnly = true;
+            this.mlblToDate.AutoSize = true;
+            this.mlblToDate.Location = new System.Drawing.Point(6, 129);
+            this.mlblToDate.Name = "mlblToDate";
+            this.mlblToDate.Size = new System.Drawing.Size(27, 19);
+            this.mlblToDate.TabIndex = 13;
+            this.mlblToDate.Text = "To:";
             // 
-            // colCurrentlyScheduled
+            // metroComboBox1
             // 
-            this.colCurrentlyScheduled.HeaderText = "Currently Scheduled";
-            this.colCurrentlyScheduled.Name = "colCurrentlyScheduled";
-            this.colCurrentlyScheduled.ReadOnly = true;
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Location = new System.Drawing.Point(77, 14);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(208, 29);
+            this.metroComboBox1.TabIndex = 14;
+            this.metroComboBox1.UseSelectable = true;
             // 
-            // colStatus
+            // metroComboBox2
             // 
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
+            this.metroComboBox2.FormattingEnabled = true;
+            this.metroComboBox2.ItemHeight = 23;
+            this.metroComboBox2.Location = new System.Drawing.Point(77, 49);
+            this.metroComboBox2.Name = "metroComboBox2";
+            this.metroComboBox2.Size = new System.Drawing.Size(208, 29);
+            this.metroComboBox2.TabIndex = 15;
+            this.metroComboBox2.UseSelectable = true;
+            // 
+            // mbtnSearch
+            // 
+            this.mbtnSearch.BackgroundImage = global::Impendulo.StudentEngineeringCourseErollment.Devlopment.Properties.Resources.search1;
+            this.mbtnSearch.Location = new System.Drawing.Point(291, 14);
+            this.mbtnSearch.Name = "mbtnSearch";
+            this.mbtnSearch.Size = new System.Drawing.Size(122, 134);
+            this.mbtnSearch.TabIndex = 16;
+            this.mbtnSearch.UseSelectable = true;
             // 
             // frmScheduleApprience
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 317);
+            this.ClientSize = new System.Drawing.Size(874, 462);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmScheduleApprience";
-            this.Text = "frmScheduleApprience";
+            this.Text = "Schedule Apprienticeship";
             this.Load += new System.EventHandler(this.frmScheduleApprience_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConfirmSchedule)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.gbfilters.ResumeLayout(false);
             this.gbfilters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mdgvScheduleApprienticeship)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScheduleApprienticeshipbindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvConfirmSchedule;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox gbfilters;
-        private System.Windows.Forms.ComboBox cbVanues;
-        private System.Windows.Forms.ComboBox cbFacilitators;
-        private System.Windows.Forms.Label lblVanues;
-        private System.Windows.Forms.Label lblFacilitators;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DateTimePicker dtpTodate;
-        private System.Windows.Forms.DateTimePicker dtpFromDate;
-        private System.Windows.Forms.Label lblTodate;
-        private System.Windows.Forms.Label lblFromdate;
-        private System.Windows.Forms.DataGridViewLinkColumn colSelect;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colScheduledCourses;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStartdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFacilitator;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVanue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaximum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCurrentlyScheduled;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private MetroFramework.Controls.MetroButton mbtnSearch;
+        private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroLabel mlblToDate;
+        private MetroFramework.Controls.MetroLabel mlblFromdate;
+        private MetroFramework.Controls.MetroLabel mlblVanue;
+        private MetroFramework.Controls.MetroLabel mlblFacilitator;
+        private MetroFramework.Controls.MetroDateTime metroDateTime2;
+        private MetroFramework.Controls.MetroDateTime metroDateTime1;
+        private MetroFramework.Controls.MetroGrid mdgvScheduleApprienticeship;
+        private System.Windows.Forms.DataGridViewLinkColumn colCourseSelect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCourses;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCourseStartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCourseFacilitator;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCourseVanue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCourseMaximum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCoursecurrentSchedules;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colcourseAvailable;
+        private System.Windows.Forms.BindingSource ScheduleApprienticeshipbindingSource;
     }
 }
