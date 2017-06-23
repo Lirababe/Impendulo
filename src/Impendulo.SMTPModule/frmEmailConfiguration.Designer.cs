@@ -57,18 +57,18 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtTestingToAddress = new System.Windows.Forms.TextBox();
-            this.btnSendTestMessage = new System.Windows.Forms.Button();
-            this.txtTestMessage = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lstAttachments = new System.Windows.Forms.ListBox();
             this.txtTestSubject = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtTestMessage = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnSendTestMessage = new System.Windows.Forms.Button();
+            this.txtTestingToAddress = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.saveFileDialogForAttachments = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialogForAttachments = new System.Windows.Forms.OpenFileDialog();
-            this.lstAttachments = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picConnectionPassed)).BeginInit();
@@ -127,7 +127,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(440, 362);
+            this.groupBox1.Size = new System.Drawing.Size(473, 320);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SMTP Settings";
@@ -329,10 +329,10 @@
             this.tabEmailSettings.Controls.Add(this.tabPage1);
             this.tabEmailSettings.Controls.Add(this.tabPage2);
             this.tabEmailSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabEmailSettings.Location = new System.Drawing.Point(0, 0);
+            this.tabEmailSettings.Location = new System.Drawing.Point(20, 60);
             this.tabEmailSettings.Name = "tabEmailSettings";
             this.tabEmailSettings.SelectedIndex = 0;
-            this.tabEmailSettings.Size = new System.Drawing.Size(454, 394);
+            this.tabEmailSettings.Size = new System.Drawing.Size(487, 352);
             this.tabEmailSettings.TabIndex = 4;
             this.tabEmailSettings.SelectedIndexChanged += new System.EventHandler(this.tabEmailSettings_SelectedIndexChanged);
             // 
@@ -342,7 +342,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(446, 368);
+            this.tabPage1.Size = new System.Drawing.Size(479, 326);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Configuration Settings";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -353,7 +353,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(446, 368);
+            this.tabPage2.Size = new System.Drawing.Size(479, 326);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Test Message";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -372,38 +372,59 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(440, 362);
+            this.groupBox4.Size = new System.Drawing.Size(473, 320);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Send Test Message";
             // 
-            // label8
+            // button1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 22);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Send To Address:";
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(105, 187);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(158, 47);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Add Attachments";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtTestingToAddress
+            // groupBox5
             // 
-            this.txtTestingToAddress.Location = new System.Drawing.Point(105, 19);
-            this.txtTestingToAddress.Name = "txtTestingToAddress";
-            this.txtTestingToAddress.Size = new System.Drawing.Size(329, 20);
-            this.txtTestingToAddress.TabIndex = 1;
+            this.groupBox5.Controls.Add(this.lstAttachments);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox5.Location = new System.Drawing.Point(3, 198);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(467, 119);
+            this.groupBox5.TabIndex = 7;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "List Of Attachments";
             // 
-            // btnSendTestMessage
+            // lstAttachments
             // 
-            this.btnSendTestMessage.Image = ((System.Drawing.Image)(resources.GetObject("btnSendTestMessage.Image")));
-            this.btnSendTestMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSendTestMessage.Location = new System.Drawing.Point(269, 187);
-            this.btnSendTestMessage.Name = "btnSendTestMessage";
-            this.btnSendTestMessage.Size = new System.Drawing.Size(165, 47);
-            this.btnSendTestMessage.TabIndex = 2;
-            this.btnSendTestMessage.Text = "Send Mail";
-            this.btnSendTestMessage.UseVisualStyleBackColor = true;
-            this.btnSendTestMessage.Click += new System.EventHandler(this.btnSendTestMessage_Click);
+            this.lstAttachments.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstAttachments.FormattingEnabled = true;
+            this.lstAttachments.Location = new System.Drawing.Point(3, 16);
+            this.lstAttachments.Name = "lstAttachments";
+            this.lstAttachments.Size = new System.Drawing.Size(461, 100);
+            this.lstAttachments.TabIndex = 0;
+            // 
+            // txtTestSubject
+            // 
+            this.txtTestSubject.Location = new System.Drawing.Point(105, 45);
+            this.txtTestSubject.Name = "txtTestSubject";
+            this.txtTestSubject.Size = new System.Drawing.Size(329, 20);
+            this.txtTestSubject.TabIndex = 6;
+            this.txtTestSubject.Text = "MCD Test Message";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 48);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 13);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Subject:";
             // 
             // txtTestMessage
             // 
@@ -423,65 +444,44 @@
             this.label9.TabIndex = 3;
             this.label9.Text = "Test Message:";
             // 
-            // txtTestSubject
+            // btnSendTestMessage
             // 
-            this.txtTestSubject.Location = new System.Drawing.Point(105, 45);
-            this.txtTestSubject.Name = "txtTestSubject";
-            this.txtTestSubject.Size = new System.Drawing.Size(329, 20);
-            this.txtTestSubject.TabIndex = 6;
-            this.txtTestSubject.Text = "MCD Test Message";
+            this.btnSendTestMessage.Image = ((System.Drawing.Image)(resources.GetObject("btnSendTestMessage.Image")));
+            this.btnSendTestMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSendTestMessage.Location = new System.Drawing.Point(269, 187);
+            this.btnSendTestMessage.Name = "btnSendTestMessage";
+            this.btnSendTestMessage.Size = new System.Drawing.Size(165, 47);
+            this.btnSendTestMessage.TabIndex = 2;
+            this.btnSendTestMessage.Text = "Send Mail";
+            this.btnSendTestMessage.UseVisualStyleBackColor = true;
+            this.btnSendTestMessage.Click += new System.EventHandler(this.btnSendTestMessage_Click);
             // 
-            // label10
+            // txtTestingToAddress
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 48);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 13);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Subject:";
+            this.txtTestingToAddress.Location = new System.Drawing.Point(105, 19);
+            this.txtTestingToAddress.Name = "txtTestingToAddress";
+            this.txtTestingToAddress.Size = new System.Drawing.Size(329, 20);
+            this.txtTestingToAddress.TabIndex = 1;
             // 
-            // groupBox5
+            // label8
             // 
-            this.groupBox5.Controls.Add(this.lstAttachments);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox5.Location = new System.Drawing.Point(3, 240);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(434, 119);
-            this.groupBox5.TabIndex = 7;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "List Of Attachments";
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(105, 187);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 47);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Add Attachments";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(92, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Send To Address:";
             // 
             // openFileDialogForAttachments
             // 
             this.openFileDialogForAttachments.FileName = "openFileDialog1";
             this.openFileDialogForAttachments.Multiselect = true;
             // 
-            // lstAttachments
-            // 
-            this.lstAttachments.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstAttachments.FormattingEnabled = true;
-            this.lstAttachments.Location = new System.Drawing.Point(3, 16);
-            this.lstAttachments.Name = "lstAttachments";
-            this.lstAttachments.Size = new System.Drawing.Size(428, 100);
-            this.lstAttachments.TabIndex = 0;
-            // 
             // frmEmailConfiguration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 394);
+            this.ClientSize = new System.Drawing.Size(527, 432);
             this.Controls.Add(this.tabEmailSettings);
             this.Name = "frmEmailConfiguration";
             this.Text = "Email Settings";

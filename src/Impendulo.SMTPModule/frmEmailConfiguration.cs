@@ -14,7 +14,7 @@ using Impendulo.Common.Enum;
 
 namespace Impendulo.SMTPModule.Development
 {
-    public partial class frmEmailConfiguration : Form
+    public partial class frmEmailConfiguration : MetroFramework.Forms.MetroForm
     {
         public string toAddressForTesting { get; set; }
         public frmEmailConfiguration()

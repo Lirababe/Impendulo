@@ -15,7 +15,7 @@ using System.Data.Entity;
 
 namespace Impendulo.SystemLogin.Development
 {
-    public partial class frmLogin : Form
+    public partial class frmLogin : MetroFramework.Forms.MetroForm
     {
         public frmLogin()
         {
