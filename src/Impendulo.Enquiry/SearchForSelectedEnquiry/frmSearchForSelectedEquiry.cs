@@ -140,10 +140,12 @@ namespace Impendulo.Enquiry.Development.SearchForSelectedEnquiry
 
         private void lookupDepartmentBindingSource_PositionChanged(object sender, EventArgs e)
         {
+
             if (lookupDepartmentBindingSource.Count > 0)
             {
                 this.refreshCurriculum();
             }
+
         }
 
         private void txtEquiryRef_KeyUp(object sender, KeyEventArgs e)

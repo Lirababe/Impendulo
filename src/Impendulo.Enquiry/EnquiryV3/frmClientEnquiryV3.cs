@@ -106,11 +106,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                     {
                         x.CurriculumEnquiries.Add(CE);
                     }
-                    //FilteredListWithNoCurriculumEnquiryItemsListed = (from a in FilteredListWithNoCurriculumEnquiryItemsListed
-                    //                                                  orderby a.EnquiryID descending
-                    //                                                  select a).ToList<Data.Models.Enquiry>();
-                    //NewEnquiryTab_NewEnquiryBindingSource.DataSource = FilteredListWithNoCurriculumEnquiryItemsListed;
-                    //
+                    CurrentSelectedEnquiryID = x.EnquiryID;
                     enquiryInprogressBindingSource.DataSource = x;
                 }
 
@@ -160,7 +156,27 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
 
         private void btnuUpdateContactDetails_Click(object sender, EventArgs e)
         {
+            using (frmAddUpdateContactDetails frm = new frmAddUpdateContactDetails())
+            {
+                frm.ContactDetailID = ((ContactDetail)contactDetailsInprogressBindingSource.Current).ContactDetailID;
+                frm.CurrentDetail = (ContactDetail)contactDetailsInprogressBindingSource.Current;
+                frm.ShowDialog();
+                if (frm.CurrentDetail != null)
+                {
+                    using (var Dbconnection = new MCDEntities())
+                    {
+                        Dbconnection.ContactDetails.Attach(frm.CurrentDetail);
+                        Dbconnection.Entry(frm.CurrentDetail).State = System.Data.Entity.EntityState.Modified;
+                        Dbconnection.SaveChanges();
+                    };
 
+                    contactDetailsInprogressBindingSource.ResetCurrentItem();
+                }
+
+
+                // refreshInProgressEnquiry(CurrentSelectedEnquiryID);
+
+            }
         }
         private void enquiryInprogressBindingSource_BindingComplete(object sender, BindingCompleteEventArgs e)
         {
@@ -318,8 +334,65 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
             {
                 using (frmSelectCompanyContact frm = new frmSelectCompanyContact())
                 {
+                    Data.Models.Enquiry CurrentEnquiry = (Data.Models.Enquiry)enquiryInprogressBindingSource.Current;
+                    Individual CurrentContact = CurrentEnquiry.Individuals.FirstOrDefault<Individual>();
+                    //frm.CurrentCompany = CurrentEnquiry.Companies.FirstOrDefault<Data.Models.Company>();
+                    //frm.SelectedIndividual = CurrentEnquiry.Individuals.FirstOrDefault<Individual>();
                     frm.ShowDialog();
+
+
+                    if (frm.CurrentCompany != null)
+                    {
+                        using (var Dbconnection = new MCDEntities())
+                        {
+                            Dbconnection.Enquiries.Attach(CurrentEnquiry);
+                            //REmova Current Contact from tthe Enquiry
+                            Dbconnection.Enquiries.Attach(CurrentEnquiry);
+
+                            CurrentEnquiry.Individuals.Clear();
+                            CurrentEnquiry.Companies.Clear();
+                            Dbconnection.SaveChanges();
+                        }
+                        //Link Company That Is responible for the Enquiry
+                        using (var Dbconnection = new MCDEntities())
+                        {
+                            Dbconnection.Enquiries.Attach(CurrentEnquiry);
+                            Data.Models.Company CompanyToLink = new Data.Models.Company
+                            {
+                                CompanyID = frm.CurrentCompany.CompanyID
+                            };
+                            Dbconnection.Companies.Attach(CompanyToLink);
+                            CurrentEnquiry.Companies.Add(CompanyToLink);
+                            Dbconnection.SaveChanges();
+                        };
+
+                        using (var Dbconnection = new MCDEntities())
+                        {
+                            Dbconnection.Enquiries.Attach(CurrentEnquiry);
+                            Individual NewContact = new Individual
+                            {
+                                IndividualID = frm.SelectedIndividual.IndividualID
+                            };
+                            Dbconnection.Individuals.Attach(NewContact);
+                            CurrentEnquiry.Individuals.Add(NewContact);
+                            Dbconnection.SaveChanges();
+                        };
+
+                        //Link the Copmpany Contact
+                        // Dbconnection.Individuals.Add(frm.SelectedIndividual);
+
+
+                        //Remove the current Contact
+
+                        //Dbconnection.Entry(CompanyToLink).Reload();
+                        //CurrentEnquiry.Companies.Add(frm.CurrentCompany);
+
+
+
+                    }
+
                 }
+                refreshInProgressEnquiry(CurrentSelectedEnquiryID);
             }
             else
             {
@@ -407,7 +480,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                         {
                             Dbconnection.CurriculumEnquiries.Attach(CE);
                             Dbconnection.Entry(CE).Collection(a => a.Enrollments).Load();
-                              //.Include("CurriculumEnquiries.Enrollments")
+                            //.Include("CurriculumEnquiries.Enrollments")
                         };
                         if (CE.EnrollmentQuanity >= CE.Enrollments.Count)
                         {
@@ -450,6 +523,57 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
 
                     }
                     break;
+            }
+        }
+
+        private void btnInProgressChangeContact_Click(object sender, EventArgs e)
+        {
+            if (((Data.Models.Enquiry)enquiryInprogressBindingSource.Current).Companies.Count > 0)
+            {
+                using (frmSelectCompanyContact frm = new frmSelectCompanyContact())
+                {
+                    Data.Models.Enquiry _CurentSelectedEnquiry = (Data.Models.Enquiry)enquiryInprogressBindingSource.Current;
+                    using (var Dbconnection = new MCDEntities())
+                    {
+                        Dbconnection.Enquiries.Attach(_CurentSelectedEnquiry);
+                        Dbconnection.Entry(_CurentSelectedEnquiry).Collection(a => a.Companies).Load();
+
+                        frm.CurrentCompany = ((Data.Models.Enquiry)enquiryInprogressBindingSource.Current).Companies.FirstOrDefault<Data.Models.Company>();
+                        frm.ShowDialog();
+                        if (frm.SelectedIndividual != null)
+                        {
+
+
+                            Individual CurrentEnquiryContact = ((Data.Models.Enquiry)enquiryInprogressBindingSource.Current).Individuals.FirstOrDefault<Individual>();
+
+                            //REmove C=urrent Contact
+                            Dbconnection.Enquiries.Attach(_CurentSelectedEnquiry);
+
+                            _CurentSelectedEnquiry.Individuals.Remove(CurrentEnquiryContact);
+
+                            Dbconnection.SaveChanges();
+
+                            //Link Selected Contact
+
+                            Dbconnection.Individuals.Attach(frm.SelectedIndividual);
+
+                            _CurentSelectedEnquiry.Individuals.Add(frm.SelectedIndividual);
+
+                            Dbconnection.SaveChanges();
+
+
+
+                        };
+                        //REfresh Enquiry
+                        this.refreshInProgressEnquiry(CurrentSelectedEnquiryID);
+
+                    }
+
+                }
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Can Only Change Company Contacts, Not Private Contacts", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
