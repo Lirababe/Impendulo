@@ -521,7 +521,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Location = new System.Drawing.Point(20, 60);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -533,7 +533,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel3);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1195, 722);
+            this.splitContainer1.Size = new System.Drawing.Size(1155, 642);
             this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -545,7 +545,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 722);
+            this.panel2.Size = new System.Drawing.Size(200, 642);
             this.panel2.TabIndex = 0;
             // 
             // NavigationPanel
@@ -556,7 +556,7 @@
             this.NavigationPanel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NavigationPanel.Location = new System.Drawing.Point(0, 42);
             this.NavigationPanel.Name = "NavigationPanel";
-            this.NavigationPanel.Size = new System.Drawing.Size(196, 676);
+            this.NavigationPanel.Size = new System.Drawing.Size(196, 596);
             this.NavigationPanel.TabIndex = 8;
             // 
             // panel5
@@ -572,7 +572,7 @@
             this.panel5.Font = new System.Drawing.Font("Tahoma", 9F);
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(192, 672);
+            this.panel5.Size = new System.Drawing.Size(192, 592);
             this.panel5.TabIndex = 0;
             // 
             // label42
@@ -658,7 +658,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(991, 649);
+            this.panel3.Size = new System.Drawing.Size(951, 569);
             this.panel3.TabIndex = 1;
             // 
             // MainflowLayoutPanel
@@ -675,7 +675,7 @@
             this.MainflowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.MainflowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.MainflowLayoutPanel.Name = "MainflowLayoutPanel";
-            this.MainflowLayoutPanel.Size = new System.Drawing.Size(987, 645);
+            this.MainflowLayoutPanel.Size = new System.Drawing.Size(947, 565);
             this.MainflowLayoutPanel.TabIndex = 2;
             // 
             // gbStudentCompany
@@ -945,7 +945,7 @@
             // 
             this.gbStudentAddressDetails.Controls.Add(this.tabControl1);
             this.gbStudentAddressDetails.Controls.Add(this.ToolStripContainerStudentAddresses);
-            this.gbStudentAddressDetails.Location = new System.Drawing.Point(733, 364);
+            this.gbStudentAddressDetails.Location = new System.Drawing.Point(0, 875);
             this.gbStudentAddressDetails.Margin = new System.Windows.Forms.Padding(0);
             this.gbStudentAddressDetails.Name = "gbStudentAddressDetails";
             this.gbStudentAddressDetails.Padding = new System.Windows.Forms.Padding(0);
@@ -1409,7 +1409,7 @@
             // 
             this.gbAddStudentContactDetailRadioButtons.Controls.Add(this.tabControl3);
             this.gbAddStudentContactDetailRadioButtons.Controls.Add(this.toolStripContainerStudentContacts);
-            this.gbAddStudentContactDetailRadioButtons.Location = new System.Drawing.Point(0, 875);
+            this.gbAddStudentContactDetailRadioButtons.Location = new System.Drawing.Point(213, 875);
             this.gbAddStudentContactDetailRadioButtons.Margin = new System.Windows.Forms.Padding(0);
             this.gbAddStudentContactDetailRadioButtons.Name = "gbAddStudentContactDetailRadioButtons";
             this.gbAddStudentContactDetailRadioButtons.Padding = new System.Windows.Forms.Padding(0);
@@ -1767,7 +1767,7 @@
             // 
             this.gbStudentDisability.Controls.Add(this.tabControl4);
             this.gbStudentDisability.Controls.Add(this.toolStripContainerStudentDisablity);
-            this.gbStudentDisability.Location = new System.Drawing.Point(280, 875);
+            this.gbStudentDisability.Location = new System.Drawing.Point(493, 875);
             this.gbStudentDisability.Margin = new System.Windows.Forms.Padding(0);
             this.gbStudentDisability.Name = "gbStudentDisability";
             this.gbStudentDisability.Padding = new System.Windows.Forms.Padding(0);
@@ -2055,7 +2055,7 @@
             // gbStudentDetails
             // 
             this.gbStudentDetails.Controls.Add(this.tabControl2);
-            this.gbStudentDetails.Location = new System.Drawing.Point(602, 875);
+            this.gbStudentDetails.Location = new System.Drawing.Point(0, 995);
             this.gbStudentDetails.Margin = new System.Windows.Forms.Padding(0);
             this.gbStudentDetails.Name = "gbStudentDetails";
             this.gbStudentDetails.Padding = new System.Windows.Forms.Padding(0);
@@ -2219,10 +2219,10 @@
             this.panel1.Controls.Add(this.btnNextSection);
             this.panel1.Controls.Add(this.btnPreviousSection);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 649);
+            this.panel1.Location = new System.Drawing.Point(0, 569);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(991, 73);
+            this.panel1.Size = new System.Drawing.Size(951, 73);
             this.panel1.TabIndex = 0;
             // 
             // btnNextSection
@@ -2230,7 +2230,7 @@
             this.btnNextSection.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnNextSection.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNextSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextSection.Location = new System.Drawing.Point(704, 5);
+            this.btnNextSection.Location = new System.Drawing.Point(664, 5);
             this.btnNextSection.Name = "btnNextSection";
             this.btnNextSection.Size = new System.Drawing.Size(280, 61);
             this.btnNextSection.TabIndex = 1;
@@ -2260,7 +2260,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1195, 722);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2270,7 +2269,6 @@
             this.Name = "frmAddUpdateStudent";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Update Student";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAddUpdateStudent_FormClosing);
             this.Load += new System.EventHandler(this.frmAddUpdateStudent_Load);

@@ -15,7 +15,7 @@ using Impendulo.Company.Deployment;
 
 namespace Impendulo.StudentForms.Development
 {
-    public partial class frmAddUpdateStudent : Form
+    public partial class frmAddUpdateStudent : MetroFramework.Forms.MetroForm
     {
         int iCurrentPosition = 0;
         public Student CurrentSelectedStudent { get; set; }

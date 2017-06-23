@@ -30,8 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudentSearchForStudent));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbSearchForStudent = new System.Windows.Forms.GroupBox();
+            this.txtStudentNumber = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.picbtnAddStudent = new System.Windows.Forms.PictureBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -45,11 +47,9 @@
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dgvStudentSearchResults = new System.Windows.Forms.DataGridView();
             this.colSelectStudent = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentIDNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStudentFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStudentLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -60,8 +60,8 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtStudentNumber = new System.Windows.Forms.MaskedTextBox();
+            this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbSearchForStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbtnAddStudent)).BeginInit();
             this.panelStudentSearchResults.SuspendLayout();
@@ -69,9 +69,9 @@
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentSearchResults)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gbSearchForStudent
@@ -94,6 +94,22 @@
             this.gbSearchForStudent.TabIndex = 1;
             this.gbSearchForStudent.TabStop = false;
             this.gbSearchForStudent.Text = "Search Fields";
+            // 
+            // txtStudentNumber
+            // 
+            this.txtStudentNumber.Location = new System.Drawing.Point(151, 53);
+            this.txtStudentNumber.Name = "txtStudentNumber";
+            this.txtStudentNumber.Size = new System.Drawing.Size(239, 20);
+            this.txtStudentNumber.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Student Number";
             // 
             // picbtnAddStudent
             // 
@@ -238,8 +254,8 @@
             // 
             this.colSelectStudent.ActiveLinkColor = System.Drawing.Color.Black;
             this.colSelectStudent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.colSelectStudent.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.colSelectStudent.DefaultCellStyle = dataGridViewCellStyle1;
             this.colSelectStudent.HeaderText = "Select";
             this.colSelectStudent.LinkColor = System.Drawing.Color.Black;
             this.colSelectStudent.Name = "colSelectStudent";
@@ -249,16 +265,6 @@
             this.colSelectStudent.UseColumnTextForLinkValue = true;
             this.colSelectStudent.VisitedLinkColor = System.Drawing.Color.Black;
             this.colSelectStudent.Width = 43;
-            // 
-            // studentIDDataGridViewTextBoxColumn
-            // 
-            this.studentIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.studentIDDataGridViewTextBoxColumn.DataPropertyName = "StudentID";
-            this.studentIDDataGridViewTextBoxColumn.HeaderText = "Student Number";
-            this.studentIDDataGridViewTextBoxColumn.MinimumWidth = 115;
-            this.studentIDDataGridViewTextBoxColumn.Name = "studentIDDataGridViewTextBoxColumn";
-            this.studentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.studentIDDataGridViewTextBoxColumn.Width = 115;
             // 
             // StudentIDNumber
             // 
@@ -284,10 +290,6 @@
             this.colStudentLastName.HeaderText = "Last Name";
             this.colStudentLastName.Name = "colStudentLastName";
             this.colStudentLastName.ReadOnly = true;
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(Impendulo.Data.Models.Student);
             // 
             // bindingNavigator1
             // 
@@ -386,21 +388,19 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // label1
+            // studentIDDataGridViewTextBoxColumn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Student Number";
+            this.studentIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.studentIDDataGridViewTextBoxColumn.DataPropertyName = "StudentID";
+            this.studentIDDataGridViewTextBoxColumn.HeaderText = "Student Number";
+            this.studentIDDataGridViewTextBoxColumn.MinimumWidth = 115;
+            this.studentIDDataGridViewTextBoxColumn.Name = "studentIDDataGridViewTextBoxColumn";
+            this.studentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.studentIDDataGridViewTextBoxColumn.Width = 115;
             // 
-            // txtStudentNumber
+            // studentBindingSource
             // 
-            this.txtStudentNumber.Location = new System.Drawing.Point(151, 53);
-            this.txtStudentNumber.Name = "txtStudentNumber";
-            this.txtStudentNumber.Size = new System.Drawing.Size(239, 20);
-            this.txtStudentNumber.TabIndex = 18;
+            this.studentBindingSource.DataSource = typeof(Impendulo.Data.Models.Student);
             // 
             // frmStudentSearchForStudent
             // 
@@ -409,6 +409,7 @@
             this.Controls.Add(this.panelStudentSearchResults);
             this.Controls.Add(this.gbSearchForStudent);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmStudentSearchForStudent";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -425,10 +426,10 @@
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentSearchResults)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

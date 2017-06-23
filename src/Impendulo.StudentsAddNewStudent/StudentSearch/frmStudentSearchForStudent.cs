@@ -14,7 +14,7 @@ using Impendulo.StudentForms;
 
 namespace Impendulo.StudentForms.Development
 {
-    public partial class frmStudentSearchForStudent : Form
+    public partial class frmStudentSearchForStudent : MetroFramework.Forms.MetroForm
     {
         public frmStudentSearchForStudent()
         {
