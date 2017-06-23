@@ -455,14 +455,6 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                     row.Cells[colInProgressEnquiryQuantityCurrentlyEnrolled.Index].Value = "0";
 
 
-                    //if (ContactDetailObj.ContactTypeID == (int)Common.Enum.EnumContactTypes.Email_Address)
-                    //{
-                    //    row.Cells[colInProgressContactDetailSendOption.Index].Value = "[ Send Email ]";
-                    //}
-                    //if (ContactDetailObj.ContactTypeID == (int)Common.Enum.EnumContactTypes.Cell_Number)
-                    //{
-                    //    row.Cells[colInProgressContactDetailSendOption.Index].Value = "[ Send SMS ]";
-                    //}
                 }
             }
         }
@@ -479,8 +471,10 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                         using (var Dbconnection = new MCDEntities())
                         {
                             Dbconnection.CurriculumEnquiries.Attach(CE);
-                            Dbconnection.Entry(CE).Collection(a => a.Enrollments).Load();
-                            //.Include("CurriculumEnquiries.Enrollments")
+                            if (!(Dbconnection.Entry(CE).Collection(a => a.Enrollments).IsLoaded))
+                            {
+                                Dbconnection.Entry(CE).Collection(a => a.Enrollments).Load();
+                            }
                         };
                         if (CE.EnrollmentQuanity >= CE.Enrollments.Count)
                         {
@@ -506,19 +500,19 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
 
                             //    };
                             //}
-                            DialogResult Rtn1 = MessageBox.Show("Do you wish to View the Enrollment,and course selection?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                            if (Rtn1 == DialogResult.Yes)
-                            {
-                                using (frmEnrolmmentInprogress frm = new frmEnrolmmentInprogress())
-                                {
-                                    frm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
-                                    frm.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)CE.Curriculum.DepartmentID;
-                                    // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
-                                    frm.ShowDialog();
-                                }
+                            ////DialogResult Rtn1 = MessageBox.Show("Do you wish to View the Enrollment,and course selection?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            ////if (Rtn1 == DialogResult.Yes)
+                            ////{
+                            ////    using (frmEnrolmmentInprogress frm = new frmEnrolmmentInprogress())
+                            ////    {
+                            ////        frm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
+                            ////        frm.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)CE.Curriculum.DepartmentID;
+                            ////        // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
+                            ////        frm.ShowDialog();
+                            ////    }
 
 
-                            }
+                            ////}
                         }
 
                     }

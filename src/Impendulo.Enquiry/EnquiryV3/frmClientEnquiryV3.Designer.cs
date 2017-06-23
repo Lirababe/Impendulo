@@ -35,14 +35,14 @@
             System.Windows.Forms.Label companyNameLabel1;
             System.Windows.Forms.Label initialConsultationCompleteLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientEnquiryV3));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
@@ -59,7 +59,6 @@
             this.btnInProgressSwitchBetweenCompanyANdPrivate = new MetroFramework.Controls.MetroTile();
             this.btnInProgressChangeContact = new MetroFramework.Controls.MetroTile();
             this.initialConsultationCompleteCheckBox = new System.Windows.Forms.CheckBox();
-            this.enquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fullNameTextBox = new System.Windows.Forms.TextBox();
             this.individualsInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtInprogressCompanyName = new System.Windows.Forms.TextBox();
@@ -70,7 +69,6 @@
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.dgvInprogressContactDetails = new MetroFramework.Controls.MetroGrid();
             this.colInProgressContactType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInProgressContactDetailSendOption = new System.Windows.Forms.DataGridViewLinkColumn();
             this.contactDetailsInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
@@ -122,13 +120,29 @@
             this.studentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.systemAdministratorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companiesInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lastUpdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInProgressEnquiryCloseCurriculumEnquiry = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colInProgressCurriculumName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentQuanityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInProgressEnquiryQuantityCurrentlyEnrolled = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInProgressProcessEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colInProgressViewCurrentEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.enquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualFirstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualSecondNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualLastnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowVersionDataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.assessorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facilitatorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupTitleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nextOfKinDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.systemAdministratorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastUpdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentQuanityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             enquiryDateLabel = new System.Windows.Forms.Label();
             enquiryIDLabel = new System.Windows.Forms.Label();
             fullNameLabel = new System.Windows.Forms.Label();
@@ -148,7 +162,6 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.gbInprogressContactNameAndCompanyName.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.individualsInprogressBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).BeginInit();
             this.gbInProgressContactDetails.SuspendLayout();
@@ -168,6 +181,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingNavigator)).BeginInit();
             this.enquiryInprogressBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companiesInprogressBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // enquiryDateLabel
@@ -330,7 +344,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(234, 45);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(237, 45);
             this.tableLayoutPanel1.TabIndex = 12;
             // 
             // btnSearchForEnquiry
@@ -339,7 +353,7 @@
             this.btnSearchForEnquiry.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearchForEnquiry.Location = new System.Drawing.Point(3, 3);
             this.btnSearchForEnquiry.Name = "btnSearchForEnquiry";
-            this.btnSearchForEnquiry.Size = new System.Drawing.Size(52, 39);
+            this.btnSearchForEnquiry.Size = new System.Drawing.Size(53, 39);
             this.btnSearchForEnquiry.TabIndex = 6;
             this.btnSearchForEnquiry.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearchForEnquiry.TileImage = ((System.Drawing.Image)(resources.GetObject("btnSearchForEnquiry.TileImage")));
@@ -353,9 +367,9 @@
             // 
             this.btnViewProgressInProgressSections.ActiveControl = null;
             this.btnViewProgressInProgressSections.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnViewProgressInProgressSections.Location = new System.Drawing.Point(61, 3);
+            this.btnViewProgressInProgressSections.Location = new System.Drawing.Point(62, 3);
             this.btnViewProgressInProgressSections.Name = "btnViewProgressInProgressSections";
-            this.btnViewProgressInProgressSections.Size = new System.Drawing.Size(52, 39);
+            this.btnViewProgressInProgressSections.Size = new System.Drawing.Size(53, 39);
             this.btnViewProgressInProgressSections.TabIndex = 10;
             this.btnViewProgressInProgressSections.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnViewProgressInProgressSections.TileImage = ((System.Drawing.Image)(resources.GetObject("btnViewProgressInProgressSections.TileImage")));
@@ -369,7 +383,7 @@
             // 
             this.btnCloseInprogressEnquiry.ActiveControl = null;
             this.btnCloseInprogressEnquiry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCloseInprogressEnquiry.Location = new System.Drawing.Point(177, 3);
+            this.btnCloseInprogressEnquiry.Location = new System.Drawing.Point(180, 3);
             this.btnCloseInprogressEnquiry.Name = "btnCloseInprogressEnquiry";
             this.btnCloseInprogressEnquiry.Size = new System.Drawing.Size(54, 39);
             this.btnCloseInprogressEnquiry.TabIndex = 11;
@@ -384,9 +398,9 @@
             this.btnInitialConsultationConfirmationInProgressSection.ActiveControl = null;
             this.btnInitialConsultationConfirmationInProgressSection.BackColor = System.Drawing.Color.Olive;
             this.btnInitialConsultationConfirmationInProgressSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnInitialConsultationConfirmationInProgressSection.Location = new System.Drawing.Point(119, 3);
+            this.btnInitialConsultationConfirmationInProgressSection.Location = new System.Drawing.Point(121, 3);
             this.btnInitialConsultationConfirmationInProgressSection.Name = "btnInitialConsultationConfirmationInProgressSection";
-            this.btnInitialConsultationConfirmationInProgressSection.Size = new System.Drawing.Size(52, 39);
+            this.btnInitialConsultationConfirmationInProgressSection.Size = new System.Drawing.Size(53, 39);
             this.btnInitialConsultationConfirmationInProgressSection.TabIndex = 12;
             this.btnInitialConsultationConfirmationInProgressSection.TileImage = ((System.Drawing.Image)(resources.GetObject("btnInitialConsultationConfirmationInProgressSection.TileImage")));
             this.btnInitialConsultationConfirmationInProgressSection.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -465,11 +479,6 @@
             this.initialConsultationCompleteCheckBox.Size = new System.Drawing.Size(21, 24);
             this.initialConsultationCompleteCheckBox.TabIndex = 14;
             this.initialConsultationCompleteCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // enquiryInprogressBindingSource
-            // 
-            this.enquiryInprogressBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
-            this.enquiryInprogressBindingSource.BindingComplete += new System.Windows.Forms.BindingCompleteEventHandler(this.enquiryInprogressBindingSource_BindingComplete);
             // 
             // fullNameTextBox
             // 
@@ -557,28 +566,28 @@
             this.dgvInprogressContactDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInprogressContactDetails.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvInprogressContactDetails.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInprogressContactDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInprogressContactDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInprogressContactDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInprogressContactDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colInProgressContactType,
             this.contactDetailValueDataGridViewTextBoxColumn,
             this.colInProgressContactDetailSendOption});
             this.dgvInprogressContactDetails.DataSource = this.contactDetailsInprogressBindingSource;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInprogressContactDetails.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInprogressContactDetails.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInprogressContactDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInprogressContactDetails.EnableHeadersVisualStyles = false;
             this.dgvInprogressContactDetails.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -587,14 +596,14 @@
             this.dgvInprogressContactDetails.Name = "dgvInprogressContactDetails";
             this.dgvInprogressContactDetails.ReadOnly = true;
             this.dgvInprogressContactDetails.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInprogressContactDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInprogressContactDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInprogressContactDetails.RowHeadersWidth = 15;
             this.dgvInprogressContactDetails.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvInprogressContactDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -608,16 +617,6 @@
             this.colInProgressContactType.HeaderText = "Contact Type";
             this.colInProgressContactType.Name = "colInProgressContactType";
             this.colInProgressContactType.ReadOnly = true;
-            // 
-            // contactDetailValueDataGridViewTextBoxColumn
-            // 
-            this.contactDetailValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.contactDetailValueDataGridViewTextBoxColumn.DataPropertyName = "ContactDetailValue";
-            this.contactDetailValueDataGridViewTextBoxColumn.HeaderText = "Contact Detail";
-            this.contactDetailValueDataGridViewTextBoxColumn.MinimumWidth = 105;
-            this.contactDetailValueDataGridViewTextBoxColumn.Name = "contactDetailValueDataGridViewTextBoxColumn";
-            this.contactDetailValueDataGridViewTextBoxColumn.ReadOnly = true;
-            this.contactDetailValueDataGridViewTextBoxColumn.Width = 105;
             // 
             // colInProgressContactDetailSendOption
             // 
@@ -817,14 +816,14 @@
             this.dgvInProgressCurriculumEnquiries.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInProgressCurriculumEnquiries.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvInProgressCurriculumEnquiries.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInProgressCurriculumEnquiries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInProgressCurriculumEnquiries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInProgressCurriculumEnquiries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInProgressCurriculumEnquiries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.lastUpdatedDataGridViewTextBoxColumn,
@@ -835,14 +834,14 @@
             this.colInProgressProcessEnrollment,
             this.colInProgressViewCurrentEnrollment});
             this.dgvInProgressCurriculumEnquiries.DataSource = this.curriculumEnquiryInprogressBindingSource;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInProgressCurriculumEnquiries.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInProgressCurriculumEnquiries.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvInProgressCurriculumEnquiries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInProgressCurriculumEnquiries.EnableHeadersVisualStyles = false;
             this.dgvInProgressCurriculumEnquiries.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -851,14 +850,14 @@
             this.dgvInProgressCurriculumEnquiries.Name = "dgvInProgressCurriculumEnquiries";
             this.dgvInProgressCurriculumEnquiries.ReadOnly = true;
             this.dgvInProgressCurriculumEnquiries.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInProgressCurriculumEnquiries.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInProgressCurriculumEnquiries.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvInProgressCurriculumEnquiries.RowHeadersWidth = 15;
             this.dgvInProgressCurriculumEnquiries.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvInProgressCurriculumEnquiries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -1104,15 +1103,6 @@
             this.companiesInprogressBindingSource.DataMember = "Companies";
             this.companiesInprogressBindingSource.DataSource = this.individualsInprogressBindingSource;
             // 
-            // lastUpdatedDataGridViewTextBoxColumn
-            // 
-            this.lastUpdatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.lastUpdatedDataGridViewTextBoxColumn.DataPropertyName = "LastUpdated";
-            this.lastUpdatedDataGridViewTextBoxColumn.HeaderText = "LastUpdated";
-            this.lastUpdatedDataGridViewTextBoxColumn.Name = "lastUpdatedDataGridViewTextBoxColumn";
-            this.lastUpdatedDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastUpdatedDataGridViewTextBoxColumn.Width = 95;
-            // 
             // colInProgressEnquiryCloseCurriculumEnquiry
             // 
             this.colInProgressEnquiryCloseCurriculumEnquiry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -1133,22 +1123,11 @@
             this.colInProgressCurriculumName.ReadOnly = true;
             this.colInProgressCurriculumName.Width = 86;
             // 
-            // enrollmentQuanityDataGridViewTextBoxColumn
-            // 
-            this.enrollmentQuanityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentQuanity";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.HeaderText = "Qty To Enroll";
-            this.enrollmentQuanityDataGridViewTextBoxColumn.Name = "enrollmentQuanityDataGridViewTextBoxColumn";
-            this.enrollmentQuanityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.Width = 94;
-            // 
             // colInProgressEnquiryQuantityCurrentlyEnrolled
             // 
             this.colInProgressEnquiryQuantityCurrentlyEnrolled.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.DefaultCellStyle = dataGridViewCellStyle6;
             this.colInProgressEnquiryQuantityCurrentlyEnrolled.HeaderText = "Qty Enrolled";
             this.colInProgressEnquiryQuantityCurrentlyEnrolled.Name = "colInProgressEnquiryQuantityCurrentlyEnrolled";
             this.colInProgressEnquiryQuantityCurrentlyEnrolled.ReadOnly = true;
@@ -1176,6 +1155,126 @@
             this.colInProgressViewCurrentEnrollment.Text = "View Current Enrollments";
             this.colInProgressViewCurrentEnrollment.TrackVisitedState = false;
             this.colInProgressViewCurrentEnrollment.UseColumnTextForLinkValue = true;
+            // 
+            // enquiryInprogressBindingSource
+            // 
+            this.enquiryInprogressBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
+            this.enquiryInprogressBindingSource.BindingComplete += new System.Windows.Forms.BindingCompleteEventHandler(this.enquiryInprogressBindingSource_BindingComplete);
+            // 
+            // fullNameDataGridViewTextBoxColumn1
+            // 
+            this.fullNameDataGridViewTextBoxColumn1.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn1.HeaderText = "FullName";
+            this.fullNameDataGridViewTextBoxColumn1.Name = "fullNameDataGridViewTextBoxColumn1";
+            this.fullNameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // individualIDDataGridViewTextBoxColumn1
+            // 
+            this.individualIDDataGridViewTextBoxColumn1.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn1.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn1.Name = "individualIDDataGridViewTextBoxColumn1";
+            // 
+            // titleIDDataGridViewTextBoxColumn1
+            // 
+            this.titleIDDataGridViewTextBoxColumn1.DataPropertyName = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn1.HeaderText = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn1.Name = "titleIDDataGridViewTextBoxColumn1";
+            // 
+            // individualFirstNameDataGridViewTextBoxColumn1
+            // 
+            this.individualFirstNameDataGridViewTextBoxColumn1.DataPropertyName = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn1.HeaderText = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn1.Name = "individualFirstNameDataGridViewTextBoxColumn1";
+            // 
+            // individualSecondNameDataGridViewTextBoxColumn1
+            // 
+            this.individualSecondNameDataGridViewTextBoxColumn1.DataPropertyName = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn1.HeaderText = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn1.Name = "individualSecondNameDataGridViewTextBoxColumn1";
+            // 
+            // individualLastnameDataGridViewTextBoxColumn1
+            // 
+            this.individualLastnameDataGridViewTextBoxColumn1.DataPropertyName = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn1.HeaderText = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn1.Name = "individualLastnameDataGridViewTextBoxColumn1";
+            // 
+            // rowVersionDataGridViewImageColumn1
+            // 
+            this.rowVersionDataGridViewImageColumn1.DataPropertyName = "RowVersion";
+            this.rowVersionDataGridViewImageColumn1.HeaderText = "RowVersion";
+            this.rowVersionDataGridViewImageColumn1.Name = "rowVersionDataGridViewImageColumn1";
+            // 
+            // assessorDataGridViewTextBoxColumn1
+            // 
+            this.assessorDataGridViewTextBoxColumn1.DataPropertyName = "Assessor";
+            this.assessorDataGridViewTextBoxColumn1.HeaderText = "Assessor";
+            this.assessorDataGridViewTextBoxColumn1.Name = "assessorDataGridViewTextBoxColumn1";
+            // 
+            // employeeDataGridViewTextBoxColumn1
+            // 
+            this.employeeDataGridViewTextBoxColumn1.DataPropertyName = "Employee";
+            this.employeeDataGridViewTextBoxColumn1.HeaderText = "Employee";
+            this.employeeDataGridViewTextBoxColumn1.Name = "employeeDataGridViewTextBoxColumn1";
+            // 
+            // facilitatorDataGridViewTextBoxColumn1
+            // 
+            this.facilitatorDataGridViewTextBoxColumn1.DataPropertyName = "Facilitator";
+            this.facilitatorDataGridViewTextBoxColumn1.HeaderText = "Facilitator";
+            this.facilitatorDataGridViewTextBoxColumn1.Name = "facilitatorDataGridViewTextBoxColumn1";
+            // 
+            // lookupTitleDataGridViewTextBoxColumn1
+            // 
+            this.lookupTitleDataGridViewTextBoxColumn1.DataPropertyName = "LookupTitle";
+            this.lookupTitleDataGridViewTextBoxColumn1.HeaderText = "LookupTitle";
+            this.lookupTitleDataGridViewTextBoxColumn1.Name = "lookupTitleDataGridViewTextBoxColumn1";
+            // 
+            // nextOfKinDataGridViewTextBoxColumn1
+            // 
+            this.nextOfKinDataGridViewTextBoxColumn1.DataPropertyName = "NextOfKin";
+            this.nextOfKinDataGridViewTextBoxColumn1.HeaderText = "NextOfKin";
+            this.nextOfKinDataGridViewTextBoxColumn1.Name = "nextOfKinDataGridViewTextBoxColumn1";
+            // 
+            // studentDataGridViewTextBoxColumn1
+            // 
+            this.studentDataGridViewTextBoxColumn1.DataPropertyName = "Student";
+            this.studentDataGridViewTextBoxColumn1.HeaderText = "Student";
+            this.studentDataGridViewTextBoxColumn1.Name = "studentDataGridViewTextBoxColumn1";
+            // 
+            // systemAdministratorDataGridViewTextBoxColumn1
+            // 
+            this.systemAdministratorDataGridViewTextBoxColumn1.DataPropertyName = "SystemAdministrator";
+            this.systemAdministratorDataGridViewTextBoxColumn1.HeaderText = "SystemAdministrator";
+            this.systemAdministratorDataGridViewTextBoxColumn1.Name = "systemAdministratorDataGridViewTextBoxColumn1";
+            // 
+            // contactDetailValueDataGridViewTextBoxColumn
+            // 
+            this.contactDetailValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.contactDetailValueDataGridViewTextBoxColumn.DataPropertyName = "ContactDetailValue";
+            this.contactDetailValueDataGridViewTextBoxColumn.HeaderText = "Contact Detail";
+            this.contactDetailValueDataGridViewTextBoxColumn.MinimumWidth = 105;
+            this.contactDetailValueDataGridViewTextBoxColumn.Name = "contactDetailValueDataGridViewTextBoxColumn";
+            this.contactDetailValueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.contactDetailValueDataGridViewTextBoxColumn.Width = 105;
+            // 
+            // lastUpdatedDataGridViewTextBoxColumn
+            // 
+            this.lastUpdatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.lastUpdatedDataGridViewTextBoxColumn.DataPropertyName = "LastUpdated";
+            this.lastUpdatedDataGridViewTextBoxColumn.HeaderText = "LastUpdated";
+            this.lastUpdatedDataGridViewTextBoxColumn.Name = "lastUpdatedDataGridViewTextBoxColumn";
+            this.lastUpdatedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastUpdatedDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // enrollmentQuanityDataGridViewTextBoxColumn
+            // 
+            this.enrollmentQuanityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentQuanity";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.HeaderText = "Qty To Enroll";
+            this.enrollmentQuanityDataGridViewTextBoxColumn.Name = "enrollmentQuanityDataGridViewTextBoxColumn";
+            this.enrollmentQuanityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.Width = 94;
             // 
             // frmClientEnquiryV3
             // 
@@ -1207,7 +1306,6 @@
             this.gbInprogressContactNameAndCompanyName.ResumeLayout(false);
             this.gbInprogressContactNameAndCompanyName.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.individualsInprogressBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).EndInit();
             this.gbInProgressContactDetails.ResumeLayout(false);
@@ -1233,6 +1331,7 @@
             this.enquiryInprogressBindingNavigator.ResumeLayout(false);
             this.enquiryInprogressBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companiesInprogressBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1325,5 +1424,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colInProgressEnquiryQuantityCurrentlyEnrolled;
         private System.Windows.Forms.DataGridViewLinkColumn colInProgressProcessEnrollment;
         private System.Windows.Forms.DataGridViewLinkColumn colInProgressViewCurrentEnrollment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualFirstNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualSecondNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualLastnameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn rowVersionDataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assessorDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn facilitatorDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lookupTitleDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nextOfKinDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn systemAdministratorDataGridViewTextBoxColumn1;
     }
 }
