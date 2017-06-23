@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Impendulo.Data.Models;
 using MetroFramework.Forms;
+using Impendulo.Common.Enum;
 
 namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.ScheduleApprientice
 {
@@ -21,33 +22,56 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.ScheduleApprien
 
         private void frmScheduleApprience_Load(object sender, EventArgs e)
         {
-            using (var Dbconnection = new MCDEntities())
-            {
+            refreshEnrollment();
+        }
 
+        //refresh Method
+        private void refreshEnrollment()
+        {
+            EnrollmentInprogress.frmEnrolmmentInprogress frm = new EnrollmentInprogress.frmEnrolmmentInprogress();
+            if (frm.enrollmentBindingSource.List.Count > 0)
+            {
+                refreshScheduleCoursePriliminaryDate();
             }
         }
 
-        private void dgvConfirmSchedule_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void refreshScheduleCoursePriliminaryDate()
+        {
+            int _EnrollmentID = 0;
+            EnrollmentInprogress.frmEnrolmmentInprogress frm = new EnrollmentInprogress.frmEnrolmmentInprogress();
+            if (frm.enrollmentBindingSource.List.Count > 0)
+            {
+                _EnrollmentID = ((Enrollment)(frm.enrollmentBindingSource.Current)).EnrollmentID;
+            }
+            populateCoursesToBeScheduled(_EnrollmentID);
+
+        }
+
+        //populate methods
+        private void populateCoursesToBeScheduled(int _EnrollmentID)
+        {
+            using (var Dbconnection = new MCDEntities())
+            {
+                ScheduleApprienticeshipbindingSource.DataSource = (from a in Dbconnection.CurriculumCourses
+                                                                  from b in a.CurriculumCourseEnrollments
+                                                                  where b.EnrollmentID == _EnrollmentID
+                                                                  select a).ToList<CurriculumCourse>();
+            };
+        }
+
+        private void mdgvScheduleApprienticeship_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             var gridView = (DataGridView)sender;
             foreach (DataGridViewRow row in gridView.Rows)
             {
                 if (!row.IsNewRow)
                 {
-                    var Obj = (Facilitator)(row.DataBoundItem);
-                    var Obj1 = (Venue)(row.DataBoundItem);
+                    CurriculumCourse CurriculumCourseObj = (CurriculumCourse)(row.DataBoundItem);
+
+                    row.Cells[colCourses.Index].Value = CurriculumCourseObj.Course.CourseName.ToString();
                     
-                    row.Cells[colFacilitator.Index].Value = Obj.FacilitatorAssociatedCourses;
-                    row.Cells[colVanue.Index].Value = Obj1.VenueName;
-                    row.Cells[colMaximum.Index].Value = Obj1.VenueMaxCapacity;
-                    //row.Cells[colNewEnquiry_Curriculum.Index].Value = CurriculumEnquiryObj.Curriculum.CurriculumName.ToString();
                 }
             }
-        }
-
-        private void dgvConfirmSchedule_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

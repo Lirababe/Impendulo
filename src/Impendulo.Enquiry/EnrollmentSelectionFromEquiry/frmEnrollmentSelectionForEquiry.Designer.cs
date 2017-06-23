@@ -32,34 +32,34 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEnrollmentSelectionForEquiry));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.curriculumEnquiryBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.curriculumEnquiryBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.enrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enrollmentDataGridView = new System.Windows.Forms.DataGridView();
             this.colSelection = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.curriculumEnquiryBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.curriculumEnquiryBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enrollmentDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrollmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.curriculumEnquiryBindingNavigator)).BeginInit();
             this.curriculumEnquiryBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.enrollmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enrollmentDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -91,135 +91,6 @@
             // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.curriculumEnquiryBindingNavigator);
-            // 
-            // curriculumEnquiryBindingNavigator
-            // 
-            this.curriculumEnquiryBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.curriculumEnquiryBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.curriculumEnquiryBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.curriculumEnquiryBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
-            this.curriculumEnquiryBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.curriculumEnquiryBindingNavigatorSaveItem});
-            this.curriculumEnquiryBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.curriculumEnquiryBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.curriculumEnquiryBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.curriculumEnquiryBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.curriculumEnquiryBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.curriculumEnquiryBindingNavigator.Name = "curriculumEnquiryBindingNavigator";
-            this.curriculumEnquiryBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.curriculumEnquiryBindingNavigator.Size = new System.Drawing.Size(733, 25);
-            this.curriculumEnquiryBindingNavigator.Stretch = true;
-            this.curriculumEnquiryBindingNavigator.TabIndex = 1;
-            this.curriculumEnquiryBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // curriculumEnquiryBindingNavigatorSaveItem
-            // 
-            this.curriculumEnquiryBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.curriculumEnquiryBindingNavigatorSaveItem.Enabled = false;
-            this.curriculumEnquiryBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("curriculumEnquiryBindingNavigatorSaveItem.Image")));
-            this.curriculumEnquiryBindingNavigatorSaveItem.Name = "curriculumEnquiryBindingNavigatorSaveItem";
-            this.curriculumEnquiryBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.curriculumEnquiryBindingNavigatorSaveItem.Text = "Save Data";
-            // 
-            // enrollmentBindingSource
-            // 
-            this.enrollmentBindingSource.DataSource = typeof(Impendulo.Data.Models.Enrollment);
             // 
             // enrollmentDataGridView
             // 
@@ -281,13 +152,142 @@
             this.colStatus.HeaderText = "Progress";
             this.colStatus.Name = "colStatus";
             // 
+            // enrollmentBindingSource
+            // 
+            this.enrollmentBindingSource.DataSource = typeof(Impendulo.Data.Models.Enrollment);
+            // 
+            // curriculumEnquiryBindingNavigator
+            // 
+            this.curriculumEnquiryBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.curriculumEnquiryBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.curriculumEnquiryBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.curriculumEnquiryBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
+            this.curriculumEnquiryBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.curriculumEnquiryBindingNavigatorSaveItem});
+            this.curriculumEnquiryBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.curriculumEnquiryBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.curriculumEnquiryBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.curriculumEnquiryBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.curriculumEnquiryBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.curriculumEnquiryBindingNavigator.Name = "curriculumEnquiryBindingNavigator";
+            this.curriculumEnquiryBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.curriculumEnquiryBindingNavigator.Size = new System.Drawing.Size(733, 25);
+            this.curriculumEnquiryBindingNavigator.Stretch = true;
+            this.curriculumEnquiryBindingNavigator.TabIndex = 1;
+            this.curriculumEnquiryBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // curriculumEnquiryBindingNavigatorSaveItem
+            // 
+            this.curriculumEnquiryBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.curriculumEnquiryBindingNavigatorSaveItem.Enabled = false;
+            this.curriculumEnquiryBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("curriculumEnquiryBindingNavigatorSaveItem.Image")));
+            this.curriculumEnquiryBindingNavigatorSaveItem.Name = "curriculumEnquiryBindingNavigatorSaveItem";
+            this.curriculumEnquiryBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.curriculumEnquiryBindingNavigatorSaveItem.Text = "Save Data";
+            // 
             // frmEnrollmentSelectionForEquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 437);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEnrollmentSelectionForEquiry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enrollment Selection";
@@ -298,11 +298,11 @@
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enrollmentDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrollmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.curriculumEnquiryBindingNavigator)).EndInit();
             this.curriculumEnquiryBindingNavigator.ResumeLayout(false);
             this.curriculumEnquiryBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.enrollmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enrollmentDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
