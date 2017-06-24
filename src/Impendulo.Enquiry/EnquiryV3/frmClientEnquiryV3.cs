@@ -2,11 +2,13 @@
 using Impendulo.ContactDetails.Development;
 using Impendulo.Data.Models;
 using Impendulo.Email.Email_Message_Version_2;
+using Impendulo.Enquiry.Development.CloseEnquiryConfirmation;
 using Impendulo.Enquiry.Development.InitaialConsultation;
 using Impendulo.Enquiry.Development.SearchForSelectedEnquiry;
 using Impendulo.Enquiry.Development.ViewHistory;
 using Impendulo.Enquiry.SelectContacts.Deployment1;
 using Impendulo.Enquiry.SelectContacts.Developemnt;
+using Impendulo.Enquiry.UpdateSelectedCurriculumEnrollQty.Development;
 using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInprogress;
 using Impendulo.WizardForm.ClientEnquiry.Development;
 using MetroFramework;
@@ -77,6 +79,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
             {
                 Data.Models.Enquiry x = (from a in Dbconnection.Enquiries
                                          where a.EnquiryID == _EnquiryID
+                                         && a.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed
                                          select a)
                                          .Include("Individuals")
                                          .Include("Individuals.ContactDetails")
@@ -93,12 +96,16 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                     ////filter out closed enquiries.
                     List<CurriculumEnquiry> DataSourceList;
 
+                    //Filters the Curriculum Enquiry for the current Loggin Employee (Only The One THat they May View).
                     DataSourceList = new List<CurriculumEnquiry>();
                     foreach (CurriculumEnquiry CE in x.CurriculumEnquiries)
                     {
-                        if (CE.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed && DetermineIfPartOfDepartment(CE.Curriculum.DepartmentID))
+                        if (DetermineIfPartOfDepartment(CE.Curriculum.DepartmentID))
                         {
+                            //if (CE.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed)
+                            //{
                             DataSourceList.Add(CE);
+                            //}
                         }
                     }
                     x.CurriculumEnquiries.Clear();
@@ -108,6 +115,12 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                     }
                     CurrentSelectedEnquiryID = x.EnquiryID;
                     enquiryInprogressBindingSource.DataSource = x;
+                }
+                else
+                {
+                    enquiryInprogressBindingSource.Clear();
+                    contactDetailsInprogressBindingSource.Clear();
+                    curriculumEnquiryInprogressBindingSource.Clear();
                 }
 
             };
@@ -271,7 +284,8 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
         private void enquiryDateTextBox_TextChanged(object sender, EventArgs e)
         {
             TextBox x = (TextBox)sender;
-            x.Text = Convert.ToDateTime(x.Text).ToString("D");
+            if (x.Text.Length > 0) { x.Text = Convert.ToDateTime(x.Text).ToString("D"); }
+
         }
         #endregion
 
@@ -306,7 +320,14 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
             btnCloseInprogressEnquiry.Visible = true;
             gbInprogressContactNameAndCompanyName.Enabled = true;
             gbInProgressContactDetails.Enabled = true;
-            gbInProgressEnquiryEnrrolmentQueries.Enabled = true;
+            if (((Data.Models.Enquiry)enquiryInprogressBindingSource.Current).InitialConsultationComplete)
+            {
+                gbInProgressEnquiryEnrrolmentQueries.Enabled = true;
+            }
+            else
+            {
+                gbInProgressEnquiryEnrrolmentQueries.Enabled = false;
+            }
         }
 
 
@@ -451,20 +472,89 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                 if (!row.IsNewRow)
                 {
                     var CurriculumEnquiryObj = (CurriculumEnquiry)(row.DataBoundItem);
+                    if (CurriculumEnquiryObj.EnquiryStatusID == (int)EnumEnquiryStatuses.Enquiry_Closed)
+                    {
+                        row.Cells[colInProgressEnquiryCloseCurriculumEnquiry.Index].Value = "[ Reinstate Enquiry Item ]";
+                    }
+                    else
+                    {
+                        row.Cells[colInProgressEnquiryCloseCurriculumEnquiry.Index].Value = "[ Close Enquiry Item ]";
+                    }
+                    row.Cells[colInProgressCurriculumDepartment.Index].Value = CurriculumEnquiryObj.Curriculum.LookupDepartment.DepartmentName.ToString();
                     row.Cells[colInProgressCurriculumName.Index].Value = CurriculumEnquiryObj.Curriculum.CurriculumName.ToString();
-                    row.Cells[colInProgressEnquiryQuantityCurrentlyEnrolled.Index].Value = "0";
-
-
+                    row.Cells[colInProgressCurriculumEnquiryStatus.Index].Value = CurriculumEnquiryObj.LookupEnquiryStatus.EnquiryStatus.ToString();
+                    row.Cells[colInProgressEnquiryQuantityCurrentlyEnrolled.Index].Value = CurriculumEnquiryObj.Enrollments.Count;
                 }
             }
         }
 
         private void dgvInProgressCurriculumEnquiries_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            Data.Models.Enquiry CurrentEnquiry = (Data.Models.Enquiry)enquiryInprogressBindingSource.Current;
             CurriculumEnquiry CE = (CurriculumEnquiry)dgvInProgressCurriculumEnquiries.Rows[e.RowIndex].DataBoundItem;
             switch (e.ColumnIndex)
             {
-                case 5:
+                case 0:
+                    if (CE.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed)
+                    {
+                        DialogResult Rtn = MessageBox.Show("Are you sure that you wish to Close this Enquiry Item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (Rtn == DialogResult.Yes)
+                        {
+                            using (var Dbconnection = new MCDEntities())
+                            {
+                                Dbconnection.CurriculumEnquiries.Attach(CE);
+                                CE.EnquiryStatusID = (int)EnumEnquiryStatuses.Enquiry_Closed;
+                                CE.LastUpdated = DateTime.Now;
+                                Dbconnection.Entry<CurriculumEnquiry>(CE).State = System.Data.Entity.EntityState.Modified;
+                                Dbconnection.SaveChanges();
+                                EquiryHistory hist = new EquiryHistory
+                                {
+                                    EnquiryID = CurrentEnquiry.EnquiryID,
+                                    EmployeeID = this.CurrentEmployeeLoggedIn.EmployeeID,
+                                    LookupEquiyHistoryTypeID = (int)EnumEquiryHistoryTypes.Curriculum_Enquiry_Item_Closed,
+                                    DateEnquiryUpdated = DateTime.Now,
+                                    EnquiryNotes = "Curriculum Enquiry Line Item Closed, Item Removed - " + CE.Curriculum.CurriculumName + "- For Enquiry Ref: " + CurrentEnquiry.EnquiryID
+                                };
+
+                                Dbconnection.EquiryHistories.Add(hist);
+                                int IsSaved = Dbconnection.SaveChanges();
+
+                                refreshInProgressEnquiry(CurrentSelectedEnquiryID);
+                            };
+                        }
+                    }
+                    else
+                    {
+                        DialogResult Rtn = MessageBox.Show("Are you sure that you wish to Close this Enquiry Item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (Rtn == DialogResult.Yes)
+                        {
+                            using (var Dbconnection = new MCDEntities())
+                            {
+                                Dbconnection.CurriculumEnquiries.Attach(CE);
+                                CE.EnquiryStatusID = (int)EnumEnquiryStatuses.Enrollment_In_Progress;
+                                CE.LastUpdated = DateTime.Now;
+                                Dbconnection.Entry<CurriculumEnquiry>(CE).State = System.Data.Entity.EntityState.Modified;
+                                Dbconnection.SaveChanges();
+                                EquiryHistory hist = new EquiryHistory
+                                {
+                                    EnquiryID = CurrentEnquiry.EnquiryID,
+                                    EmployeeID = this.CurrentEmployeeLoggedIn.EmployeeID,
+                                    LookupEquiyHistoryTypeID = (int)EnumEquiryHistoryTypes.Curriculum_Enquiry_Item_Reinstated,
+                                    DateEnquiryUpdated = DateTime.Now,
+                                    EnquiryNotes = "Curriculum Enquiry Line Item Reinstated, Item Reinstated - " + CE.Curriculum.CurriculumName + "- For Enquiry Ref: " + CurrentEnquiry.EnquiryID
+                                };
+
+                                Dbconnection.EquiryHistories.Add(hist);
+                                int IsSaved = Dbconnection.SaveChanges();
+
+                                refreshInProgressEnquiry(CurrentSelectedEnquiryID);
+                            };
+                        }
+                    }
+
+
+                    break;
+                case 7:
                     if (CE.Curriculum.DepartmentID == (int)EnumDepartments.Apprenticeship)
                     {
 
@@ -476,29 +566,14 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                                 Dbconnection.Entry(CE).Collection(a => a.Enrollments).Load();
                             }
                         };
-                        if (CE.EnrollmentQuanity >= CE.Enrollments.Count)
+                        if (CE.EnrollmentQuanity > CE.Enrollments.Count)
                         {
-                            frmApprenticeshipEnrollmentFormV2 frm6 = new frmApprenticeshipEnrollmentFormV2();
-                            frm6.CurrentCurriculumEnquiry = CE;
-                            // curriculumEnquiriesBindingSource.ResetItem(e.RowIndex);
-                            frm6.ShowDialog();
-                            //Check to see if the amoount required to be enrolled equal the amount that have been enrolled.
-                            //if (CE.EnrollmentQuanity <= CE.Enrollments.Count)
-                            //{
-                            //    using (var Dbconnection = new MCDEntities())
-                            //    {
-                            //        Dbconnection.CurriculumEnquiries.Attach(CE);
-                            //        CE.EnquiryStatusID = (int)EnumEnquiryStatuses.Enquiry_Closed;
-                            //        CE.LastUpdated = DateTime.Now;
-                            //        Dbconnection.Entry<CurriculumEnquiry>(CE).State = System.Data.Entity.EntityState.Modified;
-                            //        Dbconnection.SaveChanges();
-                            //        Dbconnection.CurriculumEnquiries.Remove(CE);
-                            //        int currentIndex = NewEnquiryTab_NewEnquiryBindingSource.Position;
-                            //        refreshNewEnquiry();
-                            //        NewEnquiryTab_NewEnquiryBindingSource.Position = currentIndex;
-                            //        dgvNewEnquiryTab_CurriculumEnquiry.Refresh();
-
-                            //    };
+                            using (frmApprenticeshipEnrollmentFormV2 frm = new frmApprenticeshipEnrollmentFormV2())
+                            {
+                                frm.CurrentCurriculumEnquiry = CE;
+                                frm.ShowDialog();
+                                this.refreshInProgressEnquiry(CurrentSelectedEnquiryID);
+                            }
                             //}
                             ////DialogResult Rtn1 = MessageBox.Show("Do you wish to View the Enrollment,and course selection?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                             ////if (Rtn1 == DialogResult.Yes)
@@ -514,7 +589,6 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
 
                             ////}
                         }
-
                     }
                     break;
             }
@@ -568,6 +642,60 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
             else
             {
                 MetroMessageBox.Show(this, "Can Only Change Company Contacts, Not Private Contacts", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnCloseInprogressEnquiry_Click(object sender, EventArgs e)
+        {
+            DialogResult Rtn = MessageBox.Show("Are You sure?\nThis will close this enquiry and all the associated Line Items.", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (Rtn == DialogResult.Yes)
+            {
+
+                using (frmCloseEnquiryConfirmation frm = new frmCloseEnquiryConfirmation())
+                {
+                    frm.CurrentSelectedEnquiry = (Data.Models.Enquiry)enquiryInprogressBindingSource.Current;
+                    frm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
+                    frm.ShowDialog();
+                    if (frm.IsSuccessfullyClosedOff)
+                    {
+                        this.refreshInProgressEnquiry(0);
+                    }
+
+                }
+            }
+        }
+
+        private void btrnInProgressSendInitialDocumentation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateCurriculumEnquiryItemEnrollmentQty_Click(object sender, EventArgs e)
+        {
+            using (frmUpdateSelectedCurriculumEnrollQty frm = new frmUpdateSelectedCurriculumEnrollQty())
+            {
+                CurriculumEnquiry CE = (CurriculumEnquiry)curriculumEnquiryInprogressBindingSource.Current;
+
+                using (var Dbconnection = new MCDEntities())
+                {
+                    Data.Models.Enquiry EnquiryObj = (Data.Models.Enquiry)enquiryInprogressBindingSource.Current;
+                    Dbconnection.Enquiries.Attach(EnquiryObj);
+
+                    Dbconnection.Entry(CE).Collection(a => a.Enrollments).Load();
+
+                };
+
+                frm.nudQtyToEnroll.Minimum = CE.Enrollments.Count + 1;
+                frm.CurrentCurriculumEnquiry = CE;
+                frm.ShowDialog();
+
+                using (var Dbconnection = new MCDEntities())
+                {
+                    Dbconnection.CurriculumEnquiries.Attach(CE);
+                    Dbconnection.Entry(CE).State = EntityState.Modified;
+                    Dbconnection.SaveChanges();
+                };
+                this.refreshInProgressEnquiry(CurrentSelectedEnquiryID);
             }
         }
     }

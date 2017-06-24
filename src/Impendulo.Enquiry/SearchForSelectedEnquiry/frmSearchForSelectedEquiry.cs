@@ -215,15 +215,21 @@ namespace Impendulo.Enquiry.Development.SearchForSelectedEnquiry
 
                 using (var Dbconnection = new MCDEntities())
                 {
-                    //this.enquiryBindingSource.DataSource
-                    AllEnquiry = (from a in Dbconnection.Enquiries
-                                  orderby a.EnquiryID descending
-                                  select a)
-                                                //.Include("Individuals")
-                                                //.Include("Individuals.Companies")
-                                                //.Include("CurriculumEnquiries")
-                                                //.Include("CurriculumEnquiries.Curriculum")
-                                                .ToList<Data.Models.Enquiry>();
+                    if (radActiveEnquiry.Checked)
+                    {
+                        AllEnquiry = (from a in Dbconnection.Enquiries
+                                      where a.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed
+                                      orderby a.EnquiryID descending
+                                      select a).ToList<Data.Models.Enquiry>();
+                    }
+                    else
+                    {
+                        AllEnquiry = (from a in Dbconnection.Enquiries
+                                      where a.EnquiryStatusID == (int)EnumEnquiryStatuses.Enquiry_Closed
+                                      orderby a.EnquiryID descending
+                                      select a).ToList<Data.Models.Enquiry>();
+                    }
+
 
 
                     if (chkUseContactName.Checked)
@@ -323,7 +329,10 @@ namespace Impendulo.Enquiry.Development.SearchForSelectedEnquiry
                             }
                         }
                     }
-
+                    if ( chkUseContactName.Checked == false && chkUseDateFilter.Checked == false && chkUseDepartment.Checked == false)
+                    {
+                        FilteredEnquiry = AllEnquiry.ToList();
+                    }
                     this.enquiryBindingSource.DataSource = FilteredEnquiry.Distinct().ToList();
                 };
 
@@ -437,7 +446,7 @@ namespace Impendulo.Enquiry.Development.SearchForSelectedEnquiry
             txtEquiryRef.Clear();
             if (chkUseContactName.Checked)
             {
-               // filterEnquiries();
+                // filterEnquiries();
             }
             else
             {
@@ -454,7 +463,7 @@ namespace Impendulo.Enquiry.Development.SearchForSelectedEnquiry
             txtEquiryRef.Clear();
             if (chkUseDepartment.Checked)
             {
-               // filterEnquiries();
+                // filterEnquiries();
             }
             else
             {
@@ -477,6 +486,29 @@ namespace Impendulo.Enquiry.Development.SearchForSelectedEnquiry
                 this.enableAdvancedSearchControls();
                 this.filterEnquiries();
             }
+        }
+
+        private void dgvEquirySearchResults_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            var gridView = (DataGridView)sender;
+            foreach (DataGridViewRow row in gridView.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    Data.Models.Enquiry EnquiryObj = (Data.Models.Enquiry)(row.DataBoundItem);
+                    row.Cells[colEnquiryStatus.Index].Value = EnquiryObj.LookupEnquiryStatus.EnquiryStatus.ToString();
+                }
+            }
+        }
+
+        private void radActiveEnquiry_CheckedChanged(object sender, EventArgs e)
+        {
+            filterEnquiries();
+        }
+
+        private void radClosedEnquiry_CheckedChanged(object sender, EventArgs e)
+        {
+            filterEnquiries();
         }
     }
 }

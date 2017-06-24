@@ -46,13 +46,34 @@
             this.colApprenticeshipCurriculum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateIntitiated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApprenticeshipSection = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateIntitiatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrolmentParentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentExcemptDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCurriculum = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnAddNewEnquiry = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer5 = new System.Windows.Forms.ToolStripContainer();
             this.dgvPrerequisiteCourses = new System.Windows.Forms.DataGridView();
@@ -64,15 +85,35 @@
             this.colApprenticeshipPreRequisiteCurriculum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApprenticeshipPreRequisiteCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApprenticeshipPreRequisiteIsExemptionStatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.enrollmentIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateIntitiatedDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrolmentParentIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentExcemptDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentPrerequisitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem1 = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer12 = new System.Windows.Forms.SplitContainer();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnEmailClient = new System.Windows.Forms.Button();
+            this.btnCompleteEnrollmentSummary = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
@@ -86,11 +127,24 @@
             this.ApprenticeshipEnrollmentFormSelect = new System.Windows.Forms.DataGridViewLinkColumn();
             this.FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contentTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileExtensionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator12 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem3 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem4 = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem4 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem4 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem4 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem4 = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem4 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem4 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator34 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
@@ -107,78 +161,6 @@
             this.colApprenticeshipEnrollmentLinkedCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colScheduleStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colScheduleEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigator9 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripLabel9 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator31 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripTextBox10 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator32 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator33 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
-            this.dgvEnrollmenLinkedCurriculumCourses = new System.Windows.Forms.DataGridView();
-            this.colApprenticeshipEnrollmentAvailableCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.folderBrowserDialogForDownloading = new System.Windows.Forms.FolderBrowserDialog();
-            this.enrollmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateIntitiatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.individualIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrolmentParentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentExcemptDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.btnAddNewEnquiry = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.enrollmentIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateIntitiatedDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.individualIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrolmentParentIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentExcemptDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentPrerequisitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
-            this.btnEmailClient = new System.Windows.Forms.Button();
-            this.btnCompleteEnrollmentSummary = new System.Windows.Forms.Button();
-            this.imageIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contentTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileExtensionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigatorAddNewItem3 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem4 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem4 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem4 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveNextItem4 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem4 = new System.Windows.Forms.ToolStripButton();
             this.scheduleIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scheduleStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -187,10 +169,21 @@
             this.curriculumCourseEnrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigator9 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.toolStripLabel9 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton41 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton42 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator31 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBox10 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator32 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton43 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton44 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator33 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
+            this.dgvEnrollmenLinkedCurriculumCourses = new System.Windows.Forms.DataGridView();
+            this.colApprenticeshipEnrollmentAvailableCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumCourseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumCourseParentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -204,10 +197,17 @@
             this.curriculumDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookupEnrollmentTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumCourseLinkedToEnrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.folderBrowserDialogForDownloading = new System.Windows.Forms.FolderBrowserDialog();
             this.courseScheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.curriculumCourseEnrollmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.courseScheduleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -228,6 +228,7 @@
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrollmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorCurriculum)).BeginInit();
             this.bindingNavigatorCurriculum.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -235,6 +236,7 @@
             this.toolStripContainer5.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrerequisiteCourses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrollmentPrerequisitesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
@@ -256,6 +258,7 @@
             this.toolStripContainer11.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnollmentFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator12)).BeginInit();
             this.bindingNavigator12.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -271,19 +274,16 @@
             this.toolStripContainer10.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseSschedule)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator9)).BeginInit();
             this.bindingNavigator9.SuspendLayout();
             this.toolStripContainer2.ContentPanel.SuspendLayout();
             this.toolStripContainer2.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollmenLinkedCurriculumCourses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseLinkedToEnrollmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
             this.bindingNavigator2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.enrollmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enrollmentPrerequisitesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseLinkedToEnrollmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseScheduleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseEnrollmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseScheduleBindingSource1)).BeginInit();
@@ -484,6 +484,88 @@
             this.colApprenticeshipSection.Name = "colApprenticeshipSection";
             this.colApprenticeshipSection.ReadOnly = true;
             // 
+            // enrollmentIDDataGridViewTextBoxColumn
+            // 
+            this.enrollmentIDDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn.HeaderText = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn.Name = "enrollmentIDDataGridViewTextBoxColumn";
+            this.enrollmentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn
+            // 
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn.DataPropertyName = "LookupEnrollmentProgressStateID";
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn.HeaderText = "LookupEnrollmentProgressStateID";
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn.Name = "lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn";
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // curriculumIDDataGridViewTextBoxColumn
+            // 
+            this.curriculumIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumID";
+            this.curriculumIDDataGridViewTextBoxColumn.HeaderText = "CurriculumID";
+            this.curriculumIDDataGridViewTextBoxColumn.Name = "curriculumIDDataGridViewTextBoxColumn";
+            this.curriculumIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateIntitiatedDataGridViewTextBoxColumn
+            // 
+            this.dateIntitiatedDataGridViewTextBoxColumn.DataPropertyName = "DateIntitiated";
+            this.dateIntitiatedDataGridViewTextBoxColumn.HeaderText = "DateIntitiated";
+            this.dateIntitiatedDataGridViewTextBoxColumn.Name = "dateIntitiatedDataGridViewTextBoxColumn";
+            this.dateIntitiatedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // individualIDDataGridViewTextBoxColumn
+            // 
+            this.individualIDDataGridViewTextBoxColumn.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn.Name = "individualIDDataGridViewTextBoxColumn";
+            this.individualIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // enrolmentParentIDDataGridViewTextBoxColumn
+            // 
+            this.enrolmentParentIDDataGridViewTextBoxColumn.DataPropertyName = "EnrolmentParentID";
+            this.enrolmentParentIDDataGridViewTextBoxColumn.HeaderText = "EnrolmentParentID";
+            this.enrolmentParentIDDataGridViewTextBoxColumn.Name = "enrolmentParentIDDataGridViewTextBoxColumn";
+            this.enrolmentParentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // enrollmentExcemptDataGridViewTextBoxColumn
+            // 
+            this.enrollmentExcemptDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentExcempt";
+            this.enrollmentExcemptDataGridViewTextBoxColumn.HeaderText = "EnrollmentExcempt";
+            this.enrollmentExcemptDataGridViewTextBoxColumn.Name = "enrollmentExcemptDataGridViewTextBoxColumn";
+            this.enrollmentExcemptDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // curriculumDataGridViewTextBoxColumn
+            // 
+            this.curriculumDataGridViewTextBoxColumn.DataPropertyName = "Curriculum";
+            this.curriculumDataGridViewTextBoxColumn.HeaderText = "Curriculum";
+            this.curriculumDataGridViewTextBoxColumn.Name = "curriculumDataGridViewTextBoxColumn";
+            this.curriculumDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lookupEnrollmentProgressStateDataGridViewTextBoxColumn
+            // 
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.DataPropertyName = "LookupEnrollmentProgressState";
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.HeaderText = "LookupEnrollmentProgressState";
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.Name = "lookupEnrollmentProgressStateDataGridViewTextBoxColumn";
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studentDataGridViewTextBoxColumn
+            // 
+            this.studentDataGridViewTextBoxColumn.DataPropertyName = "Student";
+            this.studentDataGridViewTextBoxColumn.HeaderText = "Student";
+            this.studentDataGridViewTextBoxColumn.Name = "studentDataGridViewTextBoxColumn";
+            this.studentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // apprienticeshipEnrollmentDataGridViewTextBoxColumn
+            // 
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn.DataPropertyName = "ApprienticeshipEnrollment";
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn.HeaderText = "ApprienticeshipEnrollment";
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn.Name = "apprienticeshipEnrollmentDataGridViewTextBoxColumn";
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // enrollmentBindingSource
+            // 
+            this.enrollmentBindingSource.DataSource = typeof(Impendulo.Data.Models.Enrollment);
+            this.enrollmentBindingSource.PositionChanged += new System.EventHandler(this.enrollmentBindingSource_PositionChanged);
+            // 
             // bindingNavigatorCurriculum
             // 
             this.bindingNavigatorCurriculum.AddNewItem = null;
@@ -527,6 +609,33 @@
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
@@ -546,15 +655,70 @@
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // btnAddNewEnquiry
+            // 
+            this.btnAddNewEnquiry.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAddNewEnquiry.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewEnquiry.Image")));
+            this.btnAddNewEnquiry.Name = "btnAddNewEnquiry";
+            this.btnAddNewEnquiry.RightToLeftAutoMirrorImage = true;
+            this.btnAddNewEnquiry.Size = new System.Drawing.Size(23, 22);
+            this.btnAddNewEnquiry.Text = "Add new";
+            // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
             this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "toolStripButton1";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton7.Text = "toolStripButton2";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // groupBox9
             // 
@@ -695,6 +859,87 @@
             this.colApprenticeshipPreRequisiteIsExemptionStatus.ReadOnly = true;
             this.colApprenticeshipPreRequisiteIsExemptionStatus.Width = 43;
             // 
+            // enrollmentIDDataGridViewTextBoxColumn1
+            // 
+            this.enrollmentIDDataGridViewTextBoxColumn1.DataPropertyName = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn1.HeaderText = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn1.Name = "enrollmentIDDataGridViewTextBoxColumn1";
+            this.enrollmentIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1
+            // 
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.DataPropertyName = "LookupEnrollmentProgressStateID";
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.HeaderText = "LookupEnrollmentProgressStateID";
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.Name = "lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1";
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // curriculumIDDataGridViewTextBoxColumn1
+            // 
+            this.curriculumIDDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumID";
+            this.curriculumIDDataGridViewTextBoxColumn1.HeaderText = "CurriculumID";
+            this.curriculumIDDataGridViewTextBoxColumn1.Name = "curriculumIDDataGridViewTextBoxColumn1";
+            this.curriculumIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dateIntitiatedDataGridViewTextBoxColumn1
+            // 
+            this.dateIntitiatedDataGridViewTextBoxColumn1.DataPropertyName = "DateIntitiated";
+            this.dateIntitiatedDataGridViewTextBoxColumn1.HeaderText = "DateIntitiated";
+            this.dateIntitiatedDataGridViewTextBoxColumn1.Name = "dateIntitiatedDataGridViewTextBoxColumn1";
+            this.dateIntitiatedDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // individualIDDataGridViewTextBoxColumn1
+            // 
+            this.individualIDDataGridViewTextBoxColumn1.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn1.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn1.Name = "individualIDDataGridViewTextBoxColumn1";
+            this.individualIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // enrolmentParentIDDataGridViewTextBoxColumn1
+            // 
+            this.enrolmentParentIDDataGridViewTextBoxColumn1.DataPropertyName = "EnrolmentParentID";
+            this.enrolmentParentIDDataGridViewTextBoxColumn1.HeaderText = "EnrolmentParentID";
+            this.enrolmentParentIDDataGridViewTextBoxColumn1.Name = "enrolmentParentIDDataGridViewTextBoxColumn1";
+            this.enrolmentParentIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // enrollmentExcemptDataGridViewTextBoxColumn1
+            // 
+            this.enrollmentExcemptDataGridViewTextBoxColumn1.DataPropertyName = "EnrollmentExcempt";
+            this.enrollmentExcemptDataGridViewTextBoxColumn1.HeaderText = "EnrollmentExcempt";
+            this.enrollmentExcemptDataGridViewTextBoxColumn1.Name = "enrollmentExcemptDataGridViewTextBoxColumn1";
+            this.enrollmentExcemptDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // curriculumDataGridViewTextBoxColumn1
+            // 
+            this.curriculumDataGridViewTextBoxColumn1.DataPropertyName = "Curriculum";
+            this.curriculumDataGridViewTextBoxColumn1.HeaderText = "Curriculum";
+            this.curriculumDataGridViewTextBoxColumn1.Name = "curriculumDataGridViewTextBoxColumn1";
+            this.curriculumDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // lookupEnrollmentProgressStateDataGridViewTextBoxColumn1
+            // 
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.DataPropertyName = "LookupEnrollmentProgressState";
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.HeaderText = "LookupEnrollmentProgressState";
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.Name = "lookupEnrollmentProgressStateDataGridViewTextBoxColumn1";
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // studentDataGridViewTextBoxColumn1
+            // 
+            this.studentDataGridViewTextBoxColumn1.DataPropertyName = "Student";
+            this.studentDataGridViewTextBoxColumn1.HeaderText = "Student";
+            this.studentDataGridViewTextBoxColumn1.Name = "studentDataGridViewTextBoxColumn1";
+            this.studentDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // apprienticeshipEnrollmentDataGridViewTextBoxColumn1
+            // 
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1.DataPropertyName = "ApprienticeshipEnrollment";
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1.HeaderText = "ApprienticeshipEnrollment";
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1.Name = "apprienticeshipEnrollmentDataGridViewTextBoxColumn1";
+            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // enrollmentPrerequisitesBindingSource
+            // 
+            this.enrollmentPrerequisitesBindingSource.DataSource = typeof(Impendulo.Data.Models.Enrollment);
+            // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -725,12 +970,48 @@
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 0;
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
             // bindingNavigatorCountItem1
             // 
             this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
             this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem1.Text = "of {0}";
             this.bindingNavigatorCountItem1.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem1
+            // 
+            this.bindingNavigatorDeleteItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem1.Image")));
+            this.bindingNavigatorDeleteItem1.Name = "bindingNavigatorDeleteItem1";
+            this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem1.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem1
+            // 
+            this.bindingNavigatorMoveFirstItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
+            this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem1";
+            this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem1.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem1
+            // 
+            this.bindingNavigatorMovePreviousItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
+            this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem1";
+            this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem1.Text = "Move previous";
             // 
             // bindingNavigatorSeparator3
             // 
@@ -750,6 +1031,24 @@
             // 
             this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
             this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem1
+            // 
+            this.bindingNavigatorMoveNextItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
+            this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem1";
+            this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem1.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem1
+            // 
+            this.bindingNavigatorMoveLastItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
+            this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem1";
+            this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem1.Text = "Move last";
             // 
             // bindingNavigatorSeparator5
             // 
@@ -815,6 +1114,30 @@
             this.groupBox7.TabIndex = 12;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Student Details";
+            // 
+            // btnEmailClient
+            // 
+            this.btnEmailClient.Image = ((System.Drawing.Image)(resources.GetObject("btnEmailClient.Image")));
+            this.btnEmailClient.Location = new System.Drawing.Point(326, 19);
+            this.btnEmailClient.Name = "btnEmailClient";
+            this.btnEmailClient.Size = new System.Drawing.Size(107, 101);
+            this.btnEmailClient.TabIndex = 40;
+            this.btnEmailClient.Text = "Email Client";
+            this.btnEmailClient.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEmailClient.UseVisualStyleBackColor = true;
+            this.btnEmailClient.Click += new System.EventHandler(this.btnEmailClient_Click);
+            // 
+            // btnCompleteEnrollmentSummary
+            // 
+            this.btnCompleteEnrollmentSummary.Image = ((System.Drawing.Image)(resources.GetObject("btnCompleteEnrollmentSummary.Image")));
+            this.btnCompleteEnrollmentSummary.Location = new System.Drawing.Point(213, 19);
+            this.btnCompleteEnrollmentSummary.Name = "btnCompleteEnrollmentSummary";
+            this.btnCompleteEnrollmentSummary.Size = new System.Drawing.Size(107, 101);
+            this.btnCompleteEnrollmentSummary.TabIndex = 39;
+            this.btnCompleteEnrollmentSummary.Text = "Complete Summary";
+            this.btnCompleteEnrollmentSummary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCompleteEnrollmentSummary.UseVisualStyleBackColor = true;
+            this.btnCompleteEnrollmentSummary.Click += new System.EventHandler(this.btnCompleteEnrollmentSummary_Click);
             // 
             // textBox5
             // 
@@ -973,6 +1296,52 @@
             this.DateCreated.Name = "DateCreated";
             this.DateCreated.ReadOnly = true;
             // 
+            // imageIDDataGridViewTextBoxColumn
+            // 
+            this.imageIDDataGridViewTextBoxColumn.DataPropertyName = "ImageID";
+            this.imageIDDataGridViewTextBoxColumn.HeaderText = "ImageID";
+            this.imageIDDataGridViewTextBoxColumn.Name = "imageIDDataGridViewTextBoxColumn";
+            this.imageIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contentTypeDataGridViewTextBoxColumn
+            // 
+            this.contentTypeDataGridViewTextBoxColumn.DataPropertyName = "ContentType";
+            this.contentTypeDataGridViewTextBoxColumn.HeaderText = "ContentType";
+            this.contentTypeDataGridViewTextBoxColumn.Name = "contentTypeDataGridViewTextBoxColumn";
+            this.contentTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fileImageDataGridViewImageColumn
+            // 
+            this.fileImageDataGridViewImageColumn.DataPropertyName = "FileImage";
+            this.fileImageDataGridViewImageColumn.HeaderText = "FileImage";
+            this.fileImageDataGridViewImageColumn.Name = "fileImageDataGridViewImageColumn";
+            this.fileImageDataGridViewImageColumn.ReadOnly = true;
+            // 
+            // fileNameDataGridViewTextBoxColumn
+            // 
+            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
+            this.fileNameDataGridViewTextBoxColumn.HeaderText = "FileName";
+            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
+            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fileExtensionDataGridViewTextBoxColumn
+            // 
+            this.fileExtensionDataGridViewTextBoxColumn.DataPropertyName = "FileExtension";
+            this.fileExtensionDataGridViewTextBoxColumn.HeaderText = "FileExtension";
+            this.fileExtensionDataGridViewTextBoxColumn.Name = "fileExtensionDataGridViewTextBoxColumn";
+            this.fileExtensionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateCreatedDataGridViewTextBoxColumn
+            // 
+            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "DateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
+            this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fileBindingSource
+            // 
+            this.fileBindingSource.DataSource = typeof(Impendulo.Data.Models.File);
+            // 
             // bindingNavigator12
             // 
             this.bindingNavigator12.AddNewItem = this.bindingNavigatorAddNewItem3;
@@ -1005,12 +1374,48 @@
             this.bindingNavigator12.Stretch = true;
             this.bindingNavigator12.TabIndex = 0;
             // 
+            // bindingNavigatorAddNewItem3
+            // 
+            this.bindingNavigatorAddNewItem3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem3.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem3.Image")));
+            this.bindingNavigatorAddNewItem3.Name = "bindingNavigatorAddNewItem3";
+            this.bindingNavigatorAddNewItem3.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem3.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem3.Text = "Add new";
+            // 
             // bindingNavigatorCountItem4
             // 
             this.bindingNavigatorCountItem4.Name = "bindingNavigatorCountItem4";
             this.bindingNavigatorCountItem4.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem4.Text = "of {0}";
             this.bindingNavigatorCountItem4.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem4
+            // 
+            this.bindingNavigatorDeleteItem4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem4.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem4.Image")));
+            this.bindingNavigatorDeleteItem4.Name = "bindingNavigatorDeleteItem4";
+            this.bindingNavigatorDeleteItem4.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem4.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem4.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem4
+            // 
+            this.bindingNavigatorMoveFirstItem4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem4.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem4.Image")));
+            this.bindingNavigatorMoveFirstItem4.Name = "bindingNavigatorMoveFirstItem4";
+            this.bindingNavigatorMoveFirstItem4.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem4.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem4.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem4
+            // 
+            this.bindingNavigatorMovePreviousItem4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem4.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem4.Image")));
+            this.bindingNavigatorMovePreviousItem4.Name = "bindingNavigatorMovePreviousItem4";
+            this.bindingNavigatorMovePreviousItem4.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem4.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem4.Text = "Move previous";
             // 
             // bindingNavigatorSeparator12
             // 
@@ -1030,6 +1435,24 @@
             // 
             this.bindingNavigatorSeparator13.Name = "bindingNavigatorSeparator13";
             this.bindingNavigatorSeparator13.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem4
+            // 
+            this.bindingNavigatorMoveNextItem4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem4.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem4.Image")));
+            this.bindingNavigatorMoveNextItem4.Name = "bindingNavigatorMoveNextItem4";
+            this.bindingNavigatorMoveNextItem4.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem4.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem4.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem4
+            // 
+            this.bindingNavigatorMoveLastItem4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem4.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem4.Image")));
+            this.bindingNavigatorMoveLastItem4.Name = "bindingNavigatorMoveLastItem4";
+            this.bindingNavigatorMoveLastItem4.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem4.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem4.Text = "Move last";
             // 
             // bindingNavigatorSeparator14
             // 
@@ -1215,6 +1638,59 @@
             this.colScheduleEndDate.Name = "colScheduleEndDate";
             this.colScheduleEndDate.ReadOnly = true;
             // 
+            // scheduleIDDataGridViewTextBoxColumn
+            // 
+            this.scheduleIDDataGridViewTextBoxColumn.DataPropertyName = "ScheduleID";
+            this.scheduleIDDataGridViewTextBoxColumn.HeaderText = "ScheduleID";
+            this.scheduleIDDataGridViewTextBoxColumn.Name = "scheduleIDDataGridViewTextBoxColumn";
+            this.scheduleIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // curriculumCourseEnrollmentIDDataGridViewTextBoxColumn
+            // 
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumCourseEnrollmentID";
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn.HeaderText = "CurriculumCourseEnrollmentID";
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn.Name = "curriculumCourseEnrollmentIDDataGridViewTextBoxColumn";
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // scheduleStartDateDataGridViewTextBoxColumn
+            // 
+            this.scheduleStartDateDataGridViewTextBoxColumn.DataPropertyName = "ScheduleStartDate";
+            this.scheduleStartDateDataGridViewTextBoxColumn.HeaderText = "ScheduleStartDate";
+            this.scheduleStartDateDataGridViewTextBoxColumn.Name = "scheduleStartDateDataGridViewTextBoxColumn";
+            this.scheduleStartDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // scheduleCompletionDateDataGridViewTextBoxColumn
+            // 
+            this.scheduleCompletionDateDataGridViewTextBoxColumn.DataPropertyName = "ScheduleCompletionDate";
+            this.scheduleCompletionDateDataGridViewTextBoxColumn.HeaderText = "ScheduleCompletionDate";
+            this.scheduleCompletionDateDataGridViewTextBoxColumn.Name = "scheduleCompletionDateDataGridViewTextBoxColumn";
+            this.scheduleCompletionDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // enrollmentIDDataGridViewTextBoxColumn2
+            // 
+            this.enrollmentIDDataGridViewTextBoxColumn2.DataPropertyName = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn2.HeaderText = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn2.Name = "enrollmentIDDataGridViewTextBoxColumn2";
+            this.enrollmentIDDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // curriculumCourseEnrollmentDataGridViewTextBoxColumn
+            // 
+            this.curriculumCourseEnrollmentDataGridViewTextBoxColumn.DataPropertyName = "CurriculumCourseEnrollment";
+            this.curriculumCourseEnrollmentDataGridViewTextBoxColumn.HeaderText = "CurriculumCourseEnrollment";
+            this.curriculumCourseEnrollmentDataGridViewTextBoxColumn.Name = "curriculumCourseEnrollmentDataGridViewTextBoxColumn";
+            this.curriculumCourseEnrollmentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // enrollmentDataGridViewTextBoxColumn
+            // 
+            this.enrollmentDataGridViewTextBoxColumn.DataPropertyName = "Enrollment";
+            this.enrollmentDataGridViewTextBoxColumn.HeaderText = "Enrollment";
+            this.enrollmentDataGridViewTextBoxColumn.Name = "enrollmentDataGridViewTextBoxColumn";
+            this.enrollmentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // scheduleBindingSource
+            // 
+            this.scheduleBindingSource.DataSource = typeof(Impendulo.Data.Models.Schedule);
+            // 
             // bindingNavigator9
             // 
             this.bindingNavigator9.AddNewItem = null;
@@ -1250,6 +1726,24 @@
             this.toolStripLabel9.Text = "of {0}";
             this.toolStripLabel9.ToolTipText = "Total number of items";
             // 
+            // toolStripButton41
+            // 
+            this.toolStripButton41.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton41.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton41.Image")));
+            this.toolStripButton41.Name = "toolStripButton41";
+            this.toolStripButton41.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton41.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton41.Text = "Move first";
+            // 
+            // toolStripButton42
+            // 
+            this.toolStripButton42.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton42.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton42.Image")));
+            this.toolStripButton42.Name = "toolStripButton42";
+            this.toolStripButton42.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton42.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton42.Text = "Move previous";
+            // 
             // toolStripSeparator31
             // 
             this.toolStripSeparator31.Name = "toolStripSeparator31";
@@ -1268,6 +1762,24 @@
             // 
             this.toolStripSeparator32.Name = "toolStripSeparator32";
             this.toolStripSeparator32.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton43
+            // 
+            this.toolStripButton43.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton43.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton43.Image")));
+            this.toolStripButton43.Name = "toolStripButton43";
+            this.toolStripButton43.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton43.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton43.Text = "Move next";
+            // 
+            // toolStripButton44
+            // 
+            this.toolStripButton44.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton44.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton44.Image")));
+            this.toolStripButton44.Name = "toolStripButton44";
+            this.toolStripButton44.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton44.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton44.Text = "Move last";
             // 
             // toolStripSeparator33
             // 
@@ -1347,576 +1859,6 @@
             this.Duration.HeaderText = "Duration";
             this.Duration.Name = "Duration";
             this.Duration.ReadOnly = true;
-            // 
-            // bindingNavigator2
-            // 
-            this.bindingNavigator2.AddNewItem = null;
-            this.bindingNavigator2.CountItem = this.toolStripLabel2;
-            this.bindingNavigator2.DeleteItem = null;
-            this.bindingNavigator2.Dock = System.Windows.Forms.DockStyle.None;
-            this.bindingNavigator2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.bindingNavigator2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripSeparator1,
-            this.toolStripTextBox1,
-            this.toolStripLabel2,
-            this.toolStripSeparator2,
-            this.toolStripButton5,
-            this.toolStripButton6,
-            this.toolStripSeparator3});
-            this.bindingNavigator2.Location = new System.Drawing.Point(0, 0);
-            this.bindingNavigator2.MoveFirstItem = this.toolStripButton3;
-            this.bindingNavigator2.MoveLastItem = this.toolStripButton6;
-            this.bindingNavigator2.MoveNextItem = this.toolStripButton5;
-            this.bindingNavigator2.MovePreviousItem = this.toolStripButton4;
-            this.bindingNavigator2.Name = "bindingNavigator2";
-            this.bindingNavigator2.PositionItem = this.toolStripTextBox1;
-            this.bindingNavigator2.Size = new System.Drawing.Size(344, 25);
-            this.bindingNavigator2.Stretch = true;
-            this.bindingNavigator2.TabIndex = 0;
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(35, 22);
-            this.toolStripLabel2.Text = "of {0}";
-            this.toolStripLabel2.ToolTipText = "Total number of items";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.AccessibleName = "Position";
-            this.toolStripTextBox1.AutoSize = false;
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
-            this.toolStripTextBox1.Text = "0";
-            this.toolStripTextBox1.ToolTipText = "Current position";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // enrollmentIDDataGridViewTextBoxColumn
-            // 
-            this.enrollmentIDDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentID";
-            this.enrollmentIDDataGridViewTextBoxColumn.HeaderText = "EnrollmentID";
-            this.enrollmentIDDataGridViewTextBoxColumn.Name = "enrollmentIDDataGridViewTextBoxColumn";
-            this.enrollmentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn
-            // 
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn.DataPropertyName = "LookupEnrollmentProgressStateID";
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn.HeaderText = "LookupEnrollmentProgressStateID";
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn.Name = "lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn";
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // curriculumIDDataGridViewTextBoxColumn
-            // 
-            this.curriculumIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumID";
-            this.curriculumIDDataGridViewTextBoxColumn.HeaderText = "CurriculumID";
-            this.curriculumIDDataGridViewTextBoxColumn.Name = "curriculumIDDataGridViewTextBoxColumn";
-            this.curriculumIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateIntitiatedDataGridViewTextBoxColumn
-            // 
-            this.dateIntitiatedDataGridViewTextBoxColumn.DataPropertyName = "DateIntitiated";
-            this.dateIntitiatedDataGridViewTextBoxColumn.HeaderText = "DateIntitiated";
-            this.dateIntitiatedDataGridViewTextBoxColumn.Name = "dateIntitiatedDataGridViewTextBoxColumn";
-            this.dateIntitiatedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // individualIDDataGridViewTextBoxColumn
-            // 
-            this.individualIDDataGridViewTextBoxColumn.DataPropertyName = "IndividualID";
-            this.individualIDDataGridViewTextBoxColumn.HeaderText = "IndividualID";
-            this.individualIDDataGridViewTextBoxColumn.Name = "individualIDDataGridViewTextBoxColumn";
-            this.individualIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // enrolmentParentIDDataGridViewTextBoxColumn
-            // 
-            this.enrolmentParentIDDataGridViewTextBoxColumn.DataPropertyName = "EnrolmentParentID";
-            this.enrolmentParentIDDataGridViewTextBoxColumn.HeaderText = "EnrolmentParentID";
-            this.enrolmentParentIDDataGridViewTextBoxColumn.Name = "enrolmentParentIDDataGridViewTextBoxColumn";
-            this.enrolmentParentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // enrollmentExcemptDataGridViewTextBoxColumn
-            // 
-            this.enrollmentExcemptDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentExcempt";
-            this.enrollmentExcemptDataGridViewTextBoxColumn.HeaderText = "EnrollmentExcempt";
-            this.enrollmentExcemptDataGridViewTextBoxColumn.Name = "enrollmentExcemptDataGridViewTextBoxColumn";
-            this.enrollmentExcemptDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // curriculumDataGridViewTextBoxColumn
-            // 
-            this.curriculumDataGridViewTextBoxColumn.DataPropertyName = "Curriculum";
-            this.curriculumDataGridViewTextBoxColumn.HeaderText = "Curriculum";
-            this.curriculumDataGridViewTextBoxColumn.Name = "curriculumDataGridViewTextBoxColumn";
-            this.curriculumDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lookupEnrollmentProgressStateDataGridViewTextBoxColumn
-            // 
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.DataPropertyName = "LookupEnrollmentProgressState";
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.HeaderText = "LookupEnrollmentProgressState";
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.Name = "lookupEnrollmentProgressStateDataGridViewTextBoxColumn";
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // studentDataGridViewTextBoxColumn
-            // 
-            this.studentDataGridViewTextBoxColumn.DataPropertyName = "Student";
-            this.studentDataGridViewTextBoxColumn.HeaderText = "Student";
-            this.studentDataGridViewTextBoxColumn.Name = "studentDataGridViewTextBoxColumn";
-            this.studentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // apprienticeshipEnrollmentDataGridViewTextBoxColumn
-            // 
-            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn.DataPropertyName = "ApprienticeshipEnrollment";
-            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn.HeaderText = "ApprienticeshipEnrollment";
-            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn.Name = "apprienticeshipEnrollmentDataGridViewTextBoxColumn";
-            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // enrollmentBindingSource
-            // 
-            this.enrollmentBindingSource.DataSource = typeof(Impendulo.Data.Models.Enrollment);
-            this.enrollmentBindingSource.PositionChanged += new System.EventHandler(this.enrollmentBindingSource_PositionChanged);
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // btnAddNewEnquiry
-            // 
-            this.btnAddNewEnquiry.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAddNewEnquiry.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewEnquiry.Image")));
-            this.btnAddNewEnquiry.Name = "btnAddNewEnquiry";
-            this.btnAddNewEnquiry.RightToLeftAutoMirrorImage = true;
-            this.btnAddNewEnquiry.Size = new System.Drawing.Size(23, 22);
-            this.btnAddNewEnquiry.Text = "Add new";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton1";
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton7.Text = "toolStripButton2";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // enrollmentIDDataGridViewTextBoxColumn1
-            // 
-            this.enrollmentIDDataGridViewTextBoxColumn1.DataPropertyName = "EnrollmentID";
-            this.enrollmentIDDataGridViewTextBoxColumn1.HeaderText = "EnrollmentID";
-            this.enrollmentIDDataGridViewTextBoxColumn1.Name = "enrollmentIDDataGridViewTextBoxColumn1";
-            this.enrollmentIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1
-            // 
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.DataPropertyName = "LookupEnrollmentProgressStateID";
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.HeaderText = "LookupEnrollmentProgressStateID";
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.Name = "lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1";
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // curriculumIDDataGridViewTextBoxColumn1
-            // 
-            this.curriculumIDDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumID";
-            this.curriculumIDDataGridViewTextBoxColumn1.HeaderText = "CurriculumID";
-            this.curriculumIDDataGridViewTextBoxColumn1.Name = "curriculumIDDataGridViewTextBoxColumn1";
-            this.curriculumIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dateIntitiatedDataGridViewTextBoxColumn1
-            // 
-            this.dateIntitiatedDataGridViewTextBoxColumn1.DataPropertyName = "DateIntitiated";
-            this.dateIntitiatedDataGridViewTextBoxColumn1.HeaderText = "DateIntitiated";
-            this.dateIntitiatedDataGridViewTextBoxColumn1.Name = "dateIntitiatedDataGridViewTextBoxColumn1";
-            this.dateIntitiatedDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // individualIDDataGridViewTextBoxColumn1
-            // 
-            this.individualIDDataGridViewTextBoxColumn1.DataPropertyName = "IndividualID";
-            this.individualIDDataGridViewTextBoxColumn1.HeaderText = "IndividualID";
-            this.individualIDDataGridViewTextBoxColumn1.Name = "individualIDDataGridViewTextBoxColumn1";
-            this.individualIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // enrolmentParentIDDataGridViewTextBoxColumn1
-            // 
-            this.enrolmentParentIDDataGridViewTextBoxColumn1.DataPropertyName = "EnrolmentParentID";
-            this.enrolmentParentIDDataGridViewTextBoxColumn1.HeaderText = "EnrolmentParentID";
-            this.enrolmentParentIDDataGridViewTextBoxColumn1.Name = "enrolmentParentIDDataGridViewTextBoxColumn1";
-            this.enrolmentParentIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // enrollmentExcemptDataGridViewTextBoxColumn1
-            // 
-            this.enrollmentExcemptDataGridViewTextBoxColumn1.DataPropertyName = "EnrollmentExcempt";
-            this.enrollmentExcemptDataGridViewTextBoxColumn1.HeaderText = "EnrollmentExcempt";
-            this.enrollmentExcemptDataGridViewTextBoxColumn1.Name = "enrollmentExcemptDataGridViewTextBoxColumn1";
-            this.enrollmentExcemptDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // curriculumDataGridViewTextBoxColumn1
-            // 
-            this.curriculumDataGridViewTextBoxColumn1.DataPropertyName = "Curriculum";
-            this.curriculumDataGridViewTextBoxColumn1.HeaderText = "Curriculum";
-            this.curriculumDataGridViewTextBoxColumn1.Name = "curriculumDataGridViewTextBoxColumn1";
-            this.curriculumDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // lookupEnrollmentProgressStateDataGridViewTextBoxColumn1
-            // 
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.DataPropertyName = "LookupEnrollmentProgressState";
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.HeaderText = "LookupEnrollmentProgressState";
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.Name = "lookupEnrollmentProgressStateDataGridViewTextBoxColumn1";
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // studentDataGridViewTextBoxColumn1
-            // 
-            this.studentDataGridViewTextBoxColumn1.DataPropertyName = "Student";
-            this.studentDataGridViewTextBoxColumn1.HeaderText = "Student";
-            this.studentDataGridViewTextBoxColumn1.Name = "studentDataGridViewTextBoxColumn1";
-            this.studentDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // apprienticeshipEnrollmentDataGridViewTextBoxColumn1
-            // 
-            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1.DataPropertyName = "ApprienticeshipEnrollment";
-            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1.HeaderText = "ApprienticeshipEnrollment";
-            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1.Name = "apprienticeshipEnrollmentDataGridViewTextBoxColumn1";
-            this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // enrollmentPrerequisitesBindingSource
-            // 
-            this.enrollmentPrerequisitesBindingSource.DataSource = typeof(Impendulo.Data.Models.Enrollment);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem1
-            // 
-            this.bindingNavigatorDeleteItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem1.Image")));
-            this.bindingNavigatorDeleteItem1.Name = "bindingNavigatorDeleteItem1";
-            this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem1.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem1
-            // 
-            this.bindingNavigatorMoveFirstItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
-            this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem1";
-            this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem1.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem1
-            // 
-            this.bindingNavigatorMovePreviousItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
-            this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem1";
-            this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem1.Text = "Move previous";
-            // 
-            // bindingNavigatorMoveNextItem1
-            // 
-            this.bindingNavigatorMoveNextItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
-            this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem1";
-            this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem1.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem1
-            // 
-            this.bindingNavigatorMoveLastItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
-            this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem1";
-            this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem1.Text = "Move last";
-            // 
-            // btnEmailClient
-            // 
-            this.btnEmailClient.Image = ((System.Drawing.Image)(resources.GetObject("btnEmailClient.Image")));
-            this.btnEmailClient.Location = new System.Drawing.Point(326, 19);
-            this.btnEmailClient.Name = "btnEmailClient";
-            this.btnEmailClient.Size = new System.Drawing.Size(107, 101);
-            this.btnEmailClient.TabIndex = 40;
-            this.btnEmailClient.Text = "Email Client";
-            this.btnEmailClient.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEmailClient.UseVisualStyleBackColor = true;
-            this.btnEmailClient.Click += new System.EventHandler(this.btnEmailClient_Click);
-            // 
-            // btnCompleteEnrollmentSummary
-            // 
-            this.btnCompleteEnrollmentSummary.Image = ((System.Drawing.Image)(resources.GetObject("btnCompleteEnrollmentSummary.Image")));
-            this.btnCompleteEnrollmentSummary.Location = new System.Drawing.Point(213, 19);
-            this.btnCompleteEnrollmentSummary.Name = "btnCompleteEnrollmentSummary";
-            this.btnCompleteEnrollmentSummary.Size = new System.Drawing.Size(107, 101);
-            this.btnCompleteEnrollmentSummary.TabIndex = 39;
-            this.btnCompleteEnrollmentSummary.Text = "Complete Summary";
-            this.btnCompleteEnrollmentSummary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCompleteEnrollmentSummary.UseVisualStyleBackColor = true;
-            this.btnCompleteEnrollmentSummary.Click += new System.EventHandler(this.btnCompleteEnrollmentSummary_Click);
-            // 
-            // imageIDDataGridViewTextBoxColumn
-            // 
-            this.imageIDDataGridViewTextBoxColumn.DataPropertyName = "ImageID";
-            this.imageIDDataGridViewTextBoxColumn.HeaderText = "ImageID";
-            this.imageIDDataGridViewTextBoxColumn.Name = "imageIDDataGridViewTextBoxColumn";
-            this.imageIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // contentTypeDataGridViewTextBoxColumn
-            // 
-            this.contentTypeDataGridViewTextBoxColumn.DataPropertyName = "ContentType";
-            this.contentTypeDataGridViewTextBoxColumn.HeaderText = "ContentType";
-            this.contentTypeDataGridViewTextBoxColumn.Name = "contentTypeDataGridViewTextBoxColumn";
-            this.contentTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fileImageDataGridViewImageColumn
-            // 
-            this.fileImageDataGridViewImageColumn.DataPropertyName = "FileImage";
-            this.fileImageDataGridViewImageColumn.HeaderText = "FileImage";
-            this.fileImageDataGridViewImageColumn.Name = "fileImageDataGridViewImageColumn";
-            this.fileImageDataGridViewImageColumn.ReadOnly = true;
-            // 
-            // fileNameDataGridViewTextBoxColumn
-            // 
-            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
-            this.fileNameDataGridViewTextBoxColumn.HeaderText = "FileName";
-            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
-            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fileExtensionDataGridViewTextBoxColumn
-            // 
-            this.fileExtensionDataGridViewTextBoxColumn.DataPropertyName = "FileExtension";
-            this.fileExtensionDataGridViewTextBoxColumn.HeaderText = "FileExtension";
-            this.fileExtensionDataGridViewTextBoxColumn.Name = "fileExtensionDataGridViewTextBoxColumn";
-            this.fileExtensionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateCreatedDataGridViewTextBoxColumn
-            // 
-            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated";
-            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "DateCreated";
-            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
-            this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fileBindingSource
-            // 
-            this.fileBindingSource.DataSource = typeof(Impendulo.Data.Models.File);
-            // 
-            // bindingNavigatorAddNewItem3
-            // 
-            this.bindingNavigatorAddNewItem3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem3.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem3.Image")));
-            this.bindingNavigatorAddNewItem3.Name = "bindingNavigatorAddNewItem3";
-            this.bindingNavigatorAddNewItem3.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem3.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem3.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem4
-            // 
-            this.bindingNavigatorDeleteItem4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem4.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem4.Image")));
-            this.bindingNavigatorDeleteItem4.Name = "bindingNavigatorDeleteItem4";
-            this.bindingNavigatorDeleteItem4.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem4.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem4.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem4
-            // 
-            this.bindingNavigatorMoveFirstItem4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem4.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem4.Image")));
-            this.bindingNavigatorMoveFirstItem4.Name = "bindingNavigatorMoveFirstItem4";
-            this.bindingNavigatorMoveFirstItem4.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem4.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem4.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem4
-            // 
-            this.bindingNavigatorMovePreviousItem4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem4.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem4.Image")));
-            this.bindingNavigatorMovePreviousItem4.Name = "bindingNavigatorMovePreviousItem4";
-            this.bindingNavigatorMovePreviousItem4.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem4.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem4.Text = "Move previous";
-            // 
-            // bindingNavigatorMoveNextItem4
-            // 
-            this.bindingNavigatorMoveNextItem4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem4.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem4.Image")));
-            this.bindingNavigatorMoveNextItem4.Name = "bindingNavigatorMoveNextItem4";
-            this.bindingNavigatorMoveNextItem4.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem4.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem4.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem4
-            // 
-            this.bindingNavigatorMoveLastItem4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem4.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem4.Image")));
-            this.bindingNavigatorMoveLastItem4.Name = "bindingNavigatorMoveLastItem4";
-            this.bindingNavigatorMoveLastItem4.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem4.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem4.Text = "Move last";
-            // 
-            // scheduleIDDataGridViewTextBoxColumn
-            // 
-            this.scheduleIDDataGridViewTextBoxColumn.DataPropertyName = "ScheduleID";
-            this.scheduleIDDataGridViewTextBoxColumn.HeaderText = "ScheduleID";
-            this.scheduleIDDataGridViewTextBoxColumn.Name = "scheduleIDDataGridViewTextBoxColumn";
-            this.scheduleIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // curriculumCourseEnrollmentIDDataGridViewTextBoxColumn
-            // 
-            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumCourseEnrollmentID";
-            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn.HeaderText = "CurriculumCourseEnrollmentID";
-            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn.Name = "curriculumCourseEnrollmentIDDataGridViewTextBoxColumn";
-            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // scheduleStartDateDataGridViewTextBoxColumn
-            // 
-            this.scheduleStartDateDataGridViewTextBoxColumn.DataPropertyName = "ScheduleStartDate";
-            this.scheduleStartDateDataGridViewTextBoxColumn.HeaderText = "ScheduleStartDate";
-            this.scheduleStartDateDataGridViewTextBoxColumn.Name = "scheduleStartDateDataGridViewTextBoxColumn";
-            this.scheduleStartDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // scheduleCompletionDateDataGridViewTextBoxColumn
-            // 
-            this.scheduleCompletionDateDataGridViewTextBoxColumn.DataPropertyName = "ScheduleCompletionDate";
-            this.scheduleCompletionDateDataGridViewTextBoxColumn.HeaderText = "ScheduleCompletionDate";
-            this.scheduleCompletionDateDataGridViewTextBoxColumn.Name = "scheduleCompletionDateDataGridViewTextBoxColumn";
-            this.scheduleCompletionDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // enrollmentIDDataGridViewTextBoxColumn2
-            // 
-            this.enrollmentIDDataGridViewTextBoxColumn2.DataPropertyName = "EnrollmentID";
-            this.enrollmentIDDataGridViewTextBoxColumn2.HeaderText = "EnrollmentID";
-            this.enrollmentIDDataGridViewTextBoxColumn2.Name = "enrollmentIDDataGridViewTextBoxColumn2";
-            this.enrollmentIDDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // curriculumCourseEnrollmentDataGridViewTextBoxColumn
-            // 
-            this.curriculumCourseEnrollmentDataGridViewTextBoxColumn.DataPropertyName = "CurriculumCourseEnrollment";
-            this.curriculumCourseEnrollmentDataGridViewTextBoxColumn.HeaderText = "CurriculumCourseEnrollment";
-            this.curriculumCourseEnrollmentDataGridViewTextBoxColumn.Name = "curriculumCourseEnrollmentDataGridViewTextBoxColumn";
-            this.curriculumCourseEnrollmentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // enrollmentDataGridViewTextBoxColumn
-            // 
-            this.enrollmentDataGridViewTextBoxColumn.DataPropertyName = "Enrollment";
-            this.enrollmentDataGridViewTextBoxColumn.HeaderText = "Enrollment";
-            this.enrollmentDataGridViewTextBoxColumn.Name = "enrollmentDataGridViewTextBoxColumn";
-            this.enrollmentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // scheduleBindingSource
-            // 
-            this.scheduleBindingSource.DataSource = typeof(Impendulo.Data.Models.Schedule);
-            // 
-            // toolStripButton41
-            // 
-            this.toolStripButton41.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton41.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton41.Image")));
-            this.toolStripButton41.Name = "toolStripButton41";
-            this.toolStripButton41.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton41.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton41.Text = "Move first";
-            // 
-            // toolStripButton42
-            // 
-            this.toolStripButton42.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton42.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton42.Image")));
-            this.toolStripButton42.Name = "toolStripButton42";
-            this.toolStripButton42.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton42.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton42.Text = "Move previous";
-            // 
-            // toolStripButton43
-            // 
-            this.toolStripButton43.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton43.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton43.Image")));
-            this.toolStripButton43.Name = "toolStripButton43";
-            this.toolStripButton43.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton43.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton43.Text = "Move next";
-            // 
-            // toolStripButton44
-            // 
-            this.toolStripButton44.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton44.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton44.Image")));
-            this.toolStripButton44.Name = "toolStripButton44";
-            this.toolStripButton44.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton44.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton44.Text = "Move last";
             // 
             // curriculumCourseIDDataGridViewTextBoxColumn
             // 
@@ -2006,6 +1948,41 @@
             // 
             this.curriculumCourseLinkedToEnrollmentBindingSource.DataSource = typeof(Impendulo.Data.Models.CurriculumCourse);
             // 
+            // bindingNavigator2
+            // 
+            this.bindingNavigator2.AddNewItem = null;
+            this.bindingNavigator2.CountItem = this.toolStripLabel2;
+            this.bindingNavigator2.DeleteItem = null;
+            this.bindingNavigator2.Dock = System.Windows.Forms.DockStyle.None;
+            this.bindingNavigator2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.bindingNavigator2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton3,
+            this.toolStripButton4,
+            this.toolStripSeparator1,
+            this.toolStripTextBox1,
+            this.toolStripLabel2,
+            this.toolStripSeparator2,
+            this.toolStripButton5,
+            this.toolStripButton6,
+            this.toolStripSeparator3});
+            this.bindingNavigator2.Location = new System.Drawing.Point(0, 0);
+            this.bindingNavigator2.MoveFirstItem = this.toolStripButton3;
+            this.bindingNavigator2.MoveLastItem = this.toolStripButton6;
+            this.bindingNavigator2.MoveNextItem = this.toolStripButton5;
+            this.bindingNavigator2.MovePreviousItem = this.toolStripButton4;
+            this.bindingNavigator2.Name = "bindingNavigator2";
+            this.bindingNavigator2.PositionItem = this.toolStripTextBox1;
+            this.bindingNavigator2.Size = new System.Drawing.Size(344, 25);
+            this.bindingNavigator2.Stretch = true;
+            this.bindingNavigator2.TabIndex = 0;
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(35, 22);
+            this.toolStripLabel2.Text = "of {0}";
+            this.toolStripLabel2.ToolTipText = "Total number of items";
+            // 
             // toolStripButton3
             // 
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -2024,6 +2001,25 @@
             this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton4.Text = "Move previous";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.AccessibleName = "Position";
+            this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
+            this.toolStripTextBox1.Text = "0";
+            this.toolStripTextBox1.ToolTipText = "Current position";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // toolStripButton5
             // 
             this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -2041,6 +2037,11 @@
             this.toolStripButton6.RightToLeftAutoMirrorImage = true;
             this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton6.Text = "Move last";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
             // curriculumCourseEnrollmentsBindingSource
             // 
@@ -2075,6 +2076,7 @@
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrollmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorCurriculum)).EndInit();
             this.bindingNavigatorCurriculum.ResumeLayout(false);
             this.bindingNavigatorCurriculum.PerformLayout();
@@ -2085,6 +2087,7 @@
             this.toolStripContainer5.ResumeLayout(false);
             this.toolStripContainer5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrerequisiteCourses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrollmentPrerequisitesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -2110,6 +2113,7 @@
             this.toolStripContainer11.ResumeLayout(false);
             this.toolStripContainer11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnollmentFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator12)).EndInit();
             this.bindingNavigator12.ResumeLayout(false);
             this.bindingNavigator12.PerformLayout();
@@ -2128,6 +2132,7 @@
             this.toolStripContainer10.ResumeLayout(false);
             this.toolStripContainer10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseSschedule)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator9)).EndInit();
             this.bindingNavigator9.ResumeLayout(false);
             this.bindingNavigator9.PerformLayout();
@@ -2137,14 +2142,10 @@
             this.toolStripContainer2.ResumeLayout(false);
             this.toolStripContainer2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollmenLinkedCurriculumCourses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseLinkedToEnrollmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.enrollmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enrollmentPrerequisitesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseLinkedToEnrollmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseScheduleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseEnrollmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseScheduleBindingSource1)).EndInit();

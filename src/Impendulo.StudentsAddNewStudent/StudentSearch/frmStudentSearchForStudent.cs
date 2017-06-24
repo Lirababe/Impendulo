@@ -16,6 +16,7 @@ namespace Impendulo.StudentForms.Development
 {
     public partial class frmStudentSearchForStudent : MetroFramework.Forms.MetroForm
     {
+        public List<Student> StudentExpceptionList { get; set; }
         public frmStudentSearchForStudent()
         {
             InitializeComponent();
@@ -41,6 +42,10 @@ namespace Impendulo.StudentForms.Development
 
         private void frmStudentSearchForStudent_Load(object sender, EventArgs e)
         {
+            if (StudentExpceptionList == null)
+            {
+                StudentExpceptionList = new List<Student>();
+            }
             SearchStudentNumber = "0";
             this.setSearchVariables();
             this.SearchForStudent();
@@ -76,7 +81,7 @@ namespace Impendulo.StudentForms.Development
             using (var DbConnection = new MCDEntities())
             {
                 int CurrentStudentNumber = 0;
-                if (SearchStudentNumber.Length > 0 )
+                if (SearchStudentNumber.Length > 0)
                 {
                     CurrentStudentNumber = Convert.ToInt32(this.SearchStudentNumber);
                 }
@@ -97,9 +102,26 @@ namespace Impendulo.StudentForms.Development
                                       a.StudentIDNumber.Contains(this.SearchStudentIDNumber)
                                       select a).Take<Student>(50).ToList<Student>();
                 }
+                List<Student> FinalListOfStudentsFromSearch = new List<Student>();
+                Boolean IsStudentExemptFromSearch = false;
+                foreach (Student StudentObj in resultByFilter)
+                {
+                    IsStudentExemptFromSearch = false;
+                    foreach (Student StduentExempt in StudentExpceptionList)
+                    {
+                        if (StudentObj.StudentID == StduentExempt.StudentID)
+                        {
+                            IsStudentExemptFromSearch = true;
+                        }
+                    }
+                    if (!IsStudentExemptFromSearch)
+                    {
+                        FinalListOfStudentsFromSearch.Add(StudentObj);
+                    }
+                }
 
 
-                studentBindingSource.DataSource = resultByFilter;
+                studentBindingSource.DataSource = FinalListOfStudentsFromSearch;
             };
             this.setAddStudentButtonVisablity();
         }
@@ -177,12 +199,20 @@ namespace Impendulo.StudentForms.Development
             frmAddUpdateStudent frm = new frmAddUpdateStudent();
             frm.StudentID = 0;
             frm.ShowDialog();
-            this.txtStudentIdNumber.Text = frm.CurrentSelectedStudent.StudentIDNumber;
-            this.txtFirstName.Text = frm.CurrentSelectedStudent.Individual.IndividualFirstName;
-            this.txtLastName.Text = frm.CurrentSelectedStudent.Individual.IndividualLastname;
-            this.txtStudentNumber.Text = frm.CurrentSelectedStudent.StudentID.ToString();
+            if (frm.StudentID != 0)
+            {
+                this.txtStudentIdNumber.Text = frm.CurrentSelectedStudent.StudentIDNumber;
+                this.txtFirstName.Text = frm.CurrentSelectedStudent.Individual.IndividualFirstName;
+                this.txtLastName.Text = frm.CurrentSelectedStudent.Individual.IndividualLastname;
+                this.txtStudentNumber.Text = frm.CurrentSelectedStudent.StudentID.ToString();
+            }
             this.setSearchVariables();
             this.SearchForStudent();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -45,7 +45,7 @@
             this.dgvEquirySearchResults = new MetroFramework.Controls.MetroGrid();
             this.colSelect = new System.Windows.Forms.DataGridViewLinkColumn();
             this.enquiryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.initialConsultationCompleteDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colEnquiryStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enquiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
@@ -62,6 +62,13 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.gbSearchForStudent = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.txtEquiryRef = new System.Windows.Forms.MaskedTextBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.radClosedEnquiry = new MetroFramework.Controls.MetroRadioButton();
+            this.radActiveEnquiry = new MetroFramework.Controls.MetroRadioButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -70,8 +77,6 @@
             this.datToDate = new MetroFramework.Controls.MetroDateTime();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.chkUseDateFilter = new MetroFramework.Controls.MetroToggle();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.txtEquiryRef = new System.Windows.Forms.MaskedTextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.chkUseContactName = new MetroFramework.Controls.MetroToggle();
@@ -118,10 +123,13 @@
             this.splitContainer3.SuspendLayout();
             this.gbSearchForStudent.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -154,11 +162,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvEquirySearchResults);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(434, 188);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(434, 176);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(434, 213);
+            this.toolStripContainer1.Size = new System.Drawing.Size(434, 201);
             this.toolStripContainer1.TabIndex = 11;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -188,7 +196,7 @@
             this.dgvEquirySearchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSelect,
             this.enquiryIDDataGridViewTextBoxColumn,
-            this.initialConsultationCompleteDataGridViewCheckBoxColumn,
+            this.colEnquiryStatus,
             this.enquiryDateDataGridViewTextBoxColumn});
             this.dgvEquirySearchResults.DataSource = this.enquiryBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -218,10 +226,11 @@
             this.dgvEquirySearchResults.RowHeadersWidth = 15;
             this.dgvEquirySearchResults.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvEquirySearchResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvEquirySearchResults.Size = new System.Drawing.Size(434, 188);
+            this.dgvEquirySearchResults.Size = new System.Drawing.Size(434, 176);
             this.dgvEquirySearchResults.TabIndex = 0;
             this.dgvEquirySearchResults.TabStop = false;
             this.dgvEquirySearchResults.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEquirySearchResults_CellContentClick);
+            this.dgvEquirySearchResults.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvEquirySearchResults_DataBindingComplete);
             // 
             // colSelect
             // 
@@ -249,14 +258,13 @@
             this.enquiryIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.enquiryIDDataGridViewTextBoxColumn.Width = 96;
             // 
-            // initialConsultationCompleteDataGridViewCheckBoxColumn
+            // colEnquiryStatus
             // 
-            this.initialConsultationCompleteDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.initialConsultationCompleteDataGridViewCheckBoxColumn.DataPropertyName = "InitialConsultationComplete";
-            this.initialConsultationCompleteDataGridViewCheckBoxColumn.HeaderText = "Initial Complete";
-            this.initialConsultationCompleteDataGridViewCheckBoxColumn.Name = "initialConsultationCompleteDataGridViewCheckBoxColumn";
-            this.initialConsultationCompleteDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.initialConsultationCompleteDataGridViewCheckBoxColumn.Width = 92;
+            this.colEnquiryStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colEnquiryStatus.HeaderText = "Status";
+            this.colEnquiryStatus.Name = "colEnquiryStatus";
+            this.colEnquiryStatus.ReadOnly = true;
+            this.colEnquiryStatus.Width = 62;
             // 
             // enquiryDateDataGridViewTextBoxColumn
             // 
@@ -391,7 +399,7 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer3.Size = new System.Drawing.Size(851, 487);
-            this.splitContainer3.SplitterDistance = 251;
+            this.splitContainer3.SplitterDistance = 263;
             this.splitContainer3.TabIndex = 14;
             // 
             // gbSearchForStudent
@@ -400,7 +408,7 @@
             this.gbSearchForStudent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbSearchForStudent.Location = new System.Drawing.Point(0, 0);
             this.gbSearchForStudent.Name = "gbSearchForStudent";
-            this.gbSearchForStudent.Size = new System.Drawing.Size(851, 251);
+            this.gbSearchForStudent.Size = new System.Drawing.Size(851, 263);
             this.gbSearchForStudent.TabIndex = 13;
             this.gbSearchForStudent.TabStop = false;
             this.gbSearchForStudent.Text = "Search Fields";
@@ -410,8 +418,8 @@
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 470F));
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.groupBox6, 0, 3);
-            this.tableLayoutPanel5.Controls.Add(this.groupBox7, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.groupBox5, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.groupBox4, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel1, 1, 0);
@@ -419,22 +427,110 @@
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 4;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(845, 232);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(845, 244);
             this.tableLayoutPanel5.TabIndex = 14;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.95935F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.04065F));
+            this.tableLayoutPanel2.Controls.Add(this.groupBox7, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox8, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(369, 49);
+            this.tableLayoutPanel2.TabIndex = 15;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.txtEquiryRef);
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox7.Location = new System.Drawing.Point(3, 3);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(123, 43);
+            this.groupBox7.TabIndex = 3;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Enquiry Ref#";
+            // 
+            // txtEquiryRef
+            // 
+            this.txtEquiryRef.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtEquiryRef.Location = new System.Drawing.Point(3, 16);
+            this.txtEquiryRef.Mask = "00000000000000000";
+            this.txtEquiryRef.Name = "txtEquiryRef";
+            this.txtEquiryRef.Size = new System.Drawing.Size(117, 20);
+            this.txtEquiryRef.TabIndex = 0;
+            this.txtEquiryRef.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtEquiryRef_MaskInputRejected);
+            this.txtEquiryRef.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtEquiryRef_KeyUp);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.tableLayoutPanel9);
+            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox8.Location = new System.Drawing.Point(132, 3);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(234, 43);
+            this.groupBox8.TabIndex = 4;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "All Enquiry Which is Active Or Closed";
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.Controls.Add(this.radClosedEnquiry, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.radActiveEnquiry, 0, 0);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(228, 24);
+            this.tableLayoutPanel9.TabIndex = 0;
+            // 
+            // radClosedEnquiry
+            // 
+            this.radClosedEnquiry.AutoSize = true;
+            this.radClosedEnquiry.Location = new System.Drawing.Point(117, 3);
+            this.radClosedEnquiry.Name = "radClosedEnquiry";
+            this.radClosedEnquiry.Size = new System.Drawing.Size(59, 15);
+            this.radClosedEnquiry.TabIndex = 1;
+            this.radClosedEnquiry.Text = "Closed";
+            this.radClosedEnquiry.UseSelectable = true;
+            this.radClosedEnquiry.CheckedChanged += new System.EventHandler(this.radClosedEnquiry_CheckedChanged);
+            // 
+            // radActiveEnquiry
+            // 
+            this.radActiveEnquiry.AutoSize = true;
+            this.radActiveEnquiry.Checked = true;
+            this.radActiveEnquiry.Location = new System.Drawing.Point(3, 3);
+            this.radActiveEnquiry.Name = "radActiveEnquiry";
+            this.radActiveEnquiry.Size = new System.Drawing.Size(56, 15);
+            this.radActiveEnquiry.TabIndex = 0;
+            this.radActiveEnquiry.TabStop = true;
+            this.radActiveEnquiry.Text = "Active";
+            this.radActiveEnquiry.UseSelectable = true;
+            this.radActiveEnquiry.CheckedChanged += new System.EventHandler(this.radActiveEnquiry_CheckedChanged);
             // 
             // groupBox6
             // 
             this.tableLayoutPanel5.SetColumnSpan(this.groupBox6, 2);
             this.groupBox6.Controls.Add(this.tableLayoutPanel8);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox6.Location = new System.Drawing.Point(3, 171);
+            this.groupBox6.Location = new System.Drawing.Point(3, 180);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(839, 58);
+            this.groupBox6.Size = new System.Drawing.Size(839, 61);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Date Between";
@@ -451,7 +547,7 @@
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(833, 39);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(833, 42);
             this.tableLayoutPanel8.TabIndex = 15;
             // 
             // tableLayoutPanel4
@@ -470,7 +566,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.61111F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(737, 33);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(737, 36);
             this.tableLayoutPanel4.TabIndex = 35;
             // 
             // metroLabel1
@@ -529,33 +625,11 @@
             this.chkUseDateFilter.UseSelectable = true;
             this.chkUseDateFilter.CheckedChanged += new System.EventHandler(this.chkUseDateFilter_CheckedChanged);
             // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.txtEquiryRef);
-            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox7.Location = new System.Drawing.Point(3, 3);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(369, 43);
-            this.groupBox7.TabIndex = 3;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Enquiry Ref#";
-            // 
-            // txtEquiryRef
-            // 
-            this.txtEquiryRef.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEquiryRef.Location = new System.Drawing.Point(3, 16);
-            this.txtEquiryRef.Mask = "00000000000000000";
-            this.txtEquiryRef.Name = "txtEquiryRef";
-            this.txtEquiryRef.Size = new System.Drawing.Size(363, 20);
-            this.txtEquiryRef.TabIndex = 0;
-            this.txtEquiryRef.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtEquiryRef_MaskInputRejected);
-            this.txtEquiryRef.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtEquiryRef_KeyUp);
-            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.tableLayoutPanel7);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(3, 52);
+            this.groupBox5.Location = new System.Drawing.Point(3, 58);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(369, 48);
             this.groupBox5.TabIndex = 1;
@@ -604,9 +678,9 @@
             this.tableLayoutPanel5.SetColumnSpan(this.groupBox4, 2);
             this.groupBox4.Controls.Add(this.tableLayoutPanel6);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(3, 106);
+            this.groupBox4.Location = new System.Drawing.Point(3, 112);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(839, 59);
+            this.groupBox4.Size = new System.Drawing.Size(839, 62);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Curriculum By Department";
@@ -623,7 +697,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(833, 40);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(833, 43);
             this.tableLayoutPanel6.TabIndex = 15;
             // 
             // tableLayoutPanel3
@@ -638,7 +712,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(735, 34);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(735, 37);
             this.tableLayoutPanel3.TabIndex = 35;
             // 
             // cboDepartment
@@ -708,7 +782,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel5.SetRowSpan(this.tableLayoutPanel1, 2);
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(464, 97);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(464, 103);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // btnRefreshSearch
@@ -718,7 +792,7 @@
             this.btnRefreshSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRefreshSearch.Location = new System.Drawing.Point(157, 3);
             this.btnRefreshSearch.Name = "btnRefreshSearch";
-            this.btnRefreshSearch.Size = new System.Drawing.Size(148, 91);
+            this.btnRefreshSearch.Size = new System.Drawing.Size(148, 97);
             this.btnRefreshSearch.TabIndex = 5;
             this.btnRefreshSearch.Text = "Reset";
             this.btnRefreshSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -737,7 +811,7 @@
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearch.Location = new System.Drawing.Point(3, 3);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(148, 91);
+            this.btnSearch.Size = new System.Drawing.Size(148, 97);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Filter Enquiry";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -754,7 +828,7 @@
             this.metroTile1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTile1.Location = new System.Drawing.Point(311, 3);
             this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(150, 91);
+            this.metroTile1.Size = new System.Drawing.Size(150, 97);
             this.metroTile1.TabIndex = 6;
             this.metroTile1.Text = "Minimize Filter";
             this.metroTile1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -769,7 +843,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(851, 232);
+            this.groupBox2.Size = new System.Drawing.Size(851, 220);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Results";
@@ -788,7 +862,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(845, 213);
+            this.splitContainer1.Size = new System.Drawing.Size(845, 201);
             this.splitContainer1.SplitterDistance = 434;
             this.splitContainer1.TabIndex = 12;
             // 
@@ -807,7 +881,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox3);
-            this.splitContainer2.Size = new System.Drawing.Size(407, 213);
+            this.splitContainer2.Size = new System.Drawing.Size(407, 201);
             this.splitContainer2.SplitterDistance = 71;
             this.splitContainer2.TabIndex = 1;
             // 
@@ -905,7 +979,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(407, 138);
+            this.groupBox3.Size = new System.Drawing.Size(407, 126);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Associated Enquiry Curriculum";
@@ -961,7 +1035,7 @@
             this.dgvAssociatedEquiryCurriculum.RowHeadersWidth = 15;
             this.dgvAssociatedEquiryCurriculum.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvAssociatedEquiryCurriculum.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvAssociatedEquiryCurriculum.Size = new System.Drawing.Size(401, 119);
+            this.dgvAssociatedEquiryCurriculum.Size = new System.Drawing.Size(401, 107);
             this.dgvAssociatedEquiryCurriculum.TabIndex = 0;
             this.dgvAssociatedEquiryCurriculum.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvAssociatedEquiryCurriculum_DataBindingComplete);
             // 
@@ -1034,13 +1108,17 @@
             this.splitContainer3.ResumeLayout(false);
             this.gbSearchForStudent.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
@@ -1109,10 +1187,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentQuanityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCurriculumName;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdatedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewLinkColumn colSelect;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enquiryIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn initialConsultationCompleteDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enquiryDateDataGridViewTextBoxColumn;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroDateTime datFromDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
@@ -1136,5 +1210,14 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Components.MetroToolTip metroToolTip1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.DataGridViewLinkColumn colSelect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enquiryIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEnquiryStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enquiryDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private MetroFramework.Controls.MetroRadioButton radClosedEnquiry;
+        private MetroFramework.Controls.MetroRadioButton radActiveEnquiry;
     }
 }

@@ -706,6 +706,11 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             //}
 
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+
+        }
         //private void dtp_OnTextChange(object sender, EventArgs e)
         //{
         //    dgvCourseSschedule.CurrentCell.Value = dtp.Text.ToString();

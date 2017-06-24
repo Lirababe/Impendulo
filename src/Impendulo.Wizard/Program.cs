@@ -17,7 +17,7 @@ namespace Impendulo.Wizard
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmWizardTemplate());
+            Application.Run(new FrmWizardTemplateMenu());
         }
     }
 }

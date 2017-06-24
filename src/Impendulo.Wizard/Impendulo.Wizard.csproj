@@ -73,10 +73,28 @@
     <Compile Include="frmWizardTemplate.Designer.cs">
       <DependentUpon>frmWizardTemplate.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmWizardTemplateMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWizardTemplateMenu.Designer.cs">
+      <DependentUpon>FrmWizardTemplateMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWizardTemplateV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWizardTemplateV2.Designer.cs">
+      <DependentUpon>frmWizardTemplateV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmWizardTemplate.resx">
       <DependentUpon>frmWizardTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWizardTemplateMenu.resx">
+      <DependentUpon>FrmWizardTemplateMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWizardTemplateV2.resx">
+      <DependentUpon>frmWizardTemplateV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

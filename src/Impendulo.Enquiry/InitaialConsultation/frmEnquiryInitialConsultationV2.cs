@@ -34,13 +34,18 @@ namespace Impendulo.Enquiry.Development.InitaialConsultation
         {
             using (var Dbconnection = new MCDEntities())
             {
+                string InitialConsultationText = "None or No Notes where documented.";
+                if (txtNotes.Text.Length > 0)
+                {
+                    InitialConsultationText = txtNotes.Text;
+                }
                 EquiryHistory hist = new EquiryHistory
                 {
                     EnquiryID = CurrentEnquiry.EnquiryID,
                     EmployeeID = this.EmployeeID,
                     LookupEquiyHistoryTypeID = (int)EnumEquiryHistoryTypes.Enquiry_Initial_Consultation_Completed,
                     DateEnquiryUpdated = DateTime.Now,
-                    EnquiryNotes = txtNotes.Text
+                    EnquiryNotes = InitialConsultationText
                 };
                 Dbconnection.EquiryHistories.Add(hist);
                 int IsSaved = Dbconnection.SaveChanges();

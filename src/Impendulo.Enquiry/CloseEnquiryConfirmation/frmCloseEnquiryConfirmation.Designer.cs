@@ -1,6 +1,6 @@
-﻿namespace Impendulo.Enquiry.Development.InitaialConsultation
+﻿namespace Impendulo.Enquiry.Development.CloseEnquiryConfirmation
 {
-    partial class frmEnquiryInitialConsultationV2
+    partial class frmCloseEnquiryConfirmation
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEnquiryInitialConsultationV2));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSave = new MetroFramework.Controls.MetroButton();
@@ -55,8 +54,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(510, 252);
-            this.tableLayoutPanel1.TabIndex = 5;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(514, 314);
+            this.tableLayoutPanel1.TabIndex = 6;
             // 
             // flowLayoutPanel1
             // 
@@ -64,15 +63,15 @@
             this.flowLayoutPanel1.Controls.Add(this.btnCancel);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 220);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 282);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(504, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(508, 29);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // btnSave
             // 
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(380, 3);
+            this.btnSave.Location = new System.Drawing.Point(384, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(121, 23);
             this.btnSave.TabIndex = 3;
@@ -83,7 +82,7 @@
             // btnCancel
             // 
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Location = new System.Drawing.Point(253, 3);
+            this.btnCancel.Location = new System.Drawing.Point(257, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(121, 23);
             this.btnCancel.TabIndex = 4;
@@ -97,7 +96,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(504, 211);
+            this.panel1.Size = new System.Drawing.Size(508, 273);
             this.panel1.TabIndex = 4;
             // 
             // groupBox1
@@ -106,7 +105,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(504, 211);
+            this.groupBox1.Size = new System.Drawing.Size(508, 273);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Notes";
@@ -116,25 +115,19 @@
             this.txtNotes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNotes.Location = new System.Drawing.Point(3, 16);
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(498, 192);
+            this.txtNotes.Size = new System.Drawing.Size(502, 254);
             this.txtNotes.TabIndex = 0;
             this.txtNotes.Text = "";
             // 
-            // frmEnquiryInitialConsultationV2
+            // frmCloseEnquiryConfirmation
             // 
-            this.ApplyImageInvert = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
-            this.ClientSize = new System.Drawing.Size(550, 332);
+            this.ClientSize = new System.Drawing.Size(554, 394);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "frmEnquiryInitialConsultationV2";
-            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
-            this.Style = MetroFramework.MetroColorStyle.Yellow;
-            this.Text = "Initial Consultaion";
-            this.Load += new System.EventHandler(this.frmEnquiryInitialConsultationV2_Load);
+            this.Name = "frmCloseEnquiryConfirmation";
+            this.Text = "Close Enquiry";
+            this.Load += new System.EventHandler(this.frmCloseEnquiryConfirmation_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

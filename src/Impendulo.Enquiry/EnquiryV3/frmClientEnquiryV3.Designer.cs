@@ -33,42 +33,47 @@
             System.Windows.Forms.Label enquiryIDLabel;
             System.Windows.Forms.Label fullNameLabel;
             System.Windows.Forms.Label companyNameLabel1;
-            System.Windows.Forms.Label initialConsultationCompleteLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientEnquiryV3));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSearchForEnquiry = new MetroFramework.Controls.MetroTile();
-            this.btnViewProgressInProgressSections = new MetroFramework.Controls.MetroTile();
             this.btnCloseInprogressEnquiry = new MetroFramework.Controls.MetroTile();
+            this.btnViewProgressInProgressSections = new MetroFramework.Controls.MetroTile();
             this.btnInitialConsultationConfirmationInProgressSection = new MetroFramework.Controls.MetroTile();
+            this.enquiryDateTextBox = new System.Windows.Forms.TextBox();
+            this.enquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtEnquiryInProgressEnquiryID = new System.Windows.Forms.TextBox();
             this.gbInprogressContactNameAndCompanyName = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnInProgressSwitchBetweenCompanyANdPrivate = new MetroFramework.Controls.MetroTile();
             this.btnInProgressChangeContact = new MetroFramework.Controls.MetroTile();
-            this.initialConsultationCompleteCheckBox = new System.Windows.Forms.CheckBox();
-            this.fullNameTextBox = new System.Windows.Forms.TextBox();
-            this.individualsInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtInprogressCompanyName = new System.Windows.Forms.TextBox();
             this.companiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.enquiryDateTextBox = new System.Windows.Forms.TextBox();
-            this.txtEnquiryInProgressEnquiryID = new System.Windows.Forms.TextBox();
+            this.fullNameTextBox = new System.Windows.Forms.TextBox();
+            this.individualsInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.initialConsultationCompleteCheckBox = new System.Windows.Forms.CheckBox();
             this.gbInProgressContactDetails = new System.Windows.Forms.GroupBox();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.dgvInprogressContactDetails = new MetroFramework.Controls.MetroGrid();
             this.colInProgressContactType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInProgressContactDetailSendOption = new System.Windows.Forms.DataGridViewLinkColumn();
             this.contactDetailsInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
@@ -102,6 +107,11 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btrnInProgressSendInitialDocumentation = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnUpdateCurriculumEnquiryItemEnrollmentQty = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -119,13 +129,6 @@
             this.nextOfKinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.systemAdministratorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companiesInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colInProgressEnquiryCloseCurriculumEnquiry = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colInProgressCurriculumName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInProgressProcessEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colInProgressViewCurrentEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.enquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fullNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.individualIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -140,14 +143,48 @@
             this.nextOfKinDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.systemAdministratorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualFirstNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualSecondNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualLastnameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowVersionDataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.assessorDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facilitatorDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupTitleDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nextOfKinDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.systemAdministratorDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualIDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleIDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualFirstNameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualSecondNameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualLastnameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowVersionDataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.assessorDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facilitatorDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupTitleDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nextOfKinDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.systemAdministratorDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companiesInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colInProgressEnquiryCloseCurriculumEnquiry = new System.Windows.Forms.DataGridViewLinkColumn();
             this.lastUpdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInProgressCurriculumDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInProgressCurriculumName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInProgressCurriculumEnquiryStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentQuanityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInProgressProcessEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colInProgressViewCurrentEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
             enquiryDateLabel = new System.Windows.Forms.Label();
             enquiryIDLabel = new System.Windows.Forms.Label();
             fullNameLabel = new System.Windows.Forms.Label();
             companyNameLabel1 = new System.Windows.Forms.Label();
-            initialConsultationCompleteLabel = new System.Windows.Forms.Label();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -158,12 +195,16 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).BeginInit();
             this.gbInprogressContactNameAndCompanyName.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.individualsInprogressBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.individualsInprogressBindingSource)).BeginInit();
             this.gbInProgressContactDetails.SuspendLayout();
             this.toolStripContainer2.ContentPanel.SuspendLayout();
             this.toolStripContainer2.TopToolStripPanel.SuspendLayout();
@@ -181,13 +222,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingNavigator)).BeginInit();
             this.enquiryInprogressBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companiesInprogressBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // enquiryDateLabel
             // 
             enquiryDateLabel.AutoSize = true;
-            enquiryDateLabel.Location = new System.Drawing.Point(12, 47);
+            enquiryDateLabel.Location = new System.Drawing.Point(3, 34);
+            enquiryDateLabel.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
             enquiryDateLabel.Name = "enquiryDateLabel";
             enquiryDateLabel.Size = new System.Drawing.Size(71, 13);
             enquiryDateLabel.TabIndex = 0;
@@ -196,7 +237,8 @@
             // enquiryIDLabel
             // 
             enquiryIDLabel.AutoSize = true;
-            enquiryIDLabel.Location = new System.Drawing.Point(9, 22);
+            enquiryIDLabel.Location = new System.Drawing.Point(3, 7);
+            enquiryIDLabel.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
             enquiryIDLabel.Name = "enquiryIDLabel";
             enquiryIDLabel.Size = new System.Drawing.Size(65, 13);
             enquiryIDLabel.TabIndex = 2;
@@ -205,7 +247,8 @@
             // fullNameLabel
             // 
             fullNameLabel.AutoSize = true;
-            fullNameLabel.Location = new System.Drawing.Point(4, 22);
+            fullNameLabel.Location = new System.Drawing.Point(3, 7);
+            fullNameLabel.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
             fullNameLabel.Name = "fullNameLabel";
             fullNameLabel.Size = new System.Drawing.Size(57, 13);
             fullNameLabel.TabIndex = 7;
@@ -214,20 +257,12 @@
             // companyNameLabel1
             // 
             companyNameLabel1.AutoSize = true;
-            companyNameLabel1.Location = new System.Drawing.Point(7, 48);
+            companyNameLabel1.Location = new System.Drawing.Point(3, 33);
+            companyNameLabel1.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
             companyNameLabel1.Name = "companyNameLabel1";
             companyNameLabel1.Size = new System.Drawing.Size(54, 13);
             companyNameLabel1.TabIndex = 9;
             companyNameLabel1.Text = "Company:";
-            // 
-            // initialConsultationCompleteLabel
-            // 
-            initialConsultationCompleteLabel.AutoSize = true;
-            initialConsultationCompleteLabel.Location = new System.Drawing.Point(7, 77);
-            initialConsultationCompleteLabel.Name = "initialConsultationCompleteLabel";
-            initialConsultationCompleteLabel.Size = new System.Drawing.Size(142, 13);
-            initialConsultationCompleteLabel.TabIndex = 13;
-            initialConsultationCompleteLabel.Text = "Initial Consultation Complete:";
             // 
             // metroTabControl1
             // 
@@ -237,10 +272,10 @@
             this.metroTabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.HotTrack = true;
-            this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
+            this.metroTabControl1.Location = new System.Drawing.Point(20, 30);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 1;
-            this.metroTabControl1.Size = new System.Drawing.Size(809, 478);
+            this.metroTabControl1.Size = new System.Drawing.Size(809, 508);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
             // 
@@ -251,7 +286,7 @@
             this.metroTabPage1.HorizontalScrollbarSize = 10;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(801, 436);
+            this.metroTabPage1.Size = new System.Drawing.Size(801, 466);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Dash-Board";
             this.metroTabPage1.UseVisualStyleBackColor = true;
@@ -267,7 +302,7 @@
             this.metroTabPage2.HorizontalScrollbarSize = 10;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(801, 436);
+            this.metroTabPage2.Size = new System.Drawing.Size(801, 466);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Inprogress Enquiry Work Bench";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
@@ -286,12 +321,13 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Panel1MinSize = 185;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gbInProgressEnquiryEnrrolmentQueries);
-            this.splitContainer1.Size = new System.Drawing.Size(801, 436);
-            this.splitContainer1.SplitterDistance = 179;
+            this.splitContainer1.Size = new System.Drawing.Size(801, 466);
+            this.splitContainer1.SplitterDistance = 185;
             this.splitContainer1.TabIndex = 8;
             // 
             // splitContainer2
@@ -304,30 +340,61 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.AutoScroll = true;
-            this.splitContainer2.Panel1.Controls.Add(this.groupBox2);
+            this.splitContainer2.Panel1.Controls.Add(this.tableLayoutPanel6);
+            this.splitContainer2.Panel1MinSize = 450;
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.gbInProgressContactDetails);
-            this.splitContainer2.Size = new System.Drawing.Size(801, 179);
-            this.splitContainer2.SplitterDistance = 450;
+            this.splitContainer2.Size = new System.Drawing.Size(801, 185);
+            this.splitContainer2.SplitterDistance = 451;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.groupBox2, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.gbInprogressContactNameAndCompanyName, 0, 1);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.01075F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.98925F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(451, 185);
+            this.tableLayoutPanel6.TabIndex = 10;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox2.Controls.Add(this.gbInprogressContactNameAndCompanyName);
-            this.groupBox2.Controls.Add(enquiryDateLabel);
-            this.groupBox2.Controls.Add(this.enquiryDateTextBox);
-            this.groupBox2.Controls.Add(enquiryIDLabel);
-            this.groupBox2.Controls.Add(this.txtEnquiryInProgressEnquiryID);
+            this.groupBox2.Controls.Add(this.tableLayoutPanel4);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(450, 179);
+            this.groupBox2.Size = new System.Drawing.Size(445, 73);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Enquiry";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 239F));
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel1, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(enquiryIDLabel, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(enquiryDateLabel, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.enquiryDateTextBox, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txtEnquiryInProgressEnquiryID, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(439, 54);
+            this.tableLayoutPanel4.TabIndex = 18;
             // 
             // tableLayoutPanel1
             // 
@@ -337,14 +404,16 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Controls.Add(this.btnSearchForEnquiry, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnViewProgressInProgressSections, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnCloseInprogressEnquiry, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnInitialConsultationConfirmationInProgressSection, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(204, 19);
+            this.tableLayoutPanel1.Controls.Add(this.btnViewProgressInProgressSections, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnInitialConsultationConfirmationInProgressSection, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(203, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel4.SetRowSpan(this.tableLayoutPanel1, 2);
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(237, 45);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(233, 48);
             this.tableLayoutPanel1.TabIndex = 12;
             // 
             // btnSearchForEnquiry
@@ -353,7 +422,7 @@
             this.btnSearchForEnquiry.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearchForEnquiry.Location = new System.Drawing.Point(3, 3);
             this.btnSearchForEnquiry.Name = "btnSearchForEnquiry";
-            this.btnSearchForEnquiry.Size = new System.Drawing.Size(53, 39);
+            this.btnSearchForEnquiry.Size = new System.Drawing.Size(52, 42);
             this.btnSearchForEnquiry.TabIndex = 6;
             this.btnSearchForEnquiry.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearchForEnquiry.TileImage = ((System.Drawing.Image)(resources.GetObject("btnSearchForEnquiry.TileImage")));
@@ -363,13 +432,28 @@
             this.btnSearchForEnquiry.UseTileImage = true;
             this.btnSearchForEnquiry.Click += new System.EventHandler(this.btnSearchForEnquiry_Click);
             // 
+            // btnCloseInprogressEnquiry
+            // 
+            this.btnCloseInprogressEnquiry.ActiveControl = null;
+            this.btnCloseInprogressEnquiry.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCloseInprogressEnquiry.Location = new System.Drawing.Point(177, 3);
+            this.btnCloseInprogressEnquiry.Name = "btnCloseInprogressEnquiry";
+            this.btnCloseInprogressEnquiry.Size = new System.Drawing.Size(53, 42);
+            this.btnCloseInprogressEnquiry.TabIndex = 11;
+            this.btnCloseInprogressEnquiry.TileImage = ((System.Drawing.Image)(resources.GetObject("btnCloseInprogressEnquiry.TileImage")));
+            this.btnCloseInprogressEnquiry.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnCloseInprogressEnquiry, "Close The Enquiry, Closes All Enrollments Line Items As Well");
+            this.btnCloseInprogressEnquiry.UseSelectable = true;
+            this.btnCloseInprogressEnquiry.UseTileImage = true;
+            this.btnCloseInprogressEnquiry.Click += new System.EventHandler(this.btnCloseInprogressEnquiry_Click);
+            // 
             // btnViewProgressInProgressSections
             // 
             this.btnViewProgressInProgressSections.ActiveControl = null;
             this.btnViewProgressInProgressSections.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnViewProgressInProgressSections.Location = new System.Drawing.Point(62, 3);
+            this.btnViewProgressInProgressSections.Location = new System.Drawing.Point(119, 3);
             this.btnViewProgressInProgressSections.Name = "btnViewProgressInProgressSections";
-            this.btnViewProgressInProgressSections.Size = new System.Drawing.Size(53, 39);
+            this.btnViewProgressInProgressSections.Size = new System.Drawing.Size(52, 42);
             this.btnViewProgressInProgressSections.TabIndex = 10;
             this.btnViewProgressInProgressSections.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnViewProgressInProgressSections.TileImage = ((System.Drawing.Image)(resources.GetObject("btnViewProgressInProgressSections.TileImage")));
@@ -379,28 +463,14 @@
             this.btnViewProgressInProgressSections.UseTileImage = true;
             this.btnViewProgressInProgressSections.Click += new System.EventHandler(this.btnViewProgressInProgressSections_Click);
             // 
-            // btnCloseInprogressEnquiry
-            // 
-            this.btnCloseInprogressEnquiry.ActiveControl = null;
-            this.btnCloseInprogressEnquiry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCloseInprogressEnquiry.Location = new System.Drawing.Point(180, 3);
-            this.btnCloseInprogressEnquiry.Name = "btnCloseInprogressEnquiry";
-            this.btnCloseInprogressEnquiry.Size = new System.Drawing.Size(54, 39);
-            this.btnCloseInprogressEnquiry.TabIndex = 11;
-            this.btnCloseInprogressEnquiry.TileImage = ((System.Drawing.Image)(resources.GetObject("btnCloseInprogressEnquiry.TileImage")));
-            this.btnCloseInprogressEnquiry.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.toolTip1.SetToolTip(this.btnCloseInprogressEnquiry, "Close The Enquiry, Closes All Enrollments Line Items As Well");
-            this.btnCloseInprogressEnquiry.UseSelectable = true;
-            this.btnCloseInprogressEnquiry.UseTileImage = true;
-            // 
             // btnInitialConsultationConfirmationInProgressSection
             // 
             this.btnInitialConsultationConfirmationInProgressSection.ActiveControl = null;
             this.btnInitialConsultationConfirmationInProgressSection.BackColor = System.Drawing.Color.Olive;
             this.btnInitialConsultationConfirmationInProgressSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnInitialConsultationConfirmationInProgressSection.Location = new System.Drawing.Point(121, 3);
+            this.btnInitialConsultationConfirmationInProgressSection.Location = new System.Drawing.Point(61, 3);
             this.btnInitialConsultationConfirmationInProgressSection.Name = "btnInitialConsultationConfirmationInProgressSection";
-            this.btnInitialConsultationConfirmationInProgressSection.Size = new System.Drawing.Size(53, 39);
+            this.btnInitialConsultationConfirmationInProgressSection.Size = new System.Drawing.Size(52, 42);
             this.btnInitialConsultationConfirmationInProgressSection.TabIndex = 12;
             this.btnInitialConsultationConfirmationInProgressSection.TileImage = ((System.Drawing.Image)(resources.GetObject("btnInitialConsultationConfirmationInProgressSection.TileImage")));
             this.btnInitialConsultationConfirmationInProgressSection.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -409,22 +479,65 @@
             this.btnInitialConsultationConfirmationInProgressSection.UseTileImage = true;
             this.btnInitialConsultationConfirmationInProgressSection.Click += new System.EventHandler(this.btnInitialConsultationConfirmation_Click);
             // 
+            // enquiryDateTextBox
+            // 
+            this.enquiryDateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enquiryInprogressBindingSource, "EnquiryDate", true));
+            this.enquiryDateTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.enquiryDateTextBox.Location = new System.Drawing.Point(85, 30);
+            this.enquiryDateTextBox.Name = "enquiryDateTextBox";
+            this.enquiryDateTextBox.ReadOnly = true;
+            this.enquiryDateTextBox.Size = new System.Drawing.Size(112, 20);
+            this.enquiryDateTextBox.TabIndex = 1;
+            this.enquiryDateTextBox.TextChanged += new System.EventHandler(this.enquiryDateTextBox_TextChanged);
+            // 
+            // enquiryInprogressBindingSource
+            // 
+            this.enquiryInprogressBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
+            this.enquiryInprogressBindingSource.BindingComplete += new System.Windows.Forms.BindingCompleteEventHandler(this.enquiryInprogressBindingSource_BindingComplete);
+            // 
+            // txtEnquiryInProgressEnquiryID
+            // 
+            this.txtEnquiryInProgressEnquiryID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enquiryInprogressBindingSource, "EnquiryID", true));
+            this.txtEnquiryInProgressEnquiryID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtEnquiryInProgressEnquiryID.Location = new System.Drawing.Point(85, 3);
+            this.txtEnquiryInProgressEnquiryID.Name = "txtEnquiryInProgressEnquiryID";
+            this.txtEnquiryInProgressEnquiryID.ReadOnly = true;
+            this.txtEnquiryInProgressEnquiryID.Size = new System.Drawing.Size(112, 20);
+            this.txtEnquiryInProgressEnquiryID.TabIndex = 3;
+            // 
             // gbInprogressContactNameAndCompanyName
             // 
-            this.gbInprogressContactNameAndCompanyName.Controls.Add(this.tableLayoutPanel2);
-            this.gbInprogressContactNameAndCompanyName.Controls.Add(initialConsultationCompleteLabel);
-            this.gbInprogressContactNameAndCompanyName.Controls.Add(this.initialConsultationCompleteCheckBox);
-            this.gbInprogressContactNameAndCompanyName.Controls.Add(this.fullNameTextBox);
-            this.gbInprogressContactNameAndCompanyName.Controls.Add(companyNameLabel1);
-            this.gbInprogressContactNameAndCompanyName.Controls.Add(this.txtInprogressCompanyName);
-            this.gbInprogressContactNameAndCompanyName.Controls.Add(fullNameLabel);
-            this.gbInprogressContactNameAndCompanyName.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gbInprogressContactNameAndCompanyName.Location = new System.Drawing.Point(3, 73);
+            this.gbInprogressContactNameAndCompanyName.Controls.Add(this.tableLayoutPanel5);
+            this.gbInprogressContactNameAndCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbInprogressContactNameAndCompanyName.Location = new System.Drawing.Point(3, 82);
             this.gbInprogressContactNameAndCompanyName.Name = "gbInprogressContactNameAndCompanyName";
-            this.gbInprogressContactNameAndCompanyName.Size = new System.Drawing.Size(444, 103);
+            this.gbInprogressContactNameAndCompanyName.Size = new System.Drawing.Size(445, 100);
             this.gbInprogressContactNameAndCompanyName.TabIndex = 9;
             this.gbInprogressContactNameAndCompanyName.TabStop = false;
             this.gbInprogressContactNameAndCompanyName.Text = "Company Contact Or ( Student Details if Private )";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 288F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel2, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.txtInprogressCompanyName, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.fullNameTextBox, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(fullNameLabel, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(companyNameLabel1, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.initialConsultationCompleteCheckBox, 1, 2);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(439, 81);
+            this.tableLayoutPanel5.TabIndex = 18;
             // 
             // tableLayoutPanel2
             // 
@@ -433,11 +546,13 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.btnInProgressSwitchBetweenCompanyANdPrivate, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnInProgressChangeContact, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(343, 19);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(357, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel5.SetRowSpan(this.tableLayoutPanel2, 2);
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(95, 46);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(86, 46);
             this.tableLayoutPanel2.TabIndex = 16;
             // 
             // btnInProgressSwitchBetweenCompanyANdPrivate
@@ -446,7 +561,7 @@
             this.btnInProgressSwitchBetweenCompanyANdPrivate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnInProgressSwitchBetweenCompanyANdPrivate.Location = new System.Drawing.Point(3, 3);
             this.btnInProgressSwitchBetweenCompanyANdPrivate.Name = "btnInProgressSwitchBetweenCompanyANdPrivate";
-            this.btnInProgressSwitchBetweenCompanyANdPrivate.Size = new System.Drawing.Size(41, 40);
+            this.btnInProgressSwitchBetweenCompanyANdPrivate.Size = new System.Drawing.Size(37, 40);
             this.btnInProgressSwitchBetweenCompanyANdPrivate.TabIndex = 12;
             this.btnInProgressSwitchBetweenCompanyANdPrivate.TileImage = ((System.Drawing.Image)(resources.GetObject("btnInProgressSwitchBetweenCompanyANdPrivate.TileImage")));
             this.btnInProgressSwitchBetweenCompanyANdPrivate.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -459,9 +574,9 @@
             // 
             this.btnInProgressChangeContact.ActiveControl = null;
             this.btnInProgressChangeContact.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnInProgressChangeContact.Location = new System.Drawing.Point(50, 3);
+            this.btnInProgressChangeContact.Location = new System.Drawing.Point(46, 3);
             this.btnInProgressChangeContact.Name = "btnInProgressChangeContact";
-            this.btnInProgressChangeContact.Size = new System.Drawing.Size(42, 40);
+            this.btnInProgressChangeContact.Size = new System.Drawing.Size(37, 40);
             this.btnInProgressChangeContact.TabIndex = 15;
             this.btnInProgressChangeContact.TileImage = ((System.Drawing.Image)(resources.GetObject("btnInProgressChangeContact.TileImage")));
             this.btnInProgressChangeContact.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -470,37 +585,14 @@
             this.btnInProgressChangeContact.UseTileImage = true;
             this.btnInProgressChangeContact.Click += new System.EventHandler(this.btnInProgressChangeContact_Click);
             // 
-            // initialConsultationCompleteCheckBox
-            // 
-            this.initialConsultationCompleteCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.enquiryInprogressBindingSource, "InitialConsultationComplete", true));
-            this.initialConsultationCompleteCheckBox.Enabled = false;
-            this.initialConsultationCompleteCheckBox.Location = new System.Drawing.Point(155, 72);
-            this.initialConsultationCompleteCheckBox.Name = "initialConsultationCompleteCheckBox";
-            this.initialConsultationCompleteCheckBox.Size = new System.Drawing.Size(21, 24);
-            this.initialConsultationCompleteCheckBox.TabIndex = 14;
-            this.initialConsultationCompleteCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // fullNameTextBox
-            // 
-            this.fullNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.individualsInprogressBindingSource, "FullName", true));
-            this.fullNameTextBox.Location = new System.Drawing.Point(67, 19);
-            this.fullNameTextBox.Name = "fullNameTextBox";
-            this.fullNameTextBox.ReadOnly = true;
-            this.fullNameTextBox.Size = new System.Drawing.Size(270, 20);
-            this.fullNameTextBox.TabIndex = 11;
-            // 
-            // individualsInprogressBindingSource
-            // 
-            this.individualsInprogressBindingSource.DataMember = "Individuals";
-            this.individualsInprogressBindingSource.DataSource = this.enquiryInprogressBindingSource;
-            // 
             // txtInprogressCompanyName
             // 
             this.txtInprogressCompanyName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companiesBindingSource, "CompanyName", true));
-            this.txtInprogressCompanyName.Location = new System.Drawing.Point(67, 45);
+            this.txtInprogressCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInprogressCompanyName.Location = new System.Drawing.Point(69, 29);
             this.txtInprogressCompanyName.Name = "txtInprogressCompanyName";
             this.txtInprogressCompanyName.ReadOnly = true;
-            this.txtInprogressCompanyName.Size = new System.Drawing.Size(270, 20);
+            this.txtInprogressCompanyName.Size = new System.Drawing.Size(282, 20);
             this.txtInprogressCompanyName.TabIndex = 10;
             // 
             // companiesBindingSource
@@ -508,24 +600,33 @@
             this.companiesBindingSource.DataMember = "Companies";
             this.companiesBindingSource.DataSource = this.enquiryInprogressBindingSource;
             // 
-            // enquiryDateTextBox
+            // fullNameTextBox
             // 
-            this.enquiryDateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enquiryInprogressBindingSource, "EnquiryDate", true));
-            this.enquiryDateTextBox.Location = new System.Drawing.Point(89, 44);
-            this.enquiryDateTextBox.Name = "enquiryDateTextBox";
-            this.enquiryDateTextBox.ReadOnly = true;
-            this.enquiryDateTextBox.Size = new System.Drawing.Size(109, 20);
-            this.enquiryDateTextBox.TabIndex = 1;
-            this.enquiryDateTextBox.TextChanged += new System.EventHandler(this.enquiryDateTextBox_TextChanged);
+            this.fullNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.individualsInprogressBindingSource, "FullName", true));
+            this.fullNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fullNameTextBox.Location = new System.Drawing.Point(69, 3);
+            this.fullNameTextBox.Name = "fullNameTextBox";
+            this.fullNameTextBox.ReadOnly = true;
+            this.fullNameTextBox.Size = new System.Drawing.Size(282, 20);
+            this.fullNameTextBox.TabIndex = 11;
             // 
-            // txtEnquiryInProgressEnquiryID
+            // individualsInprogressBindingSource
             // 
-            this.txtEnquiryInProgressEnquiryID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enquiryInprogressBindingSource, "EnquiryID", true));
-            this.txtEnquiryInProgressEnquiryID.Location = new System.Drawing.Point(89, 19);
-            this.txtEnquiryInProgressEnquiryID.Name = "txtEnquiryInProgressEnquiryID";
-            this.txtEnquiryInProgressEnquiryID.ReadOnly = true;
-            this.txtEnquiryInProgressEnquiryID.Size = new System.Drawing.Size(109, 20);
-            this.txtEnquiryInProgressEnquiryID.TabIndex = 3;
+            this.individualsInprogressBindingSource.DataMember = "Individuals";
+            this.individualsInprogressBindingSource.DataSource = this.enquiryInprogressBindingSource;
+            // 
+            // initialConsultationCompleteCheckBox
+            // 
+            this.initialConsultationCompleteCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.enquiryInprogressBindingSource, "InitialConsultationComplete", true));
+            this.initialConsultationCompleteCheckBox.Enabled = false;
+            this.initialConsultationCompleteCheckBox.Location = new System.Drawing.Point(69, 55);
+            this.initialConsultationCompleteCheckBox.Name = "initialConsultationCompleteCheckBox";
+            this.initialConsultationCompleteCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.initialConsultationCompleteCheckBox.Size = new System.Drawing.Size(171, 24);
+            this.initialConsultationCompleteCheckBox.TabIndex = 14;
+            this.initialConsultationCompleteCheckBox.Text = "Initial Consultation Complete";
+            this.initialConsultationCompleteCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.initialConsultationCompleteCheckBox.UseVisualStyleBackColor = true;
             // 
             // gbInProgressContactDetails
             // 
@@ -533,7 +634,7 @@
             this.gbInProgressContactDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbInProgressContactDetails.Location = new System.Drawing.Point(0, 0);
             this.gbInProgressContactDetails.Name = "gbInProgressContactDetails";
-            this.gbInProgressContactDetails.Size = new System.Drawing.Size(347, 179);
+            this.gbInProgressContactDetails.Size = new System.Drawing.Size(346, 185);
             this.gbInProgressContactDetails.TabIndex = 0;
             this.gbInProgressContactDetails.TabStop = false;
             this.gbInProgressContactDetails.Text = "Contact Details";
@@ -544,11 +645,11 @@
             // toolStripContainer2.ContentPanel
             // 
             this.toolStripContainer2.ContentPanel.Controls.Add(this.dgvInprogressContactDetails);
-            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(341, 135);
+            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(340, 141);
             this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer2.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainer2.Name = "toolStripContainer2";
-            this.toolStripContainer2.Size = new System.Drawing.Size(341, 160);
+            this.toolStripContainer2.Size = new System.Drawing.Size(340, 166);
             this.toolStripContainer2.TabIndex = 0;
             this.toolStripContainer2.Text = "toolStripContainer2";
             // 
@@ -607,7 +708,7 @@
             this.dgvInprogressContactDetails.RowHeadersWidth = 15;
             this.dgvInprogressContactDetails.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvInprogressContactDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvInprogressContactDetails.Size = new System.Drawing.Size(341, 135);
+            this.dgvInprogressContactDetails.Size = new System.Drawing.Size(340, 141);
             this.dgvInprogressContactDetails.TabIndex = 0;
             this.dgvInprogressContactDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInprogressContactDetails_CellContentClick);
             this.dgvInprogressContactDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvInprogressContactDetails_DataBindingComplete);
@@ -617,6 +718,16 @@
             this.colInProgressContactType.HeaderText = "Contact Type";
             this.colInProgressContactType.Name = "colInProgressContactType";
             this.colInProgressContactType.ReadOnly = true;
+            // 
+            // contactDetailValueDataGridViewTextBoxColumn
+            // 
+            this.contactDetailValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.contactDetailValueDataGridViewTextBoxColumn.DataPropertyName = "ContactDetailValue";
+            this.contactDetailValueDataGridViewTextBoxColumn.HeaderText = "Contact Detail";
+            this.contactDetailValueDataGridViewTextBoxColumn.MinimumWidth = 105;
+            this.contactDetailValueDataGridViewTextBoxColumn.Name = "contactDetailValueDataGridViewTextBoxColumn";
+            this.contactDetailValueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.contactDetailValueDataGridViewTextBoxColumn.Width = 105;
             // 
             // colInProgressContactDetailSendOption
             // 
@@ -665,7 +776,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(341, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(340, 25);
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 0;
             // 
@@ -783,7 +894,7 @@
             this.gbInProgressEnquiryEnrrolmentQueries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbInProgressEnquiryEnrrolmentQueries.Location = new System.Drawing.Point(0, 0);
             this.gbInProgressEnquiryEnrrolmentQueries.Name = "gbInProgressEnquiryEnrrolmentQueries";
-            this.gbInProgressEnquiryEnrrolmentQueries.Size = new System.Drawing.Size(801, 253);
+            this.gbInProgressEnquiryEnrrolmentQueries.Size = new System.Drawing.Size(801, 277);
             this.gbInProgressEnquiryEnrrolmentQueries.TabIndex = 0;
             this.gbInProgressEnquiryEnrrolmentQueries.TabStop = false;
             this.gbInProgressEnquiryEnrrolmentQueries.Text = "Enquiry Enrollment Queries";
@@ -794,11 +905,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvInProgressCurriculumEnquiries);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(795, 209);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(795, 233);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(795, 234);
+            this.toolStripContainer1.Size = new System.Drawing.Size(795, 258);
             this.toolStripContainer1.TabIndex = 2;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -826,22 +937,24 @@
             this.dgvInProgressCurriculumEnquiries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInProgressCurriculumEnquiries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInProgressCurriculumEnquiries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.lastUpdatedDataGridViewTextBoxColumn,
             this.colInProgressEnquiryCloseCurriculumEnquiry,
+            this.lastUpdatedDataGridViewTextBoxColumn,
+            this.colInProgressCurriculumDepartment,
             this.colInProgressCurriculumName,
+            this.colInProgressCurriculumEnquiryStatus,
             this.enrollmentQuanityDataGridViewTextBoxColumn,
             this.colInProgressEnquiryQuantityCurrentlyEnrolled,
             this.colInProgressProcessEnrollment,
             this.colInProgressViewCurrentEnrollment});
             this.dgvInProgressCurriculumEnquiries.DataSource = this.curriculumEnquiryInprogressBindingSource;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInProgressCurriculumEnquiries.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInProgressCurriculumEnquiries.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvInProgressCurriculumEnquiries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInProgressCurriculumEnquiries.EnableHeadersVisualStyles = false;
             this.dgvInProgressCurriculumEnquiries.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -850,18 +963,18 @@
             this.dgvInProgressCurriculumEnquiries.Name = "dgvInProgressCurriculumEnquiries";
             this.dgvInProgressCurriculumEnquiries.ReadOnly = true;
             this.dgvInProgressCurriculumEnquiries.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInProgressCurriculumEnquiries.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInProgressCurriculumEnquiries.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvInProgressCurriculumEnquiries.RowHeadersWidth = 15;
             this.dgvInProgressCurriculumEnquiries.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvInProgressCurriculumEnquiries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvInProgressCurriculumEnquiries.Size = new System.Drawing.Size(795, 209);
+            this.dgvInProgressCurriculumEnquiries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInProgressCurriculumEnquiries.Size = new System.Drawing.Size(795, 233);
             this.dgvInProgressCurriculumEnquiries.TabIndex = 0;
             this.dgvInProgressCurriculumEnquiries.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInProgressCurriculumEnquiries_CellContentClick);
             this.dgvInProgressCurriculumEnquiries.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvInProgressCurriculumEnquiries_DataBindingComplete);
@@ -889,7 +1002,12 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
+            this.bindingNavigatorDeleteItem,
+            this.toolStripSeparator3,
+            this.btrnInProgressSendInitialDocumentation,
+            this.toolStripSeparator4,
+            this.btnUpdateCurriculumEnquiryItemEnrollmentQty,
+            this.toolStripSeparator5});
             this.enquiryInprogressBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.enquiryInprogressBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.enquiryInprogressBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -977,6 +1095,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.ToolTipText = "Add Additional Enquiry Items";
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -986,6 +1105,43 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.ToolTipText = "Cancel/Close Enquiry Item";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btrnInProgressSendInitialDocumentation
+            // 
+            this.btrnInProgressSendInitialDocumentation.Image = ((System.Drawing.Image)(resources.GetObject("btrnInProgressSendInitialDocumentation.Image")));
+            this.btrnInProgressSendInitialDocumentation.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btrnInProgressSendInitialDocumentation.Name = "btrnInProgressSendInitialDocumentation";
+            this.btrnInProgressSendInitialDocumentation.Size = new System.Drawing.Size(171, 22);
+            this.btrnInProgressSendInitialDocumentation.Text = "Send Initail Documentation";
+            this.btrnInProgressSendInitialDocumentation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btrnInProgressSendInitialDocumentation.ToolTipText = "Send Initial Documentation after Initial Consultation";
+            this.btrnInProgressSendInitialDocumentation.Click += new System.EventHandler(this.btrnInProgressSendInitialDocumentation_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnUpdateCurriculumEnquiryItemEnrollmentQty
+            // 
+            this.btnUpdateCurriculumEnquiryItemEnrollmentQty.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateCurriculumEnquiryItemEnrollmentQty.Image")));
+            this.btnUpdateCurriculumEnquiryItemEnrollmentQty.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnUpdateCurriculumEnquiryItemEnrollmentQty.Name = "btnUpdateCurriculumEnquiryItemEnrollmentQty";
+            this.btnUpdateCurriculumEnquiryItemEnrollmentQty.Size = new System.Drawing.Size(87, 22);
+            this.btnUpdateCurriculumEnquiryItemEnrollmentQty.Text = "Update Qty";
+            this.btnUpdateCurriculumEnquiryItemEnrollmentQty.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnUpdateCurriculumEnquiryItemEnrollmentQty.Click += new System.EventHandler(this.btnUpdateCurriculumEnquiryItemEnrollmentQty_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
             // metroTabPage3
             // 
@@ -994,7 +1150,7 @@
             this.metroTabPage3.HorizontalScrollbarSize = 10;
             this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(801, 436);
+            this.metroTabPage3.Size = new System.Drawing.Size(801, 466);
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "Completed Enquiry";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
@@ -1098,69 +1254,6 @@
             this.systemAdministratorDataGridViewTextBoxColumn.HeaderText = "SystemAdministrator";
             this.systemAdministratorDataGridViewTextBoxColumn.Name = "systemAdministratorDataGridViewTextBoxColumn";
             // 
-            // companiesInprogressBindingSource
-            // 
-            this.companiesInprogressBindingSource.DataMember = "Companies";
-            this.companiesInprogressBindingSource.DataSource = this.individualsInprogressBindingSource;
-            // 
-            // colInProgressEnquiryCloseCurriculumEnquiry
-            // 
-            this.colInProgressEnquiryCloseCurriculumEnquiry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.HeaderText = "";
-            this.colInProgressEnquiryCloseCurriculumEnquiry.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.Name = "colInProgressEnquiryCloseCurriculumEnquiry";
-            this.colInProgressEnquiryCloseCurriculumEnquiry.ReadOnly = true;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.Text = "[ Close Enquiry Item ]";
-            this.colInProgressEnquiryCloseCurriculumEnquiry.TrackVisitedState = false;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.UseColumnTextForLinkValue = true;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.Width = 5;
-            // 
-            // colInProgressCurriculumName
-            // 
-            this.colInProgressCurriculumName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colInProgressCurriculumName.HeaderText = "Curriculum";
-            this.colInProgressCurriculumName.Name = "colInProgressCurriculumName";
-            this.colInProgressCurriculumName.ReadOnly = true;
-            this.colInProgressCurriculumName.Width = 86;
-            // 
-            // colInProgressEnquiryQuantityCurrentlyEnrolled
-            // 
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.HeaderText = "Qty Enrolled";
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.Name = "colInProgressEnquiryQuantityCurrentlyEnrolled";
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.ReadOnly = true;
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.Width = 93;
-            // 
-            // colInProgressProcessEnrollment
-            // 
-            this.colInProgressProcessEnrollment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colInProgressProcessEnrollment.HeaderText = "";
-            this.colInProgressProcessEnrollment.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colInProgressProcessEnrollment.Name = "colInProgressProcessEnrollment";
-            this.colInProgressProcessEnrollment.ReadOnly = true;
-            this.colInProgressProcessEnrollment.Text = "Process Enrollment";
-            this.colInProgressProcessEnrollment.TrackVisitedState = false;
-            this.colInProgressProcessEnrollment.UseColumnTextForLinkValue = true;
-            this.colInProgressProcessEnrollment.Width = 5;
-            // 
-            // colInProgressViewCurrentEnrollment
-            // 
-            this.colInProgressViewCurrentEnrollment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colInProgressViewCurrentEnrollment.HeaderText = "";
-            this.colInProgressViewCurrentEnrollment.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colInProgressViewCurrentEnrollment.Name = "colInProgressViewCurrentEnrollment";
-            this.colInProgressViewCurrentEnrollment.ReadOnly = true;
-            this.colInProgressViewCurrentEnrollment.Text = "View Current Enrollments";
-            this.colInProgressViewCurrentEnrollment.TrackVisitedState = false;
-            this.colInProgressViewCurrentEnrollment.UseColumnTextForLinkValue = true;
-            // 
-            // enquiryInprogressBindingSource
-            // 
-            this.enquiryInprogressBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
-            this.enquiryInprogressBindingSource.BindingComplete += new System.Windows.Forms.BindingCompleteEventHandler(this.enquiryInprogressBindingSource_BindingComplete);
-            // 
             // fullNameDataGridViewTextBoxColumn1
             // 
             this.fullNameDataGridViewTextBoxColumn1.DataPropertyName = "FullName";
@@ -1246,15 +1339,193 @@
             this.systemAdministratorDataGridViewTextBoxColumn1.HeaderText = "SystemAdministrator";
             this.systemAdministratorDataGridViewTextBoxColumn1.Name = "systemAdministratorDataGridViewTextBoxColumn1";
             // 
-            // contactDetailValueDataGridViewTextBoxColumn
+            // fullNameDataGridViewTextBoxColumn2
             // 
-            this.contactDetailValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.contactDetailValueDataGridViewTextBoxColumn.DataPropertyName = "ContactDetailValue";
-            this.contactDetailValueDataGridViewTextBoxColumn.HeaderText = "Contact Detail";
-            this.contactDetailValueDataGridViewTextBoxColumn.MinimumWidth = 105;
-            this.contactDetailValueDataGridViewTextBoxColumn.Name = "contactDetailValueDataGridViewTextBoxColumn";
-            this.contactDetailValueDataGridViewTextBoxColumn.ReadOnly = true;
-            this.contactDetailValueDataGridViewTextBoxColumn.Width = 105;
+            this.fullNameDataGridViewTextBoxColumn2.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn2.HeaderText = "FullName";
+            this.fullNameDataGridViewTextBoxColumn2.Name = "fullNameDataGridViewTextBoxColumn2";
+            this.fullNameDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // individualIDDataGridViewTextBoxColumn2
+            // 
+            this.individualIDDataGridViewTextBoxColumn2.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn2.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn2.Name = "individualIDDataGridViewTextBoxColumn2";
+            // 
+            // titleIDDataGridViewTextBoxColumn2
+            // 
+            this.titleIDDataGridViewTextBoxColumn2.DataPropertyName = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn2.HeaderText = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn2.Name = "titleIDDataGridViewTextBoxColumn2";
+            // 
+            // individualFirstNameDataGridViewTextBoxColumn2
+            // 
+            this.individualFirstNameDataGridViewTextBoxColumn2.DataPropertyName = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn2.HeaderText = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn2.Name = "individualFirstNameDataGridViewTextBoxColumn2";
+            // 
+            // individualSecondNameDataGridViewTextBoxColumn2
+            // 
+            this.individualSecondNameDataGridViewTextBoxColumn2.DataPropertyName = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn2.HeaderText = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn2.Name = "individualSecondNameDataGridViewTextBoxColumn2";
+            // 
+            // individualLastnameDataGridViewTextBoxColumn2
+            // 
+            this.individualLastnameDataGridViewTextBoxColumn2.DataPropertyName = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn2.HeaderText = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn2.Name = "individualLastnameDataGridViewTextBoxColumn2";
+            // 
+            // rowVersionDataGridViewImageColumn2
+            // 
+            this.rowVersionDataGridViewImageColumn2.DataPropertyName = "RowVersion";
+            this.rowVersionDataGridViewImageColumn2.HeaderText = "RowVersion";
+            this.rowVersionDataGridViewImageColumn2.Name = "rowVersionDataGridViewImageColumn2";
+            // 
+            // assessorDataGridViewTextBoxColumn2
+            // 
+            this.assessorDataGridViewTextBoxColumn2.DataPropertyName = "Assessor";
+            this.assessorDataGridViewTextBoxColumn2.HeaderText = "Assessor";
+            this.assessorDataGridViewTextBoxColumn2.Name = "assessorDataGridViewTextBoxColumn2";
+            // 
+            // employeeDataGridViewTextBoxColumn2
+            // 
+            this.employeeDataGridViewTextBoxColumn2.DataPropertyName = "Employee";
+            this.employeeDataGridViewTextBoxColumn2.HeaderText = "Employee";
+            this.employeeDataGridViewTextBoxColumn2.Name = "employeeDataGridViewTextBoxColumn2";
+            // 
+            // facilitatorDataGridViewTextBoxColumn2
+            // 
+            this.facilitatorDataGridViewTextBoxColumn2.DataPropertyName = "Facilitator";
+            this.facilitatorDataGridViewTextBoxColumn2.HeaderText = "Facilitator";
+            this.facilitatorDataGridViewTextBoxColumn2.Name = "facilitatorDataGridViewTextBoxColumn2";
+            // 
+            // lookupTitleDataGridViewTextBoxColumn2
+            // 
+            this.lookupTitleDataGridViewTextBoxColumn2.DataPropertyName = "LookupTitle";
+            this.lookupTitleDataGridViewTextBoxColumn2.HeaderText = "LookupTitle";
+            this.lookupTitleDataGridViewTextBoxColumn2.Name = "lookupTitleDataGridViewTextBoxColumn2";
+            // 
+            // nextOfKinDataGridViewTextBoxColumn2
+            // 
+            this.nextOfKinDataGridViewTextBoxColumn2.DataPropertyName = "NextOfKin";
+            this.nextOfKinDataGridViewTextBoxColumn2.HeaderText = "NextOfKin";
+            this.nextOfKinDataGridViewTextBoxColumn2.Name = "nextOfKinDataGridViewTextBoxColumn2";
+            // 
+            // studentDataGridViewTextBoxColumn2
+            // 
+            this.studentDataGridViewTextBoxColumn2.DataPropertyName = "Student";
+            this.studentDataGridViewTextBoxColumn2.HeaderText = "Student";
+            this.studentDataGridViewTextBoxColumn2.Name = "studentDataGridViewTextBoxColumn2";
+            // 
+            // systemAdministratorDataGridViewTextBoxColumn2
+            // 
+            this.systemAdministratorDataGridViewTextBoxColumn2.DataPropertyName = "SystemAdministrator";
+            this.systemAdministratorDataGridViewTextBoxColumn2.HeaderText = "SystemAdministrator";
+            this.systemAdministratorDataGridViewTextBoxColumn2.Name = "systemAdministratorDataGridViewTextBoxColumn2";
+            // 
+            // fullNameDataGridViewTextBoxColumn3
+            // 
+            this.fullNameDataGridViewTextBoxColumn3.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn3.HeaderText = "FullName";
+            this.fullNameDataGridViewTextBoxColumn3.Name = "fullNameDataGridViewTextBoxColumn3";
+            this.fullNameDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // individualIDDataGridViewTextBoxColumn3
+            // 
+            this.individualIDDataGridViewTextBoxColumn3.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn3.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn3.Name = "individualIDDataGridViewTextBoxColumn3";
+            // 
+            // titleIDDataGridViewTextBoxColumn3
+            // 
+            this.titleIDDataGridViewTextBoxColumn3.DataPropertyName = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn3.HeaderText = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn3.Name = "titleIDDataGridViewTextBoxColumn3";
+            // 
+            // individualFirstNameDataGridViewTextBoxColumn3
+            // 
+            this.individualFirstNameDataGridViewTextBoxColumn3.DataPropertyName = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn3.HeaderText = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn3.Name = "individualFirstNameDataGridViewTextBoxColumn3";
+            // 
+            // individualSecondNameDataGridViewTextBoxColumn3
+            // 
+            this.individualSecondNameDataGridViewTextBoxColumn3.DataPropertyName = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn3.HeaderText = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn3.Name = "individualSecondNameDataGridViewTextBoxColumn3";
+            // 
+            // individualLastnameDataGridViewTextBoxColumn3
+            // 
+            this.individualLastnameDataGridViewTextBoxColumn3.DataPropertyName = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn3.HeaderText = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn3.Name = "individualLastnameDataGridViewTextBoxColumn3";
+            // 
+            // rowVersionDataGridViewImageColumn3
+            // 
+            this.rowVersionDataGridViewImageColumn3.DataPropertyName = "RowVersion";
+            this.rowVersionDataGridViewImageColumn3.HeaderText = "RowVersion";
+            this.rowVersionDataGridViewImageColumn3.Name = "rowVersionDataGridViewImageColumn3";
+            // 
+            // assessorDataGridViewTextBoxColumn3
+            // 
+            this.assessorDataGridViewTextBoxColumn3.DataPropertyName = "Assessor";
+            this.assessorDataGridViewTextBoxColumn3.HeaderText = "Assessor";
+            this.assessorDataGridViewTextBoxColumn3.Name = "assessorDataGridViewTextBoxColumn3";
+            // 
+            // employeeDataGridViewTextBoxColumn3
+            // 
+            this.employeeDataGridViewTextBoxColumn3.DataPropertyName = "Employee";
+            this.employeeDataGridViewTextBoxColumn3.HeaderText = "Employee";
+            this.employeeDataGridViewTextBoxColumn3.Name = "employeeDataGridViewTextBoxColumn3";
+            // 
+            // facilitatorDataGridViewTextBoxColumn3
+            // 
+            this.facilitatorDataGridViewTextBoxColumn3.DataPropertyName = "Facilitator";
+            this.facilitatorDataGridViewTextBoxColumn3.HeaderText = "Facilitator";
+            this.facilitatorDataGridViewTextBoxColumn3.Name = "facilitatorDataGridViewTextBoxColumn3";
+            // 
+            // lookupTitleDataGridViewTextBoxColumn3
+            // 
+            this.lookupTitleDataGridViewTextBoxColumn3.DataPropertyName = "LookupTitle";
+            this.lookupTitleDataGridViewTextBoxColumn3.HeaderText = "LookupTitle";
+            this.lookupTitleDataGridViewTextBoxColumn3.Name = "lookupTitleDataGridViewTextBoxColumn3";
+            // 
+            // nextOfKinDataGridViewTextBoxColumn3
+            // 
+            this.nextOfKinDataGridViewTextBoxColumn3.DataPropertyName = "NextOfKin";
+            this.nextOfKinDataGridViewTextBoxColumn3.HeaderText = "NextOfKin";
+            this.nextOfKinDataGridViewTextBoxColumn3.Name = "nextOfKinDataGridViewTextBoxColumn3";
+            // 
+            // studentDataGridViewTextBoxColumn3
+            // 
+            this.studentDataGridViewTextBoxColumn3.DataPropertyName = "Student";
+            this.studentDataGridViewTextBoxColumn3.HeaderText = "Student";
+            this.studentDataGridViewTextBoxColumn3.Name = "studentDataGridViewTextBoxColumn3";
+            // 
+            // systemAdministratorDataGridViewTextBoxColumn3
+            // 
+            this.systemAdministratorDataGridViewTextBoxColumn3.DataPropertyName = "SystemAdministrator";
+            this.systemAdministratorDataGridViewTextBoxColumn3.HeaderText = "SystemAdministrator";
+            this.systemAdministratorDataGridViewTextBoxColumn3.Name = "systemAdministratorDataGridViewTextBoxColumn3";
+            // 
+            // companiesInprogressBindingSource
+            // 
+            this.companiesInprogressBindingSource.DataMember = "Companies";
+            this.companiesInprogressBindingSource.DataSource = this.individualsInprogressBindingSource;
+            // 
+            // colInProgressEnquiryCloseCurriculumEnquiry
+            // 
+            this.colInProgressEnquiryCloseCurriculumEnquiry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.HeaderText = "";
+            this.colInProgressEnquiryCloseCurriculumEnquiry.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.Name = "colInProgressEnquiryCloseCurriculumEnquiry";
+            this.colInProgressEnquiryCloseCurriculumEnquiry.ReadOnly = true;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.Text = "[ Close Enquiry Item ]";
+            this.colInProgressEnquiryCloseCurriculumEnquiry.TrackVisitedState = false;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.Width = 5;
             // 
             // lastUpdatedDataGridViewTextBoxColumn
             // 
@@ -1265,16 +1536,73 @@
             this.lastUpdatedDataGridViewTextBoxColumn.ReadOnly = true;
             this.lastUpdatedDataGridViewTextBoxColumn.Width = 95;
             // 
+            // colInProgressCurriculumDepartment
+            // 
+            this.colInProgressCurriculumDepartment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colInProgressCurriculumDepartment.HeaderText = "Department";
+            this.colInProgressCurriculumDepartment.Name = "colInProgressCurriculumDepartment";
+            this.colInProgressCurriculumDepartment.ReadOnly = true;
+            this.colInProgressCurriculumDepartment.Width = 91;
+            // 
+            // colInProgressCurriculumName
+            // 
+            this.colInProgressCurriculumName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colInProgressCurriculumName.HeaderText = "Curriculum";
+            this.colInProgressCurriculumName.Name = "colInProgressCurriculumName";
+            this.colInProgressCurriculumName.ReadOnly = true;
+            this.colInProgressCurriculumName.Width = 86;
+            // 
+            // colInProgressCurriculumEnquiryStatus
+            // 
+            this.colInProgressCurriculumEnquiryStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colInProgressCurriculumEnquiryStatus.HeaderText = "Stastus";
+            this.colInProgressCurriculumEnquiryStatus.Name = "colInProgressCurriculumEnquiryStatus";
+            this.colInProgressCurriculumEnquiryStatus.ReadOnly = true;
+            this.colInProgressCurriculumEnquiryStatus.Width = 67;
+            // 
             // enrollmentQuanityDataGridViewTextBoxColumn
             // 
             this.enrollmentQuanityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.enrollmentQuanityDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentQuanity";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.enrollmentQuanityDataGridViewTextBoxColumn.HeaderText = "Qty To Enroll";
             this.enrollmentQuanityDataGridViewTextBoxColumn.Name = "enrollmentQuanityDataGridViewTextBoxColumn";
             this.enrollmentQuanityDataGridViewTextBoxColumn.ReadOnly = true;
             this.enrollmentQuanityDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // colInProgressEnquiryQuantityCurrentlyEnrolled
+            // 
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.HeaderText = "Qty Enrolled";
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.Name = "colInProgressEnquiryQuantityCurrentlyEnrolled";
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.ReadOnly = true;
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.Width = 93;
+            // 
+            // colInProgressProcessEnrollment
+            // 
+            this.colInProgressProcessEnrollment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colInProgressProcessEnrollment.HeaderText = "";
+            this.colInProgressProcessEnrollment.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colInProgressProcessEnrollment.Name = "colInProgressProcessEnrollment";
+            this.colInProgressProcessEnrollment.ReadOnly = true;
+            this.colInProgressProcessEnrollment.Text = "[ Pocess Enrollment ]";
+            this.colInProgressProcessEnrollment.TrackVisitedState = false;
+            this.colInProgressProcessEnrollment.UseColumnTextForLinkValue = true;
+            this.colInProgressProcessEnrollment.Width = 5;
+            // 
+            // colInProgressViewCurrentEnrollment
+            // 
+            this.colInProgressViewCurrentEnrollment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colInProgressViewCurrentEnrollment.HeaderText = "";
+            this.colInProgressViewCurrentEnrollment.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colInProgressViewCurrentEnrollment.Name = "colInProgressViewCurrentEnrollment";
+            this.colInProgressViewCurrentEnrollment.ReadOnly = true;
+            this.colInProgressViewCurrentEnrollment.Text = "[ View Current Enrollments ]";
+            this.colInProgressViewCurrentEnrollment.TrackVisitedState = false;
+            this.colInProgressViewCurrentEnrollment.UseColumnTextForLinkValue = true;
             // 
             // frmClientEnquiryV3
             // 
@@ -1284,7 +1612,9 @@
             this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
             this.ClientSize = new System.Drawing.Size(849, 558);
             this.Controls.Add(this.metroTabControl1);
+            this.DisplayHeader = false;
             this.Name = "frmClientEnquiryV3";
+            this.Padding = new System.Windows.Forms.Padding(20, 30, 20, 20);
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Text = "Client Enquiry";
@@ -1300,14 +1630,18 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).EndInit();
             this.gbInprogressContactNameAndCompanyName.ResumeLayout(false);
-            this.gbInprogressContactNameAndCompanyName.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.individualsInprogressBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companiesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.individualsInprogressBindingSource)).EndInit();
             this.gbInProgressContactDetails.ResumeLayout(false);
             this.toolStripContainer2.ContentPanel.ResumeLayout(false);
             this.toolStripContainer2.TopToolStripPanel.ResumeLayout(false);
@@ -1331,7 +1665,6 @@
             this.enquiryInprogressBindingNavigator.ResumeLayout(false);
             this.enquiryInprogressBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companiesInprogressBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1417,13 +1750,6 @@
         private System.Windows.Forms.ToolStripButton btnuUpdateContactDetails;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private MetroFramework.Controls.MetroTile btnInProgressChangeContact;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdatedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewLinkColumn colInProgressEnquiryCloseCurriculumEnquiry;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInProgressCurriculumName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentQuanityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInProgressEnquiryQuantityCurrentlyEnrolled;
-        private System.Windows.Forms.DataGridViewLinkColumn colInProgressProcessEnrollment;
-        private System.Windows.Forms.DataGridViewLinkColumn colInProgressViewCurrentEnrollment;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn individualIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleIDDataGridViewTextBoxColumn1;
@@ -1438,5 +1764,50 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nextOfKinDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn systemAdministratorDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton btrnInProgressSendInitialDocumentation;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualIDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleIDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualFirstNameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualSecondNameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualLastnameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn rowVersionDataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assessorDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn facilitatorDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lookupTitleDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nextOfKinDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn systemAdministratorDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.ToolStripButton btnUpdateCurriculumEnquiryItemEnrollmentQty;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualIDDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleIDDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualFirstNameDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualSecondNameDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualLastnameDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn rowVersionDataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assessorDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn facilitatorDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lookupTitleDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nextOfKinDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn systemAdministratorDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewLinkColumn colInProgressEnquiryCloseCurriculumEnquiry;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdatedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInProgressCurriculumDepartment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInProgressCurriculumName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInProgressCurriculumEnquiryStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentQuanityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInProgressEnquiryQuantityCurrentlyEnrolled;
+        private System.Windows.Forms.DataGridViewLinkColumn colInProgressProcessEnrollment;
+        private System.Windows.Forms.DataGridViewLinkColumn colInProgressViewCurrentEnrollment;
     }
 }

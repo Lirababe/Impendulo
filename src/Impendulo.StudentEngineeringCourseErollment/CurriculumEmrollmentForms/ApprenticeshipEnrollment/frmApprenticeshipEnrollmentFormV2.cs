@@ -76,38 +76,56 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
 
         #region Forms Sections
 
-        #region Page 1  - Student Selection
+        #region Page 1  - Enrollmrnt Type Selection
 
         #region Controls Events
         private void picSearchStudents_Click(object sender, EventArgs e)
         {
-            frmStudentSearchForStudent frm = new frmStudentSearchForStudent();
-            frm.ShowDialog();
-            if (frm.CurrentSelectedStudent != null)
-            {
-                txtStudentFullName.Text = frm.CurrentSelectedStudent.Individual.IndividualFirstName + " " + frm.CurrentSelectedStudent.Individual.IndividualLastname;
-                txtStudentIdNumber.Text = frm.CurrentSelectedStudent.StudentIDNumber;
-                txtStudentNember.Text = frm.CurrentSelectedStudent.StudentID.ToString();
-                CurrentSelectedStudent = frm.CurrentSelectedStudent;
-                //Summary Fields
-                txtSummaryFullName.Text = txtStudentFullName.Text;
-                txtSummaryIDNumber.Text = txtStudentIdNumber.Text;
-                txtSummaryStudentNumber.Text = txtStudentNember.Text;
-                picbtnEditCurrentStudent.Visible = true;
+            List<Student> StudentExcemptionList = new List<Student>();
 
-            }
-            else
+            using (var Dbconnection = new MCDEntities())
             {
-                picbtnEditCurrentStudent.Visible = false;
-                txtStudentFullName.Clear();
-                txtStudentIdNumber.Clear();
-                txtStudentNember.Clear();
-                //Summary Fields
-                txtSummaryFullName.Clear();
-                txtSummaryIDNumber.Clear();
-                txtSummaryStudentNumber.Clear();
-                CurrentSelectedStudent = null;
-            }
+                //Loadds the associated Collections in this case the Enrollment with their associated Students that are enrolled.
+                Dbconnection.CurriculumEnquiries.Attach(CurrentCurriculumEnquiry);
+                //Load all enrollments that linked to the Enquiry Item.
+                Dbconnection.Entry(CurrentCurriculumEnquiry).Collection(a => a.Enrollments).Load();
+                foreach (Enrollment EnrollmentObj in CurrentCurriculumEnquiry.Enrollments)
+                {
+                    //Load the student linked to the enrollment
+                    Dbconnection.Entry(EnrollmentObj).Reference(a => a.Student).Load();
+                    StudentExcemptionList.Add(EnrollmentObj.Student);
+                }
+            };
+            using (frmStudentSearchForStudent frm = new frmStudentSearchForStudent())
+            {
+                //Set the list of student that are already Enrolled for this Enquiry Item.
+                frm.StudentExpceptionList = StudentExcemptionList;
+                frm.ShowDialog();
+                if (frm.CurrentSelectedStudent != null)
+                {
+                    txtStudentFullName.Text = frm.CurrentSelectedStudent.Individual.FullName;
+                    txtStudentIdNumber.Text = frm.CurrentSelectedStudent.StudentIDNumber;
+                    txtStudentNember.Text = frm.CurrentSelectedStudent.StudentID.ToString();
+                    CurrentSelectedStudent = frm.CurrentSelectedStudent;
+                    //Summary Fields
+                    txtSummaryFullName.Text = txtStudentFullName.Text;
+                    txtSummaryIDNumber.Text = txtStudentIdNumber.Text;
+                    txtSummaryStudentNumber.Text = txtStudentNember.Text;
+                    picbtnEditCurrentStudent.Visible = true;
+                }
+                else
+                {
+                    picbtnEditCurrentStudent.Visible = false;
+                    txtStudentFullName.Clear();
+                    txtStudentIdNumber.Clear();
+                    txtStudentNember.Clear();
+                    //Summary Fields
+                    txtSummaryFullName.Clear();
+                    txtSummaryIDNumber.Clear();
+                    txtSummaryStudentNumber.Clear();
+                    CurrentSelectedStudent = null;
+                }
+            };
         }
         private void picbtnEditCurrentStudent_Click(object sender, EventArgs e)
         {
@@ -151,25 +169,17 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
         #endregion
 
         #region Control Events
-        private void lnk_UploadEnrollmentForm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        private void radSelectSection13_CheckedChanged(object sender, EventArgs e)
         {
-            removeAllEnrollmentForms();
-            CurrentEnrollmentFormDocument = FileHandeling.UploadFile();
-            if (CurrentEnrollmentFormDocument.Count > 0)
-            {
+            lblCurentlySelectedEnrollmentType.Text = lblCurentlySelectedEnrollmentType.Text.Replace("28", "13");
+            lblSummaryEnrollmentSelectionType.Text = lblCurentlySelectedEnrollmentType.Text;
+        }
 
-                lblEnrollmentFormStatus.Text = "Completed Uploaded";
-                lblEnrollmentFormStatus.BackColor = Color.Green;
-                chkEnrollmentFormNotAvailable.Checked = false;
-
-
-            }
-            else
-            {
-                lblEnrollmentFormStatus.Text = "Not Uploaded";
-                lblEnrollmentFormStatus.BackColor = Color.Red;
-            }
-            populateFileSummaryList();
+        private void radSelectSection28_CheckedChanged(object sender, EventArgs e)
+        {
+            lblCurentlySelectedEnrollmentType.Text = lblCurentlySelectedEnrollmentType.Text.Replace("13", "28");
+            lblSummaryEnrollmentSelectionType.Text = lblCurentlySelectedEnrollmentType.Text;
         }
         private void populateFileSummaryList()
         {
@@ -185,6 +195,27 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                 txtSummaryIDDocumentAttachemnts.Text += f.FileName + "." + f.FileExtension + "\n";
             }
         }
+
+        private void lnkUploadEnrollmentForm_Click(object sender, EventArgs e)
+        {
+            removeAllEnrollmentForms();
+            CurrentEnrollmentFormDocument = FileHandeling.UploadFile();
+            if (CurrentEnrollmentFormDocument.Count > 0)
+            {
+
+                lblEnrollmentFormStatus.Text = "Completed Uploaded";
+                lblEnrollmentFormStatus.BackColor = Color.Green;
+                chkEnrollmentFormNotAvailable.Checked = true;
+
+            }
+            else
+            {
+                lblEnrollmentFormStatus.Text = "Not Uploaded";
+                lblEnrollmentFormStatus.BackColor = Color.Red;
+            }
+            populateFileSummaryList();
+        }
+
         private void removeAllEnrollmentForms()
         {
             if (CurrentEnrollmentFormDocument.Count > 0)
@@ -205,8 +236,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
             }
             populateFileSummaryList();
         }
-
-        private void lnkUploadIDDocument_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lnkUploadIDDocument_LinkClicked(object sender, EventArgs e)
         {
             removeAllIDDocuments();
 
@@ -216,7 +246,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
 
                 lblIDDocumentStatus.Text = "Completed Uploaded";
                 lblIDDocumentStatus.BackColor = Color.Green;
-                chkIDDocumentNotAvailable.Checked = false;
+                chkIDDocumentNotAvailable.Checked = true;
 
             }
             else
@@ -226,6 +256,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
             }
             populateFileSummaryList();
         }
+
         private void removeAllIDDocuments()
         {
             if (CurrentIDDocument.Count > 0)
@@ -236,7 +267,6 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                     {
                         Dbconnection.Files.Attach(f);
                     }
-
                     Dbconnection.Files.RemoveRange(CurrentIDDocument);
                     Dbconnection.SaveChanges();
                     CurrentIDDocument.Clear();
@@ -249,7 +279,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
 
         private void chkEnrollmentFormNotAvailable_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkEnrollmentFormNotAvailable.Checked)
+            if (!chkEnrollmentFormNotAvailable.Checked)
             {
                 removeAllEnrollmentForms();
             }
@@ -257,7 +287,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
 
         private void chkIDDocumentNotAvailable_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkIDDocumentNotAvailable.Checked)
+            if (!chkIDDocumentNotAvailable.Checked)
             {
                 removeAllIDDocuments();
             }
@@ -361,7 +391,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
             {
                 if (iCurrentPosition == MainflowLayoutPanel.Controls.Count - 1)
                 {
-                    btnNextSection.Text = "Save Enquiry";
+                    btnNextSection.Text = "Process";
                     btnNextSection.ImageIndex = 2;
                 }
                 else
@@ -371,10 +401,12 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                 }
                 btnPreviousSection.Visible = true;
             }
-            foreach (var Control in panel5.Controls)
+            int iAmountOfSteps = 0;
+            foreach (var Control in tableLayoutPanel5.Controls)
             {
                 if (Control is Label)
                 {
+                    iAmountOfSteps++;
                     //NavigationPanel
                     var lblObj = (Label)Control;
                     if (Convert.ToInt32(lblObj.Tag.ToString()) == iCurrentPosition)
@@ -387,11 +419,13 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                     }
                 }
             }
+            double dblPercentageComplete = (((Convert.ToDouble(iCurrentPosition + 1) / Convert.ToDouble(iAmountOfSteps))) * 100);
+            wizardStepProgressBar.Value = Convert.ToInt32(dblPercentageComplete);
 
         }
         private void setCenterDisplayPanels()
         {
-            foreach (var gbControl in MainflowLayoutPanel.Controls)
+            foreach (Control gbControl in MainflowLayoutPanel.Controls)
             {
                 if (gbControl is GroupBox)
                 {
@@ -399,7 +433,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                     gbObj.Hide();
                 }
             }
-            foreach (var Control in MainflowLayoutPanel.Controls)
+            foreach (Control Control in MainflowLayoutPanel.Controls)
             {
                 if (Control is GroupBox)
                 {
@@ -530,7 +564,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                     Dbconnection.CurriculumEnquiries.Attach(CurrentCurriculumEnquiry);
 
                     EnumSectionalEnrollmentTypes EnrollmenTypeSelection;
-                    if (radSection13.Checked)
+                    if (radSelectSection13.Checked)
                     {
                         EnrollmenTypeSelection = EnumSectionalEnrollmentTypes.Section_13;
                     }
@@ -608,8 +642,24 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                     }
 
                     Dbconnection.SaveChanges();
+                    EquiryHistory hist = new EquiryHistory
+                    {
+                        EnquiryID = CurrentCurriculumEnquiry.EnquiryID,
+                        EmployeeID = CurrentEmployeeLoggedIn.EmployeeID,
+                        LookupEquiyHistoryTypeID = (int)EnumEquiryHistoryTypes.Enrollment_Student_Successfully_Enrolled,
+                        DateEnquiryUpdated = DateTime.Now,
+                        EnquiryNotes = "Enrollment Completed Successfully for the the Following Individual - " + CurrentSelectedStudent.Individual.FullName.ToString() + "\n Enquiry Ref# - " + CurrentCurriculumEnquiry.EnquiryID
+
+                    };
+                    Dbconnection.EquiryHistories.Add(hist);
+                    int IsSaved = Dbconnection.SaveChanges();
                 };
             }
         }
+
+      
+
+
+
     }
 }

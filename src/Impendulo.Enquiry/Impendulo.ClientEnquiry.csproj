@@ -86,6 +86,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CloseEnquiryConfirmation\frmCloseEnquiryConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CloseEnquiryConfirmation\frmCloseEnquiryConfirmation.Designer.cs">
+      <DependentUpon>frmCloseEnquiryConfirmation.cs</DependentUpon>
+    </Compile>
     <Compile Include="EnquiryV2\frmClientEnquiryV2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     <Compile Include="WorkBanchEnquiries\frmWorkbanchEnquiries.Designer.cs">
       <DependentUpon>frmWorkbanchEnquiries.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CloseEnquiryConfirmation\frmCloseEnquiryConfirmation.resx">
+      <DependentUpon>frmCloseEnquiryConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EnquiryV2\frmClientEnquiryV2.resx">
       <DependentUpon>frmClientEnquiryV2.cs</DependentUpon>
     </EmbeddedResource>

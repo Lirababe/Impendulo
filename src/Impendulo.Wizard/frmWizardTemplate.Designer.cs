@@ -30,26 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWizardTemplate));
-            this.label43 = new System.Windows.Forms.Label();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.NavigationPanel = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.MainflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.gbEnquiryType = new System.Windows.Forms.GroupBox();
-            this.gbContactInfo = new System.Windows.Forms.GroupBox();
-            this.contactDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.curriculumEnquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gbEquirySummary = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPreviousSection = new System.Windows.Forms.Button();
             this.imageListWizardControlButtons = new System.Windows.Forms.ImageList(this.components);
-            this.btnNextSection = new System.Windows.Forms.Button();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -59,30 +40,120 @@
             this.contactDetailValueDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookupContactTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.curriculumEnquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label43 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.MainflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.gbEnquiryType = new System.Windows.Forms.GroupBox();
+            this.gbContactInfo = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gbEquirySummary = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPreviousSection = new System.Windows.Forms.Button();
+            this.btnNextSection = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.contactDetailBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.curriculumEnquiryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.NavigationPanel.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.MainflowLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contactDetailBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.curriculumEnquiryBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // label43
+            // imageListWizardControlButtons
             // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(10, 7);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(125, 23);
-            this.label43.TabIndex = 6;
-            this.label43.Text = "{ Heading }";
+            this.imageListWizardControlButtons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListWizardControlButtons.ImageStream")));
+            this.imageListWizardControlButtons.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListWizardControlButtons.Images.SetKeyName(0, "Circle-right-icon-48.png");
+            this.imageListWizardControlButtons.Images.SetKeyName(1, "Circle-left-icon-48.png");
+            this.imageListWizardControlButtons.Images.SetKeyName(2, "Circle-apply-icon-48.png");
+            // 
+            // BottomToolStripPanel
+            // 
+            this.BottomToolStripPanel.Location = new System.Drawing.Point(0, 0);
+            this.BottomToolStripPanel.Name = "BottomToolStripPanel";
+            this.BottomToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.BottomToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.BottomToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            // 
+            // TopToolStripPanel
+            // 
+            this.TopToolStripPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.TopToolStripPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TopToolStripPanel.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.TopToolStripPanel.Location = new System.Drawing.Point(0, 0);
+            this.TopToolStripPanel.Name = "TopToolStripPanel";
+            this.TopToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.TopToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.TopToolStripPanel.Size = new System.Drawing.Size(100, 1000);
+            // 
+            // RightToolStripPanel
+            // 
+            this.RightToolStripPanel.Location = new System.Drawing.Point(0, 0);
+            this.RightToolStripPanel.Name = "RightToolStripPanel";
+            this.RightToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.RightToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.RightToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            // 
+            // LeftToolStripPanel
+            // 
+            this.LeftToolStripPanel.Location = new System.Drawing.Point(0, 0);
+            this.LeftToolStripPanel.Name = "LeftToolStripPanel";
+            this.LeftToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.LeftToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.LeftToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            // 
+            // ContentPanel
+            // 
+            this.ContentPanel.Size = new System.Drawing.Size(621, 169);
+            // 
+            // contactDetailIDDataGridViewTextBoxColumn
+            // 
+            this.contactDetailIDDataGridViewTextBoxColumn.DataPropertyName = "ContactDetailID";
+            this.contactDetailIDDataGridViewTextBoxColumn.HeaderText = "ContactDetailID";
+            this.contactDetailIDDataGridViewTextBoxColumn.Name = "contactDetailIDDataGridViewTextBoxColumn";
+            // 
+            // contactDetailValueDataGridViewTextBoxColumn1
+            // 
+            this.contactDetailValueDataGridViewTextBoxColumn1.DataPropertyName = "ContactDetailValue";
+            this.contactDetailValueDataGridViewTextBoxColumn1.HeaderText = "ContactDetailValue";
+            this.contactDetailValueDataGridViewTextBoxColumn1.Name = "contactDetailValueDataGridViewTextBoxColumn1";
+            // 
+            // contactTypeIDDataGridViewTextBoxColumn
+            // 
+            this.contactTypeIDDataGridViewTextBoxColumn.DataPropertyName = "ContactTypeID";
+            this.contactTypeIDDataGridViewTextBoxColumn.HeaderText = "ContactTypeID";
+            this.contactTypeIDDataGridViewTextBoxColumn.Name = "contactTypeIDDataGridViewTextBoxColumn";
+            // 
+            // lookupContactTypeDataGridViewTextBoxColumn
+            // 
+            this.lookupContactTypeDataGridViewTextBoxColumn.DataPropertyName = "LookupContactType";
+            this.lookupContactTypeDataGridViewTextBoxColumn.HeaderText = "LookupContactType";
+            this.lookupContactTypeDataGridViewTextBoxColumn.Name = "lookupContactTypeDataGridViewTextBoxColumn";
+            // 
+            // contactDetailBindingSource
+            // 
+            this.contactDetailBindingSource.DataSource = typeof(Impendulo.Data.Models.ContactDetail);
+            // 
+            // curriculumEnquiryBindingSource
+            // 
+            this.curriculumEnquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.CurriculumEnquiry);
+            // 
+            // enquiryBindingSource
+            // 
+            this.enquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
             // 
             // splitContainer1
             // 
@@ -94,7 +165,8 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.NavigationPanel);
+            this.splitContainer1.Panel1.Controls.Add(this.panel5);
+            this.splitContainer1.Panel1.Controls.Add(this.panel4);
             this.splitContainer1.Panel1MinSize = 175;
             // 
             // splitContainer1.Panel2
@@ -103,18 +175,29 @@
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Size = new System.Drawing.Size(1061, 636);
             this.splitContainer1.SplitterDistance = 175;
-            this.splitContainer1.TabIndex = 1;
+            this.splitContainer1.TabIndex = 2;
             // 
-            // NavigationPanel
+            // panel4
             // 
-            this.NavigationPanel.Controls.Add(this.panel5);
-            this.NavigationPanel.Controls.Add(this.panel4);
-            this.NavigationPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NavigationPanel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NavigationPanel.Location = new System.Drawing.Point(0, 0);
-            this.NavigationPanel.Name = "NavigationPanel";
-            this.NavigationPanel.Size = new System.Drawing.Size(173, 634);
-            this.NavigationPanel.TabIndex = 8;
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel4.Controls.Add(this.label43);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(173, 44);
+            this.panel4.TabIndex = 7;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(10, 7);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(125, 23);
+            this.label43.TabIndex = 6;
+            this.label43.Text = "{ Heading }";
             // 
             // panel5
             // 
@@ -175,19 +258,6 @@
             this.label37.Tag = "0";
             this.label37.Text = "{Page 1 }";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label43);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(173, 44);
-            this.panel4.TabIndex = 7;
-            // 
             // MainflowLayoutPanel
             // 
             this.MainflowLayoutPanel.AutoScroll = true;
@@ -227,10 +297,6 @@
             this.gbContactInfo.Tag = "1";
             this.gbContactInfo.Text = "{ Page 2 }";
             // 
-            // contactDetailBindingSource
-            // 
-            this.contactDetailBindingSource.DataSource = typeof(Impendulo.Data.Models.ContactDetail);
-            // 
             // groupBox3
             // 
             this.groupBox3.Location = new System.Drawing.Point(500, 0);
@@ -242,10 +308,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Tag = "2";
             this.groupBox3.Text = "{ Page 3 }";
-            // 
-            // curriculumEnquiryBindingSource
-            // 
-            this.curriculumEnquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.CurriculumEnquiry);
             // 
             // gbEquirySummary
             // 
@@ -286,15 +348,6 @@
             this.btnPreviousSection.TabIndex = 2;
             this.btnPreviousSection.Text = "Previous";
             this.btnPreviousSection.UseVisualStyleBackColor = true;
-            this.btnPreviousSection.Click += new System.EventHandler(this.btnPreviousSection_Click);
-            // 
-            // imageListWizardControlButtons
-            // 
-            this.imageListWizardControlButtons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListWizardControlButtons.ImageStream")));
-            this.imageListWizardControlButtons.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListWizardControlButtons.Images.SetKeyName(0, "Circle-right-icon-48.png");
-            this.imageListWizardControlButtons.Images.SetKeyName(1, "Circle-left-icon-48.png");
-            this.imageListWizardControlButtons.Images.SetKeyName(2, "Circle-apply-icon-48.png");
             // 
             // btnNextSection
             // 
@@ -310,73 +363,8 @@
             this.btnNextSection.TabIndex = 1;
             this.btnNextSection.Text = "Next";
             this.btnNextSection.UseVisualStyleBackColor = true;
-            this.btnNextSection.Click += new System.EventHandler(this.btnNextSection_Click);
             // 
-            // BottomToolStripPanel
-            // 
-            this.BottomToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.BottomToolStripPanel.Name = "BottomToolStripPanel";
-            this.BottomToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.BottomToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.BottomToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // TopToolStripPanel
-            // 
-            this.TopToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.TopToolStripPanel.Name = "TopToolStripPanel";
-            this.TopToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.TopToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.TopToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // RightToolStripPanel
-            // 
-            this.RightToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.RightToolStripPanel.Name = "RightToolStripPanel";
-            this.RightToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.RightToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.RightToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // LeftToolStripPanel
-            // 
-            this.LeftToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.LeftToolStripPanel.Name = "LeftToolStripPanel";
-            this.LeftToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.LeftToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.LeftToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // ContentPanel
-            // 
-            this.ContentPanel.Size = new System.Drawing.Size(621, 169);
-            // 
-            // contactDetailIDDataGridViewTextBoxColumn
-            // 
-            this.contactDetailIDDataGridViewTextBoxColumn.DataPropertyName = "ContactDetailID";
-            this.contactDetailIDDataGridViewTextBoxColumn.HeaderText = "ContactDetailID";
-            this.contactDetailIDDataGridViewTextBoxColumn.Name = "contactDetailIDDataGridViewTextBoxColumn";
-            // 
-            // contactDetailValueDataGridViewTextBoxColumn1
-            // 
-            this.contactDetailValueDataGridViewTextBoxColumn1.DataPropertyName = "ContactDetailValue";
-            this.contactDetailValueDataGridViewTextBoxColumn1.HeaderText = "ContactDetailValue";
-            this.contactDetailValueDataGridViewTextBoxColumn1.Name = "contactDetailValueDataGridViewTextBoxColumn1";
-            // 
-            // contactTypeIDDataGridViewTextBoxColumn
-            // 
-            this.contactTypeIDDataGridViewTextBoxColumn.DataPropertyName = "ContactTypeID";
-            this.contactTypeIDDataGridViewTextBoxColumn.HeaderText = "ContactTypeID";
-            this.contactTypeIDDataGridViewTextBoxColumn.Name = "contactTypeIDDataGridViewTextBoxColumn";
-            // 
-            // lookupContactTypeDataGridViewTextBoxColumn
-            // 
-            this.lookupContactTypeDataGridViewTextBoxColumn.DataPropertyName = "LookupContactType";
-            this.lookupContactTypeDataGridViewTextBoxColumn.HeaderText = "LookupContactType";
-            this.lookupContactTypeDataGridViewTextBoxColumn.Name = "lookupContactTypeDataGridViewTextBoxColumn";
-            // 
-            // enquiryBindingSource
-            // 
-            this.enquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
-            // 
-            // frmNewEnquiry
+            // frmWizardTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -388,53 +376,34 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmNewEnquiry";
+            this.Name = "frmWizardTemplate";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "{Template}";
             this.Load += new System.EventHandler(this.frmAddUpdateStudent_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.contactDetailBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.curriculumEnquiryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.NavigationPanel.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.MainflowLayoutPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.contactDetailBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.curriculumEnquiryBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.enquiryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Panel NavigationPanel;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.FlowLayoutPanel MainflowLayoutPanel;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnNextSection;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.GroupBox gbContactInfo;
-        private System.Windows.Forms.GroupBox gbEnquiryType;
         private System.Windows.Forms.ImageList imageListWizardControlButtons;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.BindingSource contactDetailBindingSource;
-        private System.Windows.Forms.Button btnPreviousSection;
         private System.Windows.Forms.BindingSource enquiryBindingSource;
         private System.Windows.Forms.BindingSource curriculumEnquiryBindingSource;
-        private System.Windows.Forms.GroupBox gbEquirySummary;
         private System.Windows.Forms.DataGridViewTextBoxColumn contactDetailIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contactDetailValueDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn contactTypeIDDataGridViewTextBoxColumn;
@@ -444,6 +413,22 @@
         private System.Windows.Forms.ToolStripPanel RightToolStripPanel;
         private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
         private System.Windows.Forms.ToolStripContentPanel ContentPanel;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.FlowLayoutPanel MainflowLayoutPanel;
+        private System.Windows.Forms.GroupBox gbEnquiryType;
+        private System.Windows.Forms.GroupBox gbContactInfo;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gbEquirySummary;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnPreviousSection;
+        private System.Windows.Forms.Button btnNextSection;
     }
 }
 
