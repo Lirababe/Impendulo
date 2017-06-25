@@ -444,8 +444,8 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                     if (Convert.ToInt32(gbObj.Tag.ToString()) == iCurrentPosition)
                     {
                         gbObj.Show();
-                        gbObj.Width = MainflowLayoutPanel.Width;
-                        gbObj.Height = MainflowLayoutPanel.Height;
+                        gbObj.Width = MainflowLayoutPanel.Width - 10;
+                        gbObj.Height = MainflowLayoutPanel.Height - 10;
                     }
                     else
                     {

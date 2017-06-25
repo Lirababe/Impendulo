@@ -65,6 +65,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.gbSearchForStudent.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -136,12 +137,14 @@
             this.picbtnAddStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picbtnAddStudent.TabIndex = 15;
             this.picbtnAddStudent.TabStop = false;
+            this.toolTip1.SetToolTip(this.picbtnAddStudent, "Add Student If No Student Was Found.");
             this.picbtnAddStudent.Visible = false;
             this.picbtnAddStudent.Click += new System.EventHandler(this.picbtnAddStudent_Click);
             // 
             // btnSearch
             // 
             this.btnSearch.ActiveControl = null;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearch.Location = new System.Drawing.Point(3, 3);
             this.btnSearch.Name = "btnSearch";
@@ -151,6 +154,7 @@
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearch.TileImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.TileImage")));
             this.btnSearch.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnSearch, "Click To Filter student List");
             this.btnSearch.UseSelectable = true;
             this.btnSearch.UseTileImage = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -158,6 +162,7 @@
             // btnRefresh
             // 
             this.btnRefresh.ActiveControl = null;
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRefresh.Location = new System.Drawing.Point(124, 3);
             this.btnRefresh.Name = "btnRefresh";
@@ -167,6 +172,7 @@
             this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRefresh.TileImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.TileImage")));
             this.btnRefresh.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnRefresh, "Reset Filter List");
             this.btnRefresh.UseSelectable = true;
             this.btnRefresh.UseTileImage = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -538,5 +544,6 @@
         private System.Windows.Forms.PictureBox picbtnAddStudent;
         private MetroFramework.Controls.MetroTile btnSearch;
         private MetroFramework.Controls.MetroTile btnRefresh;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
