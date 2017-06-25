@@ -3,6 +3,7 @@ using Impendulo.ContactDetails.Development;
 using Impendulo.Data.Models;
 using Impendulo.Email.Email_Message_Version_2;
 using Impendulo.Enquiry.Development.CloseEnquiryConfirmation;
+using Impendulo.Enquiry.Development.EnrollmentSelectionFromEquiry;
 using Impendulo.Enquiry.Development.InitaialConsultation;
 using Impendulo.Enquiry.Development.SearchForSelectedEnquiry;
 using Impendulo.Enquiry.Development.ViewHistory;
@@ -423,7 +424,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                     frm.ShowDialog();
                     //get the Individual Selected Which represents the Student Selected.
 
-                    if (frm.SelectedIndividual != null)
+                    if (frm.SelectedIndividual.IndividualID != 0)
                     {
 
                         using (var Dbconnection = new MCDEntities())
@@ -474,15 +475,15 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                     var CurriculumEnquiryObj = (CurriculumEnquiry)(row.DataBoundItem);
                     if (CurriculumEnquiryObj.EnquiryStatusID == (int)EnumEnquiryStatuses.Enquiry_Closed)
                     {
-                        row.Cells[colInProgressEnquiryCloseCurriculumEnquiry.Index].Value = "[ Reinstate Enquiry Item ]";
+                        row.Cells[colInProgressEnquiryCloseCurriculumEnquiry.Index].Value = "[ Reinstate ]";
                     }
                     else
                     {
-                        row.Cells[colInProgressEnquiryCloseCurriculumEnquiry.Index].Value = "[ Close Enquiry Item ]";
+                        row.Cells[colInProgressEnquiryCloseCurriculumEnquiry.Index].Value = "[ Close ]";
                     }
                     row.Cells[colInProgressCurriculumDepartment.Index].Value = CurriculumEnquiryObj.Curriculum.LookupDepartment.DepartmentName.ToString();
                     row.Cells[colInProgressCurriculumName.Index].Value = CurriculumEnquiryObj.Curriculum.CurriculumName.ToString();
-                    row.Cells[colInProgressCurriculumEnquiryStatus.Index].Value = CurriculumEnquiryObj.LookupEnquiryStatus.EnquiryStatus.ToString();
+                    //row.Cells[colInProgressCurriculumEnquiryStatus.Index].Value = CurriculumEnquiryObj.LookupEnquiryStatus.EnquiryStatus.ToString();
                     row.Cells[colInProgressEnquiryQuantityCurrentlyEnrolled.Index].Value = CurriculumEnquiryObj.Enrollments.Count;
                 }
             }
@@ -494,7 +495,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
             CurriculumEnquiry CE = (CurriculumEnquiry)dgvInProgressCurriculumEnquiries.Rows[e.RowIndex].DataBoundItem;
             switch (e.ColumnIndex)
             {
-                case 0:
+                case 1:
                     if (CE.EnquiryStatusID != (int)EnumEnquiryStatuses.Enquiry_Closed)
                     {
                         DialogResult Rtn = MessageBox.Show("Are you sure that you wish to Close this Enquiry Item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -554,7 +555,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
 
 
                     break;
-                case 7:
+                case 6:
                     if (CE.Curriculum.DepartmentID == (int)EnumDepartments.Apprenticeship)
                     {
 
@@ -572,23 +573,60 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                             {
                                 frm.CurrentCurriculumEnquiry = CE;
                                 frm.ShowDialog();
-                                this.refreshInProgressEnquiry(CurrentSelectedEnquiryID);
+                                curriculumEnquiryInprogressBindingSource.ResetCurrentItem();
+                                //this.refreshInProgressEnquiry(CurrentSelectedEnquiryID);
+
+                                if (frm.IsSuccessfullySaved)
+                                {
+                                    DialogResult Rtn1 = MessageBox.Show("Do you wish to process this new enrollment now?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                    if (Rtn1 == DialogResult.Yes)
+                                    {
+                                        using (frmEnrolmmentInprogress frmInner = new frmEnrolmmentInprogress())
+                                        {
+                                            frmInner.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
+                                            frmInner.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)CE.Curriculum.DepartmentID;
+                                            // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
+                                            frmInner.ShowDialog();
+                                        }
+                                    }
+                                }
                             }
-                            //}
-                            ////DialogResult Rtn1 = MessageBox.Show("Do you wish to View the Enrollment,and course selection?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                            ////if (Rtn1 == DialogResult.Yes)
-                            ////{
-                            ////    using (frmEnrolmmentInprogress frm = new frmEnrolmmentInprogress())
-                            ////    {
-                            ////        frm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
-                            ////        frm.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)CE.Curriculum.DepartmentID;
-                            ////        // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
-                            ////        frm.ShowDialog();
-                            ////    }
-
-
-                            ////}
                         }
+                    }
+                    break;
+                case 7:
+                    //ensure that the Enrollments are refershed
+                    using (var Dbconnection = new MCDEntities())
+                    {
+                        Dbconnection.CurriculumEnquiries.Attach(CE);
+                        if (!(Dbconnection.Entry(CE).Collection(a => a.Enrollments).IsLoaded))
+                        {
+                            Dbconnection.Entry(CE).Collection(a => a.Enrollments).Load();
+                        }
+                    };
+                    //IF any enrollments exists then open Selection list else Do Nothing.
+                    if (CE.Enrollments.Count > 0)
+                    {
+                        //Open thje list of linked Enrollments that are in progress
+                        using (frmEnrollmentSelectionForEquiry frm = new frmEnrollmentSelectionForEquiry())
+                        {
+                            frm.SelectedCurriculumEnquiryID = CE.CurriculumEnquiryID;
+                            frm.ShowDialog();
+                            if (frm.SelectedEnrollmentID != 0)
+                            {
+                                using (frmEnrolmmentInprogress innerFrm = new frmEnrolmmentInprogress())
+                                {
+                                    innerFrm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
+                                    innerFrm.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)CE.Curriculum.DepartmentID;
+                                    innerFrm.CurrentEnrollmentID = frm.SelectedEnrollmentID;
+                                    innerFrm.ShowDialog();
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("There are currently no enrollments for this enquiry.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;
             }
@@ -686,16 +724,18 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                 };
 
                 frm.nudQtyToEnroll.Minimum = CE.Enrollments.Count + 1;
+                frm.nudQtyToEnroll.Value = CE.Enrollments.Count + 1;
                 frm.CurrentCurriculumEnquiry = CE;
                 frm.ShowDialog();
-
+                //any change to the Qty will be saved.
                 using (var Dbconnection = new MCDEntities())
                 {
                     Dbconnection.CurriculumEnquiries.Attach(CE);
                     Dbconnection.Entry(CE).State = EntityState.Modified;
                     Dbconnection.SaveChanges();
                 };
-                this.refreshInProgressEnquiry(CurrentSelectedEnquiryID);
+                this.curriculumEnquiryInprogressBindingSource.ResetCurrentItem();
+                //this.refreshInProgressEnquiry(CurrentSelectedEnquiryID);
             }
         }
     }

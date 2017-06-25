@@ -30,6 +30,8 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
         private IList<File> CurrentEnrollmentFormDocument { get; set; }
         private IList<File> CurrentIDDocument { get; set; }
 
+        public Boolean IsSuccessfullySaved { get; set; }
+
         private Boolean MustSaveItems = false;
 
         public Employee CurrentEmployeeLoggedIn
@@ -41,6 +43,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
         public frmApprenticeshipEnrollmentFormV2()
         {
             InitializeComponent();
+            IsSuccessfullySaved = false;
             CurrentEnrollmentFormDocument = new List<File>();
             CurrentIDDocument = new List<File>();
         }
@@ -653,11 +656,12 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                     };
                     Dbconnection.EquiryHistories.Add(hist);
                     int IsSaved = Dbconnection.SaveChanges();
+                    IsSuccessfullySaved = true;
                 };
             }
         }
 
-      
+
 
 
 

@@ -38,11 +38,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
@@ -172,11 +174,10 @@
             this.studentDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.systemAdministratorDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companiesInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colInProgressEnquiryCloseCurriculumEnquiry = new System.Windows.Forms.DataGridViewLinkColumn();
             this.lastUpdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInProgressEnquiryCloseCurriculumEnquiry = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colInProgressCurriculumDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInProgressCurriculumName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInProgressCurriculumEnquiryStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentQuanityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInProgressEnquiryQuantityCurrentlyEnrolled = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInProgressProcessEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -347,7 +348,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.gbInProgressContactDetails);
             this.splitContainer2.Size = new System.Drawing.Size(801, 185);
-            this.splitContainer2.SplitterDistance = 451;
+            this.splitContainer2.SplitterDistance = 466;
             this.splitContainer2.TabIndex = 0;
             // 
             // tableLayoutPanel6
@@ -362,7 +363,7 @@
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.01075F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.98925F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(451, 185);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(466, 185);
             this.tableLayoutPanel6.TabIndex = 10;
             // 
             // groupBox2
@@ -371,7 +372,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(445, 73);
+            this.groupBox2.Size = new System.Drawing.Size(460, 73);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Enquiry";
@@ -393,7 +394,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(439, 54);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(454, 54);
             this.tableLayoutPanel4.TabIndex = 18;
             // 
             // tableLayoutPanel1
@@ -408,12 +409,13 @@
             this.tableLayoutPanel1.Controls.Add(this.btnViewProgressInProgressSections, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnInitialConsultationConfirmationInProgressSection, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(203, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(200, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel4.SetRowSpan(this.tableLayoutPanel1, 2);
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(233, 48);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(254, 54);
             this.tableLayoutPanel1.TabIndex = 12;
             // 
             // btnSearchForEnquiry
@@ -422,7 +424,7 @@
             this.btnSearchForEnquiry.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearchForEnquiry.Location = new System.Drawing.Point(3, 3);
             this.btnSearchForEnquiry.Name = "btnSearchForEnquiry";
-            this.btnSearchForEnquiry.Size = new System.Drawing.Size(52, 42);
+            this.btnSearchForEnquiry.Size = new System.Drawing.Size(57, 48);
             this.btnSearchForEnquiry.TabIndex = 6;
             this.btnSearchForEnquiry.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearchForEnquiry.TileImage = ((System.Drawing.Image)(resources.GetObject("btnSearchForEnquiry.TileImage")));
@@ -436,9 +438,9 @@
             // 
             this.btnCloseInprogressEnquiry.ActiveControl = null;
             this.btnCloseInprogressEnquiry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCloseInprogressEnquiry.Location = new System.Drawing.Point(177, 3);
+            this.btnCloseInprogressEnquiry.Location = new System.Drawing.Point(192, 3);
             this.btnCloseInprogressEnquiry.Name = "btnCloseInprogressEnquiry";
-            this.btnCloseInprogressEnquiry.Size = new System.Drawing.Size(53, 42);
+            this.btnCloseInprogressEnquiry.Size = new System.Drawing.Size(59, 48);
             this.btnCloseInprogressEnquiry.TabIndex = 11;
             this.btnCloseInprogressEnquiry.TileImage = ((System.Drawing.Image)(resources.GetObject("btnCloseInprogressEnquiry.TileImage")));
             this.btnCloseInprogressEnquiry.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -451,9 +453,9 @@
             // 
             this.btnViewProgressInProgressSections.ActiveControl = null;
             this.btnViewProgressInProgressSections.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnViewProgressInProgressSections.Location = new System.Drawing.Point(119, 3);
+            this.btnViewProgressInProgressSections.Location = new System.Drawing.Point(129, 3);
             this.btnViewProgressInProgressSections.Name = "btnViewProgressInProgressSections";
-            this.btnViewProgressInProgressSections.Size = new System.Drawing.Size(52, 42);
+            this.btnViewProgressInProgressSections.Size = new System.Drawing.Size(57, 48);
             this.btnViewProgressInProgressSections.TabIndex = 10;
             this.btnViewProgressInProgressSections.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnViewProgressInProgressSections.TileImage = ((System.Drawing.Image)(resources.GetObject("btnViewProgressInProgressSections.TileImage")));
@@ -468,9 +470,9 @@
             this.btnInitialConsultationConfirmationInProgressSection.ActiveControl = null;
             this.btnInitialConsultationConfirmationInProgressSection.BackColor = System.Drawing.Color.Olive;
             this.btnInitialConsultationConfirmationInProgressSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnInitialConsultationConfirmationInProgressSection.Location = new System.Drawing.Point(61, 3);
+            this.btnInitialConsultationConfirmationInProgressSection.Location = new System.Drawing.Point(66, 3);
             this.btnInitialConsultationConfirmationInProgressSection.Name = "btnInitialConsultationConfirmationInProgressSection";
-            this.btnInitialConsultationConfirmationInProgressSection.Size = new System.Drawing.Size(52, 42);
+            this.btnInitialConsultationConfirmationInProgressSection.Size = new System.Drawing.Size(57, 48);
             this.btnInitialConsultationConfirmationInProgressSection.TabIndex = 12;
             this.btnInitialConsultationConfirmationInProgressSection.TileImage = ((System.Drawing.Image)(resources.GetObject("btnInitialConsultationConfirmationInProgressSection.TileImage")));
             this.btnInitialConsultationConfirmationInProgressSection.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -511,7 +513,7 @@
             this.gbInprogressContactNameAndCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbInprogressContactNameAndCompanyName.Location = new System.Drawing.Point(3, 82);
             this.gbInprogressContactNameAndCompanyName.Name = "gbInprogressContactNameAndCompanyName";
-            this.gbInprogressContactNameAndCompanyName.Size = new System.Drawing.Size(445, 100);
+            this.gbInprogressContactNameAndCompanyName.Size = new System.Drawing.Size(460, 100);
             this.gbInprogressContactNameAndCompanyName.TabIndex = 9;
             this.gbInprogressContactNameAndCompanyName.TabStop = false;
             this.gbInprogressContactNameAndCompanyName.Text = "Company Contact Or ( Student Details if Private )";
@@ -536,7 +538,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(439, 81);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(454, 81);
             this.tableLayoutPanel5.TabIndex = 18;
             // 
             // tableLayoutPanel2
@@ -547,12 +549,13 @@
             this.tableLayoutPanel2.Controls.Add(this.btnInProgressSwitchBetweenCompanyANdPrivate, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnInProgressChangeContact, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(357, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(354, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel5.SetRowSpan(this.tableLayoutPanel2, 2);
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(86, 46);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(97, 52);
             this.tableLayoutPanel2.TabIndex = 16;
             // 
             // btnInProgressSwitchBetweenCompanyANdPrivate
@@ -561,7 +564,7 @@
             this.btnInProgressSwitchBetweenCompanyANdPrivate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnInProgressSwitchBetweenCompanyANdPrivate.Location = new System.Drawing.Point(3, 3);
             this.btnInProgressSwitchBetweenCompanyANdPrivate.Name = "btnInProgressSwitchBetweenCompanyANdPrivate";
-            this.btnInProgressSwitchBetweenCompanyANdPrivate.Size = new System.Drawing.Size(37, 40);
+            this.btnInProgressSwitchBetweenCompanyANdPrivate.Size = new System.Drawing.Size(42, 46);
             this.btnInProgressSwitchBetweenCompanyANdPrivate.TabIndex = 12;
             this.btnInProgressSwitchBetweenCompanyANdPrivate.TileImage = ((System.Drawing.Image)(resources.GetObject("btnInProgressSwitchBetweenCompanyANdPrivate.TileImage")));
             this.btnInProgressSwitchBetweenCompanyANdPrivate.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -574,9 +577,9 @@
             // 
             this.btnInProgressChangeContact.ActiveControl = null;
             this.btnInProgressChangeContact.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnInProgressChangeContact.Location = new System.Drawing.Point(46, 3);
+            this.btnInProgressChangeContact.Location = new System.Drawing.Point(51, 3);
             this.btnInProgressChangeContact.Name = "btnInProgressChangeContact";
-            this.btnInProgressChangeContact.Size = new System.Drawing.Size(37, 40);
+            this.btnInProgressChangeContact.Size = new System.Drawing.Size(43, 46);
             this.btnInProgressChangeContact.TabIndex = 15;
             this.btnInProgressChangeContact.TileImage = ((System.Drawing.Image)(resources.GetObject("btnInProgressChangeContact.TileImage")));
             this.btnInProgressChangeContact.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -634,7 +637,7 @@
             this.gbInProgressContactDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbInProgressContactDetails.Location = new System.Drawing.Point(0, 0);
             this.gbInProgressContactDetails.Name = "gbInProgressContactDetails";
-            this.gbInProgressContactDetails.Size = new System.Drawing.Size(346, 185);
+            this.gbInProgressContactDetails.Size = new System.Drawing.Size(331, 185);
             this.gbInProgressContactDetails.TabIndex = 0;
             this.gbInProgressContactDetails.TabStop = false;
             this.gbInProgressContactDetails.Text = "Contact Details";
@@ -645,11 +648,11 @@
             // toolStripContainer2.ContentPanel
             // 
             this.toolStripContainer2.ContentPanel.Controls.Add(this.dgvInprogressContactDetails);
-            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(340, 141);
+            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(325, 141);
             this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer2.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainer2.Name = "toolStripContainer2";
-            this.toolStripContainer2.Size = new System.Drawing.Size(340, 166);
+            this.toolStripContainer2.Size = new System.Drawing.Size(325, 166);
             this.toolStripContainer2.TabIndex = 0;
             this.toolStripContainer2.Text = "toolStripContainer2";
             // 
@@ -685,7 +688,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvInprogressContactDetails.DefaultCellStyle = dataGridViewCellStyle2;
@@ -707,8 +710,10 @@
             this.dgvInprogressContactDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInprogressContactDetails.RowHeadersWidth = 15;
             this.dgvInprogressContactDetails.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvInprogressContactDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvInprogressContactDetails.Size = new System.Drawing.Size(340, 141);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvInprogressContactDetails.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvInprogressContactDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInprogressContactDetails.Size = new System.Drawing.Size(325, 141);
             this.dgvInprogressContactDetails.TabIndex = 0;
             this.dgvInprogressContactDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInprogressContactDetails_CellContentClick);
             this.dgvInprogressContactDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvInprogressContactDetails_DataBindingComplete);
@@ -776,7 +781,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(340, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(325, 25);
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 0;
             // 
@@ -927,34 +932,33 @@
             this.dgvInProgressCurriculumEnquiries.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInProgressCurriculumEnquiries.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvInProgressCurriculumEnquiries.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInProgressCurriculumEnquiries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInProgressCurriculumEnquiries.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvInProgressCurriculumEnquiries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInProgressCurriculumEnquiries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colInProgressEnquiryCloseCurriculumEnquiry,
             this.lastUpdatedDataGridViewTextBoxColumn,
+            this.colInProgressEnquiryCloseCurriculumEnquiry,
             this.colInProgressCurriculumDepartment,
             this.colInProgressCurriculumName,
-            this.colInProgressCurriculumEnquiryStatus,
             this.enrollmentQuanityDataGridViewTextBoxColumn,
             this.colInProgressEnquiryQuantityCurrentlyEnrolled,
             this.colInProgressProcessEnrollment,
             this.colInProgressViewCurrentEnrollment});
             this.dgvInProgressCurriculumEnquiries.DataSource = this.curriculumEnquiryInprogressBindingSource;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInProgressCurriculumEnquiries.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInProgressCurriculumEnquiries.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvInProgressCurriculumEnquiries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInProgressCurriculumEnquiries.EnableHeadersVisualStyles = false;
             this.dgvInProgressCurriculumEnquiries.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -963,16 +967,18 @@
             this.dgvInProgressCurriculumEnquiries.Name = "dgvInProgressCurriculumEnquiries";
             this.dgvInProgressCurriculumEnquiries.ReadOnly = true;
             this.dgvInProgressCurriculumEnquiries.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInProgressCurriculumEnquiries.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInProgressCurriculumEnquiries.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvInProgressCurriculumEnquiries.RowHeadersWidth = 15;
             this.dgvInProgressCurriculumEnquiries.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvInProgressCurriculumEnquiries.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvInProgressCurriculumEnquiries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInProgressCurriculumEnquiries.Size = new System.Drawing.Size(795, 233);
             this.dgvInProgressCurriculumEnquiries.TabIndex = 0;
@@ -1514,19 +1520,6 @@
             this.companiesInprogressBindingSource.DataMember = "Companies";
             this.companiesInprogressBindingSource.DataSource = this.individualsInprogressBindingSource;
             // 
-            // colInProgressEnquiryCloseCurriculumEnquiry
-            // 
-            this.colInProgressEnquiryCloseCurriculumEnquiry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.HeaderText = "";
-            this.colInProgressEnquiryCloseCurriculumEnquiry.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.Name = "colInProgressEnquiryCloseCurriculumEnquiry";
-            this.colInProgressEnquiryCloseCurriculumEnquiry.ReadOnly = true;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.Text = "[ Close Enquiry Item ]";
-            this.colInProgressEnquiryCloseCurriculumEnquiry.TrackVisitedState = false;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.Width = 5;
-            // 
             // lastUpdatedDataGridViewTextBoxColumn
             // 
             this.lastUpdatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -1535,6 +1528,19 @@
             this.lastUpdatedDataGridViewTextBoxColumn.Name = "lastUpdatedDataGridViewTextBoxColumn";
             this.lastUpdatedDataGridViewTextBoxColumn.ReadOnly = true;
             this.lastUpdatedDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // colInProgressEnquiryCloseCurriculumEnquiry
+            // 
+            this.colInProgressEnquiryCloseCurriculumEnquiry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.HeaderText = "";
+            this.colInProgressEnquiryCloseCurriculumEnquiry.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.Name = "colInProgressEnquiryCloseCurriculumEnquiry";
+            this.colInProgressEnquiryCloseCurriculumEnquiry.ReadOnly = true;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.Text = "[ Close Enquiry Item ]";
+            this.colInProgressEnquiryCloseCurriculumEnquiry.TrackVisitedState = false;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.Width = 5;
             // 
             // colInProgressCurriculumDepartment
             // 
@@ -1552,20 +1558,12 @@
             this.colInProgressCurriculumName.ReadOnly = true;
             this.colInProgressCurriculumName.Width = 86;
             // 
-            // colInProgressCurriculumEnquiryStatus
-            // 
-            this.colInProgressCurriculumEnquiryStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colInProgressCurriculumEnquiryStatus.HeaderText = "Stastus";
-            this.colInProgressCurriculumEnquiryStatus.Name = "colInProgressCurriculumEnquiryStatus";
-            this.colInProgressCurriculumEnquiryStatus.ReadOnly = true;
-            this.colInProgressCurriculumEnquiryStatus.Width = 67;
-            // 
             // enrollmentQuanityDataGridViewTextBoxColumn
             // 
             this.enrollmentQuanityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.enrollmentQuanityDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentQuanity";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.enrollmentQuanityDataGridViewTextBoxColumn.HeaderText = "Qty To Enroll";
             this.enrollmentQuanityDataGridViewTextBoxColumn.Name = "enrollmentQuanityDataGridViewTextBoxColumn";
             this.enrollmentQuanityDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1574,8 +1572,8 @@
             // colInProgressEnquiryQuantityCurrentlyEnrolled
             // 
             this.colInProgressEnquiryQuantityCurrentlyEnrolled.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.DefaultCellStyle = dataGridViewCellStyle8;
             this.colInProgressEnquiryQuantityCurrentlyEnrolled.HeaderText = "Qty Enrolled";
             this.colInProgressEnquiryQuantityCurrentlyEnrolled.Name = "colInProgressEnquiryQuantityCurrentlyEnrolled";
             this.colInProgressEnquiryQuantityCurrentlyEnrolled.ReadOnly = true;
@@ -1800,11 +1798,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nextOfKinDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn systemAdministratorDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewLinkColumn colInProgressEnquiryCloseCurriculumEnquiry;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdatedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn colInProgressEnquiryCloseCurriculumEnquiry;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInProgressCurriculumDepartment;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInProgressCurriculumName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInProgressCurriculumEnquiryStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentQuanityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInProgressEnquiryQuantityCurrentlyEnrolled;
         private System.Windows.Forms.DataGridViewLinkColumn colInProgressProcessEnrollment;

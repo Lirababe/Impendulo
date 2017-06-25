@@ -29,7 +29,11 @@ namespace Impendulo.Enquiry.UpdateSelectedCurriculumEnrollQty.Development
         {
             if (CurrentCurriculumEnquiry != null)
             {
-                this.nudQtyToEnroll.Value = CurrentCurriculumEnquiry.EnrollmentQuanity;
+                //if (this.nudQtyToEnroll.Minimum > )
+                //{
+
+                //}
+                //this.nudQtyToEnroll.Value = CurrentCurriculumEnquiry.EnrollmentQuanity;
             }else
             {
                 this.nudQtyToEnroll.Value = 1;
