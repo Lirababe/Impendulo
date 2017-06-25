@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Impendulo.Data.Models;
-using Impendulo.StudentForms;
-
-
+using System.Data.Entity;
 
 namespace Impendulo.StudentForms.Development
 {
@@ -46,11 +40,55 @@ namespace Impendulo.StudentForms.Development
             {
                 StudentExpceptionList = new List<Student>();
             }
+            this.LoadSearchSuggestions();
             SearchStudentNumber = "0";
             this.setSearchVariables();
             this.SearchForStudent();
-        }
 
+        }
+        private void LoadSearchSuggestions()
+        {
+
+            AutoCompleteStringCollection allowedIDNumbers = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection allowedFirstNames = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection allowedLastNames = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection allowedStudentNumbers = new AutoCompleteStringCollection();
+
+            List<Data.Models.Student> x = new List<Data.Models.Student>();
+
+            using (var Dbconnection = new MCDEntities())
+            {
+                x = (from a in Dbconnection.Students
+                     select a)
+                     .Include("Individual")
+                     .ToList<Data.Models.Student>();
+
+
+            };
+            foreach (Student StudentObj in x)
+            {
+                allowedIDNumbers.Add(StudentObj.StudentIDNumber.ToString());
+                allowedFirstNames.Add(StudentObj.Individual.IndividualFirstName);
+                allowedLastNames.Add(StudentObj.Individual.IndividualLastname);
+                //allowedStudentNumbers.Add(StudentObj.StudentID.ToString());
+            }
+
+            txtStudentIdNumber.AutoCompleteCustomSource = allowedIDNumbers;
+            txtStudentIdNumber.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtStudentIdNumber.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            txtFirstName.AutoCompleteCustomSource = allowedFirstNames;
+            txtFirstName.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtFirstName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            txtLastName.AutoCompleteCustomSource = allowedLastNames;
+            txtLastName.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtLastName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            //txtStudentNumber.AutoCompleteCustomSource = allowedLastNames;
+            //txtLastName.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //txtLastName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             this.setSearchVariables();
@@ -211,9 +249,5 @@ namespace Impendulo.StudentForms.Development
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

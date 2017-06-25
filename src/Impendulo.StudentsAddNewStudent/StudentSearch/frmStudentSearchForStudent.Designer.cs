@@ -29,16 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudentSearchForStudent));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbSearchForStudent = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.picbtnAddStudent = new System.Windows.Forms.PictureBox();
+            this.btnSearch = new MetroFramework.Controls.MetroTile();
+            this.btnRefresh = new MetroFramework.Controls.MetroTile();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtStudentNumber = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtStudentIdNumber = new System.Windows.Forms.TextBox();
             this.panelStudentSearchResults = new System.Windows.Forms.Panel();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
@@ -59,13 +65,11 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSearch = new MetroFramework.Controls.MetroTile();
-            this.btnRefresh = new MetroFramework.Controls.MetroTile();
-            this.picbtnAddStudent = new System.Windows.Forms.PictureBox();
             this.gbSearchForStudent.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbtnAddStudent)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.panelStudentSearchResults.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -74,10 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbtnAddStudent)).BeginInit();
             this.SuspendLayout();
             // 
             // gbSearchForStudent
@@ -86,15 +86,129 @@
             this.gbSearchForStudent.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbSearchForStudent.Location = new System.Drawing.Point(20, 60);
             this.gbSearchForStudent.Name = "gbSearchForStudent";
-            this.gbSearchForStudent.Size = new System.Drawing.Size(762, 126);
+            this.gbSearchForStudent.Size = new System.Drawing.Size(762, 135);
             this.gbSearchForStudent.TabIndex = 1;
             this.gbSearchForStudent.TabStop = false;
             this.gbSearchForStudent.Text = "Search Fields";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(756, 114);
+            this.tableLayoutPanel3.TabIndex = 21;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel2.Controls.Add(this.picbtnAddStudent, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnSearch, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnRefresh, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(390, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(363, 108);
+            this.tableLayoutPanel2.TabIndex = 20;
+            // 
+            // picbtnAddStudent
+            // 
+            this.picbtnAddStudent.BackColor = System.Drawing.Color.SkyBlue;
+            this.picbtnAddStudent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picbtnAddStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picbtnAddStudent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picbtnAddStudent.Image = ((System.Drawing.Image)(resources.GetObject("picbtnAddStudent.Image")));
+            this.picbtnAddStudent.Location = new System.Drawing.Point(245, 3);
+            this.picbtnAddStudent.Name = "picbtnAddStudent";
+            this.picbtnAddStudent.Size = new System.Drawing.Size(115, 102);
+            this.picbtnAddStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbtnAddStudent.TabIndex = 15;
+            this.picbtnAddStudent.TabStop = false;
+            this.picbtnAddStudent.Visible = false;
+            this.picbtnAddStudent.Click += new System.EventHandler(this.picbtnAddStudent_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.ActiveControl = null;
+            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSearch.Location = new System.Drawing.Point(3, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(115, 102);
+            this.btnSearch.TabIndex = 16;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSearch.TileImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.TileImage")));
+            this.btnSearch.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSearch.UseSelectable = true;
+            this.btnSearch.UseTileImage = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.ActiveControl = null;
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRefresh.Location = new System.Drawing.Point(124, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(115, 102);
+            this.btnRefresh.TabIndex = 17;
+            this.btnRefresh.Text = "Reset";
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRefresh.TileImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.TileImage")));
+            this.btnRefresh.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRefresh.UseSelectable = true;
+            this.btnRefresh.UseTileImage = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtStudentNumber, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtLastName, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtFirstName, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtStudentIdNumber, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(381, 107);
+            this.tableLayoutPanel1.TabIndex = 19;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 7);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Student ID Number";
             // 
             // txtStudentNumber
             // 
             this.txtStudentNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtStudentNumber.Location = new System.Drawing.Point(112, 29);
+            this.txtStudentNumber.Mask = "0000000000000000000000000";
             this.txtStudentNumber.Name = "txtStudentNumber";
             this.txtStudentNumber.Size = new System.Drawing.Size(266, 20);
             this.txtStudentNumber.TabIndex = 18;
@@ -108,25 +222,6 @@
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 17;
             this.label1.Text = "Student Number";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 85);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Last Name";
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtLastName.Location = new System.Drawing.Point(112, 81);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(266, 20);
-            this.txtLastName.TabIndex = 7;
             // 
             // label4
             // 
@@ -138,6 +233,24 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "First Name";
             // 
+            // txtLastName
+            // 
+            this.txtLastName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLastName.Location = new System.Drawing.Point(112, 81);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(266, 20);
+            this.txtLastName.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 85);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Last Name";
+            // 
             // txtFirstName
             // 
             this.txtFirstName.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -145,16 +258,6 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(266, 20);
             this.txtFirstName.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 7);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Student ID Number";
             // 
             // txtStudentIdNumber
             // 
@@ -168,9 +271,9 @@
             // 
             this.panelStudentSearchResults.Controls.Add(this.toolStripContainer1);
             this.panelStudentSearchResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelStudentSearchResults.Location = new System.Drawing.Point(20, 186);
+            this.panelStudentSearchResults.Location = new System.Drawing.Point(20, 195);
             this.panelStudentSearchResults.Name = "panelStudentSearchResults";
-            this.panelStudentSearchResults.Size = new System.Drawing.Size(762, 339);
+            this.panelStudentSearchResults.Size = new System.Drawing.Size(762, 330);
             this.panelStudentSearchResults.TabIndex = 12;
             // 
             // toolStripContainer1
@@ -179,11 +282,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvStudentSearchResults);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(762, 312);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(762, 303);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(762, 339);
+            this.toolStripContainer1.Size = new System.Drawing.Size(762, 330);
             this.toolStripContainer1.TabIndex = 11;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -210,7 +313,7 @@
             this.dgvStudentSearchResults.ReadOnly = true;
             this.dgvStudentSearchResults.RowTemplate.Height = 24;
             this.dgvStudentSearchResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudentSearchResults.Size = new System.Drawing.Size(762, 312);
+            this.dgvStudentSearchResults.Size = new System.Drawing.Size(762, 303);
             this.dgvStudentSearchResults.TabIndex = 0;
             this.dgvStudentSearchResults.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentSearchResults_CellContentClick);
             this.dgvStudentSearchResults.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvStudentSearchResults_DataBindingComplete);
@@ -219,8 +322,8 @@
             // 
             this.colSelectStudent.ActiveLinkColor = System.Drawing.Color.Black;
             this.colSelectStudent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.colSelectStudent.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.colSelectStudent.DefaultCellStyle = dataGridViewCellStyle2;
             this.colSelectStudent.HeaderText = "Select";
             this.colSelectStudent.LinkColor = System.Drawing.Color.Black;
             this.colSelectStudent.Name = "colSelectStudent";
@@ -367,108 +470,6 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtStudentNumber, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtLastName, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtFirstName, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtStudentIdNumber, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(381, 111);
-            this.tableLayoutPanel1.TabIndex = 19;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel2.Controls.Add(this.picbtnAddStudent, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnSearch, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnRefresh, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(390, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(363, 101);
-            this.tableLayoutPanel2.TabIndex = 20;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel1, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(756, 110);
-            this.tableLayoutPanel3.TabIndex = 21;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.ActiveControl = null;
-            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSearch.Location = new System.Drawing.Point(3, 3);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(115, 95);
-            this.btnSearch.TabIndex = 16;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSearch.TileImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.TileImage")));
-            this.btnSearch.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSearch.UseSelectable = true;
-            this.btnSearch.UseTileImage = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.ActiveControl = null;
-            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRefresh.Location = new System.Drawing.Point(124, 3);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(115, 95);
-            this.btnRefresh.TabIndex = 17;
-            this.btnRefresh.Text = "Reset";
-            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRefresh.TileImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.TileImage")));
-            this.btnRefresh.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnRefresh.UseSelectable = true;
-            this.btnRefresh.UseTileImage = true;
-            // 
-            // picbtnAddStudent
-            // 
-            this.picbtnAddStudent.BackColor = System.Drawing.Color.SkyBlue;
-            this.picbtnAddStudent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picbtnAddStudent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picbtnAddStudent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picbtnAddStudent.Image = ((System.Drawing.Image)(resources.GetObject("picbtnAddStudent.Image")));
-            this.picbtnAddStudent.Location = new System.Drawing.Point(245, 3);
-            this.picbtnAddStudent.Name = "picbtnAddStudent";
-            this.picbtnAddStudent.Size = new System.Drawing.Size(115, 95);
-            this.picbtnAddStudent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbtnAddStudent.TabIndex = 15;
-            this.picbtnAddStudent.TabStop = false;
-            this.picbtnAddStudent.Visible = false;
-            this.picbtnAddStudent.Click += new System.EventHandler(this.picbtnAddStudent_Click);
-            // 
             // frmStudentSearchForStudent
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -481,6 +482,11 @@
             this.Text = "Search For Selected Student";
             this.Load += new System.EventHandler(this.frmStudentSearchForStudent_Load);
             this.gbSearchForStudent.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picbtnAddStudent)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.panelStudentSearchResults.ResumeLayout(false);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
@@ -492,11 +498,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picbtnAddStudent)).EndInit();
             this.ResumeLayout(false);
 
         }
