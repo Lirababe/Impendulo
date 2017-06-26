@@ -147,6 +147,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroForm", "MetroForm\Metr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroFramework", "..\..\winforms-modernui\MetroFramework\MetroFramework.csproj", "{BB41AC8B-CBED-4387-A7E0-4567EDB3F57F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{93F9F421-53DA-41FA-A358-4C36B8DB6CA1}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\MCD Database Script 2017-06-06 Version 2.sql = ..\..\..\MCD Database Script 2017-06-06 Version 2.sql
+		..\..\..\MCD-26June2017.sql = ..\..\..\MCD-26June2017.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU

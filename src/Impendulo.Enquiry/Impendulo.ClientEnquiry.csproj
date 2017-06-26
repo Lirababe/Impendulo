@@ -343,6 +343,10 @@
       <Project>{268FA5ED-F32A-4AF9-85DF-64326DBE5D05}</Project>
       <Name>Impendulo.Email</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Impendulo.MainApplication\Impendulo.MainApplication.csproj">
+      <Project>{8AF9D303-A5DA-49C1-9497-EB6033A31076}</Project>
+      <Name>Impendulo.MainApplication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Impendulo.StudentEngineeringCourseErollment\Impendulo.StudentCourseErollment.csproj">
       <Project>{D23EB8C1-6D7C-4D0C-B20C-6B0060C4343B}</Project>
       <Name>Impendulo.StudentCourseErollment</Name>
