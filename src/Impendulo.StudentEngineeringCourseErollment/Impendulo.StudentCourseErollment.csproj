@@ -86,6 +86,12 @@
     <Compile Include="EnrollmentException\frmEnrollmentException.Designer.cs">
       <DependentUpon>frmEnrollmentException.cs</DependentUpon>
     </Compile>
+    <Compile Include="EnrollmentInprogress\frmEnrollmentProgressV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentInprogress\frmEnrollmentProgressV2.Designer.cs">
+      <DependentUpon>frmEnrollmentProgressV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="EnrollmentInprogress\frmEnrolmmentInprogress.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EnrollmentException\frmEnrollmentException.resx">
       <DependentUpon>frmEnrollmentException.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentInprogress\frmEnrollmentProgressV2.resx">
+      <DependentUpon>frmEnrollmentProgressV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EnrollmentInprogress\frmEnrolmmentInprogress.resx">
       <DependentUpon>frmEnrolmmentInprogress.cs</DependentUpon>
