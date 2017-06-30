@@ -24,7 +24,7 @@ using Impendulo.Employees.Deployment1;
 using Impendulo.StudentEngineeringCourseErollment.Deployment;
 
 using Impendulo.WizardForm.ClientEnquiry.Deployment;
-using Impendulo.Enquiry.Development.Enquiry.Deployment;
+using Impendulo.Enquiry.Deployment.Enquiry;
 
 namespace Impendulo.MainApplication
 {

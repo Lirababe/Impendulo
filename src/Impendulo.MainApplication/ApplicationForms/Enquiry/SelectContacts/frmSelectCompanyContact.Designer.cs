@@ -36,6 +36,23 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.dgvCompanyContacts = new System.Windows.Forms.DataGridView();
+            this.colContactTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colContactFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IndividualFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IndividualLastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualSecondNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualLastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowVersionDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.assessorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facilitatorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nextOfKinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.systemAdministratorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.individualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.txtContactsFilterCriteria = new System.Windows.Forms.ToolStripTextBox();
@@ -78,10 +95,9 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAddCompany = new System.Windows.Forms.Button();
             this.btnSelectCompany = new System.Windows.Forms.Button();
-            this.colContactTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colContactFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IndividualFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IndividualLastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.gbContacts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
@@ -104,12 +120,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.BindingNavigatorStudentContactInfo)).BeginInit();
             this.BindingNavigatorStudentContactInfo.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(162, 17);
+            this.label1.Location = new System.Drawing.Point(153, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 1;
@@ -117,7 +137,7 @@
             // 
             // txtCompanyName
             // 
-            this.txtCompanyName.Location = new System.Drawing.Point(219, 14);
+            this.txtCompanyName.Location = new System.Drawing.Point(210, 3);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.ReadOnly = true;
             this.txtCompanyName.Size = new System.Drawing.Size(347, 20);
@@ -125,14 +145,14 @@
             // 
             // gbContacts
             // 
-            this.gbContacts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbContacts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbContacts.Controls.Add(this.splitContainer3);
             this.gbContacts.Enabled = false;
-            this.gbContacts.Location = new System.Drawing.Point(12, 50);
+            this.gbContacts.Location = new System.Drawing.Point(3, 38);
             this.gbContacts.Name = "gbContacts";
-            this.gbContacts.Size = new System.Drawing.Size(868, 251);
+            this.gbContacts.Size = new System.Drawing.Size(883, 253);
             this.gbContacts.TabIndex = 4;
             this.gbContacts.TabStop = false;
             this.gbContacts.Text = "Contacts";
@@ -151,8 +171,8 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.groupBox5);
-            this.splitContainer3.Size = new System.Drawing.Size(862, 232);
-            this.splitContainer3.SplitterDistance = 388;
+            this.splitContainer3.Size = new System.Drawing.Size(877, 234);
+            this.splitContainer3.SplitterDistance = 404;
             this.splitContainer3.TabIndex = 0;
             // 
             // toolStripContainer2
@@ -161,11 +181,11 @@
             // toolStripContainer2.ContentPanel
             // 
             this.toolStripContainer2.ContentPanel.Controls.Add(this.dgvCompanyContacts);
-            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(388, 178);
+            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(404, 172);
             this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer2.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer2.Name = "toolStripContainer2";
-            this.toolStripContainer2.Size = new System.Drawing.Size(388, 232);
+            this.toolStripContainer2.Size = new System.Drawing.Size(404, 234);
             this.toolStripContainer2.TabIndex = 0;
             this.toolStripContainer2.Text = "toolStripContainer2";
             // 
@@ -184,7 +204,20 @@
             this.colContactTitle,
             this.colContactFullName,
             this.IndividualFirstName,
-            this.IndividualLastname});
+            this.IndividualLastname,
+            this.individualIDDataGridViewTextBoxColumn,
+            this.titleIDDataGridViewTextBoxColumn,
+            this.individualFirstNameDataGridViewTextBoxColumn,
+            this.individualSecondNameDataGridViewTextBoxColumn,
+            this.individualLastnameDataGridViewTextBoxColumn,
+            this.rowVersionDataGridViewImageColumn,
+            this.assessorDataGridViewTextBoxColumn,
+            this.employeeDataGridViewTextBoxColumn,
+            this.facilitatorDataGridViewTextBoxColumn,
+            this.lookupTitleDataGridViewTextBoxColumn,
+            this.nextOfKinDataGridViewTextBoxColumn,
+            this.studentDataGridViewTextBoxColumn,
+            this.systemAdministratorDataGridViewTextBoxColumn});
             this.dgvCompanyContacts.DataSource = this.individualBindingSource;
             this.dgvCompanyContacts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCompanyContacts.Location = new System.Drawing.Point(0, 0);
@@ -192,9 +225,146 @@
             this.dgvCompanyContacts.ReadOnly = true;
             this.dgvCompanyContacts.RowHeadersWidth = 15;
             this.dgvCompanyContacts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCompanyContacts.Size = new System.Drawing.Size(388, 178);
+            this.dgvCompanyContacts.Size = new System.Drawing.Size(404, 172);
             this.dgvCompanyContacts.TabIndex = 0;
             this.dgvCompanyContacts.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvCompanyContacts_DataBindingComplete);
+            // 
+            // colContactTitle
+            // 
+            this.colContactTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colContactTitle.HeaderText = "Title";
+            this.colContactTitle.Name = "colContactTitle";
+            this.colContactTitle.ReadOnly = true;
+            this.colContactTitle.Width = 52;
+            // 
+            // colContactFullName
+            // 
+            this.colContactFullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colContactFullName.HeaderText = "Full Name";
+            this.colContactFullName.Name = "colContactFullName";
+            this.colContactFullName.ReadOnly = true;
+            this.colContactFullName.Width = 79;
+            // 
+            // IndividualFirstName
+            // 
+            this.IndividualFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.IndividualFirstName.DataPropertyName = "IndividualFirstName";
+            this.IndividualFirstName.HeaderText = "First Name";
+            this.IndividualFirstName.Name = "IndividualFirstName";
+            this.IndividualFirstName.ReadOnly = true;
+            this.IndividualFirstName.Width = 82;
+            // 
+            // IndividualLastname
+            // 
+            this.IndividualLastname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.IndividualLastname.DataPropertyName = "IndividualLastname";
+            this.IndividualLastname.HeaderText = "Last Name";
+            this.IndividualLastname.Name = "IndividualLastname";
+            this.IndividualLastname.ReadOnly = true;
+            // 
+            // individualIDDataGridViewTextBoxColumn
+            // 
+            this.individualIDDataGridViewTextBoxColumn.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn.Name = "individualIDDataGridViewTextBoxColumn";
+            this.individualIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.individualIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // titleIDDataGridViewTextBoxColumn
+            // 
+            this.titleIDDataGridViewTextBoxColumn.DataPropertyName = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn.HeaderText = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn.Name = "titleIDDataGridViewTextBoxColumn";
+            this.titleIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.titleIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // individualFirstNameDataGridViewTextBoxColumn
+            // 
+            this.individualFirstNameDataGridViewTextBoxColumn.DataPropertyName = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn.HeaderText = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn.Name = "individualFirstNameDataGridViewTextBoxColumn";
+            this.individualFirstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.individualFirstNameDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // individualSecondNameDataGridViewTextBoxColumn
+            // 
+            this.individualSecondNameDataGridViewTextBoxColumn.DataPropertyName = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn.HeaderText = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn.Name = "individualSecondNameDataGridViewTextBoxColumn";
+            this.individualSecondNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.individualSecondNameDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // individualLastnameDataGridViewTextBoxColumn
+            // 
+            this.individualLastnameDataGridViewTextBoxColumn.DataPropertyName = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn.HeaderText = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn.Name = "individualLastnameDataGridViewTextBoxColumn";
+            this.individualLastnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.individualLastnameDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // rowVersionDataGridViewImageColumn
+            // 
+            this.rowVersionDataGridViewImageColumn.DataPropertyName = "RowVersion";
+            this.rowVersionDataGridViewImageColumn.HeaderText = "RowVersion";
+            this.rowVersionDataGridViewImageColumn.Name = "rowVersionDataGridViewImageColumn";
+            this.rowVersionDataGridViewImageColumn.ReadOnly = true;
+            this.rowVersionDataGridViewImageColumn.Visible = false;
+            // 
+            // assessorDataGridViewTextBoxColumn
+            // 
+            this.assessorDataGridViewTextBoxColumn.DataPropertyName = "Assessor";
+            this.assessorDataGridViewTextBoxColumn.HeaderText = "Assessor";
+            this.assessorDataGridViewTextBoxColumn.Name = "assessorDataGridViewTextBoxColumn";
+            this.assessorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.assessorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // employeeDataGridViewTextBoxColumn
+            // 
+            this.employeeDataGridViewTextBoxColumn.DataPropertyName = "Employee";
+            this.employeeDataGridViewTextBoxColumn.HeaderText = "Employee";
+            this.employeeDataGridViewTextBoxColumn.Name = "employeeDataGridViewTextBoxColumn";
+            this.employeeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.employeeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // facilitatorDataGridViewTextBoxColumn
+            // 
+            this.facilitatorDataGridViewTextBoxColumn.DataPropertyName = "Facilitator";
+            this.facilitatorDataGridViewTextBoxColumn.HeaderText = "Facilitator";
+            this.facilitatorDataGridViewTextBoxColumn.Name = "facilitatorDataGridViewTextBoxColumn";
+            this.facilitatorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.facilitatorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // lookupTitleDataGridViewTextBoxColumn
+            // 
+            this.lookupTitleDataGridViewTextBoxColumn.DataPropertyName = "LookupTitle";
+            this.lookupTitleDataGridViewTextBoxColumn.HeaderText = "LookupTitle";
+            this.lookupTitleDataGridViewTextBoxColumn.Name = "lookupTitleDataGridViewTextBoxColumn";
+            this.lookupTitleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lookupTitleDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nextOfKinDataGridViewTextBoxColumn
+            // 
+            this.nextOfKinDataGridViewTextBoxColumn.DataPropertyName = "NextOfKin";
+            this.nextOfKinDataGridViewTextBoxColumn.HeaderText = "NextOfKin";
+            this.nextOfKinDataGridViewTextBoxColumn.Name = "nextOfKinDataGridViewTextBoxColumn";
+            this.nextOfKinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nextOfKinDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // studentDataGridViewTextBoxColumn
+            // 
+            this.studentDataGridViewTextBoxColumn.DataPropertyName = "Student";
+            this.studentDataGridViewTextBoxColumn.HeaderText = "Student";
+            this.studentDataGridViewTextBoxColumn.Name = "studentDataGridViewTextBoxColumn";
+            this.studentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.studentDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // systemAdministratorDataGridViewTextBoxColumn
+            // 
+            this.systemAdministratorDataGridViewTextBoxColumn.DataPropertyName = "SystemAdministrator";
+            this.systemAdministratorDataGridViewTextBoxColumn.HeaderText = "SystemAdministrator";
+            this.systemAdministratorDataGridViewTextBoxColumn.Name = "systemAdministratorDataGridViewTextBoxColumn";
+            this.systemAdministratorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.systemAdministratorDataGridViewTextBoxColumn.Visible = false;
             // 
             // individualBindingSource
             // 
@@ -214,7 +384,8 @@
             this.btnRefreshContactsearch});
             this.toolStrip3.Location = new System.Drawing.Point(0, 0);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(388, 27);
+            this.toolStrip3.Padding = new System.Windows.Forms.Padding(2);
+            this.toolStrip3.Size = new System.Drawing.Size(404, 31);
             this.toolStrip3.Stretch = true;
             this.toolStrip3.TabIndex = 6;
             // 
@@ -271,14 +442,15 @@
             this.btnAddContact,
             this.toolStripSeparator4,
             this.btnUpdateContact});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 27);
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 31);
             this.bindingNavigator1.MoveFirstItem = this.toolStripButton7;
             this.bindingNavigator1.MoveLastItem = this.toolStripButton10;
             this.bindingNavigator1.MoveNextItem = this.toolStripButton9;
             this.bindingNavigator1.MovePreviousItem = this.toolStripButton8;
             this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.Padding = new System.Windows.Forms.Padding(2);
             this.bindingNavigator1.PositionItem = this.toolStripTextBox3;
-            this.bindingNavigator1.Size = new System.Drawing.Size(388, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(404, 31);
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 1;
             // 
@@ -382,7 +554,7 @@
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(470, 232);
+            this.groupBox5.Size = new System.Drawing.Size(469, 234);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Contact Details";
@@ -393,11 +565,11 @@
             // toolStripContainerStudentContacts.ContentPanel
             // 
             this.toolStripContainerStudentContacts.ContentPanel.Controls.Add(this.dgvStudentContactInfo);
-            this.toolStripContainerStudentContacts.ContentPanel.Size = new System.Drawing.Size(464, 186);
+            this.toolStripContainerStudentContacts.ContentPanel.Size = new System.Drawing.Size(463, 184);
             this.toolStripContainerStudentContacts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainerStudentContacts.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainerStudentContacts.Name = "toolStripContainerStudentContacts";
-            this.toolStripContainerStudentContacts.Size = new System.Drawing.Size(464, 213);
+            this.toolStripContainerStudentContacts.Size = new System.Drawing.Size(463, 215);
             this.toolStripContainerStudentContacts.TabIndex = 3;
             this.toolStripContainerStudentContacts.Text = "toolStripContainer1";
             // 
@@ -422,7 +594,7 @@
             this.dgvStudentContactInfo.RowHeadersWidth = 15;
             this.dgvStudentContactInfo.RowTemplate.Height = 24;
             this.dgvStudentContactInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudentContactInfo.Size = new System.Drawing.Size(464, 186);
+            this.dgvStudentContactInfo.Size = new System.Drawing.Size(463, 184);
             this.dgvStudentContactInfo.TabIndex = 0;
             this.dgvStudentContactInfo.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvStudentContactInfo_DataBindingComplete);
             // 
@@ -474,8 +646,9 @@
             this.BindingNavigatorStudentContactInfo.MoveNextItem = this.bindingNavigatorMoveNextItem1;
             this.BindingNavigatorStudentContactInfo.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.BindingNavigatorStudentContactInfo.Name = "BindingNavigatorStudentContactInfo";
+            this.BindingNavigatorStudentContactInfo.Padding = new System.Windows.Forms.Padding(2);
             this.BindingNavigatorStudentContactInfo.PositionItem = this.bindingNavigatorPositionItem1;
-            this.BindingNavigatorStudentContactInfo.Size = new System.Drawing.Size(464, 27);
+            this.BindingNavigatorStudentContactInfo.Size = new System.Drawing.Size(463, 31);
             this.BindingNavigatorStudentContactInfo.Stretch = true;
             this.BindingNavigatorStudentContactInfo.TabIndex = 0;
             // 
@@ -571,9 +744,9 @@
             // 
             this.btnSelectContact.Enabled = false;
             this.btnSelectContact.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSelectContact.Location = new System.Drawing.Point(770, 3);
+            this.btnSelectContact.Location = new System.Drawing.Point(711, 3);
             this.btnSelectContact.Name = "btnSelectContact";
-            this.btnSelectContact.Size = new System.Drawing.Size(119, 45);
+            this.btnSelectContact.Size = new System.Drawing.Size(119, 24);
             this.btnSelectContact.TabIndex = 5;
             this.btnSelectContact.Text = "Select Contact";
             this.btnSelectContact.UseVisualStyleBackColor = true;
@@ -583,18 +756,17 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnSelectContact);
             this.flowLayoutPanel1.Controls.Add(this.btnCancel);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 304);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 297);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(892, 48);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(833, 31);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(659, 3);
+            this.btnCancel.Location = new System.Drawing.Point(600, 3);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(105, 45);
+            this.btnCancel.Size = new System.Drawing.Size(105, 24);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -604,7 +776,7 @@
             // 
             this.btnAddCompany.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCompany.Image")));
             this.btnAddCompany.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddCompany.Location = new System.Drawing.Point(572, 14);
+            this.btnAddCompany.Location = new System.Drawing.Point(563, 3);
             this.btnAddCompany.Name = "btnAddCompany";
             this.btnAddCompany.Size = new System.Drawing.Size(144, 23);
             this.btnAddCompany.TabIndex = 7;
@@ -615,7 +787,7 @@
             // btnSelectCompany
             // 
             this.btnSelectCompany.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelectCompany.Location = new System.Drawing.Point(15, 12);
+            this.btnSelectCompany.Location = new System.Drawing.Point(3, 3);
             this.btnSelectCompany.Name = "btnSelectCompany";
             this.btnSelectCompany.Size = new System.Drawing.Size(144, 23);
             this.btnSelectCompany.TabIndex = 8;
@@ -623,54 +795,54 @@
             this.btnSelectCompany.UseVisualStyleBackColor = true;
             this.btnSelectCompany.Click += new System.EventHandler(this.btnSelectCompany_Click);
             // 
-            // colContactTitle
+            // groupBox1
             // 
-            this.colContactTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colContactTitle.HeaderText = "Title";
-            this.colContactTitle.Name = "colContactTitle";
-            this.colContactTitle.ReadOnly = true;
-            this.colContactTitle.Width = 52;
+            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(20, 60);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(895, 350);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Contact Details";
             // 
-            // colContactFullName
+            // tableLayoutPanel1
             // 
-            this.colContactFullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colContactFullName.HeaderText = "Full Name";
-            this.colContactFullName.Name = "colContactFullName";
-            this.colContactFullName.ReadOnly = true;
-            this.colContactFullName.Width = 79;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.gbContacts, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.90476F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.09524F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(889, 331);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // IndividualFirstName
+            // flowLayoutPanel2
             // 
-            this.IndividualFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.IndividualFirstName.DataPropertyName = "IndividualFirstName";
-            this.IndividualFirstName.HeaderText = "First Name";
-            this.IndividualFirstName.Name = "IndividualFirstName";
-            this.IndividualFirstName.ReadOnly = true;
-            this.IndividualFirstName.Width = 82;
-            // 
-            // IndividualLastname
-            // 
-            this.IndividualLastname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.IndividualLastname.DataPropertyName = "IndividualLastname";
-            this.IndividualLastname.HeaderText = "Last Name";
-            this.IndividualLastname.Name = "IndividualLastname";
-            this.IndividualLastname.ReadOnly = true;
+            this.flowLayoutPanel2.Controls.Add(this.btnSelectCompany);
+            this.flowLayoutPanel2.Controls.Add(this.label1);
+            this.flowLayoutPanel2.Controls.Add(this.txtCompanyName);
+            this.flowLayoutPanel2.Controls.Add(this.btnAddCompany);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(883, 29);
+            this.flowLayoutPanel2.TabIndex = 7;
             // 
             // frmSelectCompanyContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 352);
-            this.Controls.Add(this.btnSelectCompany);
-            this.Controls.Add(this.btnAddCompany);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.gbContacts);
-            this.Controls.Add(this.txtCompanyName);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.ClientSize = new System.Drawing.Size(935, 430);
+            this.Controls.Add(this.groupBox1);
             this.Name = "frmSelectCompanyContact";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Company Contact";
             this.Load += new System.EventHandler(this.frmSelectCompanyContact_Load);
             this.gbContacts.ResumeLayout(false);
@@ -702,8 +874,11 @@
             this.BindingNavigatorStudentContactInfo.ResumeLayout(false);
             this.BindingNavigatorStudentContactInfo.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -760,5 +935,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colContactFullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn IndividualFirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn IndividualLastname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualFirstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualSecondNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualLastnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn rowVersionDataGridViewImageColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assessorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn facilitatorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lookupTitleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nextOfKinDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn systemAdministratorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }

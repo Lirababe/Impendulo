@@ -239,6 +239,11 @@
             this.nudCourseMaximumAllowed.Name = "nudCourseMaximumAllowed";
             this.nudCourseMaximumAllowed.Size = new System.Drawing.Size(51, 22);
             this.nudCourseMaximumAllowed.TabIndex = 57;
+            this.nudCourseMaximumAllowed.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // nudCourseMinimumAllowed
             // 
@@ -247,6 +252,11 @@
             this.nudCourseMinimumAllowed.Name = "nudCourseMinimumAllowed";
             this.nudCourseMinimumAllowed.Size = new System.Drawing.Size(51, 22);
             this.nudCourseMinimumAllowed.TabIndex = 56;
+            this.nudCourseMinimumAllowed.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label8
             // 
@@ -458,7 +468,7 @@
             this.txtTrainingDepartmentCourse.Name = "txtTrainingDepartmentCourse";
             this.txtTrainingDepartmentCourse.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTrainingDepartmentCourse.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtTrainingDepartmentCourse.Size = new System.Drawing.Size(172, 39);
+            this.txtTrainingDepartmentCourse.Size = new System.Drawing.Size(160, 39);
             // 
             // lstCourses
             // 
@@ -572,7 +582,7 @@
             this.txtCourseFilterCriteria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCourseFilterCriteria.Name = "txtCourseFilterCriteria";
             this.txtCourseFilterCriteria.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtCourseFilterCriteria.Size = new System.Drawing.Size(117, 31);
+            this.txtCourseFilterCriteria.Size = new System.Drawing.Size(105, 31);
             // 
             // tsbtnSearchCourses
             // 

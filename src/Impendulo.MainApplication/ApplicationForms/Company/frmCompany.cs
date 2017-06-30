@@ -7,16 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Impendulo.Company.AddCompany;
 using Impendulo.Data.Models;
 using Impendulo.Common.Enum;
-using Impendulo.Contacts;
 using Impendulo.Addresses;
 using Impendulo.ContactDetails;
 using Impendulo.Addresses.Deployment;
 using Impendulo.ContactDetails.Deployment;
-using Impendulo.Contacts.Deployment;
 using Impendulo.Company.AddCompany.Deployment;
+using Impendulo.Deployment.Contacts;
 
 namespace Impendulo.Company.Deployment
 {

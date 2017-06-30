@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Impendulo.Data.Models;
+using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,19 +9,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Impendulo.Data.Models;
 
 namespace Impendulo.Company.SearchForCompany.Deployment
 {
-    public partial class frmCompanySearch : Form
+    public partial class frmCompanySearch : MetroForm
     {
+
         private string SearchCompanyName { get; set; }
         private string SearchSicNumber { get; set; }
         private string SearchSARSRegNumber { get; set; }
         private string SearchSETANumber { get; set; }
 
         public Data.Models.Company CurrentCompany { get; set; }
-
         public frmCompanySearch()
         {
             InitializeComponent();
@@ -70,7 +71,6 @@ namespace Impendulo.Company.SearchForCompany.Deployment
                                                             a.CompanySETANumber.Contains(this.SearchSETANumber) &&
                                                             a.CompanySicCode.Contains(SearchSicNumber)
                                                             select a).Take<Data.Models.Company>(50).ToList<Data.Models.Company>();
-
                 companyBindingSource.DataSource = resultByFilter;
             };
         }

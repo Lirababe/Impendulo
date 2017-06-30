@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Impendulo.Data.Models;
+using MetroFramework.Forms;
 
 namespace Impendulo.Company.SearchForCompany.Development
 {

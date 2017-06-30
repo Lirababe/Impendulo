@@ -45,6 +45,12 @@
             this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dgvCompanySearchResults = new System.Windows.Forms.DataGridView();
+            this.colSelectStudent = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companySETANumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companySicCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companySARSLevyRegistrationNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -55,20 +61,19 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colSelectStudent = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companySETANumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companySicCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companySARSLevyRegistrationNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gbSearchForStudent.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompanySearchResults)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbSearchForStudent
@@ -84,10 +89,10 @@
             this.gbSearchForStudent.Controls.Add(this.label4);
             this.gbSearchForStudent.Controls.Add(this.label2);
             this.gbSearchForStudent.Controls.Add(this.txtCompanyName);
-            this.gbSearchForStudent.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbSearchForStudent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbSearchForStudent.Location = new System.Drawing.Point(0, 0);
             this.gbSearchForStudent.Name = "gbSearchForStudent";
-            this.gbSearchForStudent.Size = new System.Drawing.Size(608, 138);
+            this.gbSearchForStudent.Size = new System.Drawing.Size(608, 143);
             this.gbSearchForStudent.TabIndex = 2;
             this.gbSearchForStudent.TabStop = false;
             this.gbSearchForStudent.Text = "Search Fields";
@@ -196,11 +201,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvCompanySearchResults);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(608, 322);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(608, 313);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 138);
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(608, 349);
+            this.toolStripContainer1.Size = new System.Drawing.Size(608, 340);
             this.toolStripContainer1.TabIndex = 12;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -227,9 +232,64 @@
             this.dgvCompanySearchResults.ReadOnly = true;
             this.dgvCompanySearchResults.RowTemplate.Height = 24;
             this.dgvCompanySearchResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCompanySearchResults.Size = new System.Drawing.Size(608, 322);
+            this.dgvCompanySearchResults.Size = new System.Drawing.Size(608, 313);
             this.dgvCompanySearchResults.TabIndex = 0;
             this.dgvCompanySearchResults.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompanySearchResults_CellContentClick);
+            // 
+            // colSelectStudent
+            // 
+            this.colSelectStudent.ActiveLinkColor = System.Drawing.Color.Black;
+            this.colSelectStudent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.colSelectStudent.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colSelectStudent.HeaderText = "Select";
+            this.colSelectStudent.LinkColor = System.Drawing.Color.Black;
+            this.colSelectStudent.Name = "colSelectStudent";
+            this.colSelectStudent.ReadOnly = true;
+            this.colSelectStudent.Text = "Select";
+            this.colSelectStudent.TrackVisitedState = false;
+            this.colSelectStudent.UseColumnTextForLinkValue = true;
+            this.colSelectStudent.VisitedLinkColor = System.Drawing.Color.Black;
+            this.colSelectStudent.Width = 43;
+            // 
+            // companyNameDataGridViewTextBoxColumn
+            // 
+            this.companyNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "CompanyName";
+            this.companyNameDataGridViewTextBoxColumn.HeaderText = "Company Name";
+            this.companyNameDataGridViewTextBoxColumn.MinimumWidth = 105;
+            this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
+            this.companyNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.companyNameDataGridViewTextBoxColumn.Width = 105;
+            // 
+            // companySETANumberDataGridViewTextBoxColumn
+            // 
+            this.companySETANumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.companySETANumberDataGridViewTextBoxColumn.DataPropertyName = "CompanySETANumber";
+            this.companySETANumberDataGridViewTextBoxColumn.HeaderText = "SETA Number";
+            this.companySETANumberDataGridViewTextBoxColumn.Name = "companySETANumberDataGridViewTextBoxColumn";
+            this.companySETANumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // companySicCodeDataGridViewTextBoxColumn
+            // 
+            this.companySicCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.companySicCodeDataGridViewTextBoxColumn.DataPropertyName = "CompanySicCode";
+            this.companySicCodeDataGridViewTextBoxColumn.HeaderText = "Sic Code";
+            this.companySicCodeDataGridViewTextBoxColumn.Name = "companySicCodeDataGridViewTextBoxColumn";
+            this.companySicCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.companySicCodeDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // companySARSLevyRegistrationNumberDataGridViewTextBoxColumn
+            // 
+            this.companySARSLevyRegistrationNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.companySARSLevyRegistrationNumberDataGridViewTextBoxColumn.DataPropertyName = "CompanySARSLevyRegistrationNumber";
+            this.companySARSLevyRegistrationNumberDataGridViewTextBoxColumn.HeaderText = "SARS Reg. Number";
+            this.companySARSLevyRegistrationNumberDataGridViewTextBoxColumn.Name = "companySARSLevyRegistrationNumberDataGridViewTextBoxColumn";
+            this.companySARSLevyRegistrationNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(Impendulo.Data.Models.Company);
             // 
             // bindingNavigator1
             // 
@@ -327,68 +387,31 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // companyBindingSource
+            // splitContainer1
             // 
-            this.companyBindingSource.DataSource = typeof(Impendulo.Data.Models.Company);
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // colSelectStudent
+            // splitContainer1.Panel1
             // 
-            this.colSelectStudent.ActiveLinkColor = System.Drawing.Color.Black;
-            this.colSelectStudent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.colSelectStudent.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colSelectStudent.HeaderText = "Select";
-            this.colSelectStudent.LinkColor = System.Drawing.Color.Black;
-            this.colSelectStudent.Name = "colSelectStudent";
-            this.colSelectStudent.ReadOnly = true;
-            this.colSelectStudent.Text = "Select";
-            this.colSelectStudent.TrackVisitedState = false;
-            this.colSelectStudent.UseColumnTextForLinkValue = true;
-            this.colSelectStudent.VisitedLinkColor = System.Drawing.Color.Black;
-            this.colSelectStudent.Width = 43;
+            this.splitContainer1.Panel1.Controls.Add(this.gbSearchForStudent);
             // 
-            // companyNameDataGridViewTextBoxColumn
+            // splitContainer1.Panel2
             // 
-            this.companyNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "CompanyName";
-            this.companyNameDataGridViewTextBoxColumn.HeaderText = "Company Name";
-            this.companyNameDataGridViewTextBoxColumn.MinimumWidth = 105;
-            this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
-            this.companyNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.companyNameDataGridViewTextBoxColumn.Width = 105;
-            // 
-            // companySETANumberDataGridViewTextBoxColumn
-            // 
-            this.companySETANumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.companySETANumberDataGridViewTextBoxColumn.DataPropertyName = "CompanySETANumber";
-            this.companySETANumberDataGridViewTextBoxColumn.HeaderText = "SETA Number";
-            this.companySETANumberDataGridViewTextBoxColumn.Name = "companySETANumberDataGridViewTextBoxColumn";
-            this.companySETANumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // companySicCodeDataGridViewTextBoxColumn
-            // 
-            this.companySicCodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.companySicCodeDataGridViewTextBoxColumn.DataPropertyName = "CompanySicCode";
-            this.companySicCodeDataGridViewTextBoxColumn.HeaderText = "Sic Code";
-            this.companySicCodeDataGridViewTextBoxColumn.Name = "companySicCodeDataGridViewTextBoxColumn";
-            this.companySicCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.companySicCodeDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // companySARSLevyRegistrationNumberDataGridViewTextBoxColumn
-            // 
-            this.companySARSLevyRegistrationNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.companySARSLevyRegistrationNumberDataGridViewTextBoxColumn.DataPropertyName = "CompanySARSLevyRegistrationNumber";
-            this.companySARSLevyRegistrationNumberDataGridViewTextBoxColumn.HeaderText = "SARS Reg. Number";
-            this.companySARSLevyRegistrationNumberDataGridViewTextBoxColumn.Name = "companySARSLevyRegistrationNumberDataGridViewTextBoxColumn";
-            this.companySARSLevyRegistrationNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.splitContainer1.Panel2.Controls.Add(this.toolStripContainer1);
+            this.splitContainer1.Size = new System.Drawing.Size(608, 487);
+            this.splitContainer1.SplitterDistance = 143;
+            this.splitContainer1.TabIndex = 13;
             // 
             // frmCompanySearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 487);
-            this.Controls.Add(this.toolStripContainer1);
-            this.Controls.Add(this.gbSearchForStudent);
+            this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmCompanySearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -402,10 +425,14 @@
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompanySearchResults)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -442,5 +469,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn companySETANumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn companySicCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn companySARSLevyRegistrationNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }

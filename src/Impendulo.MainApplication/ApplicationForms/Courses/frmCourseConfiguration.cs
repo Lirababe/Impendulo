@@ -155,8 +155,7 @@ namespace Impendulo.Courses.Configuration.Deployment
 
             using (var Dbconnection = new MCDEntities())
             {
-                List<CurriculumCourse> configuredCoures = (from a in Dbconnection.CurriculumCourses.Include("CurricullumCourseCode").Include("CurriculumCourseMinimumMaximum")
-                                                           where a.CurriculumID == _CurriculumID
+                List<CurriculumCourse> configuredCoures = (from a in Dbconnection.GetCurriculumCourseInOrder(_CurriculumID)
                                                            select a).ToList<CurriculumCourse>();
                 curriculumCourseBindingSource.DataSource = (from a in configuredCoures
                                                             where a.Course.CourseName.ToLower().Contains(txtCurriculumCourseFilterCriteria.Text)

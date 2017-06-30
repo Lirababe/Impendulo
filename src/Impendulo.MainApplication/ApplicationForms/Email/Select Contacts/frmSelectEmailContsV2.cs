@@ -1,33 +1,40 @@
-﻿using System;
+﻿using Impendulo.Common.EmailSending;
+using Impendulo.Common.Enum;
+using Impendulo.Data;
+using Impendulo.Data.Models;
+using MetroFramework.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
 using System.Windows.Forms;
-using Impendulo.Data.Models;
-using Impendulo.Common.Enum;
 
-namespace Impendulo.Email.Select_Contacts.Deployment
+namespace Impendulo.Email.Deployment
 {
-    public partial class frmSelectEmailContacts : Form
+    public partial class frmSelectEmailContacts : MetroFramework.Forms.MetroForm
     {
+        public Boolean CancelClicked = false;
+
         private List<Individual> _AvailableContacts = new List<Individual>();
         public List<Individual> AvailableContacts { get { return _AvailableContacts; } set { _AvailableContacts = value; } }
 
         private List<Individual> _SelectedContacts = new List<Individual>();
         public List<Individual> SelectedContacts { get { return _SelectedContacts; } set { _SelectedContacts = value; } }
 
-
         public frmSelectEmailContacts()
         {
             InitializeComponent();
             PreLoadContacts();
         }
-
+        private void refreshSelectedContacts()
+        {
+            populateSelectedContacts();
+        }
         private void PreLoadContacts()
         {
             using (var Dbconnection = new MCDEntities())
@@ -47,24 +54,56 @@ namespace Impendulo.Email.Select_Contacts.Deployment
                                      .ToList<Individual>();
             };
 
+            //remove the individuals that are already in the selected list.
 
+
+
+        }
+
+        private void populateSelectedContacts()
+        {
+            ContactsSelectedBindingSource.DataSource = SelectedContacts.ToList<Individual>();
+        }
+
+        private void frmSelectEmailContacts_Load(object sender, EventArgs e)
+        {
+            this.refreshAvailableContacts();
+            this.refreshSelectedContacts();
+        }
+        public void LoadExistingContacts(List<Individual> x)
+        {
+            foreach (Individual y in x)
+            {
+                SelectedContacts.Add(y);
+            }
+            //using (var Dbconnection = new MCDEntities())
+            //{
+            //    foreach (EmailAddress y in x)
+            //    {
+            //        foreach (Individual z in (from a in Dbconnection.Individuals
+            //                                  from b in a.ContactDetails
+            //                                  where b.ContactTypeID == (int)EnumContactTypes.Email_Address
+            //                                  && b.ContactDetailValue.Contains(y.Address)
+            //                                  select a).Include("ContactDetails")
+            //                        .Include("Companies")
+            //                        .Include("Employee")
+            //                        .Include("Assessor")
+            //                        .Include("Facilitator")
+            //                        .Include("Student")
+            //                        .Include("Companies.Individuals.ContactDetails")
+            //                        .ToList<Individual>())
+            //        {
+            //            SelectedContacts.Add(z);
+            //        }
+            //        SelectedContacts = (from a in SelectedContacts
+            //                            select a).Distinct<Individual>().ToList<Individual>();
+            //    }
+            //};
         }
 
         private void refreshAvailableContacts()
         {
             populateAvailableContacts();
-        }
-        private void refreshSelectedContacts()
-        {
-            populateSelectedContacts();
-        }
-        private void frmSelectEmailContacts_Load(object sender, EventArgs e)
-        {
-            this.refreshAvailableContacts();
-        }
-        private void populateSelectedContacts()
-        {
-            ContactsSelectedBindingSource.DataSource = SelectedContacts.ToList<Individual>();
         }
         private void populateAvailableContacts()
         {
@@ -72,12 +111,10 @@ namespace Impendulo.Email.Select_Contacts.Deployment
             List<Individual> TempList = new List<Individual>();
             if (chkAllContacts.Checked)
             {
-                ContactToLinkBindingSource.DataSource =
+                TempList =
                     (from a in AvailableContacts
                      where (a.IndividualFirstName.ToString().ToLower()).Contains(txtContactFilterCriteria.Text.ToString().ToLower())
-                     select a).Except(
-                        SelectedContacts
-                        ).ToList<Individual>(); ;
+                     select a).ToList<Individual>();
             }
             else
             {
@@ -116,20 +153,44 @@ namespace Impendulo.Email.Select_Contacts.Deployment
 
                                        select a).ToList<Individual>());
                 }
-                ContactToLinkBindingSource.DataSource = (from a in TempList
-                                                         where (a.IndividualFirstName.ToString().ToLower()).Contains(txtContactFilterCriteria.Text.ToString().ToLower())
-                                                         select a).Except(SelectedContacts).ToList<Individual>();
+
+            }
+            List<Individual> FinalAvaibaleContacts = new List<Individual>();
+
+            foreach (Individual x in TempList)
+            {
+                if (!(IsSelectedContact(x.IndividualID)))
+                {
+                    FinalAvaibaleContacts.Add(x);
+                }
             }
 
+            ContactToLinkBindingSource.DataSource = (from a in FinalAvaibaleContacts
+                                                     where (a.IndividualFirstName.ToString().ToLower()).Contains(txtContactFilterCriteria.Text.ToString().ToLower())
+                                                     select a).Distinct<Individual>().ToList<Individual>();
+
         }
-
-
+        private Boolean IsSelectedContact(int IndividualID)
+        {
+            Boolean Rtn = false;
+            foreach (Individual x in SelectedContacts)
+            {
+                if (x.IndividualID == IndividualID)
+                {
+                    Rtn = true;
+                }
+            }
+            return Rtn;
+        }
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            CancelClicked = true;
+            //this.SelectedContacts.Clear();
+            this.Close();
+        }
 
         private void btnLinkContact_Click(object sender, EventArgs e)
         {
-            //            
-            List<Individual> SelctedCourses = new List<Individual>();
-
             var gridView = (DataGridView)dgvAvaiableContacts;
             foreach (DataGridViewRow row in gridView.Rows)
             {
@@ -141,11 +202,6 @@ namespace Impendulo.Email.Select_Contacts.Deployment
                         {
                             SelectedContacts.Add((Individual)(row.DataBoundItem));
                             AvailableContacts.Remove((Individual)(row.DataBoundItem));
-                            //SelctedCourses.Add(new CurriculumPrequisiteCourse
-                            //{
-                            //    CurriculumCourseID = ((CurriculumCourse)(row.DataBoundItem)).CurriculumCourseID,
-                            //    CurriculumID = SelectedCurriculumID
-                            //});
                         }
                     }
                 }
@@ -156,7 +212,6 @@ namespace Impendulo.Email.Select_Contacts.Deployment
 
         private void btnDeselectContacts_Click(object sender, EventArgs e)
         {
-
 
             var gridView = (DataGridView)dgvLinkedContacts;
             foreach (DataGridViewRow row in gridView.Rows)
@@ -178,63 +233,16 @@ namespace Impendulo.Email.Select_Contacts.Deployment
             refreshSelectedContacts();
         }
 
-
-
-        private void dgvAvaiableContacts_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dgvAvaiableContacts.EndEdit();
-            if (e.ColumnIndex == 0)
-            {
-                if (dgvAvaiableContacts.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
-                {
-                    dgvAvaiableContacts.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
-                }
-                else
-                {
-                    if ((bool)dgvAvaiableContacts.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == true)
-                    {
-                        dgvAvaiableContacts.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = false;
-                    }
-                    else
-                    {
-                        dgvAvaiableContacts.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
-                    }
-                }
-            }
-        }
-
-        private void dgvLinkedContacts_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dgvLinkedContacts.EndEdit();
-            if (e.ColumnIndex == 0)
-            {
-                if (dgvLinkedContacts.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
-                {
-                    dgvLinkedContacts.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
-                }
-                else
-                {
-                    if ((bool)dgvLinkedContacts.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == true)
-                    {
-                        dgvLinkedContacts.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = false;
-                    }
-                    else
-                    {
-                        dgvLinkedContacts.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
-                    }
-                }
-            }
-        }
-
         private void setCheckBoxes(object TagValue)
         {
+
             if (Convert.ToInt32(TagValue) == 0)
             {
                 foreach (Control con in flowLayoutPanelForCheckBoxes.Controls)
                 {
-                    if (con is CheckBox)
+                    if (con is MetroToggle)
                     {
-                        ((CheckBox)con).Checked = false;
+                        ((MetroToggle)con).Checked = false;
                     }
                 }
                 chkAllContacts.Checked = true;
@@ -243,35 +251,21 @@ namespace Impendulo.Email.Select_Contacts.Deployment
             {
                 chkAllContacts.Checked = false;
             }
+
+
+
         }
 
         private void chk_Click(object sender, EventArgs e)
         {
-            CheckBox chk = (CheckBox)sender;
+            MetroToggle chk = (MetroToggle)sender;
             setCheckBoxes(chk.Tag);
             refreshAvailableContacts();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.SelectedContacts.Clear();
-            this.Close();
-        }
-
-        private void brnAddContacts_Click(object sender, EventArgs e)
+        private void metroButton1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnFilterContacts_Click(object sender, EventArgs e)
-        {
-            refreshAvailableContacts();
-        }
-
-        private void tsbtnRefreshCourseSearch_Click(object sender, EventArgs e)
-        {
-            this.txtContactFilterCriteria.Clear();
-            refreshAvailableContacts();
         }
     }
 }

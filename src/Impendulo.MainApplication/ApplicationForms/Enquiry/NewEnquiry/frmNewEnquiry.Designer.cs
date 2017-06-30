@@ -1371,7 +1371,7 @@
             this.gbEquirySummary.Margin = new System.Windows.Forms.Padding(0);
             this.gbEquirySummary.Name = "gbEquirySummary";
             this.gbEquirySummary.Padding = new System.Windows.Forms.Padding(0);
-            this.gbEquirySummary.Size = new System.Drawing.Size(635, 635);
+            this.gbEquirySummary.Size = new System.Drawing.Size(580, 490);
             this.gbEquirySummary.TabIndex = 4;
             this.gbEquirySummary.TabStop = false;
             this.gbEquirySummary.Tag = "4";
@@ -1387,19 +1387,19 @@
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 15);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 349F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 72F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 305F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 116F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(635, 620);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(580, 475);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.groupBox10);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox8.Location = new System.Drawing.Point(3, 352);
+            this.groupBox8.Location = new System.Drawing.Point(3, 308);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(629, 265);
+            this.groupBox8.Size = new System.Drawing.Size(574, 164);
             this.groupBox8.TabIndex = 2;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Selected Course Curriculum";
@@ -1410,7 +1410,7 @@
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox10.Location = new System.Drawing.Point(3, 18);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(623, 244);
+            this.groupBox10.Size = new System.Drawing.Size(568, 143);
             this.groupBox10.TabIndex = 12;
             this.groupBox10.TabStop = false;
             // 
@@ -1440,7 +1440,7 @@
             this.dgvSummarySelectedCurriculum.RowHeadersWidth = 15;
             this.dgvSummarySelectedCurriculum.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSummarySelectedCurriculum.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSummarySelectedCurriculum.Size = new System.Drawing.Size(617, 223);
+            this.dgvSummarySelectedCurriculum.Size = new System.Drawing.Size(562, 122);
             this.dgvSummarySelectedCurriculum.TabIndex = 0;
             this.dgvSummarySelectedCurriculum.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSummarySelectedCurriculum_DataBindingComplete);
             // 
@@ -1538,7 +1538,7 @@
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.Location = new System.Drawing.Point(3, 3);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(629, 343);
+            this.groupBox7.Size = new System.Drawing.Size(574, 299);
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Contact That Initiaited The Enquiry";
@@ -1555,9 +1555,9 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 169F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(623, 322);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 115F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 94F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(568, 278);
             this.tableLayoutPanel5.TabIndex = 22;
             // 
             // panel3
@@ -1569,7 +1569,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(617, 65);
+            this.panel3.Size = new System.Drawing.Size(562, 65);
             this.panel3.TabIndex = 0;
             // 
             // label8
@@ -1614,7 +1614,7 @@
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Location = new System.Drawing.Point(3, 74);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(617, 163);
+            this.groupBox9.Size = new System.Drawing.Size(562, 109);
             this.groupBox9.TabIndex = 21;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Contact Details";
@@ -1636,7 +1636,7 @@
             this.dgvSummaryContactDetails.RowHeadersWidth = 15;
             this.dgvSummaryContactDetails.RowTemplate.Height = 24;
             this.dgvSummaryContactDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSummaryContactDetails.Size = new System.Drawing.Size(611, 142);
+            this.dgvSummaryContactDetails.Size = new System.Drawing.Size(556, 88);
             this.dgvSummaryContactDetails.TabIndex = 0;
             this.dgvSummaryContactDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSummaryContactDetails_DataBindingComplete);
             // 
@@ -1661,9 +1661,9 @@
             // 
             this.groupBox12.Controls.Add(this.flowLayoutPanelEquiryOrigionSummary);
             this.groupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox12.Location = new System.Drawing.Point(3, 243);
+            this.groupBox12.Location = new System.Drawing.Point(3, 189);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(617, 76);
+            this.groupBox12.Size = new System.Drawing.Size(562, 88);
             this.groupBox12.TabIndex = 22;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Equiry Origion";
@@ -1673,7 +1673,7 @@
             this.flowLayoutPanelEquiryOrigionSummary.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelEquiryOrigionSummary.Location = new System.Drawing.Point(3, 18);
             this.flowLayoutPanelEquiryOrigionSummary.Name = "flowLayoutPanelEquiryOrigionSummary";
-            this.flowLayoutPanelEquiryOrigionSummary.Size = new System.Drawing.Size(611, 55);
+            this.flowLayoutPanelEquiryOrigionSummary.Size = new System.Drawing.Size(556, 67);
             this.flowLayoutPanelEquiryOrigionSummary.TabIndex = 0;
             // 
             // panel1

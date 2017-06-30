@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtComapnyName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAddCompany = new System.Windows.Forms.Button();
             this.txtFaxNumber = new System.Windows.Forms.MaskedTextBox();
             this.txtOfficeNumber = new System.Windows.Forms.MaskedTextBox();
             this.txtEmailAddress = new System.Windows.Forms.TextBox();
@@ -43,26 +43,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCompanySETANumber = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnAddCompany = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtComapnyName = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtComapnyName
-            // 
-            this.txtComapnyName.Location = new System.Drawing.Point(133, 25);
-            this.txtComapnyName.Name = "txtComapnyName";
-            this.txtComapnyName.Size = new System.Drawing.Size(405, 20);
-            this.txtComapnyName.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Company";
             // 
             // groupBox1
             // 
@@ -82,12 +66,32 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtComapnyName);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(23, 63);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(547, 254);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Company Details";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(274, 216);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(120, 23);
+            this.btnCancel.TabIndex = 28;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnAddCompany
+            // 
+            this.btnAddCompany.Location = new System.Drawing.Point(400, 216);
+            this.btnAddCompany.Name = "btnAddCompany";
+            this.btnAddCompany.Size = new System.Drawing.Size(138, 23);
+            this.btnAddCompany.TabIndex = 27;
+            this.btnAddCompany.Text = "Add Company";
+            this.btnAddCompany.UseVisualStyleBackColor = true;
+            this.btnAddCompany.Click += new System.EventHandler(this.btnAddCompany_Click);
             // 
             // txtFaxNumber
             // 
@@ -187,38 +191,31 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "SETA Number";
             // 
-            // btnAddCompany
+            // label1
             // 
-            this.btnAddCompany.Location = new System.Drawing.Point(400, 216);
-            this.btnAddCompany.Name = "btnAddCompany";
-            this.btnAddCompany.Size = new System.Drawing.Size(138, 23);
-            this.btnAddCompany.TabIndex = 27;
-            this.btnAddCompany.Text = "Add Company";
-            this.btnAddCompany.UseVisualStyleBackColor = true;
-            this.btnAddCompany.Click += new System.EventHandler(this.btnAddCompany_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Company";
             // 
-            // btnCancel
+            // txtComapnyName
             // 
-            this.btnCancel.Location = new System.Drawing.Point(274, 216);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(120, 23);
-            this.btnCancel.TabIndex = 28;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.txtComapnyName.Location = new System.Drawing.Point(133, 25);
+            this.txtComapnyName.Name = "txtComapnyName";
+            this.txtComapnyName.Size = new System.Drawing.Size(405, 20);
+            this.txtComapnyName.TabIndex = 0;
             // 
-            // frmAddCompany
+            // frmCompanySearchV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 275);
+            this.ClientSize = new System.Drawing.Size(584, 332);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmAddCompany";
-            this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Name = "frmCompanySearchV2";
             this.Text = "Add Company";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.frmCompanySearchV2_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -227,8 +224,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtComapnyName;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAddCompany;
@@ -244,5 +239,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCompanySETANumber;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtComapnyName;
     }
 }

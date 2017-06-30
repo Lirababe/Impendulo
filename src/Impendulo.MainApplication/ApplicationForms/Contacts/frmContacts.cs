@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Impendulo.Common.Enum;
+using Impendulo.Data.Models;
+using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,26 +10,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Impendulo.Data.Models;
-using Impendulo.Company;
-using Impendulo.Company.Deployment;
 
-namespace Impendulo.Contacts.Deployment
+namespace Impendulo.Deployment.Contacts
 {
-    public partial class frmContacts : Form
+    public partial class frmContacts : MetroForm
     {
-        public frmCompany frmCompany { get; set; }
+
+        public Boolean IsStudent { get; set; }
         public Individual CurrentContact { get; set; }
         public int IndividualID { get; set; }
 
         public frmContacts()
         {
             IndividualID = 0;
+            IsStudent = false;
             InitializeComponent();
         }
+
         private void frmContacts_Load(object sender, EventArgs e)
         {
             this.populateTitles();
+            if (IsStudent)
+            {
+                txtIDNumber.Visible = true;
+                lblIDNumber.Visible = true;
+            }
+            else
+            {
+                txtIDNumber.Visible = false;
+                lblIDNumber.Visible = false;
+            }
             if (IndividualID != 0)
             {
                 this.setControls();
@@ -87,28 +100,54 @@ namespace Impendulo.Contacts.Deployment
 
         private void btnAddContact_Click(object sender, EventArgs e)
         {
-            using (var Dbconnection = new MCDEntities())
+            if (IsStudent)
             {
-                CurrentContact = new Individual
+                Student StudentObj = new Student()
                 {
-                    TitleID = Convert.ToInt32(cboIndividualTitle.SelectedValue),
-                    IndividualFirstName = txtFirstName.Text.ToString(),
-                    IndividualSecondName = txtSecondName.Text.ToString(),
-                    IndividualLastname = txtLastName.Text.ToString()
-                };
-                Dbconnection.Individuals.Add(CurrentContact);
-                Dbconnection.SaveChanges();
-                //if (CurrentContact != null)
-                //{
-                //    CurrentContact.IndividualID = NewContact.IndividualID;
-                //    CurrentContact.TitleID = NewContact.TitleID;
-                //    CurrentContact.IndividualFirstName = NewContact.IndividualFirstName;
-                //    CurrentContact.IndividualSecondName = NewContact.IndividualSecondName;
-                //    CurrentContact.IndividualLastname = NewContact.IndividualLastname;
-                //};
-            };
-            this.Close();
+                    EthnicityID = (int)EnumEthnicities.Other_Unspecified,
+                    GenderID = (int)EnumGenders.Male,
+                    MartialStatusID = (int)EnumMartialStatuses.Single,
+                    QualificationLevelID = (int)EnumQualificationLevels.NQF_1_Grade_9_National_Certificate,
+                    StudentlInitialDate = DateTime.Today,
+                    StudentIDNumber = txtIDNumber.Text,
+                    StudentCurrentPosition = "",
+                    Individual = new Individual()
+                    {
+                        // IndividualID = 0,
+                        TitleID = Convert.ToInt32(cboIndividualTitle.SelectedValue),
+                        IndividualFirstName = txtFirstName.Text.ToString(),
+                        IndividualSecondName = txtSecondName.Text.ToString(),
+                        IndividualLastname = txtLastName.Text.ToString()
 
+                    }
+                };
+
+                using (MCDEntities DbConnection = new MCDEntities())
+                {
+                    //We are saving a new student into the Student Collection
+                    DbConnection.Students.Add(StudentObj);
+                    DbConnection.SaveChanges();
+
+                }
+                CurrentContact = StudentObj.Individual;
+            }
+            else
+            {
+                using (var Dbconnection = new MCDEntities())
+                {
+                    CurrentContact = new Individual
+                    {
+                        TitleID = Convert.ToInt32(cboIndividualTitle.SelectedValue),
+                        IndividualFirstName = txtFirstName.Text.ToString(),
+                        IndividualSecondName = txtSecondName.Text.ToString(),
+                        IndividualLastname = txtLastName.Text.ToString()
+                    };
+                    Dbconnection.Individuals.Add(CurrentContact);
+                    Dbconnection.SaveChanges();
+                };
+
+            }
+            this.Close();
         }
 
         private void btnUpdateContact_Click(object sender, EventArgs e)
@@ -139,5 +178,7 @@ namespace Impendulo.Contacts.Deployment
         {
             this.Close();
         }
+
+
     }
 }

@@ -113,9 +113,20 @@ namespace Impendulo.AllComponentDemosAndExamples
 
                 //add an attachment that is linked to the data base
                 NewMessage.AddAttachment(new EmailAttachmentMetaData(((Data.Models.File)fileBindingSource.Current).ImageID));
-               
+
 
                 NewMessage.sendMessage();
+            };
+        }
+        private int MyLocalID = 5;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            using (Form2 frm = new Form2())
+            {
+                frm.YoutID = MyLocalID;
+                frm.ShowDialog();
             };
         }
     }

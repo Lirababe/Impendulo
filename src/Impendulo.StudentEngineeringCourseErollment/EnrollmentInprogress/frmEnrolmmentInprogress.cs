@@ -18,7 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
-
+using Impendulo.StudentEngineeringCourseErollment.Devlopment.ScheduleApprientice;
 
 namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInprogress
 {
@@ -603,7 +603,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
 
         private void btnScheduleEnrollement_Click(object sender, EventArgs e)
         {
-            ScheduleApprientice.frmScheduleApprience frm = new ScheduleApprientice.frmScheduleApprience();
+            frmScheduleApprience frm = new frmScheduleApprience();
             frm.ShowDialog();
         }
 

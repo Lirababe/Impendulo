@@ -1,7 +1,4 @@
-﻿using Impendulo.Company.AddCompany.Deployment;
-using Impendulo.Company.SearchForCompany.Deployment;
-using Impendulo.ContactDetails.Deployment;
-using Impendulo.Contacts.Deployment;
+﻿
 using Impendulo.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -12,11 +9,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
+using Impendulo.Company.SearchForCompany.Deployment;
+using Impendulo.ContactDetails.Deployment;
+using Impendulo.Company.AddCompany.Deployment;
+using Impendulo.Deployment.Contacts;
 
 namespace Impendulo.Enquiry.SelectContacts.Deployment
 
 {
-    public partial class frmSelectCompanyContact : Form
+    public partial class frmSelectCompanyContact : MetroForm
     {
         public Data.Models.Company CurrentCompany { get; set; }
         public Individual SelectedIndividual { get; set; }

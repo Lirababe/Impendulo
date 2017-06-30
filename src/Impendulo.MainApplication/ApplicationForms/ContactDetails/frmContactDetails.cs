@@ -13,7 +13,9 @@ using System.Data.Entity;
 
 namespace Impendulo.ContactDetails.Deployment
 {
-    public partial class frmAddUpdateContactDetails : Form
+    /// <summary>
+    /// </summary>
+    public partial class frmAddUpdateContactDetails : MetroFramework.Forms.MetroForm
     {
         public int ContactDetailID { get; set; }
         public ContactDetail CurrentDetail { get; set; }
@@ -199,7 +201,7 @@ namespace Impendulo.ContactDetails.Deployment
                 };
                 Dbconnection.ContactDetails.Add(CurrentDetail);
                 Dbconnection.SaveChanges();
-                
+
             };
             this.Close();
         }

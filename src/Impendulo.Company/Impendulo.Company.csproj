@@ -87,6 +87,18 @@
     <Compile Include="Search For Company\frmCompanySearch.Designer.cs">
       <DependentUpon>frmCompanySearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddCompany\frmAddCompanyV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCompany\frmAddCompanyV2.Designer.cs">
+      <DependentUpon>frmAddCompanyV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search For Company\frmCompanySearchV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search For Company\frmCompanySearchV2.Designer.cs">
+      <DependentUpon>frmCompanySearchV2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddCompany\frmAddCompany.resx">
       <DependentUpon>frmAddCompany.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +116,12 @@
     </Compile>
     <EmbeddedResource Include="Search For Company\frmCompanySearch.resx">
       <DependentUpon>frmCompanySearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCompany\frmAddCompanyV2.resx">
+      <DependentUpon>frmAddCompanyV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search For Company\frmCompanySearchV2.resx">
+      <DependentUpon>frmCompanySearchV2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.Company.datasource" />

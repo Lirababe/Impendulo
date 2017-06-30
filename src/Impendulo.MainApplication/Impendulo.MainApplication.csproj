@@ -182,11 +182,11 @@
     <Compile Include="ApplicationForms\Email\frmEmailMessage.Designer.cs">
       <DependentUpon>frmEmailMessage.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationForms\Email\Select Contacts\frmSelectEmailContacts.cs">
+    <Compile Include="ApplicationForms\Email\Select Contacts\frmSelectEmailContsV2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ApplicationForms\Email\Select Contacts\frmSelectEmailContacts.Designer.cs">
-      <DependentUpon>frmSelectEmailContacts.cs</DependentUpon>
+    <Compile Include="ApplicationForms\Email\Select Contacts\frmSelectEmailContsV2.Designer.cs">
+      <DependentUpon>frmSelectEmailContsV2.cs</DependentUpon>
     </Compile>
     <Compile Include="ApplicationForms\Employees\AddUpdateEmployee\frmAddUpdateEmployee.cs">
       <SubType>Form</SubType>
@@ -211,6 +211,12 @@
     </Compile>
     <Compile Include="ApplicationForms\Employees\LinkEmployeeDepartment\frmEmployeeAssociatedDepartments.Designer.cs">
       <DependentUpon>frmEmployeeAssociatedDepartments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationForms\Enquiry\CloseEnquiryConfirmation\frmCloseEnquiryConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationForms\Enquiry\CloseEnquiryConfirmation\frmCloseEnquiryConfirmation.Designer.cs">
+      <DependentUpon>frmCloseEnquiryConfirmation.cs</DependentUpon>
     </Compile>
     <Compile Include="ApplicationForms\Enquiry\EnquiryProcessing\Aprenticeship\Step1-DocumentsToSend\frmEnquiryDocumentsToSend_Apprenticeship.cs">
       <SubType>Form</SubType>
@@ -254,6 +260,12 @@
     <Compile Include="ApplicationForms\Enquiry\NewEnquiry\frmNewEnquiry.Designer.cs">
       <DependentUpon>frmNewEnquiry.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApplicationForms\Enquiry\SearchForSelectedEnquiry\frmSearchForSelectedEquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationForms\Enquiry\SearchForSelectedEnquiry\frmSearchForSelectedEquiry.Designer.cs">
+      <DependentUpon>frmSearchForSelectedEquiry.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationForms\Enquiry\SelectContacts\frmSelectCompanyContact.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,11 +290,11 @@
     <Compile Include="ApplicationForms\Enquiry\UpdateSelectedCurriculumEnrollQty\frmUpdateSelectedCurriculumEnrollQty.Designer.cs">
       <DependentUpon>frmUpdateSelectedCurriculumEnrollQty.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationForms\Enquiry\ViewHistory\frmEnquiryViewHistory.cs">
+    <Compile Include="ApplicationForms\Enquiry\ViewHistory\frmEquiryViewHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ApplicationForms\Enquiry\ViewHistory\frmEnquiryViewHistory.Designer.cs">
-      <DependentUpon>frmEnquiryViewHistory.cs</DependentUpon>
+    <Compile Include="ApplicationForms\Enquiry\ViewHistory\frmEquiryViewHistory.Designer.cs">
+      <DependentUpon>frmEquiryViewHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="ApplicationForms\Enrollments\AddNewEnrollments\frmEnrollmentSelectCourseCurriculum.cs">
       <SubType>Form</SubType>
@@ -290,11 +302,11 @@
     <Compile Include="ApplicationForms\Enrollments\AddNewEnrollments\frmEnrollmentSelectCourseCurriculum.Designer.cs">
       <DependentUpon>frmEnrollmentSelectCourseCurriculum.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationForms\Enrollments\CurriculumEmrollmentForms\ApprenticeshipEnrollment\frmApprenticeshipEnrollmentFormV2.cs">
+    <Compile Include="ApplicationForms\Enrollments\CurriculumEmrollmentForms\ApprenticeshipEnrollment\frmApprenticeshipEnrollmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ApplicationForms\Enrollments\CurriculumEmrollmentForms\ApprenticeshipEnrollment\frmApprenticeshipEnrollmentFormV2.Designer.cs">
-      <DependentUpon>frmApprenticeshipEnrollmentFormV2.cs</DependentUpon>
+    <Compile Include="ApplicationForms\Enrollments\CurriculumEmrollmentForms\ApprenticeshipEnrollment\frmApprenticeshipEnrollmentForm.Designer.cs">
+      <DependentUpon>frmApprenticeshipEnrollmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ApplicationForms\Enrollments\EnrollmentCourseSelection\frmEnrollmentCourseSelection.cs">
       <SubType>Form</SubType>
@@ -319,6 +331,12 @@
     </Compile>
     <Compile Include="ApplicationForms\Enrollments\frmStudentCourseEnrollmentV2.Designer.cs">
       <DependentUpon>frmStudentCourseEnrollmentV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationForms\Enrollments\ScheduleApprientice\frmScheduleApprience.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationForms\Enrollments\ScheduleApprientice\frmScheduleApprience.Designer.cs">
+      <DependentUpon>frmScheduleApprience.cs</DependentUpon>
     </Compile>
     <Compile Include="ApplicationForms\Facilitators\AddUpdateFacilitator\frmAddUpdateFacilitactor.cs">
       <SubType>Form</SubType>
@@ -453,9 +471,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\Email\frmEmailMessage.resx">
       <DependentUpon>frmEmailMessage.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ApplicationForms\Email\Select Contacts\frmSelectEmailContacts.resx">
-      <DependentUpon>frmSelectEmailContacts.cs</DependentUpon>
+    <EmbeddedResource Include="ApplicationForms\Email\Select Contacts\frmSelectEmailContsV2.resx">
+      <DependentUpon>frmSelectEmailContsV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\Employees\AddUpdateEmployee\frmAddUpdateEmployee.resx">
       <DependentUpon>frmAddUpdateEmployee.cs</DependentUpon>
@@ -468,6 +487,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\Employees\LinkEmployeeDepartment\frmEmployeeAssociatedDepartments.resx">
       <DependentUpon>frmEmployeeAssociatedDepartments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationForms\Enquiry\CloseEnquiryConfirmation\frmCloseEnquiryConfirmation.resx">
+      <DependentUpon>frmCloseEnquiryConfirmation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\Enquiry\EnquiryProcessing\Aprenticeship\Step1-DocumentsToSend\frmEnquiryDocumentsToSend_Apprenticeship.resx">
       <DependentUpon>frmEnquiryDocumentsToSend_Apprenticeship.cs</DependentUpon>
@@ -490,6 +512,9 @@
     <EmbeddedResource Include="ApplicationForms\Enquiry\NewEnquiry\frmNewEnquiry.resx">
       <DependentUpon>frmNewEnquiry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationForms\Enquiry\SearchForSelectedEnquiry\frmSearchForSelectedEquiry.resx">
+      <DependentUpon>frmSearchForSelectedEquiry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\Enquiry\SelectContacts\frmSelectCompanyContact.resx">
       <DependentUpon>frmSelectCompanyContact.cs</DependentUpon>
     </EmbeddedResource>
@@ -502,14 +527,14 @@
     <EmbeddedResource Include="ApplicationForms\Enquiry\UpdateSelectedCurriculumEnrollQty\frmUpdateSelectedCurriculumEnrollQty.resx">
       <DependentUpon>frmUpdateSelectedCurriculumEnrollQty.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ApplicationForms\Enquiry\ViewHistory\frmEnquiryViewHistory.resx">
-      <DependentUpon>frmEnquiryViewHistory.cs</DependentUpon>
+    <EmbeddedResource Include="ApplicationForms\Enquiry\ViewHistory\frmEquiryViewHistory.resx">
+      <DependentUpon>frmEquiryViewHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\Enrollments\AddNewEnrollments\frmEnrollmentSelectCourseCurriculum.resx">
       <DependentUpon>frmEnrollmentSelectCourseCurriculum.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ApplicationForms\Enrollments\CurriculumEmrollmentForms\ApprenticeshipEnrollment\frmApprenticeshipEnrollmentFormV2.resx">
-      <DependentUpon>frmApprenticeshipEnrollmentFormV2.cs</DependentUpon>
+    <EmbeddedResource Include="ApplicationForms\Enrollments\CurriculumEmrollmentForms\ApprenticeshipEnrollment\frmApprenticeshipEnrollmentForm.resx">
+      <DependentUpon>frmApprenticeshipEnrollmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\Enrollments\EnrollmentCourseSelection\frmEnrollmentCourseSelection.resx">
       <DependentUpon>frmEnrollmentCourseSelection.cs</DependentUpon>
@@ -522,6 +547,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\Enrollments\frmStudentCourseEnrollmentV2.resx">
       <DependentUpon>frmStudentCourseEnrollmentV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationForms\Enrollments\ScheduleApprientice\frmScheduleApprience.resx">
+      <DependentUpon>frmScheduleApprience.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\Facilitators\AddUpdateFacilitator\frmAddUpdateFacilitactor.resx">
       <DependentUpon>frmAddUpdateFacilitactor.cs</DependentUpon>
@@ -611,6 +639,44 @@
     <Folder Include="ApplicationForms\Enrollments\CurriculumEmrollmentForms\LOPTEnrollmentForms\" />
     <Folder Include="ApplicationForms\Enrollments\CurriculumEmrollmentForms\SoftSkillsEnrollmentForms\" />
     <Folder Include="ApplicationForms\FileUploading\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Outlook">
+      <Guid>{00062FFF-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.OutlookViewCtl">
+      <Guid>{0006F062-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

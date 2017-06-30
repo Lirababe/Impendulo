@@ -1,11 +1,6 @@
 ﻿using Impendulo.Common.Enum;
 using Impendulo.Common.FileHandeling;
 using Impendulo.Data.Models;
-using Impendulo.Email.Deployment;
-using Impendulo.Enquiry.Deployment.ViewHistory;
-using Impendulo.Scheduling.Deployment.Courses.Apprenticeship;
-using Impendulo.StudentEngineeringCourseErollment.Deployment.EnrollmentCourseSelection;
-using Impendulo.StudentEngineeringCourseErollment.Deployment.EnrollmentException;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,11 +12,16 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MetroFramework.Forms;
+using Impendulo.Enquiry.Deployment.ViewHistory;
+using Impendulo.StudentEngineeringCourseErollment.Deployment.EnrollmentException;
+using Impendulo.Scheduling.Deployment.Courses.Apprenticeship;
+using Impendulo.StudentEngineeringCourseErollment.Deployment.EnrollmentCourseSelection;
+using Impendulo.StudentEngineeringCourseErollment.Deployment.ScheduleApprientice;
 
 namespace Impendulo.StudentEngineeringCourseErollment.Deployment.EnrollmentInprogress
 {
-    public partial class frmEnrolmmentInprogress : Form
+    public partial class frmEnrolmmentInprogress : MetroForm
     {
         public frmEnrolmmentInprogress()
         {
@@ -43,10 +43,53 @@ namespace Impendulo.StudentEngineeringCourseErollment.Deployment.EnrollmentInpro
         private void frmEnrolmmentInprogress_Load(object sender, EventArgs e)
         {
             CurrentSelectedDepartment = EnumDepartments.Apprenticeship;
-
             this.refreshEnrollment();
+           
 
+        }
 
+        private void CheckIfAllPreRequisitesAreCompletedRefresh()
+        {
+            if (CheckIfAllPreRequisitesAreCompleted())
+            {
+                btnEditCourseSelection.Enabled = false;
+            }
+            else
+            {
+                btnEditCourseSelection.Enabled = true;
+            }
+        }
+
+        private Boolean CheckIfAllPreRequisitesAreCompleted()
+        {
+            Boolean Rtn = false;
+
+            //Check to see if there are any prerequisites
+            if (enrollmentPrerequisitesBindingSource.Count > 0)
+            {
+                //checks to see if tehere are any are incompleted.
+                foreach (Enrollment Enroll in enrollmentPrerequisitesBindingSource.List)
+                {
+                    if (Enroll.LookupEnrollmentProgressStateID == (int)Common.Enum.EnumEnrollmentProgressStates.In_Progress)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return Rtn;
+        }
+
+        private void CheckIFThereAreCoursesToSchedule()
+        {
+            if(curriculumCourseLinkedToEnrollmentBindingSource.Count > 0)
+            {
+                btnScheduleEnrollement.Enabled = true;
+            }
+            else
+            {
+                btnScheduleEnrollement.Enabled = false;
+            }
         }
 
         #region Common Functions
@@ -121,11 +164,18 @@ namespace Impendulo.StudentEngineeringCourseErollment.Deployment.EnrollmentInpro
             {
                 this.populateApprenticeshipDocumnetTypes((EnumDepartments)((Enrollment)enrollmentBindingSource.Current).Curriculum.DepartmentID);
                 this.refreshEnrollmentLinkedCourses();
+                //this.refreshScheduleCoursePriliminaryDate();
+                
+
+
             }
         }
         private void refreshEnrollmentCoursePreRequisites()
         {
+            
             populateApprenticeshipCoursePreRequisites();
+            
+
         }
 
 
@@ -137,6 +187,22 @@ namespace Impendulo.StudentEngineeringCourseErollment.Deployment.EnrollmentInpro
                 _EnrollmentID = ((Enrollment)(enrollmentBindingSource.Current)).EnrollmentID;
             }
             populateApprienticeshipLinkedCourse(_EnrollmentID);
+            this.CheckIFThereAreCoursesToSchedule();
+            CheckIfAllPreRequisitesAreCompletedRefresh();
+
+
+
+        }
+
+        private void refreshScheduleCoursePriliminaryDate()
+        {
+            //int _EnrollmentID = 0;
+            //if (enrollmentBindingSource.List.Count > 0)
+            //{
+            //    _EnrollmentID = ((Enrollment)(enrollmentBindingSource.Current)).EnrollmentID;
+            //}
+            //populateCourseSchedulePreliminaryDates(_EnrollmentID);
+            
         }
 
         #endregion
@@ -245,6 +311,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Deployment.EnrollmentInpro
                                                                               select a).ToList<CurriculumCourse>();
             };
         }
+
         #endregion
 
         #region Control Event Methods
@@ -357,9 +424,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Deployment.EnrollmentInpro
             switch (e.ColumnIndex)
             {
                 case 0:
-
-
-                    frmEnquiryViewHistory frm5 = new frmEnquiryViewHistory();
+                    frmEquiryViewHistory frm5 = new frmEquiryViewHistory();
                     //frm5.CurrentEnquiryID = EnrollmentObj.CurriculumEnquiries.Where(a=>a.Enrollments.;
                     frm5.ShowDialog();
 
@@ -456,6 +521,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Deployment.EnrollmentInpro
             {
                 populateApprenticeshipDocumnetTypes((EnumDepartments)((Enrollment)(enrollmentBindingSource.Current)).Curriculum.DepartmentID);
                 this.refreshEnrollmentLinkedCourses();
+                this.refreshScheduleCoursePriliminaryDate();
             }
         }
 
@@ -487,42 +553,43 @@ namespace Impendulo.StudentEngineeringCourseErollment.Deployment.EnrollmentInpro
                                     .FirstOrDefault<Data.Models.Enquiry>();
             };
 
-            frmSendEmail frm = new frmSendEmail();
+            //frmSendEmail frm = new frmSendEmail();
 
-            List<ContactDetail> CustomEmailPerson = (from a in CurrentEnquiryObj.Individuals
-                                                     from b in a.ContactDetails
-                                                     where b.ContactTypeID == (int)Common.Enum.EnumContactTypes.Email_Address
-                                                     select b).ToList<ContactDetail>();
 
-            //Sets the Email Address For the Currently Selected Contact For this Enquiry
-            foreach (ContactDetail ConDetObj in CustomEmailPerson)
-            {
-                if (frm.txtTestingToAddress.Text.Length > 0)
-                {
-                    frm.txtTestingToAddress.Text += ";";
-                }
-                frm.txtTestingToAddress.Text += ConDetObj.ContactDetailValue;
-            }
+            //List<ContactDetail> CustomEmailPerson = (from a in CurrentEnquiryObj.Individuals
+            //                                         from b in a.ContactDetails
+            //                                         where b.ContactTypeID == (int)Common.Enum.EnumContactTypes.Email_Address
+            //                                         select b).ToList<ContactDetail>();
 
-            frm.txtTestSubject.Text = "Enquiry No: ( " + CurrentEnquiryObj.EnquiryID + "-" + CurriculumEnquiryObj.CurriculumEnquiryID + " ) Enquiry Feed Back";
-            frm.txtTestMessage.Text = "Good Day \nThis is regarding the processing of your Enrollemnt - Ref: " + EnrollmentObj.EnrollmentID + "\n";
-            frm.ShowDialog();
-            if (frm.IsSent)
-            {
-                using (var Dbconnection = new MCDEntities())
-                {
-                    EquiryHistory hist = new EquiryHistory
-                    {
-                        EnquiryID = CurrentEnquiryObj.EnquiryID,
-                        EmployeeID = this.CurrentEmployeeLoggedIn.EmployeeID,
-                        LookupEquiyHistoryTypeID = (int)EnumEquiryHistoryTypes.Enquiry_Custom_Email_Message_Sent,
-                        DateEnquiryUpdated = DateTime.Now,
-                        EnquiryNotes = "Custom Message Sent To Client Via Email\nSubject of the Message was:\n\n{" + frm.txtTestSubject.Text + "}\n\nBody Of the Message read:\n" + frm.txtTestMessage.Text
-                    };
-                    Dbconnection.EquiryHistories.Add(hist);
-                    int IsSaved = Dbconnection.SaveChanges();
-                };
-            }
+            ////Sets the Email Address For the Currently Selected Contact For this Enquiry
+            //foreach (ContactDetail ConDetObj in CustomEmailPerson)
+            //{
+            //    if (frm.txtTestingToAddress.Text.Length > 0)
+            //    {
+            //        frm.txtTestingToAddress.Text += ";";
+            //    }
+            //    frm.txtTestingToAddress.Text += ConDetObj.ContactDetailValue;
+            //}
+
+            //frm.txtTestSubject.Text = "Enquiry No: ( " + CurrentEnquiryObj.EnquiryID + "-" + CurriculumEnquiryObj.CurriculumEnquiryID + " ) Enquiry Feed Back";
+            //frm.txtTestMessage.Text = "Good Day \nThis is regarding the processing of your Enrollemnt - Ref: " + EnrollmentObj.EnrollmentID + "\n";
+            //frm.ShowDialog();
+            //if (frm.IsSent)
+            //{
+            //    using (var Dbconnection = new MCDEntities())
+            //    {
+            //        EquiryHistory hist = new EquiryHistory
+            //        {
+            //            EnquiryID = CurrentEnquiryObj.EnquiryID,
+            //            EmployeeID = this.CurrentEmployeeLoggedIn.EmployeeID,
+            //            LookupEquiyHistoryTypeID = (int)EnumEquiryHistoryTypes.Enquiry_Custom_Email_Message_Sent,
+            //            DateEnquiryUpdated = DateTime.Now,
+            //            EnquiryNotes = "Custom Message Sent To Client Via Email\nSubject of the Message was:\n\n{" + frm.txtTestSubject.Text + "}\n\nBody Of the Message read:\n" + frm.txtTestMessage.Text
+            //        };
+            //        Dbconnection.EquiryHistories.Add(hist);
+            //        int IsSaved = Dbconnection.SaveChanges();
+            //    };
+            //}
         }
 
         private void btnEditCourseSelection_Click(object sender, EventArgs e)
@@ -533,9 +600,123 @@ namespace Impendulo.StudentEngineeringCourseErollment.Deployment.EnrollmentInpro
             refreshEnrollmentLinkedCourses();
         }
 
-        private void btnAddNewEnquiry_Click(object sender, EventArgs e)
+        private void btnScheduleEnrollement_Click(object sender, EventArgs e)
+        {
+            frmScheduleApprience frm = new frmScheduleApprience();
+            frm.ShowDialog();
+        }
+
+        private void dgvCourseSschedule_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            //DateTimePicker dtp = new DateTimePicker();
+            //var gridView = (DataGridView)sender;
+            //foreach (DataGridViewRow row in gridView.Rows)
+            //{
+            //    if (!row.IsNewRow)
+            //    {
+            //        CurriculumCourse CurriculumCourseObj = (CurriculumCourse)(row.DataBoundItem);
+            //        //Schedule CourseScheduleObj = (Schedule)(row.DataBoundItem);
+
+            //        row.Cells[colApprenticeshipEnrollmentLinkedCourse.Index].Value = CurriculumCourseObj.Course.CourseName.ToString();
+
+            //        //row.Cells[colApprenticeshipEnrollmentLinkedCourseStartDate.Index].Value = CourseScheduleObj.ScheduleStartDate.ToShortDateString();
+            //        //row.Cells[colApprenticeshipEnrollmentLinkedCourseEndtDate.Index].Value = CourseScheduleObj.ScheduleCompletionDate.ToShortDateString();
+            //    }
+            //}
+        }
+
+        DateTimePicker dtp = new DateTimePicker();
+        private void dgvCourseSschedule_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            //try
+            //{
+            //    if ((dgvCourseSschedule.Focused) && (dgvCourseSschedule.CurrentCell.ColumnIndex == 1))
+            //    {
+            //        dtp = new DateTimePicker();
+            //        dgvCourseSschedule.Controls.Add(dtp);
+            //        dtp.Format = DateTimePickerFormat.Short;
+            //        dtp.Visible = false;
+            //        dtp.Location = dgvCourseSschedule.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false).Location;
+            //        dtp.Visible = true;
+            //        if (dgvCourseSschedule.CurrentCell.Value != DBNull.Value)
+            //        {
+            //            dtp.Value = (DateTime)dgvCourseSschedule.CurrentCell.Value;
+            //        }
+            //        else
+            //        {
+            //            dtp.Value = DateTime.Today;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        dtp.Visible = false;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
+            //dgvCourseSschedule.CellValueChanged += this.dtp_ValueChanged;
+
+        }
+        private void dgvCourseSschedule_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            //try
+            //{
+            //    if ((dgvCourseSschedule.Focused) && (dgvCourseSschedule.CurrentCell.ColumnIndex == 1))
+            //    {
+            //        dtp = new DateTimePicker();
+            //        dgvCourseSschedule.Controls.Add(dtp);
+            //        dtp.Format = DateTimePickerFormat.Short;
+            //        dtp.Visible = false;
+            //        dgvCourseSschedule.CurrentCell.Value = dtp.Value.Date;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
+            //dgvCourseSschedule.CellValueChanged += this.dtp_ValueChanged;
+        }
+
+        //private void dtp_ValueChanged(object sender, EventArgs e)
+        //{
+        //    dgvCourseSschedule.CurrentCell.Value = dtp.Text;
+        //}
+
+        private void dgvCourseSschedule_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (e.ColumnIndex == 1)
+            //{
+            //    dtp = new DateTimePicker();
+            //    dgvCourseSschedule.Controls.Add(dtp);
+            //    dtp.Format = DateTimePickerFormat.Short;
+            //    Rectangle Rectangle = dgvCourseSschedule.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+            //    dtp.Size = new Size(Rectangle.Width, Rectangle.Height);
+            //    dtp.Location = new Point(Rectangle.X, Rectangle.Y);
+
+            //    dtp.CloseUp += new EventHandler(dtp_CloseUp);
+            //    dtp.TextChanged += new EventHandler(dtp_OnTextChange);
+
+
+            //    dtp.Visible = true;
+            //}
+
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
         {
 
         }
+        //private void dtp_OnTextChange(object sender, EventArgs e)
+        //{
+        //    dgvCourseSschedule.CurrentCell.Value = dtp.Text.ToString();
+        //}
+        //void dtp_CloseUp(object sender, EventArgs e)
+        //{
+        //    dtp.Visible = false;
+        //}
     }
 }

@@ -9,10 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace Impendulo.Enquiry.Deployment.EnrollmentSelectionFromEquiry
 {
-    public partial class frmEnrollmentSelectionForEquiry : Form
+    public partial class frmEnrollmentSelectionForEquiry : MetroForm
     {
 
         public int SelectedCurriculumEnquiryID { get; set; }
@@ -35,7 +36,7 @@ namespace Impendulo.Enquiry.Deployment.EnrollmentSelectionFromEquiry
 
             using (var Dbconnection = new MCDEntities())
             {
-                var Reslut = (from a in Dbconnection.Enrollments
+                var result = (from a in Dbconnection.Enrollments
                               from b in a.CurriculumEnquiries
                               where b.CurriculumEnquiryID == this.SelectedCurriculumEnquiryID
                               //&& a.LookupEnrollmentProgressStateID == (int)Common.Enum.EnumEnrollmentProgressStates.In_Progress
@@ -45,7 +46,7 @@ namespace Impendulo.Enquiry.Deployment.EnrollmentSelectionFromEquiry
                                                         .Include("Curriculum")
                                                         .Include("LookupEnrollmentProgressState")
                                                         .ToList<Enrollment>();
-                enrollmentBindingSource.DataSource = Reslut;
+                enrollmentBindingSource.DataSource = result;
             };
         }
 
@@ -53,7 +54,7 @@ namespace Impendulo.Enquiry.Deployment.EnrollmentSelectionFromEquiry
         {
             switch (e.ColumnIndex)
             {
-                case 0:
+                case 1:
                     SelectedEnrollmentID = ((Enrollment)enrollmentBindingSource.Current).EnrollmentID;
                     this.Close();
                     break;
@@ -70,15 +71,12 @@ namespace Impendulo.Enquiry.Deployment.EnrollmentSelectionFromEquiry
                 if (!row.IsNewRow)
                 {
 
-                    var EnrollmentObj = (Enrollment)(row.DataBoundItem);
+                    Enrollment EnrollmentObj = (Enrollment)(row.DataBoundItem);
+
+                    row.Cells[colStudentIDNumber.Index].Value = EnrollmentObj.Student.StudentIDNumber.ToString();
                     row.Cells[colFirstName.Index].Value = EnrollmentObj.Student.Individual.IndividualFirstName.ToString();
                     row.Cells[colLastName.Index].Value = EnrollmentObj.Student.Individual.IndividualLastname.ToString();
                     row.Cells[colStatus.Index].Value = EnrollmentObj.LookupEnrollmentProgressState.EnrollmentProgressCurrentState.ToString();
-                    //if (EnrollmentObj.LookupEnrollmentProgressStateID != (int)Common.Enum.EnumEnrollmentProgressStates.In_Progress)
-                    //{
-                    //    row.Cells[colSelection.Index].Value = "";
-                    //}
-
                 }
             }
         }

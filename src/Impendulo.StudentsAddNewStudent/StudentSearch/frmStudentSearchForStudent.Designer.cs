@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudentSearchForStudent));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbSearchForStudent = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -328,8 +328,8 @@
             // 
             this.colSelectStudent.ActiveLinkColor = System.Drawing.Color.Black;
             this.colSelectStudent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.colSelectStudent.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.colSelectStudent.DefaultCellStyle = dataGridViewCellStyle1;
             this.colSelectStudent.HeaderText = "Select";
             this.colSelectStudent.LinkColor = System.Drawing.Color.Black;
             this.colSelectStudent.Name = "colSelectStudent";

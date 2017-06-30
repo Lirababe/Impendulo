@@ -1,21 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Impendulo.Data.Models;
-using Impendulo.StudentForms;
-
-
+using System.Data.Entity;
 
 namespace Impendulo.StudentForms.Deployment
 {
-    public partial class frmStudentSearchForStudent : Form
+    public partial class frmStudentSearchForStudent : MetroFramework.Forms.MetroForm
     {
+        public List<Student> StudentExpceptionList { get; set; }
         public frmStudentSearchForStudent()
         {
             InitializeComponent();
@@ -41,11 +36,59 @@ namespace Impendulo.StudentForms.Deployment
 
         private void frmStudentSearchForStudent_Load(object sender, EventArgs e)
         {
+            if (StudentExpceptionList == null)
+            {
+                StudentExpceptionList = new List<Student>();
+            }
+            this.LoadSearchSuggestions();
             SearchStudentNumber = "0";
             this.setSearchVariables();
             this.SearchForStudent();
-        }
 
+        }
+        private void LoadSearchSuggestions()
+        {
+
+            AutoCompleteStringCollection allowedIDNumbers = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection allowedFirstNames = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection allowedLastNames = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection allowedStudentNumbers = new AutoCompleteStringCollection();
+
+            List<Data.Models.Student> x = new List<Data.Models.Student>();
+
+            using (var Dbconnection = new MCDEntities())
+            {
+                x = (from a in Dbconnection.Students
+                     select a)
+                     .Include("Individual")
+                     .ToList<Data.Models.Student>();
+
+
+            };
+            foreach (Student StudentObj in x)
+            {
+                allowedIDNumbers.Add(StudentObj.StudentIDNumber.ToString());
+                allowedFirstNames.Add(StudentObj.Individual.IndividualFirstName);
+                allowedLastNames.Add(StudentObj.Individual.IndividualLastname);
+                //allowedStudentNumbers.Add(StudentObj.StudentID.ToString());
+            }
+
+            txtStudentIdNumber.AutoCompleteCustomSource = allowedIDNumbers;
+            txtStudentIdNumber.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtStudentIdNumber.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            txtFirstName.AutoCompleteCustomSource = allowedFirstNames;
+            txtFirstName.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtFirstName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            txtLastName.AutoCompleteCustomSource = allowedLastNames;
+            txtLastName.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtLastName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            //txtStudentNumber.AutoCompleteCustomSource = allowedLastNames;
+            //txtLastName.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //txtLastName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             this.setSearchVariables();
@@ -76,7 +119,7 @@ namespace Impendulo.StudentForms.Deployment
             using (var DbConnection = new MCDEntities())
             {
                 int CurrentStudentNumber = 0;
-                if (SearchStudentNumber.Length > 0 )
+                if (SearchStudentNumber.Length > 0)
                 {
                     CurrentStudentNumber = Convert.ToInt32(this.SearchStudentNumber);
                 }
@@ -97,9 +140,26 @@ namespace Impendulo.StudentForms.Deployment
                                       a.StudentIDNumber.Contains(this.SearchStudentIDNumber)
                                       select a).Take<Student>(50).ToList<Student>();
                 }
+                List<Student> FinalListOfStudentsFromSearch = new List<Student>();
+                Boolean IsStudentExemptFromSearch = false;
+                foreach (Student StudentObj in resultByFilter)
+                {
+                    IsStudentExemptFromSearch = false;
+                    foreach (Student StduentExempt in StudentExpceptionList)
+                    {
+                        if (StudentObj.StudentID == StduentExempt.StudentID)
+                        {
+                            IsStudentExemptFromSearch = true;
+                        }
+                    }
+                    if (!IsStudentExemptFromSearch)
+                    {
+                        FinalListOfStudentsFromSearch.Add(StudentObj);
+                    }
+                }
 
 
-                studentBindingSource.DataSource = resultByFilter;
+                studentBindingSource.DataSource = FinalListOfStudentsFromSearch;
             };
             this.setAddStudentButtonVisablity();
         }
@@ -177,13 +237,17 @@ namespace Impendulo.StudentForms.Deployment
             frmAddUpdateStudent frm = new frmAddUpdateStudent();
             frm.StudentID = 0;
             frm.ShowDialog();
-            this.txtStudentIdNumber.Text = frm.CurrentSelectedStudent.StudentIDNumber;
-            this.txtFirstName.Text = frm.CurrentSelectedStudent.Individual.IndividualFirstName;
-            this.txtLastName.Text = frm.CurrentSelectedStudent.Individual.IndividualLastname;
-            this.txtStudentNumber.Text = frm.CurrentSelectedStudent.StudentID.ToString();
+            if (frm.StudentID != 0)
+            {
+                this.txtStudentIdNumber.Text = frm.CurrentSelectedStudent.StudentIDNumber;
+                this.txtFirstName.Text = frm.CurrentSelectedStudent.Individual.IndividualFirstName;
+                this.txtLastName.Text = frm.CurrentSelectedStudent.Individual.IndividualLastname;
+                this.txtStudentNumber.Text = frm.CurrentSelectedStudent.StudentID.ToString();
+            }
             this.setSearchVariables();
             this.SearchForStudent();
 
         }
+
     }
 }

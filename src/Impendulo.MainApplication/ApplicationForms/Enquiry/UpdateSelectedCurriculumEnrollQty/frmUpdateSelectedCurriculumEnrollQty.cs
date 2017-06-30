@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Impendulo.Data.Models;
+using MetroFramework.Forms;
 
 namespace Impendulo.Enquiry.UpdateSelectedCurriculumEnrollQty.Deployment
 {
-    public partial class frmUpdateSelectedCurriculumEnrollQty : Form
+    public partial class frmUpdateSelectedCurriculumEnrollQty : MetroForm
     {
 
         public CurriculumEnquiry CurrentCurriculumEnquiry { get; set; }
@@ -28,7 +29,11 @@ namespace Impendulo.Enquiry.UpdateSelectedCurriculumEnrollQty.Deployment
         {
             if (CurrentCurriculumEnquiry != null)
             {
-                this.nudQtyToEnroll.Value = CurrentCurriculumEnquiry.EnrollmentQuanity;
+                //if (this.nudQtyToEnroll.Minimum > )
+                //{
+
+                //}
+                //this.nudQtyToEnroll.Value = CurrentCurriculumEnquiry.EnrollmentQuanity;
             }else
             {
                 this.nudQtyToEnroll.Value = 1;

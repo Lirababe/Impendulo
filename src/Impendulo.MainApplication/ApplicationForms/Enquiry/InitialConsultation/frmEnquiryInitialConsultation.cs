@@ -1,5 +1,6 @@
 ﻿using Impendulo.Common.Enum;
 using Impendulo.Data.Models;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,17 +13,17 @@ using System.Windows.Forms;
 
 namespace Impendulo.Enquiry.Deployment.InitaialConsultation
 {
-    public partial class frmEnquiryInitialConsultation : Form
+    public partial class frmEnquiryInitialConsultation : MetroForm
     {
         public int EmployeeID { get; set; }
         public Data.Models.Enquiry CurrentEnquiry { get; set; }
+        public Employee CurrentEmployeeLoggedIn { get; set; }
         public frmEnquiryInitialConsultation()
         {
             InitializeComponent();
-
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void frmEnquiryInitialConsultation_Load(object sender, EventArgs e)
         {
 
         }
@@ -31,13 +32,18 @@ namespace Impendulo.Enquiry.Deployment.InitaialConsultation
         {
             using (var Dbconnection = new MCDEntities())
             {
+                string InitialConsultationText = "None or No Notes where documented.";
+                if (txtNotes.Text.Length > 0)
+                {
+                    InitialConsultationText = txtNotes.Text;
+                }
                 EquiryHistory hist = new EquiryHistory
                 {
                     EnquiryID = CurrentEnquiry.EnquiryID,
                     EmployeeID = this.EmployeeID,
                     LookupEquiyHistoryTypeID = (int)EnumEquiryHistoryTypes.Enquiry_Initial_Consultation_Completed,
                     DateEnquiryUpdated = DateTime.Now,
-                    EnquiryNotes = txtNotes.Text
+                    EnquiryNotes = InitialConsultationText
                 };
                 Dbconnection.EquiryHistories.Add(hist);
                 int IsSaved = Dbconnection.SaveChanges();
@@ -52,14 +58,10 @@ namespace Impendulo.Enquiry.Deployment.InitaialConsultation
             this.Close();
         }
 
-        private void frmEnquiryInitialConsultation_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }

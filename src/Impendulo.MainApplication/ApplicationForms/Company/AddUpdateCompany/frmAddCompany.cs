@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Impendulo.Common.Enum;
+using Impendulo.Data.Models;
+using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,48 +10,58 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Impendulo.Data.Models;
-using Impendulo.Common.Enum;
 
 namespace Impendulo.Company.AddCompany.Deployment
 {
-    public partial class frmAddCompany : Form
+    public partial class frmAddCompany : MetroForm
     {
         public frmAddCompany()
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private Impendulo.Data.Models.Company _CurrentCompany;
+        public Impendulo.Data.Models.Company CurrentCompany
         {
-
+            get
+            {
+                if (_CurrentCompany == null)
+                {
+                    _CurrentCompany = new Data.Models.Company();
+                    return _CurrentCompany;
+                }
+                return _CurrentCompany;
+            }
+            set { _CurrentCompany = value; }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void frmCompanySearchV2_Load(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
         private void btnAddCompany_Click(object sender, EventArgs e)
         {
-
             using (var Dbconnection = new MCDEntities())
             {
-                Impendulo.Data.Models.Company NewCompany = new Data.Models.Company
-                {
-                    CompanyName = this.txtComapnyName.Text.ToString(),
-                    CompanySETANumber = this.txtSARSLevyRegistration.Text.ToString(),
-                    CompanySicCode = this.txtSicCode.Text.ToString(),
-                    CompanySARSLevyRegistrationNumber = this.txtSARSLevyRegistration.Text.ToString()
-                };
+
+                CurrentCompany.CompanyName = this.txtComapnyName.Text.ToString();
+                CurrentCompany.CompanySETANumber = this.txtSARSLevyRegistration.Text.ToString();
+                CurrentCompany.CompanySicCode = this.txtSicCode.Text.ToString();
+                CurrentCompany.CompanySARSLevyRegistrationNumber = this.txtSARSLevyRegistration.Text.ToString();
+
                 foreach (ContactDetail ConDetail in GetCompanyContactDetails())
                 {
-                    NewCompany.ContactDetails.Add(ConDetail);
+                    CurrentCompany.ContactDetails.Add(ConDetail);
                 };
-                Dbconnection.Companies.Add(NewCompany);
+                Dbconnection.Companies.Add(CurrentCompany);
                 Dbconnection.SaveChanges();
 
             };
+            this.Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
         private List<ContactDetail> GetCompanyContactDetails()
