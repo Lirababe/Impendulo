@@ -81,7 +81,7 @@ namespace Impendulo.FileViewer.Development
             frmSendEmail frm = new frmSendEmail();
             string path = Directory.GetCurrentDirectory() + "\\Temp" + "\\" + CurrentFile.FileName + "." + CurrentFile.FileExtension;
             //frm.Attachments.Add(path);
-            frm.ShowDialog();
+            //frm.ShowDialog();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

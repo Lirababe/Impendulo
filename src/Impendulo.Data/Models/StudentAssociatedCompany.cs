@@ -19,7 +19,7 @@ namespace Impendulo.Data.Models
         public int CompanyID { get; set; }
         public bool IsCurrentCompany { get; set; }
     
-        public virtual Student Student { get; set; }
         public virtual Company Company { get; set; }
+        public virtual Student Student { get; set; }
     }
 }

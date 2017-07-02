@@ -22,7 +22,7 @@ Email_Address = 1,Cell_Number = 2,Home_Number = 3,Office_Number = 4,Fax_Number =
 South_Africa = 1,Lesotho = 2,Mozambique = 3,Zimbabwe = 4,Namibia = 5        }
         public enum EnumDepartments : int
 	    {
-Learnership = 1004,Lifting_Operator_Training_LOPT = 1005,Surface_Mobile_Equipment = 1006,Apprenticeship = 2004,Short_Courses = 2005,Training_Related_Services = 2009,test = 5014        }
+Learnership = 1004,Lifting_Operator_Training_LOPT = 1005,Surface_Mobile_Equipment = 1006,Apprenticeship = 2004,Short_Courses = 2005,Training_Related_Services = 2009        }
         public enum EnumDisabilities : int
 	    {
 Mobility_Impairments = 1,Physical_Impairments = 2,Vision = 3,Hearing = 4,Cognitive_or_Learning = 5,Other = 7        }
@@ -37,7 +37,7 @@ New = 1,Enrollment_In_Progress = 2,Awaiting_Scheduling = 3,Schedule_Finalised = 
 Enrollment_Documents = 1,ID_Documents = 2,Proof_Of_Payment = 3        }
         public enum EnumEnrollmentProgressStates : int
 	    {
-In_Progress = 1,Complete = 2,Excempt = 1002        }
+In_Progress = 1,Complete = 2,Excempt = 1002,New_Enrollment = 2002        }
         public enum EnumEnrollmentTypes : int
 	    {
 Novice = 1,ReCertification = 2        }

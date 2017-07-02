@@ -17,7 +17,7 @@ namespace Impendulo.Data.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CurriculumEnquiry()
         {
-            this.CurriculumEquirySelectedCourses = new ObservableListSource<CurriculumEquirySelectedCours>();
+            this.CurriculumEquirySelectedCourses = new ObservableListSource<CurriculumEquirySelectedCourse>();
             this.Enrollments = new ObservableListSource<Enrollment>();
         }
     
@@ -33,7 +33,7 @@ namespace Impendulo.Data.Models
         public virtual Enquiry Enquiry { get; set; }
         public virtual LookupEnquiryStatus LookupEnquiryStatus { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<CurriculumEquirySelectedCours> CurriculumEquirySelectedCourses { get; set; }
+        public virtual ObservableListSource<CurriculumEquirySelectedCourse> CurriculumEquirySelectedCourses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<Enrollment> Enrollments { get; set; }
     }

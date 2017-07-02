@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label enquiryDateLabel;
             System.Windows.Forms.Label enquiryIDLabel;
             System.Windows.Forms.Label fullNameLabel;
@@ -59,7 +58,7 @@
             this.btnViewProgressInProgressSections = new MetroFramework.Controls.MetroTile();
             this.btnInitialConsultationConfirmationInProgressSection = new MetroFramework.Controls.MetroTile();
             this.enquiryDateTextBox = new System.Windows.Forms.TextBox();
-            this.enquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.enquiryInprogressBindingSource = new System.Windows.Forms.BindingSource();
             this.txtEnquiryInProgressEnquiryID = new System.Windows.Forms.TextBox();
             this.gbInprogressContactNameAndCompanyName = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -67,9 +66,9 @@
             this.btnInProgressSwitchBetweenCompanyANdPrivate = new MetroFramework.Controls.MetroTile();
             this.btnInProgressChangeContact = new MetroFramework.Controls.MetroTile();
             this.txtInprogressCompanyName = new System.Windows.Forms.TextBox();
-            this.companiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.companiesBindingSource = new System.Windows.Forms.BindingSource();
             this.fullNameTextBox = new System.Windows.Forms.TextBox();
-            this.individualsInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.individualsInprogressBindingSource = new System.Windows.Forms.BindingSource();
             this.initialConsultationCompleteCheckBox = new System.Windows.Forms.CheckBox();
             this.gbInProgressContactDetails = new System.Windows.Forms.GroupBox();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
@@ -77,8 +76,8 @@
             this.colInProgressContactType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInProgressContactDetailSendOption = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.contactDetailsInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.contactDetailsInprogressBindingSource = new System.Windows.Forms.BindingSource();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
@@ -104,8 +103,8 @@
             this.colInProgressEnquiryQuantityCurrentlyEnrolled = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInProgressProcessEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colInProgressViewCurrentEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.curriculumEnquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.enquiryInprogressBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.curriculumEnquiryInprogressBindingSource = new System.Windows.Forms.BindingSource();
+            this.enquiryInprogressBindingNavigator = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -123,8 +122,8 @@
             this.btnUpdateCurriculumEnquiryItemEnrollmentQty = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.toolTip1 = new System.Windows.Forms.ToolTip();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.individualIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -181,7 +180,7 @@
             this.nextOfKinDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.systemAdministratorDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companiesInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.companiesInprogressBindingSource = new System.Windows.Forms.BindingSource();
             enquiryDateLabel = new System.Windows.Forms.Label();
             enquiryIDLabel = new System.Windows.Forms.Label();
             fullNameLabel = new System.Windows.Forms.Label();

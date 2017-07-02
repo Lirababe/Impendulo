@@ -11,6 +11,7 @@ using Impendulo.Data.Models;
 using Impendulo.MainApplication;
 using Impendulo.Enrollments.Deployment;
 using Impendulo.StudentEngineeringCourseErollment.Devlopment;
+using Impendulo.StudentEngineeringCourseErollment.Deployment;
 
 namespace Impendulo.Facilitators.Development
 {

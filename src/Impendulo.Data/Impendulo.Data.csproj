@@ -70,9 +70,6 @@
     <Compile Include="Models\Address.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ApprenticeshipEnrollmentDocument.cs">
-      <DependentUpon>MCDEntities.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\ApprienticeshipEnrollment.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
@@ -118,13 +115,10 @@
     <Compile Include="Models\CurriculumEnquiry.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CurriculumEquirySelectedCours.cs">
+    <Compile Include="Models\CurriculumEquirySelectedCourse.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CurriculumPrequisiteCourse.cs">
-      <DependentUpon>MCDEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\C__RefactorLog.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EmailMessageRepository.cs">
@@ -146,6 +140,9 @@
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Enrollment.cs">
+      <DependentUpon>MCDEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EnrollmentDocument.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EquiryHistory.cs">
@@ -291,6 +288,9 @@
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\StudentDisability.cs">
+      <DependentUpon>MCDEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SystemAdministrator.cs">

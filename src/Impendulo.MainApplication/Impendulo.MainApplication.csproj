@@ -410,6 +410,12 @@
     <Compile Include="ApplicationForms\System\EmailSettings\frmEmailConfiguration.Designer.cs">
       <DependentUpon>frmEmailConfiguration.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMCDMainFormV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMCDMainFormV2.Designer.cs">
+      <DependentUpon>frmMCDMainFormV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MCDMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -586,6 +592,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForms\System\EmailSettings\frmEmailConfiguration.resx">
       <DependentUpon>frmEmailConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMCDMainFormV2.resx">
+      <DependentUpon>frmMCDMainFormV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MCDMainForm.resx">
       <DependentUpon>MCDMainForm.cs</DependentUpon>

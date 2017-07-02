@@ -15,7 +15,7 @@ namespace Impendulo.Data.Models
     public partial class CourseSchedule
     {
         public int CourseScheduleID { get; set; }
-        public int StudentID { get; set; }
+        public int IndividualID { get; set; }
         public System.DateTime CourseScheduleStartDate { get; set; }
         public System.DateTime CourseScheduleEndDate { get; set; }
     

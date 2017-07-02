@@ -30,6 +30,7 @@ namespace Impendulo.Data.Models
         public virtual DbSet<Activity> Activities { get; set; }
         public virtual DbSet<Address> Addresses { get; set; }
         public virtual DbSet<Assessor> Assessors { get; set; }
+        public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<ContactDetail> ContactDetails { get; set; }
         public virtual DbSet<CostingModel> CostingModels { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
@@ -40,64 +41,63 @@ namespace Impendulo.Data.Models
         public virtual DbSet<CurriculumCourseModule> CurriculumCourseModules { get; set; }
         public virtual DbSet<CurriculumCoursePredecessor> CurriculumCoursePredecessors { get; set; }
         public virtual DbSet<CurriculumCourse> CurriculumCourses { get; set; }
+        public virtual DbSet<CurriculumEnquiry> CurriculumEnquiries { get; set; }
+        public virtual DbSet<CurriculumEquirySelectedCourse> CurriculumEquirySelectedCourses { get; set; }
+        public virtual DbSet<CurriculumPrequisiteCourse> CurriculumPrequisiteCourses { get; set; }
         public virtual DbSet<Curriculum> Curriculums { get; set; }
+        public virtual DbSet<EmailMessageRepository> EmailMessageRepositories { get; set; }
+        public virtual DbSet<EmailMessageRepositoryHistory> EmailMessageRepositoryHistories { get; set; }
+        public virtual DbSet<EmailSystemOutGoingMessageAttachment> EmailSystemOutGoingMessageAttachments { get; set; }
+        public virtual DbSet<EmailSystemOutGoingMessage> EmailSystemOutGoingMessages { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<Enrollment> Enrollments { get; set; }
+        public virtual DbSet<Enquiry> Enquiries { get; set; }
+        public virtual DbSet<EnrollmentDocument> EnrollmentDocuments { get; set; }
         public virtual DbSet<EquiryHistory> EquiryHistories { get; set; }
         public virtual DbSet<FacilitatorAssociatedCourse> FacilitatorAssociatedCourses { get; set; }
         public virtual DbSet<FacilitatorQualification> FacilitatorQualifications { get; set; }
         public virtual DbSet<Facilitator> Facilitators { get; set; }
         public virtual DbSet<FacilitatorSetaAccreditation> FacilitatorSetaAccreditations { get; set; }
+        public virtual DbSet<File> Files { get; set; }
         public virtual DbSet<Individual> Individuals { get; set; }
+        public virtual DbSet<Login> Logins { get; set; }
         public virtual DbSet<LookupAddressType> LookupAddressTypes { get; set; }
         public virtual DbSet<LookupContactType> LookupContactTypes { get; set; }
         public virtual DbSet<LookupCountry> LookupCountries { get; set; }
         public virtual DbSet<LookupDepartment> LookupDepartments { get; set; }
         public virtual DbSet<LookupDisability> LookupDisabilities { get; set; }
+        public virtual DbSet<LookupEmailMessageRepositoryHistoryTrancationType> LookupEmailMessageRepositoryHistoryTrancationTypes { get; set; }
+        public virtual DbSet<LookupEnquiryStatus> LookupEnquiryStatuses { get; set; }
+        public virtual DbSet<LookupEnrollentDocumentType> LookupEnrollentDocumentTypes { get; set; }
         public virtual DbSet<LookupEnrollmentProgressState> LookupEnrollmentProgressStates { get; set; }
         public virtual DbSet<LookupEnrollmentType> LookupEnrollmentTypes { get; set; }
+        public virtual DbSet<LookupEquiryHistoryType> LookupEquiryHistoryTypes { get; set; }
+        public virtual DbSet<LookupEquiryOrigion> LookupEquiryOrigions { get; set; }
         public virtual DbSet<LookupEthnicity> LookupEthnicities { get; set; }
         public virtual DbSet<LookupGender> LookupGenders { get; set; }
         public virtual DbSet<LookupMartialStatus> LookupMartialStatuses { get; set; }
+        public virtual DbSet<LookupProcess> LookupProcesses { get; set; }
+        public virtual DbSet<LookupProcessStep> LookupProcessSteps { get; set; }
         public virtual DbSet<LookupProvince> LookupProvinces { get; set; }
         public virtual DbSet<LookupQualificationLevel> LookupQualificationLevels { get; set; }
         public virtual DbSet<LookupSectionalEnrollmentType> LookupSectionalEnrollmentTypes { get; set; }
         public virtual DbSet<LookupSeta> LookupSetas { get; set; }
         public virtual DbSet<LookupTitle> LookupTitles { get; set; }
         public virtual DbSet<LookupTypeOfRelation> LookupTypeOfRelations { get; set; }
+        public virtual DbSet<MessageTemplate> MessageTemplates { get; set; }
         public virtual DbSet<Module> Modules { get; set; }
         public virtual DbSet<NextOfKin> NextOfKins { get; set; }
         public virtual DbSet<Qualification> Qualifications { get; set; }
+        public virtual DbSet<Schedule> Schedules { get; set; }
         public virtual DbSet<SMTPSetting> SMTPSettings { get; set; }
         public virtual DbSet<StudentAssociatedCompany> StudentAssociatedCompanies { get; set; }
         public virtual DbSet<StudentDisability> StudentDisabilities { get; set; }
         public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<SystemAdministrator> SystemAdministrators { get; set; }
         public virtual DbSet<VenueAssociatedCurriculumCourse> VenueAssociatedCurriculumCourses { get; set; }
         public virtual DbSet<Venue> Venues { get; set; }
-        public virtual DbSet<Login> Logins { get; set; }
-        public virtual DbSet<SystemAdministrator> SystemAdministrators { get; set; }
-        public virtual DbSet<EmailMessageRepository> EmailMessageRepositories { get; set; }
-        public virtual DbSet<Company> Companies { get; set; }
-        public virtual DbSet<LookupEnquiryStatus> LookupEnquiryStatuses { get; set; }
-        public virtual DbSet<LookupEquiryHistoryType> LookupEquiryHistoryTypes { get; set; }
-        public virtual DbSet<LookupProcess> LookupProcesses { get; set; }
-        public virtual DbSet<LookupProcessStep> LookupProcessSteps { get; set; }
-        public virtual DbSet<MessageTemplate> MessageTemplates { get; set; }
-        public virtual DbSet<CurriculumEquirySelectedCours> CurriculumEquirySelectedCourses { get; set; }
-        public virtual DbSet<EmailMessageRepositoryHistory> EmailMessageRepositoryHistories { get; set; }
-        public virtual DbSet<EmailSystemOutGoingMessageAttachment> EmailSystemOutGoingMessageAttachments { get; set; }
-        public virtual DbSet<EmailSystemOutGoingMessage> EmailSystemOutGoingMessages { get; set; }
-        public virtual DbSet<LookupEmailMessageRepositoryHistoryTrancationType> LookupEmailMessageRepositoryHistoryTrancationTypes { get; set; }
-        public virtual DbSet<CurriculumPrequisiteCourse> CurriculumPrequisiteCourses { get; set; }
-        public virtual DbSet<CurriculumEnquiry> CurriculumEnquiries { get; set; }
-        public virtual DbSet<Enquiry> Enquiries { get; set; }
         public virtual DbSet<ApprienticeshipEnrollment> ApprienticeshipEnrollments { get; set; }
-        public virtual DbSet<ApprenticeshipEnrollmentDocument> ApprenticeshipEnrollmentDocuments { get; set; }
-        public virtual DbSet<LookupEnrollentDocumentType> LookupEnrollentDocumentTypes { get; set; }
-        public virtual DbSet<File> Files { get; set; }
-        public virtual DbSet<LookupEquiryOrigion> LookupEquiryOrigions { get; set; }
-        public virtual DbSet<Schedule> Schedules { get; set; }
-        public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
+        public virtual DbSet<Enrollment> Enrollments { get; set; }
     
         public virtual ObjectResult<CurriculumCourse> GetCurriculumCourseInOrder(Nullable<int> curriculumID)
         {

@@ -18,8 +18,8 @@ namespace Impendulo.Data.Models
         public EmailMessageRepository()
         {
             this.EmailMessageRepositoryHistories = new ObservableListSource<EmailMessageRepositoryHistory>();
-            this.Enquiries = new ObservableListSource<Enquiry>();
             this.Files = new ObservableListSource<File>();
+            this.Enquiries = new ObservableListSource<Enquiry>();
         }
     
         public int EmailMessageRepositoryID { get; set; }
@@ -31,8 +31,8 @@ namespace Impendulo.Data.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<EmailMessageRepositoryHistory> EmailMessageRepositoryHistories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<Enquiry> Enquiries { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<File> Files { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<Enquiry> Enquiries { get; set; }
     }
 }

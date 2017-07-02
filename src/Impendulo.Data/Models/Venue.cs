@@ -21,7 +21,7 @@ namespace Impendulo.Data.Models
         }
     
         public int VenueID { get; set; }
-        public string VenueName { get; set; }
+        public string Venue1 { get; set; }
         public int VenueMaxCapacity { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -111,15 +111,15 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                 {
                     RadioButton radObj = new RadioButton();
                     radObj.Appearance = Appearance.Button;
-                    radObj.Text = Enrolltype.EnrollentDocumentType;
+                    radObj.Text = Enrolltype.EnrollmentDocumentType;
                     if (IsFirst)
                     {
-                        populateApprenticeshipEnrollmentDocuments(Enrolltype.LookupEnrollentDocumentTypeID);
+                        populateApprenticeshipEnrollmentDocuments(Enrolltype.LookupEnrollmentDocumentTypeID);
                         radObj.Checked = true;
                         IsFirst = false;
 
                     };
-                    radObj.Tag = Enrolltype.LookupEnrollentDocumentTypeID;
+                    radObj.Tag = Enrolltype.LookupEnrollmentDocumentTypeID;
                     radObj.CheckedChanged += RadObj_ApprenticeshipDocuments_CheckedChanged;
                     if (_EnrollmentType == EnumDepartments.Apprenticeship)
                     {
@@ -136,15 +136,15 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             using (var Dbconnection = new MCDEntities())
             {
                 Enrollment Enroll = ((Enrollment)(enrollmentBindingSource.Current));
-                fileBindingSource.DataSource = (from a in Dbconnection.ApprenticeshipEnrollmentDocuments
-                                                where a.EnrollmentID == Enroll.EnrollmentID
-                                                    && a.LookupEnrollentDocumentTypeID == _EnrollentDocumentTypeID
-                                                select new
-                                                {
-                                                    ImageID = a.File.ImageID,
-                                                    FileName = a.File.FileName + "." + a.File.FileExtension,
-                                                    DateCreated = a.File.DateCreated
-                                                }).ToList();
+                //fileBindingSource.DataSource = (from a in Dbconnection.ApprenticeshipEnrollmentDocuments
+                //                                where a.EnrollmentID == Enroll.EnrollmentID
+                //                                    && a.LookupEnrollentDocumentTypeID == _EnrollentDocumentTypeID
+                //                                select new
+                //                                {
+                //                                    ImageID = a.File.ImageID,
+                //                                    FileName = a.File.FileName + "." + a.File.FileExtension,
+                //                                    DateCreated = a.File.DateCreated
+                //                                }).ToList();
 
             };
         }
@@ -328,11 +328,11 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                     Enrollment EnrollmentObj = (Enrollment)(row.DataBoundItem);
 
                     row.Cells[colApprenticeshipCurriculum.Index].Value = EnrollmentObj.Curriculum.CurriculumName.ToString();
-                    if (EnrollmentObj.ApprienticeshipEnrollment != null)
-                    {
-                        row.Cells[colApprenticeshipSection.Index].Value = EnrollmentObj.ApprienticeshipEnrollment.LookupSectionalEnrollmentType.LookupSectionalEnrollmentTypeName.ToString();
+                    //if (EnrollmentObj.ApprienticeshipEnrollment != null)
+                    //{
+                    //    row.Cells[colApprenticeshipSection.Index].Value = EnrollmentObj.ApprienticeshipEnrollment.LookupSectionalEnrollmentType.LookupSectionalEnrollmentTypeName.ToString();
 
-                    }
+                    //}
                     var CurriculumEnquiryObj = EnrollmentObj.CurriculumEnquiries.FirstOrDefault<CurriculumEnquiry>(); ;
                     if (CurriculumEnquiryObj != null)
                     {
@@ -425,7 +425,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             switch (e.ColumnIndex)
             {
                 case 0:
-                    frmEnquiryViewHistory frm5 = new frmEnquiryViewHistory();
+                    frmEquiryViewHistory frm5 = new frmEquiryViewHistory();
                     //frm5.CurrentEnquiryID = EnrollmentObj.CurriculumEnquiries.Where(a=>a.Enrollments.;
                     frm5.ShowDialog();
 

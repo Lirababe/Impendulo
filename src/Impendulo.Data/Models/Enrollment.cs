@@ -18,27 +18,30 @@ namespace Impendulo.Data.Models
         public Enrollment()
         {
             this.CurriculumCourseEnrollments = new ObservableListSource<CurriculumCourseEnrollment>();
-            this.CurriculumEnquiries = new ObservableListSource<CurriculumEnquiry>();
+            this.EnrollmentDocuments = new ObservableListSource<EnrollmentDocument>();
             this.Schedules = new ObservableListSource<Schedule>();
+            this.CurriculumEnquiries = new ObservableListSource<CurriculumEnquiry>();
         }
     
         public int EnrollmentID { get; set; }
+        public Nullable<int> EnrolmentParentID { get; set; }
+        public Nullable<bool> EnrollmentExcempt { get; set; }
         public int LookupEnrollmentProgressStateID { get; set; }
         public int CurriculumID { get; set; }
         public System.DateTime DateIntitiated { get; set; }
         public int IndividualID { get; set; }
-        public Nullable<int> EnrolmentParentID { get; set; }
-        public Nullable<bool> EnrollmentExcempt { get; set; }
     
+        public virtual ApprienticeshipEnrollment ApprienticeshipEnrollment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<CurriculumCourseEnrollment> CurriculumCourseEnrollments { get; set; }
         public virtual Curriculum Curriculum { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<EnrollmentDocument> EnrollmentDocuments { get; set; }
         public virtual LookupEnrollmentProgressState LookupEnrollmentProgressState { get; set; }
         public virtual Student Student { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<CurriculumEnquiry> CurriculumEnquiries { get; set; }
-        public virtual ApprienticeshipEnrollment ApprienticeshipEnrollment { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<Schedule> Schedules { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<CurriculumEnquiry> CurriculumEnquiries { get; set; }
     }
 }

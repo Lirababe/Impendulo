@@ -17,7 +17,7 @@ namespace Impendulo.Data.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public File()
         {
-            this.ApprenticeshipEnrollmentDocuments = new ObservableListSource<ApprenticeshipEnrollmentDocument>();
+            this.EnrollmentDocuments = new ObservableListSource<EnrollmentDocument>();
             this.EmailMessageRepositories = new ObservableListSource<EmailMessageRepository>();
             this.MessageTemplates = new ObservableListSource<MessageTemplate>();
         }
@@ -30,7 +30,7 @@ namespace Impendulo.Data.Models
         public System.DateTime DateCreated { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<ApprenticeshipEnrollmentDocument> ApprenticeshipEnrollmentDocuments { get; set; }
+        public virtual ObservableListSource<EnrollmentDocument> EnrollmentDocuments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<EmailMessageRepository> EmailMessageRepositories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

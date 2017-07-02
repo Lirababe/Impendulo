@@ -123,17 +123,18 @@ namespace Impendulo.Enrollments.Deployment
             }
             using (var Dbconnection = new MCDEntities())
             {
-               
+                Enrollment x = new Enrollment();
+                
                 Enrollment enroll = new Enrollment
                 {
                     LookupEnrollmentProgressStateID = (int)EnumEnrollmentProgressStates.In_Progress,
                     IndividualID = this.StudentID,
                     CurriculumID = CurriculumObj.CurriculumID,
-                    DateIntitiated = DateTime.Now,
-                    ApprienticeshipEnrollment = new ApprienticeshipEnrollment
-                    {
-                        LookupSectionalEnrollmentTypeID = LookupSectionalEnrollmentTypeID
-                    }
+                    DateIntitiated = DateTime.Now                   
+                    //,ApprienticeshipEnrollment = new   ApprienticeshipEnrollment
+                    //{
+                    //    LookupSectionalEnrollmentTypeID = LookupSectionalEnrollmentTypeID
+                    //}
 
                 };
 

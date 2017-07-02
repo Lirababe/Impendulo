@@ -20,10 +20,10 @@ namespace Impendulo.Data.Models
             this.CurriculumCourseEnrollments = new ObservableListSource<CurriculumCourseEnrollment>();
             this.CurriculumCourseModules = new ObservableListSource<CurriculumCourseModule>();
             this.CurriculumCoursePredecessors = new ObservableListSource<CurriculumCoursePredecessor>();
+            this.CurriculumEquirySelectedCourses = new ObservableListSource<CurriculumEquirySelectedCourse>();
+            this.CurriculumPrequisiteCourses = new ObservableListSource<CurriculumPrequisiteCourse>();
             this.VenueAssociatedCurriculumCourses = new ObservableListSource<VenueAssociatedCurriculumCourse>();
             this.LookupSetas = new ObservableListSource<LookupSeta>();
-            this.CurriculumEquirySelectedCourses = new ObservableListSource<CurriculumEquirySelectedCours>();
-            this.CurriculumPrequisiteCourses = new ObservableListSource<CurriculumPrequisiteCourse>();
         }
     
         public int CurriculumCourseID { get; set; }
@@ -46,12 +46,12 @@ namespace Impendulo.Data.Models
         public virtual Curriculum Curriculum { get; set; }
         public virtual LookupEnrollmentType LookupEnrollmentType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<CurriculumEquirySelectedCourse> CurriculumEquirySelectedCourses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<CurriculumPrequisiteCourse> CurriculumPrequisiteCourses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<VenueAssociatedCurriculumCourse> VenueAssociatedCurriculumCourses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<LookupSeta> LookupSetas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<CurriculumEquirySelectedCours> CurriculumEquirySelectedCourses { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<CurriculumPrequisiteCourse> CurriculumPrequisiteCourses { get; set; }
     }
 }

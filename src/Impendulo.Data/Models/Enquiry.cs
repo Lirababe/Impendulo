@@ -27,11 +27,12 @@ namespace Impendulo.Data.Models
     
         public int EnquiryID { get; set; }
         public System.DateTime EnquiryDate { get; set; }
-        public bool InitialConsultationComplete { get; set; }
         public int EnquiryStatusID { get; set; }
+        public bool InitialConsultationComplete { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<CurriculumEnquiry> CurriculumEnquiries { get; set; }
+        public virtual LookupEnquiryStatus LookupEnquiryStatus { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<EquiryHistory> EquiryHistories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -42,6 +43,5 @@ namespace Impendulo.Data.Models
         public virtual ObservableListSource<Individual> Individuals { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<LookupEquiryOrigion> LookupEquiryOrigions { get; set; }
-        public virtual LookupEnquiryStatus LookupEnquiryStatus { get; set; }
     }
 }

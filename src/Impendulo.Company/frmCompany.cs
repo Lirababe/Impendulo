@@ -11,8 +11,9 @@ using Impendulo.Data.Models;
 using Impendulo.Common.Enum;
 using Impendulo.Company.AddCompany.Development;
 using Impendulo.ContactDetails.Deployment;
-using Impendulo.Contacts.Deployment;
+
 using Impendulo.Addresses.Deployment;
+using Impendulo.Deployment.Contacts;
 
 namespace Impendulo.Company.Development
 {

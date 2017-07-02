@@ -581,11 +581,8 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
                     CurrentEnrollments.CurriculumID = CurrentCurriculumEnquiry.CurriculumID;
                     CurrentEnrollments.IndividualID = CurrentSelectedStudent.StudentID;
                     CurrentEnrollments.DateIntitiated = DateTime.Now;
-                    CurrentEnrollments.ApprienticeshipEnrollment = new ApprienticeshipEnrollment()
-                    {
-                        LookupSectionalEnrollmentTypeID = (int)EnrollmenTypeSelection
-                    };
-
+                    CurrentEnrollments.LookupEnrollmentProgressStateID = (int)EnrollmenTypeSelection;
+                   
                     CurrentCurriculumEnquiry.Enrollments.Add(CurrentEnrollments);
 
                     Dbconnection.SaveChanges();
@@ -625,24 +622,24 @@ namespace Impendulo.WizardForm.ClientEnquiry.Deployment
 
                     /* End Step 3*/
 
-                    foreach (File f in CurrentEnrollmentFormDocument)
-                    {
-                        CurrentEnrollments.ApprienticeshipEnrollment.ApprenticeshipEnrollmentDocuments.Add(new ApprenticeshipEnrollmentDocument()
-                        {
-                            ImageID = f.ImageID,
-                            EnrollmentID = CurrentEnrollments.EnrollmentID,
-                            LookupEnrollentDocumentTypeID = (int)EnumEnrollentDocumentTypes.Enrollment_Documents
-                        });
-                    }
-                    foreach (File f in CurrentIDDocument)
-                    {
-                        CurrentEnrollments.ApprienticeshipEnrollment.ApprenticeshipEnrollmentDocuments.Add(new ApprenticeshipEnrollmentDocument()
-                        {
-                            ImageID = f.ImageID,
-                            EnrollmentID = CurrentEnrollments.EnrollmentID,
-                            LookupEnrollentDocumentTypeID = (int)EnumEnrollentDocumentTypes.ID_Documents
-                        });
-                    }
+                    //foreach (File f in CurrentEnrollmentFormDocument)
+                    //{
+                    //    CurrentEnrollments.ApprienticeshipEnrollment.ApprenticeshipEnrollmentDocuments.Add(new ApprenticeshipEnrollmentDocument()
+                    //    {
+                    //        ImageID = f.ImageID,
+                    //        EnrollmentID = CurrentEnrollments.EnrollmentID,
+                    //        LookupEnrollentDocumentTypeID = (int)EnumEnrollentDocumentTypes.Enrollment_Documents
+                    //    });
+                    //}
+                    //foreach (File f in CurrentIDDocument)
+                    //{
+                    //    CurrentEnrollments.ApprienticeshipEnrollment.ApprenticeshipEnrollmentDocuments.Add(new ApprenticeshipEnrollmentDocument()
+                    //    {
+                    //        ImageID = f.ImageID,
+                    //        EnrollmentID = CurrentEnrollments.EnrollmentID,
+                    //        LookupEnrollentDocumentTypeID = (int)EnumEnrollentDocumentTypes.ID_Documents
+                    //    });
+                    //}
 
                     Dbconnection.SaveChanges();
                     EquiryHistory hist = new EquiryHistory

@@ -18,10 +18,10 @@ namespace Impendulo.Data.Models
         public Student()
         {
             this.CourseSchedules = new ObservableListSource<CourseSchedule>();
-            this.Enrollments = new ObservableListSource<Enrollment>();
             this.StudentAssociatedCompanies = new ObservableListSource<StudentAssociatedCompany>();
             this.StudentDisabilities = new ObservableListSource<StudentDisability>();
             this.NextOfKins = new ObservableListSource<NextOfKin>();
+            this.Enrollments = new ObservableListSource<Enrollment>();
         }
     
         public int StudentID { get; set; }
@@ -36,8 +36,6 @@ namespace Impendulo.Data.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<CourseSchedule> CourseSchedules { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<Enrollment> Enrollments { get; set; }
         public virtual Individual Individual { get; set; }
         public virtual LookupEthnicity LookupEthnicity { get; set; }
         public virtual LookupGender LookupGender { get; set; }
@@ -49,5 +47,7 @@ namespace Impendulo.Data.Models
         public virtual ObservableListSource<StudentDisability> StudentDisabilities { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<NextOfKin> NextOfKins { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<Enrollment> Enrollments { get; set; }
     }
 }

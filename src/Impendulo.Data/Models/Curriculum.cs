@@ -18,9 +18,9 @@ namespace Impendulo.Data.Models
         public Curriculum()
         {
             this.CurriculumCourses = new ObservableListSource<CurriculumCourse>();
-            this.Enrollments = new ObservableListSource<Enrollment>();
-            this.CurriculumPrequisiteCourses = new ObservableListSource<CurriculumPrequisiteCourse>();
             this.CurriculumEnquiries = new ObservableListSource<CurriculumEnquiry>();
+            this.CurriculumPrequisiteCourses = new ObservableListSource<CurriculumPrequisiteCourse>();
+            this.Enrollments = new ObservableListSource<Enrollment>();
         }
     
         public int CurriculumID { get; set; }
@@ -32,12 +32,12 @@ namespace Impendulo.Data.Models
         public virtual CostingModel CostingModel { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<CurriculumCourse> CurriculumCourses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<CurriculumEnquiry> CurriculumEnquiries { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<CurriculumPrequisiteCourse> CurriculumPrequisiteCourses { get; set; }
         public virtual LookupDepartment LookupDepartment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<Enrollment> Enrollments { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<CurriculumPrequisiteCourse> CurriculumPrequisiteCourses { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<CurriculumEnquiry> CurriculumEnquiries { get; set; }
     }
 }

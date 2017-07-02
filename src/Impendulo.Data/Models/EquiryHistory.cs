@@ -17,12 +17,12 @@ namespace Impendulo.Data.Models
         public int EnqueryHistoryID { get; set; }
         public int EnquiryID { get; set; }
         public int EmployeeID { get; set; }
+        public int LookupEquiyHistoryTypeID { get; set; }
         public System.DateTime DateEnquiryUpdated { get; set; }
         public string EnquiryNotes { get; set; }
-        public int LookupEquiyHistoryTypeID { get; set; }
     
         public virtual Employee Employee { get; set; }
-        public virtual LookupEquiryHistoryType LookupEquiryHistoryType { get; set; }
         public virtual Enquiry Enquiry { get; set; }
+        public virtual LookupEquiryHistoryType LookupEquiryHistoryType { get; set; }
     }
 }

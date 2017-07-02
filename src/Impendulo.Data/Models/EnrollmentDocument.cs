@@ -12,8 +12,15 @@ namespace Impendulo.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class C__RefactorLog
+    public partial class EnrollmentDocument
     {
-        public System.Guid OperationKey { get; set; }
+        public int EnrollmentDocumentID { get; set; }
+        public int EnrollmentID { get; set; }
+        public int ImageID { get; set; }
+        public int LookupEnrollmentDocumentTypeID { get; set; }
+    
+        public virtual File File { get; set; }
+        public virtual LookupEnrollentDocumentType LookupEnrollentDocumentType { get; set; }
+        public virtual Enrollment Enrollment { get; set; }
     }
 }

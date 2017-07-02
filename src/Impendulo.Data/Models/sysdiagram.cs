@@ -12,14 +12,12 @@ namespace Impendulo.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class CurriculumEquirySelectedCours
+    public partial class sysdiagram
     {
-        public int CurriculumEquirySelectedCourseID { get; set; }
-        public int CurriculumEnquiryID { get; set; }
-        public int CurriculumCourseID { get; set; }
-        public int EnrollmentQuanity { get; set; }
-    
-        public virtual CurriculumCourse CurriculumCours { get; set; }
-        public virtual CurriculumEnquiry CurriculumEnquiry { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

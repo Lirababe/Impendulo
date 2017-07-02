@@ -17,10 +17,10 @@ namespace Impendulo.Data.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Individual()
         {
-            this.Addresses = new ObservableListSource<Address>();
-            this.ContactDetails = new ObservableListSource<ContactDetail>();
             this.Companies = new ObservableListSource<Company>();
             this.Enquiries = new ObservableListSource<Enquiry>();
+            this.Addresses = new ObservableListSource<Address>();
+            this.ContactDetails = new ObservableListSource<ContactDetail>();
         }
     
         public int IndividualID { get; set; }
@@ -36,14 +36,14 @@ namespace Impendulo.Data.Models
         public virtual LookupTitle LookupTitle { get; set; }
         public virtual NextOfKin NextOfKin { get; set; }
         public virtual Student Student { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<Address> Addresses { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<ContactDetail> ContactDetails { get; set; }
         public virtual SystemAdministrator SystemAdministrator { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<Company> Companies { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<Enquiry> Enquiries { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<Address> Addresses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<ContactDetail> ContactDetails { get; set; }
     }
 }

@@ -12,15 +12,14 @@ namespace Impendulo.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ApprenticeshipEnrollmentDocument
+    public partial class CurriculumEquirySelectedCourse
     {
-        public int ApprenticeshipEnrollmentDocumentID { get; set; }
-        public int EnrollmentID { get; set; }
-        public int ImageID { get; set; }
-        public int LookupEnrollentDocumentTypeID { get; set; }
+        public int CurriculumEquirySelectedCourseID { get; set; }
+        public int CurriculumEnquiryID { get; set; }
+        public int CurriculumCourseID { get; set; }
+        public int EnrollmentQuanity { get; set; }
     
-        public virtual ApprienticeshipEnrollment ApprienticeshipEnrollment { get; set; }
-        public virtual LookupEnrollentDocumentType LookupEnrollentDocumentType { get; set; }
-        public virtual File File { get; set; }
+        public virtual CurriculumCourse CurriculumCourse { get; set; }
+        public virtual CurriculumEnquiry CurriculumEnquiry { get; set; }
     }
 }

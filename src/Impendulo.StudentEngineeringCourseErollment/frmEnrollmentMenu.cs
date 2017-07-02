@@ -24,7 +24,6 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment
             {
                 //Simulates the current Employee that is logged in.
                 CurrentEmployeeLoggedIn = (from a in Dbconnection.Employees
-                                           where a.EmployeeID == 11075
                                            select a).FirstOrDefault<Employee>();
                 //loads Departments in the drop down
                 lookupDepartmentBindingSource.DataSource = (from a in Dbconnection.LookupDepartments
@@ -76,6 +75,16 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment
                 frm.SelectedEnrollment = (from a in Dbconnection.Enrollments
                                           orderby a.EnrollmentID descending
                                           select a).FirstOrDefault<Enrollment>();
+                frm.ShowDialog();
+            }
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            using (frmEnrollmentInProgressV2 frm = new frmEnrollmentInProgressV2())
+            {
+                frm.CurrentEmployeeLoggedIn = CurrentEmployeeLoggedIn;
+                frm.CurrentEnrollmentID = 5045;
                 frm.ShowDialog();
             }
         }

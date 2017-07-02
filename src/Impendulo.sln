@@ -153,8 +153,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{93F9
 		..\..\..\MCD-26June2017.sql = ..\..\..\MCD-26June2017.sql
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication2", "WpfApplication2\WpfApplication2.csproj", "{6F243709-B2DA-4830-BC60-3EC713C83F47}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
@@ -1209,34 +1207,6 @@ Global
 		{BB41AC8B-CBED-4387-A7E0-4567EDB3F57F}.Trial|Any CPU.Build.0 = Release|Any CPU
 		{BB41AC8B-CBED-4387-A7E0-4567EDB3F57F}.Trial|x86.ActiveCfg = Release|Any CPU
 		{BB41AC8B-CBED-4387-A7E0-4567EDB3F57F}.Trial|x86.Build.0 = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.CD_ROM|x86.ActiveCfg = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.CD_ROM|x86.Build.0 = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Debug|x86.Build.0 = Debug|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Development|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Development|Any CPU.Build.0 = Debug|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Development|x86.ActiveCfg = Debug|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Development|x86.Build.0 = Debug|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.DVD-5|x86.ActiveCfg = Debug|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.DVD-5|x86.Build.0 = Debug|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Release|x86.ActiveCfg = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Release|x86.Build.0 = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.SingleImage|Any CPU.Build.0 = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.SingleImage|x86.ActiveCfg = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.SingleImage|x86.Build.0 = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Trial|Any CPU.ActiveCfg = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Trial|Any CPU.Build.0 = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Trial|x86.ActiveCfg = Release|Any CPU
-		{6F243709-B2DA-4830-BC60-3EC713C83F47}.Trial|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

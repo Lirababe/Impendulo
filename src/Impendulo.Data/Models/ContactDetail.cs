@@ -17,8 +17,8 @@ namespace Impendulo.Data.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ContactDetail()
         {
-            this.Individuals = new ObservableListSource<Individual>();
             this.Companies = new ObservableListSource<Company>();
+            this.Individuals = new ObservableListSource<Individual>();
         }
     
         public int ContactDetailID { get; set; }
@@ -27,8 +27,8 @@ namespace Impendulo.Data.Models
     
         public virtual LookupContactType LookupContactType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<Individual> Individuals { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<Company> Companies { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<Individual> Individuals { get; set; }
     }
 }

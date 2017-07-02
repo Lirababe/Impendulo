@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewEnquiry));
             this.label43 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -61,8 +60,8 @@
             this.dgvIndividualContactDetails = new System.Windows.Forms.DataGridView();
             this.colContactType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.contactDetailBindingSource = new System.Windows.Forms.BindingSource();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
@@ -114,8 +113,8 @@
             this.curriculumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookupEnquiryStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enquiryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumEnquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.curriculumEnquiryBindingSource = new System.Windows.Forms.BindingSource();
+            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
@@ -161,7 +160,7 @@
             this.flowLayoutPanelEquiryOrigionSummary = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPreviousSection = new System.Windows.Forms.Button();
-            this.imageListWizardControlButtons = new System.Windows.Forms.ImageList(this.components);
+            this.imageListWizardControlButtons = new System.Windows.Forms.ImageList();
             this.btnNextSection = new System.Windows.Forms.Button();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -172,7 +171,7 @@
             this.contactDetailValueDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookupContactTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.enquiryBindingSource = new System.Windows.Forms.BindingSource();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();

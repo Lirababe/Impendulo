@@ -1,4 +1,5 @@
-﻿using Impendulo.Contacts.Deployment;
+﻿
+using Impendulo.Contacts.Development;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;

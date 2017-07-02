@@ -577,7 +577,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                     }
 
                     CurrentEnrollments.EnrolmentParentID = 0;
-                    CurrentEnrollments.LookupEnrollmentProgressStateID = (int)EnumEnrollmentProgressStates.In_Progress;
+                    CurrentEnrollments.LookupEnrollmentProgressStateID = (int)EnumEnrollmentProgressStates.New_Enrollment;
                     CurrentEnrollments.CurriculumID = CurrentCurriculumEnquiry.CurriculumID;
                     CurrentEnrollments.IndividualID = CurrentSelectedStudent.StudentID;
                     CurrentEnrollments.DateIntitiated = DateTime.Now;
@@ -585,6 +585,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                     {
                         LookupSectionalEnrollmentTypeID = (int)EnrollmenTypeSelection
                     };
+
 
                     CurrentCurriculumEnquiry.Enrollments.Add(CurrentEnrollments);
 
@@ -599,59 +600,72 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                                                             .Include("CurriculumCourse")
                                                             .ToList<CurriculumPrequisiteCourse>();
 
-                    foreach (CurriculumPrequisiteCourse CurrentCPC in CPC)
+                    //Get All The Possible Cuuriculum that for partof the Pre-Requisites
+                    List<int> PreRequisiteCurriculumID = (from a in CPC
+                                                          select a.CurriculumCourse.CurriculumID)
+                                                          .Distinct<int>()
+                                                          .ToList<int>();
+                    //Create Enrollment for each possible Curriculum that that forms part of the list pre-requisite Courses.
+                    foreach (int CurriculumIDForPreRquisiteCourseEnrollment in PreRequisiteCurriculumID)
                     {
+                        //Creates a Enrollment Enrty for the Curriculum
                         Enrollment PreRequisisteCourseEnrollment = new Enrollment
                         {
                             EnrolmentParentID = CurrentEnrollments.EnrollmentID,
                             LookupEnrollmentProgressStateID = (int)EnumEnrollmentProgressStates.In_Progress,
-                            CurriculumID = CurrentCPC.CurriculumCourse.CurriculumID,
+                            CurriculumID = CurriculumIDForPreRquisiteCourseEnrollment,
                             IndividualID = CurrentSelectedStudent.StudentID,
                             DateIntitiated = DateTime.Now
                         };
-
-                        //CurrentCurriculumEnquiry.Enrollments.Add(PreRequisisteCourseEnrollment);
                         Dbconnection.Enrollments.Add(PreRequisisteCourseEnrollment);
                         Dbconnection.SaveChanges();
-
-                        CurriculumCourseEnrollment CCE = new CurriculumCourseEnrollment
+                        //links each pre-Requisite Course to the Curriculum Linked.
+                        foreach (int CurriculumCourseIDToLink in (from a in CPC
+                                                                  where a.CurriculumCourse.CurriculumID == CurriculumIDForPreRquisiteCourseEnrollment
+                                                                  select a.CurriculumCourseID)
+                                           .Distinct<int>().
+                                           ToList<int>())
                         {
-                            EnrollmentID = PreRequisisteCourseEnrollment.EnrollmentID,
-                            CurriculumCourseID = CurrentCPC.CurriculumCourse.CurriculumCourseID
-                        };
-                        Dbconnection.CurriculumCourseEnrollments.Add(CCE);
+                            Dbconnection.CurriculumCourseEnrollments.Add(new CurriculumCourseEnrollment
+                            {
+                                CurriculumCourseID = CurriculumCourseIDToLink,
+                                EnrollmentID = PreRequisisteCourseEnrollment.EnrollmentID
+                            });
+                        }
+                        //Saves the sub set of Pre-Requisite Curriculum and linked courses.
                         Dbconnection.SaveChanges();
                     }
 
-                    /* End Step 3*/
+
+                    ///* End Step 3*/
 
                     foreach (File f in CurrentEnrollmentFormDocument)
                     {
-                        CurrentEnrollments.ApprienticeshipEnrollment.ApprenticeshipEnrollmentDocuments.Add(new ApprenticeshipEnrollmentDocument()
+                        CurrentEnrollments.EnrollmentDocuments.Add(new EnrollmentDocument()
                         {
                             ImageID = f.ImageID,
                             EnrollmentID = CurrentEnrollments.EnrollmentID,
-                            LookupEnrollentDocumentTypeID = (int)EnumEnrollentDocumentTypes.Enrollment_Documents
+                            LookupEnrollmentDocumentTypeID = (int)EnumEnrollentDocumentTypes.Enrollment_Documents
                         });
                     }
                     foreach (File f in CurrentIDDocument)
                     {
-                        CurrentEnrollments.ApprienticeshipEnrollment.ApprenticeshipEnrollmentDocuments.Add(new ApprenticeshipEnrollmentDocument()
+                        CurrentEnrollments.EnrollmentDocuments.Add(new EnrollmentDocument()
                         {
                             ImageID = f.ImageID,
                             EnrollmentID = CurrentEnrollments.EnrollmentID,
-                            LookupEnrollentDocumentTypeID = (int)EnumEnrollentDocumentTypes.ID_Documents
+                            LookupEnrollmentDocumentTypeID = (int)EnumEnrollentDocumentTypes.ID_Documents
                         });
                     }
 
-                    Dbconnection.SaveChanges();
+                    //Dbconnection.SaveChanges();
                     EquiryHistory hist = new EquiryHistory
                     {
                         EnquiryID = CurrentCurriculumEnquiry.EnquiryID,
                         EmployeeID = CurrentEmployeeLoggedIn.EmployeeID,
                         LookupEquiyHistoryTypeID = (int)EnumEquiryHistoryTypes.Enrollment_Student_Successfully_Enrolled,
                         DateEnquiryUpdated = DateTime.Now,
-                        EnquiryNotes = "Enrollment Completed Successfully for the the Following Individual - " + CurrentSelectedStudent.Individual.FullName.ToString() + "\n Enquiry Ref# - " + CurrentCurriculumEnquiry.EnquiryID
+                        EnquiryNotes = "Initial Enrollment Completed Successfully for the the Following Individual - " + CurrentSelectedStudent.Individual.FullName.ToString() + "\n Enquiry Ref# - " + CurrentCurriculumEnquiry.EnquiryID
 
                     };
                     Dbconnection.EquiryHistories.Add(hist);

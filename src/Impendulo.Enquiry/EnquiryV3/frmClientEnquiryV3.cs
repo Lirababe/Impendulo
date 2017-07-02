@@ -614,7 +614,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                             frm.ShowDialog();
                             if (frm.SelectedEnrollmentID != 0)
                             {
-                                using (frmEnrolmmentInprogress innerFrm = new frmEnrolmmentInprogress())
+                                using (frmEnrollmentInProgressV2 innerFrm = new frmEnrollmentInProgressV2())
                                 {
                                     innerFrm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
                                     innerFrm.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)CE.Curriculum.DepartmentID;
