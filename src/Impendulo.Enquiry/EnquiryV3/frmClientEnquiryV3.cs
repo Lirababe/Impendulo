@@ -617,6 +617,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                                 using (frmEnrollmentInProgressV2 innerFrm = new frmEnrollmentInProgressV2())
                                 {
                                     innerFrm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
+                                    innerFrm.CurrentEquiryID = this.CurrentSelectedEnquiryID;
                                     innerFrm.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)CE.Curriculum.DepartmentID;
                                     innerFrm.CurrentEnrollmentID = frm.SelectedEnrollmentID;
                                     innerFrm.ShowDialog();
@@ -737,6 +738,11 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                 this.curriculumEnquiryInprogressBindingSource.ResetCurrentItem();
                 //this.refreshInProgressEnquiry(CurrentSelectedEnquiryID);
             }
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

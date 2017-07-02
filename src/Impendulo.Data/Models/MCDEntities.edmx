@@ -142,6 +142,7 @@
           <Property Name="CurriculumCourseID" Type="int" Nullable="false" />
           <Property Name="EnrollmentID" Type="int" Nullable="false" />
           <Property Name="Excempt" Type="bit" Nullable="false" />
+          <Property Name="CourseCost" Type="money" Nullable="false" />
         </EntityType>
         <EntityType Name="CurriculumCourseMinimumMaximums">
           <Key>
@@ -3076,6 +3077,7 @@
           <NavigationProperty Name="Schedules" Relationship="MCDModel.FK_Schedules_CurriculumCourseEnrollments" FromRole="CurriculumCourseEnrollment" ToRole="Schedule" />
           <NavigationProperty Name="Enrollment" Relationship="MCDModel.FK_CurriculumCourseEnrollments_Enrollments1" FromRole="CurriculumCourseEnrollment" ToRole="Enrollment" />
           <Property Name="Excempt" Type="Boolean" Nullable="false" />
+          <Property Name="CourseCost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
         </EntityType>
         <EntityType Name="CurriculumCourseMinimumMaximum">
           <Key>
@@ -4804,6 +4806,7 @@
           <EntitySetMapping Name="CurriculumCourseEnrollments">
             <EntityTypeMapping TypeName="MCDModel.CurriculumCourseEnrollment">
               <MappingFragment StoreEntitySet="CurriculumCourseEnrollments">
+                <ScalarProperty Name="CourseCost" ColumnName="CourseCost" />
                 <ScalarProperty Name="Excempt" ColumnName="Excempt" />
                 <ScalarProperty Name="EnrollmentID" ColumnName="EnrollmentID" />
                 <ScalarProperty Name="CurriculumCourseID" ColumnName="CurriculumCourseID" />

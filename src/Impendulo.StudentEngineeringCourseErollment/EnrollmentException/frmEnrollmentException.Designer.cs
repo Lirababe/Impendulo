@@ -1,4 +1,4 @@
-﻿namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentException
+﻿namespace Impendulo.StudentEngineeringCourseErollment.Development.EnrollmentException
 {
     partial class frmEnrollmentException
     {
@@ -45,16 +45,17 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(430, 192);
+            this.groupBox1.Size = new System.Drawing.Size(430, 182);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Notes Related to Exception";
             // 
             // txtExceptionNotes
             // 
-            this.txtExceptionNotes.Location = new System.Drawing.Point(9, 19);
+            this.txtExceptionNotes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtExceptionNotes.Location = new System.Drawing.Point(3, 16);
             this.txtExceptionNotes.Name = "txtExceptionNotes";
-            this.txtExceptionNotes.Size = new System.Drawing.Size(452, 238);
+            this.txtExceptionNotes.Size = new System.Drawing.Size(424, 163);
             this.txtExceptionNotes.TabIndex = 0;
             this.txtExceptionNotes.Text = "";
             // 
@@ -68,8 +69,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 60);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.81579F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.18421F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.92857F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.07143F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(436, 224);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -79,9 +80,9 @@
             this.flowLayoutPanel1.Controls.Add(this.btnCanel);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 201);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 191);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(430, 20);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(430, 30);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnPropcessException

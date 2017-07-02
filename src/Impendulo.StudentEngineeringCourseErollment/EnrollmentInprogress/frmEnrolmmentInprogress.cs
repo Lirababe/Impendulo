@@ -1,11 +1,10 @@
 ﻿using Impendulo.Common.Enum;
 using Impendulo.Common.FileHandeling;
 using Impendulo.Data.Models;
-using Impendulo.Email.Development;
 using Impendulo.Enquiry.Deployment.ViewHistory;
-using Impendulo.Scheduling.Development.Courses.Apprenticeship;
+
 using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentCourseSelection;
-using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentException;
+using Impendulo.StudentEngineeringCourseErollment.Development.EnrollmentException;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +18,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using Impendulo.StudentEngineeringCourseErollment.Devlopment.ScheduleApprientice;
+using Impendulo.Email.Development;
+using Impendulo.StudentEngineeringCourseErollment.Development.EnrollmentException;
 
 namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInprogress
 {
@@ -443,7 +444,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                 case 1:
                     frmEnrollmentException frm1 = new frmEnrollmentException();
                     frm1.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
-                    frm1.SelectedEnrollment = (Enrollment)enrollmentPrerequisitesBindingSource.Current;
+                  //  frm1.SelectedEnrollment = (Enrollment)enrollmentPrerequisitesBindingSource.Current;
                     //int x = (int)dgvAprenticeshipTab_Enrollment.Rows[dgvAprenticeshipTab_Enrollment.CurrentRow.Index].Cells[colApprenticeshipEnqiry.Index].Value;
                     frm1.EnquiryID = Convert.ToInt32(dgvEnrollment.Rows[dgvEnrollment.CurrentRow.Index].Cells[colApprenticeshipEnqiry.Index].Value);
                     frm1.ShowDialog();
@@ -453,8 +454,8 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                     //apprenticeshipPreRequisteCurriculumCourseBindingSource.Position = iCurrentPosition;
                     break;
                 case 3:
-                    frmScheduleApprenticeship frm = new frmScheduleApprenticeship();
-                    frm.ShowDialog();
+                    //frmScheduleApprenticeship frm = new frmScheduleApprenticeship();
+                    //frm.ShowDialog();
                     break;
                 case 2:
                     Enrollment PreEnrollmentObj = (Enrollment)enrollmentPrerequisitesBindingSource.Current;

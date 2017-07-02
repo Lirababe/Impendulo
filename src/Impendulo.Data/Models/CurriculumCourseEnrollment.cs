@@ -24,6 +24,7 @@ namespace Impendulo.Data.Models
         public int CurriculumCourseID { get; set; }
         public int EnrollmentID { get; set; }
         public bool Excempt { get; set; }
+        public decimal CourseCost { get; set; }
     
         public virtual CurriculumCourse CurriculumCourse { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -1,5 +1,7 @@
 ﻿using Impendulo.Common.Enum;
 using Impendulo.Data.Models;
+using Impendulo.StudentEngineeringCourseErollment.Development.EnrollmentException;
+using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentCourseSelection;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -99,10 +101,10 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                                                       //.Include("CurriculumCourseEnrollments.CurriculumCourse")
                                                       .Include("Curriculum")
                                                       .FirstOrDefault<Data.Models.Enrollment>();
-               
-                
+
+
                 enrollmentBindingSourceMain.DataSource = CurrentEnrollment;
-                
+
             };
         }
 
@@ -162,7 +164,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
 
                     if (!(CurriculumCourseEnrollmentObj.Excempt))
                     {
-                        row.Cells[colPreRequisiteCourseProcessPreRequisiteCourse.Index].Value = "[ Process ]";
+                        row.Cells[colPreRequisiteCourseProcessPreRequisiteCourse.Index].Value = "[ Edit ]";
                         row.Cells[colPreRequisiteCourseExemmptionStatus.Index].Value = "[ Exempt Course ]";
                     }
                     else
@@ -195,6 +197,16 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                     this.CurrentEnrollmentPreRequisiteID = PreRequisiteEnrollment.EnrollmentID;
                     this.refreshEnrollment();
                     break;
+                case 1:
+                    using (frmEnrollmentException frm = new frmEnrollmentException())
+                    {
+                        frm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
+                        frm.EnquiryID = CurrentEquiryID;
+                        frm.SelectedCurriculumCourseEnrollment = (CurriculumCourseEnrollment)curriculumCourseEnrollmentPreRequisiteCourseBindingSource.Current;
+                        frm.ShowDialog();
+                    }
+                    refreshEnrollment();
+                    break;
             }
         }
 
@@ -202,6 +214,30 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
         {
             this.CurrentEnrollmentPreRequisiteID = 0;
             this.refreshEnrollment();
+        }
+
+        private void dgvEnrollmentCourseMain_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            var gridView = (DataGridView)sender;
+            foreach (DataGridViewRow row in gridView.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    CurriculumCourseEnrollment CurriculumCourseEnrollmentObj = (CurriculumCourseEnrollment)row.DataBoundItem;
+                    row.Cells[colCourseEnrollmentMainCourseName.Index].Value = CurriculumCourseEnrollmentObj.CurriculumCourse.Course.CourseName.ToString();
+                }
+            }
+
+        }
+
+        private void btnSelectCourses_Click(object sender, EventArgs e)
+        {
+            using (frmEnrollmentCourseSelection frm = new frmEnrollmentCourseSelection())
+            {
+                frm.CurrentEnrollemnt = this.CurrentEnrollment;
+                frm.ShowDialog();
+                refreshEnrollment();
+            }
         }
     }
 }

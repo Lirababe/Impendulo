@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label enquiryDateLabel;
             System.Windows.Forms.Label enquiryIDLabel;
             System.Windows.Forms.Label fullNameLabel;
@@ -58,7 +59,7 @@
             this.btnViewProgressInProgressSections = new MetroFramework.Controls.MetroTile();
             this.btnInitialConsultationConfirmationInProgressSection = new MetroFramework.Controls.MetroTile();
             this.enquiryDateTextBox = new System.Windows.Forms.TextBox();
-            this.enquiryInprogressBindingSource = new System.Windows.Forms.BindingSource();
+            this.enquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtEnquiryInProgressEnquiryID = new System.Windows.Forms.TextBox();
             this.gbInprogressContactNameAndCompanyName = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -66,9 +67,9 @@
             this.btnInProgressSwitchBetweenCompanyANdPrivate = new MetroFramework.Controls.MetroTile();
             this.btnInProgressChangeContact = new MetroFramework.Controls.MetroTile();
             this.txtInprogressCompanyName = new System.Windows.Forms.TextBox();
-            this.companiesBindingSource = new System.Windows.Forms.BindingSource();
+            this.companiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fullNameTextBox = new System.Windows.Forms.TextBox();
-            this.individualsInprogressBindingSource = new System.Windows.Forms.BindingSource();
+            this.individualsInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.initialConsultationCompleteCheckBox = new System.Windows.Forms.CheckBox();
             this.gbInProgressContactDetails = new System.Windows.Forms.GroupBox();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
@@ -76,8 +77,8 @@
             this.colInProgressContactType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInProgressContactDetailSendOption = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.contactDetailsInprogressBindingSource = new System.Windows.Forms.BindingSource();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator();
+            this.contactDetailsInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
@@ -103,8 +104,8 @@
             this.colInProgressEnquiryQuantityCurrentlyEnrolled = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInProgressProcessEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colInProgressViewCurrentEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.curriculumEnquiryInprogressBindingSource = new System.Windows.Forms.BindingSource();
-            this.enquiryInprogressBindingNavigator = new System.Windows.Forms.BindingNavigator();
+            this.curriculumEnquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.enquiryInprogressBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -122,8 +123,8 @@
             this.btnUpdateCurriculumEnquiryItemEnrollmentQty = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
-            this.imageList1 = new System.Windows.Forms.ImageList();
-            this.toolTip1 = new System.Windows.Forms.ToolTip();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.individualIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -180,7 +181,7 @@
             this.nextOfKinDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.systemAdministratorDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companiesInprogressBindingSource = new System.Windows.Forms.BindingSource();
+            this.companiesInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             enquiryDateLabel = new System.Windows.Forms.Label();
             enquiryIDLabel = new System.Windows.Forms.Label();
             fullNameLabel = new System.Windows.Forms.Label();
@@ -341,13 +342,13 @@
             // 
             this.splitContainer2.Panel1.AutoScroll = true;
             this.splitContainer2.Panel1.Controls.Add(this.tableLayoutPanel6);
-            this.splitContainer2.Panel1MinSize = 450;
+            this.splitContainer2.Panel1MinSize = 410;
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.gbInProgressContactDetails);
             this.splitContainer2.Size = new System.Drawing.Size(801, 185);
-            this.splitContainer2.SplitterDistance = 466;
+            this.splitContainer2.SplitterDistance = 410;
             this.splitContainer2.TabIndex = 0;
             // 
             // tableLayoutPanel6
@@ -356,13 +357,12 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.groupBox2, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.gbInprogressContactNameAndCompanyName, 0, 1);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.01075F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.98925F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(466, 185);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(409, 185);
             this.tableLayoutPanel6.TabIndex = 10;
             // 
             // groupBox2
@@ -371,7 +371,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(460, 73);
+            this.groupBox2.Size = new System.Drawing.Size(403, 73);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Enquiry";
@@ -380,8 +380,8 @@
             // 
             this.tableLayoutPanel4.ColumnCount = 3;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 254F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 272F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel1, 2, 0);
             this.tableLayoutPanel4.Controls.Add(enquiryIDLabel, 0, 0);
             this.tableLayoutPanel4.Controls.Add(enquiryDateLabel, 0, 1);
@@ -393,7 +393,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(454, 54);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(397, 54);
             this.tableLayoutPanel4.TabIndex = 18;
             // 
             // tableLayoutPanel1
@@ -407,14 +407,13 @@
             this.tableLayoutPanel1.Controls.Add(this.btnCloseInprogressEnquiry, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnViewProgressInProgressSections, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnInitialConsultationConfirmationInProgressSection, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(200, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(182, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel4.SetRowSpan(this.tableLayoutPanel1, 2);
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(254, 54);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(215, 54);
             this.tableLayoutPanel1.TabIndex = 12;
             // 
             // btnSearchForEnquiry
@@ -423,7 +422,7 @@
             this.btnSearchForEnquiry.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSearchForEnquiry.Location = new System.Drawing.Point(3, 3);
             this.btnSearchForEnquiry.Name = "btnSearchForEnquiry";
-            this.btnSearchForEnquiry.Size = new System.Drawing.Size(57, 48);
+            this.btnSearchForEnquiry.Size = new System.Drawing.Size(47, 48);
             this.btnSearchForEnquiry.TabIndex = 6;
             this.btnSearchForEnquiry.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearchForEnquiry.TileImage = ((System.Drawing.Image)(resources.GetObject("btnSearchForEnquiry.TileImage")));
@@ -437,9 +436,9 @@
             // 
             this.btnCloseInprogressEnquiry.ActiveControl = null;
             this.btnCloseInprogressEnquiry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCloseInprogressEnquiry.Location = new System.Drawing.Point(192, 3);
+            this.btnCloseInprogressEnquiry.Location = new System.Drawing.Point(162, 3);
             this.btnCloseInprogressEnquiry.Name = "btnCloseInprogressEnquiry";
-            this.btnCloseInprogressEnquiry.Size = new System.Drawing.Size(59, 48);
+            this.btnCloseInprogressEnquiry.Size = new System.Drawing.Size(50, 48);
             this.btnCloseInprogressEnquiry.TabIndex = 11;
             this.btnCloseInprogressEnquiry.TileImage = ((System.Drawing.Image)(resources.GetObject("btnCloseInprogressEnquiry.TileImage")));
             this.btnCloseInprogressEnquiry.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -452,9 +451,9 @@
             // 
             this.btnViewProgressInProgressSections.ActiveControl = null;
             this.btnViewProgressInProgressSections.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnViewProgressInProgressSections.Location = new System.Drawing.Point(129, 3);
+            this.btnViewProgressInProgressSections.Location = new System.Drawing.Point(109, 3);
             this.btnViewProgressInProgressSections.Name = "btnViewProgressInProgressSections";
-            this.btnViewProgressInProgressSections.Size = new System.Drawing.Size(57, 48);
+            this.btnViewProgressInProgressSections.Size = new System.Drawing.Size(47, 48);
             this.btnViewProgressInProgressSections.TabIndex = 10;
             this.btnViewProgressInProgressSections.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnViewProgressInProgressSections.TileImage = ((System.Drawing.Image)(resources.GetObject("btnViewProgressInProgressSections.TileImage")));
@@ -469,9 +468,9 @@
             this.btnInitialConsultationConfirmationInProgressSection.ActiveControl = null;
             this.btnInitialConsultationConfirmationInProgressSection.BackColor = System.Drawing.Color.Olive;
             this.btnInitialConsultationConfirmationInProgressSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnInitialConsultationConfirmationInProgressSection.Location = new System.Drawing.Point(66, 3);
+            this.btnInitialConsultationConfirmationInProgressSection.Location = new System.Drawing.Point(56, 3);
             this.btnInitialConsultationConfirmationInProgressSection.Name = "btnInitialConsultationConfirmationInProgressSection";
-            this.btnInitialConsultationConfirmationInProgressSection.Size = new System.Drawing.Size(57, 48);
+            this.btnInitialConsultationConfirmationInProgressSection.Size = new System.Drawing.Size(47, 48);
             this.btnInitialConsultationConfirmationInProgressSection.TabIndex = 12;
             this.btnInitialConsultationConfirmationInProgressSection.TileImage = ((System.Drawing.Image)(resources.GetObject("btnInitialConsultationConfirmationInProgressSection.TileImage")));
             this.btnInitialConsultationConfirmationInProgressSection.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -487,7 +486,7 @@
             this.enquiryDateTextBox.Location = new System.Drawing.Point(85, 30);
             this.enquiryDateTextBox.Name = "enquiryDateTextBox";
             this.enquiryDateTextBox.ReadOnly = true;
-            this.enquiryDateTextBox.Size = new System.Drawing.Size(112, 20);
+            this.enquiryDateTextBox.Size = new System.Drawing.Size(94, 20);
             this.enquiryDateTextBox.TabIndex = 1;
             this.enquiryDateTextBox.TextChanged += new System.EventHandler(this.enquiryDateTextBox_TextChanged);
             // 
@@ -503,7 +502,7 @@
             this.txtEnquiryInProgressEnquiryID.Location = new System.Drawing.Point(85, 3);
             this.txtEnquiryInProgressEnquiryID.Name = "txtEnquiryInProgressEnquiryID";
             this.txtEnquiryInProgressEnquiryID.ReadOnly = true;
-            this.txtEnquiryInProgressEnquiryID.Size = new System.Drawing.Size(112, 20);
+            this.txtEnquiryInProgressEnquiryID.Size = new System.Drawing.Size(94, 20);
             this.txtEnquiryInProgressEnquiryID.TabIndex = 3;
             // 
             // gbInprogressContactNameAndCompanyName
@@ -512,7 +511,7 @@
             this.gbInprogressContactNameAndCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbInprogressContactNameAndCompanyName.Location = new System.Drawing.Point(3, 82);
             this.gbInprogressContactNameAndCompanyName.Name = "gbInprogressContactNameAndCompanyName";
-            this.gbInprogressContactNameAndCompanyName.Size = new System.Drawing.Size(460, 100);
+            this.gbInprogressContactNameAndCompanyName.Size = new System.Drawing.Size(403, 100);
             this.gbInprogressContactNameAndCompanyName.TabIndex = 9;
             this.gbInprogressContactNameAndCompanyName.TabStop = false;
             this.gbInprogressContactNameAndCompanyName.Text = "Company Contact Or ( Student Details if Private )";
@@ -521,8 +520,8 @@
             // 
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 288F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 206F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 182F));
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel2, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.txtInprogressCompanyName, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.fullNameTextBox, 1, 0);
@@ -537,7 +536,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(454, 81);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(397, 81);
             this.tableLayoutPanel5.TabIndex = 18;
             // 
             // tableLayoutPanel2
@@ -547,15 +546,15 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.btnInProgressSwitchBetweenCompanyANdPrivate, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnInProgressChangeContact, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(354, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(272, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel5.SetRowSpan(this.tableLayoutPanel2, 2);
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(97, 52);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(125, 52);
             this.tableLayoutPanel2.TabIndex = 16;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // btnInProgressSwitchBetweenCompanyANdPrivate
             // 
@@ -563,7 +562,7 @@
             this.btnInProgressSwitchBetweenCompanyANdPrivate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnInProgressSwitchBetweenCompanyANdPrivate.Location = new System.Drawing.Point(3, 3);
             this.btnInProgressSwitchBetweenCompanyANdPrivate.Name = "btnInProgressSwitchBetweenCompanyANdPrivate";
-            this.btnInProgressSwitchBetweenCompanyANdPrivate.Size = new System.Drawing.Size(42, 46);
+            this.btnInProgressSwitchBetweenCompanyANdPrivate.Size = new System.Drawing.Size(56, 46);
             this.btnInProgressSwitchBetweenCompanyANdPrivate.TabIndex = 12;
             this.btnInProgressSwitchBetweenCompanyANdPrivate.TileImage = ((System.Drawing.Image)(resources.GetObject("btnInProgressSwitchBetweenCompanyANdPrivate.TileImage")));
             this.btnInProgressSwitchBetweenCompanyANdPrivate.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -576,9 +575,9 @@
             // 
             this.btnInProgressChangeContact.ActiveControl = null;
             this.btnInProgressChangeContact.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnInProgressChangeContact.Location = new System.Drawing.Point(51, 3);
+            this.btnInProgressChangeContact.Location = new System.Drawing.Point(65, 3);
             this.btnInProgressChangeContact.Name = "btnInProgressChangeContact";
-            this.btnInProgressChangeContact.Size = new System.Drawing.Size(43, 46);
+            this.btnInProgressChangeContact.Size = new System.Drawing.Size(57, 46);
             this.btnInProgressChangeContact.TabIndex = 15;
             this.btnInProgressChangeContact.TileImage = ((System.Drawing.Image)(resources.GetObject("btnInProgressChangeContact.TileImage")));
             this.btnInProgressChangeContact.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -594,7 +593,7 @@
             this.txtInprogressCompanyName.Location = new System.Drawing.Point(69, 29);
             this.txtInprogressCompanyName.Name = "txtInprogressCompanyName";
             this.txtInprogressCompanyName.ReadOnly = true;
-            this.txtInprogressCompanyName.Size = new System.Drawing.Size(282, 20);
+            this.txtInprogressCompanyName.Size = new System.Drawing.Size(200, 20);
             this.txtInprogressCompanyName.TabIndex = 10;
             // 
             // companiesBindingSource
@@ -609,7 +608,7 @@
             this.fullNameTextBox.Location = new System.Drawing.Point(69, 3);
             this.fullNameTextBox.Name = "fullNameTextBox";
             this.fullNameTextBox.ReadOnly = true;
-            this.fullNameTextBox.Size = new System.Drawing.Size(282, 20);
+            this.fullNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.fullNameTextBox.TabIndex = 11;
             // 
             // individualsInprogressBindingSource
@@ -636,7 +635,7 @@
             this.gbInProgressContactDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbInProgressContactDetails.Location = new System.Drawing.Point(0, 0);
             this.gbInProgressContactDetails.Name = "gbInProgressContactDetails";
-            this.gbInProgressContactDetails.Size = new System.Drawing.Size(331, 185);
+            this.gbInProgressContactDetails.Size = new System.Drawing.Size(387, 185);
             this.gbInProgressContactDetails.TabIndex = 0;
             this.gbInProgressContactDetails.TabStop = false;
             this.gbInProgressContactDetails.Text = "Contact Details";
@@ -647,11 +646,11 @@
             // toolStripContainer2.ContentPanel
             // 
             this.toolStripContainer2.ContentPanel.Controls.Add(this.dgvInprogressContactDetails);
-            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(325, 141);
+            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(381, 141);
             this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer2.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainer2.Name = "toolStripContainer2";
-            this.toolStripContainer2.Size = new System.Drawing.Size(325, 166);
+            this.toolStripContainer2.Size = new System.Drawing.Size(381, 166);
             this.toolStripContainer2.TabIndex = 0;
             this.toolStripContainer2.Text = "toolStripContainer2";
             // 
@@ -713,7 +712,7 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             this.dgvInprogressContactDetails.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInprogressContactDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInprogressContactDetails.Size = new System.Drawing.Size(325, 141);
+            this.dgvInprogressContactDetails.Size = new System.Drawing.Size(381, 141);
             this.dgvInprogressContactDetails.TabIndex = 0;
             this.dgvInprogressContactDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInprogressContactDetails_CellContentClick);
             this.dgvInprogressContactDetails.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvInprogressContactDetails_DataBindingComplete);
@@ -781,7 +780,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(325, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(381, 25);
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 0;
             // 

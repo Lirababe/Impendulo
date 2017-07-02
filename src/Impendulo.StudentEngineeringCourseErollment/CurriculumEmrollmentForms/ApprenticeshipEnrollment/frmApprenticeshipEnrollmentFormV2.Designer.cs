@@ -111,10 +111,10 @@
             this.contactDetailValueDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookupContactTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.contactDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.curriculumEnquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -320,7 +320,7 @@
             this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(526, 51);
             this.tableLayoutPanel10.TabIndex = 3;
             // 
@@ -332,7 +332,7 @@
             this.wizardStepProgressBar.MarqueeAnimationSpeed = 500;
             this.wizardStepProgressBar.Name = "wizardStepProgressBar";
             this.wizardStepProgressBar.ProgressBarStyle = System.Windows.Forms.ProgressBarStyle.Blocks;
-            this.wizardStepProgressBar.Size = new System.Drawing.Size(255, 44);
+            this.wizardStepProgressBar.Size = new System.Drawing.Size(255, 43);
             this.wizardStepProgressBar.Step = 1;
             this.wizardStepProgressBar.Style = MetroFramework.MetroColorStyle.Blue;
             this.wizardStepProgressBar.TabIndex = 22;
@@ -345,7 +345,7 @@
             this.btnPreviousSection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPreviousSection.Location = new System.Drawing.Point(4, 4);
             this.btnPreviousSection.Name = "btnPreviousSection";
-            this.btnPreviousSection.Size = new System.Drawing.Size(124, 44);
+            this.btnPreviousSection.Size = new System.Drawing.Size(124, 43);
             this.btnPreviousSection.TabIndex = 0;
             this.btnPreviousSection.Text = "Previous";
             this.btnPreviousSection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -361,7 +361,7 @@
             this.btnNextSection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNextSection.Location = new System.Drawing.Point(397, 4);
             this.btnNextSection.Name = "btnNextSection";
-            this.btnNextSection.Size = new System.Drawing.Size(125, 44);
+            this.btnNextSection.Size = new System.Drawing.Size(125, 43);
             this.btnNextSection.TabIndex = 1;
             this.btnNextSection.Text = "Next";
             this.btnNextSection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1180,6 +1180,12 @@
             this.lookupContactTypeDataGridViewTextBoxColumn.HeaderText = "LookupContactType";
             this.lookupContactTypeDataGridViewTextBoxColumn.Name = "lookupContactTypeDataGridViewTextBoxColumn";
             // 
+            // metroToolTip1
+            // 
+            this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroToolTip1.StyleManager = null;
+            this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
             // contactDetailBindingSource
             // 
             this.contactDetailBindingSource.DataSource = typeof(Impendulo.Data.Models.ContactDetail);
@@ -1191,12 +1197,6 @@
             // enquiryBindingSource
             // 
             this.enquiryBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
-            // 
-            // metroToolTip1
-            // 
-            this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroToolTip1.StyleManager = null;
-            this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // frmApprenticeshipEnrollmentFormV2
             // 

@@ -1,6 +1,7 @@
 ﻿using Impendulo.Data.Models;
 using Impendulo.Scheduling.Deployment.Courses.Apprenticeship;
-using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentException;
+using Impendulo.StudentEngineeringCourseErollment.Development.EnrollmentException;
+using Impendulo.StudentEngineeringCourseErollment.Development.EnrollmentException;
 using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInprogress;
 using System;
 using System.Collections.Generic;
@@ -72,9 +73,9 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment
 
             using (var Dbconnection = new MCDEntities())
             {
-                frm.SelectedEnrollment = (from a in Dbconnection.Enrollments
+                frm.SelectedCurriculumCourseEnrollment = (from a in Dbconnection.CurriculumCourseEnrollments
                                           orderby a.EnrollmentID descending
-                                          select a).FirstOrDefault<Enrollment>();
+                                          select a).FirstOrDefault<CurriculumCourseEnrollment>();
                 frm.ShowDialog();
             }
         }

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 
-namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentException
+namespace Impendulo.StudentEngineeringCourseErollment.Development.EnrollmentException
 {
     public partial class frmEnrollmentException : MetroForm
     {
@@ -22,7 +22,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentExcep
         }
 
         public Employee CurrentEmployeeLoggedIn { get; set; }
-        public Enrollment SelectedEnrollment { get; set; }
+        public CurriculumCourseEnrollment SelectedCurriculumCourseEnrollment { get; set; }
 
         public int EnquiryID { get; set; }
 
@@ -32,9 +32,9 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentExcep
             {
                 try
                 {
-                    Dbconnection.Enrollments.Attach(SelectedEnrollment);
-                    SelectedEnrollment.LookupEnrollmentProgressStateID = (int)EnumEnrollmentProgressStates.Excempt;
-                    Dbconnection.Entry(SelectedEnrollment).State = System.Data.Entity.EntityState.Modified;
+                    Dbconnection.CurriculumCourseEnrollments.Attach(SelectedCurriculumCourseEnrollment);
+                    SelectedCurriculumCourseEnrollment.Excempt = true;
+                    Dbconnection.Entry(SelectedCurriculumCourseEnrollment).State = System.Data.Entity.EntityState.Modified;
                     Dbconnection.SaveChanges();
                    
                     EquiryHistory hist = new EquiryHistory
@@ -43,12 +43,12 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentExcep
                         EmployeeID = this.CurrentEmployeeLoggedIn.EmployeeID,
                         LookupEquiyHistoryTypeID = (int)EnumEquiryHistoryTypes.Enrollment_Course_PreRequisite_Was_Except,
                         DateEnquiryUpdated = DateTime.Now,
-                        EnquiryNotes = "For Enrollment : " + EnquiryID.ToString() + "\n\nThe following Curriculum: " + SelectedEnrollment.Curriculum.CurriculumName.ToString() + " Has Been Excempt.\n\nEnrollment Ref:\n" + SelectedEnrollment.EnrollmentID + "\n\nNotes:" + txtExceptionNotes.Text.ToString()
+                        EnquiryNotes = "For Enrollment : " + EnquiryID.ToString() + "\n\nThe following Curriculum: " + SelectedCurriculumCourseEnrollment.CurriculumCourse.Curriculum.CurriculumName.ToString() + " Has Been Excempt.\n\nEnrollment Ref:\n" + SelectedCurriculumCourseEnrollment.Enrollment.EnrollmentID + "\n\nNotes:" + txtExceptionNotes.Text.ToString()
                     };
                     Dbconnection.EquiryHistories.Add(hist);
                     int IsSaved = Dbconnection.SaveChanges();
                     //SelectedEnrollment.LookupEnrollmentProgressState = null;
-                    Dbconnection.Entry(SelectedEnrollment).Reference("LookupEnrollmentProgressState").Load();
+                    //Dbconnection.Entry(SelectedEnrollment).Reference("LookupEnrollmentProgressState").Load();
                 }
                 catch (Exception ex)
                 {

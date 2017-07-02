@@ -3,7 +3,7 @@ using Impendulo.Common.FileHandeling;
 using Impendulo.Data.Models;
 using Impendulo.Email.Development;
 using Impendulo.Scheduling.Development.Courses.Apprenticeship;
-using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentException;
+using Impendulo.StudentEngineeringCourseErollment.Development.EnrollmentException;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -353,20 +353,20 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment
 
                     break;
                 case 1:
-                    frmEnrollmentException frm1 = new frmEnrollmentException();
-                    frm1.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
-                    frm1.SelectedEnrollment = (Enrollment)enrollmentPrerequisitesBindingSource.Current;
-                    //int x = (int)dgvAprenticeshipTab_Enrollment.Rows[dgvAprenticeshipTab_Enrollment.CurrentRow.Index].Cells[colApprenticeshipEnqiry.Index].Value;
-                    frm1.EnquiryID = Convert.ToInt32(dgvEnrollment.Rows[dgvEnrollment.CurrentRow.Index].Cells[colApprenticeshipEnqiry.Index].Value);
-                    frm1.ShowDialog();
-                    int iCurrentPosition = enrollmentPrerequisitesBindingSource.Position;
-                    enrollmentPrerequisitesBindingSource.ResetItem(iCurrentPosition);
-                    //refreshApprenticeshipCoursePreRequisites();
-                    //apprenticeshipPreRequisteCurriculumCourseBindingSource.Position = iCurrentPosition;
+                    //frmEnrollmentException frm1 = new frmEnrollmentException();
+                    //frm1.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
+                    //frm1.SelectedEnrollment = (Enrollment)enrollmentPrerequisitesBindingSource.Current;
+                    ////int x = (int)dgvAprenticeshipTab_Enrollment.Rows[dgvAprenticeshipTab_Enrollment.CurrentRow.Index].Cells[colApprenticeshipEnqiry.Index].Value;
+                    //frm1.EnquiryID = Convert.ToInt32(dgvEnrollment.Rows[dgvEnrollment.CurrentRow.Index].Cells[colApprenticeshipEnqiry.Index].Value);
+                    //frm1.ShowDialog();
+                    //int iCurrentPosition = enrollmentPrerequisitesBindingSource.Position;
+                    //enrollmentPrerequisitesBindingSource.ResetItem(iCurrentPosition);
+                    ////refreshApprenticeshipCoursePreRequisites();
+                    ////apprenticeshipPreRequisteCurriculumCourseBindingSource.Position = iCurrentPosition;
                     break;
                 case 2:
-                    frmScheduleApprenticeship frm = new frmScheduleApprenticeship();
-                    frm.ShowDialog();
+                    //frmScheduleApprenticeship frm = new frmScheduleApprenticeship();
+                    //frm.ShowDialog();
                     break;
             }
         }

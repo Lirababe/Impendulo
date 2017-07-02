@@ -620,16 +620,17 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                         Dbconnection.Enrollments.Add(PreRequisisteCourseEnrollment);
                         Dbconnection.SaveChanges();
                         //links each pre-Requisite Course to the Curriculum Linked.
-                        foreach (int CurriculumCourseIDToLink in (from a in CPC
+                        foreach (CurriculumCourse CurriculumCourseToLink in (from a in CPC
                                                                   where a.CurriculumCourse.CurriculumID == CurriculumIDForPreRquisiteCourseEnrollment
-                                                                  select a.CurriculumCourseID)
-                                           .Distinct<int>().
-                                           ToList<int>())
+                                                                  select a.CurriculumCourse)
+                                           .Distinct<CurriculumCourse>().
+                                           ToList<CurriculumCourse>())
                         {
                             Dbconnection.CurriculumCourseEnrollments.Add(new CurriculumCourseEnrollment
                             {
-                                CurriculumCourseID = CurriculumCourseIDToLink,
-                                EnrollmentID = PreRequisisteCourseEnrollment.EnrollmentID
+                                CurriculumCourseID = CurriculumCourseToLink.CurriculumCourseID,
+                                EnrollmentID = PreRequisisteCourseEnrollment.EnrollmentID,
+                                 CourseCost = CurriculumCourseToLink.Cost // Set the linked course to the default Cost for the course
                             });
                         }
                         //Saves the sub set of Pre-Requisite Curriculum and linked courses.

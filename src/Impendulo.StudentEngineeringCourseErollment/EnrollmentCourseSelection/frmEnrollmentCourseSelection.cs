@@ -47,20 +47,21 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentCours
             {
                 curriculumCourseLinkedBindingSource.DataSource = (from a1 in Dbconnection.GetCurriculumCourseInOrder(CurrentEnrollemnt.CurriculumID)
                                                                   select a1).Intersect(from a2 in Dbconnection.CurriculumCourseEnrollments
-                                                                                      where a2.EnrollmentID == CurrentEnrollemnt.EnrollmentID
-                                                                                      select a2.CurriculumCourse)
+                                                                                       where a2.EnrollmentID == CurrentEnrollemnt.EnrollmentID
+                                                                                       select a2.CurriculumCourse)
                                                                   .ToList<CurriculumCourse>();
+
                 foreach (CurriculumCourse CurriculumCourseObj in curriculumCourseLinkedBindingSource.List)
                 {
-                    Dbconnection.Entry(CurriculumCourseObj).Reference("Course").Load();
-                    Dbconnection.Entry(CurriculumCourseObj).Collection("CurriculumCourseEnrollments").Load();
+                    if (!Dbconnection.Entry(CurriculumCourseObj).Reference(a => a.Course).IsLoaded)
+                    {
+                        Dbconnection.Entry(CurriculumCourseObj).Reference(a => a.Course).Load();
+                    }
+                    if (!Dbconnection.Entry(CurriculumCourseObj).Collection(a => a.CurriculumCourseEnrollments).IsLoaded)
+                    {
+                        Dbconnection.Entry(CurriculumCourseObj).Collection(a => a.CurriculumCourseEnrollments).Load();
+                    }
                 }
-                //curriculumCourseLinkedBindingSource.DataSource = (from a in Dbconnection.CurriculumCourseEnrollments
-                //                                                  where a.EnrollmentID == CurrentEnrollemnt.EnrollmentID
-                //                                                  select a.CurriculumCourse)
-                //                                                  .Include("Course")
-                //                                                  .Include("CurriculumCourseEnrollments")
-                //                                                  .ToList<CurriculumCourse>();
             };
         }
 
@@ -69,7 +70,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentCours
             using (var Dbconnection = new MCDEntities())
             {
                 curriculumCourseAvailableBindingSource.DataSource = (from a in Dbconnection.GetCurriculumCourseInOrder(CurrentEnrollemnt.CurriculumID)
-                                                                    // where a.CurriculumID == CurrentEnrollemnt.CurriculumID
+                                                                         // where a.CurriculumID == CurrentEnrollemnt.CurriculumID
                                                                      select a).Except(
                     from a in Dbconnection.CurriculumCourseEnrollments
                     where a.EnrollmentID == CurrentEnrollemnt.EnrollmentID
@@ -108,7 +109,8 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentCours
                     CCE.Add(new CurriculumCourseEnrollment
                     {
                         CurriculumCourseID = CCObj.CurriculumCourseID,
-                        EnrollmentID = CurrentEnrollemnt.EnrollmentID
+                        EnrollmentID = CurrentEnrollemnt.EnrollmentID,
+                        CourseCost = CCObj.Cost
                     });
                 };
                 int iFieldsEffected = 0;
@@ -116,11 +118,11 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentCours
                 {
                     Dbconnection.CurriculumCourseEnrollments.AddRange(CCE);
                     iFieldsEffected = Dbconnection.SaveChanges();
-                    if (iFieldsEffected > 0)
-                    {
-                        Dbconnection.Enrollments.Attach(CurrentEnrollemnt);
-                        Dbconnection.Entry(CurrentEnrollemnt).Reload();
-                    }
+                    //if (iFieldsEffected > 0)
+                    //{
+                    //    Dbconnection.Enrollments.Attach(CurrentEnrollemnt);
+                    //    Dbconnection.Entry(CurrentEnrollemnt).Reload();
+                    //}
                 };
             }
             populateLinkedCurriculumCourses();
