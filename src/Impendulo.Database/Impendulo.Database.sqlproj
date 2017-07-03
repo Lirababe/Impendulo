@@ -159,9 +159,11 @@
     <Build Include="dbo\Tables\CurriculumPrequisiteCourses.sql" />
     <Build Include="dbo\Tables\LookupEnrollentDocumentTypes_1.sql" />
     <Build Include="dbo\Tables\CurriculumEnquiryEnrollments_2.sql" />
-    <Build Include="dbo\Tables\ApprenticeshipEnrollmentDocuments_1.sql" />
     <Build Include="dbo\Tables\LookupEquiryOrigions.sql" />
     <Build Include="dbo\Tables\EquiryOrigions.sql" />
+    <Build Include="dbo\Tables\EnrollmentDocuments.sql" />
+    <Build Include="dbo\Tables\StudentPhotos.sql" />
+    <Build Include="dbo\Tables\StudentIDDocuments.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Impendulo.Database.publish.xml" />
@@ -169,5 +171,8 @@
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Impendulo.Database.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="PostBuilding\Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>

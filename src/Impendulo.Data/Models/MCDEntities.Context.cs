@@ -98,6 +98,8 @@ namespace Impendulo.Data.Models
         public virtual DbSet<Venue> Venues { get; set; }
         public virtual DbSet<ApprienticeshipEnrollment> ApprienticeshipEnrollments { get; set; }
         public virtual DbSet<Enrollment> Enrollments { get; set; }
+        public virtual DbSet<StudentIDDocument> StudentIDDocuments { get; set; }
+        public virtual DbSet<StudentPhoto> StudentPhotos { get; set; }
     
         public virtual ObjectResult<CurriculumCourse> GetCurriculumCourseInOrder(Nullable<int> curriculumID)
         {

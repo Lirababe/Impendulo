@@ -165,12 +165,15 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                     if (!(CurriculumCourseEnrollmentObj.Excempt))
                     {
                         row.Cells[colPreRequisiteCourseProcessPreRequisiteCourse.Index].Value = "[ Edit ]";
+
                         row.Cells[colPreRequisiteCourseExemmptionStatus.Index].Value = "[ Exempt Course ]";
+                        row.Cells[colPreRequisiteCourseExemmptionStatus.Index].Tag = 0;
                     }
                     else
                     {
                         row.Cells[colPreRequisiteCourseProcessPreRequisiteCourse.Index].Value = "";
-                        row.Cells[colPreRequisiteCourseExemmptionStatus.Index].Value = "[ Re-Instate Course ]";
+                        row.Cells[colPreRequisiteCourseExemmptionStatus.Index].Value = "[ Re-Instate ]";
+                        row.Cells[colPreRequisiteCourseExemmptionStatus.Index].Tag = 1;
                     }
                     row.Cells[colPreRequisiteCourseCurriculumName.Index].Value = CurriculumCourseEnrollmentObj.CurriculumCourse.Curriculum.CurriculumName.ToString();
                     row.Cells[colPreRequisiteCourseName.Index].Value = CurriculumCourseEnrollmentObj.CurriculumCourse.Course.CourseName.ToString();
@@ -198,13 +201,21 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                     this.refreshEnrollment();
                     break;
                 case 1:
-                    using (frmEnrollmentException frm = new frmEnrollmentException())
+                    if (Convert.ToInt32(dgvEnrollmentPreRequisites.Rows[e.RowIndex].Cells[e.ColumnIndex].Tag) == 0)
                     {
-                        frm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
-                        frm.EnquiryID = CurrentEquiryID;
-                        frm.SelectedCurriculumCourseEnrollment = (CurriculumCourseEnrollment)curriculumCourseEnrollmentPreRequisiteCourseBindingSource.Current;
-                        frm.ShowDialog();
+                        using (frmEnrollmentException frm = new frmEnrollmentException())
+                        {
+                            frm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
+                            frm.EnquiryID = CurrentEquiryID;
+                            frm.SelectedCurriculumCourseEnrollment = (CurriculumCourseEnrollment)curriculumCourseEnrollmentPreRequisiteCourseBindingSource.Current;
+                            frm.ShowDialog();
+                        }
                     }
+                    else
+                    {
+
+                    }
+
                     refreshEnrollment();
                     break;
             }

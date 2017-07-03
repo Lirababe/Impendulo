@@ -3,7 +3,7 @@
 -- =============================================
 
 CREATE PROCEDURE [dbo].[GetCurriculumCourseInOrder]
---drop Procedure GetCurriculumCourseInOrder 2
+--drop Procedure GetCurriculumCourseInOrder 8
 	@CurriculumID int
 AS
 	 

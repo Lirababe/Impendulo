@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Impendulo.StudentsAddNewStudent.Properties {
+namespace Impendulo.Development.Students.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

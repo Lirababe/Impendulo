@@ -20,6 +20,8 @@ namespace Impendulo.Data.Models
             this.EnrollmentDocuments = new ObservableListSource<EnrollmentDocument>();
             this.EmailMessageRepositories = new ObservableListSource<EmailMessageRepository>();
             this.MessageTemplates = new ObservableListSource<MessageTemplate>();
+            this.StudentIDDocuments = new ObservableListSource<StudentIDDocument>();
+            this.StudentPhotos = new ObservableListSource<StudentPhoto>();
         }
     
         public int ImageID { get; set; }
@@ -35,5 +37,9 @@ namespace Impendulo.Data.Models
         public virtual ObservableListSource<EmailMessageRepository> EmailMessageRepositories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<MessageTemplate> MessageTemplates { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<StudentIDDocument> StudentIDDocuments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<StudentPhoto> StudentPhotos { get; set; }
     }
 }

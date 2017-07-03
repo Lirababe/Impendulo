@@ -677,6 +677,14 @@
           <Property Name="DisabilityID" Type="int" Nullable="false" />
           <Property Name="StudentDisabilityNotes" Type="varchar" MaxLength="1000" Nullable="false" />
         </EntityType>
+        <EntityType Name="StudentIDDocuments">
+          <Key>
+            <PropertyRef Name="StudentIDDocumentID" />
+          </Key>
+          <Property Name="StudentIDDocumentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IndividualID" Type="int" Nullable="false" />
+          <Property Name="ImageID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="StudentNextOfKins">
           <Key>
             <PropertyRef Name="StudentID" />
@@ -684,6 +692,15 @@
           </Key>
           <Property Name="StudentID" Type="int" Nullable="false" />
           <Property Name="NextOfKinID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudentPhotos">
+          <Key>
+            <PropertyRef Name="StudentPhotoID" />
+          </Key>
+          <Property Name="StudentPhotoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IndividualID" Type="int" Nullable="false" />
+          <Property Name="ImageID" Type="int" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Students">
           <Key>
@@ -1857,6 +1874,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_StudentIDDocuments_Files">
+          <End Role="Files" Type="Self.Files" Multiplicity="1" />
+          <End Role="StudentIDDocuments" Type="Self.StudentIDDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Files">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="StudentIDDocuments">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentIDDocuments_Students">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="StudentIDDocuments" Type="Self.StudentIDDocuments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="IndividualID" />
+            </Principal>
+            <Dependent Role="StudentIDDocuments">
+              <PropertyRef Name="IndividualID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_StudentNextOfKins_NextOfKins">
           <End Role="NextOfKins" Type="Self.NextOfKins" Multiplicity="1" />
           <End Role="StudentNextOfKins" Type="Self.StudentNextOfKins" Multiplicity="*" />
@@ -1878,6 +1919,30 @@
             </Principal>
             <Dependent Role="StudentNextOfKins">
               <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentPhotos_Files">
+          <End Role="Files" Type="Self.Files" Multiplicity="1" />
+          <End Role="StudentPhotos" Type="Self.StudentPhotos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Files">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="StudentPhotos">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentPhotos_Students">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="StudentPhotos" Type="Self.StudentPhotos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="IndividualID" />
+            </Principal>
+            <Dependent Role="StudentPhotos">
+              <PropertyRef Name="IndividualID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2065,7 +2130,9 @@
           <EntitySet Name="SMTPSettings" EntityType="Self.SMTPSettings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StudentAssociatedCompany" EntityType="Self.StudentAssociatedCompany" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StudentDisabilities" EntityType="Self.StudentDisabilities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentIDDocuments" EntityType="Self.StudentIDDocuments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StudentNextOfKins" EntityType="Self.StudentNextOfKins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentPhotos" EntityType="Self.StudentPhotos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SystemAdministrator" EntityType="Self.SystemAdministrator" Schema="dbo" store:Type="Tables" />
@@ -2439,6 +2506,14 @@
             <End Role="Students" EntitySet="Students" />
             <End Role="StudentDisabilities" EntitySet="StudentDisabilities" />
           </AssociationSet>
+          <AssociationSet Name="FK_StudentIDDocuments_Files" Association="Self.FK_StudentIDDocuments_Files">
+            <End Role="Files" EntitySet="Files" />
+            <End Role="StudentIDDocuments" EntitySet="StudentIDDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentIDDocuments_Students" Association="Self.FK_StudentIDDocuments_Students">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="StudentIDDocuments" EntitySet="StudentIDDocuments" />
+          </AssociationSet>
           <AssociationSet Name="FK_StudentNextOfKins_NextOfKins" Association="Self.FK_StudentNextOfKins_NextOfKins">
             <End Role="NextOfKins" EntitySet="NextOfKins" />
             <End Role="StudentNextOfKins" EntitySet="StudentNextOfKins" />
@@ -2446,6 +2521,14 @@
           <AssociationSet Name="FK_StudentNextOfKins_Students" Association="Self.FK_StudentNextOfKins_Students">
             <End Role="Students" EntitySet="Students" />
             <End Role="StudentNextOfKins" EntitySet="StudentNextOfKins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentPhotos_Files" Association="Self.FK_StudentPhotos_Files">
+            <End Role="Files" EntitySet="Files" />
+            <End Role="StudentPhotos" EntitySet="StudentPhotos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentPhotos_Students" Association="Self.FK_StudentPhotos_Students">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="StudentPhotos" EntitySet="StudentPhotos" />
           </AssociationSet>
           <AssociationSet Name="FK_Students_Individuals1" Association="Self.FK_Students_Individuals1">
             <End Role="Individuals" EntitySet="Individuals" />
@@ -2906,6 +2989,24 @@
             <End Role="CurriculumEnquiry" EntitySet="CurriculumEnquiries" />
             <End Role="Enrollment" EntitySet="Enrollments" />
           </AssociationSet>
+          <EntitySet Name="StudentIDDocuments" EntityType="MCDModel.StudentIDDocument" />
+          <EntitySet Name="StudentPhotos" EntityType="MCDModel.StudentPhoto" />
+          <AssociationSet Name="FK_StudentIDDocuments_Files" Association="MCDModel.FK_StudentIDDocuments_Files">
+            <End Role="File" EntitySet="Files" />
+            <End Role="StudentIDDocument" EntitySet="StudentIDDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentPhotos_Files" Association="MCDModel.FK_StudentPhotos_Files">
+            <End Role="File" EntitySet="Files" />
+            <End Role="StudentPhoto" EntitySet="StudentPhotos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentIDDocuments_Students" Association="MCDModel.FK_StudentIDDocuments_Students">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="StudentIDDocument" EntitySet="StudentIDDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentPhotos_Students" Association="MCDModel.FK_StudentPhotos_Students">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="StudentPhoto" EntitySet="StudentPhotos" />
+          </AssociationSet>
           </EntityContainer>
         <ComplexType Name="GetCurriculumCourseInOrder_Result">
           <Property Type="Int32" Name="CurriculumCourseID" Nullable="true" />
@@ -3330,6 +3431,8 @@
           <NavigationProperty Name="EnrollmentDocuments" Relationship="MCDModel.FK_EnrollmentDocuments_Files" FromRole="File" ToRole="EnrollmentDocument" />
           <NavigationProperty Name="EmailMessageRepositories" Relationship="MCDModel.EmailMessageRepositoryAttachments" FromRole="File" ToRole="EmailMessageRepository" />
           <NavigationProperty Name="MessageTemplates" Relationship="MCDModel.MessageTemplateAttachments" FromRole="File" ToRole="MessageTemplate" />
+          <NavigationProperty Name="StudentIDDocuments" Relationship="MCDModel.FK_StudentIDDocuments_Files" FromRole="File" ToRole="StudentIDDocument" />
+          <NavigationProperty Name="StudentPhotos" Relationship="MCDModel.FK_StudentPhotos_Files" FromRole="File" ToRole="StudentPhoto" />
         </EntityType>
         <EntityType Name="Individual">
           <Key>
@@ -3666,6 +3769,8 @@
           <NavigationProperty Name="StudentDisabilities" Relationship="MCDModel.FK_StudentDisabilities_Students" FromRole="Student" ToRole="StudentDisability" />
           <NavigationProperty Name="NextOfKins" Relationship="MCDModel.StudentNextOfKins" FromRole="Student" ToRole="NextOfKin" />
           <NavigationProperty Name="Enrollments" Relationship="MCDModel.FK_Enrollments_Students" FromRole="Student" ToRole="Enrollment" />
+          <NavigationProperty Name="StudentIDDocuments" Relationship="MCDModel.FK_StudentIDDocuments_Students" FromRole="Student" ToRole="StudentIDDocument" />
+          <NavigationProperty Name="StudentPhotos" Relationship="MCDModel.FK_StudentPhotos_Students" FromRole="Student" ToRole="StudentPhoto" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -4650,6 +4755,75 @@
           <End Type="MCDModel.CurriculumEnquiry" Role="CurriculumEnquiry" Multiplicity="*" />
           <End Type="MCDModel.Enrollment" Role="Enrollment" Multiplicity="*" />
         </Association>
+        <EntityType Name="StudentIDDocument">
+          <Key>
+            <PropertyRef Name="StudentIDDocumentID" />
+          </Key>
+          <Property Name="StudentIDDocumentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IndividualID" Type="Int32" Nullable="false" />
+          <Property Name="ImageID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="File" Relationship="MCDModel.FK_StudentIDDocuments_Files" FromRole="StudentIDDocument" ToRole="File" />
+          <NavigationProperty Name="Student" Relationship="MCDModel.FK_StudentIDDocuments_Students" FromRole="StudentIDDocument" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="StudentPhoto">
+          <Key>
+            <PropertyRef Name="StudentPhotoID" />
+          </Key>
+          <Property Name="StudentPhotoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IndividualID" Type="Int32" Nullable="false" />
+          <Property Name="ImageID" Type="Int32" Nullable="false" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="File" Relationship="MCDModel.FK_StudentPhotos_Files" FromRole="StudentPhoto" ToRole="File" />
+          <NavigationProperty Name="Student" Relationship="MCDModel.FK_StudentPhotos_Students" FromRole="StudentPhoto" ToRole="Student" />
+        </EntityType>
+        <Association Name="FK_StudentIDDocuments_Files">
+          <End Type="MCDModel.File" Role="File" Multiplicity="1" />
+          <End Type="MCDModel.StudentIDDocument" Role="StudentIDDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="File">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="StudentIDDocument">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentPhotos_Files">
+          <End Type="MCDModel.File" Role="File" Multiplicity="1" />
+          <End Type="MCDModel.StudentPhoto" Role="StudentPhoto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="File">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="StudentPhoto">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentIDDocuments_Students">
+          <End Type="MCDModel.Student" Role="Student" Multiplicity="1" />
+          <End Type="MCDModel.StudentIDDocument" Role="StudentIDDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="StudentIDDocument">
+              <PropertyRef Name="IndividualID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentPhotos_Students">
+          <End Type="MCDModel.Student" Role="Student" Multiplicity="1" />
+          <End Type="MCDModel.StudentPhoto" Role="StudentPhoto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="StudentPhoto">
+              <PropertyRef Name="IndividualID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5511,6 +5685,25 @@
               <ScalarProperty Name="CurriculumEnquiryID" ColumnName="CurriculumEnquiryID" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="StudentIDDocuments">
+            <EntityTypeMapping TypeName="MCDModel.StudentIDDocument">
+              <MappingFragment StoreEntitySet="StudentIDDocuments">
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="IndividualID" ColumnName="IndividualID" />
+                <ScalarProperty Name="StudentIDDocumentID" ColumnName="StudentIDDocumentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentPhotos">
+            <EntityTypeMapping TypeName="MCDModel.StudentPhoto">
+              <MappingFragment StoreEntitySet="StudentPhotos">
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="IndividualID" ColumnName="IndividualID" />
+                <ScalarProperty Name="StudentPhotoID" ColumnName="StudentPhotoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

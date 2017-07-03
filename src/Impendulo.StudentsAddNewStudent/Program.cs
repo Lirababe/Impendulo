@@ -1,4 +1,5 @@
 ﻿
+using Impendulo.Development.Students;
 using Impendulo.StudentForms.Development;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace Impendulo.StudentForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAddUpdateStudent());
+            Application.Run(new frmStudentMenu());
         }
     }
 }

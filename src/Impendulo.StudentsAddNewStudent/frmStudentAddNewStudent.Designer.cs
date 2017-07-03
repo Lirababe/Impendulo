@@ -945,7 +945,7 @@
             // 
             this.gbStudentAddressDetails.Controls.Add(this.tabControl1);
             this.gbStudentAddressDetails.Controls.Add(this.ToolStripContainerStudentAddresses);
-            this.gbStudentAddressDetails.Location = new System.Drawing.Point(0, 875);
+            this.gbStudentAddressDetails.Location = new System.Drawing.Point(733, 364);
             this.gbStudentAddressDetails.Margin = new System.Windows.Forms.Padding(0);
             this.gbStudentAddressDetails.Name = "gbStudentAddressDetails";
             this.gbStudentAddressDetails.Padding = new System.Windows.Forms.Padding(0);
@@ -1409,7 +1409,7 @@
             // 
             this.gbAddStudentContactDetailRadioButtons.Controls.Add(this.tabControl3);
             this.gbAddStudentContactDetailRadioButtons.Controls.Add(this.toolStripContainerStudentContacts);
-            this.gbAddStudentContactDetailRadioButtons.Location = new System.Drawing.Point(213, 875);
+            this.gbAddStudentContactDetailRadioButtons.Location = new System.Drawing.Point(0, 875);
             this.gbAddStudentContactDetailRadioButtons.Margin = new System.Windows.Forms.Padding(0);
             this.gbAddStudentContactDetailRadioButtons.Name = "gbAddStudentContactDetailRadioButtons";
             this.gbAddStudentContactDetailRadioButtons.Padding = new System.Windows.Forms.Padding(0);
@@ -1767,7 +1767,7 @@
             // 
             this.gbStudentDisability.Controls.Add(this.tabControl4);
             this.gbStudentDisability.Controls.Add(this.toolStripContainerStudentDisablity);
-            this.gbStudentDisability.Location = new System.Drawing.Point(493, 875);
+            this.gbStudentDisability.Location = new System.Drawing.Point(280, 875);
             this.gbStudentDisability.Margin = new System.Windows.Forms.Padding(0);
             this.gbStudentDisability.Name = "gbStudentDisability";
             this.gbStudentDisability.Padding = new System.Windows.Forms.Padding(0);
@@ -2055,7 +2055,7 @@
             // gbStudentDetails
             // 
             this.gbStudentDetails.Controls.Add(this.tabControl2);
-            this.gbStudentDetails.Location = new System.Drawing.Point(0, 995);
+            this.gbStudentDetails.Location = new System.Drawing.Point(602, 875);
             this.gbStudentDetails.Margin = new System.Windows.Forms.Padding(0);
             this.gbStudentDetails.Name = "gbStudentDetails";
             this.gbStudentDetails.Padding = new System.Windows.Forms.Padding(0);

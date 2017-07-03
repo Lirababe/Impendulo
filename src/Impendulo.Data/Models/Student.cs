@@ -22,6 +22,8 @@ namespace Impendulo.Data.Models
             this.StudentDisabilities = new ObservableListSource<StudentDisability>();
             this.NextOfKins = new ObservableListSource<NextOfKin>();
             this.Enrollments = new ObservableListSource<Enrollment>();
+            this.StudentIDDocuments = new ObservableListSource<StudentIDDocument>();
+            this.StudentPhotos = new ObservableListSource<StudentPhoto>();
         }
     
         public int StudentID { get; set; }
@@ -49,5 +51,9 @@ namespace Impendulo.Data.Models
         public virtual ObservableListSource<NextOfKin> NextOfKins { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<Enrollment> Enrollments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<StudentIDDocument> StudentIDDocuments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<StudentPhoto> StudentPhotos { get; set; }
     }
 }
