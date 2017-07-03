@@ -34,6 +34,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gbfilters = new System.Windows.Forms.GroupBox();
+            this.mbtnSearch = new MetroFramework.Controls.MetroButton();
+            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.mlblToDate = new MetroFramework.Controls.MetroLabel();
+            this.mlblFromdate = new MetroFramework.Controls.MetroLabel();
+            this.mlblVanue = new MetroFramework.Controls.MetroLabel();
+            this.mlblFacilitator = new MetroFramework.Controls.MetroLabel();
+            this.metroDateTime2 = new MetroFramework.Controls.MetroDateTime();
+            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.mdgvScheduleApprienticeship = new MetroFramework.Controls.MetroGrid();
             this.colCourseSelect = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colCourses = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,15 +52,6 @@
             this.colCourseMaximum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCoursecurrentSchedules = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colcourseAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
-            this.metroDateTime2 = new MetroFramework.Controls.MetroDateTime();
-            this.mlblFacilitator = new MetroFramework.Controls.MetroLabel();
-            this.mlblVanue = new MetroFramework.Controls.MetroLabel();
-            this.mlblFromdate = new MetroFramework.Controls.MetroLabel();
-            this.mlblToDate = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
-            this.mbtnSearch = new MetroFramework.Controls.MetroButton();
             this.ScheduleApprienticeshipbindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -98,6 +98,87 @@
             this.gbfilters.TabIndex = 0;
             this.gbfilters.TabStop = false;
             this.gbfilters.Text = "Filters";
+            // 
+            // mbtnSearch
+            // 
+            this.mbtnSearch.BackgroundImage = global::Impendulo.StudentEngineeringCourseErollment.Devlopment.Properties.Resources.search1;
+            this.mbtnSearch.Location = new System.Drawing.Point(291, 14);
+            this.mbtnSearch.Name = "mbtnSearch";
+            this.mbtnSearch.Size = new System.Drawing.Size(122, 134);
+            this.mbtnSearch.TabIndex = 16;
+            this.mbtnSearch.UseSelectable = true;
+            // 
+            // metroComboBox2
+            // 
+            this.metroComboBox2.FormattingEnabled = true;
+            this.metroComboBox2.ItemHeight = 23;
+            this.metroComboBox2.Location = new System.Drawing.Point(77, 49);
+            this.metroComboBox2.Name = "metroComboBox2";
+            this.metroComboBox2.Size = new System.Drawing.Size(208, 29);
+            this.metroComboBox2.TabIndex = 15;
+            this.metroComboBox2.UseSelectable = true;
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Location = new System.Drawing.Point(77, 14);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(208, 29);
+            this.metroComboBox1.TabIndex = 14;
+            this.metroComboBox1.UseSelectable = true;
+            // 
+            // mlblToDate
+            // 
+            this.mlblToDate.AutoSize = true;
+            this.mlblToDate.Location = new System.Drawing.Point(6, 129);
+            this.mlblToDate.Name = "mlblToDate";
+            this.mlblToDate.Size = new System.Drawing.Size(27, 19);
+            this.mlblToDate.TabIndex = 13;
+            this.mlblToDate.Text = "To:";
+            // 
+            // mlblFromdate
+            // 
+            this.mlblFromdate.AutoSize = true;
+            this.mlblFromdate.Location = new System.Drawing.Point(6, 94);
+            this.mlblFromdate.Name = "mlblFromdate";
+            this.mlblFromdate.Size = new System.Drawing.Size(44, 19);
+            this.mlblFromdate.TabIndex = 12;
+            this.mlblFromdate.Text = "From:";
+            // 
+            // mlblVanue
+            // 
+            this.mlblVanue.AutoSize = true;
+            this.mlblVanue.Location = new System.Drawing.Point(6, 59);
+            this.mlblVanue.Name = "mlblVanue";
+            this.mlblVanue.Size = new System.Drawing.Size(48, 19);
+            this.mlblVanue.TabIndex = 11;
+            this.mlblVanue.Text = "Vanue:";
+            // 
+            // mlblFacilitator
+            // 
+            this.mlblFacilitator.AutoSize = true;
+            this.mlblFacilitator.Location = new System.Drawing.Point(6, 24);
+            this.mlblFacilitator.Name = "mlblFacilitator";
+            this.mlblFacilitator.Size = new System.Drawing.Size(65, 19);
+            this.mlblFacilitator.TabIndex = 10;
+            this.mlblFacilitator.Text = "Faciliator:";
+            // 
+            // metroDateTime2
+            // 
+            this.metroDateTime2.Location = new System.Drawing.Point(77, 119);
+            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime2.Name = "metroDateTime2";
+            this.metroDateTime2.Size = new System.Drawing.Size(208, 29);
+            this.metroDateTime2.TabIndex = 9;
+            // 
+            // metroDateTime1
+            // 
+            this.metroDateTime1.Location = new System.Drawing.Point(77, 84);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime1.Name = "metroDateTime1";
+            this.metroDateTime1.Size = new System.Drawing.Size(208, 29);
+            this.metroDateTime1.TabIndex = 8;
             // 
             // mdgvScheduleApprienticeship
             // 
@@ -156,13 +237,17 @@
             this.mdgvScheduleApprienticeship.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.mdgvScheduleApprienticeship.Size = new System.Drawing.Size(834, 210);
             this.mdgvScheduleApprienticeship.TabIndex = 1;
+            this.mdgvScheduleApprienticeship.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mdgvScheduleApprienticeship_CellClick);
             this.mdgvScheduleApprienticeship.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.mdgvScheduleApprienticeship_DataBindingComplete);
             // 
             // colCourseSelect
             // 
-            this.colCourseSelect.HeaderText = "Select";
+            this.colCourseSelect.HeaderText = "";
+            this.colCourseSelect.LinkColor = System.Drawing.Color.Red;
             this.colCourseSelect.Name = "colCourseSelect";
             this.colCourseSelect.ReadOnly = true;
+            this.colCourseSelect.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colCourseSelect.Text = "Select Course";
             // 
             // colCourses
             // 
@@ -206,87 +291,6 @@
             this.colcourseAvailable.Name = "colcourseAvailable";
             this.colcourseAvailable.ReadOnly = true;
             // 
-            // metroDateTime1
-            // 
-            this.metroDateTime1.Location = new System.Drawing.Point(77, 84);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(208, 29);
-            this.metroDateTime1.TabIndex = 8;
-            // 
-            // metroDateTime2
-            // 
-            this.metroDateTime2.Location = new System.Drawing.Point(77, 119);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime2.Name = "metroDateTime2";
-            this.metroDateTime2.Size = new System.Drawing.Size(208, 29);
-            this.metroDateTime2.TabIndex = 9;
-            // 
-            // mlblFacilitator
-            // 
-            this.mlblFacilitator.AutoSize = true;
-            this.mlblFacilitator.Location = new System.Drawing.Point(6, 24);
-            this.mlblFacilitator.Name = "mlblFacilitator";
-            this.mlblFacilitator.Size = new System.Drawing.Size(65, 19);
-            this.mlblFacilitator.TabIndex = 10;
-            this.mlblFacilitator.Text = "Faciliator:";
-            // 
-            // mlblVanue
-            // 
-            this.mlblVanue.AutoSize = true;
-            this.mlblVanue.Location = new System.Drawing.Point(6, 59);
-            this.mlblVanue.Name = "mlblVanue";
-            this.mlblVanue.Size = new System.Drawing.Size(48, 19);
-            this.mlblVanue.TabIndex = 11;
-            this.mlblVanue.Text = "Vanue:";
-            // 
-            // mlblFromdate
-            // 
-            this.mlblFromdate.AutoSize = true;
-            this.mlblFromdate.Location = new System.Drawing.Point(6, 94);
-            this.mlblFromdate.Name = "mlblFromdate";
-            this.mlblFromdate.Size = new System.Drawing.Size(44, 19);
-            this.mlblFromdate.TabIndex = 12;
-            this.mlblFromdate.Text = "From:";
-            // 
-            // mlblToDate
-            // 
-            this.mlblToDate.AutoSize = true;
-            this.mlblToDate.Location = new System.Drawing.Point(6, 129);
-            this.mlblToDate.Name = "mlblToDate";
-            this.mlblToDate.Size = new System.Drawing.Size(27, 19);
-            this.mlblToDate.TabIndex = 13;
-            this.mlblToDate.Text = "To:";
-            // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(77, 14);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(208, 29);
-            this.metroComboBox1.TabIndex = 14;
-            this.metroComboBox1.UseSelectable = true;
-            // 
-            // metroComboBox2
-            // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
-            this.metroComboBox2.Location = new System.Drawing.Point(77, 49);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(208, 29);
-            this.metroComboBox2.TabIndex = 15;
-            this.metroComboBox2.UseSelectable = true;
-            // 
-            // mbtnSearch
-            // 
-            this.mbtnSearch.BackgroundImage = global::Impendulo.StudentEngineeringCourseErollment.Devlopment.Properties.Resources.search1;
-            this.mbtnSearch.Location = new System.Drawing.Point(291, 14);
-            this.mbtnSearch.Name = "mbtnSearch";
-            this.mbtnSearch.Size = new System.Drawing.Size(122, 134);
-            this.mbtnSearch.TabIndex = 16;
-            this.mbtnSearch.UseSelectable = true;
-            // 
             // frmScheduleApprience
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,6 +325,7 @@
         private MetroFramework.Controls.MetroDateTime metroDateTime2;
         private MetroFramework.Controls.MetroDateTime metroDateTime1;
         private MetroFramework.Controls.MetroGrid mdgvScheduleApprienticeship;
+        private System.Windows.Forms.BindingSource ScheduleApprienticeshipbindingSource;
         private System.Windows.Forms.DataGridViewLinkColumn colCourseSelect;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCourses;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCourseStartDate;
@@ -329,6 +334,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCourseMaximum;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCoursecurrentSchedules;
         private System.Windows.Forms.DataGridViewTextBoxColumn colcourseAvailable;
-        private System.Windows.Forms.BindingSource ScheduleApprienticeshipbindingSource;
     }
 }

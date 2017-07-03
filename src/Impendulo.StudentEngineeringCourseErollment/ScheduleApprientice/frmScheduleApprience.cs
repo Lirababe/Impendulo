@@ -15,6 +15,8 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.ScheduleApprien
 {
     public partial class frmScheduleApprience : MetroForm
     {
+        public int _EnrolmentID { get; set; }
+
         public frmScheduleApprience()
         {
             InitializeComponent();
@@ -22,40 +24,40 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.ScheduleApprien
 
         private void frmScheduleApprience_Load(object sender, EventArgs e)
         {
-            refreshEnrollment();
+            populateCoursesToBeScheduled();
         }
 
         //refresh Method
         private void refreshEnrollment()
         {
-            EnrollmentInprogress.frmEnrolmmentInprogress frm = new EnrollmentInprogress.frmEnrolmmentInprogress();
-            if (frm.enrollmentBindingSource.List.Count > 0)
-            {
-                refreshScheduleCoursePriliminaryDate();
-            }
+            //EnrollmentInprogress.frmEnrolmmentInprogress frm = new EnrollmentInprogress.frmEnrolmmentInprogress();
+            //if (frm.enrollmentBindingSource.List.Count > 0)
+            //{
+            //    refreshScheduleCoursePriliminaryDate();
+            //}
         }
 
         private void refreshScheduleCoursePriliminaryDate()
         {
-            int _EnrollmentID = 0;
-            EnrollmentInprogress.frmEnrolmmentInprogress frm = new EnrollmentInprogress.frmEnrolmmentInprogress();
-            if (frm.enrollmentBindingSource.List.Count > 0)
-            {
-                _EnrollmentID = ((Enrollment)(frm.enrollmentBindingSource.Current)).EnrollmentID;
-            }
-            populateCoursesToBeScheduled(_EnrollmentID);
+            //int _EnrollmentID = 0;
+            //EnrollmentInprogress.frmEnrolmmentInprogress frm = new EnrollmentInprogress.frmEnrolmmentInprogress();
+            //if (frm.enrollmentBindingSource.List.Count > 0)
+            //{
+            //    _EnrollmentID = ((Enrollment)(frm.enrollmentBindingSource.Current)).EnrollmentID;
+            //}
+            //populateCoursesToBeScheduled();
 
         }
 
         //populate methods
-        private void populateCoursesToBeScheduled(int _EnrollmentID)
+        private void populateCoursesToBeScheduled()
         {
             using (var Dbconnection = new MCDEntities())
             {
                 ScheduleApprienticeshipbindingSource.DataSource = (from a in Dbconnection.CurriculumCourses
                                                                   from b in a.CurriculumCourseEnrollments
-                                                                  where b.EnrollmentID == _EnrollmentID
-                                                                  select a).ToList<CurriculumCourse>();
+                                                                  where b.EnrollmentID == _EnrolmentID
+                                                                   select a).ToList<CurriculumCourse>();
             };
         }
 
@@ -72,6 +74,34 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.ScheduleApprien
                     
                 }
             }
+        }
+
+        DateTimePicker dtp = new DateTimePicker();
+        private void mdgvScheduleApprienticeship_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                dtp = new DateTimePicker();
+                mdgvScheduleApprienticeship.Controls.Add(dtp);
+                dtp.Format = DateTimePickerFormat.Short;
+                Rectangle Rectangle = mdgvScheduleApprienticeship.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+                dtp.Size = new Size(Rectangle.Width, Rectangle.Height);
+                dtp.Location = new Point(Rectangle.X, Rectangle.Y);
+
+                dtp.CloseUp += new EventHandler(dtp_CloseUp);
+                dtp.TextChanged += new EventHandler(dtp_OnTextChange);
+
+
+                dtp.Visible = true;
+            }
+        }
+        private void dtp_OnTextChange(object sender, EventArgs e)
+        {
+            mdgvScheduleApprienticeship.CurrentCell.Value = dtp.Text.ToString();
+        }
+        void dtp_CloseUp(object sender, EventArgs e)
+        {
+            dtp.Visible = false;
         }
     }
 }

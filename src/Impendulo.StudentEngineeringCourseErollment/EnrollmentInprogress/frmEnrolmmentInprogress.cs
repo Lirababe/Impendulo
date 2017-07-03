@@ -604,7 +604,9 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
 
         private void btnScheduleEnrollement_Click(object sender, EventArgs e)
         {
+            int _CurrentEnrollmentID = ((Enrollment)enrollmentBindingSource.Current).EnrollmentID;
             frmScheduleApprience frm = new frmScheduleApprience();
+            frm._EnrolmentID = _CurrentEnrollmentID;
             frm.ShowDialog();
         }
 

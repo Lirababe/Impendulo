@@ -29,34 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudentAddUpdate));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle120 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle121 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle122 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle123 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.Label addressLineOneLabel;
             System.Windows.Forms.Label addressLineTwoLabel;
             System.Windows.Forms.Label addressTownLabel;
             System.Windows.Forms.Label addressSuburbLabel;
             System.Windows.Forms.Label addressAreaCodeLabel;
             System.Windows.Forms.Label addressIsDefaultLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle124 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle125 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle126 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.Label lookupAddressTypeLabel;
             System.Windows.Forms.Label lookupCountryLabel;
             System.Windows.Forms.Label lookupProvinceLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudentAddUpdate));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.NavigationPanel = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label37 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
@@ -66,7 +67,19 @@
             this.btnNextSection = new MetroFramework.Controls.MetroTile();
             this.MainflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.gbEnquiryType = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.colStudentIDDocumentDownLoadFile = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colStudentIDDocumentFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudentIDDocumentFileExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentIDDocumentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentIDDocumentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -80,17 +93,6 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.gbContactInfo = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.studentIDDocumentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -99,6 +101,7 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.studentIDTextBox = new System.Windows.Forms.TextBox();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lookupTitleComboBox = new System.Windows.Forms.ComboBox();
             this.individualFirstNameTextBox = new System.Windows.Forms.TextBox();
             this.individualSecondNameTextBox = new System.Windows.Forms.TextBox();
@@ -122,19 +125,20 @@
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
-            this.colStudentIDDocumentDownLoadFile = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colStudentIDDocumentFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStudentIDDocumentFileExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label37 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.addressesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.addressLineOneTextBox = new System.Windows.Forms.TextBox();
-            this.addressLineTwoTextBox = new System.Windows.Forms.TextBox();
-            this.addressTownTextBox = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.cboStudentAddressCountry = new System.Windows.Forms.ComboBox();
+            this.cboStudentAddressProvince = new System.Windows.Forms.ComboBox();
+            this.cboStudentAddressAddressType = new System.Windows.Forms.ComboBox();
             this.addressSuburbTextBox = new System.Windows.Forms.TextBox();
+            this.addressesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.addressTownTextBox = new System.Windows.Forms.TextBox();
             this.addressAreaCodeTextBox = new System.Windows.Forms.TextBox();
             this.addressIsDefaultCheckBox = new System.Windows.Forms.CheckBox();
+            this.addressLineTwoTextBox = new System.Windows.Forms.TextBox();
+            this.addressLineOneTextBox = new System.Windows.Forms.TextBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.dgvStudentAddress = new MetroFramework.Controls.MetroGrid();
@@ -156,10 +160,11 @@
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.cboStudentAddressAddressType = new System.Windows.Forms.ComboBox();
-            this.cboStudentAddressProvince = new System.Windows.Forms.ComboBox();
-            this.cboStudentAddressCountry = new System.Windows.Forms.ComboBox();
+            this.gbContactInfo = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             addressLineOneLabel = new System.Windows.Forms.Label();
             addressLineTwoLabel = new System.Windows.Forms.Label();
             addressTownLabel = new System.Windows.Forms.Label();
@@ -181,29 +186,30 @@
             this.tableLayoutPanel10.SuspendLayout();
             this.MainflowLayoutPanel.SuspendLayout();
             this.gbEnquiryType.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentIDDocumentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentIDDocumentsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.groupBox10.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.addressesBindingSource)).BeginInit();
             this.groupBox11.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addressesBindingSource)).BeginInit();
             this.groupBox12.SuspendLayout();
             this.toolStripContainer2.ContentPanel.SuspendLayout();
             this.toolStripContainer2.TopToolStripPanel.SuspendLayout();
@@ -211,8 +217,88 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
             this.bindingNavigator2.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // addressLineOneLabel
+            // 
+            addressLineOneLabel.AutoSize = true;
+            addressLineOneLabel.Location = new System.Drawing.Point(3, 58);
+            addressLineOneLabel.Name = "addressLineOneLabel";
+            addressLineOneLabel.Size = new System.Drawing.Size(107, 14);
+            addressLineOneLabel.TabIndex = 0;
+            addressLineOneLabel.Text = "Address Line One:";
+            // 
+            // addressLineTwoLabel
+            // 
+            addressLineTwoLabel.AutoSize = true;
+            addressLineTwoLabel.Location = new System.Drawing.Point(3, 86);
+            addressLineTwoLabel.Name = "addressLineTwoLabel";
+            addressLineTwoLabel.Size = new System.Drawing.Size(109, 14);
+            addressLineTwoLabel.TabIndex = 2;
+            addressLineTwoLabel.Text = "Address Line Two:";
+            // 
+            // addressTownLabel
+            // 
+            addressTownLabel.AutoSize = true;
+            addressTownLabel.Location = new System.Drawing.Point(3, 142);
+            addressTownLabel.Name = "addressTownLabel";
+            addressTownLabel.Size = new System.Drawing.Size(90, 14);
+            addressTownLabel.TabIndex = 4;
+            addressTownLabel.Text = "Address Town:";
+            // 
+            // addressSuburbLabel
+            // 
+            addressSuburbLabel.AutoSize = true;
+            addressSuburbLabel.Location = new System.Drawing.Point(3, 170);
+            addressSuburbLabel.Name = "addressSuburbLabel";
+            addressSuburbLabel.Size = new System.Drawing.Size(97, 14);
+            addressSuburbLabel.TabIndex = 6;
+            addressSuburbLabel.Text = "Address Suburb:";
+            // 
+            // addressAreaCodeLabel
+            // 
+            addressAreaCodeLabel.AutoSize = true;
+            addressAreaCodeLabel.Location = new System.Drawing.Point(3, 198);
+            addressAreaCodeLabel.Name = "addressAreaCodeLabel";
+            addressAreaCodeLabel.Size = new System.Drawing.Size(115, 14);
+            addressAreaCodeLabel.TabIndex = 8;
+            addressAreaCodeLabel.Text = "Address Area Code:";
+            // 
+            // addressIsDefaultLabel
+            // 
+            addressIsDefaultLabel.AutoSize = true;
+            addressIsDefaultLabel.Location = new System.Drawing.Point(3, 28);
+            addressIsDefaultLabel.Name = "addressIsDefaultLabel";
+            addressIsDefaultLabel.Size = new System.Drawing.Size(110, 14);
+            addressIsDefaultLabel.TabIndex = 10;
+            addressIsDefaultLabel.Text = "Address Is Default:";
+            // 
+            // lookupAddressTypeLabel
+            // 
+            lookupAddressTypeLabel.AutoSize = true;
+            lookupAddressTypeLabel.Location = new System.Drawing.Point(3, 0);
+            lookupAddressTypeLabel.Name = "lookupAddressTypeLabel";
+            lookupAddressTypeLabel.Size = new System.Drawing.Size(86, 14);
+            lookupAddressTypeLabel.TabIndex = 42;
+            lookupAddressTypeLabel.Text = "Address Type:";
+            // 
+            // lookupCountryLabel
+            // 
+            lookupCountryLabel.AutoSize = true;
+            lookupCountryLabel.Location = new System.Drawing.Point(3, 226);
+            lookupCountryLabel.Name = "lookupCountryLabel";
+            lookupCountryLabel.Size = new System.Drawing.Size(54, 14);
+            lookupCountryLabel.TabIndex = 44;
+            lookupCountryLabel.Text = "Country:";
+            // 
+            // lookupProvinceLabel
+            // 
+            lookupProvinceLabel.AutoSize = true;
+            lookupProvinceLabel.Location = new System.Drawing.Point(3, 114);
+            lookupProvinceLabel.Name = "lookupProvinceLabel";
+            lookupProvinceLabel.Size = new System.Drawing.Size(57, 14);
+            lookupProvinceLabel.TabIndex = 45;
+            lookupProvinceLabel.Text = "Province:";
             // 
             // splitContainer1
             // 
@@ -284,6 +370,18 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(202, 336);
             this.tableLayoutPanel5.TabIndex = 19;
             // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.label37.Location = new System.Drawing.Point(3, 7);
+            this.label37.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(91, 14);
+            this.label37.TabIndex = 16;
+            this.label37.Tag = "0";
+            this.label37.Text = "Student Details";
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -332,18 +430,6 @@
             this.label14.Tag = "4";
             this.label14.Text = "Disabilitiy Details";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 49);
-            this.label12.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 14);
-            this.label12.TabIndex = 18;
-            this.label12.Tag = "1";
-            this.label12.Text = "ID Document";
-            // 
             // label38
             // 
             this.label38.AutoSize = true;
@@ -367,6 +453,18 @@
             this.label41.TabIndex = 16;
             this.label41.Tag = "2";
             this.label41.Text = "Address Details";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(3, 49);
+            this.label12.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(80, 14);
+            this.label12.TabIndex = 18;
+            this.label12.Tag = "1";
+            this.label12.Text = "ID Document";
             // 
             // panel4
             // 
@@ -423,7 +521,7 @@
             this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(758, 51);
             this.tableLayoutPanel10.TabIndex = 3;
             // 
@@ -435,7 +533,7 @@
             this.wizardStepProgressBar.MarqueeAnimationSpeed = 500;
             this.wizardStepProgressBar.Name = "wizardStepProgressBar";
             this.wizardStepProgressBar.ProgressBarStyle = System.Windows.Forms.ProgressBarStyle.Blocks;
-            this.wizardStepProgressBar.Size = new System.Drawing.Size(371, 45);
+            this.wizardStepProgressBar.Size = new System.Drawing.Size(371, 46);
             this.wizardStepProgressBar.Step = 1;
             this.wizardStepProgressBar.Style = MetroFramework.MetroColorStyle.Blue;
             this.wizardStepProgressBar.TabIndex = 22;
@@ -447,7 +545,7 @@
             this.btnPreviousSection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPreviousSection.Location = new System.Drawing.Point(4, 4);
             this.btnPreviousSection.Name = "btnPreviousSection";
-            this.btnPreviousSection.Size = new System.Drawing.Size(182, 45);
+            this.btnPreviousSection.Size = new System.Drawing.Size(182, 46);
             this.btnPreviousSection.TabIndex = 0;
             this.btnPreviousSection.Text = "Previous";
             this.btnPreviousSection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -462,7 +560,7 @@
             this.btnNextSection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNextSection.Location = new System.Drawing.Point(571, 4);
             this.btnNextSection.Name = "btnNextSection";
-            this.btnNextSection.Size = new System.Drawing.Size(183, 45);
+            this.btnNextSection.Size = new System.Drawing.Size(183, 46);
             this.btnNextSection.TabIndex = 1;
             this.btnNextSection.Text = "Next";
             this.btnNextSection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -502,6 +600,35 @@
             this.gbEnquiryType.Tag = "1";
             this.gbEnquiryType.Text = "Add/Update ID Document";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel1.Controls.Add(this.groupBox8, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 20);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(140, 125);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.toolStripContainer1);
+            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox8.Location = new System.Drawing.Point(10, 9);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(120, 106);
+            this.groupBox8.TabIndex = 1;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Student ID Documents";
+            // 
             // toolStripContainer1
             // 
             // 
@@ -519,6 +646,134 @@
             // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.bindingNavigator1);
+            // 
+            // metroGrid1
+            // 
+            this.metroGrid1.AllowUserToAddRows = false;
+            this.metroGrid1.AllowUserToDeleteRows = false;
+            this.metroGrid1.AllowUserToResizeRows = false;
+            this.metroGrid1.AutoGenerateColumns = false;
+            this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colStudentIDDocumentDownLoadFile,
+            this.colStudentIDDocumentFileName,
+            this.colStudentIDDocumentFileExtension,
+            this.studentIDDocumentIDDataGridViewTextBoxColumn,
+            this.individualIDDataGridViewTextBoxColumn,
+            this.imageIDDataGridViewTextBoxColumn,
+            this.fileDataGridViewTextBoxColumn,
+            this.studentDataGridViewTextBoxColumn});
+            this.metroGrid1.DataSource = this.studentIDDocumentsBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.metroGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroGrid1.EnableHeadersVisualStyles = false;
+            this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroGrid1.Location = new System.Drawing.Point(0, 0);
+            this.metroGrid1.Name = "metroGrid1";
+            this.metroGrid1.ReadOnly = true;
+            this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.metroGrid1.RowHeadersVisible = false;
+            this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            this.metroGrid1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.metroGrid1.Size = new System.Drawing.Size(114, 60);
+            this.metroGrid1.TabIndex = 0;
+            // 
+            // colStudentIDDocumentDownLoadFile
+            // 
+            this.colStudentIDDocumentDownLoadFile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colStudentIDDocumentDownLoadFile.HeaderText = "";
+            this.colStudentIDDocumentDownLoadFile.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colStudentIDDocumentDownLoadFile.Name = "colStudentIDDocumentDownLoadFile";
+            this.colStudentIDDocumentDownLoadFile.ReadOnly = true;
+            this.colStudentIDDocumentDownLoadFile.Text = "[ Open ]";
+            this.colStudentIDDocumentDownLoadFile.TrackVisitedState = false;
+            this.colStudentIDDocumentDownLoadFile.UseColumnTextForLinkValue = true;
+            this.colStudentIDDocumentDownLoadFile.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.colStudentIDDocumentDownLoadFile.Width = 5;
+            // 
+            // colStudentIDDocumentFileName
+            // 
+            this.colStudentIDDocumentFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colStudentIDDocumentFileName.HeaderText = "File Name";
+            this.colStudentIDDocumentFileName.Name = "colStudentIDDocumentFileName";
+            this.colStudentIDDocumentFileName.ReadOnly = true;
+            this.colStudentIDDocumentFileName.Width = 80;
+            // 
+            // colStudentIDDocumentFileExtension
+            // 
+            this.colStudentIDDocumentFileExtension.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStudentIDDocumentFileExtension.HeaderText = "Extension";
+            this.colStudentIDDocumentFileExtension.Name = "colStudentIDDocumentFileExtension";
+            this.colStudentIDDocumentFileExtension.ReadOnly = true;
+            // 
+            // studentIDDocumentsBindingSource
+            // 
+            this.studentIDDocumentsBindingSource.DataSource = typeof(Impendulo.Data.Models.StudentIDDocument);
+            // 
+            // studentIDDocumentIDDataGridViewTextBoxColumn
+            // 
+            this.studentIDDocumentIDDataGridViewTextBoxColumn.DataPropertyName = "StudentIDDocumentID";
+            this.studentIDDocumentIDDataGridViewTextBoxColumn.HeaderText = "StudentIDDocumentID";
+            this.studentIDDocumentIDDataGridViewTextBoxColumn.Name = "studentIDDocumentIDDataGridViewTextBoxColumn";
+            this.studentIDDocumentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // individualIDDataGridViewTextBoxColumn
+            // 
+            this.individualIDDataGridViewTextBoxColumn.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn.Name = "individualIDDataGridViewTextBoxColumn";
+            this.individualIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // imageIDDataGridViewTextBoxColumn
+            // 
+            this.imageIDDataGridViewTextBoxColumn.DataPropertyName = "ImageID";
+            this.imageIDDataGridViewTextBoxColumn.HeaderText = "ImageID";
+            this.imageIDDataGridViewTextBoxColumn.Name = "imageIDDataGridViewTextBoxColumn";
+            this.imageIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fileDataGridViewTextBoxColumn
+            // 
+            this.fileDataGridViewTextBoxColumn.DataPropertyName = "File";
+            this.fileDataGridViewTextBoxColumn.HeaderText = "File";
+            this.fileDataGridViewTextBoxColumn.Name = "fileDataGridViewTextBoxColumn";
+            this.fileDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studentDataGridViewTextBoxColumn
+            // 
+            this.studentDataGridViewTextBoxColumn.DataPropertyName = "Student";
+            this.studentDataGridViewTextBoxColumn.HeaderText = "Student";
+            this.studentDataGridViewTextBoxColumn.Name = "studentDataGridViewTextBoxColumn";
+            this.studentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bindingNavigator1
             // 
@@ -648,172 +903,6 @@
             this.groupBox3.Tag = "0";
             this.groupBox3.Text = "Student Details";
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.tableLayoutPanel8);
-            this.groupBox4.Location = new System.Drawing.Point(0, 150);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(0);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox4.Size = new System.Drawing.Size(736, 439);
-            this.groupBox4.TabIndex = 0;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Tag = "2";
-            this.groupBox4.Text = "Add/Update Address Details";
-            // 
-            // gbContactInfo
-            // 
-            this.gbContactInfo.Location = new System.Drawing.Point(0, 589);
-            this.gbContactInfo.Margin = new System.Windows.Forms.Padding(0);
-            this.gbContactInfo.Name = "gbContactInfo";
-            this.gbContactInfo.Padding = new System.Windows.Forms.Padding(6);
-            this.gbContactInfo.Size = new System.Drawing.Size(150, 150);
-            this.gbContactInfo.TabIndex = 0;
-            this.gbContactInfo.TabStop = false;
-            this.gbContactInfo.Tag = "3";
-            this.gbContactInfo.Text = "Add/Update Contact Details";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Location = new System.Drawing.Point(150, 589);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox2.Size = new System.Drawing.Size(150, 150);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Tag = "4";
-            this.groupBox2.Text = "Add/Update Disability Details";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(300, 589);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox1.Size = new System.Drawing.Size(150, 150);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Tag = "5";
-            this.groupBox1.Text = "Add/Update Company Details";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Location = new System.Drawing.Point(450, 589);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(0);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox6.Size = new System.Drawing.Size(150, 150);
-            this.groupBox6.TabIndex = 0;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Tag = "6";
-            this.groupBox6.Text = "Add/Update Next OF Kin Details";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Location = new System.Drawing.Point(0, 739);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(0);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox7.Size = new System.Drawing.Size(150, 150);
-            this.groupBox7.TabIndex = 0;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Tag = "7";
-            this.groupBox7.Text = "Summary";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.Controls.Add(this.groupBox8, 1, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 20);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(140, 125);
-            this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.toolStripContainer1);
-            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox8.Location = new System.Drawing.Point(10, 9);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(120, 106);
-            this.groupBox8.TabIndex = 1;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Student ID Documents";
-            // 
-            // metroGrid1
-            // 
-            this.metroGrid1.AllowUserToAddRows = false;
-            this.metroGrid1.AllowUserToDeleteRows = false;
-            this.metroGrid1.AllowUserToResizeRows = false;
-            this.metroGrid1.AutoGenerateColumns = false;
-            this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle120.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle120.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle120.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle120.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle120.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle120.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle120.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle120;
-            this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colStudentIDDocumentDownLoadFile,
-            this.colStudentIDDocumentFileName,
-            this.colStudentIDDocumentFileExtension});
-            this.metroGrid1.DataSource = this.studentIDDocumentsBindingSource;
-            dataGridViewCellStyle121.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle121.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle121.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle121.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle121.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle121.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle121.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle121;
-            this.metroGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroGrid1.EnableHeadersVisualStyles = false;
-            this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(0, 0);
-            this.metroGrid1.Name = "metroGrid1";
-            this.metroGrid1.ReadOnly = true;
-            this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle122.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle122.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle122.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle122.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle122.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle122.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle122.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle122;
-            this.metroGrid1.RowHeadersVisible = false;
-            this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle123.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            this.metroGrid1.RowsDefaultCellStyle = dataGridViewCellStyle123;
-            this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(114, 60);
-            this.metroGrid1.TabIndex = 0;
-            // 
-            // studentIDDocumentsBindingSource
-            // 
-            this.studentIDDocumentsBindingSource.DataSource = typeof(Impendulo.Data.Models.StudentIDDocument);
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(Impendulo.Data.Models.Student);
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
@@ -826,8 +915,8 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 301F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 301F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(142, 127);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
@@ -863,7 +952,7 @@
             this.tableLayoutPanel4.AutoScroll = true;
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 268F));
             this.tableLayoutPanel4.Controls.Add(this.metroLabel4, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.metroLabel5, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.metroLabel6, 0, 3);
@@ -944,6 +1033,10 @@
             this.studentIDTextBox.TabIndex = 93;
             this.studentIDTextBox.TabStop = false;
             // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(Impendulo.Data.Models.Student);
+            // 
             // lookupTitleComboBox
             // 
             this.lookupTitleComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "Individual.LookupTitle", true));
@@ -1005,7 +1098,7 @@
             this.metroLabel8.Location = new System.Drawing.Point(3, 145);
             this.metroLabel8.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(78, 19);
+            this.metroLabel8.Size = new System.Drawing.Size(77, 19);
             this.metroLabel8.TabIndex = 102;
             this.metroLabel8.Text = "ID Number:";
             // 
@@ -1015,7 +1108,7 @@
             this.metroLabel3.Location = new System.Drawing.Point(3, 201);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(56, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(55, 19);
             this.metroLabel3.TabIndex = 89;
             this.metroLabel3.Text = "Gender:";
             // 
@@ -1055,7 +1148,7 @@
             this.metroLabel9.Location = new System.Drawing.Point(3, 229);
             this.metroLabel9.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(92, 19);
+            this.metroLabel9.Size = new System.Drawing.Size(91, 19);
             this.metroLabel9.TabIndex = 104;
             this.metroLabel9.Text = "Martial Status:";
             // 
@@ -1095,7 +1188,7 @@
             this.metroLabel10.Location = new System.Drawing.Point(3, 5);
             this.metroLabel10.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(110, 19);
+            this.metroLabel10.Size = new System.Drawing.Size(109, 19);
             this.metroLabel10.TabIndex = 108;
             this.metroLabel10.Text = "Student Number:";
             // 
@@ -1202,45 +1295,18 @@
             this.metroTile4.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
             this.metroTile4.UseSelectable = true;
             // 
-            // colStudentIDDocumentDownLoadFile
+            // groupBox4
             // 
-            this.colStudentIDDocumentDownLoadFile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colStudentIDDocumentDownLoadFile.HeaderText = "";
-            this.colStudentIDDocumentDownLoadFile.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colStudentIDDocumentDownLoadFile.Name = "colStudentIDDocumentDownLoadFile";
-            this.colStudentIDDocumentDownLoadFile.ReadOnly = true;
-            this.colStudentIDDocumentDownLoadFile.Text = "[ Open ]";
-            this.colStudentIDDocumentDownLoadFile.TrackVisitedState = false;
-            this.colStudentIDDocumentDownLoadFile.UseColumnTextForLinkValue = true;
-            this.colStudentIDDocumentDownLoadFile.VisitedLinkColor = System.Drawing.Color.Blue;
-            this.colStudentIDDocumentDownLoadFile.Width = 5;
-            // 
-            // colStudentIDDocumentFileName
-            // 
-            this.colStudentIDDocumentFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colStudentIDDocumentFileName.HeaderText = "File Name";
-            this.colStudentIDDocumentFileName.Name = "colStudentIDDocumentFileName";
-            this.colStudentIDDocumentFileName.ReadOnly = true;
-            this.colStudentIDDocumentFileName.Width = 80;
-            // 
-            // colStudentIDDocumentFileExtension
-            // 
-            this.colStudentIDDocumentFileExtension.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colStudentIDDocumentFileExtension.HeaderText = "Extension";
-            this.colStudentIDDocumentFileExtension.Name = "colStudentIDDocumentFileExtension";
-            this.colStudentIDDocumentFileExtension.ReadOnly = true;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label37.Location = new System.Drawing.Point(3, 7);
-            this.label37.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(91, 14);
-            this.label37.TabIndex = 16;
-            this.label37.Tag = "0";
-            this.label37.Text = "Student Details";
+            this.groupBox4.Controls.Add(this.tableLayoutPanel8);
+            this.groupBox4.Location = new System.Drawing.Point(0, 150);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(0);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(5);
+            this.groupBox4.Size = new System.Drawing.Size(736, 439);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Tag = "2";
+            this.groupBox4.Text = "Add/Update Address Details";
             // 
             // tableLayoutPanel8
             // 
@@ -1284,10 +1350,6 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(726, 414);
             this.tableLayoutPanel8.TabIndex = 0;
             // 
-            // addressesBindingSource
-            // 
-            this.addressesBindingSource.DataSource = typeof(Impendulo.Data.ObservableListSource<Impendulo.Data.Models.Address>);
-            // 
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.tableLayoutPanel9);
@@ -1299,67 +1361,74 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Address";
             // 
-            // addressLineOneLabel
+            // tableLayoutPanel9
             // 
-            addressLineOneLabel.AutoSize = true;
-            addressLineOneLabel.Location = new System.Drawing.Point(3, 58);
-            addressLineOneLabel.Name = "addressLineOneLabel";
-            addressLineOneLabel.Size = new System.Drawing.Size(107, 14);
-            addressLineOneLabel.TabIndex = 0;
-            addressLineOneLabel.Text = "Address Line One:";
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.18182F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.81818F));
+            this.tableLayoutPanel9.Controls.Add(this.cboStudentAddressCountry, 1, 8);
+            this.tableLayoutPanel9.Controls.Add(this.cboStudentAddressProvince, 1, 4);
+            this.tableLayoutPanel9.Controls.Add(lookupProvinceLabel, 0, 4);
+            this.tableLayoutPanel9.Controls.Add(this.cboStudentAddressAddressType, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(lookupAddressTypeLabel, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.addressSuburbTextBox, 1, 6);
+            this.tableLayoutPanel9.Controls.Add(addressAreaCodeLabel, 0, 7);
+            this.tableLayoutPanel9.Controls.Add(this.addressTownTextBox, 1, 5);
+            this.tableLayoutPanel9.Controls.Add(this.addressAreaCodeTextBox, 1, 7);
+            this.tableLayoutPanel9.Controls.Add(addressSuburbLabel, 0, 6);
+            this.tableLayoutPanel9.Controls.Add(this.addressIsDefaultCheckBox, 1, 1);
+            this.tableLayoutPanel9.Controls.Add(addressIsDefaultLabel, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(addressTownLabel, 0, 5);
+            this.tableLayoutPanel9.Controls.Add(this.addressLineTwoTextBox, 1, 3);
+            this.tableLayoutPanel9.Controls.Add(addressLineTwoLabel, 0, 3);
+            this.tableLayoutPanel9.Controls.Add(this.addressLineOneTextBox, 1, 2);
+            this.tableLayoutPanel9.Controls.Add(addressLineOneLabel, 0, 2);
+            this.tableLayoutPanel9.Controls.Add(lookupCountryLabel, 0, 8);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 18);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 9;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(704, 257);
+            this.tableLayoutPanel9.TabIndex = 12;
             // 
-            // addressLineOneTextBox
+            // cboStudentAddressCountry
             // 
-            this.addressLineOneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.addressesBindingSource, "AddressLineOne", true));
-            this.addressLineOneTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addressLineOneTextBox.Location = new System.Drawing.Point(131, 61);
-            this.addressLineOneTextBox.Name = "addressLineOneTextBox";
-            this.addressLineOneTextBox.Size = new System.Drawing.Size(570, 22);
-            this.addressLineOneTextBox.TabIndex = 1;
+            this.cboStudentAddressCountry.DisplayMember = "CountryName";
+            this.cboStudentAddressCountry.FormattingEnabled = true;
+            this.cboStudentAddressCountry.Location = new System.Drawing.Point(131, 229);
+            this.cboStudentAddressCountry.Name = "cboStudentAddressCountry";
+            this.cboStudentAddressCountry.Size = new System.Drawing.Size(244, 22);
+            this.cboStudentAddressCountry.TabIndex = 47;
+            this.cboStudentAddressCountry.ValueMember = "CountryID";
             // 
-            // addressLineTwoLabel
+            // cboStudentAddressProvince
             // 
-            addressLineTwoLabel.AutoSize = true;
-            addressLineTwoLabel.Location = new System.Drawing.Point(3, 86);
-            addressLineTwoLabel.Name = "addressLineTwoLabel";
-            addressLineTwoLabel.Size = new System.Drawing.Size(109, 14);
-            addressLineTwoLabel.TabIndex = 2;
-            addressLineTwoLabel.Text = "Address Line Two:";
+            this.cboStudentAddressProvince.DisplayMember = "Province";
+            this.cboStudentAddressProvince.FormattingEnabled = true;
+            this.cboStudentAddressProvince.Location = new System.Drawing.Point(131, 117);
+            this.cboStudentAddressProvince.Name = "cboStudentAddressProvince";
+            this.cboStudentAddressProvince.Size = new System.Drawing.Size(244, 22);
+            this.cboStudentAddressProvince.TabIndex = 46;
+            this.cboStudentAddressProvince.ValueMember = "ProvinceID";
             // 
-            // addressLineTwoTextBox
+            // cboStudentAddressAddressType
             // 
-            this.addressLineTwoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.addressesBindingSource, "AddressLineTwo", true));
-            this.addressLineTwoTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addressLineTwoTextBox.Location = new System.Drawing.Point(131, 89);
-            this.addressLineTwoTextBox.Name = "addressLineTwoTextBox";
-            this.addressLineTwoTextBox.Size = new System.Drawing.Size(570, 22);
-            this.addressLineTwoTextBox.TabIndex = 3;
-            // 
-            // addressTownLabel
-            // 
-            addressTownLabel.AutoSize = true;
-            addressTownLabel.Location = new System.Drawing.Point(3, 142);
-            addressTownLabel.Name = "addressTownLabel";
-            addressTownLabel.Size = new System.Drawing.Size(90, 14);
-            addressTownLabel.TabIndex = 4;
-            addressTownLabel.Text = "Address Town:";
-            // 
-            // addressTownTextBox
-            // 
-            this.addressTownTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.addressesBindingSource, "AddressTown", true));
-            this.addressTownTextBox.Location = new System.Drawing.Point(131, 145);
-            this.addressTownTextBox.Name = "addressTownTextBox";
-            this.addressTownTextBox.Size = new System.Drawing.Size(244, 22);
-            this.addressTownTextBox.TabIndex = 5;
-            // 
-            // addressSuburbLabel
-            // 
-            addressSuburbLabel.AutoSize = true;
-            addressSuburbLabel.Location = new System.Drawing.Point(3, 170);
-            addressSuburbLabel.Name = "addressSuburbLabel";
-            addressSuburbLabel.Size = new System.Drawing.Size(97, 14);
-            addressSuburbLabel.TabIndex = 6;
-            addressSuburbLabel.Text = "Address Suburb:";
+            this.cboStudentAddressAddressType.DisplayMember = "AddressType";
+            this.cboStudentAddressAddressType.FormattingEnabled = true;
+            this.cboStudentAddressAddressType.Location = new System.Drawing.Point(131, 3);
+            this.cboStudentAddressAddressType.Name = "cboStudentAddressAddressType";
+            this.cboStudentAddressAddressType.Size = new System.Drawing.Size(244, 22);
+            this.cboStudentAddressAddressType.TabIndex = 43;
+            this.cboStudentAddressAddressType.ValueMember = "AddressTypeID";
             // 
             // addressSuburbTextBox
             // 
@@ -1369,14 +1438,17 @@
             this.addressSuburbTextBox.Size = new System.Drawing.Size(244, 22);
             this.addressSuburbTextBox.TabIndex = 7;
             // 
-            // addressAreaCodeLabel
+            // addressesBindingSource
             // 
-            addressAreaCodeLabel.AutoSize = true;
-            addressAreaCodeLabel.Location = new System.Drawing.Point(3, 198);
-            addressAreaCodeLabel.Name = "addressAreaCodeLabel";
-            addressAreaCodeLabel.Size = new System.Drawing.Size(115, 14);
-            addressAreaCodeLabel.TabIndex = 8;
-            addressAreaCodeLabel.Text = "Address Area Code:";
+            this.addressesBindingSource.DataSource = typeof(Impendulo.Data.ObservableListSource<Impendulo.Data.Models.Address>);
+            // 
+            // addressTownTextBox
+            // 
+            this.addressTownTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.addressesBindingSource, "AddressTown", true));
+            this.addressTownTextBox.Location = new System.Drawing.Point(131, 145);
+            this.addressTownTextBox.Name = "addressTownTextBox";
+            this.addressTownTextBox.Size = new System.Drawing.Size(244, 22);
+            this.addressTownTextBox.TabIndex = 5;
             // 
             // addressAreaCodeTextBox
             // 
@@ -1385,15 +1457,6 @@
             this.addressAreaCodeTextBox.Name = "addressAreaCodeTextBox";
             this.addressAreaCodeTextBox.Size = new System.Drawing.Size(104, 22);
             this.addressAreaCodeTextBox.TabIndex = 9;
-            // 
-            // addressIsDefaultLabel
-            // 
-            addressIsDefaultLabel.AutoSize = true;
-            addressIsDefaultLabel.Location = new System.Drawing.Point(3, 28);
-            addressIsDefaultLabel.Name = "addressIsDefaultLabel";
-            addressIsDefaultLabel.Size = new System.Drawing.Size(110, 14);
-            addressIsDefaultLabel.TabIndex = 10;
-            addressIsDefaultLabel.Text = "Address Is Default:";
             // 
             // addressIsDefaultCheckBox
             // 
@@ -1404,6 +1467,24 @@
             this.addressIsDefaultCheckBox.TabIndex = 11;
             this.addressIsDefaultCheckBox.Text = "checkBox1";
             this.addressIsDefaultCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // addressLineTwoTextBox
+            // 
+            this.addressLineTwoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.addressesBindingSource, "AddressLineTwo", true));
+            this.addressLineTwoTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addressLineTwoTextBox.Location = new System.Drawing.Point(131, 89);
+            this.addressLineTwoTextBox.Name = "addressLineTwoTextBox";
+            this.addressLineTwoTextBox.Size = new System.Drawing.Size(570, 22);
+            this.addressLineTwoTextBox.TabIndex = 3;
+            // 
+            // addressLineOneTextBox
+            // 
+            this.addressLineOneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.addressesBindingSource, "AddressLineOne", true));
+            this.addressLineOneTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addressLineOneTextBox.Location = new System.Drawing.Point(131, 61);
+            this.addressLineOneTextBox.Name = "addressLineOneTextBox";
+            this.addressLineOneTextBox.Size = new System.Drawing.Size(570, 22);
+            this.addressLineOneTextBox.TabIndex = 1;
             // 
             // groupBox12
             // 
@@ -1442,14 +1523,14 @@
             this.dgvStudentAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvStudentAddress.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvStudentAddress.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle124.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle124.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle124.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle124.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle124.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle124.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle124.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudentAddress.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle124;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudentAddress.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvStudentAddress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudentAddress.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.addressIsDefaultDataGridViewCheckBoxColumn,
@@ -1459,14 +1540,14 @@
             this.addressSuburbDataGridViewTextBoxColumn,
             this.addressAreaCodeDataGridViewTextBoxColumn});
             this.dgvStudentAddress.DataSource = this.addressesBindingSource;
-            dataGridViewCellStyle125.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle125.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle125.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle125.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle125.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle125.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle125.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudentAddress.DefaultCellStyle = dataGridViewCellStyle125;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudentAddress.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvStudentAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStudentAddress.EnableHeadersVisualStyles = false;
             this.dgvStudentAddress.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1474,14 +1555,14 @@
             this.dgvStudentAddress.Location = new System.Drawing.Point(0, 0);
             this.dgvStudentAddress.Name = "dgvStudentAddress";
             this.dgvStudentAddress.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle126.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle126.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle126.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle126.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle126.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle126.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle126.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudentAddress.RowHeadersDefaultCellStyle = dataGridViewCellStyle126;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudentAddress.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvStudentAddress.RowHeadersVisible = false;
             this.dgvStudentAddress.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvStudentAddress.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1534,7 +1615,7 @@
             this.bindingNavigator2.AddNewItem = null;
             this.bindingNavigator2.CountItem = this.bindingNavigatorCountItem1;
             this.bindingNavigator2.DeleteItem = null;
-            this.bindingNavigator2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bindingNavigator2.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.bindingNavigator2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem1,
@@ -1644,101 +1725,65 @@
             this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem1.Text = "Delete";
             // 
-            // tableLayoutPanel9
+            // gbContactInfo
             // 
-            this.tableLayoutPanel9.ColumnCount = 2;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.18182F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.81818F));
-            this.tableLayoutPanel9.Controls.Add(this.cboStudentAddressCountry, 1, 8);
-            this.tableLayoutPanel9.Controls.Add(this.cboStudentAddressProvince, 1, 4);
-            this.tableLayoutPanel9.Controls.Add(lookupProvinceLabel, 0, 4);
-            this.tableLayoutPanel9.Controls.Add(this.cboStudentAddressAddressType, 1, 0);
-            this.tableLayoutPanel9.Controls.Add(lookupAddressTypeLabel, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.addressSuburbTextBox, 1, 6);
-            this.tableLayoutPanel9.Controls.Add(addressAreaCodeLabel, 0, 7);
-            this.tableLayoutPanel9.Controls.Add(this.addressTownTextBox, 1, 5);
-            this.tableLayoutPanel9.Controls.Add(this.addressAreaCodeTextBox, 1, 7);
-            this.tableLayoutPanel9.Controls.Add(addressSuburbLabel, 0, 6);
-            this.tableLayoutPanel9.Controls.Add(this.addressIsDefaultCheckBox, 1, 1);
-            this.tableLayoutPanel9.Controls.Add(addressIsDefaultLabel, 0, 1);
-            this.tableLayoutPanel9.Controls.Add(addressTownLabel, 0, 5);
-            this.tableLayoutPanel9.Controls.Add(this.addressLineTwoTextBox, 1, 3);
-            this.tableLayoutPanel9.Controls.Add(addressLineTwoLabel, 0, 3);
-            this.tableLayoutPanel9.Controls.Add(this.addressLineOneTextBox, 1, 2);
-            this.tableLayoutPanel9.Controls.Add(addressLineOneLabel, 0, 2);
-            this.tableLayoutPanel9.Controls.Add(lookupCountryLabel, 0, 8);
-            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 18);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 9;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(704, 257);
-            this.tableLayoutPanel9.TabIndex = 12;
+            this.gbContactInfo.Location = new System.Drawing.Point(0, 589);
+            this.gbContactInfo.Margin = new System.Windows.Forms.Padding(0);
+            this.gbContactInfo.Name = "gbContactInfo";
+            this.gbContactInfo.Padding = new System.Windows.Forms.Padding(6);
+            this.gbContactInfo.Size = new System.Drawing.Size(150, 150);
+            this.gbContactInfo.TabIndex = 0;
+            this.gbContactInfo.TabStop = false;
+            this.gbContactInfo.Tag = "3";
+            this.gbContactInfo.Text = "Add/Update Contact Details";
             // 
-            // lookupAddressTypeLabel
+            // groupBox2
             // 
-            lookupAddressTypeLabel.AutoSize = true;
-            lookupAddressTypeLabel.Location = new System.Drawing.Point(3, 0);
-            lookupAddressTypeLabel.Name = "lookupAddressTypeLabel";
-            lookupAddressTypeLabel.Size = new System.Drawing.Size(86, 14);
-            lookupAddressTypeLabel.TabIndex = 42;
-            lookupAddressTypeLabel.Text = "Address Type:";
+            this.groupBox2.Location = new System.Drawing.Point(150, 589);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(5);
+            this.groupBox2.Size = new System.Drawing.Size(150, 150);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Tag = "4";
+            this.groupBox2.Text = "Add/Update Disability Details";
             // 
-            // cboStudentAddressAddressType
+            // groupBox1
             // 
-            this.cboStudentAddressAddressType.DisplayMember = "AddressType";
-            this.cboStudentAddressAddressType.FormattingEnabled = true;
-            this.cboStudentAddressAddressType.Location = new System.Drawing.Point(131, 3);
-            this.cboStudentAddressAddressType.Name = "cboStudentAddressAddressType";
-            this.cboStudentAddressAddressType.Size = new System.Drawing.Size(244, 22);
-            this.cboStudentAddressAddressType.TabIndex = 43;
-            this.cboStudentAddressAddressType.ValueMember = "AddressTypeID";
+            this.groupBox1.Location = new System.Drawing.Point(300, 589);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
+            this.groupBox1.Size = new System.Drawing.Size(150, 150);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Tag = "5";
+            this.groupBox1.Text = "Add/Update Company Details";
             // 
-            // lookupCountryLabel
+            // groupBox6
             // 
-            lookupCountryLabel.AutoSize = true;
-            lookupCountryLabel.Location = new System.Drawing.Point(3, 226);
-            lookupCountryLabel.Name = "lookupCountryLabel";
-            lookupCountryLabel.Size = new System.Drawing.Size(54, 14);
-            lookupCountryLabel.TabIndex = 44;
-            lookupCountryLabel.Text = "Country:";
+            this.groupBox6.Location = new System.Drawing.Point(450, 589);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(0);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(5);
+            this.groupBox6.Size = new System.Drawing.Size(150, 150);
+            this.groupBox6.TabIndex = 0;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Tag = "6";
+            this.groupBox6.Text = "Add/Update Next OF Kin Details";
             // 
-            // lookupProvinceLabel
+            // groupBox7
             // 
-            lookupProvinceLabel.AutoSize = true;
-            lookupProvinceLabel.Location = new System.Drawing.Point(3, 114);
-            lookupProvinceLabel.Name = "lookupProvinceLabel";
-            lookupProvinceLabel.Size = new System.Drawing.Size(57, 14);
-            lookupProvinceLabel.TabIndex = 45;
-            lookupProvinceLabel.Text = "Province:";
-            // 
-            // cboStudentAddressProvince
-            // 
-            this.cboStudentAddressProvince.DisplayMember = "Province";
-            this.cboStudentAddressProvince.FormattingEnabled = true;
-            this.cboStudentAddressProvince.Location = new System.Drawing.Point(131, 117);
-            this.cboStudentAddressProvince.Name = "cboStudentAddressProvince";
-            this.cboStudentAddressProvince.Size = new System.Drawing.Size(244, 22);
-            this.cboStudentAddressProvince.TabIndex = 46;
-            this.cboStudentAddressProvince.ValueMember = "ProvinceID";
-            // 
-            // cboStudentAddressCountry
-            // 
-            this.cboStudentAddressCountry.DisplayMember = "CountryName";
-            this.cboStudentAddressCountry.FormattingEnabled = true;
-            this.cboStudentAddressCountry.Location = new System.Drawing.Point(131, 229);
-            this.cboStudentAddressCountry.Name = "cboStudentAddressCountry";
-            this.cboStudentAddressCountry.Size = new System.Drawing.Size(244, 22);
-            this.cboStudentAddressCountry.TabIndex = 47;
-            this.cboStudentAddressCountry.ValueMember = "CountryID";
+            this.groupBox7.Location = new System.Drawing.Point(600, 589);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(0);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(5);
+            this.groupBox7.Size = new System.Drawing.Size(150, 150);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Tag = "7";
+            this.groupBox7.Text = "Summary";
             // 
             // frmStudentAddUpdate
             // 
@@ -1766,33 +1811,35 @@
             this.tableLayoutPanel10.ResumeLayout(false);
             this.MainflowLayoutPanel.ResumeLayout(false);
             this.gbEnquiryType.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentIDDocumentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentIDDocumentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.addressesBindingSource)).EndInit();
             this.groupBox11.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addressesBindingSource)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.toolStripContainer2.ContentPanel.ResumeLayout(false);
             this.toolStripContainer2.TopToolStripPanel.ResumeLayout(false);
@@ -1803,8 +1850,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
-            this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1925,5 +1970,10 @@
         private System.Windows.Forms.ComboBox cboStudentAddressAddressType;
         private System.Windows.Forms.ComboBox cboStudentAddressProvince;
         private System.Windows.Forms.ComboBox cboStudentAddressCountry;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentIDDocumentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imageIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fileDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentDataGridViewTextBoxColumn;
     }
 }
