@@ -290,6 +290,12 @@
     <Compile Include="Models\StudentDisability.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\StudentIDDocument.cs">
+      <DependentUpon>MCDEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentPhoto.cs">
+      <DependentUpon>MCDEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>

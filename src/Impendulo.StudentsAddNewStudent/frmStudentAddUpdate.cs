@@ -14,10 +14,12 @@ namespace Impendulo.Development.Students
 {
     public partial class frmStudentAddUpdate : MetroForm
     {
+
+        public Student CurrentStudent { get; set; }
         public int CurrentPosition { get; set; }
         public Boolean IsSuccessfullySaved { get; set; }
 
-        private Boolean MustSaveItems = false;
+        private Boolean mustSaveItems { get; set; }
 
         public Employee CurrentEmployeeLoggedIn
         {
@@ -29,6 +31,7 @@ namespace Impendulo.Development.Students
         {
             InitializeComponent();
             IsSuccessfullySaved = false;
+            mustSaveItems = false;
 
         }
 
@@ -58,6 +61,8 @@ namespace Impendulo.Development.Students
             this.loadupStep();
         }
 
+
+
         #region Wizard Comopnents
         #region "Navigation Controls"
         private void navigateForward()
@@ -75,7 +80,7 @@ namespace Impendulo.Development.Students
                     DialogResult res = MessageBox.Show("Are Details Correct?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (DialogResult.Yes == res)
                     {
-                        MustSaveItems = true;
+                        this.mustSaveItems = true;
                         this.Close();
                     }
                 }
@@ -304,5 +309,20 @@ namespace Impendulo.Development.Students
         #endregion
 
         #endregion
+
+        private void frmStudentAddUpdate_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (mustSaveItems)
+            {
+                using (var Dbconnection = new MCDEntities())
+                {
+                }
+            }
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

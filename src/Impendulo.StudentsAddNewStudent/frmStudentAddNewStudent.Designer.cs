@@ -687,7 +687,7 @@
             this.gbStudentCompany.Margin = new System.Windows.Forms.Padding(0);
             this.gbStudentCompany.Name = "gbStudentCompany";
             this.gbStudentCompany.Padding = new System.Windows.Forms.Padding(0);
-            this.gbStudentCompany.Size = new System.Drawing.Size(852, 364);
+            this.gbStudentCompany.Size = new System.Drawing.Size(294, 81);
             this.gbStudentCompany.TabIndex = 4;
             this.gbStudentCompany.TabStop = false;
             this.gbStudentCompany.Tag = "4";
@@ -707,7 +707,7 @@
             this.groupBox1.Controls.Add(companySETANumberLabel);
             this.groupBox1.Location = new System.Drawing.Point(161, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(676, 206);
+            this.groupBox1.Size = new System.Drawing.Size(118, 206);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Company Details";
@@ -778,11 +778,11 @@
             // 
             this.gbStudentNextOfKin.Controls.Add(this.gbStudnetNextOfKin);
             this.gbStudentNextOfKin.Controls.Add(this.toolStripContainerStudentNextOfKin);
-            this.gbStudentNextOfKin.Location = new System.Drawing.Point(0, 364);
+            this.gbStudentNextOfKin.Location = new System.Drawing.Point(294, 0);
             this.gbStudentNextOfKin.Margin = new System.Windows.Forms.Padding(0);
             this.gbStudentNextOfKin.Name = "gbStudentNextOfKin";
             this.gbStudentNextOfKin.Padding = new System.Windows.Forms.Padding(0);
-            this.gbStudentNextOfKin.Size = new System.Drawing.Size(733, 511);
+            this.gbStudentNextOfKin.Size = new System.Drawing.Size(316, 143);
             this.gbStudentNextOfKin.TabIndex = 5;
             this.gbStudentNextOfKin.TabStop = false;
             this.gbStudentNextOfKin.Tag = "5";
@@ -803,11 +803,11 @@
             // toolStripContainerStudentNextOfKin.ContentPanel
             // 
             this.toolStripContainerStudentNextOfKin.ContentPanel.Controls.Add(this.dgvStudentNextOfKin);
-            this.toolStripContainerStudentNextOfKin.ContentPanel.Size = new System.Drawing.Size(733, 148);
+            this.toolStripContainerStudentNextOfKin.ContentPanel.Size = new System.Drawing.Size(316, 148);
             this.toolStripContainerStudentNextOfKin.Dock = System.Windows.Forms.DockStyle.Top;
             this.toolStripContainerStudentNextOfKin.Location = new System.Drawing.Point(0, 15);
             this.toolStripContainerStudentNextOfKin.Name = "toolStripContainerStudentNextOfKin";
-            this.toolStripContainerStudentNextOfKin.Size = new System.Drawing.Size(733, 175);
+            this.toolStripContainerStudentNextOfKin.Size = new System.Drawing.Size(316, 175);
             this.toolStripContainerStudentNextOfKin.TabIndex = 0;
             this.toolStripContainerStudentNextOfKin.Text = "toolStripContainer1";
             // 
@@ -822,7 +822,7 @@
             this.dgvStudentNextOfKin.Location = new System.Drawing.Point(0, 0);
             this.dgvStudentNextOfKin.Name = "dgvStudentNextOfKin";
             this.dgvStudentNextOfKin.RowTemplate.Height = 24;
-            this.dgvStudentNextOfKin.Size = new System.Drawing.Size(733, 148);
+            this.dgvStudentNextOfKin.Size = new System.Drawing.Size(316, 148);
             this.dgvStudentNextOfKin.TabIndex = 0;
             // 
             // BindingNavigatorStudnetNextOfKin
@@ -852,7 +852,7 @@
             this.BindingNavigatorStudnetNextOfKin.MovePreviousItem = this.bindingNavigatorMovePreviousItem4;
             this.BindingNavigatorStudnetNextOfKin.Name = "BindingNavigatorStudnetNextOfKin";
             this.BindingNavigatorStudnetNextOfKin.PositionItem = this.bindingNavigatorPositionItem4;
-            this.BindingNavigatorStudnetNextOfKin.Size = new System.Drawing.Size(733, 27);
+            this.BindingNavigatorStudnetNextOfKin.Size = new System.Drawing.Size(316, 27);
             this.BindingNavigatorStudnetNextOfKin.Stretch = true;
             this.BindingNavigatorStudnetNextOfKin.TabIndex = 0;
             // 
@@ -945,11 +945,11 @@
             // 
             this.gbStudentAddressDetails.Controls.Add(this.tabControl1);
             this.gbStudentAddressDetails.Controls.Add(this.ToolStripContainerStudentAddresses);
-            this.gbStudentAddressDetails.Location = new System.Drawing.Point(733, 364);
+            this.gbStudentAddressDetails.Location = new System.Drawing.Point(0, 143);
             this.gbStudentAddressDetails.Margin = new System.Windows.Forms.Padding(0);
             this.gbStudentAddressDetails.Name = "gbStudentAddressDetails";
             this.gbStudentAddressDetails.Padding = new System.Windows.Forms.Padding(0);
-            this.gbStudentAddressDetails.Size = new System.Drawing.Size(213, 102);
+            this.gbStudentAddressDetails.Size = new System.Drawing.Size(899, 590);
             this.gbStudentAddressDetails.TabIndex = 1;
             this.gbStudentAddressDetails.TabStop = false;
             this.gbStudentAddressDetails.Tag = "1";
@@ -962,7 +962,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 171);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(213, 0);
+            this.tabControl1.Size = new System.Drawing.Size(899, 419);
             this.tabControl1.TabIndex = 40;
             // 
             // tabPage1
@@ -971,7 +971,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(205, 0);
+            this.tabPage1.Size = new System.Drawing.Size(891, 392);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add/Edit Adress";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1000,7 +1000,7 @@
             this.gbSutdentAddressAddEdit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbSutdentAddressAddEdit.Location = new System.Drawing.Point(3, 3);
             this.gbSutdentAddressAddEdit.Name = "gbSutdentAddressAddEdit";
-            this.gbSutdentAddressAddEdit.Size = new System.Drawing.Size(199, 0);
+            this.gbSutdentAddressAddEdit.Size = new System.Drawing.Size(885, 386);
             this.gbSutdentAddressAddEdit.TabIndex = 38;
             this.gbSutdentAddressAddEdit.TabStop = false;
             this.gbSutdentAddressAddEdit.Text = "Edit Student Address";
@@ -1149,11 +1149,11 @@
             // ToolStripContainerStudentAddresses.ContentPanel
             // 
             this.ToolStripContainerStudentAddresses.ContentPanel.Controls.Add(this.dgvStudentAddresses);
-            this.ToolStripContainerStudentAddresses.ContentPanel.Size = new System.Drawing.Size(213, 129);
+            this.ToolStripContainerStudentAddresses.ContentPanel.Size = new System.Drawing.Size(899, 129);
             this.ToolStripContainerStudentAddresses.Dock = System.Windows.Forms.DockStyle.Top;
             this.ToolStripContainerStudentAddresses.Location = new System.Drawing.Point(0, 15);
             this.ToolStripContainerStudentAddresses.Name = "ToolStripContainerStudentAddresses";
-            this.ToolStripContainerStudentAddresses.Size = new System.Drawing.Size(213, 156);
+            this.ToolStripContainerStudentAddresses.Size = new System.Drawing.Size(899, 156);
             this.ToolStripContainerStudentAddresses.TabIndex = 39;
             this.ToolStripContainerStudentAddresses.Text = "toolStripContainer1";
             // 
@@ -1188,7 +1188,7 @@
             this.dgvStudentAddresses.ReadOnly = true;
             this.dgvStudentAddresses.RowTemplate.Height = 24;
             this.dgvStudentAddresses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudentAddresses.Size = new System.Drawing.Size(213, 129);
+            this.dgvStudentAddresses.Size = new System.Drawing.Size(899, 129);
             this.dgvStudentAddresses.TabIndex = 36;
             this.dgvStudentAddresses.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvStudentAddresses_DataBindingComplete);
             // 
@@ -1308,7 +1308,7 @@
             this.BindingNavigatorStudentAddresses.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.BindingNavigatorStudentAddresses.Name = "BindingNavigatorStudentAddresses";
             this.BindingNavigatorStudentAddresses.PositionItem = this.bindingNavigatorPositionItem;
-            this.BindingNavigatorStudentAddresses.Size = new System.Drawing.Size(213, 27);
+            this.BindingNavigatorStudentAddresses.Size = new System.Drawing.Size(899, 27);
             this.BindingNavigatorStudentAddresses.Stretch = true;
             this.BindingNavigatorStudentAddresses.TabIndex = 2;
             this.BindingNavigatorStudentAddresses.Text = "bindingNavigator1";
@@ -1409,7 +1409,7 @@
             // 
             this.gbAddStudentContactDetailRadioButtons.Controls.Add(this.tabControl3);
             this.gbAddStudentContactDetailRadioButtons.Controls.Add(this.toolStripContainerStudentContacts);
-            this.gbAddStudentContactDetailRadioButtons.Location = new System.Drawing.Point(0, 875);
+            this.gbAddStudentContactDetailRadioButtons.Location = new System.Drawing.Point(0, 733);
             this.gbAddStudentContactDetailRadioButtons.Margin = new System.Windows.Forms.Padding(0);
             this.gbAddStudentContactDetailRadioButtons.Name = "gbAddStudentContactDetailRadioButtons";
             this.gbAddStudentContactDetailRadioButtons.Padding = new System.Windows.Forms.Padding(0);
@@ -1767,7 +1767,7 @@
             // 
             this.gbStudentDisability.Controls.Add(this.tabControl4);
             this.gbStudentDisability.Controls.Add(this.toolStripContainerStudentDisablity);
-            this.gbStudentDisability.Location = new System.Drawing.Point(280, 875);
+            this.gbStudentDisability.Location = new System.Drawing.Point(280, 733);
             this.gbStudentDisability.Margin = new System.Windows.Forms.Padding(0);
             this.gbStudentDisability.Name = "gbStudentDisability";
             this.gbStudentDisability.Padding = new System.Windows.Forms.Padding(0);
@@ -2055,11 +2055,11 @@
             // gbStudentDetails
             // 
             this.gbStudentDetails.Controls.Add(this.tabControl2);
-            this.gbStudentDetails.Location = new System.Drawing.Point(602, 875);
+            this.gbStudentDetails.Location = new System.Drawing.Point(0, 853);
             this.gbStudentDetails.Margin = new System.Windows.Forms.Padding(0);
             this.gbStudentDetails.Name = "gbStudentDetails";
             this.gbStudentDetails.Padding = new System.Windows.Forms.Padding(0);
-            this.gbStudentDetails.Size = new System.Drawing.Size(305, 243);
+            this.gbStudentDetails.Size = new System.Drawing.Size(401, 146);
             this.gbStudentDetails.TabIndex = 0;
             this.gbStudentDetails.TabStop = false;
             this.gbStudentDetails.Tag = "0";
@@ -2072,7 +2072,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 15);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(305, 228);
+            this.tabControl2.Size = new System.Drawing.Size(401, 131);
             this.tabControl2.TabIndex = 54;
             // 
             // tabPage2
@@ -2081,7 +2081,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(297, 201);
+            this.tabPage2.Size = new System.Drawing.Size(393, 104);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "Student";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -2112,7 +2112,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(291, 195);
+            this.groupBox3.Size = new System.Drawing.Size(387, 98);
             this.groupBox3.TabIndex = 52;
             this.groupBox3.TabStop = false;
             // 
