@@ -644,7 +644,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                     {
                         CurrentEnrollments.EnrollmentDocuments.Add(new EnrollmentDocument()
                         {
-                            ImageID = f.ImageID,
+                            FileID = f.FileID,
                             EnrollmentID = CurrentEnrollments.EnrollmentID,
                             LookupEnrollmentDocumentTypeID = (int)EnumEnrollentDocumentTypes.Enrollment_Documents
                         });
@@ -653,7 +653,7 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
                     {
                         CurrentEnrollments.EnrollmentDocuments.Add(new EnrollmentDocument()
                         {
-                            ImageID = f.ImageID,
+                            FileID = f.FileID,
                             EnrollmentID = CurrentEnrollments.EnrollmentID,
                             LookupEnrollmentDocumentTypeID = (int)EnumEnrollentDocumentTypes.ID_Documents
                         });

@@ -254,7 +254,7 @@ namespace Impendulo.Common
                             using (var Dbconnection = new MCDEntities())
                             {
                                 Data.Models.File FileImage = (from a in Dbconnection.Files
-                                                              where a.ImageID == myAttachment.DatabaseFileID
+                                                              where a.FileID == myAttachment.DatabaseFileID
                                                               select a).FirstOrDefault();
 
                                 MemoryStream ms = new MemoryStream(FileImage.FileImage);

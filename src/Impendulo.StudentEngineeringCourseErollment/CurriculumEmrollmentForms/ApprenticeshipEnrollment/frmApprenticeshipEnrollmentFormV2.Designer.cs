@@ -320,7 +320,7 @@
             this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(526, 51);
             this.tableLayoutPanel10.TabIndex = 3;
             // 
@@ -332,7 +332,7 @@
             this.wizardStepProgressBar.MarqueeAnimationSpeed = 500;
             this.wizardStepProgressBar.Name = "wizardStepProgressBar";
             this.wizardStepProgressBar.ProgressBarStyle = System.Windows.Forms.ProgressBarStyle.Blocks;
-            this.wizardStepProgressBar.Size = new System.Drawing.Size(255, 45);
+            this.wizardStepProgressBar.Size = new System.Drawing.Size(255, 46);
             this.wizardStepProgressBar.Step = 1;
             this.wizardStepProgressBar.Style = MetroFramework.MetroColorStyle.Blue;
             this.wizardStepProgressBar.TabIndex = 22;
@@ -345,7 +345,7 @@
             this.btnPreviousSection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPreviousSection.Location = new System.Drawing.Point(4, 4);
             this.btnPreviousSection.Name = "btnPreviousSection";
-            this.btnPreviousSection.Size = new System.Drawing.Size(124, 45);
+            this.btnPreviousSection.Size = new System.Drawing.Size(124, 46);
             this.btnPreviousSection.TabIndex = 0;
             this.btnPreviousSection.Text = "Previous";
             this.btnPreviousSection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -361,7 +361,7 @@
             this.btnNextSection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNextSection.Location = new System.Drawing.Point(397, 4);
             this.btnNextSection.Name = "btnNextSection";
-            this.btnNextSection.Size = new System.Drawing.Size(125, 45);
+            this.btnNextSection.Size = new System.Drawing.Size(125, 46);
             this.btnNextSection.TabIndex = 1;
             this.btnNextSection.Text = "Next";
             this.btnNextSection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

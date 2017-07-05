@@ -494,7 +494,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Deployment.EnrollmentInpro
                     {
                         try
                         {
-                            File CurrentFile = FileHandeling.GetFile(x.ImageID);
+                            File CurrentFile = FileHandeling.GetFile(x.FileID);
                             string path = folderBrowserDialogForDownloading.SelectedPath + "\\" + x.FileName;
                             System.IO.File.WriteAllBytes(path, CurrentFile.FileImage);
                             MessageBox.Show(x.FileName + ", Successfully Saved to: " + path, "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);

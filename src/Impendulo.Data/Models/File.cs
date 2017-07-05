@@ -24,7 +24,7 @@ namespace Impendulo.Data.Models
             this.StudentPhotos = new ObservableListSource<StudentPhoto>();
         }
     
-        public int ImageID { get; set; }
+        public int FileID { get; set; }
         public string ContentType { get; set; }
         public byte[] FileImage { get; set; }
         public string FileName { get; set; }

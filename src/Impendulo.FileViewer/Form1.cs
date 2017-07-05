@@ -30,7 +30,7 @@ namespace Impendulo.FileViewer.Development
             {
 
                 CurrentFile = (from a in Dbconnection.Files
-                               where a.ImageID == 1029
+                               where a.FileID == 1029
                                select a).FirstOrDefault<Impendulo.Data.Models.File>();
             };
 

@@ -124,31 +124,6 @@ namespace Impendulo.Addresses.Development
 
         private void btnStudentAddressAddUpdate_Click(object sender, EventArgs e)
         {
-            //using (var Dbconnection = new MCDEntities())
-            //{
-            //    Address AddressToUpdate = (from a in Dbconnection.Addresses
-            //                               where a.AddressID == this.AddressID
-            //                               select a).FirstOrDefault<Address>();
-
-            //    AddressToUpdate.AddressTypeID = Convert.ToInt32(cboStudentAddressAddressType.SelectedValue);
-            //    AddressToUpdate.AddressIsDefault = chkStudnetAddressIsDefault.Checked;
-            //    AddressToUpdate.CountryID = Convert.ToInt32(cboStudentAddressCountry.SelectedValue);
-            //    AddressToUpdate.ProvinceID = Convert.ToInt32(cboStudentAddressProvince.SelectedValue);
-            //    AddressToUpdate.AddressLineTwo = txtStudentAddressLineTwo.Text.ToString();
-            //    AddressToUpdate.AddressLineOne = txtStudentAddressLineOne.Text.ToString();
-            //    AddressToUpdate.AddressTown = txtStudentAddressTown.Text.ToString();
-            //    AddressToUpdate.AddressSuburb = txtStudentAddressSuburb.Text.ToString();
-            //    AddressToUpdate.AddressAreaCode = txtStudentAddressAreaCode.Text.ToString();
-            //    AddressToUpdate.AddressModifiedDate = DateTime.Now;
-
-            //    Dbconnection.SaveChanges();
-
-            //    Dbconnection.Entry(AddressToUpdate).Reference(a => a.LookupAddressType).Load();
-            //    Dbconnection.Entry(AddressToUpdate).Reference(a => a.LookupProvince).Load();
-            //    Dbconnection.Entry(AddressToUpdate).Reference(a => a.LookupCountry).Load();
-
-
-            //};
 
             using (var Dbconnection = new MCDEntities())
             {

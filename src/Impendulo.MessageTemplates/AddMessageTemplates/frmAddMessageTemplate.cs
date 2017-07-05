@@ -66,7 +66,7 @@ namespace Impendulo.MessageTemplates.Development.AddMessageTemplates
             List<Data.Models.File> res = (from a in CurrentMessageAttachmentFileInfo
                                           select new Data.Models.File
                                           {
-                                              ImageID = 0,
+                                              FileID = 0,
                                               FileImage = null,
                                               ContentType = "",
                                               DateCreated = DateTime.Now,

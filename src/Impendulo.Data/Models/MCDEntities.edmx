@@ -3360,7 +3360,7 @@
           </Key>
           <Property Name="EnrollmentDocumentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EnrollmentID" Type="Int32" Nullable="false" />
-          <Property Name="ImageID" Type="Int32" Nullable="false" />
+          <Property Name="FileID" Type="Int32" Nullable="false" />
           <Property Name="LookupEnrollmentDocumentTypeID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="File" Relationship="MCDModel.FK_EnrollmentDocuments_Files" FromRole="EnrollmentDocument" ToRole="File" />
           <NavigationProperty Name="LookupEnrollentDocumentType" Relationship="MCDModel.FK_EnrollmentDocuments_LookupEnrollentDocumentTypes" FromRole="EnrollmentDocument" ToRole="LookupEnrollentDocumentType" />
@@ -3420,9 +3420,9 @@
         </EntityType>
         <EntityType Name="File">
           <Key>
-            <PropertyRef Name="ImageID" />
+            <PropertyRef Name="FileID" />
           </Key>
-          <Property Name="ImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ContentType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="FileImage" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
           <Property Name="FileName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -3439,10 +3439,10 @@
             <PropertyRef Name="IndividualID" />
           </Key>
           <Property Name="IndividualID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TitleID" Type="Int32" Nullable="false" />
-          <Property Name="IndividualFirstName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="IndividualSecondName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="IndividualLastname" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TitleID" Type="Int32" Nullable="false" DefaultValue="1" />
+          <Property Name="IndividualFirstName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" DefaultValue="" />
+          <Property Name="IndividualSecondName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" DefaultValue="" />
+          <Property Name="IndividualLastname" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" DefaultValue="" />
           <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="Assessor" Relationship="MCDModel.FK_Assessors_Individuals" FromRole="Individual" ToRole="Assessor" />
           <NavigationProperty Name="Employee" Relationship="MCDModel.FK_Employees_Individuals" FromRole="Individual" ToRole="Employee" />
@@ -3751,10 +3751,10 @@
             <PropertyRef Name="StudentID" />
           </Key>
           <Property Name="StudentID" Type="Int32" Nullable="false" />
-          <Property Name="QualificationLevelID" Type="Int32" Nullable="false" />
-          <Property Name="MartialStatusID" Type="Int32" Nullable="false" />
-          <Property Name="GenderID" Type="Int32" Nullable="false" />
-          <Property Name="EthnicityID" Type="Int32" Nullable="false" />
+          <Property Name="QualificationLevelID" Type="Int32" Nullable="false" DefaultValue="1" />
+          <Property Name="MartialStatusID" Type="Int32" Nullable="false" DefaultValue="5" />
+          <Property Name="GenderID" Type="Int32" Nullable="false" DefaultValue="1" />
+          <Property Name="EthnicityID" Type="Int32" Nullable="false" DefaultValue="1" />
           <Property Name="StudentIDNumber" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="StudentCurrentPosition" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="StudentlInitialDate" Type="DateTime" Nullable="false" Precision="3" />
@@ -4281,10 +4281,10 @@
           <End Type="MCDModel.EnrollmentDocument" Role="EnrollmentDocument" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="File">
-              <PropertyRef Name="ImageID" />
+              <PropertyRef Name="FileID" />
             </Principal>
             <Dependent Role="EnrollmentDocument">
-              <PropertyRef Name="ImageID" />
+              <PropertyRef Name="FileID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4760,8 +4760,8 @@
             <PropertyRef Name="StudentIDDocumentID" />
           </Key>
           <Property Name="StudentIDDocumentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IndividualID" Type="Int32" Nullable="false" />
-          <Property Name="ImageID" Type="Int32" Nullable="false" />
+          <Property Name="StudentID" Type="Int32" Nullable="false" />
+          <Property Name="FileID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="File" Relationship="MCDModel.FK_StudentIDDocuments_Files" FromRole="StudentIDDocument" ToRole="File" />
           <NavigationProperty Name="Student" Relationship="MCDModel.FK_StudentIDDocuments_Students" FromRole="StudentIDDocument" ToRole="Student" />
         </EntityType>
@@ -4770,33 +4770,39 @@
             <PropertyRef Name="StudentPhotoID" />
           </Key>
           <Property Name="StudentPhotoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IndividualID" Type="Int32" Nullable="false" />
-          <Property Name="ImageID" Type="Int32" Nullable="false" />
+          <Property Name="StudentID" Type="Int32" Nullable="false" />
+          <Property Name="FileID" Type="Int32" Nullable="false" />
           <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="File" Relationship="MCDModel.FK_StudentPhotos_Files" FromRole="StudentPhoto" ToRole="File" />
           <NavigationProperty Name="Student" Relationship="MCDModel.FK_StudentPhotos_Students" FromRole="StudentPhoto" ToRole="Student" />
         </EntityType>
         <Association Name="FK_StudentIDDocuments_Files">
-          <End Type="MCDModel.File" Role="File" Multiplicity="1" />
-          <End Type="MCDModel.StudentIDDocument" Role="StudentIDDocument" Multiplicity="*" />
+          <End Type="MCDModel.File" Role="File" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MCDModel.StudentIDDocument" Role="StudentIDDocument" Multiplicity="*" >
+          </End>
           <ReferentialConstraint>
             <Principal Role="File">
-              <PropertyRef Name="ImageID" />
+              <PropertyRef Name="FileID" />
             </Principal>
             <Dependent Role="StudentIDDocument">
-              <PropertyRef Name="ImageID" />
+              <PropertyRef Name="FileID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StudentPhotos_Files">
-          <End Type="MCDModel.File" Role="File" Multiplicity="1" />
-          <End Type="MCDModel.StudentPhoto" Role="StudentPhoto" Multiplicity="*" />
+          <End Type="MCDModel.File" Role="File" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MCDModel.StudentPhoto" Role="StudentPhoto" Multiplicity="*" >
+          </End>
           <ReferentialConstraint>
             <Principal Role="File">
-              <PropertyRef Name="ImageID" />
+              <PropertyRef Name="FileID" />
             </Principal>
             <Dependent Role="StudentPhoto">
-              <PropertyRef Name="ImageID" />
+              <PropertyRef Name="FileID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4808,7 +4814,7 @@
               <PropertyRef Name="StudentID" />
             </Principal>
             <Dependent Role="StudentIDDocument">
-              <PropertyRef Name="IndividualID" />
+              <PropertyRef Name="StudentID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4820,7 +4826,7 @@
               <PropertyRef Name="StudentID" />
             </Principal>
             <Dependent Role="StudentPhoto">
-              <PropertyRef Name="IndividualID" />
+              <PropertyRef Name="StudentID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5130,7 +5136,7 @@
             <EntityTypeMapping TypeName="MCDModel.EnrollmentDocument">
               <MappingFragment StoreEntitySet="EnrollmentDocuments">
                 <ScalarProperty Name="LookupEnrollmentDocumentTypeID" ColumnName="LookupEnrollmentDocumentTypeID" />
-                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="FileID" ColumnName="ImageID" />
                 <ScalarProperty Name="EnrollmentID" ColumnName="EnrollmentID" />
                 <ScalarProperty Name="EnrollmentDocumentID" ColumnName="EnrollmentDocumentID" />
               </MappingFragment>
@@ -5189,7 +5195,7 @@
                 <ScalarProperty Name="FileName" ColumnName="FileName" />
                 <ScalarProperty Name="FileImage" ColumnName="FileImage" />
                 <ScalarProperty Name="ContentType" ColumnName="ContentType" />
-                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="FileID" ColumnName="ImageID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5594,7 +5600,7 @@
           </AssociationSetMapping>
           <AssociationSetMapping Name="EmailMessageRepositoryAttachments" TypeName="MCDModel.EmailMessageRepositoryAttachments" StoreEntitySet="EmailMessageRepositoryAttachments">
             <EndProperty Name="File">
-              <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+              <ScalarProperty Name="FileID" ColumnName="ImageID" />
             </EndProperty>
             <EndProperty Name="EmailMessageRepository">
               <ScalarProperty Name="EmailMessageRepositoryID" ColumnName="EmailMessageRepositoryID" />
@@ -5645,7 +5651,7 @@
               <ScalarProperty Name="MessageTemplateID" ColumnName="MessageTemplateID" />
             </EndProperty>
             <EndProperty Name="File">
-              <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+              <ScalarProperty Name="FileID" ColumnName="ImageID" />
             </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="StudentNextOfKins" TypeName="MCDModel.StudentNextOfKins" StoreEntitySet="StudentNextOfKins">
@@ -5688,8 +5694,8 @@
           <EntitySetMapping Name="StudentIDDocuments">
             <EntityTypeMapping TypeName="MCDModel.StudentIDDocument">
               <MappingFragment StoreEntitySet="StudentIDDocuments">
-                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
-                <ScalarProperty Name="IndividualID" ColumnName="IndividualID" />
+                <ScalarProperty Name="FileID" ColumnName="ImageID" />
+                <ScalarProperty Name="StudentID" ColumnName="IndividualID" />
                 <ScalarProperty Name="StudentIDDocumentID" ColumnName="StudentIDDocumentID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -5698,8 +5704,8 @@
             <EntityTypeMapping TypeName="MCDModel.StudentPhoto">
               <MappingFragment StoreEntitySet="StudentPhotos">
                 <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
-                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
-                <ScalarProperty Name="IndividualID" ColumnName="IndividualID" />
+                <ScalarProperty Name="FileID" ColumnName="ImageID" />
+                <ScalarProperty Name="StudentID" ColumnName="IndividualID" />
                 <ScalarProperty Name="StudentPhotoID" ColumnName="StudentPhotoID" />
               </MappingFragment>
             </EntityTypeMapping>

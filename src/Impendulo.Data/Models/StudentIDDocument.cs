@@ -15,8 +15,8 @@ namespace Impendulo.Data.Models
     public partial class StudentIDDocument
     {
         public int StudentIDDocumentID { get; set; }
-        public int IndividualID { get; set; }
-        public int ImageID { get; set; }
+        public int StudentID { get; set; }
+        public int FileID { get; set; }
     
         public virtual File File { get; set; }
         public virtual Student Student { get; set; }

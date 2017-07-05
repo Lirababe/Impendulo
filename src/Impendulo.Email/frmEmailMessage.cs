@@ -104,10 +104,10 @@ namespace Impendulo.Email.Development
                 foreach (int _ImageFileID in AttachmentsUsingDbImageFileID)
                 {
                     var CurrentImageFile = (from a in Dbconnection.Files
-                                            where a.ImageID == _ImageFileID
+                                            where a.FileID == _ImageFileID
                                             select new
                                             {
-                                                ImageID = a.ImageID,
+                                                ImageID = a.FileID,
                                                 FileExtension = a.FileExtension,
                                                 FileName = a.FileName,
                                                 DateCreated = a.DateCreated

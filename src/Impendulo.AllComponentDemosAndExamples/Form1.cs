@@ -38,14 +38,14 @@ namespace Impendulo.AllComponentDemosAndExamples
                              DateCreated = a.DateCreated,
                              FileExtension = a.FileExtension,
                              FileName = a.FileName,
-                             ImageID = a.ImageID
+                             ImageID = a.FileID
                          }).ToList();
                 List<Data.Models.File> ListOfAttachments = new List<Data.Models.File>();
                 foreach (var a in x)
                 {
                     ListOfAttachments.Add(new Data.Models.File
                     {
-                        ImageID = a.ImageID,
+                        FileID = a.ImageID,
                         ContentType = "",
                         DateCreated = a.DateCreated,
                         FileExtension = a.FileExtension,
@@ -112,7 +112,7 @@ namespace Impendulo.AllComponentDemosAndExamples
                 NewMessage.RequireSSL = EmailSettings.RequiresSSL;
 
                 //add an attachment that is linked to the data base
-                NewMessage.AddAttachment(new EmailAttachmentMetaData(((Data.Models.File)fileBindingSource.Current).ImageID));
+                NewMessage.AddAttachment(new EmailAttachmentMetaData(((Data.Models.File)fileBindingSource.Current).FileID));
 
 
                 NewMessage.sendMessage();

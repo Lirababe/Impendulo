@@ -188,7 +188,7 @@ namespace Impendulo.ClientEnquiry.Development
                         {
                             foreach (Data.Models.File FileObj in MTObj.Files)
                             {
-                                frm1.AttachmentsUsingDbImageFileID.Add(FileObj.ImageID);
+                                frm1.AttachmentsUsingDbImageFileID.Add(FileObj.FileID);
                             }
                         }
 

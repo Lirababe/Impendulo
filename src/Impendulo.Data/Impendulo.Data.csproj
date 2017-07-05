@@ -145,10 +145,14 @@
     <Compile Include="Models\EnrollmentDocument.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Enum\Class1.cs" />
     <Compile Include="Models\EquiryHistory.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ExtendedClasses\File.cs" />
     <Compile Include="Models\ExtendedClasses\Individual.cs" />
+    <Compile Include="Models\ExtendedClasses\Student.cs" />
+    <Compile Include="Models\ExtendedClasses\StudentPhotos.cs" />
     <Compile Include="Models\Facilitator.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
@@ -170,6 +174,7 @@
     <Compile Include="Models\Individual.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Interfaces\Interface1.cs" />
     <Compile Include="Models\Login.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
@@ -302,6 +307,7 @@
     <Compile Include="Models\SystemAdministrator.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Validation Class\MCDEntities.cs" />
     <Compile Include="Models\Venue.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
@@ -325,6 +331,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="NewFolder1\" />
     <Folder Include="Repository\" />
   </ItemGroup>
   <ItemGroup>

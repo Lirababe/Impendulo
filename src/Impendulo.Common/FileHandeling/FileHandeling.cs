@@ -12,29 +12,34 @@ namespace Impendulo.Common.FileHandeling
     public static class FileHandeling
     {
 
+        private static FileStream fs;
+        private static BinaryReader br;
         // private static OpenFileDialog openFileDialogOpenFiles { get; set; }
         // public static Impendulo.Data.Models.File[] CurrentlyUploadedFiles { get; set; }
 
-        public static List<Impendulo.Data.Models.File> UploadFile()
+        public static List<Impendulo.Data.Models.File> UploadFile(Boolean UseMultipleFileSelect = true, Boolean AutomaicallyAddFileToDatabase = true, Boolean ImagesOnly = false)
         {
 
             List<Impendulo.Data.Models.File> CurrentlyUploadedFiles = new List<Impendulo.Data.Models.File>();
             OpenFileDialog openFileDialogOpenFiles = new OpenFileDialog();
-            openFileDialogOpenFiles.Multiselect = true;
+            openFileDialogOpenFiles.Multiselect = UseMultipleFileSelect;
+            if (ImagesOnly)
+            {
+                openFileDialogOpenFiles.Filter = "Image Files(*.BMP; *.JPG; *.GIF, *.PNG)| *.BMP; *.JPG; *.GIF; *.PNG";
+            }
             openFileDialogOpenFiles.ShowDialog();
             if (openFileDialogOpenFiles.FileNames.Count() > 0)
             {
-
                 foreach (string LocalFileName in openFileDialogOpenFiles.FileNames)
                 {
 
                     FileInfo fileInfo = new FileInfo(LocalFileName);
-                    FileStream fs;
-                    BinaryReader br;
+
                     Byte[] fileToUpload = new Byte[Convert.ToInt32(fileInfo.Length)];
 
                     try
                     {
+
                         fs = new FileStream(LocalFileName, FileMode.Open, FileAccess.Read);
                         br = new BinaryReader(fs);
                         fileToUpload = br.ReadBytes(Convert.ToInt32(fileInfo.Length));
@@ -62,10 +67,20 @@ namespace Impendulo.Common.FileHandeling
                     catch (Exception)
                     {
                         throw;
+                    }
+                    finally
+                    {
+                        if (br != null)
+                        {
+                            br.Close();
+                        }
+                        if (fs != null)
+                        {
+                            fs.Close();
+                        }
                     };
-
                 }
-                if (CurrentlyUploadedFiles.Count > 0)
+                if (CurrentlyUploadedFiles.Count > 0 && AutomaicallyAddFileToDatabase)
                 {
                     using (var DbConnection = new MCDEntities())
                     {
@@ -76,8 +91,52 @@ namespace Impendulo.Common.FileHandeling
             }
             return CurrentlyUploadedFiles;
         }
+        public static Boolean RemoveFile(List<Data.Models.File> FilesToRemove)
+        {
+            Boolean Rtn = false;
+            try
+            {
+                using (var Dbconnection = new MCDEntities())
+                {
+                    foreach (Data.Models.File f in FilesToRemove)
+                    {
+                        Dbconnection.Files.Attach(f);
+                    }
+                    Dbconnection.Files.RemoveRange(FilesToRemove);
+                    Rtn = true;
+                };
+            }
+            catch (Exception ex)
+            {
+                Rtn = false;
+            }
+            return Rtn;
+        }
+        public static Boolean RemoveFile(Data.Models.File FileToRemove)
+        {
+            Boolean Rtn = false;
 
-        public static Impendulo.Data.Models.File GetFile(int FileID)
+            List<Data.Models.File> x = new List<Data.Models.File>();
+            x.Add(FileToRemove);
+            Rtn = RemoveFile(x);
+            return Rtn;
+        }
+        public static Boolean RemoveFile(int FileID)
+        {
+            Boolean Rtn = false;
+
+            using (var Dbconnection = new MCDEntities())
+            {
+                Data.Models.File f = (from a in Dbconnection.Files
+                                      where a.FileID == FileID
+                                      select a).FirstOrDefault<Data.Models.File>();
+                Dbconnection.Files.Remove(f);
+                Dbconnection.SaveChanges();
+                Rtn = true;
+            };
+            return Rtn;
+        }
+        public static Impendulo.Data.Models.File GetFile(int FileID = 0)
         {
 
             Impendulo.Data.Models.File CurrentFile = null;
@@ -85,7 +144,7 @@ namespace Impendulo.Common.FileHandeling
             using (var Dbconnection = new MCDEntities())
             {
                 CurrentFile = (from a in Dbconnection.Files
-                               where a.ImageID == FileID
+                               where a.FileID == FileID
                                select a).FirstOrDefault<Impendulo.Data.Models.File>();
             };
             return CurrentFile;

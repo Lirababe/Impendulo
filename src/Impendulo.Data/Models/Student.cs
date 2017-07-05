@@ -17,6 +17,10 @@ namespace Impendulo.Data.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Student()
         {
+            this.QualificationLevelID = 1;
+            this.MartialStatusID = 5;
+            this.GenderID = 1;
+            this.EthnicityID = 1;
             this.CourseSchedules = new ObservableListSource<CourseSchedule>();
             this.StudentAssociatedCompanies = new ObservableListSource<StudentAssociatedCompany>();
             this.StudentDisabilities = new ObservableListSource<StudentDisability>();

@@ -15,8 +15,8 @@ namespace Impendulo.Data.Models
     public partial class StudentPhoto
     {
         public int StudentPhotoID { get; set; }
-        public int IndividualID { get; set; }
-        public int ImageID { get; set; }
+        public int StudentID { get; set; }
+        public int FileID { get; set; }
         public System.DateTime DateUpdated { get; set; }
     
         public virtual File File { get; set; }

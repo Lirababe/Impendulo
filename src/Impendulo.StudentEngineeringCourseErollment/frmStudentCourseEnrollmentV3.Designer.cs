@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label7;
@@ -74,7 +73,6 @@
             this.colApprenticeshipCurriculum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateIntitiated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApprenticeshipSection = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enrollmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,7 +84,8 @@
             this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apprienticeshipEnrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigatorCurriculum = new System.Windows.Forms.BindingNavigator(this.components);
+            this.enrollmentBindingSource = new System.Windows.Forms.BindingSource();
+            this.bindingNavigatorCurriculum = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -110,7 +109,6 @@
             this.colApprenticeshipPreRequisiteCurriculum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApprenticeshipPreRequisiteCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApprenticeshipPreRequisiteIsExemptionStatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.enrollmentPrerequisitesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enrollmentIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -122,7 +120,8 @@
             this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.enrollmentPrerequisitesBindingSource = new System.Windows.Forms.BindingSource();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
@@ -150,11 +149,17 @@
             this.toolStripContainer11 = new System.Windows.Forms.ToolStripContainer();
             this.dgvEnollmentFiles = new System.Windows.Forms.DataGridView();
             this.ApprenticeshipEnrollmentFormSelect = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.imageIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigator12 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.fileBindingSource = new System.Windows.Forms.BindingSource();
+            this.objectStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contentTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileExtensionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingNavigator12 = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorAddNewItem3 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem4 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem4 = new System.Windows.Forms.ToolStripButton();
@@ -181,7 +186,7 @@
             this.colApprenticeshipEnrollmentLinkedCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApprenticeshipEnrollmentLinkedCourseStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApprenticeshipEnrollmentLinkedCourseEndtDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigator9 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigator9 = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel9 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton41 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton42 = new System.Windows.Forms.ToolStripButton();
@@ -196,7 +201,6 @@
             this.colApprenticeshipEnrollmentAvailableCourse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumCourseLinkedToEnrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.curriculumCourseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumCourseParentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -209,7 +213,8 @@
             this.curriculumCourseMinimumMaximumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookupEnrollmentTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.curriculumCourseLinkedToEnrollmentBindingSource = new System.Windows.Forms.BindingSource();
+            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
@@ -223,9 +228,9 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.imageListTabHeadings = new System.Windows.Forms.ImageList(this.components);
+            this.imageListTabHeadings = new System.Windows.Forms.ImageList();
             this.folderBrowserDialogForDownloading = new System.Windows.Forms.FolderBrowserDialog();
-            this.curriculumCourseEnrollmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.curriculumCourseEnrollmentsBindingSource = new System.Windows.Forms.BindingSource();
             label8 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -642,7 +647,7 @@
             this.tpNewEnrollment.Location = new System.Drawing.Point(4, 58);
             this.tpNewEnrollment.Name = "tpNewEnrollment";
             this.tpNewEnrollment.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNewEnrollment.Size = new System.Drawing.Size(1223, 677);
+            this.tpNewEnrollment.Size = new System.Drawing.Size(1183, 597);
             this.tpNewEnrollment.TabIndex = 1;
             this.tpNewEnrollment.Text = "New Enrollment";
             this.tpNewEnrollment.UseVisualStyleBackColor = true;
@@ -664,7 +669,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainerApprenticeship);
-            this.splitContainer1.Size = new System.Drawing.Size(1217, 671);
+            this.splitContainer1.Size = new System.Drawing.Size(1177, 591);
             this.splitContainer1.SplitterDistance = 33;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -684,7 +689,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(55, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 16);
+            this.label2.Size = new System.Drawing.Size(172, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Incomplete Enrollments";
             // 
@@ -704,7 +709,7 @@
             // 
             this.splitContainerApprenticeship.Panel2.AutoScroll = true;
             this.splitContainerApprenticeship.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainerApprenticeship.Size = new System.Drawing.Size(1217, 634);
+            this.splitContainerApprenticeship.Size = new System.Drawing.Size(1177, 554);
             this.splitContainerApprenticeship.SplitterDistance = 215;
             this.splitContainerApprenticeship.TabIndex = 1;
             // 
@@ -722,7 +727,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.groupBox9);
-            this.splitContainer3.Size = new System.Drawing.Size(1217, 215);
+            this.splitContainer3.Size = new System.Drawing.Size(1177, 215);
             this.splitContainer3.SplitterDistance = 534;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -847,11 +852,6 @@
             this.colApprenticeshipSection.Name = "colApprenticeshipSection";
             this.colApprenticeshipSection.ReadOnly = true;
             // 
-            // enrollmentBindingSource
-            // 
-            this.enrollmentBindingSource.DataSource = typeof(Impendulo.Data.Models.Enrollment);
-            this.enrollmentBindingSource.PositionChanged += new System.EventHandler(this.enrollmentBindingSource_PositionChanged);
-            // 
             // enrollmentIDDataGridViewTextBoxColumn
             // 
             this.enrollmentIDDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentID";
@@ -928,6 +928,11 @@
             this.apprienticeshipEnrollmentDataGridViewTextBoxColumn.HeaderText = "ApprienticeshipEnrollment";
             this.apprienticeshipEnrollmentDataGridViewTextBoxColumn.Name = "apprienticeshipEnrollmentDataGridViewTextBoxColumn";
             this.apprienticeshipEnrollmentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // enrollmentBindingSource
+            // 
+            this.enrollmentBindingSource.DataSource = typeof(Impendulo.Data.Models.Enrollment);
+            this.enrollmentBindingSource.PositionChanged += new System.EventHandler(this.enrollmentBindingSource_PositionChanged);
             // 
             // bindingNavigatorCurriculum
             // 
@@ -1078,7 +1083,7 @@
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Location = new System.Drawing.Point(0, 0);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(679, 215);
+            this.groupBox9.Size = new System.Drawing.Size(639, 215);
             this.groupBox9.TabIndex = 13;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Course Prerequisites";
@@ -1089,11 +1094,11 @@
             // toolStripContainer5.ContentPanel
             // 
             this.toolStripContainer5.ContentPanel.Controls.Add(this.dgvPrerequisiteCourses);
-            this.toolStripContainer5.ContentPanel.Size = new System.Drawing.Size(673, 171);
+            this.toolStripContainer5.ContentPanel.Size = new System.Drawing.Size(633, 171);
             this.toolStripContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer5.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainer5.Name = "toolStripContainer5";
-            this.toolStripContainer5.Size = new System.Drawing.Size(673, 196);
+            this.toolStripContainer5.Size = new System.Drawing.Size(633, 196);
             this.toolStripContainer5.TabIndex = 0;
             this.toolStripContainer5.Text = "toolStripContainer5";
             // 
@@ -1131,7 +1136,7 @@
             this.dgvPrerequisiteCourses.Name = "dgvPrerequisiteCourses";
             this.dgvPrerequisiteCourses.ReadOnly = true;
             this.dgvPrerequisiteCourses.RowHeadersWidth = 15;
-            this.dgvPrerequisiteCourses.Size = new System.Drawing.Size(673, 171);
+            this.dgvPrerequisiteCourses.Size = new System.Drawing.Size(633, 171);
             this.dgvPrerequisiteCourses.TabIndex = 8;
             this.dgvPrerequisiteCourses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrerequisiteCourses_CellContentClick);
             this.dgvPrerequisiteCourses.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvPrerequisiteCourses_DataBindingComplete);
@@ -1191,10 +1196,6 @@
             this.colApprenticeshipPreRequisiteIsExemptionStatus.Name = "colApprenticeshipPreRequisiteIsExemptionStatus";
             this.colApprenticeshipPreRequisiteIsExemptionStatus.ReadOnly = true;
             this.colApprenticeshipPreRequisiteIsExemptionStatus.Width = 43;
-            // 
-            // enrollmentPrerequisitesBindingSource
-            // 
-            this.enrollmentPrerequisitesBindingSource.DataSource = typeof(Impendulo.Data.Models.Enrollment);
             // 
             // enrollmentIDDataGridViewTextBoxColumn1
             // 
@@ -1273,6 +1274,10 @@
             this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1.Name = "apprienticeshipEnrollmentDataGridViewTextBoxColumn1";
             this.apprienticeshipEnrollmentDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
+            // enrollmentPrerequisitesBindingSource
+            // 
+            this.enrollmentPrerequisitesBindingSource.DataSource = typeof(Impendulo.Data.Models.Enrollment);
+            // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -1300,7 +1305,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(673, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(633, 25);
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 0;
             // 
@@ -1405,7 +1410,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.groupBox15);
-            this.splitContainer4.Size = new System.Drawing.Size(1217, 415);
+            this.splitContainer4.Size = new System.Drawing.Size(1177, 335);
             this.splitContainer4.SplitterDistance = 463;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -1424,7 +1429,7 @@
             // splitContainer12.Panel2
             // 
             this.splitContainer12.Panel2.Controls.Add(this.groupBox6);
-            this.splitContainer12.Size = new System.Drawing.Size(463, 415);
+            this.splitContainer12.Size = new System.Drawing.Size(463, 335);
             this.splitContainer12.SplitterDistance = 127;
             this.splitContainer12.TabIndex = 13;
             // 
@@ -1512,7 +1517,7 @@
             this.groupBox6.ForeColor = System.Drawing.Color.Black;
             this.groupBox6.Location = new System.Drawing.Point(0, 0);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(463, 284);
+            this.groupBox6.Size = new System.Drawing.Size(463, 204);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Documentation";
@@ -1532,7 +1537,7 @@
             // splitContainer13.Panel2
             // 
             this.splitContainer13.Panel2.Controls.Add(this.toolStripContainer11);
-            this.splitContainer13.Size = new System.Drawing.Size(457, 265);
+            this.splitContainer13.Size = new System.Drawing.Size(457, 185);
             this.splitContainer13.SplitterDistance = 49;
             this.splitContainer13.TabIndex = 1;
             // 
@@ -1562,11 +1567,11 @@
             // toolStripContainer11.ContentPanel
             // 
             this.toolStripContainer11.ContentPanel.Controls.Add(this.dgvEnollmentFiles);
-            this.toolStripContainer11.ContentPanel.Size = new System.Drawing.Size(457, 187);
+            this.toolStripContainer11.ContentPanel.Size = new System.Drawing.Size(457, 107);
             this.toolStripContainer11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer11.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer11.Name = "toolStripContainer11";
-            this.toolStripContainer11.Size = new System.Drawing.Size(457, 212);
+            this.toolStripContainer11.Size = new System.Drawing.Size(457, 132);
             this.toolStripContainer11.TabIndex = 0;
             this.toolStripContainer11.Text = "toolStripContainer11";
             // 
@@ -1582,15 +1587,21 @@
             this.dgvEnollmentFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEnollmentFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ApprenticeshipEnrollmentFormSelect,
-            this.imageIDDataGridViewTextBoxColumn,
             this.FileName,
-            this.DateCreated});
+            this.DateCreated,
+            this.objectStateDataGridViewTextBoxColumn,
+            this.fileIDDataGridViewTextBoxColumn,
+            this.contentTypeDataGridViewTextBoxColumn,
+            this.fileImageDataGridViewImageColumn,
+            this.fileNameDataGridViewTextBoxColumn,
+            this.fileExtensionDataGridViewTextBoxColumn,
+            this.dateCreatedDataGridViewTextBoxColumn});
             this.dgvEnollmentFiles.DataSource = this.fileBindingSource;
             this.dgvEnollmentFiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEnollmentFiles.Location = new System.Drawing.Point(0, 0);
             this.dgvEnollmentFiles.Name = "dgvEnollmentFiles";
             this.dgvEnollmentFiles.ReadOnly = true;
-            this.dgvEnollmentFiles.Size = new System.Drawing.Size(457, 187);
+            this.dgvEnollmentFiles.Size = new System.Drawing.Size(457, 107);
             this.dgvEnollmentFiles.TabIndex = 0;
             this.dgvEnollmentFiles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnollmentFiles_CellContentClick);
             this.dgvEnollmentFiles.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvEnollmentFiles_DataBindingComplete);
@@ -1605,15 +1616,6 @@
             this.ApprenticeshipEnrollmentFormSelect.Text = "Download";
             this.ApprenticeshipEnrollmentFormSelect.UseColumnTextForLinkValue = true;
             this.ApprenticeshipEnrollmentFormSelect.Width = 5;
-            // 
-            // imageIDDataGridViewTextBoxColumn
-            // 
-            this.imageIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.imageIDDataGridViewTextBoxColumn.DataPropertyName = "ImageID";
-            this.imageIDDataGridViewTextBoxColumn.HeaderText = "Ref";
-            this.imageIDDataGridViewTextBoxColumn.Name = "imageIDDataGridViewTextBoxColumn";
-            this.imageIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.imageIDDataGridViewTextBoxColumn.Width = 49;
             // 
             // FileName
             // 
@@ -1635,6 +1637,55 @@
             // fileBindingSource
             // 
             this.fileBindingSource.DataSource = typeof(Impendulo.Data.Models.File);
+            // 
+            // objectStateDataGridViewTextBoxColumn
+            // 
+            this.objectStateDataGridViewTextBoxColumn.DataPropertyName = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn.HeaderText = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn.Name = "objectStateDataGridViewTextBoxColumn";
+            this.objectStateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fileIDDataGridViewTextBoxColumn
+            // 
+            this.fileIDDataGridViewTextBoxColumn.DataPropertyName = "FileID";
+            this.fileIDDataGridViewTextBoxColumn.HeaderText = "FileID";
+            this.fileIDDataGridViewTextBoxColumn.Name = "fileIDDataGridViewTextBoxColumn";
+            this.fileIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contentTypeDataGridViewTextBoxColumn
+            // 
+            this.contentTypeDataGridViewTextBoxColumn.DataPropertyName = "ContentType";
+            this.contentTypeDataGridViewTextBoxColumn.HeaderText = "ContentType";
+            this.contentTypeDataGridViewTextBoxColumn.Name = "contentTypeDataGridViewTextBoxColumn";
+            this.contentTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fileImageDataGridViewImageColumn
+            // 
+            this.fileImageDataGridViewImageColumn.DataPropertyName = "FileImage";
+            this.fileImageDataGridViewImageColumn.HeaderText = "FileImage";
+            this.fileImageDataGridViewImageColumn.Name = "fileImageDataGridViewImageColumn";
+            this.fileImageDataGridViewImageColumn.ReadOnly = true;
+            // 
+            // fileNameDataGridViewTextBoxColumn
+            // 
+            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
+            this.fileNameDataGridViewTextBoxColumn.HeaderText = "FileName";
+            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
+            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fileExtensionDataGridViewTextBoxColumn
+            // 
+            this.fileExtensionDataGridViewTextBoxColumn.DataPropertyName = "FileExtension";
+            this.fileExtensionDataGridViewTextBoxColumn.HeaderText = "FileExtension";
+            this.fileExtensionDataGridViewTextBoxColumn.Name = "fileExtensionDataGridViewTextBoxColumn";
+            this.fileExtensionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateCreatedDataGridViewTextBoxColumn
+            // 
+            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "DateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
+            this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bindingNavigator12
             // 
@@ -1763,7 +1814,7 @@
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox15.Location = new System.Drawing.Point(0, 0);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(750, 415);
+            this.groupBox15.Size = new System.Drawing.Size(710, 335);
             this.groupBox15.TabIndex = 5;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Selected Courses";
@@ -1783,7 +1834,7 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.groupBox10);
-            this.splitContainer5.Size = new System.Drawing.Size(744, 396);
+            this.splitContainer5.Size = new System.Drawing.Size(704, 316);
             this.splitContainer5.SplitterDistance = 44;
             this.splitContainer5.TabIndex = 1;
             // 
@@ -1793,7 +1844,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(744, 44);
+            this.panel1.Size = new System.Drawing.Size(704, 44);
             this.panel1.TabIndex = 1;
             // 
             // groupBox8
@@ -1804,7 +1855,7 @@
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(0, 0);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(744, 44);
+            this.groupBox8.Size = new System.Drawing.Size(704, 44);
             this.groupBox8.TabIndex = 0;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Options";
@@ -1842,7 +1893,7 @@
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox10.Location = new System.Drawing.Point(0, 0);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(744, 348);
+            this.groupBox10.Size = new System.Drawing.Size(704, 268);
             this.groupBox10.TabIndex = 0;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Course Selection And Schedule";
@@ -1860,7 +1911,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(738, 329);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(698, 249);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // toolStripContainer10
@@ -1869,11 +1920,11 @@
             // toolStripContainer10.ContentPanel
             // 
             this.toolStripContainer10.ContentPanel.Controls.Add(this.dataGridView7);
-            this.toolStripContainer10.ContentPanel.Size = new System.Drawing.Size(353, 298);
+            this.toolStripContainer10.ContentPanel.Size = new System.Drawing.Size(333, 218);
             this.toolStripContainer10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer10.Location = new System.Drawing.Point(382, 3);
+            this.toolStripContainer10.Location = new System.Drawing.Point(362, 3);
             this.toolStripContainer10.Name = "toolStripContainer10";
-            this.toolStripContainer10.Size = new System.Drawing.Size(353, 323);
+            this.toolStripContainer10.Size = new System.Drawing.Size(333, 243);
             this.toolStripContainer10.TabIndex = 7;
             this.toolStripContainer10.Text = "toolStripContainer10";
             // 
@@ -1895,7 +1946,7 @@
             this.dataGridView7.Name = "dataGridView7";
             this.dataGridView7.ReadOnly = true;
             this.dataGridView7.RowHeadersWidth = 15;
-            this.dataGridView7.Size = new System.Drawing.Size(353, 298);
+            this.dataGridView7.Size = new System.Drawing.Size(333, 218);
             this.dataGridView7.TabIndex = 1;
             // 
             // colApprenticeshipEnrollmentLinkedCourse
@@ -1940,7 +1991,7 @@
             this.bindingNavigator9.MovePreviousItem = this.toolStripButton42;
             this.bindingNavigator9.Name = "bindingNavigator9";
             this.bindingNavigator9.PositionItem = this.toolStripTextBox10;
-            this.bindingNavigator9.Size = new System.Drawing.Size(353, 25);
+            this.bindingNavigator9.Size = new System.Drawing.Size(333, 25);
             this.bindingNavigator9.Stretch = true;
             this.bindingNavigator9.TabIndex = 0;
             // 
@@ -2017,11 +2068,11 @@
             // toolStripContainer2.ContentPanel
             // 
             this.toolStripContainer2.ContentPanel.Controls.Add(this.dgvEnrollmenLinkedCurriculumCourses);
-            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(353, 298);
+            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(333, 218);
             this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer2.Location = new System.Drawing.Point(3, 3);
             this.toolStripContainer2.Name = "toolStripContainer2";
-            this.toolStripContainer2.Size = new System.Drawing.Size(353, 323);
+            this.toolStripContainer2.Size = new System.Drawing.Size(333, 243);
             this.toolStripContainer2.TabIndex = 5;
             this.toolStripContainer2.Text = "toolStripContainer2";
             // 
@@ -2057,7 +2108,7 @@
             this.dgvEnrollmenLinkedCurriculumCourses.Name = "dgvEnrollmenLinkedCurriculumCourses";
             this.dgvEnrollmenLinkedCurriculumCourses.ReadOnly = true;
             this.dgvEnrollmenLinkedCurriculumCourses.RowHeadersWidth = 15;
-            this.dgvEnrollmenLinkedCurriculumCourses.Size = new System.Drawing.Size(353, 298);
+            this.dgvEnrollmenLinkedCurriculumCourses.Size = new System.Drawing.Size(333, 218);
             this.dgvEnrollmenLinkedCurriculumCourses.TabIndex = 1;
             this.dgvEnrollmenLinkedCurriculumCourses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnrollmenLinkedCurriculumCourses_CellContentClick);
             this.dgvEnrollmenLinkedCurriculumCourses.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvEnrollmenLinkedCurriculumCourses_DataBindingComplete);
@@ -2084,10 +2135,6 @@
             this.Duration.HeaderText = "Duration";
             this.Duration.Name = "Duration";
             this.Duration.ReadOnly = true;
-            // 
-            // curriculumCourseLinkedToEnrollmentBindingSource
-            // 
-            this.curriculumCourseLinkedToEnrollmentBindingSource.DataSource = typeof(Impendulo.Data.Models.CurriculumCourse);
             // 
             // curriculumCourseIDDataGridViewTextBoxColumn
             // 
@@ -2173,6 +2220,10 @@
             this.lookupEnrollmentTypeDataGridViewTextBoxColumn.Name = "lookupEnrollmentTypeDataGridViewTextBoxColumn";
             this.lookupEnrollmentTypeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // curriculumCourseLinkedToEnrollmentBindingSource
+            // 
+            this.curriculumCourseLinkedToEnrollmentBindingSource.DataSource = typeof(Impendulo.Data.Models.CurriculumCourse);
+            // 
             // bindingNavigator2
             // 
             this.bindingNavigator2.AddNewItem = null;
@@ -2197,7 +2248,7 @@
             this.bindingNavigator2.MovePreviousItem = this.toolStripButton4;
             this.bindingNavigator2.Name = "bindingNavigator2";
             this.bindingNavigator2.PositionItem = this.toolStripTextBox1;
-            this.bindingNavigator2.Size = new System.Drawing.Size(353, 25);
+            this.bindingNavigator2.Size = new System.Drawing.Size(333, 25);
             this.bindingNavigator2.Stretch = true;
             this.bindingNavigator2.TabIndex = 0;
             // 
@@ -2274,7 +2325,7 @@
             this.tpCompletedEnquiry.ImageIndex = 3;
             this.tpCompletedEnquiry.Location = new System.Drawing.Point(4, 58);
             this.tpCompletedEnquiry.Name = "tpCompletedEnquiry";
-            this.tpCompletedEnquiry.Size = new System.Drawing.Size(1223, 677);
+            this.tpCompletedEnquiry.Size = new System.Drawing.Size(1183, 597);
             this.tpCompletedEnquiry.TabIndex = 3;
             this.tpCompletedEnquiry.Text = "Completed Enrollment";
             this.tpCompletedEnquiry.UseVisualStyleBackColor = true;
@@ -2311,7 +2362,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(61, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(168, 16);
+            this.label3.Size = new System.Drawing.Size(172, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "Completed Enrollments";
             // 
@@ -2650,5 +2701,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseMinimumMaximumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn curriculumDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn lookupEnrollmentTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn objectStateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fileIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contentTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn fileImageDataGridViewImageColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fileNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fileExtensionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateCreatedDataGridViewTextBoxColumn;
     }
 }

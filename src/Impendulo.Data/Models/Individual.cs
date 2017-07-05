@@ -17,6 +17,10 @@ namespace Impendulo.Data.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Individual()
         {
+            this.TitleID = 1;
+            this.IndividualFirstName = "";
+            this.IndividualSecondName = "";
+            this.IndividualLastname = "";
             this.Companies = new ObservableListSource<Company>();
             this.Enquiries = new ObservableListSource<Enquiry>();
             this.Addresses = new ObservableListSource<Address>();

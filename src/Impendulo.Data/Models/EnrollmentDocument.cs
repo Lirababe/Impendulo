@@ -16,7 +16,7 @@ namespace Impendulo.Data.Models
     {
         public int EnrollmentDocumentID { get; set; }
         public int EnrollmentID { get; set; }
-        public int ImageID { get; set; }
+        public int FileID { get; set; }
         public int LookupEnrollmentDocumentTypeID { get; set; }
     
         public virtual File File { get; set; }

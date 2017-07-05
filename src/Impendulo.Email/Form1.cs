@@ -102,7 +102,7 @@ namespace Impendulo.Email
                 using (var Dbconnection = new MCDEntities())
                 {
                     x = ((from a in Dbconnection.Files
-                          where a.ImageID == 32
+                          where a.FileID == 32
                           select a).FirstOrDefault()).FileImage;
                 };
                 oMsg.Attachments.Add(x, Outlook.OlAttachmentType.olByValue, Type.Missing,

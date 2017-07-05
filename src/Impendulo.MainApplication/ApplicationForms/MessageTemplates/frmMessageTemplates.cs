@@ -142,7 +142,7 @@ namespace Impendulo.MessageTemplates.Deployment
                              where a.ProcessStepID == ((LookupProcessStep)lookupProcessStepsBindingSource.Current).ProcessStepID
                              select new
                              {
-                                 b.ImageID,
+                                 b.FileID,
                                  b.FileName,
                                  b.FileExtension,
                                  b.DateCreated
@@ -154,7 +154,7 @@ namespace Impendulo.MessageTemplates.Deployment
                     {
                         NewMessageTemplate.Files.Add(new Data.Models.File
                         {
-                            ImageID = gg.ImageID,
+                            FileID = gg.FileID,
                             ContentType = "",
                             DateCreated = gg.DateCreated,
                             FileImage = null,
