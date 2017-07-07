@@ -54,6 +54,25 @@ namespace Impendulo.Data.Models
                 }
             }
 
+            if (entityEntry.Entity is CurriculumCourse)
+            {
+                if ((entityEntry.CurrentValues.GetValue<decimal>("Cost").ToString()).Length == 0)
+                {
+                    var list = new List<System.Data.Entity.Validation.DbValidationError>();
+                    list.Add(new System.Data.Entity.Validation.DbValidationError("Course Cost", "(Cost Invalid) - Cost Can Not Be Empty."));
+
+                    return new System.Data.Entity.Validation.DbEntityValidationResult(entityEntry, list);
+                }
+
+                if (entityEntry.CurrentValues.GetValue<decimal>("Cost") == 0)
+                {
+                    var list = new List<System.Data.Entity.Validation.DbValidationError>();
+                    list.Add(new System.Data.Entity.Validation.DbValidationError("Course Cost", "(Cost Invalid) - Cost Can Not Be Zero."));
+
+                    return new System.Data.Entity.Validation.DbEntityValidationResult(entityEntry, list);
+                }
+            }
+
             return base.ValidateEntity(entityEntry, items);
         }
     }

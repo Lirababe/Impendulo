@@ -154,6 +154,14 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
             //                                                                                           where a.CurriculumCourseID == 0
             //                                                                                           where a.LookupDayOfWeek)
             //};
+
+            using (var Dbconnection = new MCDEntities())
+            {
+                availableCurriculumCourseDayCanBeScheduledBindingSource.DataSource = (from a in Dbconnection.LookupDayOfWeeks
+                                                                                      select a).Except(from a in Dbconnection.CurriculumCourseDayCanBeScheduleds
+                                                                                                       where a.CurriculumCours.CourseID == newCourseObj.CourseID
+                                                                                                       select a.LookupDayOfWeek).ToList<LookupDayOfWeek>();
+            };
         }
         private void populateLinkedDays()
         {
@@ -353,19 +361,19 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
 
 
 
-
+                                string ConfiguredCourseCost = txtCourseCost.Text.Replace("R", "").Replace(".", ",").Trim();
+                                if (ConfiguredCourseCost.Length == 0)
+                                    ConfiguredCourseCost = "0,0";
 
 
                                 if (newCourseObj == null)
                                 {
-                                    decimal x = Convert.ToDecimal(txtCourseCost.Text.Replace("R", "").Replace(".", ","));
                                     newCourseObj = new CurriculumCourse
                                     {
-
                                         CourseID = CourseObj.CourseID,
                                         CurriculumID = this.CurriculumID,
                                         EnrollmentTypeID = Convert.ToInt32(cboEnrollmentTypes.SelectedValue),
-                                        Cost = Convert.ToDecimal(txtCourseCost.Text.Replace("R", "").Replace(".", ",").Trim()),
+                                        Cost = Convert.ToDecimal(ConfiguredCourseCost),
                                         Duration = Convert.ToInt32(nudCourseDuration.Value),
                                         CurricullumCourseCode = new CurricullumCourseCode
                                         {
@@ -383,7 +391,7 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
                                 {
                                     newCourseObj.CourseID = CourseObj.CourseID;
                                     newCourseObj.EnrollmentTypeID = Convert.ToInt32(cboEnrollmentTypes.SelectedValue);
-                                    newCourseObj.Cost = Convert.ToDecimal(txtCourseCost.Text.Replace("R", "").Replace(".", ","));
+                                    newCourseObj.Cost = Convert.ToDecimal(ConfiguredCourseCost);
                                     newCourseObj.Duration = Convert.ToInt32(nudCourseDuration.Value);
                                     newCourseObj.CurricullumCourseCode.CurricullumCourseCodeValue = txtCourseCourseCode.Text;
                                     newCourseObj.CurriculumCourseMinimumMaximum.CurriculumCourseMaximum = Convert.ToInt32(nudCourseMaximumAllowed.Value);
