@@ -4954,7 +4954,7 @@
           <Property Name="CurriculumCourseID" Type="Int32" Nullable="false" />
           <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
           <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
-          <NavigationProperty Name="CurriculumCours" Relationship="MCDModel.FK_CurriculumCourseDayCanBeScheduled_CurriculumCourses" FromRole="CurriculumCourseDayCanBeScheduled" ToRole="CurriculumCourse" />
+          <NavigationProperty Name="CurriculumCourse" Relationship="MCDModel.FK_CurriculumCourseDayCanBeScheduled_CurriculumCourses" FromRole="CurriculumCourseDayCanBeScheduled" ToRole="CurriculumCourse" />
           <NavigationProperty Name="LookupDayOfWeek" Relationship="MCDModel.FK_CurriculumCourseDayCanBeScheduled_LookupDayOfWeeks" FromRole="CurriculumCourseDayCanBeScheduled" ToRole="LookupDayOfWeek" />
         </EntityType>
         <EntityType Name="LookupDayOfWeek">

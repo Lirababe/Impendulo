@@ -154,9 +154,11 @@
     </Compile>
     <Compile Include="Models\ExtendedClasses\CurricullumCourseCode.cs" />
     <Compile Include="Models\ExtendedClasses\CurriculumCourse.cs" />
+    <Compile Include="Models\ExtendedClasses\CurriculumCourseDayCanBeScheduled.cs" />
     <Compile Include="Models\ExtendedClasses\CurriculumCourseMinimumMaximum.cs" />
     <Compile Include="Models\ExtendedClasses\File.cs" />
     <Compile Include="Models\ExtendedClasses\Individual.cs" />
+    <Compile Include="Models\ExtendedClasses\LookupProvince.cs" />
     <Compile Include="Models\ExtendedClasses\Student.cs" />
     <Compile Include="Models\ExtendedClasses\StudentPhotos.cs" />
     <Compile Include="Models\Facilitator.cs">

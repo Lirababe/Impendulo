@@ -148,26 +148,24 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
 
         private void populateAvaiabledays()
         {
-            //using (var Dbconnection = new MCDEntities())
-            //{
-            //    availableCurriculumCourseDayCanBeScheduledBindingSource.DataSource = (from a in Dbconnection.LookupDayOfWeeks
-            //                                                                          select a).Except(from a in Dbconnection.CurriculumCourseDayCanBeScheduleds
-            //                                                                                           where a.CurriculumCourseID == 0
-            //                                                                                           where a.LookupDayOfWeek)
-            //};
-
             using (var Dbconnection = new MCDEntities())
             {
-                availableCurriculumCourseDayCanBeScheduledBindingSource.DataSource = (from a in Dbconnection.LookupDayOfWeeks
-                                                                                      select a).Except(from a in Dbconnection.CurriculumCourseDayCanBeScheduleds
-                                                                                                       where a.CurriculumCours.CourseID == newCourseObj.CourseID
-                                                                                                       select a.LookupDayOfWeek).ToList<LookupDayOfWeek>();
+                availableCurriculumCourseDayCanBeScheduledBindingSource.DataSource =
+                    (from a in Dbconnection.LookupDayOfWeeks
+                     select a).Except(from a in Dbconnection.CurriculumCourseDayCanBeScheduleds
+                                      where a.CurriculumCourse.CourseID == newCourseObj.CourseID
+                                      select a.LookupDayOfWeek).ToList<LookupDayOfWeek>();
             };
         }
         private void populateLinkedDays()
         {
-            linkedCcurriculumCourseDayCanBeScheduledBindingSource.DataSource = (from a in LinkedDays
-                                                                                select a).ToList<CurriculumCourseDayCanBeScheduled>();
+            using (var Dbconnection = new MCDEntities())
+            {
+                linkedCcurriculumCourseDayCanBeScheduledBindingSource.DataSource =
+                    (from a in Dbconnection.CurriculumCourseDayCanBeScheduleds
+                     where a.CurriculumCourse.CourseID == newCourseObj.CourseID
+                     select a).ToList<CurriculumCourseDayCanBeScheduled>();
+            };
         }
         #endregion
         #region Wizard Comopnents
@@ -613,18 +611,79 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
 
         private void dgcAvaiableDays_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+
+        }
+
+        private void dgvLinkedDayCourseCanBeScheduled_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
             var gridView = (DataGridView)sender;
             foreach (DataGridViewRow row in gridView.Rows)
             {
                 if (!row.IsNewRow)
                 {
-                   // var CurriculumCourseDayCanBeScheduledObj = (CurriculumCourseDayCanBeScheduled)(row.DataBoundItem);
+                    var CurriculumCourseDayCanBeScheduledObj = (CurriculumCourseDayCanBeScheduled)(row.DataBoundItem);
 
 
-                    //row.Cells[colAvailableDays.Index].Value = CurriculumCourseDayCanBeScheduledObj.LookupDayOfWeek.DayOfWeek.ToString();
+                    row.Cells[colDay.Index].Value = CurriculumCourseDayCanBeScheduledObj.LookupDayOfWeek.DayOfWeek.ToString();
 
                 }
             }
+        }
+
+        private void btnLinkDayAvailableToSchedule_Click(object sender, EventArgs e)
+        {
+
+            using (var Dbconnection = new MCDEntities())
+            {
+                using (System.Data.Entity.DbContextTransaction dbTran = Dbconnection.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        //CRUD Operations
+
+                        DateTime dtStart = new DateTime(2000, 01, 1, Convert.ToInt32(nudStartHours.Value), Convert.ToInt32(nudStartMin.Value), 0);
+                        DateTime dtEnd = new DateTime(2000, 01, 1, Convert.ToInt32(nudEndHours.Value), Convert.ToInt32(nudEndMin.Value), 0);
+                        LookupDayOfWeek newLookupDayOfWeek = (LookupDayOfWeek)availableCurriculumCourseDayCanBeScheduledBindingSource.Current;
+
+                        CurriculumCourseDayCanBeScheduled newCurriculumCourseDayCanBeScheduled = new CurriculumCourseDayCanBeScheduled()
+                        {
+                            CurriculumCourseID = newCourseObj.CurriculumCourseID,
+                            StartTime = dtStart.TimeOfDay,
+                            EndTime = dtEnd.TimeOfDay,
+                            DayOfWeekID = newLookupDayOfWeek.DayOfWeekID,
+                            ObjectState = EntityObjectState.Added
+                        };
+                        Dbconnection.CurriculumCourseDayCanBeScheduleds.Add(newCurriculumCourseDayCanBeScheduled);
+                        ////saves all above operations within one transaction
+                        Dbconnection.SaveChanges();
+
+                        //commit transaction
+                        dbTran.Commit();
+                        this.loadupStepThree();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        if (ex is DbEntityValidationException)
+                        {
+                            foreach (DbEntityValidationResult entityErr in ((DbEntityValidationException)ex).EntityValidationErrors)
+                            {
+                                foreach (DbValidationError error in entityErr.ValidationErrors)
+                                {
+                                    MessageBox.Show(error.ErrorMessage, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        //Rollback transaction if exception occurs
+                        dbTran.Rollback();
+                    }
+                }
+            };
+
         }
     }
 }

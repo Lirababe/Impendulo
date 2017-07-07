@@ -20,7 +20,7 @@ namespace Impendulo.Data.Models
         public System.TimeSpan StartTime { get; set; }
         public System.TimeSpan EndTime { get; set; }
     
-        public virtual CurriculumCourse CurriculumCours { get; set; }
+        public virtual CurriculumCourse CurriculumCourse { get; set; }
         public virtual LookupDayOfWeek LookupDayOfWeek { get; set; }
     }
 }

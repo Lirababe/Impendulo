@@ -169,7 +169,7 @@
         <AssociationConnector Association="MCDModel.FK_StudentIDDocuments_Students" />
         <AssociationConnector Association="MCDModel.FK_StudentPhotos_Students" />
         <AssociationConnector Association="MCDModel.FK_CurriculumCourseEnrollments_LookupEnrollmentProgressStates" />
-        <EntityTypeShape EntityType="MCDModel.CurriculumCourseDayCanBeScheduled" Width="1.5" PointX="24.75" PointY="50.125" />
+        <EntityTypeShape EntityType="MCDModel.CurriculumCourseDayCanBeScheduled" Width="3.125" PointX="24.75" PointY="50.125" />
         <EntityTypeShape EntityType="MCDModel.LookupDayOfWeek" Width="1.5" PointX="22.5" PointY="44.375" />
         <EntityTypeShape EntityType="MCDModel.PublicHoliday" Width="1.5" PointX="0.75" PointY="7.75" />
         <AssociationConnector Association="MCDModel.FK_CurriculumCourseDayCanBeScheduled_CurriculumCourses" />
