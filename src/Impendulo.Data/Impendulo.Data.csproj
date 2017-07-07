@@ -152,6 +152,9 @@
     <Compile Include="Models\EquiryHistory.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ExtendedClasses\CurricullumCourseCode.cs" />
+    <Compile Include="Models\ExtendedClasses\CurriculumCourse.cs" />
+    <Compile Include="Models\ExtendedClasses\CurriculumCourseMinimumMaximum.cs" />
     <Compile Include="Models\ExtendedClasses\File.cs" />
     <Compile Include="Models\ExtendedClasses\Individual.cs" />
     <Compile Include="Models\ExtendedClasses\Student.cs" />

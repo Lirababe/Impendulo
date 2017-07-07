@@ -1,4 +1,5 @@
 ﻿using Impendulo.Data.Models;
+using Impendulo.Data.Models.Enum;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -370,6 +371,7 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
                                 {
                                     newCourseObj = new CurriculumCourse
                                     {
+                                        ObjectState = EntityObjectState.Added,
                                         CourseID = CourseObj.CourseID,
                                         CurriculumID = this.CurriculumID,
                                         EnrollmentTypeID = Convert.ToInt32(cboEnrollmentTypes.SelectedValue),
@@ -377,15 +379,18 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
                                         Duration = Convert.ToInt32(nudCourseDuration.Value),
                                         CurricullumCourseCode = new CurricullumCourseCode
                                         {
-                                            CurricullumCourseCodeValue = txtCourseCourseCode.Text
+                                            CurricullumCourseCodeValue = txtCourseCourseCode.Text,
+                                            ObjectState = EntityObjectState.Added
                                         },
                                         CurriculumCourseMinimumMaximum = new CurriculumCourseMinimumMaximum
                                         {
                                             CurriculumCourseMaximum = Convert.ToInt32(nudCourseMaximumAllowed.Value),
-                                            CurriculumCourseMinimum = Convert.ToInt32(nudCourseMinimumAllowed.Value)
+                                            CurriculumCourseMinimum = Convert.ToInt32(nudCourseMinimumAllowed.Value),
+                                            ObjectState = EntityObjectState.Added
                                         }
                                     };
                                     Dbconnection.CurriculumCourses.Add(newCourseObj);
+
                                 }
                                 else
                                 {
@@ -398,9 +403,6 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
                                     newCourseObj.CurriculumCourseMinimumMaximum.CurriculumCourseMinimum = Convert.ToInt32(nudCourseMinimumAllowed.Value);
                                     Dbconnection.Entry(newCourseObj).State = EntityState.Modified;
                                 }
-
-
-
                                 ////saves all above operations within one transaction
                                 Dbconnection.SaveChanges();
 
@@ -425,7 +427,10 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
                                 }
                                 //Rollback transaction if exception occurs
                                 dbTran.Rollback();
-
+                                if (newCourseObj.ObjectState == EntityObjectState.Added)
+                                {
+                                    newCourseObj = null;
+                                }
                                 bRtn = false;
                             }
                         }
@@ -613,7 +618,7 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
             {
                 if (!row.IsNewRow)
                 {
-                    var CurriculumCourseDayCanBeScheduledObj = (CurriculumCourseDayCanBeScheduled)(row.DataBoundItem);
+                   // var CurriculumCourseDayCanBeScheduledObj = (CurriculumCourseDayCanBeScheduled)(row.DataBoundItem);
 
 
                     //row.Cells[colAvailableDays.Index].Value = CurriculumCourseDayCanBeScheduledObj.LookupDayOfWeek.DayOfWeek.ToString();
