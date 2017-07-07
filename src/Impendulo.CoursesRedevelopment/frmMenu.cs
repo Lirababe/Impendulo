@@ -1,4 +1,5 @@
-﻿using Impendulo.Courses.Development.LinkCurriculumCourseWizard;
+﻿using Impendulo.Courses.Configuration.Development;
+using Impendulo.Courses.Development.LinkCurriculumCourseWizard;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,15 @@ namespace Impendulo.CoursesRedevelopment
             {
                 frm.ShowDialog();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (frmCourseConfiguration frm = new frmCourseConfiguration())
+            {
+                frm.ShowDialog();
+            }
+
         }
     }
 }

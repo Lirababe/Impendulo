@@ -13,10 +13,12 @@ using Impendulo.Courses.SummaryForms;
 using Impendulo.Courses.InputForms.Development;
 using Impendulo.Courses.SummaryForms.Development;
 using Impendulo.CoursesRedevelopment.Course_Configuration_Form.Add_Course_PreRequiste_Courses;
+using Impendulo.Courses.Development.LinkCurriculumCourseWizard;
+using MetroFramework.Forms;
 
 namespace Impendulo.Courses.Configuration.Development
 {
-    public partial class frmCourseConfiguration : MetroFramework.Forms.MetroForm
+    public partial class frmCourseConfiguration : MetroForm
     {
         public frmCourseConfiguration()
         {
@@ -459,37 +461,42 @@ namespace Impendulo.Courses.Configuration.Development
 
         private void btnAddCurriculumCourse_Click(object sender, EventArgs e)
         {
-            frmAddCurriculumCourse frm = new frmAddCurriculumCourse();
-            if (curriculumBindingSource.Count > 0)
+            using (frmAddCurriculumCourseV2 frm = new frmAddCurriculumCourseV2())
             {
-                frm.CurriculumID = ((Curriculum)(curriculumBindingSource.Current)).CurriculumID;
-                frm.DepartmentID = Convert.ToInt32(cboDepartments.SelectedValue);
-                frm.ShowDialog();
-                this.refreshCurriculumCourses();
-                this.refreshCurriculumCourseListToBePrioritised();
-                if (curriculumCourseBindingSource.Count < 0)
+                if (curriculumBindingSource.Count > 0)
                 {
-                    int _CurriculumCourseID = ((CurriculumCourse)(curriculumCourseBindingSource.Current)).CurriculumCourseID;
-
-                    // this.refreshCurriculumCourseListToBePrioritised();
+                    frm.CurriculumID = ((Curriculum)(curriculumBindingSource.Current)).CurriculumID;
+                    frm.lblSelectedCurriculum.Text = ((Curriculum)(curriculumBindingSource.Current)).CurriculumName;
+                    //frm.DepartmentID = Convert.ToInt32(cboDepartments.SelectedValue);
+                    frm.ShowDialog();
+                    this.refreshCurriculumCourses();
+                    this.refreshCurriculumCourseListToBePrioritised();
                     if (curriculumCourseBindingSource.Count < 0)
                     {
-                        int _CurrentID = 0;
-                        foreach (CurriculumCourse cur in curriculumCourseBindingSource.List)
+                        int _CurriculumCourseID = ((CurriculumCourse)(curriculumCourseBindingSource.Current)).CurriculumCourseID;
+
+                        // this.refreshCurriculumCourseListToBePrioritised();
+                        if (curriculumCourseBindingSource.Count < 0)
                         {
-                            if (cur.CurriculumCourseID == _CurriculumCourseID)
+                            int _CurrentID = 0;
+                            foreach (CurriculumCourse cur in curriculumCourseBindingSource.List)
                             {
-                                curriculumCourseBindingSource.Position = _CurrentID;
+                                if (cur.CurriculumCourseID == _CurriculumCourseID)
+                                {
+                                    curriculumCourseBindingSource.Position = _CurrentID;
+                                }
+                                _CurrentID++;
                             }
-                            _CurrentID++;
                         }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Add Curriculum First!", "Add Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
-            {
-                MessageBox.Show("Add Curriculum First!", "Add Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+
+
         }
         private void btnViewCurriculumSummary_Click(object sender, EventArgs e)
         {
