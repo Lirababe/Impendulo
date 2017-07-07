@@ -123,6 +123,9 @@
   <metadata name="lookupDepartmentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>171, 17</value>
   </metadata>
+  <metadata name="lookupDepartmentBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>171, 17</value>
+  </metadata>
   <metadata name="courseBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>405, 17</value>
   </metadata>
@@ -195,9 +198,9 @@
         nnALmHLa2X/KaS///uPGT9oOyf0H4a5Dhi+mA8WmnHb3B6mZesrDFKoNArr2m0q0HtIEKtaBYt3/LQc1
         /jcdUAFjEBskBpNvPaT1v/OIuhRUOwND9V5t5Zq96v8xsQYSRpWr2K+sAtXOwFC/zUymeJv2/6KtWnBc
         vA0Vo8ht1f5fvUNbFqodAvI2GQbnbNAtzd2kVwLC6eu1XmWt1/kPwbpvc9cDxYEYpCZ/o3EoVBtukLBE
-        71rCMt3/YLxY7w5UmHgQPE37ZtAs3f8QTEY6cOnXfeDcr/sfhB36dJ5ChXECASBWBGINVgYGXSCtrpmo
-        2GFQpn4ChLWSFDtBYlA5DahakB44YAZidiDmBGJuIOYFYkYghoD/YDZIDCQHUgNSC9JDKWBgAADN8tRe
-        BomfNgAAAABJRU5ErkJggg==
+        71rCMt3/YLxY7w5UmHgQPE37ZtAs3f8QTEY6cOnXfeDcr/sfhO37dJ5ChXECASBWBGINVgYGXSCtrpmo
+        2GFQpn4ChLWSFDtBYlA5DahakB44YAZidiDmBGJuIOYFYkYghoD/YDZIDCQHUgNSC9JDKWBgAADNE9Rd
+        m0oPPQAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="DayOfWeek.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

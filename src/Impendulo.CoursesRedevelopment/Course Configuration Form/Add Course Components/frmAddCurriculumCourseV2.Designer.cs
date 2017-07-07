@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddCurriculumCourseV2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.NavigationPanel = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -64,11 +64,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.cboEnrollmentTypes = new System.Windows.Forms.ComboBox();
             this.lookupEnrollmentTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboDepartment = new System.Windows.Forms.ComboBox();
             this.lookupDepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtCurriculumName = new System.Windows.Forms.TextBox();
             this.splitContainerAddNewCourse = new System.Windows.Forms.SplitContainer();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
@@ -104,22 +102,21 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtCourseCost = new System.Windows.Forms.MaskedTextBox();
-            this.txtCourseCostCents = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.txtCourseCourseCode = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.nudCourseDuration = new System.Windows.Forms.NumericUpDown();
-            this.nudCourseMaximumAllowed = new System.Windows.Forms.NumericUpDown();
             this.nudCourseMinimumAllowed = new System.Windows.Forms.NumericUpDown();
+            this.nudCourseMaximumAllowed = new System.Windows.Forms.NumericUpDown();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtCourseCost = new System.Windows.Forms.MaskedTextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
@@ -127,10 +124,10 @@
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.dgcAvaiableDays = new MetroFramework.Controls.MetroGrid();
             this.DayOfWeek = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.availableCurriculumCourseDayCanBeScheduledBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dayOfWeekIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dayOfWeekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isWeekDayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.availableCurriculumCourseDayCanBeScheduledBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -175,6 +172,10 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.lookupDayOfWeekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblCurrentlySelectedCourse = new MetroFramework.Controls.MetroTile();
+            this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.metroTile3 = new MetroFramework.Controls.MetroTile();
+            this.lblSelectedCurriculum = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -213,10 +214,10 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCourseDuration)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCourseMaximumAllowed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCourseMinimumAllowed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCourseMaximumAllowed)).BeginInit();
+            this.tableLayoutPanel8.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -518,8 +519,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(72, 26);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 115F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 134F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 141F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(546, 416);
             this.tableLayoutPanel1.TabIndex = 30;
@@ -530,22 +531,22 @@
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(3, 3);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(540, 109);
+            this.groupBox6.Size = new System.Drawing.Size(540, 128);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Select Department";
+            this.groupBox6.Text = "Select Course For:";
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.metroTile3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label14, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.cboEnrollmentTypes, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.cboDepartment, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtCurriculumName, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lblSelectedCurriculum, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 18);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -553,13 +554,14 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(534, 88);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(534, 107);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(5, 63);
+            this.label14.Location = new System.Drawing.Point(5, 82);
             this.label14.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(97, 14);
@@ -572,7 +574,7 @@
             this.cboEnrollmentTypes.DisplayMember = "EnrollmentType";
             this.cboEnrollmentTypes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboEnrollmentTypes.FormattingEnabled = true;
-            this.cboEnrollmentTypes.Location = new System.Drawing.Point(117, 60);
+            this.cboEnrollmentTypes.Location = new System.Drawing.Point(117, 79);
             this.cboEnrollmentTypes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cboEnrollmentTypes.Name = "cboEnrollmentTypes";
             this.cboEnrollmentTypes.Size = new System.Drawing.Size(412, 22);
@@ -585,20 +587,10 @@
             this.lookupEnrollmentTypeBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupEnrollmentType);
             this.lookupEnrollmentTypeBindingSource.PositionChanged += new System.EventHandler(this.lookupEnrollmentTypeBindingSource_PositionChanged);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 7);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 14);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Curriculum";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 35);
+            this.label2.Location = new System.Drawing.Point(5, 54);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 14);
@@ -611,7 +603,7 @@
             this.cboDepartment.DisplayMember = "DepartmentName";
             this.cboDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboDepartment.FormattingEnabled = true;
-            this.cboDepartment.Location = new System.Drawing.Point(115, 31);
+            this.cboDepartment.Location = new System.Drawing.Point(115, 50);
             this.cboDepartment.Name = "cboDepartment";
             this.cboDepartment.Size = new System.Drawing.Size(416, 22);
             this.cboDepartment.TabIndex = 33;
@@ -622,20 +614,10 @@
             this.lookupDepartmentBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupDepartment);
             this.lookupDepartmentBindingSource.PositionChanged += new System.EventHandler(this.lookupDepartmentBindingSource_PositionChanged);
             // 
-            // txtCurriculumName
-            // 
-            this.txtCurriculumName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCurriculumName.Location = new System.Drawing.Point(115, 3);
-            this.txtCurriculumName.Name = "txtCurriculumName";
-            this.txtCurriculumName.ReadOnly = true;
-            this.txtCurriculumName.Size = new System.Drawing.Size(416, 22);
-            this.txtCurriculumName.TabIndex = 55;
-            this.txtCurriculumName.Text = "Welder";
-            // 
             // splitContainerAddNewCourse
             // 
             this.splitContainerAddNewCourse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerAddNewCourse.Location = new System.Drawing.Point(3, 118);
+            this.splitContainerAddNewCourse.Location = new System.Drawing.Point(3, 137);
             this.splitContainerAddNewCourse.Name = "splitContainerAddNewCourse";
             this.splitContainerAddNewCourse.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -647,7 +629,7 @@
             // 
             this.splitContainerAddNewCourse.Panel2.Controls.Add(this.groupBox1);
             this.splitContainerAddNewCourse.Panel2Collapsed = true;
-            this.splitContainerAddNewCourse.Size = new System.Drawing.Size(540, 295);
+            this.splitContainerAddNewCourse.Size = new System.Drawing.Size(540, 276);
             this.splitContainerAddNewCourse.SplitterDistance = 132;
             this.splitContainerAddNewCourse.TabIndex = 1;
             // 
@@ -657,7 +639,7 @@
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(0, 0);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(540, 295);
+            this.groupBox8.Size = new System.Drawing.Size(540, 276);
             this.groupBox8.TabIndex = 34;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Courses";
@@ -668,11 +650,11 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.metroGrid2);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(534, 243);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(534, 224);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(3, 18);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(534, 274);
+            this.toolStripContainer1.Size = new System.Drawing.Size(534, 255);
             this.toolStripContainer1.TabIndex = 34;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -690,28 +672,28 @@
             this.metroGrid2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.metroGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGrid2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.courseNameDataGridViewTextBoxColumn,
             this.courseDescriptionDataGridViewTextBoxColumn});
             this.metroGrid2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroGrid2.DataSource = this.courseBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid2.DefaultCellStyle = dataGridViewCellStyle12;
             this.metroGrid2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroGrid2.EnableHeadersVisualStyles = false;
             this.metroGrid2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -721,22 +703,22 @@
             this.metroGrid2.Name = "metroGrid2";
             this.metroGrid2.ReadOnly = true;
             this.metroGrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid2.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid2.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.metroGrid2.RowHeadersVisible = false;
             this.metroGrid2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.metroGrid2.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            this.metroGrid2.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.metroGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid2.Size = new System.Drawing.Size(534, 243);
+            this.metroGrid2.Size = new System.Drawing.Size(534, 224);
             this.metroGrid2.TabIndex = 0;
             this.metroGrid2.TabStop = false;
             // 
@@ -1046,83 +1028,103 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tableLayoutPanel6);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(37, 22);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(610, 338);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Select";
+            this.groupBox2.Text = "Set Properties";
             // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 3;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 292F));
-            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel8, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.label4, 2, 4);
-            this.tableLayoutPanel6.Controls.Add(this.label9, 2, 3);
-            this.tableLayoutPanel6.Controls.Add(this.label10, 2, 2);
-            this.tableLayoutPanel6.Controls.Add(this.label11, 2, 1);
-            this.tableLayoutPanel6.Controls.Add(this.label13, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.txtCourseCourseCode, 1, 4);
-            this.tableLayoutPanel6.Controls.Add(this.label5, 0, 4);
-            this.tableLayoutPanel6.Controls.Add(this.label6, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.label7, 0, 2);
-            this.tableLayoutPanel6.Controls.Add(this.label8, 0, 3);
-            this.tableLayoutPanel6.Controls.Add(this.nudCourseDuration, 1, 3);
-            this.tableLayoutPanel6.Controls.Add(this.nudCourseMaximumAllowed, 1, 1);
-            this.tableLayoutPanel6.Controls.Add(this.nudCourseMinimumAllowed, 1, 2);
+            this.tableLayoutPanel6.Controls.Add(this.label5, 0, 5);
+            this.tableLayoutPanel6.Controls.Add(this.label8, 0, 4);
+            this.tableLayoutPanel6.Controls.Add(this.label7, 0, 3);
+            this.tableLayoutPanel6.Controls.Add(this.label6, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.label13, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.label4, 2, 5);
+            this.tableLayoutPanel6.Controls.Add(this.label9, 2, 4);
+            this.tableLayoutPanel6.Controls.Add(this.label10, 2, 3);
+            this.tableLayoutPanel6.Controls.Add(this.label11, 2, 2);
+            this.tableLayoutPanel6.Controls.Add(this.txtCourseCourseCode, 1, 5);
+            this.tableLayoutPanel6.Controls.Add(this.nudCourseDuration, 1, 4);
+            this.tableLayoutPanel6.Controls.Add(this.nudCourseMinimumAllowed, 1, 3);
+            this.tableLayoutPanel6.Controls.Add(this.nudCourseMaximumAllowed, 1, 2);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel8, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.lblCurrentlySelectedCourse, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.metroTile2, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 18);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 5;
+            this.tableLayoutPanel6.RowCount = 6;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(604, 317);
             this.tableLayoutPanel6.TabIndex = 30;
             // 
-            // tableLayoutPanel8
+            // label5
             // 
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.77319F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.2268F));
-            this.tableLayoutPanel8.Controls.Add(this.txtCourseCost, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.txtCourseCostCents, 1, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(115, 3);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(194, 26);
-            this.tableLayoutPanel8.TabIndex = 20;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(5, 176);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 14);
+            this.label5.TabIndex = 63;
+            this.label5.Text = "Course Code";
             // 
-            // txtCourseCost
+            // label8
             // 
-            this.txtCourseCost.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCourseCost.Location = new System.Drawing.Point(3, 3);
-            this.txtCourseCost.Mask = "R00000000000000";
-            this.txtCourseCost.Name = "txtCourseCost";
-            this.txtCourseCost.Size = new System.Drawing.Size(141, 22);
-            this.txtCourseCost.TabIndex = 1;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(5, 146);
+            this.label8.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(94, 14);
+            this.label8.TabIndex = 55;
+            this.label8.Text = "Course Duration";
             // 
-            // txtCourseCostCents
+            // label7
             // 
-            this.txtCourseCostCents.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCourseCostCents.Location = new System.Drawing.Point(150, 3);
-            this.txtCourseCostCents.Mask = "00";
-            this.txtCourseCostCents.Name = "txtCourseCostCents";
-            this.txtCourseCostCents.Size = new System.Drawing.Size(41, 22);
-            this.txtCourseCostCents.TabIndex = 2;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(5, 116);
+            this.label7.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 14);
+            this.label7.TabIndex = 54;
+            this.label7.Text = "Min Attendees";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(5, 86);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 14);
+            this.label6.TabIndex = 53;
+            this.label6.Text = "Max Attendees";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(5, 54);
+            this.label13.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 14);
+            this.label13.TabIndex = 52;
+            this.label13.Text = "Course Cost";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(317, 129);
+            this.label4.Location = new System.Drawing.Point(317, 176);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 14);
@@ -1132,7 +1134,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(317, 99);
+            this.label9.Location = new System.Drawing.Point(317, 146);
             this.label9.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 14);
@@ -1142,7 +1144,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(317, 69);
+            this.label10.Location = new System.Drawing.Point(317, 116);
             this.label10.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(219, 14);
@@ -1152,75 +1154,25 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(317, 32);
+            this.label11.Location = new System.Drawing.Point(317, 79);
             this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 7, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(222, 14);
             this.label11.TabIndex = 61;
             this.label11.Text = "(0 Indicates that there is No Maximum)";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(5, 7);
-            this.label13.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(72, 14);
-            this.label13.TabIndex = 52;
-            this.label13.Text = "Course Cost";
-            // 
             // txtCourseCourseCode
             // 
             this.txtCourseCourseCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCourseCourseCode.Location = new System.Drawing.Point(117, 126);
+            this.txtCourseCourseCode.Location = new System.Drawing.Point(132, 173);
             this.txtCourseCourseCode.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtCourseCourseCode.Name = "txtCourseCourseCode";
-            this.txtCourseCourseCode.Size = new System.Drawing.Size(190, 22);
-            this.txtCourseCourseCode.TabIndex = 62;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 129);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 14);
-            this.label5.TabIndex = 63;
-            this.label5.Text = "Course Code";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 39);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 14);
-            this.label6.TabIndex = 53;
-            this.label6.Text = "Max Attendees";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(5, 69);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 14);
-            this.label7.TabIndex = 54;
-            this.label7.Text = "Min Attendees";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(5, 99);
-            this.label8.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 14);
-            this.label8.TabIndex = 55;
-            this.label8.Text = "Course Duration";
+            this.txtCourseCourseCode.Size = new System.Drawing.Size(175, 22);
+            this.txtCourseCourseCode.TabIndex = 4;
             // 
             // nudCourseDuration
             // 
-            this.nudCourseDuration.Location = new System.Drawing.Point(117, 96);
+            this.nudCourseDuration.Location = new System.Drawing.Point(132, 143);
             this.nudCourseDuration.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.nudCourseDuration.Maximum = new decimal(new int[] {
             365,
@@ -1234,8 +1186,21 @@
             0});
             this.nudCourseDuration.Name = "nudCourseDuration";
             this.nudCourseDuration.Size = new System.Drawing.Size(51, 22);
-            this.nudCourseDuration.TabIndex = 58;
+            this.nudCourseDuration.TabIndex = 3;
             this.nudCourseDuration.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // nudCourseMinimumAllowed
+            // 
+            this.nudCourseMinimumAllowed.Location = new System.Drawing.Point(132, 113);
+            this.nudCourseMinimumAllowed.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.nudCourseMinimumAllowed.Name = "nudCourseMinimumAllowed";
+            this.nudCourseMinimumAllowed.Size = new System.Drawing.Size(51, 22);
+            this.nudCourseMinimumAllowed.TabIndex = 2;
+            this.nudCourseMinimumAllowed.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -1243,29 +1208,37 @@
             // 
             // nudCourseMaximumAllowed
             // 
-            this.nudCourseMaximumAllowed.Location = new System.Drawing.Point(117, 36);
+            this.nudCourseMaximumAllowed.Location = new System.Drawing.Point(132, 83);
             this.nudCourseMaximumAllowed.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.nudCourseMaximumAllowed.Name = "nudCourseMaximumAllowed";
             this.nudCourseMaximumAllowed.Size = new System.Drawing.Size(51, 22);
-            this.nudCourseMaximumAllowed.TabIndex = 3;
+            this.nudCourseMaximumAllowed.TabIndex = 1;
             this.nudCourseMaximumAllowed.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
             // 
-            // nudCourseMinimumAllowed
+            // tableLayoutPanel8
             // 
-            this.nudCourseMinimumAllowed.Location = new System.Drawing.Point(117, 66);
-            this.nudCourseMinimumAllowed.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.nudCourseMinimumAllowed.Name = "nudCourseMinimumAllowed";
-            this.nudCourseMinimumAllowed.Size = new System.Drawing.Size(51, 22);
-            this.nudCourseMinimumAllowed.TabIndex = 4;
-            this.nudCourseMinimumAllowed.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.tableLayoutPanel8.ColumnCount = 1;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.77319F));
+            this.tableLayoutPanel8.Controls.Add(this.txtCourseCost, 0, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(130, 50);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(179, 26);
+            this.tableLayoutPanel8.TabIndex = 20;
+            // 
+            // txtCourseCost
+            // 
+            this.txtCourseCost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCourseCost.Location = new System.Drawing.Point(3, 3);
+            this.txtCourseCost.Mask = "R00000000000000";
+            this.txtCourseCost.Name = "txtCourseCost";
+            this.txtCourseCost.Size = new System.Drawing.Size(173, 22);
+            this.txtCourseCost.TabIndex = 0;
             // 
             // groupBox4
             // 
@@ -1351,14 +1324,14 @@
             this.dgcAvaiableDays.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgcAvaiableDays.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgcAvaiableDays.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgcAvaiableDays.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgcAvaiableDays.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgcAvaiableDays.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgcAvaiableDays.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DayOfWeek,
@@ -1366,14 +1339,14 @@
             this.dayOfWeekDataGridViewTextBoxColumn,
             this.isWeekDayDataGridViewCheckBoxColumn});
             this.dgcAvaiableDays.DataSource = this.availableCurriculumCourseDayCanBeScheduledBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgcAvaiableDays.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgcAvaiableDays.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgcAvaiableDays.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgcAvaiableDays.EnableHeadersVisualStyles = false;
             this.dgcAvaiableDays.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1382,14 +1355,14 @@
             this.dgcAvaiableDays.Name = "dgcAvaiableDays";
             this.dgcAvaiableDays.ReadOnly = true;
             this.dgcAvaiableDays.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgcAvaiableDays.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgcAvaiableDays.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgcAvaiableDays.RowHeadersVisible = false;
             this.dgcAvaiableDays.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgcAvaiableDays.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1404,10 +1377,6 @@
             this.DayOfWeek.HeaderText = "Day Of Week";
             this.DayOfWeek.Name = "DayOfWeek";
             this.DayOfWeek.ReadOnly = true;
-            // 
-            // availableCurriculumCourseDayCanBeScheduledBindingSource
-            // 
-            this.availableCurriculumCourseDayCanBeScheduledBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupDayOfWeek);
             // 
             // dayOfWeekIDDataGridViewTextBoxColumn
             // 
@@ -1429,6 +1398,10 @@
             this.isWeekDayDataGridViewCheckBoxColumn.HeaderText = "IsWeekDay";
             this.isWeekDayDataGridViewCheckBoxColumn.Name = "isWeekDayDataGridViewCheckBoxColumn";
             this.isWeekDayDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // availableCurriculumCourseDayCanBeScheduledBindingSource
+            // 
+            this.availableCurriculumCourseDayCanBeScheduledBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupDayOfWeek);
             // 
             // bindingNavigator2
             // 
@@ -1562,27 +1535,27 @@
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDay,
             this.dayOfWeekIDDataGridViewTextBoxColumn1});
             this.metroGrid1.DataSource = this.linkedCcurriculumCourseDayCanBeScheduledBindingSource;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle19;
             this.metroGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1590,14 +1563,14 @@
             this.metroGrid1.Location = new System.Drawing.Point(0, 0);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.metroGrid1.RowHeadersVisible = false;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1954,6 +1927,63 @@
             // 
             this.lookupDayOfWeekBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupDayOfWeek);
             // 
+            // lblCurrentlySelectedCourse
+            // 
+            this.lblCurrentlySelectedCourse.ActiveControl = null;
+            this.tableLayoutPanel6.SetColumnSpan(this.lblCurrentlySelectedCourse, 2);
+            this.lblCurrentlySelectedCourse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCurrentlySelectedCourse.Location = new System.Drawing.Point(130, 3);
+            this.lblCurrentlySelectedCourse.Name = "lblCurrentlySelectedCourse";
+            this.lblCurrentlySelectedCourse.Size = new System.Drawing.Size(471, 41);
+            this.lblCurrentlySelectedCourse.Style = MetroFramework.MetroColorStyle.Orange;
+            this.lblCurrentlySelectedCourse.TabIndex = 68;
+            this.lblCurrentlySelectedCourse.TabStop = false;
+            this.lblCurrentlySelectedCourse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCurrentlySelectedCourse.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.lblCurrentlySelectedCourse.UseSelectable = true;
+            // 
+            // metroTile2
+            // 
+            this.metroTile2.ActiveControl = null;
+            this.metroTile2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroTile2.Location = new System.Drawing.Point(3, 3);
+            this.metroTile2.Name = "metroTile2";
+            this.metroTile2.Size = new System.Drawing.Size(121, 41);
+            this.metroTile2.TabIndex = 69;
+            this.metroTile2.TabStop = false;
+            this.metroTile2.Text = "Selected Course";
+            this.metroTile2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile2.UseSelectable = true;
+            // 
+            // metroTile3
+            // 
+            this.metroTile3.ActiveControl = null;
+            this.metroTile3.Location = new System.Drawing.Point(3, 3);
+            this.metroTile3.Name = "metroTile3";
+            this.metroTile3.Size = new System.Drawing.Size(106, 41);
+            this.metroTile3.TabIndex = 70;
+            this.metroTile3.TabStop = false;
+            this.metroTile3.Text = "Curriculum";
+            this.metroTile3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile3.UseSelectable = true;
+            // 
+            // lblSelectedCurriculum
+            // 
+            this.lblSelectedCurriculum.ActiveControl = null;
+            this.lblSelectedCurriculum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSelectedCurriculum.Location = new System.Drawing.Point(115, 3);
+            this.lblSelectedCurriculum.Name = "lblSelectedCurriculum";
+            this.lblSelectedCurriculum.Size = new System.Drawing.Size(416, 41);
+            this.lblSelectedCurriculum.Style = MetroFramework.MetroColorStyle.Orange;
+            this.lblSelectedCurriculum.TabIndex = 71;
+            this.lblSelectedCurriculum.TabStop = false;
+            this.lblSelectedCurriculum.Text = "Welder";
+            this.lblSelectedCurriculum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSelectedCurriculum.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.lblSelectedCurriculum.UseSelectable = true;
+            // 
             // frmAddCurriculumCourseV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2012,11 +2042,11 @@
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCourseDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCourseMinimumAllowed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCourseMaximumAllowed)).EndInit();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCourseDuration)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCourseMaximumAllowed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCourseMinimumAllowed)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
@@ -2084,7 +2114,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
@@ -2125,7 +2154,6 @@
         private System.Windows.Forms.NumericUpDown nudCourseMinimumAllowed;
         private System.Windows.Forms.MaskedTextBox txtCourseCost;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.MaskedTextBox txtCourseCostCents;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.GroupBox groupBox9;
@@ -2183,7 +2211,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cboEnrollmentTypes;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox txtCurriculumName;
         private System.Windows.Forms.SplitContainer splitContainerAddNewCourse;
         private System.Windows.Forms.ToolStripButton btnAddNewCourse;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
@@ -2196,5 +2223,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dayOfWeekIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dayOfWeekDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isWeekDayDataGridViewCheckBoxColumn;
+        private MetroFramework.Controls.MetroTile lblCurrentlySelectedCourse;
+        private MetroFramework.Controls.MetroTile metroTile2;
+        private MetroFramework.Controls.MetroTile metroTile3;
+        private MetroFramework.Controls.MetroTile lblSelectedCurriculum;
     }
 }

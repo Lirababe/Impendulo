@@ -335,6 +335,11 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
             switch (CurrentPosition)
             {
                 case 0:
+                    if (courseBindingSource.List.Count == 0)
+                    {
+                        MessageBox.Show("Please Add and Select a Course as you canot proceed if no course is selected.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        bRtn = false;
+                    }
                     break;
                 case 1:
                     using (var Dbconnection = new MCDEntities())
@@ -345,29 +350,22 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
                             {
                                 //CRUD Operations
                                 Course CourseObj = (Course)courseBindingSource.Current;
-                                decimal Cost = 0;
-                                decimal Cents = 0;
-                                decimal TotalCost = 0;
-                                if (txtCourseCost.Text.Replace("R", "").Length > 0)
-                                {
-                                    Cost = Convert.ToDecimal(txtCourseCost.Text.Replace("R", ""));
-                                }
 
-                                if (txtCourseCostCents.Text.Length > 0)
-                                {
-                                    Cents = (Convert.ToDecimal(txtCourseCostCents.Text)) / 100;
-                                }
-                                TotalCost = Cost + Cents;
+
+
+
 
 
                                 if (newCourseObj == null)
                                 {
+                                    decimal x = Convert.ToDecimal(txtCourseCost.Text.Replace("R", "").Replace(".", ","));
                                     newCourseObj = new CurriculumCourse
                                     {
+
                                         CourseID = CourseObj.CourseID,
                                         CurriculumID = this.CurriculumID,
                                         EnrollmentTypeID = Convert.ToInt32(cboEnrollmentTypes.SelectedValue),
-                                        Cost = TotalCost,
+                                        Cost = Convert.ToDecimal(txtCourseCost.Text.Replace("R", "").Replace(".", ",").Trim()),
                                         Duration = Convert.ToInt32(nudCourseDuration.Value),
                                         CurricullumCourseCode = new CurricullumCourseCode
                                         {
@@ -379,12 +377,13 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
                                             CurriculumCourseMinimum = Convert.ToInt32(nudCourseMinimumAllowed.Value)
                                         }
                                     };
+                                    Dbconnection.CurriculumCourses.Add(newCourseObj);
                                 }
                                 else
                                 {
                                     newCourseObj.CourseID = CourseObj.CourseID;
                                     newCourseObj.EnrollmentTypeID = Convert.ToInt32(cboEnrollmentTypes.SelectedValue);
-                                    newCourseObj.Cost = TotalCost;
+                                    newCourseObj.Cost = Convert.ToDecimal(txtCourseCost.Text.Replace("R", "").Replace(".", ","));
                                     newCourseObj.Duration = Convert.ToInt32(nudCourseDuration.Value);
                                     newCourseObj.CurricullumCourseCode.CurricullumCourseCodeValue = txtCourseCourseCode.Text;
                                     newCourseObj.CurriculumCourseMinimumMaximum.CurriculumCourseMaximum = Convert.ToInt32(nudCourseMaximumAllowed.Value);
@@ -392,7 +391,7 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
                                     Dbconnection.Entry(newCourseObj).State = EntityState.Modified;
                                 }
 
-                                Dbconnection.CurriculumCourses.Add(newCourseObj);
+
 
                                 ////saves all above operations within one transaction
                                 Dbconnection.SaveChanges();
@@ -458,7 +457,20 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
 
         private void loadupStepTwo()
         {
+            Course CourseObj = (Course)courseBindingSource.Current;
 
+            lblCurrentlySelectedCourse.Text = CourseObj.CourseName;
+
+            if (newCourseObj != null)
+            {
+
+                txtCourseCost.Text = "R" + Math.Abs(newCourseObj.Cost);
+                nudCourseDuration.Value = newCourseObj.Duration;
+                txtCourseCourseCode.Text = newCourseObj.CurricullumCourseCode.CurricullumCourseCodeValue;
+                nudCourseMaximumAllowed.Value = newCourseObj.CurriculumCourseMinimumMaximum.CurriculumCourseMaximum;
+                nudCourseMinimumAllowed.Value = newCourseObj.CurriculumCourseMinimumMaximum.CurriculumCourseMinimum;
+
+            }
         }
 
         private void loadupStepThree()
