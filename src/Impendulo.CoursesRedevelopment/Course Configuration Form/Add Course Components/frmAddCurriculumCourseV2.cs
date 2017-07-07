@@ -163,6 +163,7 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
             {
                 linkedCcurriculumCourseDayCanBeScheduledBindingSource.DataSource =
                     (from a in Dbconnection.CurriculumCourseDayCanBeScheduleds
+                     orderby a.DayOfWeekID
                      where a.CurriculumCourse.CourseID == newCourseObj.CourseID
                      select a).ToList<CurriculumCourseDayCanBeScheduled>();
             };
@@ -471,6 +472,7 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
             Course CourseObj = (Course)courseBindingSource.Current;
 
             lblCurrentlySelectedCourse.Text = CourseObj.CourseName;
+            lblSummaryCourseSelected.Text = CourseObj.CourseName;
 
             if (newCourseObj != null)
             {
@@ -480,22 +482,23 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
                 txtCourseCourseCode.Text = newCourseObj.CurricullumCourseCode.CurricullumCourseCodeValue;
                 nudCourseMaximumAllowed.Value = newCourseObj.CurriculumCourseMinimumMaximum.CurriculumCourseMaximum;
                 nudCourseMinimumAllowed.Value = newCourseObj.CurriculumCourseMinimumMaximum.CurriculumCourseMinimum;
-
             }
         }
 
         private void loadupStepThree()
         {
-
             this.RefreshAvailalbleDays();
             this.refreshLkinkedDays();
-
         }
 
 
         private void loadupStepFour()
         {
-
+            txtSummaryCourseCost.Text = newCourseObj.Cost.ToString("C");
+            txtCourseDuration.Text = newCourseObj.Duration.ToString();
+            txtSummaryCourseCode.Text = newCourseObj.CurricullumCourseCode.CurricullumCourseCodeValue;
+            txtSummaryMaxAttendees.Text = newCourseObj.CurriculumCourseMinimumMaximum.CurriculumCourseMaximum.ToString();
+            txtSummaryMinAttendees.Text = newCourseObj.CurriculumCourseMinimumMaximum.CurriculumCourseMinimum.ToString();
         }
         private void loadupStepFive()
         {
@@ -660,6 +663,14 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
                         //commit transaction
                         dbTran.Commit();
                         this.loadupStepThree();
+                        this.nudStartHours.Value = 8;
+                        this.nudStartMin.Value = 0;
+                        this.nudEndHours.Value = 16;
+                        this.nudEndMin.Value = 0;
+                        if (availableCurriculumCourseDayCanBeScheduledBindingSource.Count == 0)
+                        {
+                            btnLinkDayAvailableToSchedule.Enabled = false;
+                        }
 
                     }
                     catch (Exception ex)
@@ -684,6 +695,82 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
                 }
             };
 
+        }
+
+        private void nudStartHours_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudStartHours.Value > nudEndHours.Value)
+                nudEndHours.Value = nudStartHours.Value;
+        }
+
+        private void nudStartMin_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudStartMin.Value > nudEndMin.Value)
+                nudEndMin.Value = nudStartMin.Value;
+        }
+
+        private void nudEndHours_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudEndHours.Value < nudStartHours.Value)
+                nudStartHours.Value = nudEndHours.Value;
+        }
+
+        private void nudEndMin_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudEndMin.Value < nudStartMin.Value)
+                nudStartMin.Value = nudEndMin.Value;
+        }
+
+        private void dgvLinkedDayCourseCanBeScheduled_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewLinkColumn && e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == 0)
+                {
+                    //TODO - Button Clicked - Execute Code Here
+                    CurriculumCourseDayCanBeScheduled CurriculumCourseDayCanBeScheduledObj = (CurriculumCourseDayCanBeScheduled)(senderGrid.Rows[e.RowIndex].DataBoundItem);
+                    CurriculumCourseDayCanBeScheduledObj.ObjectState = EntityObjectState.Deleted;
+
+
+                    using (var Dbconnection = new MCDEntities())
+                    {
+                        Dbconnection.Entry(CurriculumCourseDayCanBeScheduledObj).State = EntityState.Deleted;
+                        Dbconnection.SaveChanges();
+                        this.loadupStepThree();
+                        this.btnLinkDayAvailableToSchedule.Enabled = true;
+                    };
+                }
+            }
+        }
+
+        private void btnRemoveLinkedDaysToSchedule_Click(object sender, EventArgs e)
+        {
+            CurriculumCourseDayCanBeScheduled CurriculumCourseDayCanBeScheduledObj = (CurriculumCourseDayCanBeScheduled)(linkedCcurriculumCourseDayCanBeScheduledBindingSource.Current);
+            CurriculumCourseDayCanBeScheduledObj.ObjectState = EntityObjectState.Deleted;
+
+
+            using (var Dbconnection = new MCDEntities())
+            {
+                Dbconnection.Entry(CurriculumCourseDayCanBeScheduledObj).State = EntityState.Deleted;
+                Dbconnection.SaveChanges();
+                this.loadupStepThree();
+                this.btnLinkDayAvailableToSchedule.Enabled = true;
+            };
+        }
+
+        private void dgvDayToBeSeheduledSummary_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            var gridView = (DataGridView)sender;
+            foreach (DataGridViewRow row in gridView.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    var CurriculumCourseDayCanBeScheduledObj = (CurriculumCourseDayCanBeScheduled)(row.DataBoundItem);
+                    row.Cells[colSummaryDays.Index].Value = CurriculumCourseDayCanBeScheduledObj.LookupDayOfWeek.DayOfWeek.ToString();
+                }
+            }
         }
     }
 }

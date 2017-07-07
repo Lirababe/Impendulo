@@ -43,6 +43,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.NavigationPanel = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -51,8 +57,6 @@
             this.label38 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
@@ -132,10 +136,6 @@
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.dgcAvaiableDays = new MetroFramework.Controls.MetroGrid();
-            this.DayOfWeek = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dayOfWeekIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dayOfWeekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isWeekDayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.availableCurriculumCourseDayCanBeScheduledBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -150,15 +150,6 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer3 = new System.Windows.Forms.ToolStripContainer();
             this.dgvLinkedDayCourseCanBeScheduled = new MetroFramework.Controls.MetroGrid();
-            this.colDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dayOfWeekIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumCourseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lookupDayOfWeekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkedCcurriculumCourseDayCanBeScheduledBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator3 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
@@ -188,6 +179,32 @@
             this.metroTile5 = new MetroFramework.Controls.MetroTile();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.lookupDayOfWeekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DayOfWeek = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRemoveLinkedDaysToSchedule = new System.Windows.Forms.ToolStripButton();
+            this.colDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtSummaryCourseCode = new System.Windows.Forms.TextBox();
+            this.lblSummaryCourseSelected = new MetroFramework.Controls.MetroTile();
+            this.metroTile7 = new MetroFramework.Controls.MetroTile();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.toolStripContainer4 = new System.Windows.Forms.ToolStripContainer();
+            this.dgvDayToBeSeheduledSummary = new MetroFramework.Controls.MetroGrid();
+            this.txtCourseDuration = new System.Windows.Forms.TextBox();
+            this.txtSummaryMinAttendees = new System.Windows.Forms.TextBox();
+            this.txtSummaryMaxAttendees = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.colSummaryDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.txtSummaryCourseCost = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -258,7 +275,15 @@
             this.tableLayoutPanel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudStartMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStartHours)).BeginInit();
+            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookupDayOfWeekBindingSource)).BeginInit();
+            this.tableLayoutPanel18.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.toolStripContainer4.ContentPanel.SuspendLayout();
+            this.toolStripContainer4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDayToBeSeheduledSummary)).BeginInit();
+            this.tableLayoutPanel19.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -294,8 +319,6 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.tableLayoutPanel5);
-            this.groupBox5.Controls.Add(this.label16);
-            this.groupBox5.Controls.Add(this.label15);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 39);
             this.groupBox5.Name = "groupBox5";
@@ -374,26 +397,6 @@
             this.label12.TabIndex = 18;
             this.label12.Tag = "1";
             this.label12.Text = "Course Properties";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(82, 342);
-            this.label16.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(70, 17);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "End Time:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(30, 287);
-            this.label15.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(76, 17);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Start Time:";
             // 
             // panel4
             // 
@@ -1425,10 +1428,7 @@
             this.dgcAvaiableDays.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgcAvaiableDays.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgcAvaiableDays.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DayOfWeek,
-            this.dayOfWeekIDDataGridViewTextBoxColumn,
-            this.dayOfWeekDataGridViewTextBoxColumn,
-            this.isWeekDayDataGridViewCheckBoxColumn});
+            this.DayOfWeek});
             this.dgcAvaiableDays.DataSource = this.availableCurriculumCourseDayCanBeScheduledBindingSource;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1465,35 +1465,6 @@
             this.dgcAvaiableDays.TabIndex = 0;
             this.dgcAvaiableDays.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgcAvaiableDays_DataBindingComplete);
             // 
-            // DayOfWeek
-            // 
-            this.DayOfWeek.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DayOfWeek.DataPropertyName = "DayOfWeek";
-            this.DayOfWeek.HeaderText = "Day Of Week";
-            this.DayOfWeek.Name = "DayOfWeek";
-            this.DayOfWeek.ReadOnly = true;
-            // 
-            // dayOfWeekIDDataGridViewTextBoxColumn
-            // 
-            this.dayOfWeekIDDataGridViewTextBoxColumn.DataPropertyName = "DayOfWeekID";
-            this.dayOfWeekIDDataGridViewTextBoxColumn.HeaderText = "DayOfWeekID";
-            this.dayOfWeekIDDataGridViewTextBoxColumn.Name = "dayOfWeekIDDataGridViewTextBoxColumn";
-            this.dayOfWeekIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dayOfWeekDataGridViewTextBoxColumn
-            // 
-            this.dayOfWeekDataGridViewTextBoxColumn.DataPropertyName = "DayOfWeek";
-            this.dayOfWeekDataGridViewTextBoxColumn.HeaderText = "DayOfWeek";
-            this.dayOfWeekDataGridViewTextBoxColumn.Name = "dayOfWeekDataGridViewTextBoxColumn";
-            this.dayOfWeekDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // isWeekDayDataGridViewCheckBoxColumn
-            // 
-            this.isWeekDayDataGridViewCheckBoxColumn.DataPropertyName = "IsWeekDay";
-            this.isWeekDayDataGridViewCheckBoxColumn.HeaderText = "IsWeekDay";
-            this.isWeekDayDataGridViewCheckBoxColumn.Name = "isWeekDayDataGridViewCheckBoxColumn";
-            this.isWeekDayDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
             // availableCurriculumCourseDayCanBeScheduledBindingSource
             // 
             this.availableCurriculumCourseDayCanBeScheduledBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupDayOfWeek);
@@ -1501,6 +1472,7 @@
             // bindingNavigator2
             // 
             this.bindingNavigator2.AddNewItem = null;
+            this.bindingNavigator2.BindingSource = this.availableCurriculumCourseDayCanBeScheduledBindingSource;
             this.bindingNavigator2.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator2.DeleteItem = null;
             this.bindingNavigator2.Dock = System.Windows.Forms.DockStyle.None;
@@ -1642,13 +1614,7 @@
             this.dgvLinkedDayCourseCanBeScheduled.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDay,
             this.StartTime,
-            this.EndTime,
-            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn,
-            this.dayOfWeekIDDataGridViewTextBoxColumn1,
-            this.curriculumCourseIDDataGridViewTextBoxColumn,
-            this.startTimeDataGridViewTextBoxColumn,
-            this.endTimeDataGridViewTextBoxColumn,
-            this.lookupDayOfWeekDataGridViewTextBoxColumn});
+            this.EndTime});
             this.dgvLinkedDayCourseCanBeScheduled.DataSource = this.linkedCcurriculumCourseDayCanBeScheduledBindingSource;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1679,71 +1645,8 @@
             this.dgvLinkedDayCourseCanBeScheduled.Size = new System.Drawing.Size(264, 378);
             this.dgvLinkedDayCourseCanBeScheduled.TabIndex = 0;
             this.dgvLinkedDayCourseCanBeScheduled.TabStop = false;
+            this.dgvLinkedDayCourseCanBeScheduled.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLinkedDayCourseCanBeScheduled_CellContentClick);
             this.dgvLinkedDayCourseCanBeScheduled.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvLinkedDayCourseCanBeScheduled_DataBindingComplete);
-            // 
-            // colDay
-            // 
-            this.colDay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDay.HeaderText = "Day Of Week";
-            this.colDay.Name = "colDay";
-            // 
-            // StartTime
-            // 
-            this.StartTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.StartTime.DataPropertyName = "StartTime";
-            dataGridViewCellStyle10.Format = "t";
-            dataGridViewCellStyle10.NullValue = null;
-            this.StartTime.DefaultCellStyle = dataGridViewCellStyle10;
-            this.StartTime.HeaderText = "Start";
-            this.StartTime.Name = "StartTime";
-            this.StartTime.Width = 54;
-            // 
-            // EndTime
-            // 
-            this.EndTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.EndTime.DataPropertyName = "EndTime";
-            dataGridViewCellStyle11.Format = "t";
-            dataGridViewCellStyle11.NullValue = null;
-            this.EndTime.DefaultCellStyle = dataGridViewCellStyle11;
-            this.EndTime.HeaderText = "End";
-            this.EndTime.Name = "EndTime";
-            this.EndTime.Width = 50;
-            // 
-            // curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn
-            // 
-            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumCourseDayCanBeScheduledID";
-            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn.HeaderText = "CurriculumCourseDayCanBeScheduledID";
-            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn.Name = "curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn";
-            // 
-            // dayOfWeekIDDataGridViewTextBoxColumn1
-            // 
-            this.dayOfWeekIDDataGridViewTextBoxColumn1.DataPropertyName = "DayOfWeekID";
-            this.dayOfWeekIDDataGridViewTextBoxColumn1.HeaderText = "DayOfWeekID";
-            this.dayOfWeekIDDataGridViewTextBoxColumn1.Name = "dayOfWeekIDDataGridViewTextBoxColumn1";
-            // 
-            // curriculumCourseIDDataGridViewTextBoxColumn
-            // 
-            this.curriculumCourseIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumCourseID";
-            this.curriculumCourseIDDataGridViewTextBoxColumn.HeaderText = "CurriculumCourseID";
-            this.curriculumCourseIDDataGridViewTextBoxColumn.Name = "curriculumCourseIDDataGridViewTextBoxColumn";
-            // 
-            // startTimeDataGridViewTextBoxColumn
-            // 
-            this.startTimeDataGridViewTextBoxColumn.DataPropertyName = "StartTime";
-            this.startTimeDataGridViewTextBoxColumn.HeaderText = "StartTime";
-            this.startTimeDataGridViewTextBoxColumn.Name = "startTimeDataGridViewTextBoxColumn";
-            // 
-            // endTimeDataGridViewTextBoxColumn
-            // 
-            this.endTimeDataGridViewTextBoxColumn.DataPropertyName = "EndTime";
-            this.endTimeDataGridViewTextBoxColumn.HeaderText = "EndTime";
-            this.endTimeDataGridViewTextBoxColumn.Name = "endTimeDataGridViewTextBoxColumn";
-            // 
-            // lookupDayOfWeekDataGridViewTextBoxColumn
-            // 
-            this.lookupDayOfWeekDataGridViewTextBoxColumn.DataPropertyName = "LookupDayOfWeek";
-            this.lookupDayOfWeekDataGridViewTextBoxColumn.HeaderText = "LookupDayOfWeek";
-            this.lookupDayOfWeekDataGridViewTextBoxColumn.Name = "lookupDayOfWeekDataGridViewTextBoxColumn";
             // 
             // linkedCcurriculumCourseDayCanBeScheduledBindingSource
             // 
@@ -1752,6 +1655,7 @@
             // bindingNavigator3
             // 
             this.bindingNavigator3.AddNewItem = null;
+            this.bindingNavigator3.BindingSource = this.linkedCcurriculumCourseDayCanBeScheduledBindingSource;
             this.bindingNavigator3.CountItem = this.bindingNavigatorCountItem1;
             this.bindingNavigator3.DeleteItem = null;
             this.bindingNavigator3.Dock = System.Windows.Forms.DockStyle.None;
@@ -1765,7 +1669,8 @@
             this.bindingNavigatorSeparator4,
             this.bindingNavigatorMoveNextItem1,
             this.bindingNavigatorMoveLastItem1,
-            this.bindingNavigatorSeparator5});
+            this.bindingNavigatorSeparator5,
+            this.btnRemoveLinkedDaysToSchedule});
             this.bindingNavigator3.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator3.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
             this.bindingNavigator3.MoveLastItem = this.bindingNavigatorMoveLastItem1;
@@ -1920,6 +1825,7 @@
             this.nudEndMin.Name = "nudEndMin";
             this.nudEndMin.Size = new System.Drawing.Size(44, 22);
             this.nudEndMin.TabIndex = 3;
+            this.nudEndMin.ValueChanged += new System.EventHandler(this.nudEndMin_ValueChanged);
             // 
             // nudEndHours
             // 
@@ -1938,10 +1844,11 @@
             this.nudEndHours.Size = new System.Drawing.Size(44, 22);
             this.nudEndHours.TabIndex = 2;
             this.nudEndHours.Value = new decimal(new int[] {
-            1,
+            16,
             0,
             0,
             0});
+            this.nudEndHours.ValueChanged += new System.EventHandler(this.nudEndHours_ValueChanged);
             // 
             // metroLabel3
             // 
@@ -2004,6 +1911,7 @@
             this.nudStartMin.Name = "nudStartMin";
             this.nudStartMin.Size = new System.Drawing.Size(44, 22);
             this.nudStartMin.TabIndex = 1;
+            this.nudStartMin.ValueChanged += new System.EventHandler(this.nudStartMin_ValueChanged);
             // 
             // nudStartHours
             // 
@@ -2022,10 +1930,11 @@
             this.nudStartHours.Size = new System.Drawing.Size(45, 22);
             this.nudStartHours.TabIndex = 0;
             this.nudStartHours.Value = new decimal(new int[] {
-            1,
+            8,
             0,
             0,
             0});
+            this.nudStartHours.ValueChanged += new System.EventHandler(this.nudStartHours_ValueChanged);
             // 
             // metroLabel2
             // 
@@ -2077,11 +1986,12 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.tableLayoutPanel19);
             this.groupBox7.Location = new System.Drawing.Point(0, 1386);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox7.Size = new System.Drawing.Size(150, 150);
+            this.groupBox7.Size = new System.Drawing.Size(698, 474);
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             this.groupBox7.Tag = "3";
@@ -2090,6 +2000,347 @@
             // lookupDayOfWeekBindingSource
             // 
             this.lookupDayOfWeekBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupDayOfWeek);
+            // 
+            // DayOfWeek
+            // 
+            this.DayOfWeek.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DayOfWeek.DataPropertyName = "DayOfWeek";
+            this.DayOfWeek.HeaderText = "Day Of Week";
+            this.DayOfWeek.Name = "DayOfWeek";
+            this.DayOfWeek.ReadOnly = true;
+            // 
+            // btnRemoveLinkedDaysToSchedule
+            // 
+            this.btnRemoveLinkedDaysToSchedule.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnRemoveLinkedDaysToSchedule.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveLinkedDaysToSchedule.Image")));
+            this.btnRemoveLinkedDaysToSchedule.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRemoveLinkedDaysToSchedule.Name = "btnRemoveLinkedDaysToSchedule";
+            this.btnRemoveLinkedDaysToSchedule.Size = new System.Drawing.Size(23, 22);
+            this.btnRemoveLinkedDaysToSchedule.Text = "toolStripButton1";
+            this.btnRemoveLinkedDaysToSchedule.Click += new System.EventHandler(this.btnRemoveLinkedDaysToSchedule_Click);
+            // 
+            // colDay
+            // 
+            this.colDay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colDay.HeaderText = "Day Of Week";
+            this.colDay.Name = "colDay";
+            this.colDay.Width = 97;
+            // 
+            // StartTime
+            // 
+            this.StartTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.StartTime.DataPropertyName = "StartTime";
+            dataGridViewCellStyle10.Format = "t";
+            dataGridViewCellStyle10.NullValue = null;
+            this.StartTime.DefaultCellStyle = dataGridViewCellStyle10;
+            this.StartTime.HeaderText = "Start";
+            this.StartTime.Name = "StartTime";
+            this.StartTime.Width = 54;
+            // 
+            // EndTime
+            // 
+            this.EndTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EndTime.DataPropertyName = "EndTime";
+            dataGridViewCellStyle11.Format = "t";
+            dataGridViewCellStyle11.NullValue = null;
+            this.EndTime.DefaultCellStyle = dataGridViewCellStyle11;
+            this.EndTime.HeaderText = "End";
+            this.EndTime.Name = "EndTime";
+            // 
+            // tableLayoutPanel18
+            // 
+            this.tableLayoutPanel18.ColumnCount = 2;
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
+            this.tableLayoutPanel18.Controls.Add(this.groupBox12, 0, 6);
+            this.tableLayoutPanel18.Controls.Add(this.label3, 0, 5);
+            this.tableLayoutPanel18.Controls.Add(this.label15, 0, 4);
+            this.tableLayoutPanel18.Controls.Add(this.label16, 0, 3);
+            this.tableLayoutPanel18.Controls.Add(this.label18, 0, 2);
+            this.tableLayoutPanel18.Controls.Add(this.label19, 0, 1);
+            this.tableLayoutPanel18.Controls.Add(this.txtSummaryCourseCode, 1, 5);
+            this.tableLayoutPanel18.Controls.Add(this.lblSummaryCourseSelected, 1, 0);
+            this.tableLayoutPanel18.Controls.Add(this.metroTile7, 0, 0);
+            this.tableLayoutPanel18.Controls.Add(this.txtCourseDuration, 1, 4);
+            this.tableLayoutPanel18.Controls.Add(this.txtSummaryMinAttendees, 1, 3);
+            this.tableLayoutPanel18.Controls.Add(this.txtSummaryMaxAttendees, 1, 2);
+            this.tableLayoutPanel18.Controls.Add(this.txtSummaryCourseCost, 1, 1);
+            this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(3, 18);
+            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
+            this.tableLayoutPanel18.RowCount = 7;
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(400, 332);
+            this.tableLayoutPanel18.TabIndex = 31;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 166);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 14);
+            this.label3.TabIndex = 63;
+            this.label3.Text = "Course Code";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(5, 138);
+            this.label15.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(94, 14);
+            this.label15.TabIndex = 55;
+            this.label15.Text = "Course Duration";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(5, 110);
+            this.label16.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(87, 14);
+            this.label16.TabIndex = 54;
+            this.label16.Text = "Min Attendees";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(5, 82);
+            this.label18.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(90, 14);
+            this.label18.TabIndex = 53;
+            this.label18.Text = "Max Attendees";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(5, 54);
+            this.label19.Margin = new System.Windows.Forms.Padding(5, 7, 5, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(72, 14);
+            this.label19.TabIndex = 52;
+            this.label19.Text = "Course Cost";
+            // 
+            // txtSummaryCourseCode
+            // 
+            this.txtSummaryCourseCode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSummaryCourseCode.Location = new System.Drawing.Point(130, 162);
+            this.txtSummaryCourseCode.Name = "txtSummaryCourseCode";
+            this.txtSummaryCourseCode.Size = new System.Drawing.Size(267, 22);
+            this.txtSummaryCourseCode.TabIndex = 4;
+            // 
+            // lblSummaryCourseSelected
+            // 
+            this.lblSummaryCourseSelected.ActiveControl = null;
+            this.lblSummaryCourseSelected.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSummaryCourseSelected.Location = new System.Drawing.Point(130, 3);
+            this.lblSummaryCourseSelected.Name = "lblSummaryCourseSelected";
+            this.lblSummaryCourseSelected.Size = new System.Drawing.Size(267, 41);
+            this.lblSummaryCourseSelected.Style = MetroFramework.MetroColorStyle.Orange;
+            this.lblSummaryCourseSelected.TabIndex = 68;
+            this.lblSummaryCourseSelected.TabStop = false;
+            this.lblSummaryCourseSelected.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSummaryCourseSelected.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.lblSummaryCourseSelected.UseSelectable = true;
+            // 
+            // metroTile7
+            // 
+            this.metroTile7.ActiveControl = null;
+            this.metroTile7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroTile7.Location = new System.Drawing.Point(3, 3);
+            this.metroTile7.Name = "metroTile7";
+            this.metroTile7.Size = new System.Drawing.Size(121, 41);
+            this.metroTile7.TabIndex = 69;
+            this.metroTile7.TabStop = false;
+            this.metroTile7.Text = "Selected Course";
+            this.metroTile7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.metroTile7.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile7.UseSelectable = true;
+            // 
+            // groupBox12
+            // 
+            this.tableLayoutPanel18.SetColumnSpan(this.groupBox12, 2);
+            this.groupBox12.Controls.Add(this.toolStripContainer4);
+            this.groupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox12.Location = new System.Drawing.Point(3, 190);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(394, 139);
+            this.groupBox12.TabIndex = 70;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Days Course Can Be Scheduled";
+            // 
+            // toolStripContainer4
+            // 
+            // 
+            // toolStripContainer4.ContentPanel
+            // 
+            this.toolStripContainer4.ContentPanel.Controls.Add(this.dgvDayToBeSeheduledSummary);
+            this.toolStripContainer4.ContentPanel.Size = new System.Drawing.Size(388, 118);
+            this.toolStripContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer4.Location = new System.Drawing.Point(3, 18);
+            this.toolStripContainer4.Name = "toolStripContainer4";
+            this.toolStripContainer4.Size = new System.Drawing.Size(388, 118);
+            this.toolStripContainer4.TabIndex = 1;
+            this.toolStripContainer4.Text = "toolStripContainer4";
+            // 
+            // dgvDayToBeSeheduledSummary
+            // 
+            this.dgvDayToBeSeheduledSummary.AllowUserToAddRows = false;
+            this.dgvDayToBeSeheduledSummary.AllowUserToDeleteRows = false;
+            this.dgvDayToBeSeheduledSummary.AllowUserToResizeRows = false;
+            this.dgvDayToBeSeheduledSummary.AutoGenerateColumns = false;
+            this.dgvDayToBeSeheduledSummary.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvDayToBeSeheduledSummary.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDayToBeSeheduledSummary.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvDayToBeSeheduledSummary.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDayToBeSeheduledSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvDayToBeSeheduledSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDayToBeSeheduledSummary.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colSummaryDays,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dgvDayToBeSeheduledSummary.DataSource = this.linkedCcurriculumCourseDayCanBeScheduledBindingSource;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDayToBeSeheduledSummary.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvDayToBeSeheduledSummary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDayToBeSeheduledSummary.EnableHeadersVisualStyles = false;
+            this.dgvDayToBeSeheduledSummary.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvDayToBeSeheduledSummary.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvDayToBeSeheduledSummary.Location = new System.Drawing.Point(0, 0);
+            this.dgvDayToBeSeheduledSummary.Name = "dgvDayToBeSeheduledSummary";
+            this.dgvDayToBeSeheduledSummary.ReadOnly = true;
+            this.dgvDayToBeSeheduledSummary.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDayToBeSeheduledSummary.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvDayToBeSeheduledSummary.RowHeadersVisible = false;
+            this.dgvDayToBeSeheduledSummary.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvDayToBeSeheduledSummary.RowsDefaultCellStyle = dataGridViewCellStyle19;
+            this.dgvDayToBeSeheduledSummary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDayToBeSeheduledSummary.Size = new System.Drawing.Size(388, 118);
+            this.dgvDayToBeSeheduledSummary.TabIndex = 0;
+            this.dgvDayToBeSeheduledSummary.TabStop = false;
+            this.dgvDayToBeSeheduledSummary.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvDayToBeSeheduledSummary_DataBindingComplete);
+            // 
+            // txtCourseDuration
+            // 
+            this.txtCourseDuration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCourseDuration.Location = new System.Drawing.Point(130, 134);
+            this.txtCourseDuration.Name = "txtCourseDuration";
+            this.txtCourseDuration.Size = new System.Drawing.Size(267, 22);
+            this.txtCourseDuration.TabIndex = 71;
+            // 
+            // txtSummaryMinAttendees
+            // 
+            this.txtSummaryMinAttendees.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSummaryMinAttendees.Location = new System.Drawing.Point(130, 106);
+            this.txtSummaryMinAttendees.Name = "txtSummaryMinAttendees";
+            this.txtSummaryMinAttendees.Size = new System.Drawing.Size(267, 22);
+            this.txtSummaryMinAttendees.TabIndex = 72;
+            // 
+            // txtSummaryMaxAttendees
+            // 
+            this.txtSummaryMaxAttendees.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSummaryMaxAttendees.Location = new System.Drawing.Point(130, 78);
+            this.txtSummaryMaxAttendees.Name = "txtSummaryMaxAttendees";
+            this.txtSummaryMaxAttendees.Size = new System.Drawing.Size(267, 22);
+            this.txtSummaryMaxAttendees.TabIndex = 73;
+            // 
+            // tableLayoutPanel19
+            // 
+            this.tableLayoutPanel19.ColumnCount = 3;
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel19.Controls.Add(this.groupBox13, 1, 1);
+            this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(5, 20);
+            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
+            this.tableLayoutPanel19.RowCount = 3;
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(688, 449);
+            this.tableLayoutPanel19.TabIndex = 32;
+            // 
+            // colSummaryDays
+            // 
+            this.colSummaryDays.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colSummaryDays.HeaderText = "Day Of Week";
+            this.colSummaryDays.Name = "colSummaryDays";
+            this.colSummaryDays.ReadOnly = true;
+            this.colSummaryDays.Width = 97;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "StartTime";
+            dataGridViewCellStyle15.Format = "t";
+            dataGridViewCellStyle15.NullValue = null;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Start";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 54;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "EndTime";
+            dataGridViewCellStyle16.Format = "t";
+            dataGridViewCellStyle16.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle16;
+            this.dataGridViewTextBoxColumn3.HeaderText = "End";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.tableLayoutPanel18);
+            this.groupBox13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox13.Location = new System.Drawing.Point(140, 25);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(406, 353);
+            this.groupBox13.TabIndex = 0;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Summary Details";
+            // 
+            // txtSummaryCourseCost
+            // 
+            this.txtSummaryCourseCost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSummaryCourseCost.Location = new System.Drawing.Point(130, 50);
+            this.txtSummaryCourseCost.Name = "txtSummaryCourseCost";
+            this.txtSummaryCourseCost.Size = new System.Drawing.Size(267, 22);
+            this.txtSummaryCourseCost.TabIndex = 74;
             // 
             // frmAddCurriculumCourseV2
             // 
@@ -2110,7 +2361,6 @@
             this.splitContainer1.ResumeLayout(false);
             this.NavigationPanel.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -2191,7 +2441,17 @@
             this.tableLayoutPanel15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudStartMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStartHours)).EndInit();
+            this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lookupDayOfWeekBindingSource)).EndInit();
+            this.tableLayoutPanel18.ResumeLayout(false);
+            this.tableLayoutPanel18.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.toolStripContainer4.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer4.ResumeLayout(false);
+            this.toolStripContainer4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDayToBeSeheduledSummary)).EndInit();
+            this.tableLayoutPanel19.ResumeLayout(false);
+            this.groupBox13.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2293,8 +2553,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
         private MetroFramework.Controls.MetroButton btnLinkDayAvailableToSchedule;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.NumericUpDown nudEndMin;
@@ -2330,19 +2588,32 @@
         private MetroFramework.Controls.MetroTile lblSelectedCurriculum;
         private MetroFramework.Controls.MetroTile metroTile4;
         private MetroFramework.Controls.MetroTile metroTile5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCoursDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DayOfWeek;
+        private System.Windows.Forms.ToolStripButton btnRemoveLinkedDaysToSchedule;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDay;
         private System.Windows.Forms.DataGridViewTextBoxColumn StartTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn EndTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dayOfWeekIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dayOfWeekDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isWeekDayDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dayOfWeekIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCoursDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lookupDayOfWeekDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer4;
+        private MetroFramework.Controls.MetroGrid dgvDayToBeSeheduledSummary;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtSummaryCourseCode;
+        private MetroFramework.Controls.MetroTile lblSummaryCourseSelected;
+        private MetroFramework.Controls.MetroTile metroTile7;
+        private System.Windows.Forms.TextBox txtCourseDuration;
+        private System.Windows.Forms.TextBox txtSummaryMinAttendees;
+        private System.Windows.Forms.TextBox txtSummaryMaxAttendees;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSummaryDays;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.TextBox txtSummaryCourseCost;
     }
 }

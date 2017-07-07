@@ -304,6 +304,29 @@
         8l/FYwIYQ4UGBWBgAAC+0b+zuQxOnAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btnRemoveLinkedDaysToSchedule.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHKSURBVDhPrZHBSxtBFMbHakqNWnqwjTMbsjMbqtQkuCHW
+        qqB78qZ3TwXBQ0tPvQur8RLbBupJc5DoSW9WDFRBsyJIwKigEYJg/oX+BcLz7WbWbJLaS/3gx86b731v
+        dnfIk6oyHp+qjOuLsmzSraF/rhjxr7Ks183Eh+lr/S1c9XMoj8ZycvtB5bGBhVIsDKWoBmVDTwNAi7QI
+        OZtM+IvRMBSE4nDaF4LL4dqQEoaLEQ095nD6TsDFYOS9tAkBQlosrvw4CgfBAZuOe0NQHIltnRvxuZOI
+        AAv3PL61Hwh0yHhNe5qSRmAf2eMMDvBN8v0CfnNa3bM9DFuG0SYjzdrBIb+w0QFP3cZBnvowk0j4ZOvj
+        2tRYYQv/RT3szz9PdpUVyvw6Z3cbeHIjWUF3ZNvftSqUhQw2uqxKvHsrnDVdsaNllc4vqwxcfjpPZRf5
+        Vl17PE5zWVV9IaOEZCj1L6kU6ghRyyTkme0vcZpONfgpERxywq5SWnAmidOTIWqTB9N0wq6SKv0uPVgU
+        wRUwq8NdvUK6PvZ0m1/Ym5zf59OxjuJ92XeWwLVd89me12ufWGAD193IS+RBrUjtmwhpR7oa6ERcPUfs
+        zP+KkHs+BdaetVbvUgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="colSummaryDays.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="lookupDayOfWeekBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
