@@ -74,6 +74,12 @@
     <Compile Include="Course Configuration Form\Add Course Components\frmAddCurriculumCourse.Designer.cs">
       <DependentUpon>frmAddCurriculumCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Course Configuration Form\Add Course Components\frmAddCurriculumCourseV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course Configuration Form\Add Course Components\frmAddCurriculumCourseV2.Designer.cs">
+      <DependentUpon>frmAddCurriculumCourseV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Course Configuration Form\Add Course Components\frmAddModuleActivities.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,10 +140,19 @@
     <Compile Include="Course Main Form\frmCourseConfiguration.Designer.cs">
       <DependentUpon>frmCourseConfiguration.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Course Configuration Form\Add Course Components\frmAddCurriculumCourse.resx">
       <DependentUpon>frmAddCurriculumCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Course Configuration Form\Add Course Components\frmAddCurriculumCourseV2.resx">
+      <DependentUpon>frmAddCurriculumCourseV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Course Configuration Form\Add Course Components\frmAddModuleActivities.resx">
       <DependentUpon>frmAddModuleActivities.cs</DependentUpon>
@@ -169,6 +184,9 @@
     <EmbeddedResource Include="Course Main Form\frmCourseConfiguration.resx">
       <DependentUpon>frmCourseConfiguration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -183,19 +201,16 @@
     <None Include="Properties\DataSources\Impendulo.Data.Models.Activity.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.CostingModel.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.Course.datasource" />
-    <None Include="Properties\DataSources\Impendulo.Data.Models.CourseMetaData.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.Curriculum.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.CurriculumCourse.datasource" />
+    <None Include="Properties\DataSources\Impendulo.Data.Models.CurriculumCourseDayCanBeScheduled.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.CurriculumCourseModule.datasource" />
-    <None Include="Properties\DataSources\Impendulo.Data.Models.CurriculumCoursePerquisiteCourse.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.CurriculumPrequisiteCourse.datasource" />
-    <None Include="Properties\DataSources\Impendulo.Data.Models.Department.datasource" />
+    <None Include="Properties\DataSources\Impendulo.Data.Models.LookupDayOfWeek.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.LookupDepartment.datasource" />
+    <None Include="Properties\DataSources\Impendulo.Data.Models.LookupDepartment1.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.LookupEnrollmentType.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.Module.datasource" />
-    <None Include="Properties\DataSources\Impendulo.Data.Models.Seta.datasource" />
-    <None Include="Properties\DataSources\Impendulo.Data.Models.TrainingDepartment.datasource" />
-    <None Include="Properties\DataSources\Impendulo.Data.Models.TrainingDepartmentCourse.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

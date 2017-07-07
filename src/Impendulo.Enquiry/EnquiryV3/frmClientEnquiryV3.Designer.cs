@@ -59,7 +59,6 @@
             this.btnViewProgressInProgressSections = new MetroFramework.Controls.MetroTile();
             this.btnInitialConsultationConfirmationInProgressSection = new MetroFramework.Controls.MetroTile();
             this.enquiryDateTextBox = new System.Windows.Forms.TextBox();
-            this.enquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtEnquiryInProgressEnquiryID = new System.Windows.Forms.TextBox();
             this.gbInprogressContactNameAndCompanyName = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -75,7 +74,6 @@
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.dgvInprogressContactDetails = new MetroFramework.Controls.MetroGrid();
             this.colInProgressContactType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInProgressContactDetailSendOption = new System.Windows.Forms.DataGridViewLinkColumn();
             this.contactDetailsInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
@@ -96,14 +94,6 @@
             this.gbInProgressEnquiryEnrrolmentQueries = new System.Windows.Forms.GroupBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dgvInProgressCurriculumEnquiries = new MetroFramework.Controls.MetroGrid();
-            this.lastUpdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInProgressEnquiryCloseCurriculumEnquiry = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colInProgressCurriculumDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInProgressCurriculumName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentQuanityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInProgressProcessEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colInProgressViewCurrentEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
             this.curriculumEnquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enquiryInprogressBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -182,6 +172,52 @@
             this.studentDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.systemAdministratorDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companiesInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullNameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualIDDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleIDDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualFirstNameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualSecondNameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualLastnameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowVersionDataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.fullNameDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualIDDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleIDDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualFirstNameDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualSecondNameDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualLastnameDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowVersionDataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.fullNameDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualIDDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleIDDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualFirstNameDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualSecondNameDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualLastnameDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowVersionDataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.enquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.objectStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualIDDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleIDDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualFirstNameDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualSecondNameDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.individualLastnameDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowVersionDataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.assessorDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facilitatorDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupTitleDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nextOfKinDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.systemAdministratorDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastUpdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInProgressEnquiryCloseCurriculumEnquiry = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colInProgressCurriculumDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInProgressCurriculumName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentQuanityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInProgressProcessEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colInProgressViewCurrentEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
             enquiryDateLabel = new System.Windows.Forms.Label();
             enquiryIDLabel = new System.Windows.Forms.Label();
             fullNameLabel = new System.Windows.Forms.Label();
@@ -200,7 +236,6 @@
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).BeginInit();
             this.gbInprogressContactNameAndCompanyName.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -223,6 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingNavigator)).BeginInit();
             this.enquiryInprogressBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companiesInprogressBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // enquiryDateLabel
@@ -490,11 +526,6 @@
             this.enquiryDateTextBox.TabIndex = 1;
             this.enquiryDateTextBox.TextChanged += new System.EventHandler(this.enquiryDateTextBox_TextChanged);
             // 
-            // enquiryInprogressBindingSource
-            // 
-            this.enquiryInprogressBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
-            this.enquiryInprogressBindingSource.BindingComplete += new System.Windows.Forms.BindingCompleteEventHandler(this.enquiryInprogressBindingSource_BindingComplete);
-            // 
             // txtEnquiryInProgressEnquiryID
             // 
             this.txtEnquiryInProgressEnquiryID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enquiryInprogressBindingSource, "EnquiryID", true));
@@ -722,16 +753,6 @@
             this.colInProgressContactType.HeaderText = "Contact Type";
             this.colInProgressContactType.Name = "colInProgressContactType";
             this.colInProgressContactType.ReadOnly = true;
-            // 
-            // contactDetailValueDataGridViewTextBoxColumn
-            // 
-            this.contactDetailValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.contactDetailValueDataGridViewTextBoxColumn.DataPropertyName = "ContactDetailValue";
-            this.contactDetailValueDataGridViewTextBoxColumn.HeaderText = "Contact Detail";
-            this.contactDetailValueDataGridViewTextBoxColumn.MinimumWidth = 105;
-            this.contactDetailValueDataGridViewTextBoxColumn.Name = "contactDetailValueDataGridViewTextBoxColumn";
-            this.contactDetailValueDataGridViewTextBoxColumn.ReadOnly = true;
-            this.contactDetailValueDataGridViewTextBoxColumn.Width = 105;
             // 
             // colInProgressContactDetailSendOption
             // 
@@ -984,88 +1005,6 @@
             this.dgvInProgressCurriculumEnquiries.TabIndex = 0;
             this.dgvInProgressCurriculumEnquiries.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInProgressCurriculumEnquiries_CellContentClick);
             this.dgvInProgressCurriculumEnquiries.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvInProgressCurriculumEnquiries_DataBindingComplete);
-            // 
-            // lastUpdatedDataGridViewTextBoxColumn
-            // 
-            this.lastUpdatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.lastUpdatedDataGridViewTextBoxColumn.DataPropertyName = "LastUpdated";
-            this.lastUpdatedDataGridViewTextBoxColumn.HeaderText = "LastUpdated";
-            this.lastUpdatedDataGridViewTextBoxColumn.Name = "lastUpdatedDataGridViewTextBoxColumn";
-            this.lastUpdatedDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastUpdatedDataGridViewTextBoxColumn.Width = 95;
-            // 
-            // colInProgressEnquiryCloseCurriculumEnquiry
-            // 
-            this.colInProgressEnquiryCloseCurriculumEnquiry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.HeaderText = "";
-            this.colInProgressEnquiryCloseCurriculumEnquiry.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.Name = "colInProgressEnquiryCloseCurriculumEnquiry";
-            this.colInProgressEnquiryCloseCurriculumEnquiry.ReadOnly = true;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.Text = "[ Close Enquiry Item ]";
-            this.colInProgressEnquiryCloseCurriculumEnquiry.TrackVisitedState = false;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.Width = 5;
-            // 
-            // colInProgressCurriculumDepartment
-            // 
-            this.colInProgressCurriculumDepartment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colInProgressCurriculumDepartment.HeaderText = "Department";
-            this.colInProgressCurriculumDepartment.Name = "colInProgressCurriculumDepartment";
-            this.colInProgressCurriculumDepartment.ReadOnly = true;
-            this.colInProgressCurriculumDepartment.Width = 91;
-            // 
-            // colInProgressCurriculumName
-            // 
-            this.colInProgressCurriculumName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colInProgressCurriculumName.HeaderText = "Curriculum";
-            this.colInProgressCurriculumName.Name = "colInProgressCurriculumName";
-            this.colInProgressCurriculumName.ReadOnly = true;
-            this.colInProgressCurriculumName.Width = 86;
-            // 
-            // enrollmentQuanityDataGridViewTextBoxColumn
-            // 
-            this.enrollmentQuanityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentQuanity";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.HeaderText = "Qty To Enroll";
-            this.enrollmentQuanityDataGridViewTextBoxColumn.Name = "enrollmentQuanityDataGridViewTextBoxColumn";
-            this.enrollmentQuanityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // colInProgressEnquiryQuantityCurrentlyEnrolled
-            // 
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.HeaderText = "Qty Enrolled";
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.Name = "colInProgressEnquiryQuantityCurrentlyEnrolled";
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.ReadOnly = true;
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.Width = 93;
-            // 
-            // colInProgressProcessEnrollment
-            // 
-            this.colInProgressProcessEnrollment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colInProgressProcessEnrollment.HeaderText = "";
-            this.colInProgressProcessEnrollment.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colInProgressProcessEnrollment.Name = "colInProgressProcessEnrollment";
-            this.colInProgressProcessEnrollment.ReadOnly = true;
-            this.colInProgressProcessEnrollment.Text = "[ Pocess Enrollment ]";
-            this.colInProgressProcessEnrollment.TrackVisitedState = false;
-            this.colInProgressProcessEnrollment.UseColumnTextForLinkValue = true;
-            this.colInProgressProcessEnrollment.Width = 5;
-            // 
-            // colInProgressViewCurrentEnrollment
-            // 
-            this.colInProgressViewCurrentEnrollment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colInProgressViewCurrentEnrollment.HeaderText = "";
-            this.colInProgressViewCurrentEnrollment.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colInProgressViewCurrentEnrollment.Name = "colInProgressViewCurrentEnrollment";
-            this.colInProgressViewCurrentEnrollment.ReadOnly = true;
-            this.colInProgressViewCurrentEnrollment.Text = "[ View Current Enrollments ]";
-            this.colInProgressViewCurrentEnrollment.TrackVisitedState = false;
-            this.colInProgressViewCurrentEnrollment.UseColumnTextForLinkValue = true;
             // 
             // curriculumEnquiryInprogressBindingSource
             // 
@@ -1602,6 +1541,321 @@
             this.companiesInprogressBindingSource.DataMember = "Companies";
             this.companiesInprogressBindingSource.DataSource = this.individualsInprogressBindingSource;
             // 
+            // fullNameDataGridViewTextBoxColumn4
+            // 
+            this.fullNameDataGridViewTextBoxColumn4.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn4.HeaderText = "FullName";
+            this.fullNameDataGridViewTextBoxColumn4.Name = "fullNameDataGridViewTextBoxColumn4";
+            this.fullNameDataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // individualIDDataGridViewTextBoxColumn4
+            // 
+            this.individualIDDataGridViewTextBoxColumn4.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn4.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn4.Name = "individualIDDataGridViewTextBoxColumn4";
+            // 
+            // titleIDDataGridViewTextBoxColumn4
+            // 
+            this.titleIDDataGridViewTextBoxColumn4.DataPropertyName = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn4.HeaderText = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn4.Name = "titleIDDataGridViewTextBoxColumn4";
+            // 
+            // individualFirstNameDataGridViewTextBoxColumn4
+            // 
+            this.individualFirstNameDataGridViewTextBoxColumn4.DataPropertyName = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn4.HeaderText = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn4.Name = "individualFirstNameDataGridViewTextBoxColumn4";
+            // 
+            // individualSecondNameDataGridViewTextBoxColumn4
+            // 
+            this.individualSecondNameDataGridViewTextBoxColumn4.DataPropertyName = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn4.HeaderText = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn4.Name = "individualSecondNameDataGridViewTextBoxColumn4";
+            // 
+            // individualLastnameDataGridViewTextBoxColumn4
+            // 
+            this.individualLastnameDataGridViewTextBoxColumn4.DataPropertyName = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn4.HeaderText = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn4.Name = "individualLastnameDataGridViewTextBoxColumn4";
+            // 
+            // rowVersionDataGridViewImageColumn4
+            // 
+            this.rowVersionDataGridViewImageColumn4.DataPropertyName = "RowVersion";
+            this.rowVersionDataGridViewImageColumn4.HeaderText = "RowVersion";
+            this.rowVersionDataGridViewImageColumn4.Name = "rowVersionDataGridViewImageColumn4";
+            // 
+            // fullNameDataGridViewTextBoxColumn5
+            // 
+            this.fullNameDataGridViewTextBoxColumn5.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn5.HeaderText = "FullName";
+            this.fullNameDataGridViewTextBoxColumn5.Name = "fullNameDataGridViewTextBoxColumn5";
+            this.fullNameDataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // individualIDDataGridViewTextBoxColumn5
+            // 
+            this.individualIDDataGridViewTextBoxColumn5.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn5.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn5.Name = "individualIDDataGridViewTextBoxColumn5";
+            // 
+            // titleIDDataGridViewTextBoxColumn5
+            // 
+            this.titleIDDataGridViewTextBoxColumn5.DataPropertyName = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn5.HeaderText = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn5.Name = "titleIDDataGridViewTextBoxColumn5";
+            // 
+            // individualFirstNameDataGridViewTextBoxColumn5
+            // 
+            this.individualFirstNameDataGridViewTextBoxColumn5.DataPropertyName = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn5.HeaderText = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn5.Name = "individualFirstNameDataGridViewTextBoxColumn5";
+            // 
+            // individualSecondNameDataGridViewTextBoxColumn5
+            // 
+            this.individualSecondNameDataGridViewTextBoxColumn5.DataPropertyName = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn5.HeaderText = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn5.Name = "individualSecondNameDataGridViewTextBoxColumn5";
+            // 
+            // individualLastnameDataGridViewTextBoxColumn5
+            // 
+            this.individualLastnameDataGridViewTextBoxColumn5.DataPropertyName = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn5.HeaderText = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn5.Name = "individualLastnameDataGridViewTextBoxColumn5";
+            // 
+            // rowVersionDataGridViewImageColumn5
+            // 
+            this.rowVersionDataGridViewImageColumn5.DataPropertyName = "RowVersion";
+            this.rowVersionDataGridViewImageColumn5.HeaderText = "RowVersion";
+            this.rowVersionDataGridViewImageColumn5.Name = "rowVersionDataGridViewImageColumn5";
+            // 
+            // fullNameDataGridViewTextBoxColumn6
+            // 
+            this.fullNameDataGridViewTextBoxColumn6.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn6.HeaderText = "FullName";
+            this.fullNameDataGridViewTextBoxColumn6.Name = "fullNameDataGridViewTextBoxColumn6";
+            this.fullNameDataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // individualIDDataGridViewTextBoxColumn6
+            // 
+            this.individualIDDataGridViewTextBoxColumn6.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn6.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn6.Name = "individualIDDataGridViewTextBoxColumn6";
+            // 
+            // titleIDDataGridViewTextBoxColumn6
+            // 
+            this.titleIDDataGridViewTextBoxColumn6.DataPropertyName = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn6.HeaderText = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn6.Name = "titleIDDataGridViewTextBoxColumn6";
+            // 
+            // individualFirstNameDataGridViewTextBoxColumn6
+            // 
+            this.individualFirstNameDataGridViewTextBoxColumn6.DataPropertyName = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn6.HeaderText = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn6.Name = "individualFirstNameDataGridViewTextBoxColumn6";
+            // 
+            // individualSecondNameDataGridViewTextBoxColumn6
+            // 
+            this.individualSecondNameDataGridViewTextBoxColumn6.DataPropertyName = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn6.HeaderText = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn6.Name = "individualSecondNameDataGridViewTextBoxColumn6";
+            // 
+            // individualLastnameDataGridViewTextBoxColumn6
+            // 
+            this.individualLastnameDataGridViewTextBoxColumn6.DataPropertyName = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn6.HeaderText = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn6.Name = "individualLastnameDataGridViewTextBoxColumn6";
+            // 
+            // rowVersionDataGridViewImageColumn6
+            // 
+            this.rowVersionDataGridViewImageColumn6.DataPropertyName = "RowVersion";
+            this.rowVersionDataGridViewImageColumn6.HeaderText = "RowVersion";
+            this.rowVersionDataGridViewImageColumn6.Name = "rowVersionDataGridViewImageColumn6";
+            // 
+            // enquiryInprogressBindingSource
+            // 
+            this.enquiryInprogressBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
+            this.enquiryInprogressBindingSource.BindingComplete += new System.Windows.Forms.BindingCompleteEventHandler(this.enquiryInprogressBindingSource_BindingComplete);
+            // 
+            // objectStateDataGridViewTextBoxColumn
+            // 
+            this.objectStateDataGridViewTextBoxColumn.DataPropertyName = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn.HeaderText = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn.Name = "objectStateDataGridViewTextBoxColumn";
+            // 
+            // fullNameDataGridViewTextBoxColumn7
+            // 
+            this.fullNameDataGridViewTextBoxColumn7.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn7.HeaderText = "FullName";
+            this.fullNameDataGridViewTextBoxColumn7.Name = "fullNameDataGridViewTextBoxColumn7";
+            this.fullNameDataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // individualIDDataGridViewTextBoxColumn7
+            // 
+            this.individualIDDataGridViewTextBoxColumn7.DataPropertyName = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn7.HeaderText = "IndividualID";
+            this.individualIDDataGridViewTextBoxColumn7.Name = "individualIDDataGridViewTextBoxColumn7";
+            // 
+            // titleIDDataGridViewTextBoxColumn7
+            // 
+            this.titleIDDataGridViewTextBoxColumn7.DataPropertyName = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn7.HeaderText = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn7.Name = "titleIDDataGridViewTextBoxColumn7";
+            // 
+            // individualFirstNameDataGridViewTextBoxColumn7
+            // 
+            this.individualFirstNameDataGridViewTextBoxColumn7.DataPropertyName = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn7.HeaderText = "IndividualFirstName";
+            this.individualFirstNameDataGridViewTextBoxColumn7.Name = "individualFirstNameDataGridViewTextBoxColumn7";
+            // 
+            // individualSecondNameDataGridViewTextBoxColumn7
+            // 
+            this.individualSecondNameDataGridViewTextBoxColumn7.DataPropertyName = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn7.HeaderText = "IndividualSecondName";
+            this.individualSecondNameDataGridViewTextBoxColumn7.Name = "individualSecondNameDataGridViewTextBoxColumn7";
+            // 
+            // individualLastnameDataGridViewTextBoxColumn7
+            // 
+            this.individualLastnameDataGridViewTextBoxColumn7.DataPropertyName = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn7.HeaderText = "IndividualLastname";
+            this.individualLastnameDataGridViewTextBoxColumn7.Name = "individualLastnameDataGridViewTextBoxColumn7";
+            // 
+            // rowVersionDataGridViewImageColumn7
+            // 
+            this.rowVersionDataGridViewImageColumn7.DataPropertyName = "RowVersion";
+            this.rowVersionDataGridViewImageColumn7.HeaderText = "RowVersion";
+            this.rowVersionDataGridViewImageColumn7.Name = "rowVersionDataGridViewImageColumn7";
+            // 
+            // assessorDataGridViewTextBoxColumn4
+            // 
+            this.assessorDataGridViewTextBoxColumn4.DataPropertyName = "Assessor";
+            this.assessorDataGridViewTextBoxColumn4.HeaderText = "Assessor";
+            this.assessorDataGridViewTextBoxColumn4.Name = "assessorDataGridViewTextBoxColumn4";
+            // 
+            // employeeDataGridViewTextBoxColumn4
+            // 
+            this.employeeDataGridViewTextBoxColumn4.DataPropertyName = "Employee";
+            this.employeeDataGridViewTextBoxColumn4.HeaderText = "Employee";
+            this.employeeDataGridViewTextBoxColumn4.Name = "employeeDataGridViewTextBoxColumn4";
+            // 
+            // facilitatorDataGridViewTextBoxColumn4
+            // 
+            this.facilitatorDataGridViewTextBoxColumn4.DataPropertyName = "Facilitator";
+            this.facilitatorDataGridViewTextBoxColumn4.HeaderText = "Facilitator";
+            this.facilitatorDataGridViewTextBoxColumn4.Name = "facilitatorDataGridViewTextBoxColumn4";
+            // 
+            // lookupTitleDataGridViewTextBoxColumn4
+            // 
+            this.lookupTitleDataGridViewTextBoxColumn4.DataPropertyName = "LookupTitle";
+            this.lookupTitleDataGridViewTextBoxColumn4.HeaderText = "LookupTitle";
+            this.lookupTitleDataGridViewTextBoxColumn4.Name = "lookupTitleDataGridViewTextBoxColumn4";
+            // 
+            // nextOfKinDataGridViewTextBoxColumn4
+            // 
+            this.nextOfKinDataGridViewTextBoxColumn4.DataPropertyName = "NextOfKin";
+            this.nextOfKinDataGridViewTextBoxColumn4.HeaderText = "NextOfKin";
+            this.nextOfKinDataGridViewTextBoxColumn4.Name = "nextOfKinDataGridViewTextBoxColumn4";
+            // 
+            // studentDataGridViewTextBoxColumn4
+            // 
+            this.studentDataGridViewTextBoxColumn4.DataPropertyName = "Student";
+            this.studentDataGridViewTextBoxColumn4.HeaderText = "Student";
+            this.studentDataGridViewTextBoxColumn4.Name = "studentDataGridViewTextBoxColumn4";
+            // 
+            // systemAdministratorDataGridViewTextBoxColumn4
+            // 
+            this.systemAdministratorDataGridViewTextBoxColumn4.DataPropertyName = "SystemAdministrator";
+            this.systemAdministratorDataGridViewTextBoxColumn4.HeaderText = "SystemAdministrator";
+            this.systemAdministratorDataGridViewTextBoxColumn4.Name = "systemAdministratorDataGridViewTextBoxColumn4";
+            // 
+            // contactDetailValueDataGridViewTextBoxColumn
+            // 
+            this.contactDetailValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.contactDetailValueDataGridViewTextBoxColumn.DataPropertyName = "ContactDetailValue";
+            this.contactDetailValueDataGridViewTextBoxColumn.HeaderText = "Contact Detail";
+            this.contactDetailValueDataGridViewTextBoxColumn.MinimumWidth = 105;
+            this.contactDetailValueDataGridViewTextBoxColumn.Name = "contactDetailValueDataGridViewTextBoxColumn";
+            this.contactDetailValueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.contactDetailValueDataGridViewTextBoxColumn.Width = 105;
+            // 
+            // lastUpdatedDataGridViewTextBoxColumn
+            // 
+            this.lastUpdatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.lastUpdatedDataGridViewTextBoxColumn.DataPropertyName = "LastUpdated";
+            this.lastUpdatedDataGridViewTextBoxColumn.HeaderText = "LastUpdated";
+            this.lastUpdatedDataGridViewTextBoxColumn.Name = "lastUpdatedDataGridViewTextBoxColumn";
+            this.lastUpdatedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastUpdatedDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // colInProgressEnquiryCloseCurriculumEnquiry
+            // 
+            this.colInProgressEnquiryCloseCurriculumEnquiry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.HeaderText = "";
+            this.colInProgressEnquiryCloseCurriculumEnquiry.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.Name = "colInProgressEnquiryCloseCurriculumEnquiry";
+            this.colInProgressEnquiryCloseCurriculumEnquiry.ReadOnly = true;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.Text = "[ Close Enquiry Item ]";
+            this.colInProgressEnquiryCloseCurriculumEnquiry.TrackVisitedState = false;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.Width = 5;
+            // 
+            // colInProgressCurriculumDepartment
+            // 
+            this.colInProgressCurriculumDepartment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colInProgressCurriculumDepartment.HeaderText = "Department";
+            this.colInProgressCurriculumDepartment.Name = "colInProgressCurriculumDepartment";
+            this.colInProgressCurriculumDepartment.ReadOnly = true;
+            this.colInProgressCurriculumDepartment.Width = 91;
+            // 
+            // colInProgressCurriculumName
+            // 
+            this.colInProgressCurriculumName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colInProgressCurriculumName.HeaderText = "Curriculum";
+            this.colInProgressCurriculumName.Name = "colInProgressCurriculumName";
+            this.colInProgressCurriculumName.ReadOnly = true;
+            this.colInProgressCurriculumName.Width = 86;
+            // 
+            // enrollmentQuanityDataGridViewTextBoxColumn
+            // 
+            this.enrollmentQuanityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentQuanity";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.HeaderText = "Qty To Enroll";
+            this.enrollmentQuanityDataGridViewTextBoxColumn.Name = "enrollmentQuanityDataGridViewTextBoxColumn";
+            this.enrollmentQuanityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // colInProgressEnquiryQuantityCurrentlyEnrolled
+            // 
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.HeaderText = "Qty Enrolled";
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.Name = "colInProgressEnquiryQuantityCurrentlyEnrolled";
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.ReadOnly = true;
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.Width = 93;
+            // 
+            // colInProgressProcessEnrollment
+            // 
+            this.colInProgressProcessEnrollment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colInProgressProcessEnrollment.HeaderText = "";
+            this.colInProgressProcessEnrollment.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colInProgressProcessEnrollment.Name = "colInProgressProcessEnrollment";
+            this.colInProgressProcessEnrollment.ReadOnly = true;
+            this.colInProgressProcessEnrollment.Text = "";
+            this.colInProgressProcessEnrollment.TrackVisitedState = false;
+            this.colInProgressProcessEnrollment.Width = 5;
+            // 
+            // colInProgressViewCurrentEnrollment
+            // 
+            this.colInProgressViewCurrentEnrollment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colInProgressViewCurrentEnrollment.HeaderText = "";
+            this.colInProgressViewCurrentEnrollment.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colInProgressViewCurrentEnrollment.Name = "colInProgressViewCurrentEnrollment";
+            this.colInProgressViewCurrentEnrollment.ReadOnly = true;
+            this.colInProgressViewCurrentEnrollment.Text = "";
+            this.colInProgressViewCurrentEnrollment.TrackVisitedState = false;
+            // 
             // frmClientEnquiryV3
             // 
             this.ApplyImageInvert = true;
@@ -1633,7 +1887,6 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).EndInit();
             this.gbInprogressContactNameAndCompanyName.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
@@ -1663,6 +1916,7 @@
             this.enquiryInprogressBindingNavigator.ResumeLayout(false);
             this.enquiryInprogressBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companiesInprogressBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1798,6 +2052,42 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nextOfKinDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn systemAdministratorDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualIDDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleIDDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualFirstNameDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualSecondNameDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualLastnameDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewImageColumn rowVersionDataGridViewImageColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualIDDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleIDDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualFirstNameDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualSecondNameDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualLastnameDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewImageColumn rowVersionDataGridViewImageColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualIDDataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleIDDataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualFirstNameDataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualSecondNameDataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualLastnameDataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewImageColumn rowVersionDataGridViewImageColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn objectStateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualIDDataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleIDDataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualFirstNameDataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualSecondNameDataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn individualLastnameDataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewImageColumn rowVersionDataGridViewImageColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assessorDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn facilitatorDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lookupTitleDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nextOfKinDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn systemAdministratorDataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastUpdatedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewLinkColumn colInProgressEnquiryCloseCurriculumEnquiry;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInProgressCurriculumDepartment;

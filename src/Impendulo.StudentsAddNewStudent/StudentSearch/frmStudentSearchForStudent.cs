@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Impendulo.Data.Models;
 using System.Data.Entity;
+using Impendulo.Development.Students;
 
 namespace Impendulo.StudentForms.Development
 {
@@ -234,10 +235,10 @@ namespace Impendulo.StudentForms.Development
 
         private void picbtnAddStudent_Click(object sender, EventArgs e)
         {
-            frmAddUpdateStudent frm = new frmAddUpdateStudent();
-            frm.StudentID = 0;
+            frmStudentAddUpdate frm = new frmStudentAddUpdate();
+            frm.CurrentStudentID = 0;
             frm.ShowDialog();
-            if (frm.StudentID != 0)
+            if (frm.CurrentStudentID != 0)
             {
                 this.txtStudentIdNumber.Text = frm.CurrentSelectedStudent.StudentIDNumber;
                 this.txtFirstName.Text = frm.CurrentSelectedStudent.Individual.IndividualFirstName;

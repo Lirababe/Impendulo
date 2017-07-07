@@ -41,30 +41,17 @@ namespace Impendulo.Data.Models
 
                     return new System.Data.Entity.Validation.DbEntityValidationResult(entityEntry, list);
                 }
+            }
 
+            if (entityEntry.Entity is Course)
+            {
+                if (entityEntry.CurrentValues.GetValue<string>("CourseName").Length == 0)
+                {
+                    var list = new List<System.Data.Entity.Validation.DbValidationError>();
+                    list.Add(new System.Data.Entity.Validation.DbValidationError("Course Name", "(Course Name Invalid) - Course Name Can Not Be Blank."));
 
-                ////using (var Dbconnection = new MCDEntities())
-                ////{
-                ////    string IDNumberToValidate = entityEntry.CurrentValues.GetValue<string>("StudentIDNumber").ToString();
-                ////    Student StudentFound = (from a in Dbconnection.Students
-                ////                            where a.StudentIDNumber.Contains(IDNumberToValidate)
-                ////                            select a).FirstOrDefault<Student>();
-                ////    if (StudentFound != null)
-                ////    {
-                ////        if (entityEntry.Entity is Student)
-                ////        {
-
-                ////            var list = new List<System.Data.Entity.Validation.DbValidationError>();
-                ////            list.Add(new System.Data.Entity.Validation.DbValidationError("StudentIDNumber", "(ID Number Invalid) - ID Number Already Exists in the System Please Re-Enter ID Number Or Search Again!"));
-
-                ////            return new System.Data.Entity.Validation.DbEntityValidationResult(entityEntry, list);
-
-                ////        }
-                ////    }
-                ////};
-
-
-
+                    return new System.Data.Entity.Validation.DbEntityValidationResult(entityEntry, list);
+                }
             }
 
             return base.ValidateEntity(entityEntry, items);

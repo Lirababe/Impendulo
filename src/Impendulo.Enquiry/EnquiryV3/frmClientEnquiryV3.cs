@@ -485,6 +485,24 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                     row.Cells[colInProgressCurriculumName.Index].Value = CurriculumEnquiryObj.Curriculum.CurriculumName.ToString();
                     //row.Cells[colInProgressCurriculumEnquiryStatus.Index].Value = CurriculumEnquiryObj.LookupEnquiryStatus.EnquiryStatus.ToString();
                     row.Cells[colInProgressEnquiryQuantityCurrentlyEnrolled.Index].Value = CurriculumEnquiryObj.Enrollments.Count;
+                    if (CurriculumEnquiryObj.EnrollmentQuanity == CurriculumEnquiryObj.Enrollments.Count)
+                    {
+                        row.Cells[colInProgressProcessEnrollment.Index].Value = "";
+                    }else
+                    {
+                        row.Cells[colInProgressProcessEnrollment.Index].Value = "[ Add Enrollment ]";
+                    }
+
+
+                    //
+                    if (CurriculumEnquiryObj.Enrollments.Count > 0)
+                    {
+                        row.Cells[colInProgressViewCurrentEnrollment.Index].Value = "[ View Enrollments ]";
+                    }
+                    else
+                    {
+                        row.Cells[colInProgressViewCurrentEnrollment.Index].Value = "";
+                    }
                 }
             }
         }
@@ -558,35 +576,38 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                 case 6:
                     if (CE.Curriculum.DepartmentID == (int)EnumDepartments.Apprenticeship)
                     {
-
-                        using (var Dbconnection = new MCDEntities())
+                        DialogResult Rtn = MessageBox.Show("Do you have a copy of the individuals ID document or relevant details, These details are rquired to process initial enrollment! Else Select No and send an email Notification to the contact requesting these details.", "ID Document Requirement", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if(Rtn == DialogResult.Yes)
                         {
-                            Dbconnection.CurriculumEnquiries.Attach(CE);
-                            if (!(Dbconnection.Entry(CE).Collection(a => a.Enrollments).IsLoaded))
+                            using (var Dbconnection = new MCDEntities())
                             {
-                                Dbconnection.Entry(CE).Collection(a => a.Enrollments).Load();
-                            }
-                        };
-                        if (CE.EnrollmentQuanity > CE.Enrollments.Count)
-                        {
-                            using (frmApprenticeshipEnrollmentFormV2 frm = new frmApprenticeshipEnrollmentFormV2())
-                            {
-                                frm.CurrentCurriculumEnquiry = CE;
-                                frm.ShowDialog();
-                                curriculumEnquiryInprogressBindingSource.ResetCurrentItem();
-                                //this.refreshInProgressEnquiry(CurrentSelectedEnquiryID);
-
-                                if (frm.IsSuccessfullySaved)
+                                Dbconnection.CurriculumEnquiries.Attach(CE);
+                                if (!(Dbconnection.Entry(CE).Collection(a => a.Enrollments).IsLoaded))
                                 {
-                                    DialogResult Rtn1 = MessageBox.Show("Do you wish to process this new enrollment now?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                                    if (Rtn1 == DialogResult.Yes)
+                                    Dbconnection.Entry(CE).Collection(a => a.Enrollments).Load();
+                                }
+                            };
+                            if (CE.EnrollmentQuanity > CE.Enrollments.Count)
+                            {
+                                using (frmApprenticeshipEnrollmentFormV2 frm = new frmApprenticeshipEnrollmentFormV2())
+                                {
+                                    frm.CurrentCurriculumEnquiry = CE;
+                                    frm.ShowDialog();
+                                    curriculumEnquiryInprogressBindingSource.ResetCurrentItem();
+                                    //this.refreshInProgressEnquiry(CurrentSelectedEnquiryID);
+
+                                    if (frm.IsSuccessfullySaved)
                                     {
-                                        using (frmEnrolmmentInprogress frmInner = new frmEnrolmmentInprogress())
+                                        DialogResult Rtn1 = MessageBox.Show("Do you wish to process this new enrollment now?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                        if (Rtn1 == DialogResult.Yes)
                                         {
-                                            frmInner.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
-                                            frmInner.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)CE.Curriculum.DepartmentID;
-                                            // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
-                                            frmInner.ShowDialog();
+                                            using (frmEnrolmmentInprogress frmInner = new frmEnrolmmentInprogress())
+                                            {
+                                                frmInner.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
+                                                frmInner.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)CE.Curriculum.DepartmentID;
+                                                // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
+                                                frmInner.ShowDialog();
+                                            }
                                         }
                                     }
                                 }

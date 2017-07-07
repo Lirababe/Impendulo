@@ -12,21 +12,19 @@ namespace Impendulo.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class LookupEnrollmentProgressState
+    public partial class LookupDayOfWeek
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LookupEnrollmentProgressState()
+        public LookupDayOfWeek()
         {
-            this.Enrollments = new ObservableListSource<Enrollment>();
-            this.CurriculumCourseEnrollments = new ObservableListSource<CurriculumCourseEnrollment>();
+            this.CurriculumCourseDayCanBeScheduleds = new ObservableListSource<CurriculumCourseDayCanBeScheduled>();
         }
     
-        public int LookupEnrollmentProgressStateID { get; set; }
-        public string EnrollmentProgressCurrentState { get; set; }
+        public int DayOfWeekID { get; set; }
+        public string DayOfWeek { get; set; }
+        public bool IsWeekDay { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<Enrollment> Enrollments { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<CurriculumCourseEnrollment> CurriculumCourseEnrollments { get; set; }
+        public virtual ObservableListSource<CurriculumCourseDayCanBeScheduled> CurriculumCourseDayCanBeScheduleds { get; set; }
     }
 }

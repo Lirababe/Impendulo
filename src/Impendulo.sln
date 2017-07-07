@@ -153,6 +153,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{93F9
 		..\..\..\MCD-26June2017.sql = ..\..\..\MCD-26June2017.sql
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Snippents", "Snippents", "{129837BA-180F-4EFF-A144-7E72361AFF7C}"
+	ProjectSection(SolutionItems) = preProject
+		CustomDabaseConnectionWithValidation.snippet = CustomDabaseConnectionWithValidation.snippet
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>  
+<CodeSnippets  
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+    <CodeSnippet Format="1.0.0">  
+        <Header>  
+            <Title>Custom Entity Framework DBConnection With Validation</Title>  
+        </Header>  
+        <Snippet>  
+            <Code Language="CSharp">  
+                <![CDATA[
+                 using (var Dbconnection = new MCDEntities())
+                  {
+                      using (System.Data.Entity.DbContextTransaction dbTran = Dbconnection.Database.BeginTransaction())
+                      {
+                          try
+                          {
+                              //CRUD Operations
+
+                              ////saves all above operations within one transaction
+                              Dbconnection.SaveChanges();
+
+                              //commit transaction
+                              dbTran.Commit();
+                          }
+                          catch (Exception ex)
+                          {
+                              if (ex is DbEntityValidationException)
+                              {
+                                  foreach (DbEntityValidationResult entityErr in ((DbEntityValidationException)ex).EntityValidationErrors)
+                                  {
+                                      foreach (DbValidationError error in entityErr.ValidationErrors)
+                                      {
+                                          MessageBox.Show(error.ErrorMessage, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                      }
+                                  }
+                              }else
+                              {
+                                  MessageBox.Show(ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                              }
+                              //Rollback transaction if exception occurs
+                              dbTran.Rollback();
+                          }
+                      }
+                  };
+                ]]>  
+            </Code>  
+        </Snippet>  
+    </CodeSnippet>  
+</CodeSnippets>  

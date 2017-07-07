@@ -84,6 +84,10 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dgvStudentIDDocuments = new MetroFramework.Controls.MetroGrid();
+            this.colStudentIDDocumentDownLoadFile = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileExtensionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fileStudentIDDocumentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -288,10 +292,6 @@
             this.studentIDDocumentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.folderBrowserDialogForDownloading = new System.Windows.Forms.FolderBrowserDialog();
-            this.colStudentIDDocumentDownLoadFile = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.fileNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileExtensionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             addressLineOneLabel = new System.Windows.Forms.Label();
             addressLineTwoLabel = new System.Windows.Forms.Label();
             addressTownLabel = new System.Windows.Forms.Label();
@@ -903,6 +903,45 @@
             this.dgvStudentIDDocuments.TabIndex = 0;
             this.dgvStudentIDDocuments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentIDDocuments_CellContentClick);
             // 
+            // colStudentIDDocumentDownLoadFile
+            // 
+            this.colStudentIDDocumentDownLoadFile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colStudentIDDocumentDownLoadFile.HeaderText = "";
+            this.colStudentIDDocumentDownLoadFile.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colStudentIDDocumentDownLoadFile.Name = "colStudentIDDocumentDownLoadFile";
+            this.colStudentIDDocumentDownLoadFile.ReadOnly = true;
+            this.colStudentIDDocumentDownLoadFile.Text = "[ Download ]";
+            this.colStudentIDDocumentDownLoadFile.TrackVisitedState = false;
+            this.colStudentIDDocumentDownLoadFile.UseColumnTextForLinkValue = true;
+            this.colStudentIDDocumentDownLoadFile.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.colStudentIDDocumentDownLoadFile.Width = 5;
+            // 
+            // fileNameDataGridViewTextBoxColumn
+            // 
+            this.fileNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
+            this.fileNameDataGridViewTextBoxColumn.HeaderText = "FileName";
+            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
+            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fileNameDataGridViewTextBoxColumn.Width = 77;
+            // 
+            // fileExtensionDataGridViewTextBoxColumn
+            // 
+            this.fileExtensionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fileExtensionDataGridViewTextBoxColumn.DataPropertyName = "FileExtension";
+            this.fileExtensionDataGridViewTextBoxColumn.HeaderText = "FileExtension";
+            this.fileExtensionDataGridViewTextBoxColumn.Name = "fileExtensionDataGridViewTextBoxColumn";
+            this.fileExtensionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fileExtensionDataGridViewTextBoxColumn.Width = 98;
+            // 
+            // dateCreatedDataGridViewTextBoxColumn
+            // 
+            this.dateCreatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "DateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
+            this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // fileStudentIDDocumentBindingSource
             // 
             this.fileStudentIDDocumentBindingSource.DataSource = typeof(Impendulo.Data.Models.File);
@@ -1377,7 +1416,6 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.34211F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(38, 395);
             this.tableLayoutPanel6.TabIndex = 0;
-            
             // 
             // picStudentPicture
             // 
@@ -3225,45 +3263,6 @@
             // studentIDDocumentsBindingSource
             // 
             this.studentIDDocumentsBindingSource.DataSource = typeof(Impendulo.Data.Models.StudentIDDocument);
-            // 
-            // colStudentIDDocumentDownLoadFile
-            // 
-            this.colStudentIDDocumentDownLoadFile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colStudentIDDocumentDownLoadFile.HeaderText = "";
-            this.colStudentIDDocumentDownLoadFile.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colStudentIDDocumentDownLoadFile.Name = "colStudentIDDocumentDownLoadFile";
-            this.colStudentIDDocumentDownLoadFile.ReadOnly = true;
-            this.colStudentIDDocumentDownLoadFile.Text = "[ Download ]";
-            this.colStudentIDDocumentDownLoadFile.TrackVisitedState = false;
-            this.colStudentIDDocumentDownLoadFile.UseColumnTextForLinkValue = true;
-            this.colStudentIDDocumentDownLoadFile.VisitedLinkColor = System.Drawing.Color.Blue;
-            this.colStudentIDDocumentDownLoadFile.Width = 5;
-            // 
-            // fileNameDataGridViewTextBoxColumn
-            // 
-            this.fileNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.fileNameDataGridViewTextBoxColumn.DataPropertyName = "FileName";
-            this.fileNameDataGridViewTextBoxColumn.HeaderText = "FileName";
-            this.fileNameDataGridViewTextBoxColumn.Name = "fileNameDataGridViewTextBoxColumn";
-            this.fileNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fileNameDataGridViewTextBoxColumn.Width = 77;
-            // 
-            // fileExtensionDataGridViewTextBoxColumn
-            // 
-            this.fileExtensionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.fileExtensionDataGridViewTextBoxColumn.DataPropertyName = "FileExtension";
-            this.fileExtensionDataGridViewTextBoxColumn.HeaderText = "FileExtension";
-            this.fileExtensionDataGridViewTextBoxColumn.Name = "fileExtensionDataGridViewTextBoxColumn";
-            this.fileExtensionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fileExtensionDataGridViewTextBoxColumn.Width = 98;
-            // 
-            // dateCreatedDataGridViewTextBoxColumn
-            // 
-            this.dateCreatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated";
-            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "DateCreated";
-            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
-            this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frmStudentAddUpdate
             // 

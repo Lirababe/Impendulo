@@ -100,6 +100,9 @@ namespace Impendulo.Data.Models
         public virtual DbSet<Enrollment> Enrollments { get; set; }
         public virtual DbSet<StudentIDDocument> StudentIDDocuments { get; set; }
         public virtual DbSet<StudentPhoto> StudentPhotos { get; set; }
+        public virtual DbSet<CurriculumCourseDayCanBeScheduled> CurriculumCourseDayCanBeScheduleds { get; set; }
+        public virtual DbSet<LookupDayOfWeek> LookupDayOfWeeks { get; set; }
+        public virtual DbSet<PublicHoliday> PublicHolidays { get; set; }
     
         public virtual ObjectResult<CurriculumCourse> GetCurriculumCourseInOrder(Nullable<int> curriculumID)
         {

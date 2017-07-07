@@ -2,6 +2,7 @@
 using Impendulo.Data;
 using Impendulo.Data.Models;
 using Impendulo.Data.Models.Enum;
+using MetroFramework;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace Impendulo.Development.Students
     public partial class frmStudentAddUpdate : MetroForm
     {
 
+        public Student CurrentSelectedStudent { get; set; }
         public int CurrentStudentID { get; set; }
         public int CurrentPosition { get; set; }
         public Boolean IsSuccessfullySaved { get; set; }
@@ -530,6 +532,7 @@ namespace Impendulo.Development.Students
                                 if (txtStudentIDNumber.Text.Length != 0 && StudentFound != null)
                                 {
                                     //throw new DbEntityValidationException("(ID Number Invalid) - ID Number Already Exists in the System Please Re-Enter ID Number Or Search Again!");
+                                    //MetroMessageBox.Show(this, "(ID Number Invalid) - ID Number Already Exists in the System Please Re-Enter ID Number Or Search Again!", "Error Message", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
                                     MessageBox.Show("(ID Number Invalid) - ID Number Already Exists in the System Please Re-Enter ID Number Or Search Again!", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     bRtn = false;
                                     break;
@@ -560,6 +563,7 @@ namespace Impendulo.Development.Students
                                     Dbconnection.Students.Add(NewStudent);
                                     Dbconnection.SaveChanges();
                                     CurrentStudentID = NewStudent.StudentID;
+                                    //CurrentSelectedStudent = NewStudent;
 
                                     if (StudentPictureToUploaded.Count > 0)
                                     {
@@ -604,7 +608,7 @@ namespace Impendulo.Development.Students
 
                             StudentObj.ObjectState = EntityObjectState.Modified;
                         };
-
+                        CurrentSelectedStudent = StudentObj;
                         studentBindingSource.DataSource = StudentObj;
                     }
                     catch (DbEntityValidationException dbEx)

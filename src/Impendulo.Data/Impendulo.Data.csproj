@@ -100,6 +100,9 @@
     <Compile Include="Models\CurriculumCourse.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CurriculumCourseDayCanBeScheduled.cs">
+      <DependentUpon>MCDEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CurriculumCourseEnrollment.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
@@ -187,6 +190,9 @@
     <Compile Include="Models\LookupCountry.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LookupDayOfWeek.cs">
+      <DependentUpon>MCDEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\LookupDepartment.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
@@ -271,6 +277,9 @@
     <Compile Include="Models\NextOfKin.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\PublicHoliday.cs">
+      <DependentUpon>MCDEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Qualification.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
@@ -326,6 +335,7 @@
       <DependentUpon>MCDEntities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Impendulo.Data.Models.LookupDepartment.datasource" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

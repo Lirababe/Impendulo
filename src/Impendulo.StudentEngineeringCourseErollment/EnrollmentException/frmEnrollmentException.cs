@@ -33,7 +33,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Development.EnrollmentExce
                 try
                 {
                     Dbconnection.CurriculumCourseEnrollments.Attach(SelectedCurriculumCourseEnrollment);
-                    SelectedCurriculumCourseEnrollment.Excempt = true;
+                    //SelectedCurriculumCourseEnrollment.Excempt = true;
                     Dbconnection.Entry(SelectedCurriculumCourseEnrollment).State = System.Data.Entity.EntityState.Modified;
                     Dbconnection.SaveChanges();
                    

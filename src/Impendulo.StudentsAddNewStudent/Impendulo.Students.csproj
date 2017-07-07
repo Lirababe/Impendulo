@@ -146,6 +146,7 @@
     <None Include="Properties\DataSources\Impendulo.Data.Models.LookupAddressType.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.LookupContactType.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.LookupCountry.datasource" />
+    <None Include="Properties\DataSources\Impendulo.Data.Models.LookupDepartment.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.LookupDisability.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.LookupEthnicity.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.LookupGender.datasource" />

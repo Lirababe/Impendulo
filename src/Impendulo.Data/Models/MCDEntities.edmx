@@ -134,6 +134,16 @@
           <Property Name="SetaID" Type="int" Nullable="false" />
           <Property Name="CurriculumCourseID" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="CurriculumCourseDayCanBeScheduled">
+          <Key>
+            <PropertyRef Name="CurriculumCourseDayCanBeScheduledID" />
+          </Key>
+          <Property Name="CurriculumCourseDayCanBeScheduledID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DayOfWeekID" Type="int" Nullable="false" />
+          <Property Name="CurriculumCourseID" Type="int" Nullable="false" />
+          <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
         <EntityType Name="CurriculumCourseEnrollments">
           <Key>
             <PropertyRef Name="CurriculumCourseEnrollmentID" />
@@ -141,7 +151,7 @@
           <Property Name="CurriculumCourseEnrollmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CurriculumCourseID" Type="int" Nullable="false" />
           <Property Name="EnrollmentID" Type="int" Nullable="false" />
-          <Property Name="Excempt" Type="bit" Nullable="false" />
+          <Property Name="LookupEnrollmentProgressStateID" Type="int" Nullable="false" />
           <Property Name="CourseCost" Type="money" Nullable="false" />
         </EntityType>
         <EntityType Name="CurriculumCourseMinimumMaximums">
@@ -455,6 +465,14 @@
           <Property Name="CountryName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CountryCode" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
+        <EntityType Name="LookupDayOfWeeks">
+          <Key>
+            <PropertyRef Name="DayOfWeekID" />
+          </Key>
+          <Property Name="DayOfWeekID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DayOfWeek" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsWeekDay" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="LookupDepartments">
           <Key>
             <PropertyRef Name="DepartmentID" />
@@ -628,6 +646,14 @@
           </Key>
           <Property Name="IndividualID" Type="int" Nullable="false" />
           <Property Name="TypeOfRelationID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PublicHolidays">
+          <Key>
+            <PropertyRef Name="PublicHolidayID" />
+          </Key>
+          <Property Name="PublicHolidayID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicHolidayDate" Type="date" Nullable="false" />
+          <Property Name="PublicHolidayYear" Type="varchar" MaxLength="4" Nullable="false" />
         </EntityType>
         <EntityType Name="Qualifications">
           <Key>
@@ -1008,6 +1034,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_CurriculumCourseDayCanBeScheduled_CurriculumCourses">
+          <End Role="CurriculumCourses" Type="Self.CurriculumCourses" Multiplicity="1" />
+          <End Role="CurriculumCourseDayCanBeScheduled" Type="Self.CurriculumCourseDayCanBeScheduled" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumCourses">
+              <PropertyRef Name="CurriculumCourseID" />
+            </Principal>
+            <Dependent Role="CurriculumCourseDayCanBeScheduled">
+              <PropertyRef Name="CurriculumCourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumCourseDayCanBeScheduled_LookupDayOfWeeks">
+          <End Role="LookupDayOfWeeks" Type="Self.LookupDayOfWeeks" Multiplicity="1" />
+          <End Role="CurriculumCourseDayCanBeScheduled" Type="Self.CurriculumCourseDayCanBeScheduled" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LookupDayOfWeeks">
+              <PropertyRef Name="DayOfWeekID" />
+            </Principal>
+            <Dependent Role="CurriculumCourseDayCanBeScheduled">
+              <PropertyRef Name="DayOfWeekID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_CurriculumCourseEnrollments_CurriculumCourses">
           <End Role="CurriculumCourses" Type="Self.CurriculumCourses" Multiplicity="1" />
           <End Role="CurriculumCourseEnrollments" Type="Self.CurriculumCourseEnrollments" Multiplicity="*" />
@@ -1029,6 +1079,18 @@
             </Principal>
             <Dependent Role="CurriculumCourseEnrollments">
               <PropertyRef Name="EnrollmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumCourseEnrollments_LookupEnrollmentProgressStates">
+          <End Role="LookupEnrollmentProgressStates" Type="Self.LookupEnrollmentProgressStates" Multiplicity="1" />
+          <End Role="CurriculumCourseEnrollments" Type="Self.CurriculumCourseEnrollments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LookupEnrollmentProgressStates">
+              <PropertyRef Name="LookupEnrollmentProgressStateID" />
+            </Principal>
+            <Dependent Role="CurriculumCourseEnrollments">
+              <PropertyRef Name="LookupEnrollmentProgressStateID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1887,7 +1949,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StudentIDDocuments_Students">
-          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="StudentIDDocuments" Type="Self.StudentIDDocuments" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Students">
@@ -1923,7 +1987,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StudentPhotos_Files">
-          <End Role="Files" Type="Self.Files" Multiplicity="1" />
+          <End Role="Files" Type="Self.Files" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="StudentPhotos" Type="Self.StudentPhotos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Files">
@@ -1935,7 +2001,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StudentPhotos_Students">
-          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="StudentPhotos" Type="Self.StudentPhotos" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Students">
@@ -1947,7 +2015,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Students_Individuals1">
-          <End Role="Individuals" Type="Self.Individuals" Multiplicity="1" />
+          <End Role="Individuals" Type="Self.Individuals" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Individuals">
@@ -2064,6 +2134,7 @@
           <EntitySet Name="CourseSchedules" EntityType="Self.CourseSchedules" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CurricullumCourseCodes" EntityType="Self.CurricullumCourseCodes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CurriculumCourseAssociatedSetas" EntityType="Self.CurriculumCourseAssociatedSetas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurriculumCourseDayCanBeScheduled" EntityType="Self.CurriculumCourseDayCanBeScheduled" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CurriculumCourseEnrollments" EntityType="Self.CurriculumCourseEnrollments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CurriculumCourseMinimumMaximums" EntityType="Self.CurriculumCourseMinimumMaximums" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CurriculumCourseModuleActivities" EntityType="Self.CurriculumCourseModuleActivities" Schema="dbo" store:Type="Tables" />
@@ -2101,6 +2172,7 @@
           <EntitySet Name="LookupAddressTypes" EntityType="Self.LookupAddressTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupContactTypes" EntityType="Self.LookupContactTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupCountries" EntityType="Self.LookupCountries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LookupDayOfWeeks" EntityType="Self.LookupDayOfWeeks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupDepartments" EntityType="Self.LookupDepartments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupDisabilities" EntityType="Self.LookupDisabilities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupEmailMessageRepositoryHistoryTrancationTypes" EntityType="Self.LookupEmailMessageRepositoryHistoryTrancationTypes" Schema="dbo" store:Type="Tables" />
@@ -2125,6 +2197,7 @@
           <EntitySet Name="MessageTemplates" EntityType="Self.MessageTemplates" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Modules" EntityType="Self.Modules" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NextOfKins" EntityType="Self.NextOfKins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PublicHolidays" EntityType="Self.PublicHolidays" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Qualifications" EntityType="Self.Qualifications" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Schedules" EntityType="Self.Schedules" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SMTPSettings" EntityType="Self.SMTPSettings" Schema="dbo" store:Type="Tables" />
@@ -2222,12 +2295,24 @@
             <End Role="LookupSetas" EntitySet="LookupSetas" />
             <End Role="CurriculumCourseAssociatedSetas" EntitySet="CurriculumCourseAssociatedSetas" />
           </AssociationSet>
+          <AssociationSet Name="FK_CurriculumCourseDayCanBeScheduled_CurriculumCourses" Association="Self.FK_CurriculumCourseDayCanBeScheduled_CurriculumCourses">
+            <End Role="CurriculumCourses" EntitySet="CurriculumCourses" />
+            <End Role="CurriculumCourseDayCanBeScheduled" EntitySet="CurriculumCourseDayCanBeScheduled" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumCourseDayCanBeScheduled_LookupDayOfWeeks" Association="Self.FK_CurriculumCourseDayCanBeScheduled_LookupDayOfWeeks">
+            <End Role="LookupDayOfWeeks" EntitySet="LookupDayOfWeeks" />
+            <End Role="CurriculumCourseDayCanBeScheduled" EntitySet="CurriculumCourseDayCanBeScheduled" />
+          </AssociationSet>
           <AssociationSet Name="FK_CurriculumCourseEnrollments_CurriculumCourses" Association="Self.FK_CurriculumCourseEnrollments_CurriculumCourses">
             <End Role="CurriculumCourses" EntitySet="CurriculumCourses" />
             <End Role="CurriculumCourseEnrollments" EntitySet="CurriculumCourseEnrollments" />
           </AssociationSet>
           <AssociationSet Name="FK_CurriculumCourseEnrollments_Enrollments1" Association="Self.FK_CurriculumCourseEnrollments_Enrollments1">
             <End Role="Enrollments" EntitySet="Enrollments" />
+            <End Role="CurriculumCourseEnrollments" EntitySet="CurriculumCourseEnrollments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumCourseEnrollments_LookupEnrollmentProgressStates" Association="Self.FK_CurriculumCourseEnrollments_LookupEnrollmentProgressStates">
+            <End Role="LookupEnrollmentProgressStates" EntitySet="LookupEnrollmentProgressStates" />
             <End Role="CurriculumCourseEnrollments" EntitySet="CurriculumCourseEnrollments" />
           </AssociationSet>
           <AssociationSet Name="FK_CurriculumCourseMinimumMaximums_CurriculumCourses1" Association="Self.FK_CurriculumCourseMinimumMaximums_CurriculumCourses1">
@@ -3007,6 +3092,21 @@
             <End Role="Student" EntitySet="Students" />
             <End Role="StudentPhoto" EntitySet="StudentPhotos" />
           </AssociationSet>
+          <AssociationSet Name="FK_CurriculumCourseEnrollments_LookupEnrollmentProgressStates" Association="MCDModel.FK_CurriculumCourseEnrollments_LookupEnrollmentProgressStates">
+            <End Role="LookupEnrollmentProgressState" EntitySet="LookupEnrollmentProgressStates" />
+            <End Role="CurriculumCourseEnrollment" EntitySet="CurriculumCourseEnrollments" />
+          </AssociationSet>
+          <EntitySet Name="CurriculumCourseDayCanBeScheduleds" EntityType="MCDModel.CurriculumCourseDayCanBeScheduled" />
+          <EntitySet Name="LookupDayOfWeeks" EntityType="MCDModel.LookupDayOfWeek" />
+          <EntitySet Name="PublicHolidays" EntityType="MCDModel.PublicHoliday" />
+          <AssociationSet Name="FK_CurriculumCourseDayCanBeScheduled_CurriculumCourses" Association="MCDModel.FK_CurriculumCourseDayCanBeScheduled_CurriculumCourses">
+            <End Role="CurriculumCourse" EntitySet="CurriculumCourses" />
+            <End Role="CurriculumCourseDayCanBeScheduled" EntitySet="CurriculumCourseDayCanBeScheduleds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CurriculumCourseDayCanBeScheduled_LookupDayOfWeeks" Association="MCDModel.FK_CurriculumCourseDayCanBeScheduled_LookupDayOfWeeks">
+            <End Role="LookupDayOfWeek" EntitySet="LookupDayOfWeeks" />
+            <End Role="CurriculumCourseDayCanBeScheduled" EntitySet="CurriculumCourseDayCanBeScheduleds" />
+          </AssociationSet>
           </EntityContainer>
         <ComplexType Name="GetCurriculumCourseInOrder_Result">
           <Property Type="Int32" Name="CurriculumCourseID" Nullable="true" />
@@ -3177,8 +3277,9 @@
           <NavigationProperty Name="CurriculumCourse" Relationship="MCDModel.FK_CurriculumCourseEnrollments_CurriculumCourses" FromRole="CurriculumCourseEnrollment" ToRole="CurriculumCours" />
           <NavigationProperty Name="Schedules" Relationship="MCDModel.FK_Schedules_CurriculumCourseEnrollments" FromRole="CurriculumCourseEnrollment" ToRole="Schedule" />
           <NavigationProperty Name="Enrollment" Relationship="MCDModel.FK_CurriculumCourseEnrollments_Enrollments1" FromRole="CurriculumCourseEnrollment" ToRole="Enrollment" />
-          <Property Name="Excempt" Type="Boolean" Nullable="false" />
-          <Property Name="CourseCost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="CourseCost" Type="Decimal" Nullable="false" Precision="19" Scale="4" DefaultValue="0" />
+          <Property Name="LookupEnrollmentProgressStateID" Type="Int32" Nullable="false" DefaultValue="2002" />
+          <NavigationProperty Name="LookupEnrollmentProgressState" Relationship="MCDModel.FK_CurriculumCourseEnrollments_LookupEnrollmentProgressStates" FromRole="CurriculumCourseEnrollment" ToRole="LookupEnrollmentProgressState" />
         </EntityType>
         <EntityType Name="CurriculumCourseMinimumMaximum">
           <Key>
@@ -3232,6 +3333,7 @@
           <NavigationProperty Name="CurriculumPrequisiteCourses" Relationship="MCDModel.FK_CurriculumPrequisiteCourses_CurriculumCourses" FromRole="CurriculumCours" ToRole="CurriculumPrequisiteCours" />
           <NavigationProperty Name="VenueAssociatedCurriculumCourses" Relationship="MCDModel.FK_VenueAssociatedCurriculumCourses_CurriculumCourses" FromRole="CurriculumCours" ToRole="VenueAssociatedCurriculumCours" />
           <NavigationProperty Name="LookupSetas" Relationship="MCDModel.CurriculumCourseAssociatedSetas" FromRole="CurriculumCours" ToRole="LookupSeta" />
+          <NavigationProperty Name="CurriculumCourseDayCanBeScheduleds" Relationship="MCDModel.FK_CurriculumCourseDayCanBeScheduled_CurriculumCourses" FromRole="CurriculumCourse" ToRole="CurriculumCourseDayCanBeScheduled" />
         </EntityType>
         <EntityType Name="CurriculumEnquiry">
           <Key>
@@ -3543,6 +3645,7 @@
           <Property Name="LookupEnrollmentProgressStateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EnrollmentProgressCurrentState" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Enrollments" Relationship="MCDModel.FK_Enrollments_LookupEnrollmentProgressStates" FromRole="LookupEnrollmentProgressState" ToRole="Enrollment" />
+          <NavigationProperty Name="CurriculumCourseEnrollments" Relationship="MCDModel.FK_CurriculumCourseEnrollments_LookupEnrollmentProgressStates" FromRole="LookupEnrollmentProgressState" ToRole="CurriculumCourseEnrollment" />
         </EntityType>
         <EntityType Name="LookupEnrollmentType">
           <Key>
@@ -4830,6 +4933,71 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_CurriculumCourseEnrollments_LookupEnrollmentProgressStates">
+          <End Type="MCDModel.LookupEnrollmentProgressState" Role="LookupEnrollmentProgressState" Multiplicity="1" />
+          <End Type="MCDModel.CurriculumCourseEnrollment" Role="CurriculumCourseEnrollment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LookupEnrollmentProgressState">
+              <PropertyRef Name="LookupEnrollmentProgressStateID" />
+            </Principal>
+            <Dependent Role="CurriculumCourseEnrollment">
+              <PropertyRef Name="LookupEnrollmentProgressStateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CurriculumCourseDayCanBeScheduled">
+          <Key>
+            <PropertyRef Name="CurriculumCourseDayCanBeScheduledID" />
+          </Key>
+          <Property Name="CurriculumCourseDayCanBeScheduledID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DayOfWeekID" Type="Int32" Nullable="false" />
+          <Property Name="CurriculumCourseID" Type="Int32" Nullable="false" />
+          <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+          <NavigationProperty Name="CurriculumCours" Relationship="MCDModel.FK_CurriculumCourseDayCanBeScheduled_CurriculumCourses" FromRole="CurriculumCourseDayCanBeScheduled" ToRole="CurriculumCourse" />
+          <NavigationProperty Name="LookupDayOfWeek" Relationship="MCDModel.FK_CurriculumCourseDayCanBeScheduled_LookupDayOfWeeks" FromRole="CurriculumCourseDayCanBeScheduled" ToRole="LookupDayOfWeek" />
+        </EntityType>
+        <EntityType Name="LookupDayOfWeek">
+          <Key>
+            <PropertyRef Name="DayOfWeekID" />
+          </Key>
+          <Property Name="DayOfWeekID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DayOfWeek" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsWeekDay" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CurriculumCourseDayCanBeScheduleds" Relationship="MCDModel.FK_CurriculumCourseDayCanBeScheduled_LookupDayOfWeeks" FromRole="LookupDayOfWeek" ToRole="CurriculumCourseDayCanBeScheduled" />
+        </EntityType>
+        <EntityType Name="PublicHoliday">
+          <Key>
+            <PropertyRef Name="PublicHolidayID" />
+          </Key>
+          <Property Name="PublicHolidayID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicHolidayDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PublicHolidayYear" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_CurriculumCourseDayCanBeScheduled_CurriculumCourses">
+          <End Type="MCDModel.CurriculumCourse" Role="CurriculumCourse" Multiplicity="1" />
+          <End Type="MCDModel.CurriculumCourseDayCanBeScheduled" Role="CurriculumCourseDayCanBeScheduled" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurriculumCourse">
+              <PropertyRef Name="CurriculumCourseID" />
+            </Principal>
+            <Dependent Role="CurriculumCourseDayCanBeScheduled">
+              <PropertyRef Name="CurriculumCourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CurriculumCourseDayCanBeScheduled_LookupDayOfWeeks">
+          <End Type="MCDModel.LookupDayOfWeek" Role="LookupDayOfWeek" Multiplicity="1" />
+          <End Type="MCDModel.CurriculumCourseDayCanBeScheduled" Role="CurriculumCourseDayCanBeScheduled" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LookupDayOfWeek">
+              <PropertyRef Name="DayOfWeekID" />
+            </Principal>
+            <Dependent Role="CurriculumCourseDayCanBeScheduled">
+              <PropertyRef Name="DayOfWeekID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -4986,8 +5154,8 @@
           <EntitySetMapping Name="CurriculumCourseEnrollments">
             <EntityTypeMapping TypeName="MCDModel.CurriculumCourseEnrollment">
               <MappingFragment StoreEntitySet="CurriculumCourseEnrollments">
+                <ScalarProperty Name="LookupEnrollmentProgressStateID" ColumnName="LookupEnrollmentProgressStateID" />
                 <ScalarProperty Name="CourseCost" ColumnName="CourseCost" />
-                <ScalarProperty Name="Excempt" ColumnName="Excempt" />
                 <ScalarProperty Name="EnrollmentID" ColumnName="EnrollmentID" />
                 <ScalarProperty Name="CurriculumCourseID" ColumnName="CurriculumCourseID" />
                 <ScalarProperty Name="CurriculumCourseEnrollmentID" ColumnName="CurriculumCourseEnrollmentID" />
@@ -5707,6 +5875,35 @@
                 <ScalarProperty Name="FileID" ColumnName="ImageID" />
                 <ScalarProperty Name="StudentID" ColumnName="IndividualID" />
                 <ScalarProperty Name="StudentPhotoID" ColumnName="StudentPhotoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurriculumCourseDayCanBeScheduleds">
+            <EntityTypeMapping TypeName="MCDModel.CurriculumCourseDayCanBeScheduled">
+              <MappingFragment StoreEntitySet="CurriculumCourseDayCanBeScheduled">
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="CurriculumCourseID" ColumnName="CurriculumCourseID" />
+                <ScalarProperty Name="DayOfWeekID" ColumnName="DayOfWeekID" />
+                <ScalarProperty Name="CurriculumCourseDayCanBeScheduledID" ColumnName="CurriculumCourseDayCanBeScheduledID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LookupDayOfWeeks">
+            <EntityTypeMapping TypeName="MCDModel.LookupDayOfWeek">
+              <MappingFragment StoreEntitySet="LookupDayOfWeeks">
+                <ScalarProperty Name="IsWeekDay" ColumnName="IsWeekDay" />
+                <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+                <ScalarProperty Name="DayOfWeekID" ColumnName="DayOfWeekID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PublicHolidays">
+            <EntityTypeMapping TypeName="MCDModel.PublicHoliday">
+              <MappingFragment StoreEntitySet="PublicHolidays">
+                <ScalarProperty Name="PublicHolidayYear" ColumnName="PublicHolidayYear" />
+                <ScalarProperty Name="PublicHolidayDate" ColumnName="PublicHolidayDate" />
+                <ScalarProperty Name="PublicHolidayID" ColumnName="PublicHolidayID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

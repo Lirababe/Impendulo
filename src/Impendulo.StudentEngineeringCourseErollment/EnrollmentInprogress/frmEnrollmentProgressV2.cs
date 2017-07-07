@@ -1,5 +1,6 @@
 ﻿using Impendulo.Common.Enum;
 using Impendulo.Data.Models;
+using Impendulo.Development.Students;
 using Impendulo.StudentEngineeringCourseErollment.Development.EnrollmentException;
 using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentCourseSelection;
 using MetroFramework.Forms;
@@ -30,6 +31,8 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
         public Employee CurrentEmployeeLoggedIn { get; set; }
         public int CurrentEnrollmentID { get; set; }
         private int CurrentEnrollmentPreRequisiteID { get; set; }
+
+        private int CurrentCurriculumCourseEnrollmentID { get; set; }
         public int CurrentEquiryID { get; set; }
         private Enrollment CurrentEnrollment { get; set; }
 
@@ -38,6 +41,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
         {
             AllPreRequisiteEnrollments = new List<CurriculumCourseEnrollment>();
             CurrentEnrollmentPreRequisiteID = 0;
+            CurrentCurriculumCourseEnrollmentID = 0;
             InitializeComponent();
         }
 
@@ -102,12 +106,51 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                                                       .Include("Curriculum")
                                                       .FirstOrDefault<Data.Models.Enrollment>();
 
+                if (CurrentEnrollmentPreRequisiteID != 0)
+                {
+                    List<CurriculumCourseEnrollment> CurriculumCourseEnrollmentTemp = new List<CurriculumCourseEnrollment>();
+                    foreach (CurriculumCourseEnrollment CurriculumCourseEnrollmentObj in CurrentEnrollment.CurriculumCourseEnrollments)
+                    {
+                        if (CurriculumCourseEnrollmentObj.CurriculumCourseEnrollmentID == this.CurrentCurriculumCourseEnrollmentID)
+                        {
+                            CurriculumCourseEnrollmentTemp.Add(CurriculumCourseEnrollmentObj);
+                        }
+                    }
+                    CurrentEnrollment.CurriculumCourseEnrollments.Clear();
+                    foreach (CurriculumCourseEnrollment CurriculumCourseEnrollmentObj in CurriculumCourseEnrollmentTemp)
+                    {
+                        CurrentEnrollment.CurriculumCourseEnrollments.Add(CurriculumCourseEnrollmentObj);
+                    }
+
+                    //SetControls
+
+                }
+                else
+                {
+
+                }
 
                 enrollmentBindingSourceMain.DataSource = CurrentEnrollment;
 
             };
         }
+        private void setControls()
+        {
+            if (CurrentEnrollmentPreRequisiteID != 0)
+            {
+                btnSelectCourses.Enabled = false;
+            }
+            else
+            {
+                //check that all PreRequisites are iether exempt or completed.
 
+                //if ()
+                //{
+
+                //}
+                btnSelectCourses.Enabled = true;
+            }
+        }
         private void populateEnrollmentPreRequisites()
         {
             int EnrollmentToLoadID = 0;
@@ -133,6 +176,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                                                 //.Include("CurriculumCourse")
                                                 .Include("CurriculumCourse.Course")
                                                 .Include("CurriculumCourse.Curriculum")
+                                                .Include(a => a.LookupEnrollmentProgressState)
                                                 .ToList<CurriculumCourseEnrollment>();
             };
 
@@ -162,7 +206,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                 {
                     CurriculumCourseEnrollment CurriculumCourseEnrollmentObj = (CurriculumCourseEnrollment)row.DataBoundItem;
 
-                    if (!(CurriculumCourseEnrollmentObj.Excempt))
+                    if (!(CurriculumCourseEnrollmentObj.LookupEnrollmentProgressStateID == (int)EnumEnrollmentProgressStates.Excempt))
                     {
                         row.Cells[colPreRequisiteCourseProcessPreRequisiteCourse.Index].Value = "[ Edit ]";
 
@@ -177,7 +221,8 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                     }
                     row.Cells[colPreRequisiteCourseCurriculumName.Index].Value = CurriculumCourseEnrollmentObj.CurriculumCourse.Curriculum.CurriculumName.ToString();
                     row.Cells[colPreRequisiteCourseName.Index].Value = CurriculumCourseEnrollmentObj.CurriculumCourse.Course.CourseName.ToString();
-
+                    row.Cells[colPreRequisiteCourseStatus.Index].Value = CurriculumCourseEnrollmentObj.LookupEnrollmentProgressState.EnrollmentProgressCurrentState.ToString();
+                    //
                     //CurriculumCourse CurriculumCourseObj = (from a in EnrollmentObj.CurriculumCourseEnrollments
                     //                                        where a.CurriculumCourse.CurriculumID == EnrollmentObj.CurriculumID
                     //                                        select a.CurriculumCourse)
@@ -192,15 +237,18 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
 
         private void dgvEnrollmentPreRequisites_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Enrollment PreRequisiteEnrollment = ((CurriculumCourseEnrollment)curriculumCourseEnrollmentPreRequisiteCourseBindingSource.Current).Enrollment;
+            //Enrollment PreRequisiteEnrollment = ((CurriculumCourseEnrollment)curriculumCourseEnrollmentPreRequisiteCourseBindingSource.Current).Enrollment;
+            CurriculumCourseEnrollment CurriculumCourseEnrollmentObj = ((CurriculumCourseEnrollment)curriculumCourseEnrollmentPreRequisiteCourseBindingSource.Current);
 
             switch (e.ColumnIndex)
             {
-                case 0:
-                    this.CurrentEnrollmentPreRequisiteID = PreRequisiteEnrollment.EnrollmentID;
+                case 3:
+                    this.CurrentEnrollmentPreRequisiteID = CurriculumCourseEnrollmentObj.Enrollment.EnrollmentID;
+                    this.CurrentCurriculumCourseEnrollmentID = CurriculumCourseEnrollmentObj.CurriculumCourseEnrollmentID;
                     this.refreshEnrollment();
+
                     break;
-                case 1:
+                case 4:
                     if (Convert.ToInt32(dgvEnrollmentPreRequisites.Rows[e.RowIndex].Cells[e.ColumnIndex].Tag) == 0)
                     {
                         using (frmEnrollmentException frm = new frmEnrollmentException())
@@ -248,6 +296,15 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                 frm.CurrentEnrollemnt = this.CurrentEnrollment;
                 frm.ShowDialog();
                 refreshEnrollment();
+            }
+        }
+
+        private void btnStudentInformation_Click(object sender, EventArgs e)
+        {
+            using (frmStudentAddUpdate frm = new frmStudentAddUpdate())
+            {
+                frm.CurrentStudentID = CurrentEnrollment.Student.StudentID;
+                frm.ShowDialog();
             }
         }
     }
