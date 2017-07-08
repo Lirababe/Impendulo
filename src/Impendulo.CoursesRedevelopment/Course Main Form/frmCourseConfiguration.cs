@@ -514,11 +514,11 @@ namespace Impendulo.Courses.Configuration.Development
                 frmUpdateCurriculumCourseV2 frm = new frmUpdateCurriculumCourseV2();
                 frm.CurriculumCourseID = ((CurriculumCourse)(curriculumCourseBindingSource.Current)).CurriculumCourseID;
 
-                frm.txtCourseCost.Text = CurrentSelectedCourse.Cost.ToString();
-                frm.nudCourseDuration.Value = CurrentSelectedCourse.Duration;
-                frm.nudCourseMaximumAllowed.Value = CurrentSelectedCourse.CurriculumCourseMinimumMaximum.CurriculumCourseMaximum;
-                frm.nudCourseMinimumAllowed.Value = CurrentSelectedCourse.CurriculumCourseMinimumMaximum.CurriculumCourseMinimum;
-                frm.txtCourseCourseCode.Text = CurrentSelectedCourse.CurricullumCourseCode.CurricullumCourseCodeValue;
+                //frm.txtCourseCost.Text = CurrentSelectedCourse.Cost.ToString();
+                //frm.nudCourseDuration.Value = CurrentSelectedCourse.Duration;
+                //frm.nudCourseMaximumAllowed.Value = CurrentSelectedCourse.CurriculumCourseMinimumMaximum.CurriculumCourseMaximum;
+                //frm.nudCourseMinimumAllowed.Value = CurrentSelectedCourse.CurriculumCourseMinimumMaximum.CurriculumCourseMinimum;
+                //frm.txtCourseCourseCode.Text = CurrentSelectedCourse.CurricullumCourseCode.CurricullumCourseCodeValue;
                 frm.ShowDialog();
                 this.refreshCurriculumCourses();
             }

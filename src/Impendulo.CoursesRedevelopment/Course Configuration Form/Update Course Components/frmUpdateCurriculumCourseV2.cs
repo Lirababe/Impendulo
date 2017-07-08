@@ -25,16 +25,32 @@ namespace Impendulo.CoursesRedevelopment.Course_Configuration_Form.Update_Course
 
         private void frmUpdateCurriculumCourseV2_Load(object sender, EventArgs e)
         {
-
+            this.populateCurriculumCourse();
         }
 
+        private void populateCurriculumCourse()
+        {
+
+            using (var Dbconnection = new MCDEntities())
+            {
+                CurriculumCourse cc = (from a in Dbconnection.CurriculumCourses
+                                       where a.CurriculumCourseID == this.CurriculumCourseID
+                                       select a).FirstOrDefault<CurriculumCourse>();
+
+                txtCourseCost.Text = Convert.ToInt32(cc.Cost).ToString();
+                nudCourseDuration.Value = cc.Duration;
+                nudCourseMaximumAllowed.Value = cc.CurriculumCourseMinimumMaximum.CurriculumCourseMaximum;
+                nudCourseMinimumAllowed.Value = cc.CurriculumCourseMinimumMaximum.CurriculumCourseMinimum;
+                txtCourseCourseCode.Text = cc.CurricullumCourseCode.CurricullumCourseCodeValue;
+            };
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
 
             using (var Dbconnection = new MCDEntities())
             {
-                
+
             };
         }
 
@@ -57,7 +73,7 @@ namespace Impendulo.CoursesRedevelopment.Course_Configuration_Form.Update_Course
                         courseObj.CurriculumCourseMinimumMaximum.CurriculumCourseMaximum = Convert.ToInt32(nudCourseMaximumAllowed.Value);
                         courseObj.CurriculumCourseMinimumMaximum.CurriculumCourseMinimum = Convert.ToInt32(nudCourseMinimumAllowed.Value);
                         courseObj.CurricullumCourseCode.CurricullumCourseCodeValue = txtCourseCourseCode.Text;
-                                                
+
                         ////saves all above operations within one transaction
                         Dbconnection.SaveChanges();
 
@@ -113,24 +129,94 @@ namespace Impendulo.CoursesRedevelopment.Course_Configuration_Form.Update_Course
         }
         private void btnLinkDayAvailableToSchedule_Click(object sender, EventArgs e)
         {
+            using (var Dbconnection = new MCDEntities())
+            {
+                using (System.Data.Entity.DbContextTransaction dbTran = Dbconnection.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        //CRUD Operations
 
+                        DateTime dtStart = new DateTime(2000, 01, 1, Convert.ToInt32(nudStartHours.Value), Convert.ToInt32(nudStartMin.Value), 0);
+                        DateTime dtEnd = new DateTime(2000, 01, 1, Convert.ToInt32(nudEndHours.Value), Convert.ToInt32(nudEndMin.Value), 0);
+                        LookupDayOfWeek newLookupDayOfWeek = (LookupDayOfWeek)availableCurriculumCourseDayCanBeScheduledBindingSource.Current;
+
+                        CurriculumCourseDayCanBeScheduled newCurriculumCourseDayCanBeScheduled = new CurriculumCourseDayCanBeScheduled()
+                        {
+                            CurriculumCourseID = this.CurriculumCourseID,
+                            StartTime = dtStart.TimeOfDay,
+                            EndTime = dtEnd.TimeOfDay,
+                            DayOfWeekID = newLookupDayOfWeek.DayOfWeekID,
+                            ObjectState = EntityObjectState.Added
+                        };
+                        Dbconnection.CurriculumCourseDayCanBeScheduleds.Add(newCurriculumCourseDayCanBeScheduled);
+                        ////saves all above operations within one transaction
+                        Dbconnection.SaveChanges();
+
+                        //commit transaction
+                        dbTran.Commit();
+                        this.populateAvaiabledays();
+                        this.populateLinkedDays();
+                        this.nudStartHours.Value = 8;
+                        this.nudStartMin.Value = 0;
+                        this.nudEndHours.Value = 16;
+                        this.nudEndMin.Value = 0;
+                        if (availableCurriculumCourseDayCanBeScheduledBindingSource.Count == 0)
+                        {
+                            btnLinkDayAvailableToSchedule.Enabled = false;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        if (ex is DbEntityValidationException)
+                        {
+                            foreach (DbEntityValidationResult entityErr in ((DbEntityValidationException)ex).EntityValidationErrors)
+                            {
+                                foreach (DbValidationError error in entityErr.ValidationErrors)
+                                {
+                                    MessageBox.Show(error.ErrorMessage, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        //Rollback transaction if exception occurs
+                        dbTran.Rollback();
+                    }
+                }
+            };
         }
 
         private void dgvLinkedDayCourseCanBeScheduled_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+            var gridView = (DataGridView)sender;
+            foreach (DataGridViewRow row in gridView.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    var CurriculumCourseDayCanBeScheduledObj = (CurriculumCourseDayCanBeScheduled)(row.DataBoundItem);
 
+
+                    row.Cells[colDay.Index].Value = CurriculumCourseDayCanBeScheduledObj.LookupDayOfWeek.DayOfWeek.ToString();
+
+                }
+            }
         }
 
         private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(metroTabControl1.SelectedIndex){
+            switch (metroTabControl1.SelectedIndex)
+            {
 
                 case 1:
                     this.populateAvaiabledays();
                     this.populateLinkedDays();
                     break;
             }
-                
+
         }
 
         #region Populate Methods
@@ -159,10 +245,7 @@ namespace Impendulo.CoursesRedevelopment.Course_Configuration_Form.Update_Course
         }
         #endregion
 
-        private void metroTabControl1_TabIndexChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnRemoveLinkedDaysToSchedule_Click(object sender, EventArgs e)
         {
