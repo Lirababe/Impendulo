@@ -128,6 +128,12 @@
     <Compile Include="Course Configuration Form\Update Course Components\frmUpdateCurriculumCourse.Designer.cs">
       <DependentUpon>frmUpdateCurriculumCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Course Configuration Form\Update Course Components\frmUpdateCurriculumCourseV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course Configuration Form\Update Course Components\frmUpdateCurriculumCourseV2.Designer.cs">
+      <DependentUpon>frmUpdateCurriculumCourseV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Course Configuration Form\View Course Summary\frmCurriculumCourseSummary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Course Configuration Form\Update Course Components\frmUpdateCurriculumCourse.resx">
       <DependentUpon>frmUpdateCurriculumCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Course Configuration Form\Update Course Components\frmUpdateCurriculumCourseV2.resx">
+      <DependentUpon>frmUpdateCurriculumCourseV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Course Configuration Form\View Course Summary\frmCurriculumCourseSummary.resx">
       <DependentUpon>frmCurriculumCourseSummary.cs</DependentUpon>

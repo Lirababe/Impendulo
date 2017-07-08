@@ -15,6 +15,7 @@ using Impendulo.Courses.SummaryForms.Development;
 using Impendulo.CoursesRedevelopment.Course_Configuration_Form.Add_Course_PreRequiste_Courses;
 using Impendulo.Courses.Development.LinkCurriculumCourseWizard;
 using MetroFramework.Forms;
+using Impendulo.CoursesRedevelopment.Course_Configuration_Form.Update_Course_Components;
 
 namespace Impendulo.Courses.Configuration.Development
 {
@@ -510,7 +511,7 @@ namespace Impendulo.Courses.Configuration.Development
             if (curriculumCourseBindingSource.Count > 0)
             {
                 CurriculumCourse CurrentSelectedCourse = ((CurriculumCourse)(curriculumCourseBindingSource.Current));
-                frmUpdateCurriculumCourse frm = new frmUpdateCurriculumCourse();
+                frmUpdateCurriculumCourseV2 frm = new frmUpdateCurriculumCourseV2();
                 frm.CurriculumCourseID = ((CurriculumCourse)(curriculumCourseBindingSource.Current)).CurriculumCourseID;
 
                 frm.txtCourseCost.Text = CurrentSelectedCourse.Cost.ToString();
