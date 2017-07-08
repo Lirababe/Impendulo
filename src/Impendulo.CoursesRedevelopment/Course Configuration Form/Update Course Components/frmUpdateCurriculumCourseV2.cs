@@ -23,5 +23,10 @@ namespace Impendulo.CoursesRedevelopment.Course_Configuration_Form.Update_Course
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
