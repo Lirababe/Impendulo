@@ -41,12 +41,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -136,6 +136,11 @@
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.dgcAvaiableDays = new MetroFramework.Controls.MetroGrid();
+            this.DayOfWeek = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.objectStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dayOfWeekIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dayOfWeekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isWeekDayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.availableCurriculumCourseDayCanBeScheduledBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -150,6 +155,17 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer3 = new System.Windows.Forms.ToolStripContainer();
             this.dgvLinkedDayCourseCanBeScheduled = new MetroFramework.Controls.MetroGrid();
+            this.colDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dayOfWeekIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumCourseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumCourseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupDayOfWeekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.objectStateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkedCcurriculumCourseDayCanBeScheduledBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator3 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
@@ -185,6 +201,17 @@
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer4 = new System.Windows.Forms.ToolStripContainer();
             this.dgvDayToBeSeheduledSummary = new MetroFramework.Controls.MetroGrid();
+            this.colSummaryDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dayOfWeekIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumCourseIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startTimeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endTimeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumCourseDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupDayOfWeekDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.objectStateDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -198,13 +225,6 @@
             this.txtSummaryMaxAttendees = new System.Windows.Forms.TextBox();
             this.txtSummaryCourseCost = new System.Windows.Forms.TextBox();
             this.lookupDayOfWeekBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DayOfWeek = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSummaryDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -1428,7 +1448,11 @@
             this.dgcAvaiableDays.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgcAvaiableDays.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgcAvaiableDays.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DayOfWeek});
+            this.DayOfWeek,
+            this.objectStateDataGridViewTextBoxColumn,
+            this.dayOfWeekIDDataGridViewTextBoxColumn,
+            this.dayOfWeekDataGridViewTextBoxColumn,
+            this.isWeekDayDataGridViewCheckBoxColumn});
             this.dgcAvaiableDays.DataSource = this.availableCurriculumCourseDayCanBeScheduledBindingSource;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1464,6 +1488,42 @@
             this.dgcAvaiableDays.Size = new System.Drawing.Size(195, 378);
             this.dgcAvaiableDays.TabIndex = 0;
             this.dgcAvaiableDays.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgcAvaiableDays_DataBindingComplete);
+            // 
+            // DayOfWeek
+            // 
+            this.DayOfWeek.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DayOfWeek.DataPropertyName = "DayOfWeek";
+            this.DayOfWeek.HeaderText = "Day Of Week";
+            this.DayOfWeek.Name = "DayOfWeek";
+            this.DayOfWeek.ReadOnly = true;
+            // 
+            // objectStateDataGridViewTextBoxColumn
+            // 
+            this.objectStateDataGridViewTextBoxColumn.DataPropertyName = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn.HeaderText = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn.Name = "objectStateDataGridViewTextBoxColumn";
+            this.objectStateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dayOfWeekIDDataGridViewTextBoxColumn
+            // 
+            this.dayOfWeekIDDataGridViewTextBoxColumn.DataPropertyName = "DayOfWeekID";
+            this.dayOfWeekIDDataGridViewTextBoxColumn.HeaderText = "DayOfWeekID";
+            this.dayOfWeekIDDataGridViewTextBoxColumn.Name = "dayOfWeekIDDataGridViewTextBoxColumn";
+            this.dayOfWeekIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dayOfWeekDataGridViewTextBoxColumn
+            // 
+            this.dayOfWeekDataGridViewTextBoxColumn.DataPropertyName = "DayOfWeek";
+            this.dayOfWeekDataGridViewTextBoxColumn.HeaderText = "DayOfWeek";
+            this.dayOfWeekDataGridViewTextBoxColumn.Name = "dayOfWeekDataGridViewTextBoxColumn";
+            this.dayOfWeekDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isWeekDayDataGridViewCheckBoxColumn
+            // 
+            this.isWeekDayDataGridViewCheckBoxColumn.DataPropertyName = "IsWeekDay";
+            this.isWeekDayDataGridViewCheckBoxColumn.HeaderText = "IsWeekDay";
+            this.isWeekDayDataGridViewCheckBoxColumn.Name = "isWeekDayDataGridViewCheckBoxColumn";
+            this.isWeekDayDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // availableCurriculumCourseDayCanBeScheduledBindingSource
             // 
@@ -1614,7 +1674,15 @@
             this.dgvLinkedDayCourseCanBeScheduled.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDay,
             this.StartTime,
-            this.EndTime});
+            this.EndTime,
+            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn,
+            this.dayOfWeekIDDataGridViewTextBoxColumn1,
+            this.curriculumCourseIDDataGridViewTextBoxColumn,
+            this.startTimeDataGridViewTextBoxColumn,
+            this.endTimeDataGridViewTextBoxColumn,
+            this.curriculumCourseDataGridViewTextBoxColumn,
+            this.lookupDayOfWeekDataGridViewTextBoxColumn,
+            this.objectStateDataGridViewTextBoxColumn1});
             this.dgvLinkedDayCourseCanBeScheduled.DataSource = this.linkedCcurriculumCourseDayCanBeScheduledBindingSource;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1647,6 +1715,82 @@
             this.dgvLinkedDayCourseCanBeScheduled.TabStop = false;
             this.dgvLinkedDayCourseCanBeScheduled.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLinkedDayCourseCanBeScheduled_CellContentClick);
             this.dgvLinkedDayCourseCanBeScheduled.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvLinkedDayCourseCanBeScheduled_DataBindingComplete);
+            // 
+            // colDay
+            // 
+            this.colDay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colDay.HeaderText = "Day Of Week";
+            this.colDay.Name = "colDay";
+            this.colDay.Width = 97;
+            // 
+            // StartTime
+            // 
+            this.StartTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.StartTime.DataPropertyName = "StartTime";
+            dataGridViewCellStyle10.Format = "t";
+            dataGridViewCellStyle10.NullValue = null;
+            this.StartTime.DefaultCellStyle = dataGridViewCellStyle10;
+            this.StartTime.HeaderText = "Start";
+            this.StartTime.Name = "StartTime";
+            this.StartTime.Width = 54;
+            // 
+            // EndTime
+            // 
+            this.EndTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EndTime.DataPropertyName = "EndTime";
+            dataGridViewCellStyle11.Format = "t";
+            dataGridViewCellStyle11.NullValue = null;
+            this.EndTime.DefaultCellStyle = dataGridViewCellStyle11;
+            this.EndTime.HeaderText = "End";
+            this.EndTime.Name = "EndTime";
+            // 
+            // curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn
+            // 
+            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumCourseDayCanBeScheduledID";
+            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn.HeaderText = "CurriculumCourseDayCanBeScheduledID";
+            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn.Name = "curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn";
+            // 
+            // dayOfWeekIDDataGridViewTextBoxColumn1
+            // 
+            this.dayOfWeekIDDataGridViewTextBoxColumn1.DataPropertyName = "DayOfWeekID";
+            this.dayOfWeekIDDataGridViewTextBoxColumn1.HeaderText = "DayOfWeekID";
+            this.dayOfWeekIDDataGridViewTextBoxColumn1.Name = "dayOfWeekIDDataGridViewTextBoxColumn1";
+            // 
+            // curriculumCourseIDDataGridViewTextBoxColumn
+            // 
+            this.curriculumCourseIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumCourseID";
+            this.curriculumCourseIDDataGridViewTextBoxColumn.HeaderText = "CurriculumCourseID";
+            this.curriculumCourseIDDataGridViewTextBoxColumn.Name = "curriculumCourseIDDataGridViewTextBoxColumn";
+            // 
+            // startTimeDataGridViewTextBoxColumn
+            // 
+            this.startTimeDataGridViewTextBoxColumn.DataPropertyName = "StartTime";
+            this.startTimeDataGridViewTextBoxColumn.HeaderText = "StartTime";
+            this.startTimeDataGridViewTextBoxColumn.Name = "startTimeDataGridViewTextBoxColumn";
+            // 
+            // endTimeDataGridViewTextBoxColumn
+            // 
+            this.endTimeDataGridViewTextBoxColumn.DataPropertyName = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn.HeaderText = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn.Name = "endTimeDataGridViewTextBoxColumn";
+            // 
+            // curriculumCourseDataGridViewTextBoxColumn
+            // 
+            this.curriculumCourseDataGridViewTextBoxColumn.DataPropertyName = "CurriculumCourse";
+            this.curriculumCourseDataGridViewTextBoxColumn.HeaderText = "CurriculumCourse";
+            this.curriculumCourseDataGridViewTextBoxColumn.Name = "curriculumCourseDataGridViewTextBoxColumn";
+            // 
+            // lookupDayOfWeekDataGridViewTextBoxColumn
+            // 
+            this.lookupDayOfWeekDataGridViewTextBoxColumn.DataPropertyName = "LookupDayOfWeek";
+            this.lookupDayOfWeekDataGridViewTextBoxColumn.HeaderText = "LookupDayOfWeek";
+            this.lookupDayOfWeekDataGridViewTextBoxColumn.Name = "lookupDayOfWeekDataGridViewTextBoxColumn";
+            // 
+            // objectStateDataGridViewTextBoxColumn1
+            // 
+            this.objectStateDataGridViewTextBoxColumn1.DataPropertyName = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn1.HeaderText = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn1.Name = "objectStateDataGridViewTextBoxColumn1";
             // 
             // linkedCcurriculumCourseDayCanBeScheduledBindingSource
             // 
@@ -2114,7 +2258,15 @@
             this.dgvDayToBeSeheduledSummary.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSummaryDays,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewTextBoxColumn3,
+            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn1,
+            this.dayOfWeekIDDataGridViewTextBoxColumn2,
+            this.curriculumCourseIDDataGridViewTextBoxColumn1,
+            this.startTimeDataGridViewTextBoxColumn1,
+            this.endTimeDataGridViewTextBoxColumn1,
+            this.curriculumCourseDataGridViewTextBoxColumn1,
+            this.lookupDayOfWeekDataGridViewTextBoxColumn1,
+            this.objectStateDataGridViewTextBoxColumn2});
             this.dgvDayToBeSeheduledSummary.DataSource = this.linkedCcurriculumCourseDayCanBeScheduledBindingSource;
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -2151,6 +2303,93 @@
             this.dgvDayToBeSeheduledSummary.TabIndex = 0;
             this.dgvDayToBeSeheduledSummary.TabStop = false;
             this.dgvDayToBeSeheduledSummary.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvDayToBeSeheduledSummary_DataBindingComplete);
+            // 
+            // colSummaryDays
+            // 
+            this.colSummaryDays.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colSummaryDays.HeaderText = "Day Of Week";
+            this.colSummaryDays.Name = "colSummaryDays";
+            this.colSummaryDays.ReadOnly = true;
+            this.colSummaryDays.Width = 97;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "StartTime";
+            dataGridViewCellStyle15.Format = "t";
+            dataGridViewCellStyle15.NullValue = null;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Start";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 54;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "EndTime";
+            dataGridViewCellStyle16.Format = "t";
+            dataGridViewCellStyle16.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle16;
+            this.dataGridViewTextBoxColumn3.HeaderText = "End";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn1
+            // 
+            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumCourseDayCanBeScheduledID";
+            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn1.HeaderText = "CurriculumCourseDayCanBeScheduledID";
+            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn1.Name = "curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn1";
+            this.curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dayOfWeekIDDataGridViewTextBoxColumn2
+            // 
+            this.dayOfWeekIDDataGridViewTextBoxColumn2.DataPropertyName = "DayOfWeekID";
+            this.dayOfWeekIDDataGridViewTextBoxColumn2.HeaderText = "DayOfWeekID";
+            this.dayOfWeekIDDataGridViewTextBoxColumn2.Name = "dayOfWeekIDDataGridViewTextBoxColumn2";
+            this.dayOfWeekIDDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // curriculumCourseIDDataGridViewTextBoxColumn1
+            // 
+            this.curriculumCourseIDDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumCourseID";
+            this.curriculumCourseIDDataGridViewTextBoxColumn1.HeaderText = "CurriculumCourseID";
+            this.curriculumCourseIDDataGridViewTextBoxColumn1.Name = "curriculumCourseIDDataGridViewTextBoxColumn1";
+            this.curriculumCourseIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // startTimeDataGridViewTextBoxColumn1
+            // 
+            this.startTimeDataGridViewTextBoxColumn1.DataPropertyName = "StartTime";
+            this.startTimeDataGridViewTextBoxColumn1.HeaderText = "StartTime";
+            this.startTimeDataGridViewTextBoxColumn1.Name = "startTimeDataGridViewTextBoxColumn1";
+            this.startTimeDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // endTimeDataGridViewTextBoxColumn1
+            // 
+            this.endTimeDataGridViewTextBoxColumn1.DataPropertyName = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn1.HeaderText = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn1.Name = "endTimeDataGridViewTextBoxColumn1";
+            this.endTimeDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // curriculumCourseDataGridViewTextBoxColumn1
+            // 
+            this.curriculumCourseDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumCourse";
+            this.curriculumCourseDataGridViewTextBoxColumn1.HeaderText = "CurriculumCourse";
+            this.curriculumCourseDataGridViewTextBoxColumn1.Name = "curriculumCourseDataGridViewTextBoxColumn1";
+            this.curriculumCourseDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // lookupDayOfWeekDataGridViewTextBoxColumn1
+            // 
+            this.lookupDayOfWeekDataGridViewTextBoxColumn1.DataPropertyName = "LookupDayOfWeek";
+            this.lookupDayOfWeekDataGridViewTextBoxColumn1.HeaderText = "LookupDayOfWeek";
+            this.lookupDayOfWeekDataGridViewTextBoxColumn1.Name = "lookupDayOfWeekDataGridViewTextBoxColumn1";
+            this.lookupDayOfWeekDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // objectStateDataGridViewTextBoxColumn2
+            // 
+            this.objectStateDataGridViewTextBoxColumn2.DataPropertyName = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn2.HeaderText = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn2.Name = "objectStateDataGridViewTextBoxColumn2";
+            this.objectStateDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // label3
             // 
@@ -2273,73 +2512,6 @@
             // lookupDayOfWeekBindingSource
             // 
             this.lookupDayOfWeekBindingSource.DataSource = typeof(Impendulo.Data.Models.LookupDayOfWeek);
-            // 
-            // DayOfWeek
-            // 
-            this.DayOfWeek.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DayOfWeek.DataPropertyName = "DayOfWeek";
-            this.DayOfWeek.HeaderText = "Day Of Week";
-            this.DayOfWeek.Name = "DayOfWeek";
-            this.DayOfWeek.ReadOnly = true;
-            // 
-            // colDay
-            // 
-            this.colDay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colDay.HeaderText = "Day Of Week";
-            this.colDay.Name = "colDay";
-            this.colDay.Width = 97;
-            // 
-            // StartTime
-            // 
-            this.StartTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.StartTime.DataPropertyName = "StartTime";
-            dataGridViewCellStyle10.Format = "t";
-            dataGridViewCellStyle10.NullValue = null;
-            this.StartTime.DefaultCellStyle = dataGridViewCellStyle10;
-            this.StartTime.HeaderText = "Start";
-            this.StartTime.Name = "StartTime";
-            this.StartTime.Width = 54;
-            // 
-            // EndTime
-            // 
-            this.EndTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.EndTime.DataPropertyName = "EndTime";
-            dataGridViewCellStyle11.Format = "t";
-            dataGridViewCellStyle11.NullValue = null;
-            this.EndTime.DefaultCellStyle = dataGridViewCellStyle11;
-            this.EndTime.HeaderText = "End";
-            this.EndTime.Name = "EndTime";
-            // 
-            // colSummaryDays
-            // 
-            this.colSummaryDays.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colSummaryDays.HeaderText = "Day Of Week";
-            this.colSummaryDays.Name = "colSummaryDays";
-            this.colSummaryDays.ReadOnly = true;
-            this.colSummaryDays.Width = 97;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "StartTime";
-            dataGridViewCellStyle15.Format = "t";
-            dataGridViewCellStyle15.NullValue = null;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle15;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Start";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 54;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "EndTime";
-            dataGridViewCellStyle16.Format = "t";
-            dataGridViewCellStyle16.NullValue = null;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle16;
-            this.dataGridViewTextBoxColumn3.HeaderText = "End";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // frmAddCurriculumCourseV2
             // 
@@ -2614,5 +2786,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSummaryDays;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn objectStateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dayOfWeekIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dayOfWeekDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isWeekDayDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dayOfWeekIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lookupDayOfWeekDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn objectStateDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseDayCanBeScheduledIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dayOfWeekIDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startTimeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endTimeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lookupDayOfWeekDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn objectStateDataGridViewTextBoxColumn2;
     }
 }

@@ -153,7 +153,7 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
                 availableCurriculumCourseDayCanBeScheduledBindingSource.DataSource =
                     (from a in Dbconnection.LookupDayOfWeeks
                      select a).Except(from a in Dbconnection.CurriculumCourseDayCanBeScheduleds
-                                      where a.CurriculumCourse.CourseID == newCourseObj.CourseID
+                                      where a.CurriculumCourse.CurriculumCourseID == newCourseObj.CurriculumCourseID
                                       select a.LookupDayOfWeek).ToList<LookupDayOfWeek>();
             };
         }
@@ -164,7 +164,7 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
                 linkedCcurriculumCourseDayCanBeScheduledBindingSource.DataSource =
                     (from a in Dbconnection.CurriculumCourseDayCanBeScheduleds
                      orderby a.DayOfWeekID
-                     where a.CurriculumCourse.CourseID == newCourseObj.CourseID
+                     where a.CurriculumCourse.CurriculumCourseID == newCourseObj.CurriculumCourseID
                      select a).ToList<CurriculumCourseDayCanBeScheduled>();
             };
         }
@@ -730,17 +730,7 @@ namespace Impendulo.Courses.Development.LinkCurriculumCourseWizard
                 if (e.ColumnIndex == 0)
                 {
                     //TODO - Button Clicked - Execute Code Here
-                    CurriculumCourseDayCanBeScheduled CurriculumCourseDayCanBeScheduledObj = (CurriculumCourseDayCanBeScheduled)(senderGrid.Rows[e.RowIndex].DataBoundItem);
-                    CurriculumCourseDayCanBeScheduledObj.ObjectState = EntityObjectState.Deleted;
-
-
-                    using (var Dbconnection = new MCDEntities())
-                    {
-                        Dbconnection.Entry(CurriculumCourseDayCanBeScheduledObj).State = EntityState.Deleted;
-                        Dbconnection.SaveChanges();
-                        this.loadupStepThree();
-                        this.btnLinkDayAvailableToSchedule.Enabled = true;
-                    };
+                   
                 }
             }
         }
