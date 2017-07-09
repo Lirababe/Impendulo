@@ -9,12 +9,14 @@
     [StudentlInitialDate]    DATETIME     CONSTRAINT [DF_Students_IndividualInitialDate] DEFAULT (getdate()) NOT NULL,
     [RowVersion]             ROWVERSION   NOT NULL,
     CONSTRAINT [PK_Students] PRIMARY KEY CLUSTERED ([IndividualID] ASC),
-    CONSTRAINT [FK_Students_Individuals1] FOREIGN KEY ([IndividualID]) REFERENCES [dbo].[Individuals] ([IndividualID]),
+    CONSTRAINT [FK_Students_Individuals1] FOREIGN KEY ([IndividualID]) REFERENCES [dbo].[Individuals] ([IndividualID]) ON DELETE CASCADE,
     CONSTRAINT [FK_Students_LookupEthnicities] FOREIGN KEY ([EthnicityID]) REFERENCES [dbo].[LookupEthnicities] ([EthnicityID]),
     CONSTRAINT [FK_Students_LookupGenders] FOREIGN KEY ([GenderID]) REFERENCES [dbo].[LookupGenders] ([GenderID]),
     CONSTRAINT [FK_Students_LookupMartialStatuses] FOREIGN KEY ([MartialStatusID]) REFERENCES [dbo].[LookupMartialStatuses] ([MartialStatusID]),
     CONSTRAINT [FK_Students_LookupQualificationLevels] FOREIGN KEY ([QualificationLevelID]) REFERENCES [dbo].[LookupQualificationLevels] ([QualificationLevelID])
 );
+
+
 
 
 

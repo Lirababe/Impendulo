@@ -103,6 +103,7 @@ namespace Impendulo.Data.Models
         public virtual DbSet<CurriculumCourseDayCanBeScheduled> CurriculumCourseDayCanBeScheduleds { get; set; }
         public virtual DbSet<LookupDayOfWeek> LookupDayOfWeeks { get; set; }
         public virtual DbSet<PublicHoliday> PublicHolidays { get; set; }
+        public virtual DbSet<VenueAssociatedCours> VenueAssociatedCourses { get; set; }
     
         public virtual ObjectResult<CurriculumCourse> GetCurriculumCourseInOrder(Nullable<int> curriculumID)
         {
@@ -135,6 +136,19 @@ namespace Impendulo.Data.Models
         public virtual ObjectResult<Reports_StudentReports_Result> Reports_StudentReports()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Reports_StudentReports_Result>("Reports_StudentReports");
+        }
+    
+        public virtual ObjectResult<GetCurriculumCoursePreRequisiteCourseNotYetScheduled_Result> GetCurriculumCoursePreRequisiteCourseNotYetScheduled(Nullable<int> curriculumID, Nullable<int> enrollmentID)
+        {
+            var curriculumIDParameter = curriculumID.HasValue ?
+                new ObjectParameter("CurriculumID", curriculumID) :
+                new ObjectParameter("CurriculumID", typeof(int));
+    
+            var enrollmentIDParameter = enrollmentID.HasValue ?
+                new ObjectParameter("EnrollmentID", enrollmentID) :
+                new ObjectParameter("EnrollmentID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetCurriculumCoursePreRequisiteCourseNotYetScheduled_Result>("GetCurriculumCoursePreRequisiteCourseNotYetScheduled", curriculumIDParameter, enrollmentIDParameter);
         }
     }
 }

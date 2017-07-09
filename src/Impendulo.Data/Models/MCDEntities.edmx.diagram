@@ -174,6 +174,12 @@
         <EntityTypeShape EntityType="MCDModel.PublicHoliday" Width="1.5" PointX="0.75" PointY="7.75" />
         <AssociationConnector Association="MCDModel.FK_CurriculumCourseDayCanBeScheduled_CurriculumCourses" />
         <AssociationConnector Association="MCDModel.FK_CurriculumCourseDayCanBeScheduled_LookupDayOfWeeks" />
+        <EntityTypeShape EntityType="MCDModel.VenueAssociatedCours" Width="1.5" PointX="26.5" PointY="59.125" />
+        <AssociationConnector Association="MCDModel.FK_VenueAssociatedCourses_Courses" />
+        <AssociationConnector Association="MCDModel.FK_Schedules_Facilitators" />
+        <AssociationConnector Association="MCDModel.FK_VenueAssociatedCourses_Venues" />
+        <AssociationConnector Association="MCDModel.CompanyAssociatedSchedules" />
+        <AssociationConnector Association="MCDModel.ScheduledVenues" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

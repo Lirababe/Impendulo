@@ -20,6 +20,7 @@ namespace Impendulo.Data.Models
             this.FacilitatorAssociatedCourses = new ObservableListSource<FacilitatorAssociatedCourse>();
             this.FacilitatorQualifications = new ObservableListSource<FacilitatorQualification>();
             this.FacilitatorSetaAccreditations = new ObservableListSource<FacilitatorSetaAccreditation>();
+            this.Schedules = new ObservableListSource<Schedule>();
         }
     
         public int FacilitatorID { get; set; }
@@ -31,5 +32,7 @@ namespace Impendulo.Data.Models
         public virtual Individual Individual { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<FacilitatorSetaAccreditation> FacilitatorSetaAccreditations { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<Schedule> Schedules { get; set; }
     }
 }

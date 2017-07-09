@@ -164,6 +164,14 @@
     <Build Include="dbo\Tables\EnrollmentDocuments.sql" />
     <Build Include="dbo\Tables\StudentPhotos.sql" />
     <Build Include="dbo\Tables\StudentIDDocuments.sql" />
+    <Build Include="dbo\Tables\VenueAssociatedCourses.sql" />
+    <Build Include="dbo\Tables\ScheduledVenues.sql" />
+    <Build Include="dbo\Tables\PublicHolidays.sql" />
+    <Build Include="dbo\Tables\LookupDayOfWeeks.sql" />
+    <Build Include="dbo\Tables\CurriculumCourseDayCanBeScheduled.sql" />
+    <Build Include="dbo\Tables\CompanyAssociatedSchedules.sql" />
+    <Build Include="dbo\Stored Procedures\GetCurriculumCoursePreRequisiteCourseNotYetScheduled.sql" />
+    <Build Include="dbo\Stored Procedures\GetCurriculumCoursePreRequisiteCourse.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Impendulo.Database.publish.xml" />

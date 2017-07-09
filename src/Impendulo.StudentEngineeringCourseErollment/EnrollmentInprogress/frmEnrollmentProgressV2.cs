@@ -1,4 +1,5 @@
 ﻿using Impendulo.Common.Enum;
+using Impendulo.Data;
 using Impendulo.Data.Models;
 using Impendulo.Development.Students;
 using Impendulo.StudentEngineeringCourseErollment.Development.EnrollmentException;
@@ -102,6 +103,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                                                       .Include("Student.Individual")
                                                       .Include("CurriculumEnquiries")
                                                       .Include("CurriculumCourseEnrollments")
+                                                      .Include("CurriculumCourseEnrollments.Schedules")
                                                       //.Include("CurriculumCourseEnrollments.CurriculumCourse")
                                                       .Include("Curriculum")
                                                       .FirstOrDefault<Data.Models.Enrollment>();
@@ -283,7 +285,20 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                 if (!row.IsNewRow)
                 {
                     CurriculumCourseEnrollment CurriculumCourseEnrollmentObj = (CurriculumCourseEnrollment)row.DataBoundItem;
+                    ObservableListSource<Schedule> Schedules = (ObservableListSource<Schedule>)CurriculumCourseEnrollmentObj.Schedules;
                     row.Cells[colCourseEnrollmentMainCourseName.Index].Value = CurriculumCourseEnrollmentObj.CurriculumCourse.Course.CourseName.ToString();
+                    if ((from a in Schedules
+                         where a.CurriculumCourseEnrollmentID == 3
+                         select a).ToList<Schedule>().Count > 0)
+                    {
+                        row.Cells[colInProgressSelectedCourseMustSchedule.Index].Value = "[ Edit Schedule ]";
+                    }
+                    else
+                    {
+                        row.Cells[colInProgressSelectedCourseMustSchedule.Index].Value = "[ Schedule Course ]";
+                    }
+
+
                 }
             }
 

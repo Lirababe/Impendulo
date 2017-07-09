@@ -70,6 +70,14 @@
           <Property Name="CompanyID" Type="int" Nullable="false" />
           <Property Name="AddressID" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="CompanyAssociatedSchedules">
+          <Key>
+            <PropertyRef Name="ScheduleID" />
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="ScheduleID" Type="int" Nullable="false" />
+          <Property Name="CompanyID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="CompanyContactDetails">
           <Key>
             <PropertyRef Name="CompanyID" />
@@ -661,12 +669,21 @@
           </Key>
           <Property Name="QualificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
+        <EntityType Name="ScheduledVenues">
+          <Key>
+            <PropertyRef Name="ScheduleID" />
+            <PropertyRef Name="VenueID" />
+          </Key>
+          <Property Name="ScheduleID" Type="int" Nullable="false" />
+          <Property Name="VenueID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Schedules">
           <Key>
             <PropertyRef Name="ScheduleID" />
           </Key>
           <Property Name="ScheduleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CurriculumCourseEnrollmentID" Type="int" Nullable="false" />
+          <Property Name="IndividualID" Type="int" Nullable="false" />
           <Property Name="ScheduleStartDate" Type="date" Nullable="false" />
           <Property Name="ScheduleCompletionDate" Type="date" Nullable="false" />
           <Property Name="EnrollmentID" Type="int" Nullable="false" />
@@ -759,6 +776,15 @@
           <Property Name="SystemAdministratorID" Type="int" Nullable="false" />
           <Property Name="SystemUserName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="SystemUserPassword" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VenueAssociatedCourses">
+          <Key>
+            <PropertyRef Name="VenueAssociatedCourseID" />
+          </Key>
+          <Property Name="VenueAssociatedCourseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseID" Type="int" Nullable="false" />
+          <Property Name="VenueID" Type="int" Nullable="false" />
+          <Property Name="VenueMaxCapacity" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="VenueAssociatedCurriculumCourses">
           <Key>
@@ -910,6 +936,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_CompanyAssociatedSchedules_Companies">
+          <End Role="Companies" Type="Self.Companies" Multiplicity="1" />
+          <End Role="CompanyAssociatedSchedules" Type="Self.CompanyAssociatedSchedules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="CompanyAssociatedSchedules">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyAssociatedSchedules_Schedules">
+          <End Role="Schedules" Type="Self.Schedules" Multiplicity="1" />
+          <End Role="CompanyAssociatedSchedules" Type="Self.CompanyAssociatedSchedules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schedules">
+              <PropertyRef Name="ScheduleID" />
+            </Principal>
+            <Dependent Role="CompanyAssociatedSchedules">
+              <PropertyRef Name="ScheduleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_CompanyContactDetails_Companies">
           <End Role="Companies" Type="Self.Companies" Multiplicity="1" />
           <End Role="CompanyContactDetails" Type="Self.CompanyContactDetails" Multiplicity="*" />
@@ -1035,7 +1085,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CurriculumCourseDayCanBeScheduled_CurriculumCourses">
-          <End Role="CurriculumCourses" Type="Self.CurriculumCourses" Multiplicity="1" />
+          <End Role="CurriculumCourses" Type="Self.CurriculumCourses" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="CurriculumCourseDayCanBeScheduled" Type="Self.CurriculumCourseDayCanBeScheduled" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CurriculumCourses">
@@ -1864,8 +1916,34 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ScheduledVenues_Schedules">
+          <End Role="Schedules" Type="Self.Schedules" Multiplicity="1" />
+          <End Role="ScheduledVenues" Type="Self.ScheduledVenues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schedules">
+              <PropertyRef Name="ScheduleID" />
+            </Principal>
+            <Dependent Role="ScheduledVenues">
+              <PropertyRef Name="ScheduleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScheduledVenues_Venues">
+          <End Role="Venues" Type="Self.Venues" Multiplicity="1" />
+          <End Role="ScheduledVenues" Type="Self.ScheduledVenues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Venues">
+              <PropertyRef Name="VenueID" />
+            </Principal>
+            <Dependent Role="ScheduledVenues">
+              <PropertyRef Name="VenueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Schedules_CurriculumCourseEnrollments">
-          <End Role="CurriculumCourseEnrollments" Type="Self.CurriculumCourseEnrollments" Multiplicity="1" />
+          <End Role="CurriculumCourseEnrollments" Type="Self.CurriculumCourseEnrollments" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Schedules" Type="Self.Schedules" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CurriculumCourseEnrollments">
@@ -1885,6 +1963,18 @@
             </Principal>
             <Dependent Role="Schedules">
               <PropertyRef Name="EnrollmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedules_Facilitators">
+          <End Role="Facilitators" Type="Self.Facilitators" Multiplicity="1" />
+          <End Role="Schedules" Type="Self.Schedules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facilitators">
+              <PropertyRef Name="IndividualID" />
+            </Principal>
+            <Dependent Role="Schedules">
+              <PropertyRef Name="IndividualID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2088,6 +2178,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_VenueAssociatedCourses_Courses">
+          <End Role="Courses" Type="Self.Courses" Multiplicity="1" />
+          <End Role="VenueAssociatedCourses" Type="Self.VenueAssociatedCourses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Courses">
+              <PropertyRef Name="CourseID" />
+            </Principal>
+            <Dependent Role="VenueAssociatedCourses">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VenueAssociatedCourses_Venues">
+          <End Role="Venues" Type="Self.Venues" Multiplicity="1" />
+          <End Role="VenueAssociatedCourses" Type="Self.VenueAssociatedCourses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Venues">
+              <PropertyRef Name="VenueID" />
+            </Principal>
+            <Dependent Role="VenueAssociatedCourses">
+              <PropertyRef Name="VenueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_VenueAssociatedCurriculumCourses_CurriculumCourses">
           <End Role="CurriculumCourses" Type="Self.CurriculumCourses" Multiplicity="1" />
           <End Role="VenueAssociatedCurriculumCourses" Type="Self.VenueAssociatedCurriculumCourses" Multiplicity="*" />
@@ -2115,6 +2229,10 @@
         <Function Name="GetCurriculumCourseInOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CurriculumID" Type="int" Mode="In" />
         </Function>
+        <Function Name="GetCurriculumCoursePreRequisiteCourseNotYetScheduled" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CurriculumID" Type="int" Mode="In" />
+          <Parameter Name="EnrollmentID" Type="int" Mode="In" />
+        </Function>
         <Function Name="GetLookupTablesForEnumAutoGenteration" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Report_StudentInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Reports_StudentReports" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -2126,6 +2244,7 @@
           <EntitySet Name="ComapnyContacts" EntityType="Self.ComapnyContacts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CompanyAddresses" EntityType="Self.CompanyAddresses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompanyAssociatedSchedules" EntityType="Self.CompanyAssociatedSchedules" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CompanyContactDetails" EntityType="Self.CompanyContactDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CompanyEnquiry" EntityType="Self.CompanyEnquiry" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ContactDetails" EntityType="Self.ContactDetails" Schema="dbo" store:Type="Tables" />
@@ -2199,6 +2318,7 @@
           <EntitySet Name="NextOfKins" EntityType="Self.NextOfKins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PublicHolidays" EntityType="Self.PublicHolidays" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Qualifications" EntityType="Self.Qualifications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ScheduledVenues" EntityType="Self.ScheduledVenues" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Schedules" EntityType="Self.Schedules" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SMTPSettings" EntityType="Self.SMTPSettings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StudentAssociatedCompany" EntityType="Self.StudentAssociatedCompany" Schema="dbo" store:Type="Tables" />
@@ -2209,6 +2329,7 @@
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SystemAdministrator" EntityType="Self.SystemAdministrator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VenueAssociatedCourses" EntityType="Self.VenueAssociatedCourses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VenueAssociatedCurriculumCourses" EntityType="Self.VenueAssociatedCurriculumCourses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Venues" EntityType="Self.Venues" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Activities_Modules" Association="Self.FK_Activities_Modules">
@@ -2254,6 +2375,14 @@
           <AssociationSet Name="FK_CompanyAddresses_Companies" Association="Self.FK_CompanyAddresses_Companies">
             <End Role="Companies" EntitySet="Companies" />
             <End Role="CompanyAddresses" EntitySet="CompanyAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyAssociatedSchedules_Companies" Association="Self.FK_CompanyAssociatedSchedules_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="CompanyAssociatedSchedules" EntitySet="CompanyAssociatedSchedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyAssociatedSchedules_Schedules" Association="Self.FK_CompanyAssociatedSchedules_Schedules">
+            <End Role="Schedules" EntitySet="Schedules" />
+            <End Role="CompanyAssociatedSchedules" EntitySet="CompanyAssociatedSchedules" />
           </AssociationSet>
           <AssociationSet Name="FK_CompanyContactDetails_Companies" Association="Self.FK_CompanyContactDetails_Companies">
             <End Role="Companies" EntitySet="Companies" />
@@ -2567,12 +2696,24 @@
             <End Role="LookupTypeOfRelations" EntitySet="LookupTypeOfRelations" />
             <End Role="NextOfKins" EntitySet="NextOfKins" />
           </AssociationSet>
+          <AssociationSet Name="FK_ScheduledVenues_Schedules" Association="Self.FK_ScheduledVenues_Schedules">
+            <End Role="Schedules" EntitySet="Schedules" />
+            <End Role="ScheduledVenues" EntitySet="ScheduledVenues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScheduledVenues_Venues" Association="Self.FK_ScheduledVenues_Venues">
+            <End Role="Venues" EntitySet="Venues" />
+            <End Role="ScheduledVenues" EntitySet="ScheduledVenues" />
+          </AssociationSet>
           <AssociationSet Name="FK_Schedules_CurriculumCourseEnrollments" Association="Self.FK_Schedules_CurriculumCourseEnrollments">
             <End Role="CurriculumCourseEnrollments" EntitySet="CurriculumCourseEnrollments" />
             <End Role="Schedules" EntitySet="Schedules" />
           </AssociationSet>
           <AssociationSet Name="FK_Schedules_Enrollments" Association="Self.FK_Schedules_Enrollments">
             <End Role="Enrollments" EntitySet="Enrollments" />
+            <End Role="Schedules" EntitySet="Schedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedules_Facilitators" Association="Self.FK_Schedules_Facilitators">
+            <End Role="Facilitators" EntitySet="Facilitators" />
             <End Role="Schedules" EntitySet="Schedules" />
           </AssociationSet>
           <AssociationSet Name="FK_StudentAssociatedCompany_Companies" Association="Self.FK_StudentAssociatedCompany_Companies">
@@ -2638,6 +2779,14 @@
           <AssociationSet Name="FK_SystemAdministrator_Individuals" Association="Self.FK_SystemAdministrator_Individuals">
             <End Role="Individuals" EntitySet="Individuals" />
             <End Role="SystemAdministrator" EntitySet="SystemAdministrator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VenueAssociatedCourses_Courses" Association="Self.FK_VenueAssociatedCourses_Courses">
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="VenueAssociatedCourses" EntitySet="VenueAssociatedCourses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VenueAssociatedCourses_Venues" Association="Self.FK_VenueAssociatedCourses_Venues">
+            <End Role="Venues" EntitySet="Venues" />
+            <End Role="VenueAssociatedCourses" EntitySet="VenueAssociatedCourses" />
           </AssociationSet>
           <AssociationSet Name="FK_VenueAssociatedCurriculumCourses_CurriculumCourses" Association="Self.FK_VenueAssociatedCurriculumCourses_CurriculumCourses">
             <End Role="CurriculumCourses" EntitySet="CurriculumCourses" />
@@ -3107,6 +3256,31 @@
             <End Role="LookupDayOfWeek" EntitySet="LookupDayOfWeeks" />
             <End Role="CurriculumCourseDayCanBeScheduled" EntitySet="CurriculumCourseDayCanBeScheduleds" />
           </AssociationSet>
+          <EntitySet Name="VenueAssociatedCourses" EntityType="MCDModel.VenueAssociatedCours" />
+          <AssociationSet Name="FK_VenueAssociatedCourses_Courses" Association="MCDModel.FK_VenueAssociatedCourses_Courses">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="VenueAssociatedCours" EntitySet="VenueAssociatedCourses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedules_Facilitators" Association="MCDModel.FK_Schedules_Facilitators">
+            <End Role="Facilitator" EntitySet="Facilitators" />
+            <End Role="Schedule" EntitySet="Schedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VenueAssociatedCourses_Venues" Association="MCDModel.FK_VenueAssociatedCourses_Venues">
+            <End Role="Venue" EntitySet="Venues" />
+            <End Role="VenueAssociatedCours" EntitySet="VenueAssociatedCourses" />
+          </AssociationSet>
+          <AssociationSet Name="CompanyAssociatedSchedules" Association="MCDModel.CompanyAssociatedSchedules">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="Schedule" EntitySet="Schedules" />
+          </AssociationSet>
+          <AssociationSet Name="ScheduledVenues" Association="MCDModel.ScheduledVenues">
+            <End Role="Schedule" EntitySet="Schedules" />
+            <End Role="Venue" EntitySet="Venues" />
+          </AssociationSet>
+          <FunctionImport Name="GetCurriculumCoursePreRequisiteCourseNotYetScheduled" ReturnType="Collection(MCDModel.GetCurriculumCoursePreRequisiteCourseNotYetScheduled_Result)">
+            <Parameter Name="CurriculumID" Mode="In" Type="Int32" />
+            <Parameter Name="EnrollmentID" Mode="In" Type="Int32" />
+          </FunctionImport>
           </EntityContainer>
         <ComplexType Name="GetCurriculumCourseInOrder_Result">
           <Property Type="Int32" Name="CurriculumCourseID" Nullable="true" />
@@ -3217,6 +3391,7 @@
           <NavigationProperty Name="Addresses" Relationship="MCDModel.CompanyAddresses" FromRole="Company" ToRole="Address" />
           <NavigationProperty Name="ContactDetails" Relationship="MCDModel.CompanyContactDetails" FromRole="Company" ToRole="ContactDetail" />
           <NavigationProperty Name="Enquiries" Relationship="MCDModel.CompanyEnquiry" FromRole="Company" ToRole="Enquiry" />
+          <NavigationProperty Name="Schedules" Relationship="MCDModel.CompanyAssociatedSchedules" FromRole="Company" ToRole="Schedule" />
         </EntityType>
         <EntityType Name="ContactDetail">
           <Key>
@@ -3248,6 +3423,7 @@
           <NavigationProperty Name="LookupDepartment" Relationship="MCDModel.FK_Courses_Departments" FromRole="Cours" ToRole="LookupDepartment" />
           <NavigationProperty Name="CurriculumCourses" Relationship="MCDModel.FK_CurriculumCourses_Courses" FromRole="Cours" ToRole="CurriculumCours" />
           <NavigationProperty Name="FacilitatorAssociatedCourses" Relationship="MCDModel.FK_FacilitatorAssociatedCourses_Courses" FromRole="Cours" ToRole="FacilitatorAssociatedCours" />
+          <NavigationProperty Name="VenueAssociatedCourses" Relationship="MCDModel.FK_VenueAssociatedCourses_Courses" FromRole="Course" ToRole="VenueAssociatedCours" />
         </EntityType>
         <EntityType Name="CourseSchedule">
           <Key>
@@ -3511,6 +3687,7 @@
           <NavigationProperty Name="FacilitatorQualifications" Relationship="MCDModel.FK_FacilitatorQualifications_Facilitators" FromRole="Facilitator" ToRole="FacilitatorQualification" />
           <NavigationProperty Name="Individual" Relationship="MCDModel.FK_Facilitators_Individuals" FromRole="Facilitator" ToRole="Individual" />
           <NavigationProperty Name="FacilitatorSetaAccreditations" Relationship="MCDModel.FK_FacilitatorSetaAccreditations_Facilitators" FromRole="Facilitator" ToRole="FacilitatorSetaAccreditation" />
+          <NavigationProperty Name="Schedules" Relationship="MCDModel.FK_Schedules_Facilitators" FromRole="Facilitator" ToRole="Schedule" />
         </EntityType>
         <EntityType Name="FacilitatorSetaAccreditation">
           <Key>
@@ -3812,6 +3989,10 @@
           <Property Name="EnrollmentID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CurriculumCourseEnrollment" Relationship="MCDModel.FK_Schedules_CurriculumCourseEnrollments" FromRole="Schedule" ToRole="CurriculumCourseEnrollment" />
           <NavigationProperty Name="Enrollment" Relationship="MCDModel.FK_Schedules_Enrollments" FromRole="Schedule" ToRole="Enrollment" />
+          <Property Name="IndividualID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Facilitator" Relationship="MCDModel.FK_Schedules_Facilitators" FromRole="Schedule" ToRole="Facilitator" />
+          <NavigationProperty Name="Companies" Relationship="MCDModel.CompanyAssociatedSchedules" FromRole="Schedule" ToRole="Company" />
+          <NavigationProperty Name="Venues" Relationship="MCDModel.ScheduledVenues" FromRole="Schedule" ToRole="Venue" />
         </EntityType>
         <EntityType Name="SMTPSetting">
           <Key>
@@ -3912,6 +4093,8 @@
           <Property Name="Venue1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="VenueMaxCapacity" Type="Int32" Nullable="false" />
           <NavigationProperty Name="VenueAssociatedCurriculumCourses" Relationship="MCDModel.FK_VenueAssociatedCurriculumCourses_Venues" FromRole="Venue" ToRole="VenueAssociatedCurriculumCours" />
+          <NavigationProperty Name="VenueAssociatedCourses" Relationship="MCDModel.FK_VenueAssociatedCourses_Venues" FromRole="Venue" ToRole="VenueAssociatedCours" />
+          <NavigationProperty Name="Schedules" Relationship="MCDModel.ScheduledVenues" FromRole="Venue" ToRole="Schedule" />
         </EntityType>
         <Association Name="FK_Activities_Modules">
           <End Type="MCDModel.Module" Role="Module" Multiplicity="1" />
@@ -4998,6 +5181,71 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="VenueAssociatedCours">
+          <Key>
+            <PropertyRef Name="VenueAssociatedCourseID" />
+          </Key>
+          <Property Name="VenueAssociatedCourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseID" Type="Int32" Nullable="false" />
+          <Property Name="VenueID" Type="Int32" Nullable="false" />
+          <Property Name="VenueMaxCapacity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cours" Relationship="MCDModel.FK_VenueAssociatedCourses_Courses" FromRole="VenueAssociatedCours" ToRole="Course" />
+          <NavigationProperty Name="Venue" Relationship="MCDModel.FK_VenueAssociatedCourses_Venues" FromRole="VenueAssociatedCours" ToRole="Venue" />
+        </EntityType>
+        <Association Name="FK_VenueAssociatedCourses_Courses">
+          <End Type="MCDModel.Course" Role="Course" Multiplicity="1" />
+          <End Type="MCDModel.VenueAssociatedCours" Role="VenueAssociatedCours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CourseID" />
+            </Principal>
+            <Dependent Role="VenueAssociatedCours">
+              <PropertyRef Name="CourseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedules_Facilitators">
+          <End Type="MCDModel.Facilitator" Role="Facilitator" Multiplicity="1" />
+          <End Type="MCDModel.Schedule" Role="Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facilitator">
+              <PropertyRef Name="FacilitatorID" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="IndividualID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VenueAssociatedCourses_Venues">
+          <End Type="MCDModel.Venue" Role="Venue" Multiplicity="1" />
+          <End Type="MCDModel.VenueAssociatedCours" Role="VenueAssociatedCours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Venue">
+              <PropertyRef Name="VenueID" />
+            </Principal>
+            <Dependent Role="VenueAssociatedCours">
+              <PropertyRef Name="VenueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CompanyAssociatedSchedules">
+          <End Type="MCDModel.Company" Role="Company" Multiplicity="*" />
+          <End Type="MCDModel.Schedule" Role="Schedule" Multiplicity="*" />
+        </Association>
+        <Association Name="ScheduledVenues">
+          <End Type="MCDModel.Schedule" Role="Schedule" Multiplicity="*" />
+          <End Type="MCDModel.Venue" Role="Venue" Multiplicity="*" />
+        </Association>
+        <ComplexType Name="GetCurriculumCoursePreRequisiteCourseNotYetScheduled_Result">
+          <Property Type="Int32" Name="CurriculumCourseID" Nullable="true" />
+          <Property Type="Int32" Name="CurriculumCourseParentID" Nullable="true" />
+          <Property Type="Int32" Name="CurriculumID" Nullable="true" />
+          <Property Type="Int32" Name="CourseID" Nullable="true" />
+          <Property Type="Int32" Name="EnrollmentTypeID" Nullable="true" />
+          <Property Type="Int32" Name="Duration" Nullable="true" />
+          <Property Type="Decimal" Name="Cost" Nullable="true" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="ComponentLevel" Nullable="true" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5614,6 +5862,7 @@
           <EntitySetMapping Name="Schedules">
             <EntityTypeMapping TypeName="MCDModel.Schedule">
               <MappingFragment StoreEntitySet="Schedules">
+                <ScalarProperty Name="IndividualID" ColumnName="IndividualID" />
                 <ScalarProperty Name="EnrollmentID" ColumnName="EnrollmentID" />
                 <ScalarProperty Name="ScheduleCompletionDate" ColumnName="ScheduleCompletionDate" />
                 <ScalarProperty Name="ScheduleStartDate" ColumnName="ScheduleStartDate" />
@@ -5907,6 +6156,46 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="VenueAssociatedCourses">
+            <EntityTypeMapping TypeName="MCDModel.VenueAssociatedCours">
+              <MappingFragment StoreEntitySet="VenueAssociatedCourses">
+                <ScalarProperty Name="VenueMaxCapacity" ColumnName="VenueMaxCapacity" />
+                <ScalarProperty Name="VenueID" ColumnName="VenueID" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="VenueAssociatedCourseID" ColumnName="VenueAssociatedCourseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CompanyAssociatedSchedules" TypeName="MCDModel.CompanyAssociatedSchedules" StoreEntitySet="CompanyAssociatedSchedules">
+            <EndProperty Name="Schedule">
+              <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+            </EndProperty>
+            <EndProperty Name="Company">
+              <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ScheduledVenues" TypeName="MCDModel.ScheduledVenues" StoreEntitySet="ScheduledVenues">
+            <EndProperty Name="Venue">
+              <ScalarProperty Name="VenueID" ColumnName="VenueID" />
+            </EndProperty>
+            <EndProperty Name="Schedule">
+              <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="GetCurriculumCoursePreRequisiteCourseNotYetScheduled" FunctionName="MCDModel.Store.GetCurriculumCoursePreRequisiteCourseNotYetScheduled">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MCDModel.GetCurriculumCoursePreRequisiteCourseNotYetScheduled_Result">
+                <ScalarProperty Name="CurriculumCourseID" ColumnName="CurriculumCourseID" />
+                <ScalarProperty Name="CurriculumCourseParentID" ColumnName="CurriculumCourseParentID" />
+                <ScalarProperty Name="CurriculumID" ColumnName="CurriculumID" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="EnrollmentTypeID" ColumnName="EnrollmentTypeID" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="ComponentLevel" ColumnName="ComponentLevel" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

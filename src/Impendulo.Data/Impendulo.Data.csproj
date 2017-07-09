@@ -179,6 +179,9 @@
     <Compile Include="Models\GetCurriculumCourseInOrder_Result.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GetCurriculumCoursePreRequisiteCourseNotYetScheduled_Result.cs">
+      <DependentUpon>MCDEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Individual.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
@@ -323,6 +326,9 @@
     </Compile>
     <Compile Include="Models\Validation Class\MCDEntities.cs" />
     <Compile Include="Models\Venue.cs">
+      <DependentUpon>MCDEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VenueAssociatedCours.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VenueAssociatedCurriculumCourse.cs">
