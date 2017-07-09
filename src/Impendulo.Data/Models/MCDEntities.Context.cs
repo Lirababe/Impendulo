@@ -103,7 +103,7 @@ namespace Impendulo.Data.Models
         public virtual DbSet<CurriculumCourseDayCanBeScheduled> CurriculumCourseDayCanBeScheduleds { get; set; }
         public virtual DbSet<LookupDayOfWeek> LookupDayOfWeeks { get; set; }
         public virtual DbSet<PublicHoliday> PublicHolidays { get; set; }
-        public virtual DbSet<VenueAssociatedCours> VenueAssociatedCourses { get; set; }
+        public virtual DbSet<VenueAssociatedCourse> VenueAssociatedCourses { get; set; }
     
         public virtual ObjectResult<CurriculumCourse> GetCurriculumCourseInOrder(Nullable<int> curriculumID)
         {

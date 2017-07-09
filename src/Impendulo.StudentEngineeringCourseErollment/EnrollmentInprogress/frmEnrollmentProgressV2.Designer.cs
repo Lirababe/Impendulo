@@ -48,10 +48,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -126,11 +126,25 @@
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnBackToMaunEnrollmentTop = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.dgvEnrollmentCourseMain = new MetroFramework.Controls.MetroGrid();
+            this.colInProgressSelectedCourseMustSchedule = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.CourseCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCourseEnrollmentMainCourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumCourseIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseCostDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumCourseDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumCourseEnrollmentsMainCoursesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -142,6 +156,11 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer10 = new System.Windows.Forms.ToolStripContainer();
             this.metroGrid4 = new MetroFramework.Controls.MetroGrid();
@@ -166,17 +185,6 @@
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.CourseCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCourseEnrollmentMainCourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInProgressSelectedCourseMustSchedule = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumCourseIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseCostDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumCourseDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             fullNameLabel = new System.Windows.Forms.Label();
             studentIDNumberLabel = new System.Windows.Forms.Label();
             curriculumNameLabel = new System.Windows.Forms.Label();
@@ -1097,7 +1105,10 @@
             this.bindingNavigatorMoveLastItem1,
             this.bindingNavigatorSeparator5,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem1});
+            this.bindingNavigatorDeleteItem1,
+            this.toolStripSeparator4,
+            this.btnBackToMaunEnrollmentTop,
+            this.toolStripButton2});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem1;
@@ -1194,6 +1205,29 @@
             this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem1.Text = "Delete";
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnBackToMaunEnrollmentTop
+            // 
+            this.btnBackToMaunEnrollmentTop.Image = ((System.Drawing.Image)(resources.GetObject("btnBackToMaunEnrollmentTop.Image")));
+            this.btnBackToMaunEnrollmentTop.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBackToMaunEnrollmentTop.Name = "btnBackToMaunEnrollmentTop";
+            this.btnBackToMaunEnrollmentTop.Size = new System.Drawing.Size(159, 22);
+            this.btnBackToMaunEnrollmentTop.Text = "Back To Main Enrollment";
+            this.btnBackToMaunEnrollmentTop.Click += new System.EventHandler(this.btnBackToMaunEnrollmentTop_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "toolStripButton2";
+            // 
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 1;
@@ -1212,9 +1246,9 @@
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 3;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.76119F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.23881F));
             this.tableLayoutPanel7.Controls.Add(this.groupBox4, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.groupBox5, 2, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 58);
@@ -1230,7 +1264,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(329, 243);
+            this.groupBox4.Size = new System.Drawing.Size(514, 243);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Selected Course(s)";
@@ -1241,11 +1275,11 @@
             // toolStripContainer2.ContentPanel
             // 
             this.toolStripContainer2.ContentPanel.Controls.Add(this.dgvEnrollmentCourseMain);
-            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(323, 199);
+            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(508, 199);
             this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer2.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainer2.Name = "toolStripContainer2";
-            this.toolStripContainer2.Size = new System.Drawing.Size(323, 224);
+            this.toolStripContainer2.Size = new System.Drawing.Size(508, 224);
             this.toolStripContainer2.TabIndex = 5;
             this.toolStripContainer2.Text = "toolStripContainer2";
             // 
@@ -1273,9 +1307,9 @@
             this.dgvEnrollmentCourseMain.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvEnrollmentCourseMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEnrollmentCourseMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colInProgressSelectedCourseMustSchedule,
             this.CourseCost,
             this.colCourseEnrollmentMainCourseName,
-            this.colInProgressSelectedCourseMustSchedule,
             this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1,
             this.curriculumCourseIDDataGridViewTextBoxColumn1,
             this.enrollmentIDDataGridViewTextBoxColumn1,
@@ -1314,9 +1348,105 @@
             dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             this.dgvEnrollmentCourseMain.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvEnrollmentCourseMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEnrollmentCourseMain.Size = new System.Drawing.Size(323, 199);
+            this.dgvEnrollmentCourseMain.Size = new System.Drawing.Size(508, 199);
             this.dgvEnrollmentCourseMain.TabIndex = 0;
+            this.dgvEnrollmentCourseMain.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnrollmentCourseMain_CellContentClick);
             this.dgvEnrollmentCourseMain.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvEnrollmentCourseMain_DataBindingComplete);
+            // 
+            // colInProgressSelectedCourseMustSchedule
+            // 
+            this.colInProgressSelectedCourseMustSchedule.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colInProgressSelectedCourseMustSchedule.HeaderText = "";
+            this.colInProgressSelectedCourseMustSchedule.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colInProgressSelectedCourseMustSchedule.Name = "colInProgressSelectedCourseMustSchedule";
+            this.colInProgressSelectedCourseMustSchedule.ReadOnly = true;
+            this.colInProgressSelectedCourseMustSchedule.TrackVisitedState = false;
+            this.colInProgressSelectedCourseMustSchedule.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.colInProgressSelectedCourseMustSchedule.Width = 5;
+            // 
+            // CourseCost
+            // 
+            this.CourseCost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CourseCost.DataPropertyName = "CourseCost";
+            dataGridViewCellStyle12.Format = "C2";
+            dataGridViewCellStyle12.NullValue = "0";
+            this.CourseCost.DefaultCellStyle = dataGridViewCellStyle12;
+            this.CourseCost.HeaderText = "Cost";
+            this.CourseCost.Name = "CourseCost";
+            this.CourseCost.ReadOnly = true;
+            this.CourseCost.Width = 53;
+            // 
+            // colCourseEnrollmentMainCourseName
+            // 
+            this.colCourseEnrollmentMainCourseName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colCourseEnrollmentMainCourseName.HeaderText = "Course";
+            this.colCourseEnrollmentMainCourseName.Name = "colCourseEnrollmentMainCourseName";
+            this.colCourseEnrollmentMainCourseName.ReadOnly = true;
+            this.colCourseEnrollmentMainCourseName.Width = 66;
+            // 
+            // curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1
+            // 
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumCourseEnrollmentID";
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1.HeaderText = "CurriculumCourseEnrollmentID";
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1.Name = "curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1";
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // curriculumCourseIDDataGridViewTextBoxColumn1
+            // 
+            this.curriculumCourseIDDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumCourseID";
+            this.curriculumCourseIDDataGridViewTextBoxColumn1.HeaderText = "CurriculumCourseID";
+            this.curriculumCourseIDDataGridViewTextBoxColumn1.Name = "curriculumCourseIDDataGridViewTextBoxColumn1";
+            this.curriculumCourseIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.curriculumCourseIDDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // enrollmentIDDataGridViewTextBoxColumn1
+            // 
+            this.enrollmentIDDataGridViewTextBoxColumn1.DataPropertyName = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn1.HeaderText = "EnrollmentID";
+            this.enrollmentIDDataGridViewTextBoxColumn1.Name = "enrollmentIDDataGridViewTextBoxColumn1";
+            this.enrollmentIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.enrollmentIDDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // courseCostDataGridViewTextBoxColumn1
+            // 
+            this.courseCostDataGridViewTextBoxColumn1.DataPropertyName = "CourseCost";
+            this.courseCostDataGridViewTextBoxColumn1.HeaderText = "CourseCost";
+            this.courseCostDataGridViewTextBoxColumn1.Name = "courseCostDataGridViewTextBoxColumn1";
+            this.courseCostDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.courseCostDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1
+            // 
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.DataPropertyName = "LookupEnrollmentProgressStateID";
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.HeaderText = "LookupEnrollmentProgressStateID";
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.Name = "lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1";
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // curriculumCourseDataGridViewTextBoxColumn1
+            // 
+            this.curriculumCourseDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumCourse";
+            this.curriculumCourseDataGridViewTextBoxColumn1.HeaderText = "CurriculumCourse";
+            this.curriculumCourseDataGridViewTextBoxColumn1.Name = "curriculumCourseDataGridViewTextBoxColumn1";
+            this.curriculumCourseDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.curriculumCourseDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // enrollmentDataGridViewTextBoxColumn1
+            // 
+            this.enrollmentDataGridViewTextBoxColumn1.DataPropertyName = "Enrollment";
+            this.enrollmentDataGridViewTextBoxColumn1.HeaderText = "Enrollment";
+            this.enrollmentDataGridViewTextBoxColumn1.Name = "enrollmentDataGridViewTextBoxColumn1";
+            this.enrollmentDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.enrollmentDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // lookupEnrollmentProgressStateDataGridViewTextBoxColumn1
+            // 
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.DataPropertyName = "LookupEnrollmentProgressState";
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.HeaderText = "LookupEnrollmentProgressState";
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.Name = "lookupEnrollmentProgressStateDataGridViewTextBoxColumn1";
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.Visible = false;
             // 
             // curriculumCourseEnrollmentsMainCoursesBindingSource
             // 
@@ -1340,7 +1470,12 @@
             this.toolStripSeparator2,
             this.toolStripButton5,
             this.toolStripButton6,
-            this.toolStripSeparator3});
+            this.toolStripSeparator3,
+            this.toolStripLabel1,
+            this.toolStripSeparator5,
+            this.toolStripButton1,
+            this.toolStripSeparator6,
+            this.toolStripButton7});
             this.bindingNavigator2.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator2.MoveFirstItem = this.toolStripButton3;
             this.bindingNavigator2.MoveLastItem = this.toolStripButton6;
@@ -1348,7 +1483,7 @@
             this.bindingNavigator2.MovePreviousItem = this.toolStripButton4;
             this.bindingNavigator2.Name = "bindingNavigator2";
             this.bindingNavigator2.PositionItem = this.toolStripTextBox1;
-            this.bindingNavigator2.Size = new System.Drawing.Size(323, 25);
+            this.bindingNavigator2.Size = new System.Drawing.Size(508, 25);
             this.bindingNavigator2.Stretch = true;
             this.bindingNavigator2.TabIndex = 0;
             // 
@@ -1367,6 +1502,7 @@
             this.toolStripButton3.RightToLeftAutoMirrorImage = true;
             this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton3.Text = "Move first";
+            this.toolStripButton3.Visible = false;
             // 
             // toolStripButton4
             // 
@@ -1413,19 +1549,52 @@
             this.toolStripButton6.RightToLeftAutoMirrorImage = true;
             this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton6.Text = "Move last";
+            this.toolStripButton6.Visible = false;
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(110, 22);
+            this.toolStripLabel1.Text = "{0} of {1} Scheduled";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(74, 22);
+            this.toolStripButton1.Text = "Edit Cost";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(117, 22);
+            this.toolStripButton7.Text = "Finalise Schedule";
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.toolStripContainer10);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(343, 3);
+            this.groupBox5.Location = new System.Drawing.Point(528, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(329, 243);
+            this.groupBox5.Size = new System.Drawing.Size(144, 243);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Selected Course Schedule";
@@ -1436,11 +1605,11 @@
             // toolStripContainer10.ContentPanel
             // 
             this.toolStripContainer10.ContentPanel.Controls.Add(this.metroGrid4);
-            this.toolStripContainer10.ContentPanel.Size = new System.Drawing.Size(323, 199);
+            this.toolStripContainer10.ContentPanel.Size = new System.Drawing.Size(138, 199);
             this.toolStripContainer10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer10.Location = new System.Drawing.Point(3, 16);
             this.toolStripContainer10.Name = "toolStripContainer10";
-            this.toolStripContainer10.Size = new System.Drawing.Size(323, 224);
+            this.toolStripContainer10.Size = new System.Drawing.Size(138, 224);
             this.toolStripContainer10.TabIndex = 7;
             this.toolStripContainer10.Text = "toolStripContainer10";
             // 
@@ -1489,7 +1658,7 @@
             this.metroGrid4.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.metroGrid4.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid4.Size = new System.Drawing.Size(323, 199);
+            this.metroGrid4.Size = new System.Drawing.Size(138, 199);
             this.metroGrid4.TabIndex = 0;
             // 
             // bindingNavigator9
@@ -1516,14 +1685,14 @@
             this.bindingNavigator9.MovePreviousItem = this.toolStripButton42;
             this.bindingNavigator9.Name = "bindingNavigator9";
             this.bindingNavigator9.PositionItem = this.toolStripTextBox10;
-            this.bindingNavigator9.Size = new System.Drawing.Size(323, 25);
+            this.bindingNavigator9.Size = new System.Drawing.Size(138, 25);
             this.bindingNavigator9.Stretch = true;
             this.bindingNavigator9.TabIndex = 0;
             // 
             // toolStripLabel9
             // 
             this.toolStripLabel9.Name = "toolStripLabel9";
-            this.toolStripLabel9.Size = new System.Drawing.Size(35, 22);
+            this.toolStripLabel9.Size = new System.Drawing.Size(35, 15);
             this.toolStripLabel9.Text = "of {0}";
             this.toolStripLabel9.ToolTipText = "Total number of items";
             // 
@@ -1570,7 +1739,7 @@
             this.toolStripButton43.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton43.Image")));
             this.toolStripButton43.Name = "toolStripButton43";
             this.toolStripButton43.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton43.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton43.Size = new System.Drawing.Size(23, 20);
             this.toolStripButton43.Text = "Move next";
             // 
             // toolStripButton44
@@ -1579,7 +1748,7 @@
             this.toolStripButton44.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton44.Image")));
             this.toolStripButton44.Name = "toolStripButton44";
             this.toolStripButton44.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton44.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton44.Size = new System.Drawing.Size(23, 20);
             this.toolStripButton44.Text = "Move last";
             // 
             // toolStripSeparator33
@@ -1672,100 +1841,6 @@
             // ContentPanel
             // 
             this.ContentPanel.Size = new System.Drawing.Size(301, 142);
-            // 
-            // CourseCost
-            // 
-            this.CourseCost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CourseCost.DataPropertyName = "CourseCost";
-            dataGridViewCellStyle12.Format = "C2";
-            dataGridViewCellStyle12.NullValue = "0";
-            this.CourseCost.DefaultCellStyle = dataGridViewCellStyle12;
-            this.CourseCost.HeaderText = "Cost";
-            this.CourseCost.Name = "CourseCost";
-            this.CourseCost.ReadOnly = true;
-            this.CourseCost.Width = 53;
-            // 
-            // colCourseEnrollmentMainCourseName
-            // 
-            this.colCourseEnrollmentMainCourseName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colCourseEnrollmentMainCourseName.HeaderText = "Course";
-            this.colCourseEnrollmentMainCourseName.Name = "colCourseEnrollmentMainCourseName";
-            this.colCourseEnrollmentMainCourseName.ReadOnly = true;
-            this.colCourseEnrollmentMainCourseName.Width = 66;
-            // 
-            // colInProgressSelectedCourseMustSchedule
-            // 
-            this.colInProgressSelectedCourseMustSchedule.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colInProgressSelectedCourseMustSchedule.HeaderText = "";
-            this.colInProgressSelectedCourseMustSchedule.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colInProgressSelectedCourseMustSchedule.Name = "colInProgressSelectedCourseMustSchedule";
-            this.colInProgressSelectedCourseMustSchedule.ReadOnly = true;
-            this.colInProgressSelectedCourseMustSchedule.TrackVisitedState = false;
-            this.colInProgressSelectedCourseMustSchedule.VisitedLinkColor = System.Drawing.Color.Blue;
-            // 
-            // curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1
-            // 
-            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumCourseEnrollmentID";
-            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1.HeaderText = "CurriculumCourseEnrollmentID";
-            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1.Name = "curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1";
-            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // curriculumCourseIDDataGridViewTextBoxColumn1
-            // 
-            this.curriculumCourseIDDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumCourseID";
-            this.curriculumCourseIDDataGridViewTextBoxColumn1.HeaderText = "CurriculumCourseID";
-            this.curriculumCourseIDDataGridViewTextBoxColumn1.Name = "curriculumCourseIDDataGridViewTextBoxColumn1";
-            this.curriculumCourseIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.curriculumCourseIDDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // enrollmentIDDataGridViewTextBoxColumn1
-            // 
-            this.enrollmentIDDataGridViewTextBoxColumn1.DataPropertyName = "EnrollmentID";
-            this.enrollmentIDDataGridViewTextBoxColumn1.HeaderText = "EnrollmentID";
-            this.enrollmentIDDataGridViewTextBoxColumn1.Name = "enrollmentIDDataGridViewTextBoxColumn1";
-            this.enrollmentIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.enrollmentIDDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // courseCostDataGridViewTextBoxColumn1
-            // 
-            this.courseCostDataGridViewTextBoxColumn1.DataPropertyName = "CourseCost";
-            this.courseCostDataGridViewTextBoxColumn1.HeaderText = "CourseCost";
-            this.courseCostDataGridViewTextBoxColumn1.Name = "courseCostDataGridViewTextBoxColumn1";
-            this.courseCostDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.courseCostDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1
-            // 
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.DataPropertyName = "LookupEnrollmentProgressStateID";
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.HeaderText = "LookupEnrollmentProgressStateID";
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.Name = "lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1";
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // curriculumCourseDataGridViewTextBoxColumn1
-            // 
-            this.curriculumCourseDataGridViewTextBoxColumn1.DataPropertyName = "CurriculumCourse";
-            this.curriculumCourseDataGridViewTextBoxColumn1.HeaderText = "CurriculumCourse";
-            this.curriculumCourseDataGridViewTextBoxColumn1.Name = "curriculumCourseDataGridViewTextBoxColumn1";
-            this.curriculumCourseDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.curriculumCourseDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // enrollmentDataGridViewTextBoxColumn1
-            // 
-            this.enrollmentDataGridViewTextBoxColumn1.DataPropertyName = "Enrollment";
-            this.enrollmentDataGridViewTextBoxColumn1.HeaderText = "Enrollment";
-            this.enrollmentDataGridViewTextBoxColumn1.Name = "enrollmentDataGridViewTextBoxColumn1";
-            this.enrollmentDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.enrollmentDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // lookupEnrollmentProgressStateDataGridViewTextBoxColumn1
-            // 
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.DataPropertyName = "LookupEnrollmentProgressState";
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.HeaderText = "LookupEnrollmentProgressState";
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.Name = "lookupEnrollmentProgressStateDataGridViewTextBoxColumn1";
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.Visible = false;
             // 
             // frmEnrollmentInProgressV2
             // 
@@ -1901,13 +1976,11 @@
         private System.Windows.Forms.ToolStripContainer toolStripContainer2;
         private System.Windows.Forms.BindingNavigator bindingNavigator2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripContainer toolStripContainer11;
         private MetroFramework.Controls.MetroGrid metroGrid1;
@@ -1972,9 +2045,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lookupEnrollmentProgressStateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn colInProgressSelectedCourseMustSchedule;
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseCost;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCourseEnrollmentMainCourseName;
-        private System.Windows.Forms.DataGridViewLinkColumn colInProgressSelectedCourseMustSchedule;
         private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentIDDataGridViewTextBoxColumn1;
@@ -1983,5 +2056,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn curriculumCourseDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn lookupEnrollmentProgressStateDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton btnBackToMaunEnrollmentTop;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripButton toolStripButton7;
     }
 }

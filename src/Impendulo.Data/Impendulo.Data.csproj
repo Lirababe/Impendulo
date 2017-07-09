@@ -328,7 +328,7 @@
     <Compile Include="Models\Venue.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\VenueAssociatedCours.cs">
+    <Compile Include="Models\VenueAssociatedCourse.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VenueAssociatedCurriculumCourse.cs">

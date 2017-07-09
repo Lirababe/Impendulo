@@ -3256,7 +3256,7 @@
             <End Role="LookupDayOfWeek" EntitySet="LookupDayOfWeeks" />
             <End Role="CurriculumCourseDayCanBeScheduled" EntitySet="CurriculumCourseDayCanBeScheduleds" />
           </AssociationSet>
-          <EntitySet Name="VenueAssociatedCourses" EntityType="MCDModel.VenueAssociatedCours" />
+          <EntitySet Name="VenueAssociatedCourses" EntityType="MCDModel.VenueAssociatedCourse" />
           <AssociationSet Name="FK_VenueAssociatedCourses_Courses" Association="MCDModel.FK_VenueAssociatedCourses_Courses">
             <End Role="Course" EntitySet="Courses" />
             <End Role="VenueAssociatedCours" EntitySet="VenueAssociatedCourses" />
@@ -4090,8 +4090,8 @@
             <PropertyRef Name="VenueID" />
           </Key>
           <Property Name="VenueID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Venue1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="VenueMaxCapacity" Type="Int32" Nullable="false" />
+          <Property Name="VenueName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" DefaultValue="" />
+          <Property Name="VenueMaxCapacity" Type="Int32" Nullable="false" DefaultValue="0" />
           <NavigationProperty Name="VenueAssociatedCurriculumCourses" Relationship="MCDModel.FK_VenueAssociatedCurriculumCourses_Venues" FromRole="Venue" ToRole="VenueAssociatedCurriculumCours" />
           <NavigationProperty Name="VenueAssociatedCourses" Relationship="MCDModel.FK_VenueAssociatedCourses_Venues" FromRole="Venue" ToRole="VenueAssociatedCours" />
           <NavigationProperty Name="Schedules" Relationship="MCDModel.ScheduledVenues" FromRole="Venue" ToRole="Schedule" />
@@ -5181,7 +5181,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="VenueAssociatedCours">
+        <EntityType Name="VenueAssociatedCourse">
           <Key>
             <PropertyRef Name="VenueAssociatedCourseID" />
           </Key>
@@ -5189,12 +5189,12 @@
           <Property Name="CourseID" Type="Int32" Nullable="false" />
           <Property Name="VenueID" Type="Int32" Nullable="false" />
           <Property Name="VenueMaxCapacity" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Cours" Relationship="MCDModel.FK_VenueAssociatedCourses_Courses" FromRole="VenueAssociatedCours" ToRole="Course" />
+          <NavigationProperty Name="Course" Relationship="MCDModel.FK_VenueAssociatedCourses_Courses" FromRole="VenueAssociatedCours" ToRole="Course" />
           <NavigationProperty Name="Venue" Relationship="MCDModel.FK_VenueAssociatedCourses_Venues" FromRole="VenueAssociatedCours" ToRole="Venue" />
         </EntityType>
         <Association Name="FK_VenueAssociatedCourses_Courses">
           <End Type="MCDModel.Course" Role="Course" Multiplicity="1" />
-          <End Type="MCDModel.VenueAssociatedCours" Role="VenueAssociatedCours" Multiplicity="*" />
+          <End Type="MCDModel.VenueAssociatedCourse" Role="VenueAssociatedCours" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Course">
               <PropertyRef Name="CourseID" />
@@ -5217,8 +5217,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_VenueAssociatedCourses_Venues">
-          <End Type="MCDModel.Venue" Role="Venue" Multiplicity="1" />
-          <End Type="MCDModel.VenueAssociatedCours" Role="VenueAssociatedCours" Multiplicity="*" />
+          <End Type="MCDModel.Venue" Role="Venue" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MCDModel.VenueAssociatedCourse" Role="VenueAssociatedCours" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Venue">
               <PropertyRef Name="VenueID" />
@@ -5954,7 +5956,7 @@
             <EntityTypeMapping TypeName="MCDModel.Venue">
               <MappingFragment StoreEntitySet="Venues">
                 <ScalarProperty Name="VenueMaxCapacity" ColumnName="VenueMaxCapacity" />
-                <ScalarProperty Name="Venue1" ColumnName="Venue" />
+                <ScalarProperty Name="VenueName" ColumnName="Venue" />
                 <ScalarProperty Name="VenueID" ColumnName="VenueID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -6157,7 +6159,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="VenueAssociatedCourses">
-            <EntityTypeMapping TypeName="MCDModel.VenueAssociatedCours">
+            <EntityTypeMapping TypeName="MCDModel.VenueAssociatedCourse">
               <MappingFragment StoreEntitySet="VenueAssociatedCourses">
                 <ScalarProperty Name="VenueMaxCapacity" ColumnName="VenueMaxCapacity" />
                 <ScalarProperty Name="VenueID" ColumnName="VenueID" />

@@ -273,8 +273,12 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
 
         private void btnSwitchBackToParentEnrollment_Click(object sender, EventArgs e)
         {
-            this.CurrentEnrollmentPreRequisiteID = 0;
-            this.refreshEnrollment();
+            using (frmEnrollmentCourseSelection frm = new frmEnrollmentCourseSelection())
+            {
+                frm.CurrentEnrollemnt = this.CurrentEnrollment;
+                frm.ShowDialog();
+                refreshEnrollment();
+            }
         }
 
         private void dgvEnrollmentCourseMain_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -321,6 +325,17 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                 frm.CurrentStudentID = CurrentEnrollment.Student.StudentID;
                 frm.ShowDialog();
             }
+        }
+
+        private void btnBackToMaunEnrollmentTop_Click(object sender, EventArgs e)
+        {
+            this.CurrentEnrollmentPreRequisiteID = 0;
+            this.refreshEnrollment();
+        }
+
+        private void dgvEnrollmentCourseMain_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -73,6 +73,18 @@ namespace Impendulo.Data.Models
                 }
             }
 
+            if (entityEntry.Entity is Venue)
+            {
+                if ((entityEntry.CurrentValues.GetValue<string>("VenueName").ToString()).Length == 0)
+                {
+                    var list = new List<System.Data.Entity.Validation.DbValidationError>();
+                    list.Add(new System.Data.Entity.Validation.DbValidationError("Venue Name", "(Venue Name Invalid) -  Name Can Not Be Empty."));
+
+                    return new System.Data.Entity.Validation.DbEntityValidationResult(entityEntry, list);
+                }
+            }
+
+
             return base.ValidateEntity(entityEntry, items);
         }
     }

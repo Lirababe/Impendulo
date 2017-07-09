@@ -50,7 +50,6 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.curriculumCourseEnrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curriculumCourseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +58,7 @@
             this.curriculumCourseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumCourseEnrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -285,10 +285,6 @@
             this.metroGrid1.Size = new System.Drawing.Size(280, 245);
             this.metroGrid1.TabIndex = 0;
             // 
-            // curriculumCourseEnrollmentBindingSource
-            // 
-            this.curriculumCourseEnrollmentBindingSource.DataSource = typeof(Impendulo.Data.Models.CurriculumCourseEnrollment);
-            // 
             // curriculumCourseEnrollmentIDDataGridViewTextBoxColumn
             // 
             this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn.DataPropertyName = "CurriculumCourseEnrollmentID";
@@ -352,15 +348,20 @@
             this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.ReadOnly = true;
             this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.Visible = false;
             // 
+            // curriculumCourseEnrollmentBindingSource
+            // 
+            this.curriculumCourseEnrollmentBindingSource.DataSource = typeof(Impendulo.Data.Models.CurriculumCourseEnrollment);
+            // 
             // frmScheduleCurriculumCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 466);
+            this.ClientSize = new System.Drawing.Size(1014, 706);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.metroDateTime1);
             this.Controls.Add(this.textBox1);
             this.Name = "frmScheduleCurriculumCourses";
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Text = "frmScheduleCurriculumCourses";
             this.Load += new System.EventHandler(this.frmScheduleCurriculumCourses_Load);
             this.groupBox1.ResumeLayout(false);

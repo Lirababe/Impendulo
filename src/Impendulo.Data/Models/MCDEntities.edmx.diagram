@@ -73,7 +73,7 @@
         <EntityTypeShape EntityType="MCDModel.sysdiagram" Width="1.5" PointX="4.75" PointY="4.625" />
         <EntityTypeShape EntityType="MCDModel.SystemAdministrator" Width="1.5" PointX="10.5" PointY="49.125" />
         <EntityTypeShape EntityType="MCDModel.VenueAssociatedCurriculumCourse" Width="3" PointX="27" PointY="52.625" />
-        <EntityTypeShape EntityType="MCDModel.Venue" Width="1.5" PointX="20.25" PointY="53.25" />
+        <EntityTypeShape EntityType="MCDModel.Venue" Width="2.875" PointX="19.375" PointY="56" />
         <AssociationConnector Association="MCDModel.FK_Activities_Modules" />
         <AssociationConnector Association="MCDModel.FK_Addresses_LookupAddressTypes" />
         <AssociationConnector Association="MCDModel.FK_Addresses_LookupCountries" />
@@ -174,7 +174,7 @@
         <EntityTypeShape EntityType="MCDModel.PublicHoliday" Width="1.5" PointX="0.75" PointY="7.75" />
         <AssociationConnector Association="MCDModel.FK_CurriculumCourseDayCanBeScheduled_CurriculumCourses" />
         <AssociationConnector Association="MCDModel.FK_CurriculumCourseDayCanBeScheduled_LookupDayOfWeeks" />
-        <EntityTypeShape EntityType="MCDModel.VenueAssociatedCours" Width="1.5" PointX="26.5" PointY="59.125" />
+        <EntityTypeShape EntityType="MCDModel.VenueAssociatedCourse" Width="3.125" PointX="26.5" PointY="59.125" />
         <AssociationConnector Association="MCDModel.FK_VenueAssociatedCourses_Courses" />
         <AssociationConnector Association="MCDModel.FK_Schedules_Facilitators" />
         <AssociationConnector Association="MCDModel.FK_VenueAssociatedCourses_Venues" />
