@@ -33,10 +33,12 @@ namespace Impendulo.StudentEngineeringCourseErollment.Development.EnrollmentExce
                 try
                 {
                     Dbconnection.CurriculumCourseEnrollments.Attach(SelectedCurriculumCourseEnrollment);
+                    SelectedCurriculumCourseEnrollment.LookupEnrollmentProgressStateID = (int)Common.Enum.EnumEnrollmentProgressStates.Excempt;
+                    Dbconnection.Entry(SelectedCurriculumCourseEnrollment).Reference(a => a.LookupEnrollmentProgressState).Load();
                     //SelectedCurriculumCourseEnrollment.Excempt = true;
                     Dbconnection.Entry(SelectedCurriculumCourseEnrollment).State = System.Data.Entity.EntityState.Modified;
                     Dbconnection.SaveChanges();
-                   
+
                     EquiryHistory hist = new EquiryHistory
                     {
                         EnquiryID = EnquiryID,
@@ -76,7 +78,6 @@ namespace Impendulo.StudentEngineeringCourseErollment.Development.EnrollmentExce
                 using (var Dbconnection = new MCDEntities())
                 {
                     CurrentEmployeeLoggedIn = (from a in Dbconnection.Employees
-                                               where a.EmployeeID == 11075
                                                select a).FirstOrDefault<Employee>();
                 };
             }

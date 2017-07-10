@@ -53,6 +53,19 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             //Load up Current Enrollment
             refreshEnrollment();
 
+            showAddCourseForEnrollment();
+        }
+
+        private void showAddCourseForEnrollment()
+        {
+            splitContainerAddAndRevertCourse.Panel1Collapsed = false;
+            splitContainerAddAndRevertCourse.Panel2Collapsed = true;
+        }
+
+        private void hideAddCourseForEnrollment()
+        {
+            splitContainerAddAndRevertCourse.Panel1Collapsed = true;
+            splitContainerAddAndRevertCourse.Panel2Collapsed = false;
         }
 
         #region Resfresh Methods
@@ -140,7 +153,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
         {
             if (CurrentEnrollmentPreRequisiteID != 0)
             {
-                btnSelectCourses.Enabled = false;
+                //btnSelectCourses.Enabled = false;
             }
             else
             {
@@ -150,7 +163,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                 //{
 
                 //}
-                btnSelectCourses.Enabled = true;
+                // btnSelectCourses.Enabled = true;
             }
         }
         private void populateEnrollmentPreRequisites()
@@ -248,7 +261,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                     this.CurrentEnrollmentPreRequisiteID = CurriculumCourseEnrollmentObj.Enrollment.EnrollmentID;
                     this.CurrentCurriculumCourseEnrollmentID = CurriculumCourseEnrollmentObj.CurriculumCourseEnrollmentID;
                     this.refreshEnrollment();
-
+                    this.hideAddCourseForEnrollment();
                     break;
                 case 4:
                     if (Convert.ToInt32(dgvEnrollmentPreRequisites.Rows[e.RowIndex].Cells[e.ColumnIndex].Tag) == 0)
@@ -273,14 +286,33 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
 
         private void btnSwitchBackToParentEnrollment_Click(object sender, EventArgs e)
         {
-            using (frmEnrollmentCourseSelection frm = new frmEnrollmentCourseSelection())
+            if (CheckIfAllPreRequisitieCoursesAreCompleted())
             {
-                frm.CurrentEnrollemnt = this.CurrentEnrollment;
-                frm.ShowDialog();
-                refreshEnrollment();
+                using (frmEnrollmentCourseSelection frm = new frmEnrollmentCourseSelection())
+                {
+                    frm.CurrentEnrollemnt = this.CurrentEnrollment;
+                    frm.ShowDialog();
+                    refreshEnrollment();
+                }
             }
+
         }
 
+        private Boolean CheckIfAllPreRequisitieCoursesAreCompleted()
+        {
+            Boolean Rtn = true;
+            foreach (CurriculumCourseEnrollment CCE in curriculumCourseEnrollmentPreRequisiteCourseBindingSource.List)
+            {
+                if (CCE.LookupEnrollmentProgressStateID == (int)EnumEnrollmentProgressStates.In_Progress || CCE.LookupEnrollmentProgressStateID == (int)EnumEnrollmentProgressStates.New_Enrollment)
+                {
+                    MessageBox.Show(CCE.CurriculumCourse.Curriculum.CurriculumName + " - " + CCE.CurriculumCourse.Course.CourseName + " Is Incomplete - Schedule and process the course first once completed, proceed to configure the courses for the enrollment.", "Process Check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+
+            return Rtn;
+
+        }
         private void dgvEnrollmentCourseMain_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             var gridView = (DataGridView)sender;
@@ -290,16 +322,26 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                 {
                     CurriculumCourseEnrollment CurriculumCourseEnrollmentObj = (CurriculumCourseEnrollment)row.DataBoundItem;
                     ObservableListSource<Schedule> Schedules = (ObservableListSource<Schedule>)CurriculumCourseEnrollmentObj.Schedules;
+
                     row.Cells[colCourseEnrollmentMainCourseName.Index].Value = CurriculumCourseEnrollmentObj.CurriculumCourse.Course.CourseName.ToString();
+
                     if ((from a in Schedules
-                         where a.CurriculumCourseEnrollmentID == 3
+                         where a.CurriculumCourseEnrollmentID == CurriculumCourseEnrollmentObj.CurriculumCourseEnrollmentID
                          select a).ToList<Schedule>().Count > 0)
                     {
-                        row.Cells[colInProgressSelectedCourseMustSchedule.Index].Value = "[ Edit Schedule ]";
+                        Schedule ScheduleObj = (from a in Schedules
+                                                where a.CurriculumCourseEnrollmentID == CurriculumCourseEnrollmentObj.CurriculumCourseEnrollmentID
+                                                select a).FirstOrDefault<Schedule>();
+
+                        row.Cells[colInProgressSelectedCourseMustSchedule.Index].Value = "[ View Schedule ]";
+                        row.Cells[colSelectedEnrollemntStartDate.Index].Value = ScheduleObj.ScheduleStartDate.ToString("D");
+                        row.Cells[colSelectedEnrollemntEndDate.Index].Value = ScheduleObj.ScheduleCompletionDate.ToString("D");
                     }
                     else
                     {
                         row.Cells[colInProgressSelectedCourseMustSchedule.Index].Value = "[ Schedule Course ]";
+                        row.Cells[colSelectedEnrollemntStartDate.Index].Value = "Not Yet Scheduled";
+                        row.Cells[colSelectedEnrollemntEndDate.Index].Value = "Not Yet Scheduled";
                     }
 
 
@@ -336,6 +378,18 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
         private void dgvEnrollmentCourseMain_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRevertBackToMainEnrollment_Click(object sender, EventArgs e)
+        {
+            this.CurrentEnrollmentPreRequisiteID = 0;
+            this.showAddCourseForEnrollment();
+            this.refreshEnrollment();
         }
     }
 }
