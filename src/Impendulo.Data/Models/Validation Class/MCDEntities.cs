@@ -22,6 +22,7 @@ namespace Impendulo.Data.Models
 
         protected override DbEntityValidationResult ValidateEntity(DbEntityEntry entityEntry, IDictionary<object, object> items)
         {
+           
 
             if (entityEntry.Entity is Student)
             {
@@ -29,7 +30,7 @@ namespace Impendulo.Data.Models
                 if (entityEntry.CurrentValues.GetValue<string>("StudentIDNumber").Length == 0)
                 {
                     var list = new List<System.Data.Entity.Validation.DbValidationError>();
-                    list.Add(new System.Data.Entity.Validation.DbValidationError("StudentIDNumber", "(ID Number Invalid) - ID Number Can Not Be Blank."));
+                    list.Add(new System.Data.Entity.Validation.DbValidationError("Student IDNumber - Field", "(ID Number Invalid) - ID Number Can Not Be Blank."));
 
                     return new System.Data.Entity.Validation.DbEntityValidationResult(entityEntry, list);
                 }

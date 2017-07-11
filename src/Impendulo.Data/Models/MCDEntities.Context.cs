@@ -104,6 +104,7 @@ namespace Impendulo.Data.Models
         public virtual DbSet<LookupDayOfWeek> LookupDayOfWeeks { get; set; }
         public virtual DbSet<PublicHoliday> PublicHolidays { get; set; }
         public virtual DbSet<VenueAssociatedCourse> VenueAssociatedCourses { get; set; }
+        public virtual DbSet<LookupScheduleLocation> LookupScheduleLocations { get; set; }
     
         public virtual ObjectResult<CurriculumCourse> GetCurriculumCourseInOrder(Nullable<int> curriculumID)
         {
@@ -138,17 +139,30 @@ namespace Impendulo.Data.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Reports_StudentReports_Result>("Reports_StudentReports");
         }
     
-        public virtual ObjectResult<GetCurriculumCoursePreRequisiteCourseNotYetScheduled_Result> GetCurriculumCoursePreRequisiteCourseNotYetScheduled(Nullable<int> curriculumID, Nullable<int> enrollmentID)
+        public virtual ObjectResult<CurriculumCourse> GetCurriculumCoursePreRequisiteCourseNotYetScheduled(Nullable<int> curriculumCourseID, Nullable<int> enrollmentID)
         {
-            var curriculumIDParameter = curriculumID.HasValue ?
-                new ObjectParameter("CurriculumID", curriculumID) :
-                new ObjectParameter("CurriculumID", typeof(int));
+            var curriculumCourseIDParameter = curriculumCourseID.HasValue ?
+                new ObjectParameter("CurriculumCourseID", curriculumCourseID) :
+                new ObjectParameter("CurriculumCourseID", typeof(int));
     
             var enrollmentIDParameter = enrollmentID.HasValue ?
                 new ObjectParameter("EnrollmentID", enrollmentID) :
                 new ObjectParameter("EnrollmentID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetCurriculumCoursePreRequisiteCourseNotYetScheduled_Result>("GetCurriculumCoursePreRequisiteCourseNotYetScheduled", curriculumIDParameter, enrollmentIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CurriculumCourse>("GetCurriculumCoursePreRequisiteCourseNotYetScheduled", curriculumCourseIDParameter, enrollmentIDParameter);
+        }
+    
+        public virtual ObjectResult<CurriculumCourse> GetCurriculumCoursePreRequisiteCourseNotYetScheduled(Nullable<int> curriculumCourseID, Nullable<int> enrollmentID, MergeOption mergeOption)
+        {
+            var curriculumCourseIDParameter = curriculumCourseID.HasValue ?
+                new ObjectParameter("CurriculumCourseID", curriculumCourseID) :
+                new ObjectParameter("CurriculumCourseID", typeof(int));
+    
+            var enrollmentIDParameter = enrollmentID.HasValue ?
+                new ObjectParameter("EnrollmentID", enrollmentID) :
+                new ObjectParameter("EnrollmentID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CurriculumCourse>("GetCurriculumCoursePreRequisiteCourseNotYetScheduled", mergeOption, curriculumCourseIDParameter, enrollmentIDParameter);
         }
     }
 }

@@ -26,7 +26,8 @@ namespace Impendulo.Data.Models
         public System.DateTime ScheduleStartDate { get; set; }
         public System.DateTime ScheduleCompletionDate { get; set; }
         public int EnrollmentID { get; set; }
-        public int IndividualID { get; set; }
+        public int FacilitatorID { get; set; }
+        public int LookupScheduleLocationID { get; set; }
     
         public virtual CurriculumCourseEnrollment CurriculumCourseEnrollment { get; set; }
         public virtual Enrollment Enrollment { get; set; }
@@ -35,5 +36,6 @@ namespace Impendulo.Data.Models
         public virtual ObservableListSource<Company> Companies { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<Venue> Venues { get; set; }
+        public virtual LookupScheduleLocation LookupScheduleLocation { get; set; }
     }
 }

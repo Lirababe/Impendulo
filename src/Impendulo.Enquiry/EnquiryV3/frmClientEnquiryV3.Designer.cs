@@ -59,6 +59,7 @@
             this.btnViewProgressInProgressSections = new MetroFramework.Controls.MetroTile();
             this.btnInitialConsultationConfirmationInProgressSection = new MetroFramework.Controls.MetroTile();
             this.enquiryDateTextBox = new System.Windows.Forms.TextBox();
+            this.enquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtEnquiryInProgressEnquiryID = new System.Windows.Forms.TextBox();
             this.gbInprogressContactNameAndCompanyName = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -74,6 +75,7 @@
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.dgvInprogressContactDetails = new MetroFramework.Controls.MetroGrid();
             this.colInProgressContactType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInProgressContactDetailSendOption = new System.Windows.Forms.DataGridViewLinkColumn();
             this.contactDetailsInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
@@ -94,6 +96,14 @@
             this.gbInProgressEnquiryEnrrolmentQueries = new System.Windows.Forms.GroupBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dgvInProgressCurriculumEnquiries = new MetroFramework.Controls.MetroGrid();
+            this.lastUpdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInProgressEnquiryCloseCurriculumEnquiry = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colInProgressCurriculumDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInProgressCurriculumName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentQuanityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInProgressProcessEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colInProgressViewCurrentEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
             this.curriculumEnquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enquiryInprogressBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -193,7 +203,6 @@
             this.individualSecondNameDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.individualLastnameDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rowVersionDataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.enquiryInprogressBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.objectStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullNameDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.individualIDDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -209,15 +218,6 @@
             this.nextOfKinDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.systemAdministratorDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastUpdatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInProgressEnquiryCloseCurriculumEnquiry = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colInProgressCurriculumDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInProgressCurriculumName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentQuanityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInProgressProcessEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colInProgressViewCurrentEnrollment = new System.Windows.Forms.DataGridViewLinkColumn();
             enquiryDateLabel = new System.Windows.Forms.Label();
             enquiryIDLabel = new System.Windows.Forms.Label();
             fullNameLabel = new System.Windows.Forms.Label();
@@ -236,6 +236,7 @@
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).BeginInit();
             this.gbInprogressContactNameAndCompanyName.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -258,7 +259,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingNavigator)).BeginInit();
             this.enquiryInprogressBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companiesInprogressBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // enquiryDateLabel
@@ -526,6 +526,11 @@
             this.enquiryDateTextBox.TabIndex = 1;
             this.enquiryDateTextBox.TextChanged += new System.EventHandler(this.enquiryDateTextBox_TextChanged);
             // 
+            // enquiryInprogressBindingSource
+            // 
+            this.enquiryInprogressBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
+            this.enquiryInprogressBindingSource.BindingComplete += new System.Windows.Forms.BindingCompleteEventHandler(this.enquiryInprogressBindingSource_BindingComplete);
+            // 
             // txtEnquiryInProgressEnquiryID
             // 
             this.txtEnquiryInProgressEnquiryID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enquiryInprogressBindingSource, "EnquiryID", true));
@@ -753,6 +758,16 @@
             this.colInProgressContactType.HeaderText = "Contact Type";
             this.colInProgressContactType.Name = "colInProgressContactType";
             this.colInProgressContactType.ReadOnly = true;
+            // 
+            // contactDetailValueDataGridViewTextBoxColumn
+            // 
+            this.contactDetailValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.contactDetailValueDataGridViewTextBoxColumn.DataPropertyName = "ContactDetailValue";
+            this.contactDetailValueDataGridViewTextBoxColumn.HeaderText = "Contact Detail";
+            this.contactDetailValueDataGridViewTextBoxColumn.MinimumWidth = 105;
+            this.contactDetailValueDataGridViewTextBoxColumn.Name = "contactDetailValueDataGridViewTextBoxColumn";
+            this.contactDetailValueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.contactDetailValueDataGridViewTextBoxColumn.Width = 105;
             // 
             // colInProgressContactDetailSendOption
             // 
@@ -1005,6 +1020,86 @@
             this.dgvInProgressCurriculumEnquiries.TabIndex = 0;
             this.dgvInProgressCurriculumEnquiries.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInProgressCurriculumEnquiries_CellContentClick);
             this.dgvInProgressCurriculumEnquiries.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvInProgressCurriculumEnquiries_DataBindingComplete);
+            // 
+            // lastUpdatedDataGridViewTextBoxColumn
+            // 
+            this.lastUpdatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.lastUpdatedDataGridViewTextBoxColumn.DataPropertyName = "LastUpdated";
+            this.lastUpdatedDataGridViewTextBoxColumn.HeaderText = "LastUpdated";
+            this.lastUpdatedDataGridViewTextBoxColumn.Name = "lastUpdatedDataGridViewTextBoxColumn";
+            this.lastUpdatedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastUpdatedDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // colInProgressEnquiryCloseCurriculumEnquiry
+            // 
+            this.colInProgressEnquiryCloseCurriculumEnquiry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.HeaderText = "";
+            this.colInProgressEnquiryCloseCurriculumEnquiry.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.Name = "colInProgressEnquiryCloseCurriculumEnquiry";
+            this.colInProgressEnquiryCloseCurriculumEnquiry.ReadOnly = true;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.Text = "[ Close Enquiry Item ]";
+            this.colInProgressEnquiryCloseCurriculumEnquiry.TrackVisitedState = false;
+            this.colInProgressEnquiryCloseCurriculumEnquiry.Width = 5;
+            // 
+            // colInProgressCurriculumDepartment
+            // 
+            this.colInProgressCurriculumDepartment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colInProgressCurriculumDepartment.HeaderText = "Department";
+            this.colInProgressCurriculumDepartment.Name = "colInProgressCurriculumDepartment";
+            this.colInProgressCurriculumDepartment.ReadOnly = true;
+            this.colInProgressCurriculumDepartment.Width = 91;
+            // 
+            // colInProgressCurriculumName
+            // 
+            this.colInProgressCurriculumName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colInProgressCurriculumName.HeaderText = "Curriculum";
+            this.colInProgressCurriculumName.Name = "colInProgressCurriculumName";
+            this.colInProgressCurriculumName.ReadOnly = true;
+            this.colInProgressCurriculumName.Width = 86;
+            // 
+            // enrollmentQuanityDataGridViewTextBoxColumn
+            // 
+            this.enrollmentQuanityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentQuanity";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.HeaderText = "Qty To Enroll";
+            this.enrollmentQuanityDataGridViewTextBoxColumn.Name = "enrollmentQuanityDataGridViewTextBoxColumn";
+            this.enrollmentQuanityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.enrollmentQuanityDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // colInProgressEnquiryQuantityCurrentlyEnrolled
+            // 
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.HeaderText = "Qty Enrolled";
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.Name = "colInProgressEnquiryQuantityCurrentlyEnrolled";
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.ReadOnly = true;
+            this.colInProgressEnquiryQuantityCurrentlyEnrolled.Width = 93;
+            // 
+            // colInProgressProcessEnrollment
+            // 
+            this.colInProgressProcessEnrollment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colInProgressProcessEnrollment.HeaderText = "";
+            this.colInProgressProcessEnrollment.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colInProgressProcessEnrollment.Name = "colInProgressProcessEnrollment";
+            this.colInProgressProcessEnrollment.ReadOnly = true;
+            this.colInProgressProcessEnrollment.Text = "";
+            this.colInProgressProcessEnrollment.TrackVisitedState = false;
+            this.colInProgressProcessEnrollment.Width = 5;
+            // 
+            // colInProgressViewCurrentEnrollment
+            // 
+            this.colInProgressViewCurrentEnrollment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colInProgressViewCurrentEnrollment.HeaderText = "";
+            this.colInProgressViewCurrentEnrollment.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colInProgressViewCurrentEnrollment.Name = "colInProgressViewCurrentEnrollment";
+            this.colInProgressViewCurrentEnrollment.ReadOnly = true;
+            this.colInProgressViewCurrentEnrollment.Text = "";
+            this.colInProgressViewCurrentEnrollment.TrackVisitedState = false;
             // 
             // curriculumEnquiryInprogressBindingSource
             // 
@@ -1670,11 +1765,6 @@
             this.rowVersionDataGridViewImageColumn6.HeaderText = "RowVersion";
             this.rowVersionDataGridViewImageColumn6.Name = "rowVersionDataGridViewImageColumn6";
             // 
-            // enquiryInprogressBindingSource
-            // 
-            this.enquiryInprogressBindingSource.DataSource = typeof(Impendulo.Data.Models.Enquiry);
-            this.enquiryInprogressBindingSource.BindingComplete += new System.Windows.Forms.BindingCompleteEventHandler(this.enquiryInprogressBindingSource_BindingComplete);
-            // 
             // objectStateDataGridViewTextBoxColumn
             // 
             this.objectStateDataGridViewTextBoxColumn.DataPropertyName = "ObjectState";
@@ -1766,96 +1856,6 @@
             this.systemAdministratorDataGridViewTextBoxColumn4.HeaderText = "SystemAdministrator";
             this.systemAdministratorDataGridViewTextBoxColumn4.Name = "systemAdministratorDataGridViewTextBoxColumn4";
             // 
-            // contactDetailValueDataGridViewTextBoxColumn
-            // 
-            this.contactDetailValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.contactDetailValueDataGridViewTextBoxColumn.DataPropertyName = "ContactDetailValue";
-            this.contactDetailValueDataGridViewTextBoxColumn.HeaderText = "Contact Detail";
-            this.contactDetailValueDataGridViewTextBoxColumn.MinimumWidth = 105;
-            this.contactDetailValueDataGridViewTextBoxColumn.Name = "contactDetailValueDataGridViewTextBoxColumn";
-            this.contactDetailValueDataGridViewTextBoxColumn.ReadOnly = true;
-            this.contactDetailValueDataGridViewTextBoxColumn.Width = 105;
-            // 
-            // lastUpdatedDataGridViewTextBoxColumn
-            // 
-            this.lastUpdatedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.lastUpdatedDataGridViewTextBoxColumn.DataPropertyName = "LastUpdated";
-            this.lastUpdatedDataGridViewTextBoxColumn.HeaderText = "LastUpdated";
-            this.lastUpdatedDataGridViewTextBoxColumn.Name = "lastUpdatedDataGridViewTextBoxColumn";
-            this.lastUpdatedDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastUpdatedDataGridViewTextBoxColumn.Width = 95;
-            // 
-            // colInProgressEnquiryCloseCurriculumEnquiry
-            // 
-            this.colInProgressEnquiryCloseCurriculumEnquiry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.HeaderText = "";
-            this.colInProgressEnquiryCloseCurriculumEnquiry.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.Name = "colInProgressEnquiryCloseCurriculumEnquiry";
-            this.colInProgressEnquiryCloseCurriculumEnquiry.ReadOnly = true;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.Text = "[ Close Enquiry Item ]";
-            this.colInProgressEnquiryCloseCurriculumEnquiry.TrackVisitedState = false;
-            this.colInProgressEnquiryCloseCurriculumEnquiry.Width = 5;
-            // 
-            // colInProgressCurriculumDepartment
-            // 
-            this.colInProgressCurriculumDepartment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colInProgressCurriculumDepartment.HeaderText = "Department";
-            this.colInProgressCurriculumDepartment.Name = "colInProgressCurriculumDepartment";
-            this.colInProgressCurriculumDepartment.ReadOnly = true;
-            this.colInProgressCurriculumDepartment.Width = 91;
-            // 
-            // colInProgressCurriculumName
-            // 
-            this.colInProgressCurriculumName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colInProgressCurriculumName.HeaderText = "Curriculum";
-            this.colInProgressCurriculumName.Name = "colInProgressCurriculumName";
-            this.colInProgressCurriculumName.ReadOnly = true;
-            this.colInProgressCurriculumName.Width = 86;
-            // 
-            // enrollmentQuanityDataGridViewTextBoxColumn
-            // 
-            this.enrollmentQuanityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentQuanity";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.HeaderText = "Qty To Enroll";
-            this.enrollmentQuanityDataGridViewTextBoxColumn.Name = "enrollmentQuanityDataGridViewTextBoxColumn";
-            this.enrollmentQuanityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.enrollmentQuanityDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // colInProgressEnquiryQuantityCurrentlyEnrolled
-            // 
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.HeaderText = "Qty Enrolled";
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.Name = "colInProgressEnquiryQuantityCurrentlyEnrolled";
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.ReadOnly = true;
-            this.colInProgressEnquiryQuantityCurrentlyEnrolled.Width = 93;
-            // 
-            // colInProgressProcessEnrollment
-            // 
-            this.colInProgressProcessEnrollment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colInProgressProcessEnrollment.HeaderText = "";
-            this.colInProgressProcessEnrollment.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colInProgressProcessEnrollment.Name = "colInProgressProcessEnrollment";
-            this.colInProgressProcessEnrollment.ReadOnly = true;
-            this.colInProgressProcessEnrollment.Text = "";
-            this.colInProgressProcessEnrollment.TrackVisitedState = false;
-            this.colInProgressProcessEnrollment.Width = 5;
-            // 
-            // colInProgressViewCurrentEnrollment
-            // 
-            this.colInProgressViewCurrentEnrollment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colInProgressViewCurrentEnrollment.HeaderText = "";
-            this.colInProgressViewCurrentEnrollment.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colInProgressViewCurrentEnrollment.Name = "colInProgressViewCurrentEnrollment";
-            this.colInProgressViewCurrentEnrollment.ReadOnly = true;
-            this.colInProgressViewCurrentEnrollment.Text = "";
-            this.colInProgressViewCurrentEnrollment.TrackVisitedState = false;
-            // 
             // frmClientEnquiryV3
             // 
             this.ApplyImageInvert = true;
@@ -1887,6 +1887,7 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).EndInit();
             this.gbInprogressContactNameAndCompanyName.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
@@ -1916,7 +1917,6 @@
             this.enquiryInprogressBindingNavigator.ResumeLayout(false);
             this.enquiryInprogressBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companiesInprogressBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enquiryInprogressBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

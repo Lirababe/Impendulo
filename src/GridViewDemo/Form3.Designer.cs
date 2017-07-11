@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             System.Windows.Forms.Label individualFirstNameLabel;
             System.Windows.Forms.Label individualSecondNameLabel;
             System.Windows.Forms.Label individualLastnameLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.enquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.enquiryBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.enquiryBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.enquiryDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +68,7 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             individualFirstNameLabel = new System.Windows.Forms.Label();
             individualSecondNameLabel = new System.Windows.Forms.Label();
             individualLastnameLabel = new System.Windows.Forms.Label();
@@ -81,6 +82,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.curriculumEnquiriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.curriculumEnquiriesDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // individualFirstNameLabel
+            // 
+            individualFirstNameLabel.AutoSize = true;
+            individualFirstNameLabel.Location = new System.Drawing.Point(414, 57);
+            individualFirstNameLabel.Name = "individualFirstNameLabel";
+            individualFirstNameLabel.Size = new System.Drawing.Size(108, 13);
+            individualFirstNameLabel.TabIndex = 2;
+            individualFirstNameLabel.Text = "Individual First Name:";
+            // 
+            // individualSecondNameLabel
+            // 
+            individualSecondNameLabel.AutoSize = true;
+            individualSecondNameLabel.Location = new System.Drawing.Point(396, 83);
+            individualSecondNameLabel.Name = "individualSecondNameLabel";
+            individualSecondNameLabel.Size = new System.Drawing.Size(126, 13);
+            individualSecondNameLabel.TabIndex = 4;
+            individualSecondNameLabel.Text = "Individual Second Name:";
+            // 
+            // individualLastnameLabel
+            // 
+            individualLastnameLabel.AutoSize = true;
+            individualLastnameLabel.Location = new System.Drawing.Point(418, 109);
+            individualLastnameLabel.Name = "individualLastnameLabel";
+            individualLastnameLabel.Size = new System.Drawing.Size(104, 13);
+            individualLastnameLabel.TabIndex = 6;
+            individualLastnameLabel.Text = "Individual Lastname:";
             // 
             // enquiryBindingSource
             // 
@@ -116,6 +144,31 @@
             this.enquiryBindingNavigator.TabIndex = 0;
             this.enquiryBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -148,16 +201,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -180,26 +226,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // enquiryBindingNavigatorSaveItem
             // 
@@ -240,15 +268,6 @@
             this.individualsBindingSource.DataMember = "Individuals";
             this.individualsBindingSource.DataSource = this.enquiryBindingSource;
             // 
-            // individualFirstNameLabel
-            // 
-            individualFirstNameLabel.AutoSize = true;
-            individualFirstNameLabel.Location = new System.Drawing.Point(414, 57);
-            individualFirstNameLabel.Name = "individualFirstNameLabel";
-            individualFirstNameLabel.Size = new System.Drawing.Size(108, 13);
-            individualFirstNameLabel.TabIndex = 2;
-            individualFirstNameLabel.Text = "Individual First Name:";
-            // 
             // individualFirstNameTextBox
             // 
             this.individualFirstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.individualsBindingSource, "IndividualFirstName", true));
@@ -257,15 +276,6 @@
             this.individualFirstNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.individualFirstNameTextBox.TabIndex = 3;
             // 
-            // individualSecondNameLabel
-            // 
-            individualSecondNameLabel.AutoSize = true;
-            individualSecondNameLabel.Location = new System.Drawing.Point(396, 83);
-            individualSecondNameLabel.Name = "individualSecondNameLabel";
-            individualSecondNameLabel.Size = new System.Drawing.Size(126, 13);
-            individualSecondNameLabel.TabIndex = 4;
-            individualSecondNameLabel.Text = "Individual Second Name:";
-            // 
             // individualSecondNameTextBox
             // 
             this.individualSecondNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.individualsBindingSource, "IndividualSecondName", true));
@@ -273,15 +283,6 @@
             this.individualSecondNameTextBox.Name = "individualSecondNameTextBox";
             this.individualSecondNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.individualSecondNameTextBox.TabIndex = 5;
-            // 
-            // individualLastnameLabel
-            // 
-            individualLastnameLabel.AutoSize = true;
-            individualLastnameLabel.Location = new System.Drawing.Point(418, 109);
-            individualLastnameLabel.Name = "individualLastnameLabel";
-            individualLastnameLabel.Size = new System.Drawing.Size(104, 13);
-            individualLastnameLabel.TabIndex = 6;
-            individualLastnameLabel.Text = "Individual Lastname:";
             // 
             // individualLastnameTextBox
             // 
@@ -393,11 +394,22 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "Enquiry";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(745, 83);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 707);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.curriculumEnquiriesDataGridView);
             this.Controls.Add(this.contactDetailsDataGridView);
             this.Controls.Add(individualLastnameLabel);
@@ -463,5 +475,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.Button button1;
     }
 }

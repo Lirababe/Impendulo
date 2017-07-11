@@ -19,10 +19,12 @@ namespace Impendulo.Data.Models
             set;
         }
 
+        [NotMapped]
         public string FullName
         {
             get
             {
+                //Do Calculations
                 return string.Format("{0} {1}", IndividualFirstName, IndividualLastname);
             }
         }

@@ -73,6 +73,12 @@
     <Compile Include="AllCourses\frmScheduleCurriculumCourses.Designer.cs">
       <DependentUpon>frmScheduleCurriculumCourses.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllCourses\frmScheduleCurriculumCourseWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllCourses\frmScheduleCurriculumCourseWizard.Designer.cs">
+      <DependentUpon>frmScheduleCurriculumCourseWizard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Courses\Apprenticeship\frmScheduleApprenticeship.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,16 +91,28 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AllCourses\frmScheduleCurriculumCourses.resx">
       <DependentUpon>frmScheduleCurriculumCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllCourses\frmScheduleCurriculumCourseWizard.resx">
+      <DependentUpon>frmScheduleCurriculumCourseWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Courses\Apprenticeship\frmScheduleApprenticeship.resx">
       <DependentUpon>frmScheduleApprenticeship.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -108,6 +126,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.CurriculumCourseEnrollment.datasource" />
+    <None Include="Properties\DataSources\Impendulo.Data.Models.Schedule.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

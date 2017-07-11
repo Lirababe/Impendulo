@@ -197,28 +197,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentCours
 
         private void dataGridView7_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
-            {
-                var gridView = (DataGridView)sender;
-                var chkValue = gridView.Rows[e.RowIndex].Cells[colLinkedCourseSelector.Index].Value;
-                if (chkValue != null)
-                {
-                    if ((Boolean)chkValue)
-                    {
-                        gridView.Rows[e.RowIndex].Cells[colLinkedCourseSelector.Index].Value = false;
-                    }
-                    else
-                    {
-                        gridView.Rows[e.RowIndex].Cells[colLinkedCourseSelector.Index].Value = true;
-                    }
-                }
-                else
-                {
-                    gridView.Rows[e.RowIndex].Cells[colLinkedCourseSelector.Index].Value = true;
-                }
-
-
-            }
+            
         }
 
         private void dgvApprenticeshipEnrollmentAvaiableCurriculumCourses_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -277,6 +256,32 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentCours
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvApprenticeshipEnrollmentLinkedCurriculumCourses_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                var gridView = (DataGridView)sender;
+                var chkValue = gridView.Rows[e.RowIndex].Cells[colLinkedCourseSelector.Index].Value;
+                if (chkValue != null)
+                {
+                    if ((Boolean)chkValue)
+                    {
+                        gridView.Rows[e.RowIndex].Cells[colLinkedCourseSelector.Index].Value = false;
+                    }
+                    else
+                    {
+                        gridView.Rows[e.RowIndex].Cells[colLinkedCourseSelector.Index].Value = true;
+                    }
+                }
+                else
+                {
+                    gridView.Rows[e.RowIndex].Cells[colLinkedCourseSelector.Index].Value = true;
+                }
+
+
+            }
         }
     }
 }

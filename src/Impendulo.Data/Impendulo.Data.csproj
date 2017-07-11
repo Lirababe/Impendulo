@@ -152,6 +152,7 @@
     <Compile Include="Models\EquiryHistory.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ExtendedClasses\Activity.cs" />
     <Compile Include="Models\ExtendedClasses\CurricullumCourseCode.cs" />
     <Compile Include="Models\ExtendedClasses\CurriculumCourse.cs" />
     <Compile Include="Models\ExtendedClasses\CurriculumCourseDayCanBeScheduled.cs" />
@@ -247,6 +248,9 @@
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LookupQualificationLevel.cs">
+      <DependentUpon>MCDEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LookupScheduleLocation.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LookupSectionalEnrollmentType.cs">

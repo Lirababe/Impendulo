@@ -172,7 +172,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel11);
             this.splitContainer1.Size = new System.Drawing.Size(738, 463);
-            this.splitContainer1.SplitterDistance = 208;
+            this.splitContainer1.SplitterDistance = 201;
             this.splitContainer1.TabIndex = 1;
             // 
             // NavigationPanel
@@ -183,7 +183,7 @@
             this.NavigationPanel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NavigationPanel.Location = new System.Drawing.Point(0, 0);
             this.NavigationPanel.Name = "NavigationPanel";
-            this.NavigationPanel.Size = new System.Drawing.Size(208, 463);
+            this.NavigationPanel.Size = new System.Drawing.Size(201, 463);
             this.NavigationPanel.TabIndex = 8;
             // 
             // groupBox5
@@ -192,7 +192,7 @@
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 39);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(208, 424);
+            this.groupBox5.Size = new System.Drawing.Size(201, 424);
             this.groupBox5.TabIndex = 20;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Current Step";
@@ -213,7 +213,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(202, 137);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(195, 137);
             this.tableLayoutPanel5.TabIndex = 19;
             this.metroToolTip1.SetToolTip(this.tableLayoutPanel5, "Shows the Current Step The Users Is Currently Processing.");
             // 
@@ -274,7 +274,7 @@
             this.panel4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(208, 39);
+            this.panel4.Size = new System.Drawing.Size(201, 39);
             this.panel4.TabIndex = 7;
             // 
             // metroTile1
@@ -283,7 +283,7 @@
             this.metroTile1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTile1.Location = new System.Drawing.Point(0, 0);
             this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(208, 39);
+            this.metroTile1.Size = new System.Drawing.Size(201, 39);
             this.metroTile1.TabIndex = 0;
             this.metroTile1.Text = "Apprientceship Enrollment";
             this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -302,7 +302,7 @@
             this.tableLayoutPanel11.RowCount = 2;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(526, 463);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(533, 463);
             this.tableLayoutPanel11.TabIndex = 0;
             // 
             // tableLayoutPanel10
@@ -321,18 +321,18 @@
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(526, 51);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(533, 51);
             this.tableLayoutPanel10.TabIndex = 3;
             // 
             // wizardStepProgressBar
             // 
             this.wizardStepProgressBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wizardStepProgressBar.HideProgressText = false;
-            this.wizardStepProgressBar.Location = new System.Drawing.Point(135, 4);
+            this.wizardStepProgressBar.Location = new System.Drawing.Point(137, 4);
             this.wizardStepProgressBar.MarqueeAnimationSpeed = 500;
             this.wizardStepProgressBar.Name = "wizardStepProgressBar";
             this.wizardStepProgressBar.ProgressBarStyle = System.Windows.Forms.ProgressBarStyle.Blocks;
-            this.wizardStepProgressBar.Size = new System.Drawing.Size(255, 46);
+            this.wizardStepProgressBar.Size = new System.Drawing.Size(258, 46);
             this.wizardStepProgressBar.Step = 1;
             this.wizardStepProgressBar.Style = MetroFramework.MetroColorStyle.Blue;
             this.wizardStepProgressBar.TabIndex = 22;
@@ -345,7 +345,7 @@
             this.btnPreviousSection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPreviousSection.Location = new System.Drawing.Point(4, 4);
             this.btnPreviousSection.Name = "btnPreviousSection";
-            this.btnPreviousSection.Size = new System.Drawing.Size(124, 46);
+            this.btnPreviousSection.Size = new System.Drawing.Size(126, 46);
             this.btnPreviousSection.TabIndex = 0;
             this.btnPreviousSection.Text = "Previous";
             this.btnPreviousSection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -359,9 +359,9 @@
             this.btnNextSection.ActiveControl = null;
             this.btnNextSection.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNextSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNextSection.Location = new System.Drawing.Point(397, 4);
+            this.btnNextSection.Location = new System.Drawing.Point(402, 4);
             this.btnNextSection.Name = "btnNextSection";
-            this.btnNextSection.Size = new System.Drawing.Size(125, 46);
+            this.btnNextSection.Size = new System.Drawing.Size(127, 46);
             this.btnNextSection.TabIndex = 1;
             this.btnNextSection.Text = "Next";
             this.btnNextSection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -382,7 +382,7 @@
             this.MainflowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.MainflowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.MainflowLayoutPanel.Name = "MainflowLayoutPanel";
-            this.MainflowLayoutPanel.Size = new System.Drawing.Size(526, 412);
+            this.MainflowLayoutPanel.Size = new System.Drawing.Size(533, 412);
             this.MainflowLayoutPanel.TabIndex = 2;
             // 
             // gbEnquiryType

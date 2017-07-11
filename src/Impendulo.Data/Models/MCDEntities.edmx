@@ -594,6 +594,13 @@
           <Property Name="QualificationLevelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="QualificationLevel" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
+        <EntityType Name="LookupScheduleLocations">
+          <Key>
+            <PropertyRef Name="LookupScheduleLocationID" />
+          </Key>
+          <Property Name="LookupScheduleLocationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ScheduleLocation" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
         <EntityType Name="LookupSectionalEnrollmentTypes">
           <Key>
             <PropertyRef Name="LookupSectionalEnrollmentTypeID" />
@@ -687,6 +694,7 @@
           <Property Name="ScheduleStartDate" Type="date" Nullable="false" />
           <Property Name="ScheduleCompletionDate" Type="date" Nullable="false" />
           <Property Name="EnrollmentID" Type="int" Nullable="false" />
+          <Property Name="LookupScheduleLocationID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="SMTPSettings">
           <Key>
@@ -1978,6 +1986,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Schedules_LookupScheduleLocations">
+          <End Role="LookupScheduleLocations" Type="Self.LookupScheduleLocations" Multiplicity="1" />
+          <End Role="Schedules" Type="Self.Schedules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LookupScheduleLocations">
+              <PropertyRef Name="LookupScheduleLocationID" />
+            </Principal>
+            <Dependent Role="Schedules">
+              <PropertyRef Name="LookupScheduleLocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_StudentAssociatedCompany_Companies">
           <End Role="Companies" Type="Self.Companies" Multiplicity="1" />
           <End Role="StudentAssociatedCompany" Type="Self.StudentAssociatedCompany" Multiplicity="*" />
@@ -2191,7 +2211,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_VenueAssociatedCourses_Venues">
-          <End Role="Venues" Type="Self.Venues" Multiplicity="1" />
+          <End Role="Venues" Type="Self.Venues" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="VenueAssociatedCourses" Type="Self.VenueAssociatedCourses" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Venues">
@@ -2230,7 +2252,7 @@
           <Parameter Name="CurriculumID" Type="int" Mode="In" />
         </Function>
         <Function Name="GetCurriculumCoursePreRequisiteCourseNotYetScheduled" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CurriculumID" Type="int" Mode="In" />
+          <Parameter Name="CurriculumCourseID" Type="int" Mode="In" />
           <Parameter Name="EnrollmentID" Type="int" Mode="In" />
         </Function>
         <Function Name="GetLookupTablesForEnumAutoGenteration" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -2308,6 +2330,7 @@
           <EntitySet Name="LookupProcessSteps" EntityType="Self.LookupProcessSteps" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupProvinces" EntityType="Self.LookupProvinces" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupQualificationLevels" EntityType="Self.LookupQualificationLevels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LookupScheduleLocations" EntityType="Self.LookupScheduleLocations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupSectionalEnrollmentTypes" EntityType="Self.LookupSectionalEnrollmentTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupSetas" EntityType="Self.LookupSetas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LookupTitles" EntityType="Self.LookupTitles" Schema="dbo" store:Type="Tables" />
@@ -2714,6 +2737,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_Schedules_Facilitators" Association="Self.FK_Schedules_Facilitators">
             <End Role="Facilitators" EntitySet="Facilitators" />
+            <End Role="Schedules" EntitySet="Schedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedules_LookupScheduleLocations" Association="Self.FK_Schedules_LookupScheduleLocations">
+            <End Role="LookupScheduleLocations" EntitySet="LookupScheduleLocations" />
             <End Role="Schedules" EntitySet="Schedules" />
           </AssociationSet>
           <AssociationSet Name="FK_StudentAssociatedCompany_Companies" Association="Self.FK_StudentAssociatedCompany_Companies">
@@ -3277,10 +3304,15 @@
             <End Role="Schedule" EntitySet="Schedules" />
             <End Role="Venue" EntitySet="Venues" />
           </AssociationSet>
-          <FunctionImport Name="GetCurriculumCoursePreRequisiteCourseNotYetScheduled" ReturnType="Collection(MCDModel.GetCurriculumCoursePreRequisiteCourseNotYetScheduled_Result)">
-            <Parameter Name="CurriculumID" Mode="In" Type="Int32" />
+          <FunctionImport Name="GetCurriculumCoursePreRequisiteCourseNotYetScheduled" EntitySet="CurriculumCourses" ReturnType="Collection(MCDModel.CurriculumCourse)">
+            <Parameter Name="CurriculumCourseID" Mode="In" Type="Int32" />
             <Parameter Name="EnrollmentID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="LookupScheduleLocations" EntityType="MCDModel.LookupScheduleLocation" />
+          <AssociationSet Name="FK_Schedules_LookupScheduleLocations" Association="MCDModel.FK_Schedules_LookupScheduleLocations">
+            <End Role="LookupScheduleLocation" EntitySet="LookupScheduleLocations" />
+            <End Role="Schedule" EntitySet="Schedules" />
+          </AssociationSet>
           </EntityContainer>
         <ComplexType Name="GetCurriculumCourseInOrder_Result">
           <Property Type="Int32" Name="CurriculumCourseID" Nullable="true" />
@@ -3989,10 +4021,12 @@
           <Property Name="EnrollmentID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CurriculumCourseEnrollment" Relationship="MCDModel.FK_Schedules_CurriculumCourseEnrollments" FromRole="Schedule" ToRole="CurriculumCourseEnrollment" />
           <NavigationProperty Name="Enrollment" Relationship="MCDModel.FK_Schedules_Enrollments" FromRole="Schedule" ToRole="Enrollment" />
-          <Property Name="IndividualID" Type="Int32" Nullable="false" />
+          <Property Name="FacilitatorID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Facilitator" Relationship="MCDModel.FK_Schedules_Facilitators" FromRole="Schedule" ToRole="Facilitator" />
           <NavigationProperty Name="Companies" Relationship="MCDModel.CompanyAssociatedSchedules" FromRole="Schedule" ToRole="Company" />
           <NavigationProperty Name="Venues" Relationship="MCDModel.ScheduledVenues" FromRole="Schedule" ToRole="Venue" />
+          <Property Name="LookupScheduleLocationID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LookupScheduleLocation" Relationship="MCDModel.FK_Schedules_LookupScheduleLocations" FromRole="Schedule" ToRole="LookupScheduleLocation" />
         </EntityType>
         <EntityType Name="SMTPSetting">
           <Key>
@@ -5212,7 +5246,7 @@
               <PropertyRef Name="FacilitatorID" />
             </Principal>
             <Dependent Role="Schedule">
-              <PropertyRef Name="IndividualID" />
+              <PropertyRef Name="FacilitatorID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5248,6 +5282,26 @@
           <Property Type="Decimal" Name="Cost" Nullable="true" Precision="10" Scale="2" />
           <Property Type="Int32" Name="ComponentLevel" Nullable="true" />
         </ComplexType>
+        <EntityType Name="LookupScheduleLocation">
+          <Key>
+            <PropertyRef Name="LookupScheduleLocationID" />
+          </Key>
+          <Property Name="LookupScheduleLocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ScheduleLocation" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Schedules" Relationship="MCDModel.FK_Schedules_LookupScheduleLocations" FromRole="LookupScheduleLocation" ToRole="Schedule" />
+        </EntityType>
+        <Association Name="FK_Schedules_LookupScheduleLocations">
+          <End Type="MCDModel.LookupScheduleLocation" Role="LookupScheduleLocation" Multiplicity="1" />
+          <End Type="MCDModel.Schedule" Role="Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LookupScheduleLocation">
+              <PropertyRef Name="LookupScheduleLocationID" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="LookupScheduleLocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5864,7 +5918,8 @@
           <EntitySetMapping Name="Schedules">
             <EntityTypeMapping TypeName="MCDModel.Schedule">
               <MappingFragment StoreEntitySet="Schedules">
-                <ScalarProperty Name="IndividualID" ColumnName="IndividualID" />
+                <ScalarProperty Name="LookupScheduleLocationID" ColumnName="LookupScheduleLocationID" />
+                <ScalarProperty Name="FacilitatorID" ColumnName="IndividualID" />
                 <ScalarProperty Name="EnrollmentID" ColumnName="EnrollmentID" />
                 <ScalarProperty Name="ScheduleCompletionDate" ColumnName="ScheduleCompletionDate" />
                 <ScalarProperty Name="ScheduleStartDate" ColumnName="ScheduleStartDate" />
@@ -6185,19 +6240,15 @@
             </EndProperty>
           </AssociationSetMapping>
           <FunctionImportMapping FunctionImportName="GetCurriculumCoursePreRequisiteCourseNotYetScheduled" FunctionName="MCDModel.Store.GetCurriculumCoursePreRequisiteCourseNotYetScheduled">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="MCDModel.GetCurriculumCoursePreRequisiteCourseNotYetScheduled_Result">
-                <ScalarProperty Name="CurriculumCourseID" ColumnName="CurriculumCourseID" />
-                <ScalarProperty Name="CurriculumCourseParentID" ColumnName="CurriculumCourseParentID" />
-                <ScalarProperty Name="CurriculumID" ColumnName="CurriculumID" />
-                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
-                <ScalarProperty Name="EnrollmentTypeID" ColumnName="EnrollmentTypeID" />
-                <ScalarProperty Name="Duration" ColumnName="Duration" />
-                <ScalarProperty Name="Cost" ColumnName="Cost" />
-                <ScalarProperty Name="ComponentLevel" ColumnName="ComponentLevel" />
-              </ComplexTypeMapping>
-            </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="LookupScheduleLocations">
+            <EntityTypeMapping TypeName="MCDModel.LookupScheduleLocation">
+              <MappingFragment StoreEntitySet="LookupScheduleLocations">
+                <ScalarProperty Name="ScheduleLocation" ColumnName="ScheduleLocation" />
+                <ScalarProperty Name="LookupScheduleLocationID" ColumnName="LookupScheduleLocationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

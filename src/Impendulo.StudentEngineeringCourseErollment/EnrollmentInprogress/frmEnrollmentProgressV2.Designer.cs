@@ -42,16 +42,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -65,7 +65,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.departmentNameTextBox = new System.Windows.Forms.TextBox();
             this.curriculumNameTextBox = new System.Windows.Forms.TextBox();
+            this.splitContainerAddAndRevertCourse = new System.Windows.Forms.SplitContainer();
             this.btnSwitchBackToParentEnrollment = new System.Windows.Forms.PictureBox();
+            this.btnRevertBackToMainEnrollment = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
@@ -100,51 +102,6 @@
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.toolStripContainer5 = new System.Windows.Forms.ToolStripContainer();
             this.dgvEnrollmentPreRequisites = new MetroFramework.Controls.MetroGrid();
-            this.curriculumCourseEnrollmentPreRequisiteCourseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem1 = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnBackToMaunEnrollmentTop = new System.Windows.Forms.ToolStripButton();
-            this.curriculumCourseEnrollmentsMainCoursesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
-            this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.toolStripContainer10 = new System.Windows.Forms.ToolStripContainer();
-            this.miniToolStrip = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.metroGrid4 = new MetroFramework.Controls.MetroGrid();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
-            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.dgvEnrollmentCourseMain = new MetroFramework.Controls.MetroGrid();
-            this.bindingNavigator9 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.colPreRequisiteCourseCurriculumName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPreRequisiteCourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPreRequisiteCourseStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -158,6 +115,23 @@
             this.curriculumCourseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curriculumCourseEnrollmentPreRequisiteCourseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem1 = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnBackToMaunEnrollmentTop = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
+            this.dgvEnrollmentCourseMain = new MetroFramework.Controls.MetroGrid();
             this.colInProgressSelectedCourseMustSchedule = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colCourseEnrollmentMainCourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CourseCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -171,8 +145,34 @@
             this.curriculumCourseDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.splitContainerAddAndRevertCourse = new System.Windows.Forms.SplitContainer();
-            this.btnRevertBackToMainEnrollment = new System.Windows.Forms.PictureBox();
+            this.curriculumCourseEnrollmentsMainCoursesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.toolStripContainer10 = new System.Windows.Forms.ToolStripContainer();
+            this.metroGrid4 = new MetroFramework.Controls.MetroGrid();
+            this.bindingNavigator9 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.miniToolStrip = new System.Windows.Forms.BindingNavigator(this.components);
             fullNameLabel = new System.Windows.Forms.Label();
             studentIDNumberLabel = new System.Windows.Forms.Label();
             curriculumNameLabel = new System.Windows.Forms.Label();
@@ -189,7 +189,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnStudentInformation)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerAddAndRevertCourse)).BeginInit();
+            this.splitContainerAddAndRevertCourse.Panel1.SuspendLayout();
+            this.splitContainerAddAndRevertCourse.Panel2.SuspendLayout();
+            this.splitContainerAddAndRevertCourse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSwitchBackToParentEnrollment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRevertBackToMainEnrollment)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -215,31 +220,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseEnrollmentPreRequisiteCourseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseEnrollmentsMainCoursesBindingSource)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            this.toolStripContainer10.ContentPanel.SuspendLayout();
-            this.toolStripContainer10.TopToolStripPanel.SuspendLayout();
-            this.toolStripContainer10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.miniToolStrip)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid4)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            this.toolStripContainer2.ContentPanel.SuspendLayout();
-            this.toolStripContainer2.TopToolStripPanel.SuspendLayout();
-            this.toolStripContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
-            this.bindingNavigator2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollmentCourseMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator9)).BeginInit();
-            this.bindingNavigator9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerAddAndRevertCourse)).BeginInit();
-            this.splitContainerAddAndRevertCourse.Panel1.SuspendLayout();
-            this.splitContainerAddAndRevertCourse.Panel2.SuspendLayout();
-            this.splitContainerAddAndRevertCourse.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRevertBackToMainEnrollment)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.toolStripContainer2.ContentPanel.SuspendLayout();
+            this.toolStripContainer2.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollmentCourseMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseEnrollmentsMainCoursesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
+            this.bindingNavigator2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.toolStripContainer10.ContentPanel.SuspendLayout();
+            this.toolStripContainer10.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator9)).BeginInit();
+            this.bindingNavigator9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.miniToolStrip)).BeginInit();
             this.SuspendLayout();
             // 
             // fullNameLabel
@@ -449,6 +449,24 @@
             this.curriculumNameTextBox.Size = new System.Drawing.Size(178, 20);
             this.curriculumNameTextBox.TabIndex = 7;
             // 
+            // splitContainerAddAndRevertCourse
+            // 
+            this.splitContainerAddAndRevertCourse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerAddAndRevertCourse.Location = new System.Drawing.Point(258, 3);
+            this.splitContainerAddAndRevertCourse.Name = "splitContainerAddAndRevertCourse";
+            // 
+            // splitContainerAddAndRevertCourse.Panel1
+            // 
+            this.splitContainerAddAndRevertCourse.Panel1.Controls.Add(this.btnSwitchBackToParentEnrollment);
+            // 
+            // splitContainerAddAndRevertCourse.Panel2
+            // 
+            this.splitContainerAddAndRevertCourse.Panel2.Controls.Add(this.btnRevertBackToMainEnrollment);
+            this.tableLayoutPanel1.SetRowSpan(this.splitContainerAddAndRevertCourse, 2);
+            this.splitContainerAddAndRevertCourse.Size = new System.Drawing.Size(49, 47);
+            this.splitContainerAddAndRevertCourse.SplitterDistance = 25;
+            this.splitContainerAddAndRevertCourse.TabIndex = 10;
+            // 
             // btnSwitchBackToParentEnrollment
             // 
             this.btnSwitchBackToParentEnrollment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -463,6 +481,21 @@
             this.btnSwitchBackToParentEnrollment.TabStop = false;
             this.toolTip1.SetToolTip(this.btnSwitchBackToParentEnrollment, "Link/Add Courses or Modules to be completed for this enrollment.");
             this.btnSwitchBackToParentEnrollment.Click += new System.EventHandler(this.btnSwitchBackToParentEnrollment_Click);
+            // 
+            // btnRevertBackToMainEnrollment
+            // 
+            this.btnRevertBackToMainEnrollment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnRevertBackToMainEnrollment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRevertBackToMainEnrollment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRevertBackToMainEnrollment.Image = ((System.Drawing.Image)(resources.GetObject("btnRevertBackToMainEnrollment.Image")));
+            this.btnRevertBackToMainEnrollment.Location = new System.Drawing.Point(0, 0);
+            this.btnRevertBackToMainEnrollment.Name = "btnRevertBackToMainEnrollment";
+            this.btnRevertBackToMainEnrollment.Size = new System.Drawing.Size(25, 47);
+            this.btnRevertBackToMainEnrollment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRevertBackToMainEnrollment.TabIndex = 11;
+            this.btnRevertBackToMainEnrollment.TabStop = false;
+            this.toolTip1.SetToolTip(this.btnRevertBackToMainEnrollment, "Switch/REvert Back To MAin Enrollment");
+            this.btnRevertBackToMainEnrollment.Click += new System.EventHandler(this.btnRevertBackToMainEnrollment_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -962,537 +995,6 @@
             this.dgvEnrollmentPreRequisites.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnrollmentPreRequisites_CellContentClick);
             this.dgvEnrollmentPreRequisites.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvEnrollmentPreRequisites_DataBindingComplete);
             // 
-            // curriculumCourseEnrollmentPreRequisiteCourseBindingSource
-            // 
-            this.curriculumCourseEnrollmentPreRequisiteCourseBindingSource.DataSource = typeof(Impendulo.Data.Models.CurriculumCourseEnrollment);
-            // 
-            // bindingNavigator1
-            // 
-            this.bindingNavigator1.AddNewItem = null;
-            this.bindingNavigator1.BindingSource = this.curriculumCourseEnrollmentPreRequisiteCourseBindingSource;
-            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem1;
-            this.bindingNavigator1.DeleteItem = null;
-            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
-            this.bindingNavigator1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem1,
-            this.bindingNavigatorMovePreviousItem1,
-            this.bindingNavigatorSeparator3,
-            this.bindingNavigatorPositionItem1,
-            this.bindingNavigatorCountItem1,
-            this.bindingNavigatorSeparator4,
-            this.bindingNavigatorMoveNextItem1,
-            this.bindingNavigatorMoveLastItem1,
-            this.bindingNavigatorSeparator5,
-            this.btnBackToMaunEnrollmentTop,
-            this.toolStripSeparator4});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
-            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
-            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem1;
-            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem1;
-            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
-            this.bindingNavigator1.Name = "bindingNavigator1";
-            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(658, 25);
-            this.bindingNavigator1.Stretch = true;
-            this.bindingNavigator1.TabIndex = 0;
-            // 
-            // bindingNavigatorCountItem1
-            // 
-            this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
-            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem1.Text = "of {0}";
-            this.bindingNavigatorCountItem1.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorMoveFirstItem1
-            // 
-            this.bindingNavigatorMoveFirstItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
-            this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem1";
-            this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem1.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem1
-            // 
-            this.bindingNavigatorMovePreviousItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
-            this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem1";
-            this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem1.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator3
-            // 
-            this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator3";
-            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem1
-            // 
-            this.bindingNavigatorPositionItem1.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem1.AutoSize = false;
-            this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
-            this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem1.Text = "0";
-            this.bindingNavigatorPositionItem1.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator4
-            // 
-            this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
-            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem1
-            // 
-            this.bindingNavigatorMoveNextItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
-            this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem1";
-            this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem1.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem1
-            // 
-            this.bindingNavigatorMoveLastItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
-            this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem1";
-            this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem1.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator5
-            // 
-            this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
-            this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnBackToMaunEnrollmentTop
-            // 
-            this.btnBackToMaunEnrollmentTop.Image = ((System.Drawing.Image)(resources.GetObject("btnBackToMaunEnrollmentTop.Image")));
-            this.btnBackToMaunEnrollmentTop.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBackToMaunEnrollmentTop.Name = "btnBackToMaunEnrollmentTop";
-            this.btnBackToMaunEnrollmentTop.Size = new System.Drawing.Size(159, 22);
-            this.btnBackToMaunEnrollmentTop.Text = "Back To Main Enrollment";
-            this.btnBackToMaunEnrollmentTop.ToolTipText = "Return Back To Main Enrollment";
-            this.btnBackToMaunEnrollmentTop.Click += new System.EventHandler(this.btnBackToMaunEnrollmentTop_Click);
-            // 
-            // curriculumCourseEnrollmentsMainCoursesBindingSource
-            // 
-            this.curriculumCourseEnrollmentsMainCoursesBindingSource.DataMember = "CurriculumCourseEnrollments";
-            this.curriculumCourseEnrollmentsMainCoursesBindingSource.DataSource = this.enrollmentBindingSourceMain;
-            // 
-            // BottomToolStripPanel
-            // 
-            this.BottomToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.BottomToolStripPanel.Name = "BottomToolStripPanel";
-            this.BottomToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.BottomToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.BottomToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // TopToolStripPanel
-            // 
-            this.TopToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.TopToolStripPanel.Name = "TopToolStripPanel";
-            this.TopToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.TopToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.TopToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // RightToolStripPanel
-            // 
-            this.RightToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.RightToolStripPanel.Name = "RightToolStripPanel";
-            this.RightToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.RightToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.RightToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // LeftToolStripPanel
-            // 
-            this.LeftToolStripPanel.Location = new System.Drawing.Point(0, 0);
-            this.LeftToolStripPanel.Name = "LeftToolStripPanel";
-            this.LeftToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.LeftToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.LeftToolStripPanel.Size = new System.Drawing.Size(0, 0);
-            // 
-            // ContentPanel
-            // 
-            this.ContentPanel.Size = new System.Drawing.Size(301, 142);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.toolStripContainer10);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(0, 0);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(28, 310);
-            this.groupBox5.TabIndex = 9;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Scheduled Course Details";
-            // 
-            // toolStripContainer10
-            // 
-            // 
-            // toolStripContainer10.ContentPanel
-            // 
-            this.toolStripContainer10.ContentPanel.Controls.Add(this.metroGrid4);
-            this.toolStripContainer10.ContentPanel.Size = new System.Drawing.Size(22, 266);
-            this.toolStripContainer10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer10.Location = new System.Drawing.Point(3, 16);
-            this.toolStripContainer10.Name = "toolStripContainer10";
-            this.toolStripContainer10.Size = new System.Drawing.Size(22, 291);
-            this.toolStripContainer10.TabIndex = 7;
-            this.toolStripContainer10.Text = "toolStripContainer10";
-            // 
-            // toolStripContainer10.TopToolStripPanel
-            // 
-            this.toolStripContainer10.TopToolStripPanel.Controls.Add(this.bindingNavigator9);
-            // 
-            // miniToolStrip
-            // 
-            this.miniToolStrip.AddNewItem = null;
-            this.miniToolStrip.AutoSize = false;
-            this.miniToolStrip.CanOverflow = false;
-            this.miniToolStrip.CountItem = null;
-            this.miniToolStrip.DeleteItem = null;
-            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.miniToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.miniToolStrip.Location = new System.Drawing.Point(152, 3);
-            this.miniToolStrip.MoveFirstItem = null;
-            this.miniToolStrip.MoveLastItem = null;
-            this.miniToolStrip.MoveNextItem = null;
-            this.miniToolStrip.MovePreviousItem = null;
-            this.miniToolStrip.Name = "miniToolStrip";
-            this.miniToolStrip.PositionItem = null;
-            this.miniToolStrip.Size = new System.Drawing.Size(24, 25);
-            this.miniToolStrip.Stretch = true;
-            this.miniToolStrip.TabIndex = 0;
-            // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(152, 22);
-            this.toolStripButton8.Text = "Back to Seleted Courses";
-            // 
-            // metroGrid4
-            // 
-            this.metroGrid4.AllowUserToResizeRows = false;
-            this.metroGrid4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.metroGrid4.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.metroGrid4.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
-            this.metroGrid4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid4.DefaultCellStyle = dataGridViewCellStyle17;
-            this.metroGrid4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroGrid4.EnableHeadersVisualStyles = false;
-            this.metroGrid4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.metroGrid4.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid4.Location = new System.Drawing.Point(0, 0);
-            this.metroGrid4.Name = "metroGrid4";
-            this.metroGrid4.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid4.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
-            this.metroGrid4.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.metroGrid4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid4.Size = new System.Drawing.Size(22, 266);
-            this.metroGrid4.TabIndex = 0;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.toolStripContainer2);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(0, 0);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(632, 310);
-            this.groupBox4.TabIndex = 8;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Selected Course(s)";
-            // 
-            // toolStripContainer2
-            // 
-            // 
-            // toolStripContainer2.ContentPanel
-            // 
-            this.toolStripContainer2.ContentPanel.Controls.Add(this.dgvEnrollmentCourseMain);
-            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(626, 266);
-            this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer2.Location = new System.Drawing.Point(3, 16);
-            this.toolStripContainer2.Name = "toolStripContainer2";
-            this.toolStripContainer2.Size = new System.Drawing.Size(626, 291);
-            this.toolStripContainer2.TabIndex = 5;
-            this.toolStripContainer2.Text = "toolStripContainer2";
-            // 
-            // toolStripContainer2.TopToolStripPanel
-            // 
-            this.toolStripContainer2.TopToolStripPanel.Controls.Add(this.bindingNavigator2);
-            // 
-            // bindingNavigator2
-            // 
-            this.bindingNavigator2.AddNewItem = null;
-            this.bindingNavigator2.BindingSource = this.curriculumCourseEnrollmentsMainCoursesBindingSource;
-            this.bindingNavigator2.CountItem = this.toolStripLabel2;
-            this.bindingNavigator2.DeleteItem = null;
-            this.bindingNavigator2.Dock = System.Windows.Forms.DockStyle.None;
-            this.bindingNavigator2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.bindingNavigator2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripSeparator1,
-            this.toolStripTextBox1,
-            this.toolStripLabel2,
-            this.toolStripSeparator2,
-            this.toolStripButton5,
-            this.toolStripButton6,
-            this.toolStripSeparator3,
-            this.toolStripLabel1,
-            this.toolStripSeparator5,
-            this.toolStripButton1,
-            this.toolStripSeparator6,
-            this.toolStripButton7});
-            this.bindingNavigator2.Location = new System.Drawing.Point(0, 0);
-            this.bindingNavigator2.MoveFirstItem = this.toolStripButton3;
-            this.bindingNavigator2.MoveLastItem = this.toolStripButton6;
-            this.bindingNavigator2.MoveNextItem = this.toolStripButton5;
-            this.bindingNavigator2.MovePreviousItem = this.toolStripButton4;
-            this.bindingNavigator2.Name = "bindingNavigator2";
-            this.bindingNavigator2.PositionItem = this.toolStripTextBox1;
-            this.bindingNavigator2.Size = new System.Drawing.Size(626, 25);
-            this.bindingNavigator2.Stretch = true;
-            this.bindingNavigator2.TabIndex = 0;
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "Move first";
-            this.toolStripButton3.Visible = false;
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "Move previous";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.AccessibleName = "Position";
-            this.toolStripTextBox1.AutoSize = false;
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
-            this.toolStripTextBox1.Text = "0";
-            this.toolStripTextBox1.ToolTipText = "Current position";
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(35, 22);
-            this.toolStripLabel2.Text = "of {0}";
-            this.toolStripLabel2.ToolTipText = "Total number of items";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton5.Text = "Move next";
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton6.Text = "Move last";
-            this.toolStripButton6.Visible = false;
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(110, 22);
-            this.toolStripLabel1.Text = "{0} of {1} Scheduled";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(74, 22);
-            this.toolStripButton1.Text = "Edit Cost";
-            this.toolStripButton1.ToolTipText = "Edit Cost of the currently selected course from the list below";
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(117, 22);
-            this.toolStripButton7.Text = "Finalise Schedule";
-            // 
-            // dgvEnrollmentCourseMain
-            // 
-            this.dgvEnrollmentCourseMain.AllowUserToAddRows = false;
-            this.dgvEnrollmentCourseMain.AllowUserToDeleteRows = false;
-            this.dgvEnrollmentCourseMain.AllowUserToResizeRows = false;
-            this.dgvEnrollmentCourseMain.AutoGenerateColumns = false;
-            this.dgvEnrollmentCourseMain.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvEnrollmentCourseMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvEnrollmentCourseMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvEnrollmentCourseMain.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEnrollmentCourseMain.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvEnrollmentCourseMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEnrollmentCourseMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colInProgressSelectedCourseMustSchedule,
-            this.colCourseEnrollmentMainCourseName,
-            this.CourseCost,
-            this.colSelectedEnrollemntStartDate,
-            this.colSelectedEnrollemntEndDate,
-            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1,
-            this.curriculumCourseIDDataGridViewTextBoxColumn1,
-            this.enrollmentIDDataGridViewTextBoxColumn1,
-            this.courseCostDataGridViewTextBoxColumn1,
-            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1,
-            this.curriculumCourseDataGridViewTextBoxColumn1,
-            this.enrollmentDataGridViewTextBoxColumn1,
-            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1});
-            this.dgvEnrollmentCourseMain.DataSource = this.curriculumCourseEnrollmentsMainCoursesBindingSource;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEnrollmentCourseMain.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvEnrollmentCourseMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEnrollmentCourseMain.EnableHeadersVisualStyles = false;
-            this.dgvEnrollmentCourseMain.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dgvEnrollmentCourseMain.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvEnrollmentCourseMain.Location = new System.Drawing.Point(0, 0);
-            this.dgvEnrollmentCourseMain.Name = "dgvEnrollmentCourseMain";
-            this.dgvEnrollmentCourseMain.ReadOnly = true;
-            this.dgvEnrollmentCourseMain.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEnrollmentCourseMain.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.dgvEnrollmentCourseMain.RowHeadersVisible = false;
-            this.dgvEnrollmentCourseMain.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvEnrollmentCourseMain.RowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.dgvEnrollmentCourseMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEnrollmentCourseMain.Size = new System.Drawing.Size(626, 266);
-            this.dgvEnrollmentCourseMain.TabIndex = 0;
-            this.dgvEnrollmentCourseMain.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnrollmentCourseMain_CellContentClick);
-            this.dgvEnrollmentCourseMain.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvEnrollmentCourseMain_DataBindingComplete);
-            // 
-            // bindingNavigator9
-            // 
-            this.bindingNavigator9.AddNewItem = null;
-            this.bindingNavigator9.CountItem = null;
-            this.bindingNavigator9.DeleteItem = null;
-            this.bindingNavigator9.Dock = System.Windows.Forms.DockStyle.None;
-            this.bindingNavigator9.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.bindingNavigator9.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton8});
-            this.bindingNavigator9.Location = new System.Drawing.Point(0, 0);
-            this.bindingNavigator9.MoveFirstItem = null;
-            this.bindingNavigator9.MoveLastItem = null;
-            this.bindingNavigator9.MoveNextItem = null;
-            this.bindingNavigator9.MovePreviousItem = null;
-            this.bindingNavigator9.Name = "bindingNavigator9";
-            this.bindingNavigator9.PositionItem = null;
-            this.bindingNavigator9.Size = new System.Drawing.Size(22, 25);
-            this.bindingNavigator9.Stretch = true;
-            this.bindingNavigator9.TabIndex = 0;
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.groupBox4);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.groupBox5);
-            this.splitContainer3.Size = new System.Drawing.Size(664, 310);
-            this.splitContainer3.SplitterDistance = 632;
-            this.splitContainer3.TabIndex = 2;
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
             // colPreRequisiteCourseCurriculumName
             // 
             this.colPreRequisiteCourseCurriculumName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -1609,6 +1111,239 @@
             this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.ReadOnly = true;
             this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn.Visible = false;
             // 
+            // curriculumCourseEnrollmentPreRequisiteCourseBindingSource
+            // 
+            this.curriculumCourseEnrollmentPreRequisiteCourseBindingSource.DataSource = typeof(Impendulo.Data.Models.CurriculumCourseEnrollment);
+            // 
+            // bindingNavigator1
+            // 
+            this.bindingNavigator1.AddNewItem = null;
+            this.bindingNavigator1.BindingSource = this.curriculumCourseEnrollmentPreRequisiteCourseBindingSource;
+            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem1;
+            this.bindingNavigator1.DeleteItem = null;
+            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
+            this.bindingNavigator1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem1,
+            this.bindingNavigatorMovePreviousItem1,
+            this.bindingNavigatorSeparator3,
+            this.bindingNavigatorPositionItem1,
+            this.bindingNavigatorCountItem1,
+            this.bindingNavigatorSeparator4,
+            this.bindingNavigatorMoveNextItem1,
+            this.bindingNavigatorMoveLastItem1,
+            this.bindingNavigatorSeparator5,
+            this.btnBackToMaunEnrollmentTop,
+            this.toolStripSeparator4});
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
+            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
+            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem1;
+            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem1;
+            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem1;
+            this.bindingNavigator1.Size = new System.Drawing.Size(658, 25);
+            this.bindingNavigator1.Stretch = true;
+            this.bindingNavigator1.TabIndex = 0;
+            // 
+            // bindingNavigatorCountItem1
+            // 
+            this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
+            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem1.Text = "of {0}";
+            this.bindingNavigatorCountItem1.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorMoveFirstItem1
+            // 
+            this.bindingNavigatorMoveFirstItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
+            this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem1";
+            this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem1.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem1
+            // 
+            this.bindingNavigatorMovePreviousItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
+            this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem1";
+            this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem1.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator3
+            // 
+            this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator3";
+            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem1
+            // 
+            this.bindingNavigatorPositionItem1.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
+            this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem1.Text = "0";
+            this.bindingNavigatorPositionItem1.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator4
+            // 
+            this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
+            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem1
+            // 
+            this.bindingNavigatorMoveNextItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
+            this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem1";
+            this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem1.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem1
+            // 
+            this.bindingNavigatorMoveLastItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
+            this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem1";
+            this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem1.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator5
+            // 
+            this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
+            this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnBackToMaunEnrollmentTop
+            // 
+            this.btnBackToMaunEnrollmentTop.Image = ((System.Drawing.Image)(resources.GetObject("btnBackToMaunEnrollmentTop.Image")));
+            this.btnBackToMaunEnrollmentTop.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBackToMaunEnrollmentTop.Name = "btnBackToMaunEnrollmentTop";
+            this.btnBackToMaunEnrollmentTop.Size = new System.Drawing.Size(159, 22);
+            this.btnBackToMaunEnrollmentTop.Text = "Back To Main Enrollment";
+            this.btnBackToMaunEnrollmentTop.ToolTipText = "Return Back To Main Enrollment";
+            this.btnBackToMaunEnrollmentTop.Click += new System.EventHandler(this.btnBackToMaunEnrollmentTop_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.groupBox4);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.groupBox5);
+            this.splitContainer3.Size = new System.Drawing.Size(664, 310);
+            this.splitContainer3.SplitterDistance = 632;
+            this.splitContainer3.TabIndex = 2;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.toolStripContainer2);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(0, 0);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(632, 310);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Selected Course(s)";
+            // 
+            // toolStripContainer2
+            // 
+            // 
+            // toolStripContainer2.ContentPanel
+            // 
+            this.toolStripContainer2.ContentPanel.Controls.Add(this.dgvEnrollmentCourseMain);
+            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(626, 266);
+            this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer2.Location = new System.Drawing.Point(3, 16);
+            this.toolStripContainer2.Name = "toolStripContainer2";
+            this.toolStripContainer2.Size = new System.Drawing.Size(626, 291);
+            this.toolStripContainer2.TabIndex = 5;
+            this.toolStripContainer2.Text = "toolStripContainer2";
+            // 
+            // toolStripContainer2.TopToolStripPanel
+            // 
+            this.toolStripContainer2.TopToolStripPanel.Controls.Add(this.bindingNavigator2);
+            // 
+            // dgvEnrollmentCourseMain
+            // 
+            this.dgvEnrollmentCourseMain.AllowUserToAddRows = false;
+            this.dgvEnrollmentCourseMain.AllowUserToDeleteRows = false;
+            this.dgvEnrollmentCourseMain.AllowUserToResizeRows = false;
+            this.dgvEnrollmentCourseMain.AutoGenerateColumns = false;
+            this.dgvEnrollmentCourseMain.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvEnrollmentCourseMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEnrollmentCourseMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvEnrollmentCourseMain.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEnrollmentCourseMain.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvEnrollmentCourseMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEnrollmentCourseMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colInProgressSelectedCourseMustSchedule,
+            this.colCourseEnrollmentMainCourseName,
+            this.CourseCost,
+            this.colSelectedEnrollemntStartDate,
+            this.colSelectedEnrollemntEndDate,
+            this.curriculumCourseEnrollmentIDDataGridViewTextBoxColumn1,
+            this.curriculumCourseIDDataGridViewTextBoxColumn1,
+            this.enrollmentIDDataGridViewTextBoxColumn1,
+            this.courseCostDataGridViewTextBoxColumn1,
+            this.lookupEnrollmentProgressStateIDDataGridViewTextBoxColumn1,
+            this.curriculumCourseDataGridViewTextBoxColumn1,
+            this.enrollmentDataGridViewTextBoxColumn1,
+            this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1});
+            this.dgvEnrollmentCourseMain.DataSource = this.curriculumCourseEnrollmentsMainCoursesBindingSource;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEnrollmentCourseMain.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvEnrollmentCourseMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEnrollmentCourseMain.EnableHeadersVisualStyles = false;
+            this.dgvEnrollmentCourseMain.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvEnrollmentCourseMain.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvEnrollmentCourseMain.Location = new System.Drawing.Point(0, 0);
+            this.dgvEnrollmentCourseMain.Name = "dgvEnrollmentCourseMain";
+            this.dgvEnrollmentCourseMain.ReadOnly = true;
+            this.dgvEnrollmentCourseMain.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEnrollmentCourseMain.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvEnrollmentCourseMain.RowHeadersVisible = false;
+            this.dgvEnrollmentCourseMain.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvEnrollmentCourseMain.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvEnrollmentCourseMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEnrollmentCourseMain.Size = new System.Drawing.Size(626, 266);
+            this.dgvEnrollmentCourseMain.TabIndex = 0;
+            this.dgvEnrollmentCourseMain.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnrollmentCourseMain_CellContentClick);
+            this.dgvEnrollmentCourseMain.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvEnrollmentCourseMain_DataBindingComplete);
+            // 
             // colInProgressSelectedCourseMustSchedule
             // 
             this.colInProgressSelectedCourseMustSchedule.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -1721,38 +1456,303 @@
             this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.ReadOnly = true;
             this.lookupEnrollmentProgressStateDataGridViewTextBoxColumn1.Visible = false;
             // 
-            // splitContainerAddAndRevertCourse
+            // curriculumCourseEnrollmentsMainCoursesBindingSource
             // 
-            this.splitContainerAddAndRevertCourse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerAddAndRevertCourse.Location = new System.Drawing.Point(258, 3);
-            this.splitContainerAddAndRevertCourse.Name = "splitContainerAddAndRevertCourse";
+            this.curriculumCourseEnrollmentsMainCoursesBindingSource.DataMember = "CurriculumCourseEnrollments";
+            this.curriculumCourseEnrollmentsMainCoursesBindingSource.DataSource = this.enrollmentBindingSourceMain;
             // 
-            // splitContainerAddAndRevertCourse.Panel1
+            // bindingNavigator2
             // 
-            this.splitContainerAddAndRevertCourse.Panel1.Controls.Add(this.btnSwitchBackToParentEnrollment);
+            this.bindingNavigator2.AddNewItem = null;
+            this.bindingNavigator2.BindingSource = this.curriculumCourseEnrollmentsMainCoursesBindingSource;
+            this.bindingNavigator2.CountItem = this.toolStripLabel2;
+            this.bindingNavigator2.DeleteItem = null;
+            this.bindingNavigator2.Dock = System.Windows.Forms.DockStyle.None;
+            this.bindingNavigator2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.bindingNavigator2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton3,
+            this.toolStripButton4,
+            this.toolStripSeparator1,
+            this.toolStripTextBox1,
+            this.toolStripLabel2,
+            this.toolStripSeparator2,
+            this.toolStripButton5,
+            this.toolStripButton6,
+            this.toolStripSeparator3,
+            this.toolStripLabel1,
+            this.toolStripSeparator5,
+            this.toolStripButton1,
+            this.toolStripSeparator6,
+            this.toolStripButton7});
+            this.bindingNavigator2.Location = new System.Drawing.Point(0, 0);
+            this.bindingNavigator2.MoveFirstItem = this.toolStripButton3;
+            this.bindingNavigator2.MoveLastItem = this.toolStripButton6;
+            this.bindingNavigator2.MoveNextItem = this.toolStripButton5;
+            this.bindingNavigator2.MovePreviousItem = this.toolStripButton4;
+            this.bindingNavigator2.Name = "bindingNavigator2";
+            this.bindingNavigator2.PositionItem = this.toolStripTextBox1;
+            this.bindingNavigator2.Size = new System.Drawing.Size(626, 25);
+            this.bindingNavigator2.Stretch = true;
+            this.bindingNavigator2.TabIndex = 0;
             // 
-            // splitContainerAddAndRevertCourse.Panel2
+            // toolStripLabel2
             // 
-            this.splitContainerAddAndRevertCourse.Panel2.Controls.Add(this.btnRevertBackToMainEnrollment);
-            this.tableLayoutPanel1.SetRowSpan(this.splitContainerAddAndRevertCourse, 2);
-            this.splitContainerAddAndRevertCourse.Size = new System.Drawing.Size(49, 47);
-            this.splitContainerAddAndRevertCourse.SplitterDistance = 25;
-            this.splitContainerAddAndRevertCourse.TabIndex = 10;
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(35, 22);
+            this.toolStripLabel2.Text = "of {0}";
+            this.toolStripLabel2.ToolTipText = "Total number of items";
             // 
-            // btnRevertBackToMainEnrollment
+            // toolStripButton3
             // 
-            this.btnRevertBackToMainEnrollment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnRevertBackToMainEnrollment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRevertBackToMainEnrollment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRevertBackToMainEnrollment.Image = ((System.Drawing.Image)(resources.GetObject("btnRevertBackToMainEnrollment.Image")));
-            this.btnRevertBackToMainEnrollment.Location = new System.Drawing.Point(0, 0);
-            this.btnRevertBackToMainEnrollment.Name = "btnRevertBackToMainEnrollment";
-            this.btnRevertBackToMainEnrollment.Size = new System.Drawing.Size(25, 47);
-            this.btnRevertBackToMainEnrollment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRevertBackToMainEnrollment.TabIndex = 11;
-            this.btnRevertBackToMainEnrollment.TabStop = false;
-            this.toolTip1.SetToolTip(this.btnRevertBackToMainEnrollment, "Switch/REvert Back To MAin Enrollment");
-            this.btnRevertBackToMainEnrollment.Click += new System.EventHandler(this.btnRevertBackToMainEnrollment_Click);
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Text = "Move first";
+            this.toolStripButton3.Visible = false;
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton4.Text = "Move previous";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.AccessibleName = "Position";
+            this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
+            this.toolStripTextBox1.Text = "0";
+            this.toolStripTextBox1.ToolTipText = "Current position";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton5.Text = "Move next";
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton6.Text = "Move last";
+            this.toolStripButton6.Visible = false;
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(110, 22);
+            this.toolStripLabel1.Text = "{0} of {1} Scheduled";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(74, 22);
+            this.toolStripButton1.Text = "Edit Cost";
+            this.toolStripButton1.ToolTipText = "Edit Cost of the currently selected course from the list below";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(117, 22);
+            this.toolStripButton7.Text = "Finalise Schedule";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.toolStripContainer10);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(0, 0);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(28, 310);
+            this.groupBox5.TabIndex = 9;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Scheduled Course Details";
+            // 
+            // toolStripContainer10
+            // 
+            // 
+            // toolStripContainer10.ContentPanel
+            // 
+            this.toolStripContainer10.ContentPanel.Controls.Add(this.metroGrid4);
+            this.toolStripContainer10.ContentPanel.Size = new System.Drawing.Size(22, 266);
+            this.toolStripContainer10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer10.Location = new System.Drawing.Point(3, 16);
+            this.toolStripContainer10.Name = "toolStripContainer10";
+            this.toolStripContainer10.Size = new System.Drawing.Size(22, 291);
+            this.toolStripContainer10.TabIndex = 7;
+            this.toolStripContainer10.Text = "toolStripContainer10";
+            // 
+            // toolStripContainer10.TopToolStripPanel
+            // 
+            this.toolStripContainer10.TopToolStripPanel.Controls.Add(this.bindingNavigator9);
+            // 
+            // metroGrid4
+            // 
+            this.metroGrid4.AllowUserToResizeRows = false;
+            this.metroGrid4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroGrid4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.metroGrid4.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.metroGrid4.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            this.metroGrid4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid4.DefaultCellStyle = dataGridViewCellStyle17;
+            this.metroGrid4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroGrid4.EnableHeadersVisualStyles = false;
+            this.metroGrid4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.metroGrid4.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroGrid4.Location = new System.Drawing.Point(0, 0);
+            this.metroGrid4.Name = "metroGrid4";
+            this.metroGrid4.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid4.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            this.metroGrid4.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.metroGrid4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.metroGrid4.Size = new System.Drawing.Size(22, 266);
+            this.metroGrid4.TabIndex = 0;
+            // 
+            // bindingNavigator9
+            // 
+            this.bindingNavigator9.AddNewItem = null;
+            this.bindingNavigator9.CountItem = null;
+            this.bindingNavigator9.DeleteItem = null;
+            this.bindingNavigator9.Dock = System.Windows.Forms.DockStyle.None;
+            this.bindingNavigator9.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.bindingNavigator9.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton8});
+            this.bindingNavigator9.Location = new System.Drawing.Point(0, 0);
+            this.bindingNavigator9.MoveFirstItem = null;
+            this.bindingNavigator9.MoveLastItem = null;
+            this.bindingNavigator9.MoveNextItem = null;
+            this.bindingNavigator9.MovePreviousItem = null;
+            this.bindingNavigator9.Name = "bindingNavigator9";
+            this.bindingNavigator9.PositionItem = null;
+            this.bindingNavigator9.Size = new System.Drawing.Size(22, 25);
+            this.bindingNavigator9.Stretch = true;
+            this.bindingNavigator9.TabIndex = 0;
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(152, 22);
+            this.toolStripButton8.Text = "Back to Seleted Courses";
+            // 
+            // BottomToolStripPanel
+            // 
+            this.BottomToolStripPanel.Location = new System.Drawing.Point(0, 0);
+            this.BottomToolStripPanel.Name = "BottomToolStripPanel";
+            this.BottomToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.BottomToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.BottomToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            // 
+            // TopToolStripPanel
+            // 
+            this.TopToolStripPanel.Location = new System.Drawing.Point(0, 0);
+            this.TopToolStripPanel.Name = "TopToolStripPanel";
+            this.TopToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.TopToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.TopToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            // 
+            // RightToolStripPanel
+            // 
+            this.RightToolStripPanel.Location = new System.Drawing.Point(0, 0);
+            this.RightToolStripPanel.Name = "RightToolStripPanel";
+            this.RightToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.RightToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.RightToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            // 
+            // LeftToolStripPanel
+            // 
+            this.LeftToolStripPanel.Location = new System.Drawing.Point(0, 0);
+            this.LeftToolStripPanel.Name = "LeftToolStripPanel";
+            this.LeftToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.LeftToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.LeftToolStripPanel.Size = new System.Drawing.Size(0, 0);
+            // 
+            // ContentPanel
+            // 
+            this.ContentPanel.Size = new System.Drawing.Size(301, 142);
+            // 
+            // miniToolStrip
+            // 
+            this.miniToolStrip.AddNewItem = null;
+            this.miniToolStrip.AutoSize = false;
+            this.miniToolStrip.CanOverflow = false;
+            this.miniToolStrip.CountItem = null;
+            this.miniToolStrip.DeleteItem = null;
+            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.miniToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.miniToolStrip.Location = new System.Drawing.Point(152, 3);
+            this.miniToolStrip.MoveFirstItem = null;
+            this.miniToolStrip.MoveLastItem = null;
+            this.miniToolStrip.MoveNextItem = null;
+            this.miniToolStrip.MovePreviousItem = null;
+            this.miniToolStrip.Name = "miniToolStrip";
+            this.miniToolStrip.PositionItem = null;
+            this.miniToolStrip.Size = new System.Drawing.Size(24, 25);
+            this.miniToolStrip.Stretch = true;
+            this.miniToolStrip.TabIndex = 0;
             // 
             // frmEnrollmentInProgressV2
             // 
@@ -1777,7 +1777,12 @@
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.splitContainerAddAndRevertCourse.Panel1.ResumeLayout(false);
+            this.splitContainerAddAndRevertCourse.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerAddAndRevertCourse)).EndInit();
+            this.splitContainerAddAndRevertCourse.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnSwitchBackToParentEnrollment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRevertBackToMainEnrollment)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
@@ -1810,37 +1815,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseEnrollmentsMainCoursesBindingSource)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.toolStripContainer10.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer10.TopToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer10.TopToolStripPanel.PerformLayout();
-            this.toolStripContainer10.ResumeLayout(false);
-            this.toolStripContainer10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.miniToolStrip)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid4)).EndInit();
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.toolStripContainer2.ContentPanel.ResumeLayout(false);
             this.toolStripContainer2.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer2.TopToolStripPanel.PerformLayout();
             this.toolStripContainer2.ResumeLayout(false);
             this.toolStripContainer2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollmentCourseMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.curriculumCourseEnrollmentsMainCoursesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollmentCourseMain)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.toolStripContainer10.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer10.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer10.TopToolStripPanel.PerformLayout();
+            this.toolStripContainer10.ResumeLayout(false);
+            this.toolStripContainer10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator9)).EndInit();
             this.bindingNavigator9.ResumeLayout(false);
             this.bindingNavigator9.PerformLayout();
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
-            this.splitContainerAddAndRevertCourse.Panel1.ResumeLayout(false);
-            this.splitContainerAddAndRevertCourse.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerAddAndRevertCourse)).EndInit();
-            this.splitContainerAddAndRevertCourse.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnRevertBackToMainEnrollment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.miniToolStrip)).EndInit();
             this.ResumeLayout(false);
 
         }

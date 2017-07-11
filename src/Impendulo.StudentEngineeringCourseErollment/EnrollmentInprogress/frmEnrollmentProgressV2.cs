@@ -2,6 +2,7 @@
 using Impendulo.Data;
 using Impendulo.Data.Models;
 using Impendulo.Development.Students;
+using Impendulo.Scheduling.Development.AllCourses;
 using Impendulo.StudentEngineeringCourseErollment.Development.EnrollmentException;
 using Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentCourseSelection;
 using MetroFramework.Forms;
@@ -112,20 +113,30 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                 CurrentEnrollment = (from a in Dbconnection.Enrollments
                                      where a.EnrollmentID == EnrollmentToLoadID
                                      select a)
-                                                      .Include("Student")
-                                                      .Include("Student.Individual")
-                                                      .Include("CurriculumEnquiries")
-                                                      .Include("CurriculumCourseEnrollments")
-                                                      .Include("CurriculumCourseEnrollments.Schedules")
-                                                      //.Include("CurriculumCourseEnrollments.CurriculumCourse")
-                                                      .Include("Curriculum")
-                                                      .FirstOrDefault<Data.Models.Enrollment>();
+                                     .Include(a => a.Student)
+                                     .Include(a => a.Student.Individual)
+                                     .Include(a => a.CurriculumEnquiries)
+                                     .Include(a => a.CurriculumCourseEnrollments)
+                                     .Include(a => a.CurriculumCourseEnrollments.Select(b => b.Schedules))
+                                     .Include(a => a.CurriculumCourseEnrollments.Select(b => b.CurriculumCourse))
+                                     .Include(a => a.Curriculum)
+                                        .FirstOrDefault<Data.Models.Enrollment>();
 
                 if (CurrentEnrollmentPreRequisiteID != 0)
                 {
+
                     List<CurriculumCourseEnrollment> CurriculumCourseEnrollmentTemp = new List<CurriculumCourseEnrollment>();
                     foreach (CurriculumCourseEnrollment CurriculumCourseEnrollmentObj in CurrentEnrollment.CurriculumCourseEnrollments)
                     {
+                        //             //trying code
+                        //             CurrentEnrollment.CurriculumCourseEnrollments.Clear();
+                        //             Dbconnection.Entry(blog)
+                        //.Collection("Posts")
+                        //.Query()
+                        //.Where(p => p.Tags.Contains("entity-framework")
+                        //.Load();
+                        //             //end trying code
+
                         if (CurriculumCourseEnrollmentObj.CurriculumCourseEnrollmentID == this.CurrentCurriculumCourseEnrollmentID)
                         {
                             CurriculumCourseEnrollmentTemp.Add(CurriculumCourseEnrollmentObj);
@@ -187,10 +198,10 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                                                   //from c in b.CurriculumCourse.Course
                                               where a.Enrollment.EnrolmentParentID == EnrollmentToLoadID
                                               select a)
-                                                .Include("Enrollment")
-                                                //.Include("CurriculumCourse")
-                                                .Include("CurriculumCourse.Course")
-                                                .Include("CurriculumCourse.Curriculum")
+                                                .Include(a => a.Enrollment)
+                                                .Include(a => a.CurriculumCourse)
+                                                .Include(a => a.CurriculumCourse.Course)
+                                                .Include(a => a.CurriculumCourse.Curriculum)
                                                 .Include(a => a.LookupEnrollmentProgressState)
                                                 .ToList<CurriculumCourseEnrollment>();
             };
@@ -295,7 +306,6 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                     refreshEnrollment();
                 }
             }
-
         }
 
         private Boolean CheckIfAllPreRequisitieCoursesAreCompleted()
@@ -377,7 +387,68 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
 
         private void dgvEnrollmentCourseMain_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            CurriculumCourseEnrollment CurrentSelectedCurriculumCourseEnrollment = (CurriculumCourseEnrollment)curriculumCourseEnrollmentsMainCoursesBindingSource.Current;
 
+            switch (e.ColumnIndex)
+            {
+
+                case 0:
+                    //If if selected Course does not have a Parent Course then it can be scheduled any time forward from today
+                    if (CurrentSelectedCurriculumCourseEnrollment.CurriculumCourse.CurriculumCourseParentID == 0)
+                    {
+                        //TODO: Open Scheduling Form - Pass Currently Selected CurriculumCourseEnrollment Object.
+                        using (frmScheduleCurriculumCourseWizard frm = new frmScheduleCurriculumCourseWizard())
+                        {
+                            frm.CurrentSelectedCurriculumCourseEnrollment = CurrentSelectedCurriculumCourseEnrollment;
+
+                            frm.ShowDialog();
+                        }
+                    }
+                    else
+                    {
+                        /*Has PreRequisite Course*/
+                        //Step 1
+                        //Determine if all PreRequisite Courses have been Scheduled.
+                        if (DetermineIfAllPreRequisiteCourseHaveBeenScheduled(
+                            _CurriculumCourseID: CurrentSelectedCurriculumCourseEnrollment.CurriculumCourse.CurriculumCourseID,
+                            _EnrollmentID: CurrentSelectedCurriculumCourseEnrollment.EnrollmentID))
+                        {
+                            //IF All Course Pre-Requiesties Are Scheduled then:
+                            //TODO: Open Scheduling Form - Pass the Selected Currc=iculum CourseEnrollment Object
+
+                        }
+                    }
+                    break;
+            }
+        }
+
+        private Boolean DetermineIfAllPreRequisiteCourseHaveBeenScheduled(int _CurriculumCourseID, int _EnrollmentID)
+        {
+            Boolean Rtn = true;
+            IEnumerable<CurriculumCourse> PreRequisiteCoursesNotScheduled;
+            using (var Dbconnection = new MCDEntities())
+            {
+                PreRequisiteCoursesNotScheduled = (from a in Dbconnection.GetCurriculumCoursePreRequisiteCourseNotYetScheduled(_CurriculumCourseID, _EnrollmentID)
+                                                   select a)
+                                                  .ToList<CurriculumCourse>();
+
+                if (PreRequisiteCoursesNotScheduled.Count<CurriculumCourse>() > 0)
+                {
+                    int iCounter = 1;
+                    Rtn = false;
+                    String ErrorMessage = "Before proceeding to schedule this course please schedule the following course first, as these are Pre-Requisite Courses for the currently selected course:\n\n";
+                    foreach (CurriculumCourse CC in PreRequisiteCoursesNotScheduled)
+                    {
+                        Dbconnection.Entry(CC).Reference(a => a.Course).Load();
+                        ErrorMessage += iCounter + " - " + CC.Course.CourseName + "\n";
+                        iCounter++;
+                    }
+                    MessageBox.Show(ErrorMessage, "Pre-Requisite Course To Schedule", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            };
+
+
+            return Rtn;
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)

@@ -65,10 +65,10 @@
         <EntityTypeShape EntityType="MCDModel.Module" Width="1.5" PointX="15" PointY="49.875" />
         <EntityTypeShape EntityType="MCDModel.NextOfKin" Width="1.5" PointX="10.5" PointY="43.25" />
         <EntityTypeShape EntityType="MCDModel.Qualification" Width="2" PointX="13.5" PointY="29.625" />
-        <EntityTypeShape EntityType="MCDModel.Schedule" Width="3" PointX="29.625" PointY="34.75" />
+        <EntityTypeShape EntityType="MCDModel.Schedule" Width="3" PointX="35.875" PointY="33.5" />
         <EntityTypeShape EntityType="MCDModel.SMTPSetting" Width="2" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="MCDModel.StudentAssociatedCompany" Width="2.625" PointX="30.75" PointY="44.375" />
-        <EntityTypeShape EntityType="MCDModel.StudentDisability" Width="2.25" PointX="30.125" PointY="38.75" />
+        <EntityTypeShape EntityType="MCDModel.StudentDisability" Width="2.25" PointX="33" PointY="37.375" />
         <EntityTypeShape EntityType="MCDModel.Student" Width="2.625" PointX="18.75" PointY="39.875" />
         <EntityTypeShape EntityType="MCDModel.sysdiagram" Width="1.5" PointX="4.75" PointY="4.625" />
         <EntityTypeShape EntityType="MCDModel.SystemAdministrator" Width="1.5" PointX="10.5" PointY="49.125" />
@@ -180,6 +180,8 @@
         <AssociationConnector Association="MCDModel.FK_VenueAssociatedCourses_Venues" />
         <AssociationConnector Association="MCDModel.CompanyAssociatedSchedules" />
         <AssociationConnector Association="MCDModel.ScheduledVenues" />
+        <EntityTypeShape EntityType="MCDModel.LookupScheduleLocation" Width="1.5" PointX="7.375" PointY="3.875" />
+        <AssociationConnector Association="MCDModel.FK_Schedules_LookupScheduleLocations" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
