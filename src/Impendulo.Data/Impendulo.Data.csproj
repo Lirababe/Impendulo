@@ -253,6 +253,9 @@
     <Compile Include="Models\LookupScheduleLocation.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LookupScheduleStatus.cs">
+      <DependentUpon>MCDEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\LookupSectionalEnrollmentType.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
@@ -287,6 +290,12 @@
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NextOfKin.cs">
+      <DependentUpon>MCDEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OffSiteSchedule.cs">
+      <DependentUpon>MCDEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OnSiteSchedule.cs">
       <DependentUpon>MCDEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PublicHoliday.cs">

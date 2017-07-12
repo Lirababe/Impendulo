@@ -200,8 +200,7 @@ namespace Impendulo.Email.Email_Message_Version_2
             {
                 MetroMessageBox.Show(this, "Unable to add attachment from database.", "Attachment Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
+            refreshAttachments();
             return Rtn;
 
         }
@@ -278,6 +277,27 @@ namespace Impendulo.Email.Email_Message_Version_2
                             NewMessage.addToAddress(_EmailAddress);
                         }
                     }
+                }
+            }
+            populateToAddresses();
+        }
+        public void AddToEmailContact(List<Individual> IndividualsToEmail)
+        {
+            foreach (Individual Individ in IndividualsToEmail)
+            {
+                SelectedToAddresses.Add(Individ);
+            }
+
+            List<string> EmailAddresses = (from a in IndividualsToEmail
+                                           from b in a.ContactDetails
+                                           where b.ContactTypeID == (int)Common.Enum.EnumContactTypes.Email_Address
+                                           select b.ContactDetailValue).ToList<string>();
+            NewMessage.clearToAddress();
+            foreach (string _EmailAddress in EmailAddresses)
+            {
+                if (!verfiyIfAddressAlreadyAdded(AddressType.ToAddress, _EmailAddress))
+                {
+                    NewMessage.addToAddress(_EmailAddress);
                 }
             }
             populateToAddresses();

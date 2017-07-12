@@ -255,6 +255,7 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                     using (frmEmailMessageV2 frm = new frmEmailMessageV2())
                     {
                         frm.txtMessageSubject.Text = "MCD Communication - Follow On Enquiry - " + txtEnquiryInProgressEnquiryID.Text;
+                        frm.AddToEmailContact(new List<Individual>() { (Individual)individualsInprogressBindingSource.Current });
                         frm.txtMessageSubject.ReadOnly = true;
                         frm.ShowDialog();
 
@@ -321,14 +322,14 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
             btnCloseInprogressEnquiry.Visible = true;
             gbInprogressContactNameAndCompanyName.Enabled = true;
             gbInProgressContactDetails.Enabled = true;
-            if (((Data.Models.Enquiry)enquiryInprogressBindingSource.Current).InitialConsultationComplete)
-            {
-                gbInProgressEnquiryEnrrolmentQueries.Enabled = true;
-            }
-            else
-            {
-                gbInProgressEnquiryEnrrolmentQueries.Enabled = false;
-            }
+            //if (((Data.Models.Enquiry)enquiryInprogressBindingSource.Current).InitialConsultationComplete)
+            //{
+            gbInProgressEnquiryEnrrolmentQueries.Enabled = true;
+            //}
+            //else
+            //{
+            //    gbInProgressEnquiryEnrrolmentQueries.Enabled = false;
+            //}
         }
 
 
@@ -488,7 +489,8 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                     if (CurriculumEnquiryObj.EnrollmentQuanity == CurriculumEnquiryObj.Enrollments.Count)
                     {
                         row.Cells[colInProgressProcessEnrollment.Index].Value = "";
-                    }else
+                    }
+                    else
                     {
                         row.Cells[colInProgressProcessEnrollment.Index].Value = "[ Add Enrollment ]";
                     }
@@ -574,10 +576,13 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
 
                     break;
                 case 6:
-                    if (CE.Curriculum.DepartmentID == (int)EnumDepartments.Apprenticeship)
+                    //if (CE.Curriculum.DepartmentID == (int)EnumDepartments.Apprenticeship)
+                    //{
+                    if (((Data.Models.Enquiry)enquiryInprogressBindingSource.Current).InitialConsultationComplete)
                     {
+                        //gbInProgressEnquiryEnrrolmentQueries.Enabled = true;
                         DialogResult Rtn = MessageBox.Show("Do you have a copy of the individuals ID document or relevant details, These details are rquired to process initial enrollment! Else Select No and send an email Notification to the contact requesting these details.", "ID Document Requirement", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if(Rtn == DialogResult.Yes)
+                        if (Rtn == DialogResult.Yes)
                         {
                             using (var Dbconnection = new MCDEntities())
                             {
@@ -601,19 +606,36 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
                                         DialogResult Rtn1 = MessageBox.Show("Do you wish to process this new enrollment now?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                                         if (Rtn1 == DialogResult.Yes)
                                         {
-                                            using (frmEnrolmmentInprogress frmInner = new frmEnrolmmentInprogress())
+                                            using (frmEnrollmentInProgressV2 innerFrm = new frmEnrollmentInProgressV2())
                                             {
-                                                frmInner.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
-                                                frmInner.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)CE.Curriculum.DepartmentID;
-                                                // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
-                                                frmInner.ShowDialog();
+                                                innerFrm.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
+                                                innerFrm.CurrentEquiryID = this.CurrentSelectedEnquiryID;
+                                                innerFrm.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)CE.Curriculum.DepartmentID;
+                                                innerFrm.CurrentEnrollmentID = frm.CurrentEnrollments.EnrollmentID;
+                                                innerFrm.ShowDialog();
                                             }
+                                            //using (frmEnrolmmentInprogress frmInner = new frmEnrolmmentInprogress())
+                                            //{
+                                            //    frmInner.CurrentEmployeeLoggedIn = this.CurrentEmployeeLoggedIn;
+                                            //    frmInner.CurrentSelectedDepartment = (Common.Enum.EnumDepartments)CE.Curriculum.DepartmentID;
+                                            //    // frmStudentCourseEnrollmentV2 frm7 = new frmStudentCourseEnrollmentV2();
+                                            //    frmInner.ShowDialog();
+
+                                                
+                                            //}
                                         }
                                     }
                                 }
                             }
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("Initial Consultation Is Not Yet Completed, Please complete before proceeding with the enrollment!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //gbInProgressEnquiryEnrrolmentQueries.Enabled = false;
+                    }
+
+                    //}
                     break;
                 case 7:
                     //ensure that the Enrollments are refershed
@@ -727,7 +749,41 @@ namespace Impendulo.Enquiry.Development.EnquiryV3
 
         private void btrnInProgressSendInitialDocumentation_Click(object sender, EventArgs e)
         {
+            using (frmEmailMessageV2 frm = new frmEmailMessageV2())
+            {
+                frm.txtMessageSubject.Text = "MCD Communication - Follow On Enquiry - " + txtEnquiryInProgressEnquiryID.Text;
+                frm.AddToEmailContact(new List<Individual>() { (Individual)individualsInprogressBindingSource.Current });
+                frm.txtMessageSubject.ReadOnly = true;
 
+                using (var Dbconnection = new MCDEntities())
+                {
+
+                    List<MessageTemplate> MT = (from a in Dbconnection.MessageTemplates
+                                                from b in a.Files
+                                                where a.ProcessStepID == (int)EnumProcessSteps.Enquiry__Apprenticeship__Step_1__Documentation_To_Send
+                                                select a).ToList<MessageTemplate>();
+
+                    MessageTemplate CurrentMessageTemplate = MT.FirstOrDefault<MessageTemplate>();
+                    string Mess = "Good Day " + fullNameTextBox.Text + "\n \n";
+                    frm.txtMessageBody.Text = "Please Reference the Following Line Equiry Number when returning any documentation: \n" +
+                                                "Enquiry No " + txtEnquiryInProgressEnquiryID.Text + "\n\n" + Mess + CurrentMessageTemplate.Message;
+                    foreach (MessageTemplate MTObj in MT)
+                    {
+                        foreach (Data.Models.File FileObj in MTObj.Files)
+                        {
+                            frm.addDatabaseAttachment(FileObj.FileID);
+                        }
+                    }
+                    //frm.refreshAttachments();
+
+                };
+                frm.ShowDialog();
+
+
+            }
+          //  frm1.txtTestSubject.Text = "Enquiry No: ( " + CurrentEnquiryObj.EnquiryID + "-" + CE.CurriculumEnquiryID + " ) Enquiry Feed Back";
+
+            
         }
 
         private void btnUpdateCurriculumEnquiryItemEnrollmentQty_Click(object sender, EventArgs e)

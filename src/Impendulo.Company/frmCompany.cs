@@ -444,24 +444,28 @@ namespace Impendulo.Company.Development
             frmAddUpdateAddresses frm = new frmAddUpdateAddresses();
 
             frm.ShowDialog();
-
-            if (frm.CurrentAddress.AddressID != 0)
+            if (frm.CurrentAddress != null)
             {
-                using (var Dbconnection = new MCDEntities())
+                if (frm.CurrentAddress.AddressID != 0)
                 {
-                    Data.Models.Company CurrentCompany = ((Data.Models.Company)companyBindingSource.Current);
-                    Dbconnection.Companies.Attach(CurrentCompany);                 
-                    Dbconnection.Addresses.Attach(frm.CurrentAddress);
+                    using (var Dbconnection = new MCDEntities())
+                    {
+                        Data.Models.Company CurrentCompany = ((Data.Models.Company)companyBindingSource.Current);
+                        Dbconnection.Companies.Attach(CurrentCompany);
+                        Dbconnection.Addresses.Attach(frm.CurrentAddress);
 
-                    CurrentCompany.Addresses.Add(frm.CurrentAddress);
-                    
-                    Dbconnection.SaveChanges();
-                    Dbconnection.Entry(frm.CurrentAddress).Reference("LookupAddressType").Load();
-                    Dbconnection.Entry(frm.CurrentAddress).Reference("LookupProvince").Load();
-                    Dbconnection.Entry(frm.CurrentAddress).Reference("LookupCountry").Load();
-                };
-                refreshCompanyAddresses();
+                        CurrentCompany.Addresses.Add(frm.CurrentAddress);
+
+                        Dbconnection.SaveChanges();
+                        Dbconnection.Entry(frm.CurrentAddress).Reference("LookupAddressType").Load();
+                        Dbconnection.Entry(frm.CurrentAddress).Reference("LookupProvince").Load();
+                        Dbconnection.Entry(frm.CurrentAddress).Reference("LookupCountry").Load();
+                    };
+                    refreshCompanyAddresses();
+                }
+
             }
+           
         }
         private void btnUpdateAddress_Click(object sender, EventArgs e)
         {

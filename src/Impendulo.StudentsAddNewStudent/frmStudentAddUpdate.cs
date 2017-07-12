@@ -38,10 +38,11 @@ namespace Impendulo.Development.Students
             set;
         }
 
-        public frmStudentAddUpdate()
+        public frmStudentAddUpdate(int CurrentStudentID)
         {
+            this.CurrentStudentID = CurrentStudentID;
             InitializeComponent();
-            CurrentStudentID = 15200;// 15189;// 15188;// 15187;// 15173;
+            //CurrentStudentID = 15200;// 15189;// 15188;// 15187;// 15173;
             StudentPictureToUploaded = new List<Data.Models.File>();
             IsSuccessfullySaved = false;
             IsClosingPrematurly = true;
@@ -691,6 +692,7 @@ namespace Impendulo.Development.Students
                         ShowStudentPicture();
                         switchStudentPictureButtons();
                         IsClosingPrematurly = false;
+                        this.CurrentSelectedStudent = StudentObj;
                     }
                     studentBindingSource.DataSource = StudentObj;
 
@@ -763,7 +765,7 @@ namespace Impendulo.Development.Students
 
         private void btnAddStudentIDDocuments_Click(object sender, EventArgs e)
         {
-            
+
             List<Data.Models.File> StudentIDDocumentsToUploaded = FileHandeling.UploadFile(
                 UseMultipleFileSelect: true,
                 AutomaicallyAddFileToDatabase: false,
@@ -787,7 +789,7 @@ namespace Impendulo.Development.Students
                     }
                 };
                 this.refreshStudentIDDocumnets();
-                
+
             }
         }
 
@@ -805,11 +807,11 @@ namespace Impendulo.Development.Students
                     List<StudentIDDocument> x = (from a in Dbconnection.StudentIDDocuments
                                                  where a.FileID == FileToRemove.FileID
                                                  select a).ToList<StudentIDDocument>();
-                    foreach(StudentIDDocument doc in x)
+                    foreach (StudentIDDocument doc in x)
                     {
                         Dbconnection.Entry(doc).State = EntityState.Deleted;
-                    } 
-                    
+                    }
+
                     Dbconnection.SaveChanges();
                 };
                 this.refreshStudentIDDocumnets();

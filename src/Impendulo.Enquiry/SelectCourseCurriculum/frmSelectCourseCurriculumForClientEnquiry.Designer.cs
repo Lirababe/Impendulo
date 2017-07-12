@@ -59,6 +59,8 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSelectCurriculum = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.gbDepartments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookupDepartmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
@@ -75,28 +77,30 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbDepartments
             // 
-            this.gbDepartments.Controls.Add(this.cboDepartments);
-            this.gbDepartments.Controls.Add(this.label1);
+            this.gbDepartments.Controls.Add(this.tableLayoutPanel2);
             this.gbDepartments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbDepartments.Location = new System.Drawing.Point(0, 0);
             this.gbDepartments.Name = "gbDepartments";
             this.gbDepartments.Size = new System.Drawing.Size(504, 50);
             this.gbDepartments.TabIndex = 1;
             this.gbDepartments.TabStop = false;
-            this.gbDepartments.Text = "Departments";
+            this.gbDepartments.Text = "Select Curriculum";
             // 
             // cboDepartments
             // 
             this.cboDepartments.DataSource = this.lookupDepartmentBindingSource;
             this.cboDepartments.DisplayMember = "DepartmentName";
+            this.cboDepartments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboDepartments.FormattingEnabled = true;
-            this.cboDepartments.Location = new System.Drawing.Point(79, 19);
+            this.cboDepartments.Location = new System.Drawing.Point(80, 3);
             this.cboDepartments.Name = "cboDepartments";
-            this.cboDepartments.Size = new System.Drawing.Size(240, 21);
+            this.cboDepartments.Size = new System.Drawing.Size(415, 21);
             this.cboDepartments.TabIndex = 2;
             this.cboDepartments.ValueMember = "DepartmentID";
             this.cboDepartments.SelectedIndexChanged += new System.EventHandler(this.cboDepartments_SelectedIndexChanged);
@@ -108,7 +112,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Location = new System.Drawing.Point(3, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 2;
@@ -122,9 +127,9 @@
             // 
             this.gbCurriculum.Controls.Add(this.toolStripContainerCurriculum);
             this.gbCurriculum.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbCurriculum.Location = new System.Drawing.Point(0, 0);
+            this.gbCurriculum.Location = new System.Drawing.Point(3, 3);
             this.gbCurriculum.Name = "gbCurriculum";
-            this.gbCurriculum.Size = new System.Drawing.Size(504, 201);
+            this.gbCurriculum.Size = new System.Drawing.Size(498, 280);
             this.gbCurriculum.TabIndex = 2;
             this.gbCurriculum.TabStop = false;
             this.gbCurriculum.Text = "Curriculum";
@@ -136,11 +141,12 @@
             // 
             this.toolStripContainerCurriculum.ContentPanel.AutoScroll = true;
             this.toolStripContainerCurriculum.ContentPanel.Controls.Add(this.curriculumListBox);
-            this.toolStripContainerCurriculum.ContentPanel.Size = new System.Drawing.Size(498, 130);
+            this.toolStripContainerCurriculum.ContentPanel.Size = new System.Drawing.Size(492, 209);
             this.toolStripContainerCurriculum.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainerCurriculum.Location = new System.Drawing.Point(3, 16);
+            this.toolStripContainerCurriculum.Margin = new System.Windows.Forms.Padding(0);
             this.toolStripContainerCurriculum.Name = "toolStripContainerCurriculum";
-            this.toolStripContainerCurriculum.Size = new System.Drawing.Size(498, 182);
+            this.toolStripContainerCurriculum.Size = new System.Drawing.Size(492, 261);
             this.toolStripContainerCurriculum.TabIndex = 0;
             this.toolStripContainerCurriculum.Text = "toolStripContainer1";
             // 
@@ -157,7 +163,7 @@
             this.curriculumListBox.FormattingEnabled = true;
             this.curriculumListBox.Location = new System.Drawing.Point(0, 0);
             this.curriculumListBox.Name = "curriculumListBox";
-            this.curriculumListBox.Size = new System.Drawing.Size(498, 130);
+            this.curriculumListBox.Size = new System.Drawing.Size(492, 209);
             this.curriculumListBox.TabIndex = 0;
             this.curriculumListBox.ValueMember = "CostingModel";
             // 
@@ -180,7 +186,7 @@
             this.tsbtnRefreshCourseSearch});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(498, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(492, 27);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 2;
             // 
@@ -250,7 +256,7 @@
             this.bindingNavigatorCurriculum.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigatorCurriculum.Name = "bindingNavigatorCurriculum";
             this.bindingNavigatorCurriculum.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigatorCurriculum.Size = new System.Drawing.Size(498, 25);
+            this.bindingNavigatorCurriculum.Size = new System.Drawing.Size(492, 25);
             this.bindingNavigatorCurriculum.Stretch = true;
             this.bindingNavigatorCurriculum.TabIndex = 0;
             // 
@@ -325,7 +331,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(20, 60);
+            this.splitContainer1.Location = new System.Drawing.Point(20, 30);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -335,25 +341,24 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.gbCurriculum);
-            this.splitContainer1.Size = new System.Drawing.Size(504, 255);
+            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
+            this.splitContainer1.Size = new System.Drawing.Size(504, 382);
             this.splitContainer1.TabIndex = 3;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnSelectCurriculum);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 280);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 289);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(504, 35);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(498, 35);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // btnSelectCurriculum
             // 
             this.btnSelectCurriculum.Image = ((System.Drawing.Image)(resources.GetObject("btnSelectCurriculum.Image")));
             this.btnSelectCurriculum.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSelectCurriculum.Location = new System.Drawing.Point(392, 3);
+            this.btnSelectCurriculum.Location = new System.Drawing.Point(386, 3);
             this.btnSelectCurriculum.Name = "btnSelectCurriculum";
             this.btnSelectCurriculum.Size = new System.Drawing.Size(109, 29);
             this.btnSelectCurriculum.TabIndex = 0;
@@ -361,19 +366,50 @@
             this.btnSelectCurriculum.UseVisualStyleBackColor = true;
             this.btnSelectCurriculum.Click += new System.EventHandler(this.btnSelectCurriculum_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.gbCurriculum, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(504, 328);
+            this.tableLayoutPanel1.TabIndex = 5;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cboDepartments, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(498, 31);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
             // frmSelectCourseCurriculumForClientEnquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 335);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(544, 432);
             this.Controls.Add(this.splitContainer1);
+            this.DisplayHeader = false;
             this.Name = "frmSelectCourseCurriculumForClientEnquiry";
+            this.Padding = new System.Windows.Forms.Padding(20, 30, 20, 20);
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Select Course Curriculum For Client Enquiry";
             this.Load += new System.EventHandler(this.frmSelectCourseCurriculumForClientEnquiry_Load);
             this.gbDepartments.ResumeLayout(false);
-            this.gbDepartments.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookupDepartmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             this.gbCurriculum.ResumeLayout(false);
@@ -393,6 +429,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -428,5 +467,7 @@
         private System.Windows.Forms.BindingSource curriculumBindingSource;
         private System.Windows.Forms.ComboBox cboDepartments;
         private System.Windows.Forms.BindingSource lookupDepartmentBindingSource;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

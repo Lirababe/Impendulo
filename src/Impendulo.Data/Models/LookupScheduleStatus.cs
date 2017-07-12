@@ -12,25 +12,17 @@ namespace Impendulo.Data.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class CurriculumCourseEnrollment
+    public partial class LookupScheduleStatus
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CurriculumCourseEnrollment()
+        public LookupScheduleStatus()
         {
-            this.CourseCost = 0m;
-            this.LookupEnrollmentProgressStateID = 2002;
             this.Schedules = new ObservableListSource<Schedule>();
         }
     
-        public int CurriculumCourseEnrollmentID { get; set; }
-        public int CurriculumCourseID { get; set; }
-        public int EnrollmentID { get; set; }
-        public decimal CourseCost { get; set; }
-        public int LookupEnrollmentProgressStateID { get; set; }
+        public int ScheduleStatusID { get; set; }
+        public string ScheduleStatus { get; set; }
     
-        public virtual CurriculumCourse CurriculumCourse { get; set; }
-        public virtual Enrollment Enrollment { get; set; }
-        public virtual LookupEnrollmentProgressState LookupEnrollmentProgressState { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<Schedule> Schedules { get; set; }
     }

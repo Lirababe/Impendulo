@@ -128,7 +128,7 @@ namespace Impendulo.Facilitators.FacilitatorCourses.Development
 
         private void frmFacilitatorAssociatedCourses_Load(object sender, EventArgs e)
         {
-            if(currentFacilitator != null)
+            if (currentFacilitator != null)
             {
                 setAvaiableCouresFilterValues();
                 setLinkedCouresFilterValues();
@@ -145,7 +145,7 @@ namespace Impendulo.Facilitators.FacilitatorCourses.Development
                 setLinkedCouresFilterValues();
                 setSelectionControls();
             }
-           
+
         }
 
         private void setSelectionControls()
@@ -235,13 +235,14 @@ namespace Impendulo.Facilitators.FacilitatorCourses.Development
                                                                                a.CourseID == CurrentCourse.CourseID &&
                                                                                a.IndividualID == currentFacilitator.FacilitatorID
                                                                                select a).FirstOrDefault<FacilitatorAssociatedCourse>();
-
-                        Dbconnection.FacilitatorAssociatedCourses.Attach(LinkedFacilitatorCourse);
-                        CoursesToBeRemoved.Add(LinkedFacilitatorCourse);
+                        Dbconnection.Entry(LinkedFacilitatorCourse).State = System.Data.Entity.EntityState.Deleted;
+                        Dbconnection.SaveChanges();
+                        //Dbconnection.FacilitatorAssociatedCourses.Attach(LinkedFacilitatorCourse);
+                        //CoursesToBeRemoved.Add(LinkedFacilitatorCourse);
                     }
                 }
 
-                Dbconnection.FacilitatorAssociatedCourses.RemoveRange(CoursesToBeRemoved);
+                //Dbconnection.FacilitatorAssociatedCourses.RemoveRange(CoursesToBeRemoved);
                 Dbconnection.SaveChanges();
             }
             refreshAvailableCourses();
@@ -299,7 +300,7 @@ namespace Impendulo.Facilitators.FacilitatorCourses.Development
                 DataGridViewCheckBoxCell chk = currentRow.Cells[SelectCourses.Index] as DataGridViewCheckBoxCell;
 
                 chk.Value = true;
-               
+
             }
         }
 

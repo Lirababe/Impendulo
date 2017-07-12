@@ -235,8 +235,8 @@ namespace Impendulo.StudentForms.Development
 
         private void picbtnAddStudent_Click(object sender, EventArgs e)
         {
-            frmStudentAddUpdate frm = new frmStudentAddUpdate();
-            frm.CurrentStudentID = 0;
+            frmStudentAddUpdate frm = new frmStudentAddUpdate(0);
+            //frm.CurrentStudentID = 0;
             frm.ShowDialog();
             if (frm.CurrentStudentID != 0)
             {

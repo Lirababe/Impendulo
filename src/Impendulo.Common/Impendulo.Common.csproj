@@ -115,6 +115,7 @@
       <DependentUpon>rptStudents.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ScheduleAvailablityAlgorithm\SchedulingDateSearchAlgorithms.cs" />
     <Compile Include="SMTPMail\EmailEnum.cs" />
     <Compile Include="SMTPMail\CustomMailMessage.cs" />
     <Compile Include="SMTPMail\OutLookEmail.cs" />

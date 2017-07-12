@@ -1,4 +1,5 @@
 ﻿using Impendulo.Scheduling.Development.AllCourses;
+using Impendulo.Scheduling.Development.PreCalculations;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Impendulo.Scheduling.Development
 {
@@ -30,6 +32,23 @@ namespace Impendulo.Scheduling.Development
             {
                 frm.ShowDialog();
             }
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            using( frmPreCalculationTest frm = new frmPreCalculationTest())
+            {
+                frm.ShowDialog();
+            }
+
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            //using (frmClientEnquiryV3 frm = new frmClientEnquiryV3())
+            //{
+            //    frm.ShowDialog();
+            //}
         }
     }
 }

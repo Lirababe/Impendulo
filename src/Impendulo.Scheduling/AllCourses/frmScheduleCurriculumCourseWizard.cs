@@ -1,4 +1,6 @@
 ﻿using Impendulo.Common.Enum;
+using Impendulo.Company.Development;
+using Impendulo.Company.SearchForCompany.Development;
 using Impendulo.Data.Models;
 using MetroFramework.Forms;
 using System;
@@ -16,8 +18,11 @@ namespace Impendulo.Scheduling.Development.AllCourses
     public partial class frmScheduleCurriculumCourseWizard : MetroForm
     {
 
+        public Schedule CurrentScheduleConfiguration { get; set; }
 
-        private EnumScheduleLocations CurrentSiteSelection { get; set; }
+        private DateTime PossibleStartDate { get; set; }
+
+        // private EnumScheduleLocations CurrentSiteSelection { get; set; }
         public Employee CurrentEmployeeLoggedIn
         {
             get;
@@ -28,6 +33,7 @@ namespace Impendulo.Scheduling.Development.AllCourses
         /// 1. -
         /// </summary>
         public CurriculumCourseEnrollment CurrentSelectedCurriculumCourseEnrollment { get; set; }
+        //        private Data.Models.Company CurrentlySelectedCompany { get; set; }
 
         /// <summary>
         /// Course Obj - contains the Linked Facilitators for the course and Venues to select from
@@ -35,14 +41,25 @@ namespace Impendulo.Scheduling.Development.AllCourses
         private CurriculumCourse CurrentlySelectedCurriculumCourseToSchedule { get; set; }
 
         public int CurrentPosition { get; set; }
-        public frmScheduleCurriculumCourseWizard()
+        public frmScheduleCurriculumCourseWizard(DateTime InitialStartDate)
         {
-            CurrentSiteSelection = EnumScheduleLocations.Onsite;
+            PossibleStartDate = InitialStartDate;
             InitializeComponent();
+            //dtScheduleFromCustomStartDateSelector.Format = DateTimePickerFormat.Custom;
+            //dtScheduleFromCustomStartDateSelector.CustomFormat = "MMMM dd, yyyy - dddd";
+            dtScheduleFromCustomStartDateSelector.MinDate = PossibleStartDate;
         }
 
         private void frmScheduleCurriculumCourseWizard_Load(object sender, EventArgs e)
         {
+            if (CurrentScheduleConfiguration == null)
+            {
+                CurrentScheduleConfiguration = new Schedule()
+                {
+                        
+                    ScheduleLocationID = (int)EnumScheduleLocations.Onsite
+                };
+            }
             if (CurrentEmployeeLoggedIn == null)
             {
                 /*
@@ -104,7 +121,7 @@ namespace Impendulo.Scheduling.Development.AllCourses
         #region "Navigation Controls"
         private void navigateForward()
         {
-            if (ValidateStep())
+            if (ValidateForwardStep())
             {
                 if (CurrentPosition + 1 < MainflowLayoutPanel.Controls.Count)
                 {
@@ -128,15 +145,19 @@ namespace Impendulo.Scheduling.Development.AllCourses
         }
         private void navigateBackwards()
         {
-            if (CurrentPosition - 1 >= 0)
+            if (ValidateBackwardStep())
             {
-                CurrentPosition--;
-            }
-            else
-            {
+                if (CurrentPosition - 1 >= 0)
+                {
+                    CurrentPosition--;
+                }
+                else
+                {
 
-                //CurrentPosition = 5;
+                    //CurrentPosition = 5;
+                }
             }
+
             //Hide All Panels inside the MainFlowPanel
             //MainflowLayoutPanel
             this.setCenterDisplayPanels();
@@ -267,17 +288,68 @@ namespace Impendulo.Scheduling.Development.AllCourses
         {
             navigateForward();
         }
-        private Boolean ValidateStep()
+        private Boolean ValidateForwardStep()
         {
 
             Boolean bRtn = true;
             switch (CurrentPosition)
             {
                 case 0:
+                    //Select On-Site or Off-Site
+                    if (CurrentScheduleConfiguration.ScheduleLocationID == (int)EnumScheduleLocations.Onsite)
+                    {
+                        CurrentPosition++;
+                        //CurrentScheduleConfiguration.Companies.Clear();
+                    }
+
+
                     break;
                 case 1:
+                    //Select Compnay if Off Site
                     break;
                 case 2:
+                   
+                    break;
+                case 3:
+                    break;
+
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+
+                default:
+                    bRtn = false;
+                    break;
+            }
+
+            return bRtn;
+        }
+        private Boolean ValidateBackwardStep()
+        {
+
+            Boolean bRtn = true;
+            switch (CurrentPosition)
+            {
+                case 0:
+                    
+
+
+                    break;
+                case 1:
+                    
+                    break;
+                case 2:
+                    //Select Compnay if Off Site
+                    if (CurrentScheduleConfiguration.ScheduleLocationID == (int)EnumScheduleLocations.Onsite)
+                    {
+                        CurrentPosition--;
+                        //CurrentScheduleConfiguration.Companies.Clear();
+                    }
                     break;
                 case 3:
                     break;
@@ -311,9 +383,27 @@ namespace Impendulo.Scheduling.Development.AllCourses
 
         private void loadupStepThree()
         {
+            tbLeadTimeAdjuster.Value = 0;
+            txtLeadTimeForSchedulingSearch.Text = tbLeadTimeAdjuster.Value.ToString();
+            refreshLeadTimeStartDate(tbLeadTimeAdjuster.Value);
         }
-
-
+        private void refreshLeadTimeStartDate(int AmountOfDaysToAdd)
+        {
+            txtLeadTimeStartDate.Text = Common.CustomDateTime.getCustomDateTime(
+                CurrentDate: PossibleStartDate,
+                AmountDaysToAdd: AmountOfDaysToAdd,
+                DaysCanSchedule: GetDayThatCurriculumCourseCanBeScheduled()).ToString("D");
+        }
+        private List<EnumDayOfWeeks> GetDayThatCurriculumCourseCanBeScheduled()
+        {
+            List<EnumDayOfWeeks> DaysCanSchedule = new List<EnumDayOfWeeks>();
+            //sets the Date One Day Ahead
+            foreach (CurriculumCourseDayCanBeScheduled CCDCBS in CurrentSelectedCurriculumCourseEnrollment.CurriculumCourse.CurriculumCourseDayCanBeScheduleds)
+            {
+                DaysCanSchedule.Add((EnumDayOfWeeks)CCDCBS.DayOfWeekID);
+            };
+            return DaysCanSchedule;
+        }
         private void loadupStepFour()
         {
 
@@ -346,7 +436,7 @@ namespace Impendulo.Scheduling.Development.AllCourses
         {
             picSelectOnSite.BackColor = Color.Gainsboro;
             picSelectOffSite.BackColor = Color.Transparent;
-            CurrentSiteSelection = EnumScheduleLocations.Onsite;
+            CurrentScheduleConfiguration.ScheduleLocationID = (int)EnumScheduleLocations.Onsite;
             lblCurentlySelectedSiteType.Text = "On-Site";
         }
 
@@ -354,11 +444,71 @@ namespace Impendulo.Scheduling.Development.AllCourses
         {
             picSelectOnSite.BackColor = Color.Transparent;
             picSelectOffSite.BackColor = Color.Gainsboro;
-            CurrentSiteSelection = EnumScheduleLocations.OffSite;
+            CurrentScheduleConfiguration.ScheduleLocationID = (int)EnumScheduleLocations.OffSite;
             lblCurentlySelectedSiteType.Text = "Off-Site";
         }
+        private void refreshCompanyInfo()
+        {
+            this.populateCompanyInfo();
+        }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void populateCompanyInfo()
+        {
+            //if (CurrentScheduleConfiguration.Companies.Count > 0)
+            //{
+            //    companyBindingSource.DataSource = (from a in CurrentScheduleConfiguration.Companies
+            //                                       select a).ToList<Data.Models.Company>();
+            //}
+            //else
+            //{
+            //    companyBindingSource.Clear();
+            //}
+        }
+
+        private void btnSearchForCompany_Click(object sender, EventArgs e)
+        {
+            using (frmCompanySearch frm = new frmCompanySearch())
+            {
+                frm.ShowDialog();
+                if (frm.CurrentCompany != null)
+                {
+                    //this.CurrentScheduleConfiguration..Clear();
+                    //this.CurrentScheduleConfiguration.Companies.Add(frm.CurrentCompany);
+                }
+                else
+                {
+                    //this.CurrentScheduleConfiguration.Companies.Clear();
+                }
+            };
+            this.refreshCompanyInfo();
+        }
+
+        private void btnReviewCompanyDetails_Click(object sender, EventArgs e)
+        {
+            if (companyBindingSource.Count > 0)
+            {
+                using (frmCompany frm = new frmCompany())
+                {
+                    frm.txtCompaniesFilterCriteria.Text = ((Data.Models.Company)companyBindingSource.Current).CompanyName.ToString();
+                    frm.ShowDialog();
+                    this.refreshCompanyInfo();
+                }
+
+            }
+        }
+
+        private void tbLeadTimeAdjuster_Scroll(object sender, ScrollEventArgs e)
+        {
+            txtLeadTimeForSchedulingSearch.Text = e.NewValue.ToString();
+            refreshLeadTimeStartDate(e.NewValue);
+        }
+
+        private void tableLayoutPanel15_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
         {
 
         }

@@ -21,7 +21,7 @@ namespace Impendulo.Data.Models
             this.VenueMaxCapacity = 0;
             this.VenueAssociatedCurriculumCourses = new ObservableListSource<VenueAssociatedCurriculumCourse>();
             this.VenueAssociatedCourses = new ObservableListSource<VenueAssociatedCourse>();
-            this.Schedules = new ObservableListSource<Schedule>();
+            this.OnSiteSchedules = new ObservableListSource<OnSiteSchedule>();
         }
     
         public int VenueID { get; set; }
@@ -33,6 +33,6 @@ namespace Impendulo.Data.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<VenueAssociatedCourse> VenueAssociatedCourses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<Schedule> Schedules { get; set; }
+        public virtual ObservableListSource<OnSiteSchedule> OnSiteSchedules { get; set; }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewEnquiry));
             this.label43 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -60,8 +61,8 @@
             this.dgvIndividualContactDetails = new System.Windows.Forms.DataGridView();
             this.colContactType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactDetailValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactDetailBindingSource = new System.Windows.Forms.BindingSource();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator();
+            this.contactDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
@@ -113,8 +114,8 @@
             this.curriculumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookupEnquiryStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enquiryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curriculumEnquiryBindingSource = new System.Windows.Forms.BindingSource();
-            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator();
+            this.curriculumEnquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
@@ -160,7 +161,7 @@
             this.flowLayoutPanelEquiryOrigionSummary = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPreviousSection = new System.Windows.Forms.Button();
-            this.imageListWizardControlButtons = new System.Windows.Forms.ImageList();
+            this.imageListWizardControlButtons = new System.Windows.Forms.ImageList(this.components);
             this.btnNextSection = new System.Windows.Forms.Button();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -171,7 +172,7 @@
             this.contactDetailValueDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookupContactTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enquiryBindingSource = new System.Windows.Forms.BindingSource();
+            this.enquiryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -267,7 +268,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.MainflowLayoutPanel);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(794, 556);
+            this.splitContainer1.Size = new System.Drawing.Size(1014, 562);
             this.splitContainer1.SplitterDistance = 175;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -279,7 +280,7 @@
             this.NavigationPanel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NavigationPanel.Location = new System.Drawing.Point(0, 0);
             this.NavigationPanel.Name = "NavigationPanel";
-            this.NavigationPanel.Size = new System.Drawing.Size(173, 554);
+            this.NavigationPanel.Size = new System.Drawing.Size(173, 560);
             this.NavigationPanel.TabIndex = 8;
             // 
             // panel5
@@ -295,7 +296,7 @@
             this.panel5.ForeColor = System.Drawing.SystemColors.WindowText;
             this.panel5.Location = new System.Drawing.Point(0, 44);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(173, 510);
+            this.panel5.Size = new System.Drawing.Size(173, 516);
             this.panel5.TabIndex = 0;
             // 
             // label6
@@ -379,7 +380,7 @@
             this.MainflowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.MainflowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.MainflowLayoutPanel.Name = "MainflowLayoutPanel";
-            this.MainflowLayoutPanel.Size = new System.Drawing.Size(613, 500);
+            this.MainflowLayoutPanel.Size = new System.Drawing.Size(833, 506);
             this.MainflowLayoutPanel.TabIndex = 2;
             // 
             // groupBox6
@@ -1682,10 +1683,10 @@
             this.panel1.Controls.Add(this.btnPreviousSection);
             this.panel1.Controls.Add(this.btnNextSection);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 500);
+            this.panel1.Location = new System.Drawing.Point(0, 506);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5);
-            this.panel1.Size = new System.Drawing.Size(613, 54);
+            this.panel1.Size = new System.Drawing.Size(833, 54);
             this.panel1.TabIndex = 0;
             // 
             // btnPreviousSection
@@ -1720,7 +1721,7 @@
             this.btnNextSection.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNextSection.ImageIndex = 0;
             this.btnNextSection.ImageList = this.imageListWizardControlButtons;
-            this.btnNextSection.Location = new System.Drawing.Point(406, 5);
+            this.btnNextSection.Location = new System.Drawing.Point(626, 5);
             this.btnNextSection.Name = "btnNextSection";
             this.btnNextSection.Size = new System.Drawing.Size(200, 42);
             this.btnNextSection.TabIndex = 1;
@@ -1796,7 +1797,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 636);
+            this.ClientSize = new System.Drawing.Size(1054, 642);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -1806,7 +1807,6 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "New Enquiry";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNewEnquiry_FormClosing);
             this.Load += new System.EventHandler(this.frmAddUpdateStudent_Load);
             this.ResizeEnd += new System.EventHandler(this.frmNewEnquiry_ResizeEnd);

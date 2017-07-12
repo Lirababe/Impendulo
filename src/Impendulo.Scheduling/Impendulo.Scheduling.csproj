@@ -97,6 +97,12 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="PreCalculations\frmPreCalculationTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreCalculations\frmPreCalculationTest.Designer.cs">
+      <DependentUpon>frmPreCalculationTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AllCourses\frmScheduleCurriculumCourses.resx">
@@ -114,6 +120,9 @@
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PreCalculations\frmPreCalculationTest.resx">
+      <DependentUpon>frmPreCalculationTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -125,6 +134,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Impendulo.Data.Models.Company.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.CurriculumCourseEnrollment.datasource" />
     <None Include="Properties\DataSources\Impendulo.Data.Models.Schedule.datasource" />
     <None Include="Properties\Settings.settings">
@@ -147,6 +157,10 @@
     <ProjectReference Include="..\Impendulo.Common\Impendulo.Common.csproj">
       <Project>{0f07fa77-11b2-41a8-8133-4fd607c1d43a}</Project>
       <Name>Impendulo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Impendulo.Company\Impendulo.Company.csproj">
+      <Project>{CF29B394-3582-4CEA-9D18-6B6A6A8A8F9D}</Project>
+      <Name>Impendulo.Company</Name>
     </ProjectReference>
     <ProjectReference Include="..\Impendulo.Data\Impendulo.Data.csproj">
       <Project>{DB508B3A-01F7-4B80-8CA3-C4C0151B63EE}</Project>

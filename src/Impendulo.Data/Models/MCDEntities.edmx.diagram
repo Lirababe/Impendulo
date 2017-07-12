@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ad1f818797e740d188d4ab8296250592" Name="Diagram1" ZoomLevel="106" ShowGrid="true">
+      <Diagram DiagramId="ad1f818797e740d188d4ab8296250592" Name="Diagram1" ZoomLevel="101" ShowGrid="true">
         <EntityTypeShape EntityType="MCDModel.Activity" Width="1.5" PointX="17.25" PointY="49.875" />
         <EntityTypeShape EntityType="MCDModel.Address" Width="2.75" PointX="1.5" PointY="49.375" />
         <EntityTypeShape EntityType="MCDModel.Assessor" Width="1.5" PointX="10.5" PointY="51.625" />
-        <EntityTypeShape EntityType="MCDModel.Company" Width="1.5" PointX="0.75" PointY="44" />
+        <EntityTypeShape EntityType="MCDModel.Company" Width="2.25" PointX="0.5" PointY="44" />
         <EntityTypeShape EntityType="MCDModel.ContactDetail" Width="1.5" PointX="6" PointY="46.875" />
         <EntityTypeShape EntityType="MCDModel.CostingModel" Width="1.5" PointX="12.75" PointY="51.25" />
         <EntityTypeShape EntityType="MCDModel.Course" Width="2.25" PointX="15" PointY="52.875" />
@@ -65,12 +65,11 @@
         <EntityTypeShape EntityType="MCDModel.Module" Width="1.5" PointX="15" PointY="49.875" />
         <EntityTypeShape EntityType="MCDModel.NextOfKin" Width="1.5" PointX="10.5" PointY="43.25" />
         <EntityTypeShape EntityType="MCDModel.Qualification" Width="2" PointX="13.5" PointY="29.625" />
-        <EntityTypeShape EntityType="MCDModel.Schedule" Width="3" PointX="35.875" PointY="33.5" />
         <EntityTypeShape EntityType="MCDModel.SMTPSetting" Width="2" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="MCDModel.StudentAssociatedCompany" Width="2.625" PointX="30.75" PointY="44.375" />
         <EntityTypeShape EntityType="MCDModel.StudentDisability" Width="2.25" PointX="33" PointY="37.375" />
         <EntityTypeShape EntityType="MCDModel.Student" Width="2.625" PointX="18.75" PointY="39.875" />
-        <EntityTypeShape EntityType="MCDModel.sysdiagram" Width="1.5" PointX="4.75" PointY="4.625" />
+        <EntityTypeShape EntityType="MCDModel.sysdiagram" Width="2" PointX="3.5" PointY="4.125" />
         <EntityTypeShape EntityType="MCDModel.SystemAdministrator" Width="1.5" PointX="10.5" PointY="49.125" />
         <EntityTypeShape EntityType="MCDModel.VenueAssociatedCurriculumCourse" Width="3" PointX="27" PointY="52.625" />
         <EntityTypeShape EntityType="MCDModel.Venue" Width="2.875" PointX="19.375" PointY="56" />
@@ -88,7 +87,6 @@
         <AssociationConnector Association="MCDModel.FK_CourseSchedules_Students" />
         <AssociationConnector Association="MCDModel.FK_CurricullumCourseCodes_CurriculumCourses" />
         <AssociationConnector Association="MCDModel.FK_CurriculumCourseEnrollments_CurriculumCourses" />
-        <AssociationConnector Association="MCDModel.FK_Schedules_CurriculumCourseEnrollments" />
         <AssociationConnector Association="MCDModel.FK_CurriculumCourseMinimumMaximums_CurriculumCourses1" />
         <AssociationConnector Association="MCDModel.FK_CurriculumCourseModules_CurriculumCourses" />
         <AssociationConnector Association="MCDModel.FK_CurriculumCourseModules_Modules" />
@@ -160,7 +158,6 @@
         <AssociationConnector Association="MCDModel.FK_EnrollmentDocuments_Enrollments" />
         <AssociationConnector Association="MCDModel.FK_Enrollments_LookupEnrollmentProgressStates" />
         <AssociationConnector Association="MCDModel.FK_Enrollments_Students" />
-        <AssociationConnector Association="MCDModel.FK_Schedules_Enrollments" />
         <AssociationConnector Association="MCDModel.CurriculumEnquiryEnrollments" />
         <EntityTypeShape EntityType="MCDModel.StudentIDDocument" Width="2.75" PointX="22.5" PointY="41.625" />
         <EntityTypeShape EntityType="MCDModel.StudentPhoto" Width="2" PointX="27.75" PointY="44.75" />
@@ -176,12 +173,21 @@
         <AssociationConnector Association="MCDModel.FK_CurriculumCourseDayCanBeScheduled_LookupDayOfWeeks" />
         <EntityTypeShape EntityType="MCDModel.VenueAssociatedCourse" Width="3.125" PointX="26.5" PointY="59.125" />
         <AssociationConnector Association="MCDModel.FK_VenueAssociatedCourses_Courses" />
-        <AssociationConnector Association="MCDModel.FK_Schedules_Facilitators" />
         <AssociationConnector Association="MCDModel.FK_VenueAssociatedCourses_Venues" />
-        <AssociationConnector Association="MCDModel.CompanyAssociatedSchedules" />
-        <AssociationConnector Association="MCDModel.ScheduledVenues" />
-        <EntityTypeShape EntityType="MCDModel.LookupScheduleLocation" Width="1.5" PointX="7.375" PointY="3.875" />
+        <EntityTypeShape EntityType="MCDModel.LookupScheduleLocation" Width="2.5" PointX="7.375" PointY="3.875" />
+        <EntityTypeShape EntityType="MCDModel.LookupScheduleStatus" Width="1.5" PointX="6.375" PointY="6.875" />
+        <EntityTypeShape EntityType="MCDModel.OffSiteSchedule" Width="2.125" PointX="31.75" PointY="33.5" />
+        <EntityTypeShape EntityType="MCDModel.OnSiteSchedule" Width="2" PointX="33.75" PointY="40.875" />
+        <EntityTypeShape EntityType="MCDModel.Schedule" Width="2.875" PointX="29.5" PointY="21.75" />
+        <AssociationConnector Association="MCDModel.FK_OffSiteSchedule_Companies" />
+        <AssociationConnector Association="MCDModel.FK_Schedules_CurriculumCourseEnrollments" />
+        <AssociationConnector Association="MCDModel.FK_Schedules_Enrollments" />
+        <AssociationConnector Association="MCDModel.FK_Schedules_Facilitators" />
         <AssociationConnector Association="MCDModel.FK_Schedules_LookupScheduleLocations" />
+        <AssociationConnector Association="MCDModel.FK_Schedules_LookupScheduleStatuses" />
+        <AssociationConnector Association="MCDModel.FK_OffSiteSchedule_Schedules" />
+        <AssociationConnector Association="MCDModel.FK_OnSiteSchedules_Schedules" />
+        <AssociationConnector Association="MCDModel.FK_OnSiteSchedules_Venues" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

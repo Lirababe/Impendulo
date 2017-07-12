@@ -13,6 +13,7 @@ using System.Data.Entity;
 using Impendulo.Common.Enum;
 using Impendulo.StudentForms.Development;
 using Impendulo.Common.FileHandeling;
+using Impendulo.Development.Students;
 
 namespace Impendulo.WizardForm.ClientEnquiry.Development
 {
@@ -132,19 +133,23 @@ namespace Impendulo.WizardForm.ClientEnquiry.Development
         }
         private void picbtnEditCurrentStudent_Click(object sender, EventArgs e)
         {
-            frmAddUpdateStudent frm = new frmAddUpdateStudent();
-            frm.StudentID = this.CurrentSelectedStudent.StudentID;
-            frm.CurrentSelectedStudent = CurrentSelectedStudent;
-            frm.ShowDialog();
+            using (frmStudentAddUpdate frm = new frmStudentAddUpdate(CurrentSelectedStudent.StudentID))
+            {
+                //frm.StudentID = this.CurrentSelectedStudent.StudentID;
+                //frm.CurrentSelectedStudent = CurrentSelectedStudent;
+                frm.ShowDialog();
 
-            txtStudentFullName.Text = frm.CurrentSelectedStudent.Individual.IndividualFirstName + " " + frm.CurrentSelectedStudent.Individual.IndividualLastname;
-            txtStudentIdNumber.Text = frm.CurrentSelectedStudent.StudentIDNumber;
-            txtStudentNember.Text = frm.CurrentSelectedStudent.StudentID.ToString();
-            //Summary Detrials
-            txtSummaryFullName.Text = txtStudentFullName.Text;
-            txtSummaryIDNumber.Text = txtStudentIdNumber.Text;
-            txtSummaryStudentNumber.Text = txtStudentNember.Text;
-            CurrentSelectedStudent = frm.CurrentSelectedStudent;
+                txtStudentFullName.Text = frm.CurrentSelectedStudent.Individual.IndividualFirstName + " " + frm.CurrentSelectedStudent.Individual.IndividualLastname;
+                txtStudentIdNumber.Text = frm.CurrentSelectedStudent.StudentIDNumber;
+                txtStudentNember.Text = frm.CurrentSelectedStudent.StudentID.ToString();
+                //Summary Detrials
+                txtSummaryFullName.Text = txtStudentFullName.Text;
+                txtSummaryIDNumber.Text = txtStudentIdNumber.Text;
+                txtSummaryStudentNumber.Text = txtStudentNember.Text;
+                CurrentSelectedStudent = frm.CurrentSelectedStudent;
+            }
+                //frmAddUpdateStudent frm = new frmAddUpdateStudent();
+           
 
         }
 

@@ -20,7 +20,7 @@ namespace Impendulo.Development.Students
 
         private void button2_Click(object sender, EventArgs e)
         {
-            using (frmStudentAddUpdate frm = new frmStudentAddUpdate())
+            using (frmStudentAddUpdate frm = new frmStudentAddUpdate(0))
             {
                 frm.ShowDialog();
             }

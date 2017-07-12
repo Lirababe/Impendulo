@@ -119,6 +119,7 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                                      .Include(a => a.CurriculumCourseEnrollments)
                                      .Include(a => a.CurriculumCourseEnrollments.Select(b => b.Schedules))
                                      .Include(a => a.CurriculumCourseEnrollments.Select(b => b.CurriculumCourse))
+                                     .Include(a => a.CurriculumCourseEnrollments.Select(b => b.CurriculumCourse.CurriculumCourseDayCanBeScheduleds))
                                      .Include(a => a.Curriculum)
                                         .FirstOrDefault<Data.Models.Enrollment>();
 
@@ -372,9 +373,9 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
 
         private void btnStudentInformation_Click(object sender, EventArgs e)
         {
-            using (frmStudentAddUpdate frm = new frmStudentAddUpdate())
+            using (frmStudentAddUpdate frm = new frmStudentAddUpdate(CurrentEnrollment.Student.StudentID))
             {
-                frm.CurrentStudentID = CurrentEnrollment.Student.StudentID;
+                //frm.CurrentStudentID = CurrentEnrollment.Student.StudentID;
                 frm.ShowDialog();
             }
         }
@@ -384,7 +385,16 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
             this.CurrentEnrollmentPreRequisiteID = 0;
             this.refreshEnrollment();
         }
-
+        private List<EnumDayOfWeeks> GetDayThatCurriculumCourseCanBeScheduled(CurriculumCourseEnrollment CurrentSelectedCurriculumCourseEnrollment)
+        {
+            List<EnumDayOfWeeks> DaysCanSchedule = new List<EnumDayOfWeeks>();
+            //sets the Date One Day Ahead
+            foreach (CurriculumCourseDayCanBeScheduled CCDCBS in CurrentSelectedCurriculumCourseEnrollment.CurriculumCourse.CurriculumCourseDayCanBeScheduleds)
+            {
+                DaysCanSchedule.Add((EnumDayOfWeeks)CCDCBS.DayOfWeekID);
+            };
+            return DaysCanSchedule;
+        }
         private void dgvEnrollmentCourseMain_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             CurriculumCourseEnrollment CurrentSelectedCurriculumCourseEnrollment = (CurriculumCourseEnrollment)curriculumCourseEnrollmentsMainCoursesBindingSource.Current;
@@ -397,8 +407,13 @@ namespace Impendulo.StudentEngineeringCourseErollment.Devlopment.EnrollmentInpro
                     if (CurrentSelectedCurriculumCourseEnrollment.CurriculumCourse.CurriculumCourseParentID == 0)
                     {
                         //TODO: Open Scheduling Form - Pass Currently Selected CurriculumCourseEnrollment Object.
-                        using (frmScheduleCurriculumCourseWizard frm = new frmScheduleCurriculumCourseWizard())
+
+                        DateTime dt = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 1, 0, 0);
+
+                        using (frmScheduleCurriculumCourseWizard frm = new frmScheduleCurriculumCourseWizard(Common.CustomDateTime.getCustomDateTime(dt, 1, GetDayThatCurriculumCourseCanBeScheduled(CurrentSelectedCurriculumCourseEnrollment))))
                         {
+                            //Sets The Possible Start Date
+                           
                             frm.CurrentSelectedCurriculumCourseEnrollment = CurrentSelectedCurriculumCourseEnrollment;
 
                             frm.ShowDialog();

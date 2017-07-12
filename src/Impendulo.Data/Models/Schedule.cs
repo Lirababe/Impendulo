@@ -14,28 +14,21 @@ namespace Impendulo.Data.Models
     
     public partial class Schedule
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Schedule()
-        {
-            this.Companies = new ObservableListSource<Company>();
-            this.Venues = new ObservableListSource<Venue>();
-        }
-    
         public int ScheduleID { get; set; }
         public int CurriculumCourseEnrollmentID { get; set; }
+        public int FacilitatorID { get; set; }
         public System.DateTime ScheduleStartDate { get; set; }
         public System.DateTime ScheduleCompletionDate { get; set; }
+        public int ScheduleStatusID { get; set; }
         public int EnrollmentID { get; set; }
-        public int FacilitatorID { get; set; }
-        public int LookupScheduleLocationID { get; set; }
+        public int ScheduleLocationID { get; set; }
     
         public virtual CurriculumCourseEnrollment CurriculumCourseEnrollment { get; set; }
         public virtual Enrollment Enrollment { get; set; }
         public virtual Facilitator Facilitator { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<Company> Companies { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<Venue> Venues { get; set; }
         public virtual LookupScheduleLocation LookupScheduleLocation { get; set; }
+        public virtual LookupScheduleStatus LookupScheduleStatus { get; set; }
+        public virtual OffSiteSchedule OffSiteSchedule { get; set; }
+        public virtual OnSiteSchedule OnSiteSchedule { get; set; }
     }
 }

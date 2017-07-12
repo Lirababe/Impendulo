@@ -22,7 +22,7 @@ namespace Impendulo.Data.Models
             this.Addresses = new ObservableListSource<Address>();
             this.ContactDetails = new ObservableListSource<ContactDetail>();
             this.Enquiries = new ObservableListSource<Enquiry>();
-            this.Schedules = new ObservableListSource<Schedule>();
+            this.OffSiteSchedules = new ObservableListSource<OffSiteSchedule>();
         }
     
         public int CompanyID { get; set; }
@@ -42,6 +42,6 @@ namespace Impendulo.Data.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<Enquiry> Enquiries { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<Schedule> Schedules { get; set; }
+        public virtual ObservableListSource<OffSiteSchedule> OffSiteSchedules { get; set; }
     }
 }

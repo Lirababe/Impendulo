@@ -19,8 +19,8 @@ namespace Impendulo.Data.Models
         {
             this.CurriculumCourseEnrollments = new ObservableListSource<CurriculumCourseEnrollment>();
             this.EnrollmentDocuments = new ObservableListSource<EnrollmentDocument>();
-            this.Schedules = new ObservableListSource<Schedule>();
             this.CurriculumEnquiries = new ObservableListSource<CurriculumEnquiry>();
+            this.Schedules = new ObservableListSource<Schedule>();
         }
     
         public int EnrollmentID { get; set; }
@@ -40,8 +40,8 @@ namespace Impendulo.Data.Models
         public virtual LookupEnrollmentProgressState LookupEnrollmentProgressState { get; set; }
         public virtual Student Student { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableListSource<Schedule> Schedules { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ObservableListSource<CurriculumEnquiry> CurriculumEnquiries { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ObservableListSource<Schedule> Schedules { get; set; }
     }
 }

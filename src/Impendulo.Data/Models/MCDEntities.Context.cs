@@ -87,7 +87,6 @@ namespace Impendulo.Data.Models
         public virtual DbSet<Module> Modules { get; set; }
         public virtual DbSet<NextOfKin> NextOfKins { get; set; }
         public virtual DbSet<Qualification> Qualifications { get; set; }
-        public virtual DbSet<Schedule> Schedules { get; set; }
         public virtual DbSet<SMTPSetting> SMTPSettings { get; set; }
         public virtual DbSet<StudentAssociatedCompany> StudentAssociatedCompanies { get; set; }
         public virtual DbSet<StudentDisability> StudentDisabilities { get; set; }
@@ -105,6 +104,10 @@ namespace Impendulo.Data.Models
         public virtual DbSet<PublicHoliday> PublicHolidays { get; set; }
         public virtual DbSet<VenueAssociatedCourse> VenueAssociatedCourses { get; set; }
         public virtual DbSet<LookupScheduleLocation> LookupScheduleLocations { get; set; }
+        public virtual DbSet<LookupScheduleStatus> LookupScheduleStatuses { get; set; }
+        public virtual DbSet<OffSiteSchedule> OffSiteSchedules { get; set; }
+        public virtual DbSet<OnSiteSchedule> OnSiteSchedules { get; set; }
+        public virtual DbSet<Schedule> Schedules { get; set; }
     
         public virtual ObjectResult<CurriculumCourse> GetCurriculumCourseInOrder(Nullable<int> curriculumID)
         {
