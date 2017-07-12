@@ -42,6 +42,22 @@ namespace Impendulo.Data.Models
 
                     return new System.Data.Entity.Validation.DbEntityValidationResult(entityEntry, list);
                 }
+
+                if (entityEntry.CurrentValues.GetValue<int>("EthnicityID").Equals(6))
+                {
+                    var list = new List<System.Data.Entity.Validation.DbValidationError>();
+                    list.Add(new System.Data.Entity.Validation.DbValidationError("EthnicityID", "Required Field"));
+
+                    return new System.Data.Entity.Validation.DbEntityValidationResult(entityEntry, list);
+                }
+
+                if (entityEntry.CurrentValues.GetValue<int>("QualificationLevelID").Equals(11))
+                {
+                    var list = new List<System.Data.Entity.Validation.DbValidationError>();
+                    list.Add(new System.Data.Entity.Validation.DbValidationError("QualificationLevelID", "Required Field"));
+
+                    return new System.Data.Entity.Validation.DbEntityValidationResult(entityEntry, list);
+                }
             }
 
             if (entityEntry.Entity is Course)
